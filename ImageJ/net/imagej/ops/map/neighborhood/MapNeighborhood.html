@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MapNeighborhood (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="MapNeighborhood (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imagej/ops/map/neighborhood/DefaultMapNeighborhood.html" title="class in net.imagej.ops.map.neighborhood"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imagej/ops/map/neighborhood/MapNeighborhoodWithCenter.html" title="class in net.imagej.ops.map.neighborhood"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imagej/ops/map/neighborhood/MapNeighborhood.html" target="_top">Frames</a></li>
+<li><a href="MapNeighborhood.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.ops.map.neighborhood</div>
+<h2 title="Interface MapNeighborhood" class="title">Interface MapNeighborhood&lt;EI,EO,PI,PO,OP extends <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops">Op</a>&gt;</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>EI</code> - element type of inputs</dd>
+<dd><code>EO</code> - element type of outputs</dd>
+<dd><code>OP</code> - type of <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops"><code>Op</code></a> which processes each neighborhood</dd>
+</dl>
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html" title="interface in net.imagej.ops.special.computer">BinaryComputerOp</a>&lt;PI,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/neighborhood/Shape.html?is-external=true" title="class or interface in net.imglib2.algorithm.neighborhood">Shape</a>,PO&gt;, <a href="../../../../../net/imagej/ops/special/BinaryInput.html" title="interface in net.imagej.ops.special">BinaryInput</a>&lt;PI,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/neighborhood/Shape.html?is-external=true" title="class or interface in net.imglib2.algorithm.neighborhood">Shape</a>&gt;, <a href="../../../../../net/imagej/ops/special/BinaryOp.html" title="interface in net.imagej.ops.special">BinaryOp</a>&lt;PI,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/neighborhood/Shape.html?is-external=true" title="class or interface in net.imglib2.algorithm.neighborhood">Shape</a>,PO&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/command/Command.html?is-external=true" title="class or interface in org.scijava.command">Command</a>, <a href="../../../../../net/imagej/ops/Environmental.html" title="interface in net.imagej.ops">Environmental</a>, <a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a>, <a href="../../../../../net/imagej/ops/map/MapOp.html" title="interface in net.imagej.ops.map">MapOp</a>&lt;OP&gt;, <a href="../../../../../net/imagej/ops/special/computer/NullaryComputerOp.html" title="interface in net.imagej.ops.special.computer">NullaryComputerOp</a>&lt;PO&gt;, <a href="../../../../../net/imagej/ops/special/NullaryOp.html" title="interface in net.imagej.ops.special">NullaryOp</a>&lt;PO&gt;, <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops">Op</a>, <a href="../../../../../net/imagej/ops/Ops.Map.html" title="interface in net.imagej.ops">Ops.Map</a>, <a href="../../../../../net/imagej/ops/special/Output.html" title="interface in net.imagej.ops.special">Output</a>&lt;PO&gt;, <a href="../../../../../net/imagej/ops/special/OutputMutable.html" title="interface in net.imagej.ops.special">OutputMutable</a>&lt;PO&gt;, <a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a>, <a href="../../../../../net/imagej/ops/Threadable.html" title="interface in net.imagej.ops">Threadable</a>, <a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a>&lt;PI,PO&gt;, <a href="../../../../../net/imagej/ops/special/UnaryInput.html" title="interface in net.imagej.ops.special">UnaryInput</a>&lt;PI&gt;, <a href="../../../../../net/imagej/ops/special/UnaryOp.html" title="interface in net.imagej.ops.special">UnaryOp</a>&lt;PI,PO&gt;</dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../../../net/imagej/ops/map/neighborhood/AbstractMapNeighborhood.html" title="class in net.imagej.ops.map.neighborhood">AbstractMapNeighborhood</a>, <a href="../../../../../net/imagej/ops/map/neighborhood/DefaultMapNeighborhood.html" title="class in net.imagej.ops.map.neighborhood">DefaultMapNeighborhood</a>, <a href="../../../../../net/imagej/ops/map/neighborhood/MapNeighborhoodWithCenter.html" title="class in net.imagej.ops.map.neighborhood">MapNeighborhoodWithCenter</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">MapNeighborhood&lt;EI,EO,PI,PO,OP extends <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops">Op</a>&gt;</span>
+extends <a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html" title="interface in net.imagej.ops.special.computer">BinaryComputerOp</a>&lt;PI,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/neighborhood/Shape.html?is-external=true" title="class or interface in net.imglib2.algorithm.neighborhood">Shape</a>,PO&gt;, <a href="../../../../../net/imagej/ops/map/MapOp.html" title="interface in net.imagej.ops.map">MapOp</a>&lt;OP&gt;</pre>
+<div class="block">Typed interface for "map" ops that work with neighborhoods.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Leon Yang</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.net.imagej.ops.special.SpecialOp">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/SpecialOp.Flavor.html" title="enum in net.imagej.ops.special">SpecialOp.Flavor</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imagej.ops.Ops.Map">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imagej.ops.<a href="../../../../../net/imagej/ops/Ops.Map.html" title="interface in net.imagej.ops">Ops.Map</a></h3>
+<code><a href="../../../../../net/imagej/ops/Ops.Map.html#NAME">NAME</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.BinaryComputerOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.computer.<a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html" title="interface in net.imagej.ops.special.computer">BinaryComputerOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html#compute-I1-I2-O-">compute</a>, <a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html#compute-I1-O-">compute</a>, <a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html#getIndependentInstance--">getIndependentInstance</a>, <a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html#run--">run</a>, <a href="../../../../../net/imagej/ops/special/computer/BinaryComputerOp.html#run-I1-I2-O-">run</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.BinaryOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/BinaryOp.html" title="interface in net.imagej.ops.special">BinaryOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/BinaryOp.html#getArity--">getArity</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.BinaryInput">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/BinaryInput.html" title="interface in net.imagej.ops.special">BinaryInput</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/BinaryInput.html#in--">in</a>, <a href="../../../../../net/imagej/ops/special/BinaryInput.html#in1--">in1</a>, <a href="../../../../../net/imagej/ops/special/BinaryInput.html#in2--">in2</a>, <a href="../../../../../net/imagej/ops/special/BinaryInput.html#setInput-I1-">setInput</a>, <a href="../../../../../net/imagej/ops/special/BinaryInput.html#setInput1-I1-">setInput1</a>, <a href="../../../../../net/imagej/ops/special/BinaryInput.html#setInput2-I2-">setInput2</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.UnaryComputerOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.computer.<a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html#compute-O-">compute</a>, <a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html#run-I-O-">run</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.NullaryComputerOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.computer.<a href="../../../../../net/imagej/ops/special/computer/NullaryComputerOp.html" title="interface in net.imagej.ops.special.computer">NullaryComputerOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/computer/NullaryComputerOp.html#run-O-">run</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.SpecialOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/SpecialOp.html#candidates-net.imagej.ops.OpEnvironment-java.lang.String-java.lang.Class-int-net.imagej.ops.special.SpecialOp.Flavor-">candidates</a>, <a href="../../../../../net/imagej/ops/special/SpecialOp.html#filterArity-java.util.List-int-">filterArity</a>, <a href="../../../../../net/imagej/ops/special/SpecialOp.html#op-net.imagej.ops.OpEnvironment-java.lang.Class-java.lang.Class-java.lang.Class-java.lang.Object...-">op</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Environmental">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.<a href="../../../../../net/imagej/ops/Environmental.html" title="interface in net.imagej.ops">Environmental</a></h3>
+<code><a href="../../../../../net/imagej/ops/Environmental.html#ops--">ops</a>, <a href="../../../../../net/imagej/ops/Environmental.html#setEnvironment-net.imagej.ops.OpEnvironment-">setEnvironment</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Initializable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.<a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></h3>
+<code><a href="../../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.OutputMutable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/OutputMutable.html" title="interface in net.imagej.ops.special">OutputMutable</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/OutputMutable.html#setOutput-O-">setOutput</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.Output">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/Output.html" title="interface in net.imagej.ops.special">Output</a></h3>
+<code><a href="../../../../../net/imagej/ops/special/Output.html#out--">out</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.map.MapOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.map.<a href="../../../../../net/imagej/ops/map/MapOp.html" title="interface in net.imagej.ops.map">MapOp</a></h3>
+<code><a href="../../../../../net/imagej/ops/map/MapOp.html#getOp--">getOp</a>, <a href="../../../../../net/imagej/ops/map/MapOp.html#setOp-OP-">setOp</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imagej/ops/map/neighborhood/DefaultMapNeighborhood.html" title="class in net.imagej.ops.map.neighborhood"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imagej/ops/map/neighborhood/MapNeighborhoodWithCenter.html" title="class in net.imagej.ops.map.neighborhood"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imagej/ops/map/neighborhood/MapNeighborhood.html" target="_top">Frames</a></li>
+<li><a href="MapNeighborhood.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2017 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>

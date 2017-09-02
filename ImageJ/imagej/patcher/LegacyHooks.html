@@ -1,0 +1,1018 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LegacyHooks (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="LegacyHooks (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42,"i13":42,"i14":42,"i15":42,"i16":42,"i17":42,"i18":42,"i19":42,"i20":42,"i21":42,"i22":42,"i23":42,"i24":42,"i25":42,"i26":42,"i27":42,"i28":42,"i29":42,"i30":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../imagej/patcher/LegacyEnvironment.html" title="class in imagej.patcher"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../imagej/patcher/LegacyHooks.FatJarNameComparator.html" title="class in imagej.patcher"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?imagej/patcher/LegacyHooks.html" target="_top">Frames</a></li>
+<li><a href="LegacyHooks.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">imagej.patcher</div>
+<h2 title="Class LegacyHooks" class="title">Class LegacyHooks</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>imagej.patcher.LegacyHooks</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../imagej/patcher/EssentialLegacyHooks.html" title="class in imagej.patcher">EssentialLegacyHooks</a></dd>
+</dl>
+<hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+<br>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public abstract class <span class="typeNameLabel">LegacyHooks</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Extension points for ImageJ 1.x.
+ <p>
+ These extension points will be patched into ImageJ 1.x by the
+ <a href="http://javadoc.imagej.net/ImageJ/imagej/patcher/CodeHacker.html?is-external=true" title="class or interface in imagej.patcher"><code>CodeHacker</code></a>. To override the behavior of ImageJ 1.x, a new instance of
+ this interface needs to be installed into <code>ij.IJ._hooks</code>.
+ </p>
+ <p>
+ The essential functionality of the hooks is provided in the
+ <a href="../../imagej/patcher/EssentialLegacyHooks.html" title="class in imagej.patcher"><code>EssentialLegacyHooks</code></a> class, which makes an excellent base class for
+ project-specific implementations.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Johannes Schindelin</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.FatJarNameComparator.html" title="class in imagej.patcher">LegacyHooks.FatJarNameComparator</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#LegacyHooks--">LegacyHooks</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#addMenuItem-java.lang.String-java.lang.String-">addMenuItem</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;menuPath,
+           <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Callback for ImageJ 1.x' menu parsing machinery.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#addPluginClasspath-java.io.File-">addPluginClasspath</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#addPluginDirectory-java.io.File-java.lang.String:A-">addPluginDirectory</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory,
+                  <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to modify the order in which .jar files are added to the
+ PluginClassLoader.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#autoGenerateConfigFile-java.io.File-">autoGenerateConfigFile</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#autoGenerateConfigFile-java.io.File-java.io.File-java.lang.String-java.lang.String-java.lang.StringBuilder-">autoGenerateConfigFile</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;topLevelDirectory,
+                      <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory,
+                      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;menuPath,
+                      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;packageName,
+                      <a href="http://javadoc.imagej.net/Java/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a>&nbsp;builder)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#createInEditor-java.lang.String-java.lang.String-">createInEditor</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fileName,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;content)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to override ImageJ 1.x' editor.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#debug-java.lang.String-">debug</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Logs a debug message (to be shown only in debug mode).</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#dispose--">dispose</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Disposes of the hooks.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#enableIJ1PluginDirs-boolean-">enableIJ1PluginDirs</a></span>(boolean&nbsp;enable)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#error-java.lang.Throwable-">error</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;t)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Shows an exception.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#getAppName--">getAppName</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the name to use in place of "ImageJ".</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#getContext--">getContext</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Return the current context, if any.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#getIconURL--">getIconURL</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the icon to use in place of the ImageJ microscope.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#getMenuStructure--">getMenuStructure</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns ImageJ 1.x' menu structure as a map.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#handleExtraPluginJars--">handleExtraPluginJars</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to add to ImageJ 1.x' PluginClassLoader's class path.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#handleNoSuchMethodError-java.lang.NoSuchMethodError-">handleNoSuchMethodError</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/NoSuchMethodError.html?is-external=true" title="class or interface in java.lang">NoSuchMethodError</a>&nbsp;e)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to enhance ImageJ 1.x' error reporting upon
+ <a href="http://javadoc.imagej.net/Java/java/lang/NoSuchMethodError.html?is-external=true" title="class or interface in java.lang"><code>NoSuchMethodError</code></a>.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#initialized--">initialized</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">First extension point to run just after ImageJ 1.x spun up.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#installed--">installed</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Runs when the hooks are installed into an existing legacy environment.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#interceptOpen-java.lang.String-int-boolean-">interceptOpen</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+             int&nbsp;planeIndex,
+             boolean&nbsp;display)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Optionally override opening resources via legacy hooks.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#interceptRunPlugIn-java.lang.String-java.lang.String-">interceptRunPlugIn</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                  <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Intercepts the call to <a href="http://javadoc.imagej.net/ImageJ1/ij/IJ.html?is-external=true#runPlugIn-java.lang.String-java.lang.String-" title="class or interface in ij"><code>IJ.runPlugIn(String, String)</code></a>.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#isLegacyMode--">isLegacyMode</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Determines whether the image windows should be displayed or not.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#log-java.lang.String-">log</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Logs a message.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#newPluginClassLoader-java.lang.ClassLoader-">newPluginClassLoader</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;loader)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to run after a new PluginClassLoader was initialized.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#openInEditor-java.lang.String-">openInEditor</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to override ImageJ 1.x' editor.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#quit--">quit</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Disposes and prepares for quitting.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#registerImage-java.lang.Object-">registerImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;image)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Registers an image (possibly not seen before).</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#runAfterRefreshMenus--">runAfterRefreshMenus</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to run after <i>Help&gt;Refresh Menus</i></div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#showProgress-double-">showProgress</a></span>(double&nbsp;progress)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Updates the progress bar, where 0 &lt;= progress &lt;= 1.0.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#showProgress-int-int-">showProgress</a></span>(int&nbsp;currentIndex,
+            int&nbsp;finalIndex)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Updates the progress bar, where the length of the bar is set to (
+ <code>currentValue + 1) / finalValue</code> of the maximum bar length.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#showStatus-java.lang.String-">showStatus</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;status)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Shows a status message.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../imagej/patcher/LegacyHooks.html#unregisterImage-java.lang.Object-">unregisterImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;image)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Releases an image.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="LegacyHooks--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LegacyHooks</h4>
+<pre>public&nbsp;LegacyHooks()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isLegacyMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isLegacyMode</h4>
+<pre>public&nbsp;boolean&nbsp;isLegacyMode()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Determines whether the image windows should be displayed or not.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>false if ImageJ 1.x should be prevented from opening image windows.</dd>
+</dl>
+</li>
+</ul>
+<a name="getContext--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContext</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getContext()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Return the current context, if any.
+ <p>
+ For ImageJ2-specific hooks, the returned object will be the current SciJava
+ context, or null if the context is not yet initialized.
+ </p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the context, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="quit--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>quit</h4>
+<pre>public&nbsp;boolean&nbsp;quit()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Disposes and prepares for quitting.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether ImageJ 1.x should be allowed to call System.exit()</dd>
+</dl>
+</li>
+</ul>
+<a name="installed--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>installed</h4>
+<pre>public&nbsp;void&nbsp;installed()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Runs when the hooks are installed into an existing legacy environment.</div>
+</li>
+</ul>
+<a name="dispose--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dispose</h4>
+<pre>public&nbsp;void&nbsp;dispose()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Disposes of the hooks.
+ <p>
+ This method is called when ImageJ 1.x is quitting or when new hooks are
+ installed.
+ </p></div>
+</li>
+</ul>
+<a name="interceptRunPlugIn-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interceptRunPlugIn</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;interceptRunPlugIn(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                                 <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Intercepts the call to <a href="http://javadoc.imagej.net/ImageJ1/ij/IJ.html?is-external=true#runPlugIn-java.lang.String-java.lang.String-" title="class or interface in ij"><code>IJ.runPlugIn(String, String)</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>className</code> - the class name</dd>
+<dd><code>arg</code> - the argument passed to the <code>runPlugIn</code> method</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the object to return, or null to let ImageJ 1.x handle the call</dd>
+</dl>
+</li>
+</ul>
+<a name="showProgress-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>showProgress</h4>
+<pre>public&nbsp;void&nbsp;showProgress(double&nbsp;progress)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Updates the progress bar, where 0 &lt;= progress &lt;= 1.0.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>progress</code> - between 0.0 and 1.0</dd>
+</dl>
+</li>
+</ul>
+<a name="showProgress-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>showProgress</h4>
+<pre>public&nbsp;void&nbsp;showProgress(int&nbsp;currentIndex,
+                         int&nbsp;finalIndex)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Updates the progress bar, where the length of the bar is set to (
+ <code>currentValue + 1) / finalValue</code> of the maximum bar length. The
+ bar is erased if <code>currentValue &gt;= finalValue</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>currentIndex</code> - the step that was just started</dd>
+<dd><code>finalIndex</code> - the final step.</dd>
+</dl>
+</li>
+</ul>
+<a name="showStatus-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>showStatus</h4>
+<pre>public&nbsp;void&nbsp;showStatus(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;status)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Shows a status message.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>status</code> - the message</dd>
+</dl>
+</li>
+</ul>
+<a name="log-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>log</h4>
+<pre>public&nbsp;void&nbsp;log(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Logs a message.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>message</code> - the message</dd>
+</dl>
+</li>
+</ul>
+<a name="registerImage-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>registerImage</h4>
+<pre>public&nbsp;void&nbsp;registerImage(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;image)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Registers an image (possibly not seen before).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - the new image</dd>
+</dl>
+</li>
+</ul>
+<a name="unregisterImage-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unregisterImage</h4>
+<pre>public&nbsp;void&nbsp;unregisterImage(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;image)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Releases an image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - the image</dd>
+</dl>
+</li>
+</ul>
+<a name="debug-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>debug</h4>
+<pre>public&nbsp;void&nbsp;debug(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Logs a debug message (to be shown only in debug mode).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>string</code> - the debug message</dd>
+</dl>
+</li>
+</ul>
+<a name="error-java.lang.Throwable-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>error</h4>
+<pre>public&nbsp;void&nbsp;error(<a href="http://javadoc.imagej.net/Java/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;t)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Shows an exception.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the exception</dd>
+</dl>
+</li>
+</ul>
+<a name="getAppName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppName</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAppName()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the name to use in place of "ImageJ".</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the application name</dd>
+</dl>
+</li>
+</ul>
+<a name="getIconURL--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIconURL</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;getIconURL()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the icon to use in place of the ImageJ microscope.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the URL to the icon to use, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="openInEditor-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openInEditor</h4>
+<pre>public&nbsp;boolean&nbsp;openInEditor(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to override ImageJ 1.x' editor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - the path to the file to open</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the hook opened a different editor</dd>
+</dl>
+</li>
+</ul>
+<a name="createInEditor-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createInEditor</h4>
+<pre>public&nbsp;boolean&nbsp;createInEditor(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fileName,
+                              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;content)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to override ImageJ 1.x' editor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fileName</code> - the name of the new file</dd>
+<dd><code>content</code> - the initial content</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the hook opened a different editor</dd>
+</dl>
+</li>
+</ul>
+<a name="enableIJ1PluginDirs-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>enableIJ1PluginDirs</h4>
+<pre>protected&nbsp;void&nbsp;enableIJ1PluginDirs(boolean&nbsp;enable)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="addPluginClasspath-java.io.File-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPluginClasspath</h4>
+<pre>protected&nbsp;void&nbsp;addPluginClasspath(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="handleExtraPluginJars--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleExtraPluginJars</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&gt;&nbsp;handleExtraPluginJars()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to add to ImageJ 1.x' PluginClassLoader's class path.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a list of class path elements to add</dd>
+</dl>
+</li>
+</ul>
+<a name="runAfterRefreshMenus--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>runAfterRefreshMenus</h4>
+<pre>public&nbsp;void&nbsp;runAfterRefreshMenus()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to run after <i>Help&gt;Refresh Menus</i></div>
+</li>
+</ul>
+<a name="handleNoSuchMethodError-java.lang.NoSuchMethodError-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleNoSuchMethodError</h4>
+<pre>public&nbsp;boolean&nbsp;handleNoSuchMethodError(<a href="http://javadoc.imagej.net/Java/java/lang/NoSuchMethodError.html?is-external=true" title="class or interface in java.lang">NoSuchMethodError</a>&nbsp;e)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to enhance ImageJ 1.x' error reporting upon
+ <a href="http://javadoc.imagej.net/Java/java/lang/NoSuchMethodError.html?is-external=true" title="class or interface in java.lang"><code>NoSuchMethodError</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>e</code> - the exception to handle</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the error was handled by the legacy hook</dd>
+</dl>
+</li>
+</ul>
+<a name="newPluginClassLoader-java.lang.ClassLoader-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newPluginClassLoader</h4>
+<pre>public&nbsp;void&nbsp;newPluginClassLoader(<a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;loader)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to run after a new PluginClassLoader was initialized.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loader</code> - the PluginClassLoader instance</dd>
+</dl>
+</li>
+</ul>
+<a name="addPluginDirectory-java.io.File-java.lang.String:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPluginDirectory</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;addPluginDirectory(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory,
+                                   <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Extension point to modify the order in which .jar files are added to the
+ PluginClassLoader.
+ <p>
+ There is a problem which only strikes large distributions of ImageJ such as
+ Fiji: some .jar files try to be helpful and bundle classes which are
+ actually not theirs, causing problems when newer versions of those .jar
+ files which they shadow are present in the <i>plugins/</i> or <i>jars/</i>
+ directory but are not respected by the class loader.
+ </p>
+ <p>
+ The default hook of this extension point therefore hard-codes a few file
+ names of known offenders (which we politely will call fat .jar files
+ normally) and just pushes them back to the end of the list.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>directory</code> - the directory which ImageJ 1.x looked at</dd>
+<dd><code>names</code> - the list of file names in the order ImageJ 1.x discovered them</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ordered, filtered and/or augmented list</dd>
+</dl>
+</li>
+</ul>
+<a name="initialized--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialized</h4>
+<pre>public&nbsp;void&nbsp;initialized()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">First extension point to run just after ImageJ 1.x spun up.</div>
+</li>
+</ul>
+<a name="autoGenerateConfigFile-java.io.File-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>autoGenerateConfigFile</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;autoGenerateConfigFile(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="autoGenerateConfigFile-java.io.File-java.io.File-java.lang.String-java.lang.String-java.lang.StringBuilder-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>autoGenerateConfigFile</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a>&nbsp;autoGenerateConfigFile(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;topLevelDirectory,
+                                               <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;directory,
+                                               <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;menuPath,
+                                               <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;packageName,
+                                               <a href="http://javadoc.imagej.net/Java/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang">StringBuilder</a>&nbsp;builder)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="addMenuItem-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addMenuItem</h4>
+<pre>public&nbsp;void&nbsp;addMenuItem(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;menuPath,
+                        <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Callback for ImageJ 1.x' menu parsing machinery.
+ <p>
+ This method is called whenever ImageJ 1.x adds a command to the menu structure.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>menuPath</code> - the menu path of the menu item, or null when reinitializing</dd>
+<dd><code>command</code> - the command associated with the menu item, or null when reinitializing</dd>
+</dl>
+</li>
+</ul>
+<a name="getMenuStructure--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMenuStructure</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getMenuStructure()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns ImageJ 1.x' menu structure as a map.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the menu structure</dd>
+</dl>
+</li>
+</ul>
+<a name="interceptOpen-java.lang.String-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>interceptOpen</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;interceptOpen(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                            int&nbsp;planeIndex,
+                            boolean&nbsp;display)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Optionally override opening resources via legacy hooks.
+ <p>
+ This is intended as a "HandleExtraFileTypesPlus".
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - the path to the resource to open, or <code>null</code> if a dialog
+          needs to be shown</dd>
+<dd><code>planeIndex</code> - If applicable - the index of plane to open or -1 for all planes</dd>
+<dd><code>display</code> - if true, the opened object should be displayed before returning</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The opened object, or <code>null</code> to let ImageJ 1.x open the path.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../imagej/patcher/LegacyEnvironment.html" title="class in imagej.patcher"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../imagej/patcher/LegacyHooks.FatJarNameComparator.html" title="class in imagej.patcher"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?imagej/patcher/LegacyHooks.html" target="_top">Frames</a></li>
+<li><a href="LegacyHooks.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2017 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DefaultOverlayService (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultOverlayService (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/display/DefaultImageDisplayService.html" title="class in net.imagej.display"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/display/DefaultOverlayView.html" title="class in net.imagej.display"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/display/DefaultOverlayService.html" target="_top">Frames</a></li>
+<li><a href="DefaultOverlayService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.display</div>
+<h2 title="Class DefaultOverlayService" class="title">Class DefaultOverlayService</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">org.scijava.service.AbstractService</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.display.DefaultOverlayService</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a>, <a href="../../../net/imagej/ImageJService.html" title="interface in net.imagej">ImageJService</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Initializable.html?is-external=true" title="class or interface in org.scijava">Initializable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public final class <span class="typeNameLabel">DefaultOverlayService</span>
+extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">AbstractService</a>
+implements <a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></pre>
+<div class="block">Default service for working with <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Curtis Rueden, Barry DeZonia</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#DefaultOverlayService--">DefaultOverlayService</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#addOverlays-net.imagej.display.ImageDisplay-java.util.List-">addOverlays</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+           <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;&nbsp;overlays)</code>
+<div class="block">Adds the list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#divideCompositeOverlay-net.imagej.overlay.CompositeOverlay-">divideCompositeOverlay</a></span>(<a href="../../../net/imagej/overlay/CompositeOverlay.html" title="class in net.imagej.overlay">CompositeOverlay</a>&nbsp;overlay)</code>
+<div class="block">Divides a CompositeOverlay into its constituent parts and registers each
+ part with the appropriate displays.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">drawOverlay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+           <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+           <a href="../../../net/imagej/Position.html" title="class in net.imagej">Position</a>&nbsp;position,
+           <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</code>
+<div class="block">Draws the outline of a given overlay in a dataset using the set of channel
+ information provided.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">drawOverlay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+           <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+           <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</code>
+<div class="block">Draws the outline of a given overlay in a display using the set of channel
+ information provided.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">fillOverlay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+           <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+           <a href="../../../net/imagej/Position.html" title="class in net.imagej">Position</a>&nbsp;position,
+           <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</code>
+<div class="block">Draws and fills the outline of a given overlay in a dataset using the set
+ of channel information provided.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">fillOverlay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+           <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+           <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</code>
+<div class="block">Draws and fills the outline of a given overlay in a display using the set
+ of channel information provided.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getActiveOverlay-net.imagej.display.ImageDisplay-">getActiveOverlay</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;disp)</code>
+<div class="block">Returns the active overlay associated with a display</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imagej/overlay/OverlaySettings.html" title="class in net.imagej.overlay">OverlaySettings</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getDefaultSettings--">getDefaultSettings</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getDisplays-net.imagej.overlay.Overlay-">getDisplays</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o)</code>
+<div class="block">Returns all the displays associated with an overlay</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getFirstDisplay-net.imagej.overlay.Overlay-">getFirstDisplay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o)</code>
+<div class="block">Returns the first display associated with an overlay</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/object/ObjectService.html?is-external=true" title="class or interface in org.scijava.object">ObjectService</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getObjectService--">getObjectService</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imagej/display/OverlayInfoList.html" title="class in net.imagej.display">OverlayInfoList</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getOverlayInfo--">getOverlayInfo</a></span>()</code>
+<div class="block">Returns the overlay info list associated with this service.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getOverlays--">getOverlays</a></span>()</code>
+<div class="block">Gets a list of all <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getOverlays-net.imagej.display.ImageDisplay-">getOverlays</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</code>
+<div class="block">Gets a list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s linked to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getOverlays-net.imagej.display.ImageDisplay-boolean-">getOverlays</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+           boolean&nbsp;selectedOnly)</code>
+<div class="block">Gets a list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s linked to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealRect.html?is-external=true" title="class or interface in org.scijava.util">RealRect</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#getSelectionBounds-net.imagej.display.ImageDisplay-">getSelectionBounds</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</code>
+<div class="block">Gets the bounding box for the selected overlays in the given
+ <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#removeOverlay-net.imagej.display.ImageDisplay-net.imagej.overlay.Overlay-">removeOverlay</a></span>(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+             <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;overlay)</code>
+<div class="block">Removes an <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> from the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/DefaultOverlayService.html#removeOverlay-net.imagej.overlay.Overlay-">removeOverlay</a></span>(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;overlay)</code>
+<div class="block">Removes an <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> from all <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>s.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.AbstractService">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.service.<a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">AbstractService</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#getContext--" title="class or interface in org.scijava.service">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava.service">setContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#toString--" title="class or interface in org.scijava.service">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getPriority--" title="class or interface in org.scijava.plugin">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setPriority-double-" title="class or interface in org.scijava.plugin">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#initialize--" title="class or interface in org.scijava.service">initialize</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#registerEventHandlers--" title="class or interface in org.scijava.service">registerEventHandlers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#getIdentifier--" title="class or interface in org.scijava.plugin">getIdentifier</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#log--" title="class or interface in org.scijava.plugin">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#compareTo-org.scijava.Prioritized-" title="class or interface in org.scijava">compareTo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#getPriority--" title="class or interface in org.scijava">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#setPriority-double-" title="class or interface in org.scijava">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true#getLocation--" title="class or interface in org.scijava">getLocation</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true#getVersion--" title="class or interface in org.scijava">getVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Disposable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true#dispose--" title="class or interface in org.scijava">dispose</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DefaultOverlayService--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DefaultOverlayService</h4>
+<pre>public&nbsp;DefaultOverlayService()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getObjectService--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObjectService</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/SciJava/org/scijava/object/ObjectService.html?is-external=true" title="class or interface in org.scijava.object">ObjectService</a>&nbsp;getObjectService()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getObjectService--">getObjectService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOverlays--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverlays</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;&nbsp;getOverlays()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getOverlays--">OverlayService</a></code></span></div>
+<div class="block">Gets a list of all <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s. This method is a shortcut that
+ delegates to <a href="http://javadoc.imagej.net/SciJava/org/scijava/object/ObjectService.html?is-external=true" title="class or interface in org.scijava.object"><code>ObjectService</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getOverlays--">getOverlays</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOverlays-net.imagej.display.ImageDisplay-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverlays</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;&nbsp;getOverlays(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+                                 boolean&nbsp;selectedOnly)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getOverlays-net.imagej.display.ImageDisplay-boolean-">OverlayService</a></code></span></div>
+<div class="block">Gets a list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s linked to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.
+ If selectedOnly is true then it will gather overlays from the selected
+ views only. Otherwise it will gather overlays from all the views.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getOverlays-net.imagej.display.ImageDisplay-boolean-">getOverlays</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOverlays-net.imagej.display.ImageDisplay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverlays</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;&nbsp;getOverlays(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getOverlays-net.imagej.display.ImageDisplay-">OverlayService</a></code></span></div>
+<div class="block">Gets a list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s linked to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>. A
+ shortcut for <code>getOverlays(display, false)</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getOverlays-net.imagej.display.ImageDisplay-">getOverlays</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="addOverlays-net.imagej.display.ImageDisplay-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addOverlays</h4>
+<pre>public&nbsp;void&nbsp;addOverlays(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+                        <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&gt;&nbsp;overlays)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#addOverlays-net.imagej.display.ImageDisplay-java.util.List-">OverlayService</a></code></span></div>
+<div class="block">Adds the list of <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a>s to the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#addOverlays-net.imagej.display.ImageDisplay-java.util.List-">addOverlays</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="removeOverlay-net.imagej.display.ImageDisplay-net.imagej.overlay.Overlay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeOverlay</h4>
+<pre>public&nbsp;void&nbsp;removeOverlay(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+                          <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;overlay)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#removeOverlay-net.imagej.display.ImageDisplay-net.imagej.overlay.Overlay-">OverlayService</a></code></span></div>
+<div class="block">Removes an <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> from the given <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#removeOverlay-net.imagej.display.ImageDisplay-net.imagej.overlay.Overlay-">removeOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>display</code> - the <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> from which the overlay should be
+          removed</dd>
+<dd><code>overlay</code> - the <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="removeOverlay-net.imagej.overlay.Overlay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeOverlay</h4>
+<pre>public&nbsp;void&nbsp;removeOverlay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;overlay)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#removeOverlay-net.imagej.overlay.Overlay-">OverlayService</a></code></span></div>
+<div class="block">Removes an <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> from all <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>s.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#removeOverlay-net.imagej.overlay.Overlay-">removeOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>overlay</code> - the <a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay"><code>Overlay</code></a> to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="getSelectionBounds-net.imagej.display.ImageDisplay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSelectionBounds</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealRect.html?is-external=true" title="class or interface in org.scijava.util">RealRect</a>&nbsp;getSelectionBounds(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getSelectionBounds-net.imagej.display.ImageDisplay-">OverlayService</a></code></span></div>
+<div class="block">Gets the bounding box for the selected overlays in the given
+ <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getSelectionBounds-net.imagej.display.ImageDisplay-">getSelectionBounds</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>display</code> - the <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> from which the bounding box should
+          be computed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the smallest bounding box encompassing all selected overlays</dd>
+</dl>
+</li>
+</ul>
+<a name="getDefaultSettings--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultSettings</h4>
+<pre>public&nbsp;<a href="../../../net/imagej/overlay/OverlaySettings.html" title="class in net.imagej.overlay">OverlaySettings</a>&nbsp;getDefaultSettings()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getDefaultSettings--">getDefaultSettings</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="drawOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawOverlay</h4>
+<pre>public&nbsp;void&nbsp;drawOverlay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+                        <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+                        <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">OverlayService</a></code></span></div>
+<div class="block">Draws the outline of a given overlay in a display using the set of channel
+ information provided.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">drawOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="drawOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawOverlay</h4>
+<pre>public&nbsp;void&nbsp;drawOverlay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+                        <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+                        <a href="../../../net/imagej/Position.html" title="class in net.imagej">Position</a>&nbsp;position,
+                        <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">OverlayService</a></code></span></div>
+<div class="block">Draws the outline of a given overlay in a dataset using the set of channel
+ information provided.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#drawOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">drawOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fillOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fillOverlay</h4>
+<pre>public&nbsp;void&nbsp;fillOverlay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+                        <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
+                        <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">OverlayService</a></code></span></div>
+<div class="block">Draws and fills the outline of a given overlay in a display using the set
+ of channel information provided.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.display.ImageDisplay-net.imagej.ChannelCollection-">fillOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fillOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fillOverlay</h4>
+<pre>public&nbsp;void&nbsp;fillOverlay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o,
+                        <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+                        <a href="../../../net/imagej/Position.html" title="class in net.imagej">Position</a>&nbsp;position,
+                        <a href="../../../net/imagej/ChannelCollection.html" title="class in net.imagej">ChannelCollection</a>&nbsp;channels)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">OverlayService</a></code></span></div>
+<div class="block">Draws and fills the outline of a given overlay in a dataset using the set
+ of channel information provided.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#fillOverlay-net.imagej.overlay.Overlay-net.imagej.Dataset-net.imagej.Position-net.imagej.ChannelCollection-">fillOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getFirstDisplay-net.imagej.overlay.Overlay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFirstDisplay</h4>
+<pre>public&nbsp;<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;getFirstDisplay(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getFirstDisplay-net.imagej.overlay.Overlay-">OverlayService</a></code></span></div>
+<div class="block">Returns the first display associated with an overlay</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getFirstDisplay-net.imagej.overlay.Overlay-">getFirstDisplay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getDisplays-net.imagej.overlay.Overlay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDisplays</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&gt;&nbsp;getDisplays(<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getDisplays-net.imagej.overlay.Overlay-">OverlayService</a></code></span></div>
+<div class="block">Returns all the displays associated with an overlay</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getDisplays-net.imagej.overlay.Overlay-">getDisplays</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getActiveOverlay-net.imagej.display.ImageDisplay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActiveOverlay</h4>
+<pre>public&nbsp;<a href="../../../net/imagej/overlay/Overlay.html" title="interface in net.imagej.overlay">Overlay</a>&nbsp;getActiveOverlay(<a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;disp)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getActiveOverlay-net.imagej.display.ImageDisplay-">OverlayService</a></code></span></div>
+<div class="block">Returns the active overlay associated with a display</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getActiveOverlay-net.imagej.display.ImageDisplay-">getActiveOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOverlayInfo--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverlayInfo</h4>
+<pre>public&nbsp;<a href="../../../net/imagej/display/OverlayInfoList.html" title="class in net.imagej.display">OverlayInfoList</a>&nbsp;getOverlayInfo()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#getOverlayInfo--">OverlayService</a></code></span></div>
+<div class="block">Returns the overlay info list associated with this service. There is one
+ list per ImageJ context. It tracks overlay selection info and is used by
+ any defined overlay managers.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#getOverlayInfo--">getOverlayInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="divideCompositeOverlay-net.imagej.overlay.CompositeOverlay-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>divideCompositeOverlay</h4>
+<pre>public&nbsp;void&nbsp;divideCompositeOverlay(<a href="../../../net/imagej/overlay/CompositeOverlay.html" title="class in net.imagej.overlay">CompositeOverlay</a>&nbsp;overlay)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html#divideCompositeOverlay-net.imagej.overlay.CompositeOverlay-">OverlayService</a></code></span></div>
+<div class="block">Divides a CompositeOverlay into its constituent parts and registers each
+ part with the appropriate displays. Deletes the CompositeOverlay.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/display/OverlayService.html#divideCompositeOverlay-net.imagej.overlay.CompositeOverlay-">divideCompositeOverlay</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/display/OverlayService.html" title="interface in net.imagej.display">OverlayService</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/display/DefaultImageDisplayService.html" title="class in net.imagej.display"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/display/DefaultOverlayView.html" title="class in net.imagej.display"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/display/DefaultOverlayService.html" target="_top">Frames</a></li>
+<li><a href="DefaultOverlayService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2017 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>

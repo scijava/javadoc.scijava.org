@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ImageCanvas (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ImageCanvas (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/display/DummyScreenCaptureService.html" title="class in net.imagej.display"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/display/ImageCanvas.html" target="_top">Frames</a></li>
+<li><a href="ImageCanvas.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.display</div>
+<h2 title="Interface ImageCanvas" class="title">Interface ImageCanvas</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../net/imagej/display/Pannable.html" title="interface in net.imagej.display">Pannable</a>, <a href="../../../net/imagej/display/Zoomable.html" title="interface in net.imagej.display">Zoomable</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../net/imagej/display/DefaultImageCanvas.html" title="class in net.imagej.display">DefaultImageCanvas</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">ImageCanvas</span>
+extends <a href="../../../net/imagej/display/Pannable.html" title="interface in net.imagej.display">Pannable</a>, <a href="../../../net/imagej/display/Zoomable.html" title="interface in net.imagej.display">Zoomable</a></pre>
+<div class="block">A canvas upon which an <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> draws its output.
+ <p>
+ An image canvas supports two different coordinate systems, and provides a
+ mechanism for conversion between them. The first is <em>panel</em>
+ coordinates, which are in pixels onscreen. The second is <em>data</em>
+ coordinates, which match the linked <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>'s original
+ coordinate system.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Grant Harris, Curtis Rueden</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#dataToPanelCoords-org.scijava.util.RealCoords-">dataToPanelCoords</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealCoords.html?is-external=true" title="class or interface in org.scijava.util">RealCoords</a>&nbsp;dataCoords)</code>
+<div class="block">Converts the given <em>data</em> coordinates into <em>panel</em>
+ coordinates.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input">MouseCursor</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#getCursor--">getCursor</a></span>()</code>
+<div class="block">Gets the current mouse cursor.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#getDisplay--">getDisplay</a></span>()</code>
+<div class="block">Gets the canvas's display.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#getViewportHeight--">getViewportHeight</a></span>()</code>
+<div class="block">Gets the current height of the canvas viewport in <em>panel</em>
+ coordinates.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#getViewportWidth--">getViewportWidth</a></span>()</code>
+<div class="block">Gets the current width of the canvas viewport in <em>panel</em>
+ coordinates.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#isInImage-org.scijava.util.IntCoords-">isInImage</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a>&nbsp;point)</code>
+<div class="block">Tests whether a given point in the panel falls within the boundaries of the
+ display space.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealCoords.html?is-external=true" title="class or interface in org.scijava.util">RealCoords</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#panelToDataCoords-org.scijava.util.IntCoords-">panelToDataCoords</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a>&nbsp;panelCoords)</code>
+<div class="block">Converts the given <em>panel</em> coordinates into <em>data</em>
+ coordinates.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#setCursor-org.scijava.input.MouseCursor-">setCursor</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input">MouseCursor</a>&nbsp;cursor)</code>
+<div class="block">Sets the mouse to the given <a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input"><code>MouseCursor</code></a> type.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/display/ImageCanvas.html#setViewportSize-int-int-">setViewportSize</a></span>(int&nbsp;width,
+               int&nbsp;height)</code>
+<div class="block">Sets the dimensions of the viewport in <em>panel</em> coordinates.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.display.Pannable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.display.<a href="../../../net/imagej/display/Pannable.html" title="interface in net.imagej.display">Pannable</a></h3>
+<code><a href="../../../net/imagej/display/Pannable.html#getPanCenter--">getPanCenter</a>, <a href="../../../net/imagej/display/Pannable.html#getPanOffset--">getPanOffset</a>, <a href="../../../net/imagej/display/Pannable.html#pan-org.scijava.util.IntCoords-">pan</a>, <a href="../../../net/imagej/display/Pannable.html#pan-org.scijava.util.RealCoords-">pan</a>, <a href="../../../net/imagej/display/Pannable.html#panReset--">panReset</a>, <a href="../../../net/imagej/display/Pannable.html#setPanCenter-org.scijava.util.IntCoords-">setPanCenter</a>, <a href="../../../net/imagej/display/Pannable.html#setPanCenter-org.scijava.util.RealCoords-">setPanCenter</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.display.Zoomable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.display.<a href="../../../net/imagej/display/Zoomable.html" title="interface in net.imagej.display">Zoomable</a></h3>
+<code><a href="../../../net/imagej/display/Zoomable.html#getBestZoomLevel-double-">getBestZoomLevel</a>, <a href="../../../net/imagej/display/Zoomable.html#getInitialScale--">getInitialScale</a>, <a href="../../../net/imagej/display/Zoomable.html#getZoomFactor--">getZoomFactor</a>, <a href="../../../net/imagej/display/Zoomable.html#setInitialScale-double-">setInitialScale</a>, <a href="../../../net/imagej/display/Zoomable.html#setZoom-double-">setZoom</a>, <a href="../../../net/imagej/display/Zoomable.html#setZoomAndCenter-double-">setZoomAndCenter</a>, <a href="../../../net/imagej/display/Zoomable.html#setZoomAndCenter-double-org.scijava.util.RealCoords-">setZoomAndCenter</a>, <a href="../../../net/imagej/display/Zoomable.html#setZoomAtPoint-double-org.scijava.util.IntCoords-">setZoomAtPoint</a>, <a href="../../../net/imagej/display/Zoomable.html#setZoomAtPoint-double-org.scijava.util.RealCoords-">setZoomAtPoint</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomIn--">zoomIn</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomIn-org.scijava.util.IntCoords-">zoomIn</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomIn-org.scijava.util.RealCoords-">zoomIn</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomOut--">zoomOut</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomOut-org.scijava.util.IntCoords-">zoomOut</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomOut-org.scijava.util.RealCoords-">zoomOut</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomToFit-org.scijava.util.IntRect-">zoomToFit</a>, <a href="../../../net/imagej/display/Zoomable.html#zoomToFit-org.scijava.util.RealRect-">zoomToFit</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getDisplay--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDisplay</h4>
+<pre><a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;getDisplay()</pre>
+<div class="block">Gets the canvas's display.</div>
+</li>
+</ul>
+<a name="getViewportWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewportWidth</h4>
+<pre>int&nbsp;getViewportWidth()</pre>
+<div class="block">Gets the current width of the canvas viewport in <em>panel</em>
+ coordinates.</div>
+</li>
+</ul>
+<a name="getViewportHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewportHeight</h4>
+<pre>int&nbsp;getViewportHeight()</pre>
+<div class="block">Gets the current height of the canvas viewport in <em>panel</em>
+ coordinates.</div>
+</li>
+</ul>
+<a name="setViewportSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setViewportSize</h4>
+<pre>void&nbsp;setViewportSize(int&nbsp;width,
+                     int&nbsp;height)</pre>
+<div class="block">Sets the dimensions of the viewport in <em>panel</em> coordinates.</div>
+</li>
+</ul>
+<a name="isInImage-org.scijava.util.IntCoords-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isInImage</h4>
+<pre>boolean&nbsp;isInImage(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a>&nbsp;point)</pre>
+<div class="block">Tests whether a given point in the panel falls within the boundaries of the
+ display space.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - The point to check, in <em>panel</em> coordinates.</dd>
+</dl>
+</li>
+</ul>
+<a name="panelToDataCoords-org.scijava.util.IntCoords-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>panelToDataCoords</h4>
+<pre><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealCoords.html?is-external=true" title="class or interface in org.scijava.util">RealCoords</a>&nbsp;panelToDataCoords(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a>&nbsp;panelCoords)</pre>
+<div class="block">Converts the given <em>panel</em> coordinates into <em>data</em>
+ coordinates.</div>
+</li>
+</ul>
+<a name="dataToPanelCoords-org.scijava.util.RealCoords-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dataToPanelCoords</h4>
+<pre><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/IntCoords.html?is-external=true" title="class or interface in org.scijava.util">IntCoords</a>&nbsp;dataToPanelCoords(<a href="http://javadoc.imagej.net/SciJava/org/scijava/util/RealCoords.html?is-external=true" title="class or interface in org.scijava.util">RealCoords</a>&nbsp;dataCoords)</pre>
+<div class="block">Converts the given <em>data</em> coordinates into <em>panel</em>
+ coordinates.</div>
+</li>
+</ul>
+<a name="getCursor--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCursor</h4>
+<pre><a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input">MouseCursor</a>&nbsp;getCursor()</pre>
+<div class="block">Gets the current mouse cursor.</div>
+</li>
+</ul>
+<a name="setCursor-org.scijava.input.MouseCursor-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setCursor</h4>
+<pre>void&nbsp;setCursor(<a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input">MouseCursor</a>&nbsp;cursor)</pre>
+<div class="block">Sets the mouse to the given <a href="http://javadoc.imagej.net/SciJava/org/scijava/input/MouseCursor.html?is-external=true" title="class or interface in org.scijava.input"><code>MouseCursor</code></a> type.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/display/DummyScreenCaptureService.html" title="class in net.imagej.display"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/display/ImageCanvas.html" target="_top">Frames</a></li>
+<li><a href="ImageCanvas.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2017 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>
