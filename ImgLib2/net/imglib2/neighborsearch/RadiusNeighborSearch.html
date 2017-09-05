@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RadiusNeighborSearch (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="RadiusNeighborSearch (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/neighborsearch/NearestNeighborSearchOnKDTree.html" title="class in net.imglib2.neighborsearch"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearchOnKDTree.html" title="class in net.imglib2.neighborsearch"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/neighborsearch/RadiusNeighborSearch.html" target="_top">Frames</a></li>
+<li><a href="RadiusNeighborSearch.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.neighborsearch</div>
+<h2 title="Interface RadiusNeighborSearch" class="title">Interface RadiusNeighborSearch&lt;T&gt;</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearchOnKDTree.html" title="class in net.imglib2.neighborsearch">RadiusNeighborSearchOnKDTree</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">RadiusNeighborSearch&lt;T&gt;</span>
+extends <a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></pre>
+<div class="block">Radius neighbor search in an Euclidean space. The interface describes
+ implementations that perform the search for a specified reference location
+ and radius, and provide access to the data, location, and distance of the
+ found neighbors until the next search is performed. For every search, the
+ user can choose whether the found neighbors are returned in arbitrary order
+ or sorted by distance to the reference location.
+ 
+ In a multi-threaded application, each thread will need its own
+ <a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html" title="interface in net.imglib2.neighborsearch"><code>RadiusNeighborSearch</code></a>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#getDistance-int-">getDistance</a></span>(int&nbsp;i)</code>
+<div class="block">Access the Euclidean distance between the reference location as used for
+ the last search and the <em>i</em><sup>th</sup> neighbor.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#getPosition-int-">getPosition</a></span>(int&nbsp;i)</code>
+<div class="block">Access the position of the <em>i</em><sup>th</sup> neighbor within
+ radius.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html" title="type parameter in RadiusNeighborSearch">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#getSampler-int-">getSampler</a></span>(int&nbsp;i)</code>
+<div class="block">Access the data of the <em>i</em><sup>th</sup> neighbor within radius.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#getSquareDistance-int-">getSquareDistance</a></span>(int&nbsp;i)</code>
+<div class="block">Access the square Euclidean distance between the reference location as
+ used for the last search and the <em>i</em><sup>th</sup> neighbor.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#numNeighbors--">numNeighbors</a></span>()</code>
+<div class="block">Get the number of points found within radius after a
+ <a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#search-net.imglib2.RealLocalizable-double-boolean-"><code>search(RealLocalizable, double, boolean)</code></a>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#search-net.imglib2.RealLocalizable-double-boolean-">search</a></span>(<a href="../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;reference,
+      double&nbsp;radius,
+      boolean&nbsp;sortResults)</code>
+<div class="block">Perform neighbor search within a radius about a reference coordinate.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
+<code><a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="search-net.imglib2.RealLocalizable-double-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>search</h4>
+<pre>void&nbsp;search(<a href="../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;reference,
+            double&nbsp;radius,
+            boolean&nbsp;sortResults)</pre>
+<div class="block">Perform neighbor search within a radius about a reference coordinate. A
+ point is considered within radius if its distance to the reference is
+ smaller or equal the radius.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reference</code> - the reference coordinate.</dd>
+<dd><code>radius</code> - the radius about the reference coordinate that should be
+            searched for neighbors.</dd>
+<dd><code>sortResults</code> - whether the results should be ordered by ascending distances
+            to reference.</dd>
+</dl>
+</li>
+</ul>
+<a name="numNeighbors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numNeighbors</h4>
+<pre>int&nbsp;numNeighbors()</pre>
+<div class="block">Get the number of points found within radius after a
+ <a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#search-net.imglib2.RealLocalizable-double-boolean-"><code>search(RealLocalizable, double, boolean)</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of points found within radius after a
+         <a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html#search-net.imglib2.RealLocalizable-double-boolean-"><code>search(RealLocalizable, double, boolean)</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSampler-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSampler</h4>
+<pre><a href="../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearch.html" title="type parameter in RadiusNeighborSearch">T</a>&gt;&nbsp;getSampler(int&nbsp;i)</pre>
+<div class="block">Access the data of the <em>i</em><sup>th</sup> neighbor within radius. If
+ <code>sortResults</code> was set to true, neighbors are ordered by square
+ Euclidean distance to the reference. Data is accessed through a
+ <a href="../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> that guarantees write access if the underlying data set
+ is writable.</div>
+</li>
+</ul>
+<a name="getPosition-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPosition</h4>
+<pre><a href="../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;getPosition(int&nbsp;i)</pre>
+<div class="block">Access the position of the <em>i</em><sup>th</sup> neighbor within
+ radius. If <code>sortResults</code> was set to true, neighbors are ordered by
+ square Euclidean distance to the reference.</div>
+</li>
+</ul>
+<a name="getSquareDistance-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSquareDistance</h4>
+<pre>double&nbsp;getSquareDistance(int&nbsp;i)</pre>
+<div class="block">Access the square Euclidean distance between the reference location as
+ used for the last search and the <em>i</em><sup>th</sup> neighbor. If
+ <code>sortResults</code> was set to true, neighbors are ordered by square
+ Euclidean distance to the reference.</div>
+</li>
+</ul>
+<a name="getDistance-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getDistance</h4>
+<pre>double&nbsp;getDistance(int&nbsp;i)</pre>
+<div class="block">Access the Euclidean distance between the reference location as used for
+ the last search and the <em>i</em><sup>th</sup> neighbor.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/neighborsearch/NearestNeighborSearchOnKDTree.html" title="class in net.imglib2.neighborsearch"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/neighborsearch/RadiusNeighborSearchOnKDTree.html" title="class in net.imglib2.neighborsearch"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/neighborsearch/RadiusNeighborSearch.html" target="_top">Frames</a></li>
+<li><a href="RadiusNeighborSearch.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

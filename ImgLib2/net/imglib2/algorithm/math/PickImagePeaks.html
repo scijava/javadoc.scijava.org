@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PickImagePeaks (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="PickImagePeaks (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/math/PickImagePeaks.html" target="_top">Frames</a></li>
+<li><a href="PickImagePeaks.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.math</div>
+<h2 title="Class PickImagePeaks" class="title">Class PickImagePeaks&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.math.PickImagePeaks&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the comparable <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric"><code>RealType</code></a> representing information stored in the
+            <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> to pick peaks from.</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a>, <a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a>, <a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">PickImagePeaks&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;&gt;, <a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a></pre>
+<div class="block">This class implements a very simple peak-picker, with optional ellipsoidal
+ peak suppression. Peaks are found by taking the sign of the difference
+ operator in each dimension, differentiating between negative and non-negative
+ differences, then finding transitions from non-negative to negative. This is
+ accomplished in a random-access manner, in other words, with one
+ <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a> irrespective of how it traverses the <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>,
+ and a localizable by dim <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a> that is set to its 2^n-connected
+ neighbors (where n is dimensionality).
+ <p>
+ The result is that this is a fairly simple, (hopefully) fast peak-picker, but
+ it is accurate only for strict peaks, that is, peaks that have no neighbors
+ of equal value.
+ <p>
+ This picker does no pre-processing, so it may be advisable to smooth your
+ peak image before using this.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Larry Lindsey <br>
+         modified by Jean-Yves Tinevez to allow for border peaks to be found.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#PickImagePeaks-net.imglib2.RandomAccessibleInterval-">PickImagePeaks</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html" title="type parameter in PickImagePeaks">T</a>&gt;&nbsp;inputImage)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#getErrorMessage--">getErrorMessage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;long[]&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#getPeakList--">getPeakList</a></span>()</code>
+<div class="block">Returns an ArrayList containing the locations of peaks in the image
+ associated with this peak picker, as calculated by running the process()
+ method.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#getProcessingTime--">getProcessingTime</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#getResult--">getResult</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#setAllowBorderPeak-boolean-">setAllowBorderPeak</a></span>(boolean&nbsp;allowBorderPeak)</code>
+<div class="block">Set the behavior for finding peak at the image boundaries.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#setSuppression-double-">setSuppression</a></span>(double&nbsp;r)</code>
+<div class="block">Sets the peak suppression region to a spheroid of radius r.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html#setSuppression-double:A-">setSuppression</a></span>(double[]&nbsp;r)</code>
+<div class="block">Sets the peak suppression region to an ellipsoid with dimensional axes
+ corresponding to the elements in r.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="PickImagePeaks-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PickImagePeaks</h4>
+<pre>public&nbsp;PickImagePeaks(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html" title="type parameter in PickImagePeaks">T</a>&gt;&nbsp;inputImage)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#checkInput--">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getErrorMessage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getErrorMessage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getErrorMessage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#getErrorMessage--">getErrorMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#process--">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getProcessingTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProcessingTime</h4>
+<pre>public&nbsp;long&nbsp;getProcessingTime()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Benchmark.html#getProcessingTime--">getProcessingTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getResult--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResult</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;&nbsp;getResult()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html#getResult--">getResult</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPeakList--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPeakList</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;long[]&gt;&nbsp;getPeakList()</pre>
+<div class="block">Returns an ArrayList containing the locations of peaks in the image
+ associated with this peak picker, as calculated by running the process()
+ method. This ArrayList will be populated if it is not already.
+ 
+ In the case that there is no peak suppression, the locations are placed
+ in the list as they are returned by calling the
+ LocalizableCursor.getPosition() method, and are not guaranteed to have
+ anything like a natural order.
+ 
+ In the case that there is peak suppression, an additional step is taken.
+ The peaks are first collected, then sorted by magnitude. These are then
+ selected in order, and the peaks within a distance defined by the
+ suppressAxis array are rejected.
+ 
+ There is no peak suppression if the sum of all values in suppressAxis is
+ less than 1.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an ArrayList containing peak locations</dd>
+</dl>
+</li>
+</ul>
+<a name="setSuppression-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSuppression</h4>
+<pre>public&nbsp;void&nbsp;setSuppression(double&nbsp;r)</pre>
+<div class="block">Sets the peak suppression region to a spheroid of radius r.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>r</code> - the radius of the spheroid of peak suppression.</dd>
+</dl>
+</li>
+</ul>
+<a name="setAllowBorderPeak-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowBorderPeak</h4>
+<pre>public&nbsp;void&nbsp;setAllowBorderPeak(boolean&nbsp;allowBorderPeak)</pre>
+<div class="block">Set the behavior for finding peak at the image boundaries. If set to
+ false (the default), peaks will not be found at the top borders of the
+ image.</div>
+</li>
+</ul>
+<a name="setSuppression-double:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setSuppression</h4>
+<pre>public&nbsp;void&nbsp;setSuppression(double[]&nbsp;r)</pre>
+<div class="block">Sets the peak suppression region to an ellipsoid with dimensional axes
+ corresponding to the elements in r.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>r</code> - an array with as many elements as there are dimensions in the
+            <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> with which this <a href="../../../../net/imglib2/algorithm/math/PickImagePeaks.html" title="class in net.imglib2.algorithm.math"><code>PickImagePeaks</code></a> was
+            created, and represents the extent of the ellipsoid</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/math/PickImagePeaks.html" target="_top">Frames</a></li>
+<li><a href="PickImagePeaks.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

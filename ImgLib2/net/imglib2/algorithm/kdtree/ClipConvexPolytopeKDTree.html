@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ClipConvexPolytopeKDTree (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ClipConvexPolytopeKDTree (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../net/imglib2/algorithm/kdtree/ConvexPolytope.html" title="class in net.imglib2.algorithm.kdtree"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" target="_top">Frames</a></li>
+<li><a href="ClipConvexPolytopeKDTree.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.kdtree</div>
+<h2 title="Class ClipConvexPolytopeKDTree" class="title">Class ClipConvexPolytopeKDTree&lt;T&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.kdtree.ClipConvexPolytopeKDTree&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - type of values stored in the tree.</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ClipConvexPolytopeKDTree&lt;T&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Partition nodes in a <a href="../../../../net/imglib2/KDTree.html" title="class in net.imglib2"><code>KDTree</code></a> into disjoint sets of nodes that are
+ inside and outside a given convex polytope, respectively.
+
+ <p>
+ Construct with the <a href="../../../../net/imglib2/KDTree.html" title="class in net.imglib2"><code>KDTree</code></a>. Call <a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#clip-net.imglib2.algorithm.kdtree.ConvexPolytope-"><code>clip(ConvexPolytope)</code></a> to
+ partition with respect to a <a href="../../../../net/imglib2/algorithm/kdtree/ConvexPolytope.html" title="class in net.imglib2.algorithm.kdtree"><code>ConvexPolytope</code></a>. Then call
+ <a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#getInsideNodes--"><code>getInsideNodes()</code></a> and <a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#getOutsideNodes--"><code>getOutsideNodes()</code></a> to get the sets of
+ nodes inside and outside the polytope, respectively.
+
+ <p>
+ The algorithm is described in <a
+ href="http://fly.mpi-cbg.de/~pietzsch/polytope.pdf">this note</a>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#ClipConvexPolytopeKDTree-net.imglib2.KDTree-">ClipConvexPolytopeKDTree</a></span>(<a href="../../../../net/imglib2/KDTree.html" title="class in net.imglib2">KDTree</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&nbsp;tree)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#clip-net.imglib2.algorithm.kdtree.ConvexPolytope-">clip</a></span>(<a href="../../../../net/imglib2/algorithm/kdtree/ConvexPolytope.html" title="class in net.imglib2.algorithm.kdtree">ConvexPolytope</a>&nbsp;polytope)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#clip-double:A:A-">clip</a></span>(double[][]&nbsp;planes)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imglib2/KDTreeNode.html" title="class in net.imglib2">KDTreeNode</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#getInsideNodes--">getInsideNodes</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imglib2/KDTreeNode.html" title="class in net.imglib2">KDTreeNode</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#getOutsideNodes--">getOutsideNodes</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html#numDimensions--">numDimensions</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ClipConvexPolytopeKDTree-net.imglib2.KDTree-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ClipConvexPolytopeKDTree</h4>
+<pre>public&nbsp;ClipConvexPolytopeKDTree(<a href="../../../../net/imglib2/KDTree.html" title="class in net.imglib2">KDTree</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&nbsp;tree)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="numDimensions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numDimensions</h4>
+<pre>public&nbsp;int&nbsp;numDimensions()</pre>
+</li>
+</ul>
+<a name="clip-net.imglib2.algorithm.kdtree.ConvexPolytope-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clip</h4>
+<pre>public&nbsp;void&nbsp;clip(<a href="../../../../net/imglib2/algorithm/kdtree/ConvexPolytope.html" title="class in net.imglib2.algorithm.kdtree">ConvexPolytope</a>&nbsp;polytope)</pre>
+</li>
+</ul>
+<a name="clip-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clip</h4>
+<pre>public&nbsp;void&nbsp;clip(double[][]&nbsp;planes)</pre>
+</li>
+</ul>
+<a name="getInsideNodes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInsideNodes</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imglib2/KDTreeNode.html" title="class in net.imglib2">KDTreeNode</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&gt;&nbsp;getInsideNodes()</pre>
+</li>
+</ul>
+<a name="getOutsideNodes--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getOutsideNodes</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imglib2/KDTreeNode.html" title="class in net.imglib2">KDTreeNode</a>&lt;<a href="../../../../net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" title="type parameter in ClipConvexPolytopeKDTree">T</a>&gt;&gt;&nbsp;getOutsideNodes()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../net/imglib2/algorithm/kdtree/ConvexPolytope.html" title="class in net.imglib2.algorithm.kdtree"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/kdtree/ClipConvexPolytopeKDTree.html" target="_top">Frames</a></li>
+<li><a href="ClipConvexPolytopeKDTree.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

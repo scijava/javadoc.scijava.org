@@ -1,0 +1,678 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ExplicitDiffusionScheme (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ExplicitDiffusionScheme (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":6,"i5":6,"i6":10,"i7":10,"i8":6,"i9":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/pde/CoherenceEnhancingDiffusionTensor2D.html" title="class in net.imglib2.algorithm.pde"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme2D.html" title="class in net.imglib2.algorithm.pde"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" target="_top">Frames</a></li>
+<li><a href="ExplicitDiffusionScheme.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.pde</div>
+<h2 title="Class ExplicitDiffusionScheme" class="title">Class ExplicitDiffusionScheme&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html" title="class in net.imglib2.algorithm">net.imglib2.algorithm.MultiThreadedAlgorithm</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html" title="class in net.imglib2.algorithm">net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.pde.ExplicitDiffusionScheme&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a>, <a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a>, <a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme2D.html" title="class in net.imglib2.algorithm.pde">ExplicitDiffusionScheme2D</a>, <a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme3D.html" title="class in net.imglib2.algorithm.pde">ExplicitDiffusionScheme3D</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="typeNameLabel">ExplicitDiffusionScheme&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html" title="class in net.imglib2.algorithm">MultiThreadedBenchmarkAlgorithm</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#D">D</a></span></code>
+<div class="block">The diffusion tensor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#imgFactory">imgFactory</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#increment">increment</a></span></code>
+<div class="block">This is a temporary holder were we store the increment to add to the
+ input image at each iteration.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#input">input</a></span></code>
+<div class="block">The input image, will be modified by this algorithm.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#tensorComponentDimension">tensorComponentDimension</a></span></code>
+<div class="block">The dimension to iterate over to retrieve the tensor components.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.algorithm.<a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html" title="class in net.imglib2.algorithm">MultiThreadedBenchmarkAlgorithm</a></h3>
+<code><a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html#processingTime">processingTime</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.algorithm.MultiThreadedAlgorithm">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.algorithm.<a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html" title="class in net.imglib2.algorithm">MultiThreadedAlgorithm</a></h3>
+<code><a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#errorMessage">errorMessage</a>, <a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#numThreads">numThreads</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#ExplicitDiffusionScheme-net.imglib2.img.Img-net.imglib2.img.Img-">ExplicitDiffusionScheme</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                       <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</code>
+<div class="block">Contructor of ExplicitDiffusionScheme, calls contructor
+ <code>ExplicitDiffusionScheme(RandomAccessibleInterval&lt;T&gt;,
+ RandomAccessibleInterval&lt;FloatType&gt;, ImgFactory&lt;FloatType&gt;)</code> and uses the
+ <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> of the second Img as third parameter.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#ExplicitDiffusionScheme-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">ExplicitDiffusionScheme</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                       <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</code>
+<div class="block">Contructor of ExplicitDiffusionScheme, calls contructor
+ <code>ExplicitDiffusionScheme(RandomAccessibleInterval&lt;T&gt;,
+ RandomAccessibleInterval&lt;FloatType&gt;, ImgFactory&lt;FloatType&gt;)</code> and uses a default
+ <code>ArrayImgFactory&lt;FloatType&gt;</code> or <code>CellImgFactory&lt;FloatType&gt;</code> as third parameter
+ (depends on size of input).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#ExplicitDiffusionScheme-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-">ExplicitDiffusionScheme</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                       <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D,
+                       <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;imgFactory)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected abstract float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#diffusionScheme-float:A-float:A:A-">diffusionScheme</a></span>(float[]&nbsp;U,
+               float[][]&nbsp;D)</code>
+<div class="block">Compute the float increment of the current location, for which is given
+ the density neighborhood and the diffusion tensor neighborhood.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#getDiffusionTensor--">getDiffusionTensor</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#getIncrement--">getIncrement</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected abstract float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#initDensityArray--">initDensityArray</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected abstract float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#initDiffusionTensorArray--">initDiffusionTensorArray</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#process--">process</a></span>()</code>
+<div class="block">Execute one iteration of explicit scheme of the diffusion equation.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#setDiffusionTensor-net.imglib2.RandomAccessibleInterval-">setDiffusionTensor</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</code>
+<div class="block">Set the diffusion tensor that will be used for the diffusion process.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#yieldDensity-net.imglib2.RandomAccess-float:A-">yieldDensity</a></span>(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;ura,
+            float[]&nbsp;target)</code>
+<div class="block">Iterate over a nD equivalent of 3x3 neighborhood, and collect the input
+ values needed in that neighborhood to compute the concrete diffusion
+ scheme.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#yieldDiffusionTensor-net.imglib2.RandomAccess-float:A:A-">yieldDiffusionTensor</a></span>(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;dra,
+                    float[][]&nbsp;target)</code>
+<div class="block">Iterate over a nD equivalent of 3x3 neighborhood, and collect the
+ diffusion tensor values needed in that neighborhood to compute the
+ concrete diffusion scheme.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.algorithm.<a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html" title="class in net.imglib2.algorithm">MultiThreadedBenchmarkAlgorithm</a></h3>
+<code><a href="../../../../net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html#getProcessingTime--">getProcessingTime</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.MultiThreadedAlgorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.algorithm.<a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html" title="class in net.imglib2.algorithm">MultiThreadedAlgorithm</a></h3>
+<code><a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#getErrorMessage--">getErrorMessage</a>, <a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#getNumThreads--">getNumThreads</a>, <a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#setNumThreads--">setNumThreads</a>, <a href="../../../../net/imglib2/algorithm/MultiThreadedAlgorithm.html#setNumThreads-int-">setNumThreads</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="D">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>D</h4>
+<pre>protected&nbsp;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt; D</pre>
+<div class="block">The diffusion tensor.</div>
+</li>
+</ul>
+<a name="input">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>input</h4>
+<pre>protected final&nbsp;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a> extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&gt; input</pre>
+<div class="block">The input image, will be modified by this algorithm.</div>
+</li>
+</ul>
+<a name="increment">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>increment</h4>
+<pre>protected&nbsp;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt; increment</pre>
+<div class="block">This is a temporary holder were we store the increment to add to the
+ input image at each iteration. More specifically, that is <code>dt</code>
+ times the right-hand-size of the diffusion equation.</div>
+</li>
+</ul>
+<a name="imgFactory">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>imgFactory</h4>
+<pre>protected&nbsp;<a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt; imgFactory</pre>
+</li>
+</ul>
+<a name="tensorComponentDimension">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>tensorComponentDimension</h4>
+<pre>protected final&nbsp;int tensorComponentDimension</pre>
+<div class="block">The dimension to iterate over to retrieve the tensor components.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ExplicitDiffusionScheme-net.imglib2.img.Img-net.imglib2.img.Img-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ExplicitDiffusionScheme</h4>
+<pre>public&nbsp;ExplicitDiffusionScheme(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                               <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</pre>
+<div class="block">Contructor of ExplicitDiffusionScheme, calls contructor
+ <code>ExplicitDiffusionScheme(RandomAccessibleInterval&lt;T&gt;,
+ RandomAccessibleInterval&lt;FloatType&gt;, ImgFactory&lt;FloatType&gt;)</code> and uses the
+ <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> of the second Img as third parameter.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - the input Img</dd>
+<dd><code>D</code> - the diffusion tensor</dd>
+</dl>
+</li>
+</ul>
+<a name="ExplicitDiffusionScheme-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ExplicitDiffusionScheme</h4>
+<pre>public&nbsp;ExplicitDiffusionScheme(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                               <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</pre>
+<div class="block">Contructor of ExplicitDiffusionScheme, calls contructor
+ <code>ExplicitDiffusionScheme(RandomAccessibleInterval&lt;T&gt;,
+ RandomAccessibleInterval&lt;FloatType&gt;, ImgFactory&lt;FloatType&gt;)</code> and uses a default
+ <code>ArrayImgFactory&lt;FloatType&gt;</code> or <code>CellImgFactory&lt;FloatType&gt;</code> as third parameter
+ (depends on size of input).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - the input Img</dd>
+<dd><code>D</code> - the diffusion tensor</dd>
+</dl>
+</li>
+</ul>
+<a name="ExplicitDiffusionScheme-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ExplicitDiffusionScheme</h4>
+<pre>public&nbsp;ExplicitDiffusionScheme(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;input,
+                               <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D,
+                               <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;imgFactory)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="initDensityArray--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initDensityArray</h4>
+<pre>protected abstract&nbsp;float[]&nbsp;initDensityArray()</pre>
+</li>
+</ul>
+<a name="initDiffusionTensorArray--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initDiffusionTensorArray</h4>
+<pre>protected abstract&nbsp;float[][]&nbsp;initDiffusionTensorArray()</pre>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<div class="block">Execute one iteration of explicit scheme of the diffusion equation.</div>
+</li>
+</ul>
+<a name="getIncrement--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIncrement</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;getIncrement()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the increment to add to the input image at each iteration. More
+         specifically, that is <code>dt</code> times the right-hand-size
+         of the diffusion equation.</dd>
+</dl>
+</li>
+</ul>
+<a name="diffusionScheme-float:A-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>diffusionScheme</h4>
+<pre>protected abstract&nbsp;float&nbsp;diffusionScheme(float[]&nbsp;U,
+                                         float[][]&nbsp;D)</pre>
+<div class="block">Compute the float increment of the current location, for which is given
+ the density neighborhood and the diffusion tensor neighborhood.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>U</code> - the density neighborhood</dd>
+<dd><code>D</code> - the diffusion tensor neighborhood</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the increment computed from the given input</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#yieldDensity-net.imglib2.RandomAccess-float:A-"><code>yieldDensity(RandomAccess, float[])</code></a>, 
+<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#yieldDiffusionTensor-net.imglib2.RandomAccess-float:A:A-"><code>yieldDiffusionTensor(RandomAccess, float[][])</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+</li>
+</ul>
+<a name="setDiffusionTensor-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDiffusionTensor</h4>
+<pre>public&nbsp;void&nbsp;setDiffusionTensor(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;D)</pre>
+<div class="block">Set the diffusion tensor that will be used for the diffusion process.
+ <p>
+ The diffusion tensor must be a <a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real"><code>FloatType</code></a>
+ <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>, with specific dimensions: If the target
+ image has <code>N</code> dimensions, the tensor must have
+ <code>N+1</code> dimensions with:
+ <ul>
+ <li>the first <code>N</code> dimensions size equal to the input size;
+ <li>the <code>N+1</code> dimension having a size of 3.
+ </ul>
+ <p>
+ The tensor stores the local diffusion intensity and orientation in the
+ shape of a real symmetric <code>2x2</code> matrix. Along the
+ <code>N+1</code> dimension, the tensor components are ordered as:
+ <ol start="0">
+ <li> <code>Dxx</code>
+ <li> <code>Dxy</code>
+ <li> <code>Dyy</code>
+ </ol></div>
+</li>
+</ul>
+<a name="getDiffusionTensor--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiffusionTensor</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;getDiffusionTensor()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the diffusion tensor.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html#getDiffusionTensor--"><code>getDiffusionTensor()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="yieldDensity-net.imglib2.RandomAccess-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>yieldDensity</h4>
+<pre>protected abstract&nbsp;void&nbsp;yieldDensity(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" title="type parameter in ExplicitDiffusionScheme">T</a>&gt;&nbsp;ura,
+                                     float[]&nbsp;target)</pre>
+<div class="block">Iterate over a nD equivalent of 3x3 neighborhood, and collect the input
+ values needed in that neighborhood to compute the concrete diffusion
+ scheme.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ura</code> - the <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2"><code>RandomAccess</code></a></dd>
+<dd><code>target</code> - the float array in which the value will be stored</dd>
+</dl>
+</li>
+</ul>
+<a name="yieldDiffusionTensor-net.imglib2.RandomAccess-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>yieldDiffusionTensor</h4>
+<pre>protected abstract&nbsp;void&nbsp;yieldDiffusionTensor(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;dra,
+                                             float[][]&nbsp;target)</pre>
+<div class="block">Iterate over a nD equivalent of 3x3 neighborhood, and collect the
+ diffusion tensor values needed in that neighborhood to compute the
+ concrete diffusion scheme.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dra</code> - the <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2"><code>RandomAccess</code></a></dd>
+<dd><code>target</code> - the float array in which the value will be stored</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/pde/CoherenceEnhancingDiffusionTensor2D.html" title="class in net.imglib2.algorithm.pde"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/pde/ExplicitDiffusionScheme2D.html" title="class in net.imglib2.algorithm.pde"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/pde/ExplicitDiffusionScheme.html" target="_top">Frames</a></li>
+<li><a href="ExplicitDiffusionScheme.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

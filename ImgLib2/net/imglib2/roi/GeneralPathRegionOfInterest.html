@@ -1,0 +1,656 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GeneralPathRegionOfInterest (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GeneralPathRegionOfInterest (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/roi/EllipseRegionOfInterest.html" title="class in net.imglib2.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/roi/GeneralPathRegionOfInterest.html" target="_top">Frames</a></li>
+<li><a href="GeneralPathRegionOfInterest.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.net.imglib2.roi.AbstractIterableRegionOfInterest">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imglib2.roi.AbstractRegionOfInterest">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.roi</div>
+<h2 title="Class GeneralPathRegionOfInterest" class="title">Class GeneralPathRegionOfInterest</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">net.imglib2.roi.AbstractRegionOfInterest</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">net.imglib2.roi.AbstractIterableRegionOfInterest</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.roi.GeneralPathRegionOfInterest</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../net/imglib2/RealRandomAccessible.html" title="interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;, <a href="../../../net/imglib2/RealRandomAccessibleRealInterval.html" title="interface in net.imglib2">RealRandomAccessibleRealInterval</a>&lt;<a href="../../../net/imglib2/type/logic/BitType.html" title="class in net.imglib2.type.logic">BitType</a>&gt;, <a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a>, <a href="../../../net/imglib2/roi/IterableRegionOfInterest.html" title="interface in net.imglib2.roi">IterableRegionOfInterest</a>, <a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a></dd>
+</dl>
+<hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+<br>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public class <span class="typeNameLabel">GeneralPathRegionOfInterest</span>
+extends <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a>
+implements <a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></pre>
+<div class="block">A region of interest that is defined as a list of closed Beziér curves,
+ combined via the even/odd winding rule. TODO: re-implement it without using
+ AWT, to allow use of ImgLib, say, on Android</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Johannes Schindelin</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.net.imglib2.roi.AbstractIterableRegionOfInterest">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;net.imglib2.roi.<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a></h3>
+<code><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIClippedIterableInterval.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest.AROIClippedIterableInterval</a>&lt;<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIClippedIterableInterval.html" title="type parameter in AbstractIterableRegionOfInterest.AROIClippedIterableInterval">T</a> extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIClippedIterableInterval.html" title="type parameter in AbstractIterableRegionOfInterest.AROIClippedIterableInterval">T</a>&gt;&gt;, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIIterableInterval.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest.AROIIterableInterval</a>&lt;<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIIterableInterval.html" title="type parameter in AbstractIterableRegionOfInterest.AROIIterableInterval">T</a> extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIIterableInterval.html" title="type parameter in AbstractIterableRegionOfInterest.AROIIterableInterval">T</a>&gt;&gt;, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.AROIIterationOrder.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest.AROIIterationOrder</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.net.imglib2.roi.AbstractRegionOfInterest">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;net.imglib2.roi.<a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a></h3>
+<code><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.AROIRandomAccess.html" title="class in net.imglib2.roi">AbstractRegionOfInterest.AROIRandomAccess</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.roi.AbstractRegionOfInterest">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.roi.<a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a></h3>
+<code><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#nDimensions">nDimensions</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#GeneralPathRegionOfInterest--">GeneralPathRegionOfInterest</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#close--">close</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#contains-double:A-">contains</a></span>(double[]&nbsp;position)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Determine whether a point is a member of the region of interest</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#cubicTo-double-double-double-double-double-double-">cubicTo</a></span>(double&nbsp;x1,
+       double&nbsp;y1,
+       double&nbsp;x2,
+       double&nbsp;y2,
+       double&nbsp;x,
+       double&nbsp;y)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/geom/GeneralPath.html?is-external=true" title="class or interface in java.awt.geom">GeneralPath</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#getGeneralPath--">getGeneralPath</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#iteratePath-net.imglib2.roi.GeneralPathSegmentHandler-">iteratePath</a></span>(<a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a>&nbsp;handler)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#lineTo-double-double-">lineTo</a></span>(double&nbsp;x,
+      double&nbsp;y)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#move-double:A-">move</a></span>(double[]&nbsp;displacement)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#move-double-int-">move</a></span>(double&nbsp;displacement,
+    int&nbsp;d)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#moveTo-double-double-">moveTo</a></span>(double&nbsp;x,
+      double&nbsp;y)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#nextRaster-long:A-long:A-">nextRaster</a></span>(long[]&nbsp;position,
+          long[]&nbsp;end)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Advance the position to the next raster.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#quadTo-double-double-double-double-">quadTo</a></span>(double&nbsp;x1,
+      double&nbsp;y1,
+      double&nbsp;x,
+      double&nbsp;y)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#reset--">reset</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/roi/GeneralPathRegionOfInterest.html#setGeneralPath-java.awt.geom.GeneralPath-">setGeneralPath</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/geom/GeneralPath.html?is-external=true" title="class or interface in java.awt.geom">GeneralPath</a>&nbsp;path)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.AbstractIterableRegionOfInterest">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.roi.<a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a></h3>
+<code><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#dimension-int-">dimension</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#dimensions-long:A-">dimensions</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#getCachedSize--">getCachedSize</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#getExtrema-long:A-long:A-">getExtrema</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#getIterableIntervalOverROI-net.imglib2.RandomAccessible-">getIterableIntervalOverROI</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#getRealExtrema-double:A-double:A-">getRealExtrema</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#invalidateCachedState--">invalidateCachedState</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#jumpFwd-long-long:A-long:A-net.imglib2.Interval-">jumpFwd</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#max-int-">max</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#max-long:A-">max</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#max-net.imglib2.Positionable-">max</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#min-int-">min</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#min-long:A-">min</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#min-net.imglib2.Positionable-">min</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#nextRaster-long:A-long:A-net.imglib2.Interval-">nextRaster</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#remove-long:A-">remove</a>, <a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#size--">size</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.AbstractRegionOfInterest">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.roi.<a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a></h3>
+<code><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#numDimensions--">numDimensions</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMax-double:A-">realMax</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMax-int-">realMax</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMax-net.imglib2.RealPositionable-">realMax</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMin-double:A-">realMin</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMin-int-">realMin</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realMin-net.imglib2.RealPositionable-">realMin</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realRandomAccess--">realRandomAccess</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#realRandomAccess-net.imglib2.RealInterval-">realRandomAccess</a>, <a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#validateRealExtremaCache--">validateRealExtremaCache</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealRandomAccessible">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/RealRandomAccessible.html" title="interface in net.imglib2">RealRandomAccessible</a></h3>
+<code><a href="../../../net/imglib2/RealRandomAccessible.html#realRandomAccess--">realRandomAccess</a>, <a href="../../../net/imglib2/RealRandomAccessible.html#realRandomAccess-net.imglib2.RealInterval-">realRandomAccess</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a></h3>
+<code><a href="../../../net/imglib2/RealInterval.html#realMax-double:A-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMax-int-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMax-net.imglib2.RealPositionable-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-double:A-">realMin</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-int-">realMin</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-net.imglib2.RealPositionable-">realMin</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
+<code><a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GeneralPathRegionOfInterest--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GeneralPathRegionOfInterest</h4>
+<pre>public&nbsp;GeneralPathRegionOfInterest()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="moveTo-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveTo</h4>
+<pre>public&nbsp;void&nbsp;moveTo(double&nbsp;x,
+                   double&nbsp;y)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html#moveTo-double-double-">moveTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="lineTo-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lineTo</h4>
+<pre>public&nbsp;void&nbsp;lineTo(double&nbsp;x,
+                   double&nbsp;y)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html#lineTo-double-double-">lineTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="quadTo-double-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>quadTo</h4>
+<pre>public&nbsp;void&nbsp;quadTo(double&nbsp;x1,
+                   double&nbsp;y1,
+                   double&nbsp;x,
+                   double&nbsp;y)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html#quadTo-double-double-double-double-">quadTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cubicTo-double-double-double-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cubicTo</h4>
+<pre>public&nbsp;void&nbsp;cubicTo(double&nbsp;x1,
+                    double&nbsp;y1,
+                    double&nbsp;x2,
+                    double&nbsp;y2,
+                    double&nbsp;x,
+                    double&nbsp;y)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html#cubicTo-double-double-double-double-double-double-">cubicTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="close--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>public&nbsp;void&nbsp;close()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="reset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setGeneralPath-java.awt.geom.GeneralPath-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setGeneralPath</h4>
+<pre>public&nbsp;void&nbsp;setGeneralPath(<a href="http://javadoc.imagej.net/Java/java/awt/geom/GeneralPath.html?is-external=true" title="class or interface in java.awt.geom">GeneralPath</a>&nbsp;path)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getGeneralPath--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGeneralPath</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/geom/GeneralPath.html?is-external=true" title="class or interface in java.awt.geom">GeneralPath</a>&nbsp;getGeneralPath()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="iteratePath-net.imglib2.roi.GeneralPathSegmentHandler-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>iteratePath</h4>
+<pre>public&nbsp;void&nbsp;iteratePath(<a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi">GeneralPathSegmentHandler</a>&nbsp;handler)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="nextRaster-long:A-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nextRaster</h4>
+<pre>protected&nbsp;boolean&nbsp;nextRaster(long[]&nbsp;position,
+                             long[]&nbsp;end)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#nextRaster-long:A-long:A-">AbstractIterableRegionOfInterest</a></code></span></div>
+<div class="block">Advance the position to the next raster.
+ 
+ The AbstractRegionOfInterest successively adds one to the lowest
+ dimension of the position until the position is outside the ROI as
+ determined by isMember. At this point, it calls nextRaster to find the
+ start of the next raster.
+ 
+ As an example, a rectangle might have x, y, width and height. The code
+ would determine if the y position was before, within or after the
+ rectangle bounds. If before, set position[0] = x, position[1] = y and
+ return true, if within, set position[0] = x, position[1] += 1, if after,
+ return false.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html#nextRaster-long:A-long:A-">nextRaster</a></code>&nbsp;in class&nbsp;<code><a href="../../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - on entry, the position of the raster after advancement to its
+            end (or initial or final position)</dd>
+<dd><code>end</code> - on exit, the coordinates of the end of the raster. Index 0 is
+            generally the only pertinent variable, subsequent indices
+            should be duplicates of the start raster. Nevertheless, using
+            an array lets the caller pass the results as a modification of
+            the array.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if there is a raster after this one.</dd>
+</dl>
+</li>
+</ul>
+<a name="contains-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>contains</h4>
+<pre>public&nbsp;boolean&nbsp;contains(double[]&nbsp;position)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/roi/RegionOfInterest.html#contains-double:A-">RegionOfInterest</a></code></span></div>
+<div class="block">Determine whether a point is a member of the region of interest</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/RegionOfInterest.html#contains-double:A-">contains</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - position in question</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if a member</dd>
+</dl>
+</li>
+</ul>
+<a name="move-double-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>move</h4>
+<pre>public&nbsp;void&nbsp;move(double&nbsp;displacement,
+                 int&nbsp;d)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/RegionOfInterest.html#move-double-int-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="move-double:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>move</h4>
+<pre>public&nbsp;void&nbsp;move(double[]&nbsp;displacement)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/RegionOfInterest.html#move-double:A-">move</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html#move-double:A-">move</a></code>&nbsp;in class&nbsp;<code><a href="../../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/roi/EllipseRegionOfInterest.html" title="class in net.imglib2.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/roi/GeneralPathSegmentHandler.html" title="interface in net.imglib2.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/roi/GeneralPathRegionOfInterest.html" target="_top">Frames</a></li>
+<li><a href="GeneralPathRegionOfInterest.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.net.imglib2.roi.AbstractIterableRegionOfInterest">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imglib2.roi.AbstractRegionOfInterest">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

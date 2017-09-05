@@ -1,0 +1,761 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SubpixelLocalization (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SubpixelLocalization (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/localextrema/SubpixelLocalization.html" target="_top">Frames</a></li>
+<li><a href="SubpixelLocalization.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.localextrema</div>
+<h2 title="Class SubpixelLocalization" class="title">Class SubpixelLocalization&lt;P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.localextrema.SubpixelLocalization&lt;P,T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SubpixelLocalization&lt;P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Refine a set of peaks to subpixel coordinates. This class provides the static
+ <a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-int-"><code>refinePeaks(List, RandomAccessible, Interval, boolean, int, boolean, float, boolean[], int)</code></a>
+ method to do this, but this has a lot of parameters. Therefore, this class
+ can also be instantiated to encapsulate the parameter settings.
+ 
+ <p>
+ A List <a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><code>RefinedPeak</code></a> for the given list of <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2"><code>Localizable</code></a> is
+ computed by, for each peak, fitting a quadratic function to the image and
+ computing the subpixel coordinates of the extremum. This is an iterative
+ procedure. If the extremum is shifted more than 0.5 in one or more the fit is
+ repeated at the corresponding integer coordinates. This is repeated to
+ convergence, for a maximum number of iterations, or until the integer
+ coordinates move out of the valid image.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Stephan Preibisch, Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#allowedToMoveInDim">allowedToMoveInDim</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#allowMaximaTolerance">allowMaximaTolerance</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#canMoveOutside">canMoveOutside</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#maximaTolerance">maximaTolerance</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#maxNumMoves">maxNumMoves</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#numThreads">numThreads</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#returnInvalidPeaks">returnInvalidPeaks</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#SubpixelLocalization-int-">SubpixelLocalization</a></span>(int&nbsp;numDimensions)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getAllowedToMoveInDim--">getAllowedToMoveInDim</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getAllowMaximaTolerance--">getAllowMaximaTolerance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getCanMoveOutside--">getCanMoveOutside</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getMaximaTolerance--">getMaximaTolerance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getMaxNumMoves--">getMaxNumMoves</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getNumThreads--">getNumThreads</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#getReturnInvalidPeaks--">getReturnInvalidPeaks</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">P</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#process-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-">process</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">P</a>&gt;&nbsp;peaks,
+       <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;img,
+       <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval)</code>
+<div class="block">Refine a set of peaks to subpixel coordinates.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>protected static &lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#quadraticFitOffset-net.imglib2.Localizable-net.imglib2.RandomAccess-Jama.Matrix-Jama.Matrix-net.imglib2.RealPositionable-">quadraticFitOffset</a></span>(<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;p,
+                  <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;access,
+                  Jama.Matrix&nbsp;g,
+                  Jama.Matrix&nbsp;H,
+                  <a href="../../../../net/imglib2/RealPositionable.html" title="interface in net.imglib2">RealPositionable</a>&nbsp;offset)</code>
+<div class="block">Estimate subpixel <code>offset</code> of extremum of quadratic function
+ fitted at <code>p</code>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;P&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-">refinePeaks</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;peaks,
+           <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;img,
+           <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval,
+           boolean&nbsp;returnInvalidPeaks,
+           int&nbsp;maxNumMoves,
+           boolean&nbsp;allowMaximaTolerance,
+           float&nbsp;maximaTolerance,
+           boolean[]&nbsp;allowedToMoveInDim)</code>
+<div class="block">Refine a set of peaks to subpixel coordinates.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;P&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-int-">refinePeaks</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;peaks,
+           <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;img,
+           <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval,
+           boolean&nbsp;returnInvalidPeaks,
+           int&nbsp;maxNumMoves,
+           boolean&nbsp;allowMaximaTolerance,
+           float&nbsp;maximaTolerance,
+           boolean[]&nbsp;allowedToMoveInDim,
+           int&nbsp;numThreads)</code>
+<div class="block">Refine a set of peaks to subpixel coordinates.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setAllowedToMoveInDim-boolean:A-">setAllowedToMoveInDim</a></span>(boolean[]&nbsp;allowedToMoveInDim)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setAllowMaximaTolerance-boolean-">setAllowMaximaTolerance</a></span>(boolean&nbsp;allowMaximaTolerance)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setCanMoveOutside-boolean-">setCanMoveOutside</a></span>(boolean&nbsp;canMoveOutside)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setMaximaTolerance-float-">setMaximaTolerance</a></span>(float&nbsp;maximaTolerance)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setMaxNumMoves-int-">setMaxNumMoves</a></span>(int&nbsp;maxNumMoves)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setNumThreads-int-">setNumThreads</a></span>(int&nbsp;numThreads)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#setReturnInvalidPeaks-boolean-">setReturnInvalidPeaks</a></span>(boolean&nbsp;returnInvalidPeaks)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="maxNumMoves">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxNumMoves</h4>
+<pre>protected&nbsp;int maxNumMoves</pre>
+</li>
+</ul>
+<a name="allowMaximaTolerance">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allowMaximaTolerance</h4>
+<pre>protected&nbsp;boolean allowMaximaTolerance</pre>
+</li>
+</ul>
+<a name="canMoveOutside">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canMoveOutside</h4>
+<pre>protected&nbsp;boolean canMoveOutside</pre>
+</li>
+</ul>
+<a name="maximaTolerance">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maximaTolerance</h4>
+<pre>protected&nbsp;float maximaTolerance</pre>
+</li>
+</ul>
+<a name="allowedToMoveInDim">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allowedToMoveInDim</h4>
+<pre>protected&nbsp;boolean[] allowedToMoveInDim</pre>
+</li>
+</ul>
+<a name="returnInvalidPeaks">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>returnInvalidPeaks</h4>
+<pre>protected&nbsp;boolean returnInvalidPeaks</pre>
+</li>
+</ul>
+<a name="numThreads">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>numThreads</h4>
+<pre>protected&nbsp;int numThreads</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SubpixelLocalization-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SubpixelLocalization</h4>
+<pre>public&nbsp;SubpixelLocalization(int&nbsp;numDimensions)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setAllowMaximaTolerance-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowMaximaTolerance</h4>
+<pre>public&nbsp;void&nbsp;setAllowMaximaTolerance(boolean&nbsp;allowMaximaTolerance)</pre>
+</li>
+</ul>
+<a name="setCanMoveOutside-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCanMoveOutside</h4>
+<pre>public&nbsp;void&nbsp;setCanMoveOutside(boolean&nbsp;canMoveOutside)</pre>
+</li>
+</ul>
+<a name="setMaximaTolerance-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaximaTolerance</h4>
+<pre>public&nbsp;void&nbsp;setMaximaTolerance(float&nbsp;maximaTolerance)</pre>
+</li>
+</ul>
+<a name="setMaxNumMoves-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxNumMoves</h4>
+<pre>public&nbsp;void&nbsp;setMaxNumMoves(int&nbsp;maxNumMoves)</pre>
+</li>
+</ul>
+<a name="setAllowedToMoveInDim-boolean:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowedToMoveInDim</h4>
+<pre>public&nbsp;void&nbsp;setAllowedToMoveInDim(boolean[]&nbsp;allowedToMoveInDim)</pre>
+</li>
+</ul>
+<a name="setReturnInvalidPeaks-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReturnInvalidPeaks</h4>
+<pre>public&nbsp;void&nbsp;setReturnInvalidPeaks(boolean&nbsp;returnInvalidPeaks)</pre>
+</li>
+</ul>
+<a name="setNumThreads-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumThreads</h4>
+<pre>public&nbsp;void&nbsp;setNumThreads(int&nbsp;numThreads)</pre>
+</li>
+</ul>
+<a name="getAllowMaximaTolerance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowMaximaTolerance</h4>
+<pre>public&nbsp;boolean&nbsp;getAllowMaximaTolerance()</pre>
+</li>
+</ul>
+<a name="getCanMoveOutside--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanMoveOutside</h4>
+<pre>public&nbsp;boolean&nbsp;getCanMoveOutside()</pre>
+</li>
+</ul>
+<a name="getMaximaTolerance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaximaTolerance</h4>
+<pre>public&nbsp;float&nbsp;getMaximaTolerance()</pre>
+</li>
+</ul>
+<a name="getMaxNumMoves--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxNumMoves</h4>
+<pre>public&nbsp;int&nbsp;getMaxNumMoves()</pre>
+</li>
+</ul>
+<a name="getAllowedToMoveInDim--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowedToMoveInDim</h4>
+<pre>public&nbsp;boolean[]&nbsp;getAllowedToMoveInDim()</pre>
+</li>
+</ul>
+<a name="getReturnInvalidPeaks--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReturnInvalidPeaks</h4>
+<pre>public&nbsp;boolean&nbsp;getReturnInvalidPeaks()</pre>
+</li>
+</ul>
+<a name="getNumThreads--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumThreads</h4>
+<pre>public&nbsp;int&nbsp;getNumThreads()</pre>
+</li>
+</ul>
+<a name="process-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">P</a>&gt;&gt;&nbsp;process(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">P</a>&gt;&nbsp;peaks,
+                                         <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;img,
+                                         <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval)</pre>
+<div class="block">Refine a set of peaks to subpixel coordinates. Calls
+ <a href="../../../../net/imglib2/algorithm/localextrema/SubpixelLocalization.html#refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-int-"><code>refinePeaks(List, RandomAccessible, Interval, boolean, int, boolean, float, boolean[], int)</code></a>
+ with the parameters set to this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>peaks</code> - List of integer peaks.</dd>
+<dd><code>img</code> - Pixel values.</dd>
+<dd><code>validInterval</code> - In which interval the <code>img</code> contains valid pixels.
+            If null, an infinite <code>img</code> is assumed. Integer
+            peaks must lie within a 1-pixel border of this interval.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>refined list of peaks.</dd>
+</dl>
+</li>
+</ul>
+<a name="refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>refinePeaks</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;P&gt;&gt;&nbsp;refinePeaks(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;peaks,
+                                                                                                  <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;img,
+                                                                                                  <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval,
+                                                                                                  boolean&nbsp;returnInvalidPeaks,
+                                                                                                  int&nbsp;maxNumMoves,
+                                                                                                  boolean&nbsp;allowMaximaTolerance,
+                                                                                                  float&nbsp;maximaTolerance,
+                                                                                                  boolean[]&nbsp;allowedToMoveInDim,
+                                                                                                  int&nbsp;numThreads)</pre>
+<div class="block">Refine a set of peaks to subpixel coordinates. Multi-threaded version.
+ <p>
+ A List <a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><code>RefinedPeak</code></a> for the given list of <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2"><code>Localizable</code></a> is
+ computed by, for each peak, fitting a quadratic function to the image and
+ computing the subpixel coordinates of the extremum. This is an iterative
+ procedure. If the extremum is shifted more than 0.5 in one or more the
+ fit is repeated at the corresponding integer coordinates. This is
+ repeated to convergence, for a maximum number of iterations, or until the
+ integer coordinates move out of the valid image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>peaks</code> - List of integer peaks.</dd>
+<dd><code>img</code> - Pixel values.</dd>
+<dd><code>validInterval</code> - In which interval the <code>img</code> contains valid pixels.
+            If null, an infinite <code>img</code> is assumed. Integer
+            peaks must lie within a 1-pixel border of this interval.</dd>
+<dd><code>returnInvalidPeaks</code> - Whether (invalid) <a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><code>RefinedPeak</code></a> should be created for
+            peaks where the fitting procedure did not converge.</dd>
+<dd><code>maxNumMoves</code> - maximum number of iterations for each peak.</dd>
+<dd><code>allowMaximaTolerance</code> - If we allow an increasing maxima tolerance we will not change
+            the base position that easily. Sometimes it simply jumps from
+            left to right and back, because it is 4.51 (i.e. goto 5), then
+            4.49 (i.e. goto 4) Then we say, ok, lets keep the base
+            position even if the subpixel location is 0.6...</dd>
+<dd><code>maximaTolerance</code> - By how much to increase the tolerance per iteration.</dd>
+<dd><code>allowedToMoveInDim</code> - specifies, per dimension, whether the base location is allowed
+            to be moved in the iterative procedure.</dd>
+<dd><code>numThreads</code> - How many threads to use for the computation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>refined list of peaks.</dd>
+</dl>
+</li>
+</ul>
+<a name="refinePeaks-java.util.List-net.imglib2.RandomAccessible-net.imglib2.Interval-boolean-int-boolean-float-boolean:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>refinePeaks</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,P extends <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema">RefinedPeak</a>&lt;P&gt;&gt;&nbsp;refinePeaks(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;peaks,
+                                                                                                  <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;img,
+                                                                                                  <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;validInterval,
+                                                                                                  boolean&nbsp;returnInvalidPeaks,
+                                                                                                  int&nbsp;maxNumMoves,
+                                                                                                  boolean&nbsp;allowMaximaTolerance,
+                                                                                                  float&nbsp;maximaTolerance,
+                                                                                                  boolean[]&nbsp;allowedToMoveInDim)</pre>
+<div class="block">Refine a set of peaks to subpixel coordinates. Single-threaded version.
+ <p>
+ A List <a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><code>RefinedPeak</code></a> for the given list of <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2"><code>Localizable</code></a> is
+ computed by, for each peak, fitting a quadratic function to the image and
+ computing the subpixel coordinates of the extremum. This is an iterative
+ procedure. If the extremum is shifted more than 0.5 in one or more the
+ fit is repeated at the corresponding integer coordinates. This is
+ repeated to convergence, for a maximum number of iterations, or until the
+ integer coordinates move out of the valid image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>peaks</code> - List of integer peaks.</dd>
+<dd><code>img</code> - Pixel values.</dd>
+<dd><code>validInterval</code> - In which interval the <code>img</code> contains valid pixels.
+            If null, an infinite <code>img</code> is assumed. Integer
+            peaks must lie within a 1-pixel border of this interval.</dd>
+<dd><code>returnInvalidPeaks</code> - Whether (invalid) <a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><code>RefinedPeak</code></a> should be created for
+            peaks where the fitting procedure did not converge.</dd>
+<dd><code>maxNumMoves</code> - maximum number of iterations for each peak.</dd>
+<dd><code>allowMaximaTolerance</code> - If we allow an increasing maxima tolerance we will not change
+            the base position that easily. Sometimes it simply jumps from
+            left to right and back, because it is 4.51 (i.e. goto 5), then
+            4.49 (i.e. goto 4) Then we say, ok, lets keep the base
+            position even if the subpixel location is 0.6...</dd>
+<dd><code>maximaTolerance</code> - By how much to increase the tolerance per iteration.</dd>
+<dd><code>allowedToMoveInDim</code> - specifies, per dimension, whether the base location is allowed
+            to be moved in the iterative procedure.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>refined list of peaks.</dd>
+</dl>
+</li>
+</ul>
+<a name="quadraticFitOffset-net.imglib2.Localizable-net.imglib2.RandomAccess-Jama.Matrix-Jama.Matrix-net.imglib2.RealPositionable-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>quadraticFitOffset</h4>
+<pre>protected static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;quadraticFitOffset(<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;p,
+                                                                 <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;access,
+                                                                 Jama.Matrix&nbsp;g,
+                                                                 Jama.Matrix&nbsp;H,
+                                                                 <a href="../../../../net/imglib2/RealPositionable.html" title="interface in net.imglib2">RealPositionable</a>&nbsp;offset)</pre>
+<div class="block">Estimate subpixel <code>offset</code> of extremum of quadratic function
+ fitted at <code>p</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>p</code> - integer position at which to fit quadratic.</dd>
+<dd><code>access</code> - access to the image values.</dd>
+<dd><code>g</code> - a <em>n</em> vector where <em>n</em> is the dimensionality of
+            the image. (This is a temporary variable to store the
+            gradient).</dd>
+<dd><code>H</code> - a <em>n &times; n</em> matrix where <em>n</em> is the
+            dimensionality of the image. (This is a temporary variable to
+            store the Hessian).</dd>
+<dd><code>offset</code> - subpixel offset of extremum wrt. <code>p</code> is stored
+            here.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/localextrema/RefinedPeak.html" title="class in net.imglib2.algorithm.localextrema"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/localextrema/SubpixelLocalization.html" target="_top">Frames</a></li>
+<li><a href="SubpixelLocalization.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

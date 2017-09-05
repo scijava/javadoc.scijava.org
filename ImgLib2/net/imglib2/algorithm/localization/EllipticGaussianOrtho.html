@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EllipticGaussianOrtho (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="EllipticGaussianOrtho (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/localization/DummySolver.html" title="class in net.imglib2.algorithm.localization"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/localization/EllipticGaussianOrtho.html" target="_top">Frames</a></li>
+<li><a href="EllipticGaussianOrtho.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.localization</div>
+<h2 title="Class EllipticGaussianOrtho" class="title">Class EllipticGaussianOrtho</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.localization.EllipticGaussianOrtho</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization">FitFunction</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">EllipticGaussianOrtho</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization">FitFunction</a></pre>
+<div class="block">A n-dimensional Gaussian peak function, representing an elliptical Gaussian,
+ with axis constrained to be aligned with the main axis. 
+ <p>
+ This fitting target function is defined over dimension <code>n</code>, by the following 
+ <code>2n+1</code> parameters:
+ <pre>k = 0..n-1  - x₀ᵢ (with i = k)
+k = n       - A
+k = n+1..2n - bᵢ (with i = k-n-1)</pre>
+ with
+ <pre>f(x) = A × exp( - S )</pre>
+ and
+ <pre>S = ∑ bᵢ × (xᵢ - x₀ᵢ)² </pre></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez 2012</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localization/EllipticGaussianOrtho.html#EllipticGaussianOrtho--">EllipticGaussianOrtho</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localization/EllipticGaussianOrtho.html#grad-double:A-double:A-int-">grad</a></span>(double[]&nbsp;x,
+    double[]&nbsp;a,
+    int&nbsp;k)</code>
+<div class="block">Returns the gradient value of this function, with respect to the variable
+ specified by its index: Partial derivatives indices are ordered as follow:</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localization/EllipticGaussianOrtho.html#hessian-double:A-double:A-int-int-">hessian</a></span>(double[]&nbsp;x,
+       double[]&nbsp;a,
+       int&nbsp;r,
+       int&nbsp;c)</code>
+<div class="block">Returns the hessian value of this function, with respect to the variable
+ specified by its index: Partial derivatives indices are ordered as follow:</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localization/EllipticGaussianOrtho.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localization/EllipticGaussianOrtho.html#val-double:A-double:A-">val</a></span>(double[]&nbsp;x,
+   double[]&nbsp;a)</code>
+<div class="block">Evaluates this function at point <code>x</code>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="EllipticGaussianOrtho--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>EllipticGaussianOrtho</h4>
+<pre>public&nbsp;EllipticGaussianOrtho()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="val-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>val</h4>
+<pre>public final&nbsp;double&nbsp;val(double[]&nbsp;x,
+                        double[]&nbsp;a)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#val-double:A-double:A-">FitFunction</a></code></span></div>
+<div class="block">Evaluates this function at point <code>x</code>. The function is
+ otherwise defined over an array of parameters <code>a</code>, that
+ is the target of the fitting procedure.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#val-double:A-double:A-">val</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization">FitFunction</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the multidimensional to evaluate the function at</dd>
+<dd><code>a</code> - the set of parameters that defines the function</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a double value, the function evaluated at <code>x</code></dd>
+</dl>
+</li>
+</ul>
+<a name="grad-double:A-double:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>grad</h4>
+<pre>public final&nbsp;double&nbsp;grad(double[]&nbsp;x,
+                         double[]&nbsp;a,
+                         int&nbsp;k)</pre>
+<div class="block">Returns the gradient value of this function, with respect to the variable
+ specified by its index: Partial derivatives indices are ordered as follow:
+ <pre>k = 0..n-1  - x_i (with i = k-1)
+k = n       - A
+k = n+1..2n - b_i (with i = k-n-1)</pre></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#grad-double:A-double:A-int-">grad</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization">FitFunction</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the position array to compute the gradient at.</dd>
+<dd><code>a</code> - the parameters array that specified the gaussian shape.</dd>
+<dd><code>k</code> - the parameter index for derivation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the value of the gradient computed with respect to parameter 
+<code>k</code> for the gaussian with parameters <code>a</code>, calculated
+at position <code>x</code>.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#val-double:A-double:A-"><code>FitFunction.val(double[], double[])</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="hessian-double:A-double:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>hessian</h4>
+<pre>public final&nbsp;double&nbsp;hessian(double[]&nbsp;x,
+                            double[]&nbsp;a,
+                            int&nbsp;r,
+                            int&nbsp;c)</pre>
+<div class="block">Returns the hessian value of this function, with respect to the variable
+ specified by its index: Partial derivatives indices are ordered as follow:
+ <pre>k = 0..n-1  - x_i (with i = k-1)
+k = n       - A
+k = n+1..2n - b_i (with i = k-n-1)</pre></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#hessian-double:A-double:A-int-int-">hessian</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization">FitFunction</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the position array to compute the gradient at.</dd>
+<dd><code>a</code> - the parameters array that specified the gaussian shape.</dd>
+<dd><code>r</code> - the parameter index for the first derivation.</dd>
+<dd><code>c</code> - the parameter index for the second derivation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the value of the gradient computed with respect to parameters 
+<code>r, c</code> for the elliptic gaussian with parameters <code>a</code>, calculated
+at position <code>x</code>.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html#val-double:A-double:A-"><code>FitFunction.val(double[], double[])</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/localization/DummySolver.html" title="class in net.imglib2.algorithm.localization"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/localization/FitFunction.html" title="interface in net.imglib2.algorithm.localization"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/localization/EllipticGaussianOrtho.html" target="_top">Frames</a></li>
+<li><a href="EllipticGaussianOrtho.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

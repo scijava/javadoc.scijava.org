@@ -1,0 +1,659 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractLabeling (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AbstractLabeling (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../net/imglib2/labeling/AbstractNativeLabeling.html" title="class in net.imglib2.labeling"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/labeling/AbstractLabeling.html" target="_top">Frames</a></li>
+<li><a href="AbstractLabeling.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.labeling</div>
+<h2 title="Class AbstractLabeling" class="title">Class AbstractLabeling&lt;T extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">net.imglib2.AbstractEuclideanSpace</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">net.imglib2.AbstractInterval</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.labeling.AbstractLabeling&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - - the type used to label the pixels, for instance string names for
+            user-assigned object labels or integers for machine-labeled
+            images.</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;T&gt;&gt;, <a href="../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>, <a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>, <a href="../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;T&gt;&gt;, <a href="../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2">IterableRealInterval</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;T&gt;&gt;, <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;T&gt;, <a href="../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;T&gt;&gt;, <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;T&gt;&gt;, <a href="../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../net/imglib2/labeling/AbstractNativeLabeling.html" title="class in net.imglib2.labeling">AbstractNativeLabeling</a></dd>
+</dl>
+<hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+<br>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public abstract class <span class="typeNameLabel">AbstractLabeling&lt;T extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;</span>
+extends <a href="../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">AbstractInterval</a>
+implements <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;T&gt;</pre>
+<div class="block">A labeling represents the assignment of zero or more labels to the pixels in
+ a space.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Lee Kamentsky</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#size">size</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../net/imglib2/labeling/LabelingROIStrategy.html" title="interface in net.imglib2.labeling">LabelingROIStrategy</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>,? extends <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#strategy">strategy</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.AbstractInterval">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.<a href="../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">AbstractInterval</a></h3>
+<code><a href="../../../net/imglib2/AbstractInterval.html#max">max</a>, <a href="../../../net/imglib2/AbstractInterval.html#min">min</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.AbstractEuclideanSpace">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.<a href="../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">AbstractEuclideanSpace</a></h3>
+<code><a href="../../../net/imglib2/AbstractEuclideanSpace.html#n">n</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#AbstractLabeling-long:A-net.imglib2.labeling.LabelingROIStrategyFactory-">AbstractLabeling</a></span>(long[]&nbsp;size,
+                <a href="../../../net/imglib2/labeling/LabelingROIStrategyFactory.html" title="interface in net.imglib2.labeling">LabelingROIStrategyFactory</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&nbsp;factory)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getArea-T-">getArea</a></span>(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Return the area or suitable N-d analog of the labeled object</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getExtents-T-long:A-long:A-">getExtents</a></span>(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label,
+          long[]&nbsp;minExtents,
+          long[]&nbsp;maxExtents)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">find the coordinates of the bounding box around the given label.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/roi/IterableRegionOfInterest.html" title="interface in net.imglib2.roi">IterableRegionOfInterest</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getIterableRegionOfInterest-T-">getIterableRegionOfInterest</a></span>(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Get a ROI that represents the pixels with the given label</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getLabels--">getLabels</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Find all labels in the space</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getRasterStart-T-long:A-">getRasterStart</a></span>(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label,
+              long[]&nbsp;start)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Find the first pixel in a raster scan of the object with the given label.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#getRegionOfInterest-T-">getRegionOfInterest</a></span>(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Get a region of interest optimized to determine point membership</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#setLabelingCursorStrategy-net.imglib2.labeling.LabelingROIStrategy-">setLabelingCursorStrategy</a></span>(<a href="../../../net/imglib2/labeling/LabelingROIStrategy.html" title="interface in net.imglib2.labeling">LabelingROIStrategy</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>,? extends <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;&nbsp;strategy)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Use an alternative strategy for making labeling cursors.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/labeling/AbstractLabeling.html#size--">size</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">
+ Returns the number of elements in this <a href="../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2"><code>Function</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.AbstractInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.<a href="../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">AbstractInterval</a></h3>
+<code><a href="../../../net/imglib2/AbstractInterval.html#dimension-int-">dimension</a>, <a href="../../../net/imglib2/AbstractInterval.html#dimensions-long:A-">dimensions</a>, <a href="../../../net/imglib2/AbstractInterval.html#max-int-">max</a>, <a href="../../../net/imglib2/AbstractInterval.html#max-long:A-">max</a>, <a href="../../../net/imglib2/AbstractInterval.html#max-net.imglib2.Positionable-">max</a>, <a href="../../../net/imglib2/AbstractInterval.html#min-int-">min</a>, <a href="../../../net/imglib2/AbstractInterval.html#min-long:A-">min</a>, <a href="../../../net/imglib2/AbstractInterval.html#min-net.imglib2.Positionable-">min</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMax-double:A-">realMax</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMax-int-">realMax</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMax-net.imglib2.RealPositionable-">realMax</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMin-double:A-">realMin</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMin-int-">realMin</a>, <a href="../../../net/imglib2/AbstractInterval.html#realMin-net.imglib2.RealPositionable-">realMin</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.AbstractEuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.<a href="../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">AbstractEuclideanSpace</a></h3>
+<code><a href="../../../net/imglib2/AbstractEuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.labeling.Labeling">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.labeling.<a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a></h3>
+<code><a href="../../../net/imglib2/labeling/Labeling.html#copy--">copy</a>, <a href="../../../net/imglib2/labeling/Labeling.html#factory--">factory</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RandomAccessible">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a></h3>
+<code><a href="../../../net/imglib2/RandomAccessible.html#randomAccess--">randomAccess</a>, <a href="../../../net/imglib2/RandomAccessible.html#randomAccess-net.imglib2.Interval-">randomAccess</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.IterableInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2">IterableInterval</a></h3>
+<code><a href="../../../net/imglib2/IterableInterval.html#cursor--">cursor</a>, <a href="../../../net/imglib2/IterableInterval.html#localizingCursor--">localizingCursor</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.IterableRealInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2">IterableRealInterval</a></h3>
+<code><a href="../../../net/imglib2/IterableRealInterval.html#firstElement--">firstElement</a>, <a href="../../../net/imglib2/IterableRealInterval.html#iterationOrder--">iterationOrder</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true#forEach-java.util.function.Consumer-" title="class or interface in java.lang">forEach</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Iterable.html?is-external=true#spliterator--" title="class or interface in java.lang">spliterator</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Interval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></h3>
+<code><a href="../../../net/imglib2/Interval.html#max-int-">max</a>, <a href="../../../net/imglib2/Interval.html#max-long:A-">max</a>, <a href="../../../net/imglib2/Interval.html#max-net.imglib2.Positionable-">max</a>, <a href="../../../net/imglib2/Interval.html#min-int-">min</a>, <a href="../../../net/imglib2/Interval.html#min-long:A-">min</a>, <a href="../../../net/imglib2/Interval.html#min-net.imglib2.Positionable-">min</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a></h3>
+<code><a href="../../../net/imglib2/RealInterval.html#realMax-double:A-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMax-int-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMax-net.imglib2.RealPositionable-">realMax</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-double:A-">realMin</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-int-">realMin</a>, <a href="../../../net/imglib2/RealInterval.html#realMin-net.imglib2.RealPositionable-">realMin</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Dimensions">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a></h3>
+<code><a href="../../../net/imglib2/Dimensions.html#dimension-int-">dimension</a>, <a href="../../../net/imglib2/Dimensions.html#dimensions-long:A-">dimensions</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
+<code><a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="strategy">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>strategy</h4>
+<pre>protected&nbsp;<a href="../../../net/imglib2/labeling/LabelingROIStrategy.html" title="interface in net.imglib2.labeling">LabelingROIStrategy</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;,? extends <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;&gt; strategy</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="size">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>size</h4>
+<pre>protected&nbsp;long size</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractLabeling-long:A-net.imglib2.labeling.LabelingROIStrategyFactory-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractLabeling</h4>
+<pre>protected&nbsp;AbstractLabeling(long[]&nbsp;size,
+                           <a href="../../../net/imglib2/labeling/LabelingROIStrategyFactory.html" title="interface in net.imglib2.labeling">LabelingROIStrategyFactory</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&nbsp;factory)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="size--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>size</h4>
+<pre>public&nbsp;long&nbsp;size()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/IterableRealInterval.html#size--">IterableRealInterval</a></code></span></div>
+<div class="block"><p>
+ Returns the number of elements in this <a href="../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2"><code>Function</code></a>.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/IterableRealInterval.html#size--">size</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2">IterableRealInterval</a>&lt;<a href="../../../net/imglib2/labeling/LabelingType.html" title="class in net.imglib2.labeling">LabelingType</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of elements</dd>
+</dl>
+</li>
+</ul>
+<a name="setLabelingCursorStrategy-net.imglib2.labeling.LabelingROIStrategy-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLabelingCursorStrategy</h4>
+<pre>public&nbsp;void&nbsp;setLabelingCursorStrategy(<a href="../../../net/imglib2/labeling/LabelingROIStrategy.html" title="interface in net.imglib2.labeling">LabelingROIStrategy</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>,? extends <a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;&nbsp;strategy)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Use an alternative strategy for making labeling cursors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>strategy</code> - - a strategy for making labeling cursors.</dd>
+</dl>
+</li>
+</ul>
+<a name="getRegionOfInterest-java.lang.Comparable-">
+<!--   -->
+</a><a name="getRegionOfInterest-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRegionOfInterest</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/roi/RegionOfInterest.html" title="interface in net.imglib2.roi">RegionOfInterest</a>&nbsp;getRegionOfInterest(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html#getRegionOfInterest-T-">Labeling</a></code></span></div>
+<div class="block">Get a region of interest optimized to determine point membership</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getRegionOfInterest-T-">getRegionOfInterest</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>label</code> - The ROI will represent the area labeled with this label</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a region of interest</dd>
+</dl>
+</li>
+</ul>
+<a name="getIterableRegionOfInterest-java.lang.Comparable-">
+<!--   -->
+</a><a name="getIterableRegionOfInterest-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIterableRegionOfInterest</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/roi/IterableRegionOfInterest.html" title="interface in net.imglib2.roi">IterableRegionOfInterest</a>&nbsp;getIterableRegionOfInterest(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html#getIterableRegionOfInterest-T-">Labeling</a></code></span></div>
+<div class="block">Get a ROI that represents the pixels with the given label</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getIterableRegionOfInterest-T-">getIterableRegionOfInterest</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getExtents-java.lang.Comparable-long:A-long:A-">
+<!--   -->
+</a><a name="getExtents-T-long:A-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getExtents</h4>
+<pre>public&nbsp;boolean&nbsp;getExtents(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label,
+                          long[]&nbsp;minExtents,
+                          long[]&nbsp;maxExtents)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">find the coordinates of the bounding box around the given label. The the
+ minimum extents are inclusive (there will be pixels at the coordinates of
+ the minimum extents) and the maximum extents are exclusive(all pixels
+ will have coordinates less than the maximum extents)</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getExtents-T-long:A-long:A-">getExtents</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>label</code> - - find pixels with this label</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if some pixels are labeled, false if none have the label</dd>
+</dl>
+</li>
+</ul>
+<a name="getRasterStart-java.lang.Comparable-long:A-">
+<!--   -->
+</a><a name="getRasterStart-T-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRasterStart</h4>
+<pre>public&nbsp;boolean&nbsp;getRasterStart(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label,
+                              long[]&nbsp;start)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Find the first pixel in a raster scan of the object with the given label.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getRasterStart-T-long:A-">getRasterStart</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getArea-java.lang.Comparable-">
+<!--   -->
+</a><a name="getArea-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getArea</h4>
+<pre>public&nbsp;long&nbsp;getArea(<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&nbsp;label)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Return the area or suitable N-d analog of the labeled object</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getArea-T-">getArea</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>label</code> - - label for object in question</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>area in units of pixel / voxel / etc.</dd>
+</dl>
+</li>
+</ul>
+<a name="getLabels--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLabels</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&nbsp;getLabels()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Find all labels in the space</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/labeling/Labeling.html#getLabels--">getLabels</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/labeling/Labeling.html" title="interface in net.imglib2.labeling">Labeling</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../net/imglib2/labeling/AbstractLabeling.html" title="type parameter in AbstractLabeling">T</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a collection of the labels.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../net/imglib2/labeling/AbstractNativeLabeling.html" title="class in net.imglib2.labeling"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/labeling/AbstractLabeling.html" target="_top">Frames</a></li>
+<li><a href="AbstractLabeling.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

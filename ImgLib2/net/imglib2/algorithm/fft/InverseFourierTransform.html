@@ -1,0 +1,838 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>InverseFourierTransform (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="InverseFourierTransform (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42,"i13":42,"i14":42,"i15":42,"i16":42,"i17":42,"i18":42,"i19":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/fft/InverseFourierConvolution.html" title="class in net.imglib2.algorithm.fft"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/fft/LocalNeighborhoodCursor.html" title="class in net.imglib2.algorithm.fft"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/fft/InverseFourierTransform.html" target="_top">Frames</a></li>
+<li><a href="InverseFourierTransform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.fft</div>
+<h2 title="Class InverseFourierTransform" class="title">Class InverseFourierTransform&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,S extends <a href="../../../../net/imglib2/type/numeric/ComplexType.html" title="interface in net.imglib2.type.numeric">ComplexType</a>&lt;S&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.fft.InverseFourierTransform&lt;T,S&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - - the output, <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric"><code>RealType</code></a></dd>
+<dd><code>S</code> - - the input, <a href="../../../../net/imglib2/type/numeric/ComplexType.html" title="interface in net.imglib2.type.numeric"><code>ComplexType</code></a></dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a>, <a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a>, <a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a>, <a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;&gt;</dd>
+</dl>
+<hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">use <a href="../../../../net/imglib2/algorithm/fft2/FFT.html" title="class in net.imglib2.algorithm.fft2"><code>FFT</code></a> instead</span></div>
+</div>
+<br>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public class <span class="typeNameLabel">InverseFourierTransform&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,S extends <a href="../../../../net/imglib2/type/numeric/ComplexType.html" title="interface in net.imglib2.type.numeric">ComplexType</a>&lt;S&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a>, <a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;&gt;, <a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a></pre>
+<div class="block">Computes the inverse Fourier Transform of a given <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> or <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>. The inverse
+ transform is always performed in place as otherwise more constraints for the input are necessary (has to be copied).
+ 
+ If you do not want to compute it in place, make a copy before.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Stephan Preibisch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.img.Img-net.imglib2.algorithm.fft.FourierTransform-T-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;?,?&gt;&nbsp;forwardTransform,
+                       <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.img.Img-net.imglib2.algorithm.fft.FourierTransform-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>,?&gt;&nbsp;forwardTransform)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.img.Img-T-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.algorithm.fft.FourierTransform-T-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                       <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;?,?&gt;&nbsp;forwardTransform,
+                       <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, i.e.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.algorithm.fft.FourierTransform-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                       <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>,?&gt;&nbsp;forwardTransform)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT is computed in place, i.e.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-T-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                       <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, i.e.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-T-net.imglib2.algorithm.fft.FourierTransform.Rearrangement-boolean-boolean-int:A-int:A-">InverseFourierTransform</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                       <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                       <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type,
+                       <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a>&nbsp;rearrangement,
+                       boolean&nbsp;scale,
+                       boolean&nbsp;cropBack,
+                       int[]&nbsp;originalSize,
+                       int[]&nbsp;originalOffset)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#checkInput--">checkInput</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getAdditionalNormalization--">getAdditionalNormalization</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getCropBackToOriginalSize--">getCropBackToOriginalSize</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getDoScaling--">getDoScaling</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getErrorMessage--">getErrorMessage</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getNumThreads--">getNumThreads</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">The number of threads used by the algorithm</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getOriginalOffset--">getOriginalOffset</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getOriginalSize--">getOriginalSize</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getProcessingTime--">getProcessingTime</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getRearrangement--">getRearrangement</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#getResult--">getResult</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#process--">process</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setAdditionalNormalization-float-">setAdditionalNormalization</a></span>(float&nbsp;additionalNormalization)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setCropBackToOriginalSize-boolean-">setCropBackToOriginalSize</a></span>(boolean&nbsp;cropBack)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setDoScaling-boolean-">setDoScaling</a></span>(boolean&nbsp;scale)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setNumThreads--">setNumThreads</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Sets the number of threads to the amount of processors available</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setNumThreads-int-">setNumThreads</a></span>(int&nbsp;numThreads)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Sets the number of threads</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setOriginalOffset-int:A-">setOriginalOffset</a></span>(int[]&nbsp;originalOffset)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setOriginalSize-int:A-">setOriginalSize</a></span>(int[]&nbsp;originalSize)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html#setRearrangement-net.imglib2.algorithm.fft.FourierTransform.Rearrangement-">setRearrangement</a></span>(<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a>&nbsp;rearrangement)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.type.numeric.RealType-net.imglib2.algorithm.fft.FourierTransform.Rearrangement-boolean-boolean-int:A-int:A-">
+<!--   -->
+</a><a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-T-net.imglib2.algorithm.fft.FourierTransform.Rearrangement-boolean-boolean-int:A-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                               <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type,
+                               <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a>&nbsp;rearrangement,
+                               boolean&nbsp;scale,
+                               boolean&nbsp;cropBack,
+                               int[]&nbsp;originalSize,
+                               int[]&nbsp;originalOffset)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.algorithm.fft.FourierTransform-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                               <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>,?&gt;&nbsp;forwardTransform)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT is computed in place, i.e. the input is destroyed!</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>imgFactory</code> - - the <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for the output</dd>
+<dd><code>forwardTransform</code> - - the ForwardTransform (<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft"><code>FourierTransform</code></a>) which still has all parameters</dd>
+</dl>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.algorithm.fft.FourierTransform-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.algorithm.fft.FourierTransform-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                               <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;?,?&gt;&nbsp;forwardTransform,
+                               <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, i.e. the input is destroyed!</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>imgFactory</code> - - the <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for the output</dd>
+<dd><code>forwardTransform</code> - - the ForwardTransform (<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft"><code>FourierTransform</code></a>) which still has all parameters</dd>
+<dd><code>type</code> - - a Type instance for the output</dd>
+</dl>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="InverseFourierTransform-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;imgFactory,
+                               <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, i.e. the input is destroyed! All parameters need to be set using the set() methods of this class.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>imgFactory</code> - - the <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for the output</dd>
+<dd><code>type</code> - - a Type instance for the output</dd>
+</dl>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.img.Img-net.imglib2.algorithm.fft.FourierTransform-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>,?&gt;&nbsp;forwardTransform)
+                        throws <a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a></dd>
+<dd><code>forwardTransform</code> - - the ForwardTransform (<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft"><code>FourierTransform</code></a>) which still has all parameters</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.img.Img-net.imglib2.algorithm.fft.FourierTransform-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="InverseFourierTransform-net.imglib2.img.Img-net.imglib2.algorithm.fft.FourierTransform-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft">FourierTransform</a>&lt;?,?&gt;&nbsp;forwardTransform,
+                               <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)
+                        throws <a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a></dd>
+<dd><code>forwardTransform</code> - - the ForwardTransform (<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.html" title="class in net.imglib2.algorithm.fft"><code>FourierTransform</code></a>) which still has all parameters</dd>
+<dd><code>type</code> - - a Type instance for the output</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="InverseFourierTransform-net.imglib2.img.Img-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="InverseFourierTransform-net.imglib2.img.Img-T-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>InverseFourierTransform</h4>
+<pre>public&nbsp;InverseFourierTransform(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">S</a>&gt;&nbsp;fftImage,
+                               <a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&nbsp;type)
+                        throws <a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This inverse FFT can be only done in place, if desired. All parameters need to be set using the set() methods of this class.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fftImage</code> - - the input as <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a></dd>
+<dd><code>type</code> - - a Type instance for the output</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setRearrangement-net.imglib2.algorithm.fft.FourierTransform.Rearrangement-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRearrangement</h4>
+<pre>public&nbsp;void&nbsp;setRearrangement(<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a>&nbsp;rearrangement)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setDoScaling-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDoScaling</h4>
+<pre>public&nbsp;void&nbsp;setDoScaling(boolean&nbsp;scale)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setCropBackToOriginalSize-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCropBackToOriginalSize</h4>
+<pre>public&nbsp;void&nbsp;setCropBackToOriginalSize(boolean&nbsp;cropBack)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setOriginalSize-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOriginalSize</h4>
+<pre>public&nbsp;void&nbsp;setOriginalSize(int[]&nbsp;originalSize)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setOriginalOffset-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOriginalOffset</h4>
+<pre>public&nbsp;void&nbsp;setOriginalOffset(int[]&nbsp;originalOffset)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="setAdditionalNormalization-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAdditionalNormalization</h4>
+<pre>public&nbsp;void&nbsp;setAdditionalNormalization(float&nbsp;additionalNormalization)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getRearrangement--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRearrangement</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/algorithm/fft/FourierTransform.Rearrangement.html" title="enum in net.imglib2.algorithm.fft">FourierTransform.Rearrangement</a>&nbsp;getRearrangement()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getDoScaling--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDoScaling</h4>
+<pre>public&nbsp;boolean&nbsp;getDoScaling()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getCropBackToOriginalSize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCropBackToOriginalSize</h4>
+<pre>public&nbsp;boolean&nbsp;getCropBackToOriginalSize()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getOriginalSize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalSize</h4>
+<pre>public&nbsp;int[]&nbsp;getOriginalSize()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getOriginalOffset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalOffset</h4>
+<pre>public&nbsp;int[]&nbsp;getOriginalOffset()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="getAdditionalNormalization--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAdditionalNormalization</h4>
+<pre>public&nbsp;float&nbsp;getAdditionalNormalization()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#process--">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getProcessingTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProcessingTime</h4>
+<pre>public&nbsp;long&nbsp;getProcessingTime()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Benchmark.html#getProcessingTime--">getProcessingTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Benchmark.html" title="interface in net.imglib2.algorithm">Benchmark</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setNumThreads--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumThreads</h4>
+<pre>public&nbsp;void&nbsp;setNumThreads()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#setNumThreads--">MultiThreaded</a></code></span></div>
+<div class="block">Sets the number of threads to the amount of processors available</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#setNumThreads--">setNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setNumThreads-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumThreads</h4>
+<pre>public&nbsp;void&nbsp;setNumThreads(int&nbsp;numThreads)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#setNumThreads-int-">MultiThreaded</a></code></span></div>
+<div class="block">Sets the number of threads</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#setNumThreads-int-">setNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numThreads</code> - - number of threads to use</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumThreads--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumThreads</h4>
+<pre>public&nbsp;int&nbsp;getNumThreads()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#getNumThreads--">MultiThreaded</a></code></span></div>
+<div class="block">The number of threads used by the algorithm</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html#getNumThreads--">getNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/MultiThreaded.html" title="interface in net.imglib2.algorithm">MultiThreaded</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>- the number of threads</dd>
+</dl>
+</li>
+</ul>
+<a name="getResult--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResult</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&nbsp;getResult()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html#getResult--">getResult</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/OutputAlgorithm.html" title="interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a> extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imglib2/algorithm/fft/InverseFourierTransform.html" title="type parameter in InverseFourierTransform">T</a>&gt;&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#checkInput--">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getErrorMessage--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getErrorMessage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getErrorMessage()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/algorithm/Algorithm.html#getErrorMessage--">getErrorMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/algorithm/Algorithm.html" title="interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/fft/InverseFourierConvolution.html" title="class in net.imglib2.algorithm.fft"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/fft/LocalNeighborhoodCursor.html" title="class in net.imglib2.algorithm.fft"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/fft/InverseFourierTransform.html" target="_top">Frames</a></li>
+<li><a href="InverseFourierTransform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>
