@@ -1,0 +1,735 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CommandModule (SciJava Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="CommandModule (SciJava Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/command/CommandModuleItem.html" title="class in org.scijava.command"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/command/CommandModule.html" target="_top">Frames</a></li>
+<li><a href="CommandModule.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.command</div>
+<h2 title="Class CommandModule" class="title">Class CommandModule</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">org.scijava.module.AbstractModule</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.command.CommandModule</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../org/scijava/Cancelable.html" title="interface in org.scijava">Cancelable</a>, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">CommandModule</span>
+extends <a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a>
+implements <a href="../../../org/scijava/Cancelable.html" title="interface in org.scijava">Cancelable</a>, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></pre>
+<div class="block">Module adapter class for working with a <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a> instance.
+ <p>
+ The <a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module"><code>Module</code></a> interface describes an encapsulated piece of functionality
+ with inputs and outputs.
+ </p>
+ <p>
+ Conceptually, a command is such a piece of functionality. However, the
+ <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a> interface is intended to be as simple to implement as
+ possible; the only required method is <a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang"><code>Runnable.run()</code></a>, which is
+ inherited from <a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang"><code>Runnable</code></a>. The command's inputs and outputs are
+ indicated using @<a href="../../../org/scijava/plugin/Parameter.html" title="annotation in org.scijava.plugin"><code>Parameter</code></a> annotations.
+ </p>
+ <p>
+ To bridge the gap, this class adapts a <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a> instance into an
+ object that fully implements the <a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module"><code>Module</code></a> interface.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Curtis Rueden, Johannes Schindelin, Grant Harris</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command"><code>- An adapter class that bridges the gap between SciJava
+      commands and the rich {@link ModuleInfo} interface.</code></a>, 
+<a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module"><code>- The interface which provides many methods for interrogating an
+      encapsulated piece of functionality with inputs and outputs.</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#CommandModule-org.scijava.command.CommandInfo-">CommandModule</a></span>(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info)</code>
+<div class="block">Creates a command module for the given <a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#CommandModule-org.scijava.command.CommandInfo-org.scijava.command.Command-">CommandModule</a></span>(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+             <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&nbsp;command)</code>
+<div class="block">Creates a command module for the given <a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command"><code>CommandInfo</code></a>, around the
+ specified <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a> instance.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#cancel--">cancel</a></span>()</code>
+<div class="block">Cancels the command, undoing the effects of any <a href="../../../org/scijava/command/CommandModule.html#preview--"><code>preview()</code></a> calls.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#cancel-java.lang.String-">cancel</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;reason)</code>
+<div class="block">Cancels the operation execution, with the given reason for doing so.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#context--">context</a></span>()</code>
+<div class="block">Gets the application context to which the object belongs.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getCancelReason--">getCancelReason</a></span>()</code>
+<div class="block">Gets a message describing why the operation was canceled.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getCommand--">getCommand</a></span>()</code>
+<div class="block">Gets the command instance handled by this module.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getContext--">getContext</a></span>()</code>
+<div class="block">Gets the application context to which the object belongs, or null if
+ <a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-"><code>Contextual.setContext(Context)</code></a> has not yet been called on this object.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getDelegateObject--">getDelegateObject</a></span>()</code>
+<div class="block">Gets the object containing the module's actual implementation.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getInfo--">getInfo</a></span>()</code>
+<div class="block">Gets metadata about this module.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getInput-java.lang.String-">getInput</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Gets the value of the input with the given name.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#getOutput-java.lang.String-">getOutput</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Gets the value of the output with the given name.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#isCanceled--">isCanceled</a></span>()</code>
+<div class="block">Gets whether the operation has been canceled.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#preview--">preview</a></span>()</code>
+<div class="block">Computes a preview of the command's results.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#run--">run</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#setContext-org.scijava.Context-">setContext</a></span>(<a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a>&nbsp;context)</code>
+<div class="block">Sets the application context to which the object belongs.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#setInput-java.lang.String-java.lang.Object-">setInput</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+        <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<div class="block">Sets the value of the input with the given name.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#setOutput-java.lang.String-java.lang.Object-">setOutput</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+         <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<div class="block">Sets the value of the output with the given name.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/CommandModule.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.module.AbstractModule">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.module.<a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></h3>
+<code><a href="../../../org/scijava/module/AbstractModule.html#getInputs--">getInputs</a>, <a href="../../../org/scijava/module/AbstractModule.html#getOutputs--">getOutputs</a>, <a href="../../../org/scijava/module/AbstractModule.html#initialize--">initialize</a>, <a href="../../../org/scijava/module/AbstractModule.html#isInputResolved-java.lang.String-">isInputResolved</a>, <a href="../../../org/scijava/module/AbstractModule.html#isOutputResolved-java.lang.String-">isOutputResolved</a>, <a href="../../../org/scijava/module/AbstractModule.html#resolveInput-java.lang.String-">resolveInput</a>, <a href="../../../org/scijava/module/AbstractModule.html#resolveOutput-java.lang.String-">resolveOutput</a>, <a href="../../../org/scijava/module/AbstractModule.html#setInputs-java.util.Map-">setInputs</a>, <a href="../../../org/scijava/module/AbstractModule.html#setOutputs-java.util.Map-">setOutputs</a>, <a href="../../../org/scijava/module/AbstractModule.html#unresolveInput-java.lang.String-">unresolveInput</a>, <a href="../../../org/scijava/module/AbstractModule.html#unresolveOutput-java.lang.String-">unresolveOutput</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.module.Module">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.module.<a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></h3>
+<code><a href="../../../org/scijava/module/Module.html#isResolved-java.lang.String-">isResolved</a>, <a href="../../../org/scijava/module/Module.html#setResolved-java.lang.String-boolean-">setResolved</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CommandModule-org.scijava.command.CommandInfo-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CommandModule</h4>
+<pre>public&nbsp;CommandModule(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info)
+              throws <a href="../../../org/scijava/module/ModuleException.html" title="class in org.scijava.module">ModuleException</a></pre>
+<div class="block">Creates a command module for the given <a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a>.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/module/ModuleException.html" title="class in org.scijava.module">ModuleException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="CommandModule-org.scijava.command.CommandInfo-org.scijava.command.Command-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CommandModule</h4>
+<pre>public&nbsp;CommandModule(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+                     <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&nbsp;command)</pre>
+<div class="block">Creates a command module for the given <a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command"><code>CommandInfo</code></a>, around the
+ specified <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a> instance.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getCommand--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommand</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&nbsp;getCommand()</pre>
+<div class="block">Gets the command instance handled by this module.</div>
+</li>
+</ul>
+<a name="preview--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>preview</h4>
+<pre>public&nbsp;void&nbsp;preview()</pre>
+<div class="block">Computes a preview of the command's results. For this method to do
+ anything, the command must implement the <a href="../../../org/scijava/command/Previewable.html" title="interface in org.scijava.command"><code>Previewable</code></a> interface.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#preview--">preview</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#preview--">preview</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/module/ModuleInfo.html#canPreview--"><code>ModuleInfo.canPreview()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="cancel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cancel</h4>
+<pre>public&nbsp;void&nbsp;cancel()</pre>
+<div class="block">Cancels the command, undoing the effects of any <a href="../../../org/scijava/command/CommandModule.html#preview--"><code>preview()</code></a> calls.
+ For this method to do anything, the command must implement the
+ <a href="../../../org/scijava/command/Previewable.html" title="interface in org.scijava.command"><code>Previewable</code></a> interface.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#cancel--">cancel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#cancel--">cancel</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/module/ModuleInfo.html#canCancel--"><code>ModuleInfo.canCancel()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getInfo--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInfo</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;getInfo()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#getInfo--">Module</a></code></span></div>
+<div class="block">Gets metadata about this module.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#getInfo--">getInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getDelegateObject--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDelegateObject</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getDelegateObject()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#getDelegateObject--">Module</a></code></span></div>
+<div class="block">Gets the object containing the module's actual implementation. By
+ definition, this is an object whose fully qualified class name is given by
+ <code>getInfo().getDelegateClassName()</code>. This object must possess all
+ callback methods specified by <a href="../../../org/scijava/module/ModuleItem.html#getCallback--"><code>ModuleItem.getCallback()</code></a>.
+ <p>
+ The nature of this method is implementation-specific; e.g., a
+ <code>CommandModule</code> will return its associated <code>Command</code>. For
+ modules that are not plugins, the result may be something else. If you are
+ implementing this interface directly, a good rule of thumb is to return
+ <code>this</code>.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#getDelegateObject--">getDelegateObject</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#getDelegateObject--">getDelegateObject</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getInput-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInput</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getInput(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#getInput-java.lang.String-">Module</a></code></span></div>
+<div class="block">Gets the value of the input with the given name.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#getInput-java.lang.String-">getInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#getInput-java.lang.String-">getInput</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOutput-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutput</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getOutput(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#getOutput-java.lang.String-">Module</a></code></span></div>
+<div class="block">Gets the value of the output with the given name.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#getOutput-java.lang.String-">getOutput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#getOutput-java.lang.String-">getOutput</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setInput-java.lang.String-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInput</h4>
+<pre>public&nbsp;void&nbsp;setInput(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                     <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#setInput-java.lang.String-java.lang.Object-">Module</a></code></span></div>
+<div class="block">Sets the value of the input with the given name.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#setInput-java.lang.String-java.lang.Object-">setInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#setInput-java.lang.String-java.lang.Object-">setInput</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setOutput-java.lang.String-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutput</h4>
+<pre>public&nbsp;void&nbsp;setOutput(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                      <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/module/Module.html#setOutput-java.lang.String-java.lang.Object-">Module</a></code></span></div>
+<div class="block">Sets the value of the output with the given name.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/module/Module.html#setOutput-java.lang.String-java.lang.Object-">setOutput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/module/Module.html" title="interface in org.scijava.module">Module</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/module/AbstractModule.html#setOutput-java.lang.String-java.lang.Object-">setOutput</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="run--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isCanceled--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCanceled</h4>
+<pre>public&nbsp;boolean&nbsp;isCanceled()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Cancelable.html#isCanceled--">Cancelable</a></code></span></div>
+<div class="block">Gets whether the operation has been canceled.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Cancelable.html#isCanceled--">isCanceled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Cancelable.html" title="interface in org.scijava">Cancelable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cancel-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cancel</h4>
+<pre>public&nbsp;void&nbsp;cancel(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;reason)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Cancelable.html#cancel-java.lang.String-">Cancelable</a></code></span></div>
+<div class="block">Cancels the operation execution, with the given reason for doing so.
+ <p>
+ This method merely sets the operation status to canceled; it cannot
+ necessarily stop the operation itself. That is, it is the responsibility of
+ each individual operation to check <a href="../../../org/scijava/Cancelable.html#isCanceled--"><code>Cancelable.isCanceled()</code></a> in a timely manner
+ during execution, and stop doing whatever it is doing if the flag has been
+ tripped.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Cancelable.html#cancel-java.lang.String-">cancel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Cancelable.html" title="interface in org.scijava">Cancelable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reason</code> - A message describing why the operation is being canceled.</dd>
+</dl>
+</li>
+</ul>
+<a name="getCancelReason--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCancelReason</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCancelReason()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Cancelable.html#getCancelReason--">Cancelable</a></code></span></div>
+<div class="block">Gets a message describing why the operation was canceled.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Cancelable.html#getCancelReason--">getCancelReason</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Cancelable.html" title="interface in org.scijava">Cancelable</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The reason for cancelation, which may be null if no reason was
+         given, or if the operation was not in fact canceled.</dd>
+</dl>
+</li>
+</ul>
+<a name="context--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>context</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a>&nbsp;context()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Contextual.html#context--">Contextual</a></code></span></div>
+<div class="block">Gets the application context to which the object belongs.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Contextual.html#context--">context</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/Contextual.html#getContext--"><code>Contextual.getContext()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getContext--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContext</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a>&nbsp;getContext()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Contextual.html#getContext--">Contextual</a></code></span></div>
+<div class="block">Gets the application context to which the object belongs, or null if
+ <a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-"><code>Contextual.setContext(Context)</code></a> has not yet been called on this object.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Contextual.html#getContext--">getContext</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/Contextual.html#context--"><code>Contextual.context()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setContext-org.scijava.Context-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setContext</h4>
+<pre>public&nbsp;void&nbsp;setContext(<a href="../../../org/scijava/Context.html" title="class in org.scijava">Context</a>&nbsp;context)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-">Contextual</a></code></span></div>
+<div class="block">Sets the application context to which the object belongs.
+ <p>
+ Typically this method simply delegates to <a href="../../../org/scijava/Context.html#inject-java.lang.Object-"><code>Context.inject(Object)</code></a>,
+ and should be called only once to populate the context. Most contextual
+ objects do not support later alteration of the context, and will throw
+ <a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang"><code>IllegalStateException</code></a> if this method is invoked again.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-">setContext</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/Context.html#inject-java.lang.Object-"><code>Context.inject(Object)</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/command/CommandModuleItem.html" title="class in org.scijava.command"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/command/CommandModule.html" target="_top">Frames</a></li>
+<li><a href="CommandModule.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

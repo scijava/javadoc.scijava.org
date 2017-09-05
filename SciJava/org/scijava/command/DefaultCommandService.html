@@ -1,0 +1,944 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DefaultCommandService (SciJava Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultCommandService (SciJava Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/command/ContextCommand.html" title="class in org.scijava.command"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/command/DynamicCommand.html" title="class in org.scijava.command"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/command/DefaultCommandService.html" target="_top">Frames</a></li>
+<li><a href="DefaultCommandService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.command</div>
+<h2 title="Class DefaultCommandService" class="title">Class DefaultCommandService</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/AbstractContextual.html" title="class in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">org.scijava.service.AbstractService</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractPTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.command.DefaultCommandService</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a>, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;, <a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">DefaultCommandService</span>
+extends <a href="../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">AbstractPTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;
+implements <a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></pre>
+<div class="block">Default service for working with <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s. Available commands are
+ obtained from the plugin service. Loading of the actual command classes can
+ be deferred until a particular command's first execution.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Curtis Rueden</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#DefaultCommandService--">DefaultCommandService</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/event/EventService.html" title="interface in org.scijava.event">EventService</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#eventService--">eventService</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommand-java.lang.Class-">getCommand</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass)</code>
+<div class="block">Gets the first available command of the given class, or null if none.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommand-java.lang.String-">getCommand</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</code>
+<div class="block">Gets the first available command of the given class name, or null if none.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommands--">getCommands</a></span>()</code>
+<div class="block">Gets the list of all available <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s).</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>&lt;CT extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommands-java.util.List-">getCommands</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a>&lt;CT&gt;&gt;&nbsp;plugins)</code>
+<div class="block">Gets the list of <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s corresponding to the given plugins.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommandsOfClass-java.lang.Class-">getCommandsOfClass</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass)</code>
+<div class="block">Gets the list of commands of the given class.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommandsOfClass-java.lang.String-">getCommandsOfClass</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</code>
+<div class="block">Gets the list of commands with the given class name.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>&lt;CT extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getCommandsOfType-java.lang.Class-">getCommandsOfType</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;CT&gt;&nbsp;type)</code>
+<div class="block">Gets the list of <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s of the given type.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#getPluginType--">getPluginType</a></span>()</code>
+<div class="block">Gets the type of plugins managed by this service.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#initialize--">initialize</a></span>()</code>
+<div class="block">Performs any needed initialization when the service is first loaded.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/module/ModuleService.html" title="interface in org.scijava.module">ModuleService</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#moduleService--">moduleService</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#onEvent-org.scijava.plugin.event.PluginsAddedEvent-">onEvent</a></span>(<a href="../../../org/scijava/plugin/event/PluginsAddedEvent.html" title="class in org.scijava.plugin.event">PluginsAddedEvent</a>&nbsp;event)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#onEvent-org.scijava.plugin.event.PluginsRemovedEvent-">onEvent</a></span>(<a href="../../../org/scijava/plugin/event/PluginsRemovedEvent.html" title="class in org.scijava.plugin.event">PluginsRemovedEvent</a>&nbsp;event)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/plugin/PluginService.html" title="interface in org.scijava.plugin">PluginService</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#pluginService--">pluginService</a></span>()</code>
+<div class="block">Gets the service responsible for discovering and managing this service's
+ plugins.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-java.lang.Class-boolean-java.util.Map-">run</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</code>
+<div class="block">Executes the first command of the given class.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-java.lang.Class-boolean-java.lang.Object...-">run</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</code>
+<div class="block">Executes the first command of the given class.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-org.scijava.command.CommandInfo-boolean-java.util.Map-">run</a></span>(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</code>
+<div class="block">Executes the given command.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-org.scijava.command.CommandInfo-boolean-java.lang.Object...-">run</a></span>(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</code>
+<div class="block">Executes the given command.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-java.lang.String-boolean-java.util.Map-">run</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</code>
+<div class="block">Executes the first command of the given class name.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/command/DefaultCommandService.html#run-java.lang.String-boolean-java.lang.Object...-">run</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+   boolean&nbsp;process,
+   <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</code>
+<div class="block">Executes the first command of the given class name.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.AbstractService">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.service.<a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">AbstractService</a></h3>
+<code><a href="../../../org/scijava/service/AbstractService.html#getContext--">getContext</a>, <a href="../../../org/scijava/service/AbstractService.html#setContext-org.scijava.Context-">setContext</a>, <a href="../../../org/scijava/service/AbstractService.html#toString--">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="../../../org/scijava/plugin/AbstractRichPlugin.html#getInfo--">getInfo</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#getPriority--">getPriority</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#setInfo-org.scijava.plugin.PluginInfo-">setInfo</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#setPriority-double-">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="../../../org/scijava/AbstractContextual.html" title="class in org.scijava">AbstractContextual</a></h3>
+<code><a href="../../../org/scijava/AbstractContextual.html#context--">context</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.command.CommandService">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.command.<a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></h3>
+<code><a href="../../../org/scijava/command/CommandService.html#getEventService--">getEventService</a>, <a href="../../../org/scijava/command/CommandService.html#getModuleService--">getModuleService</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.PTService">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a></h3>
+<code><a href="../../../org/scijava/plugin/PTService.html#create-java.lang.Class-">create</a>, <a href="../../../org/scijava/plugin/PTService.html#getPlugins--">getPlugins</a>, <a href="../../../org/scijava/plugin/PTService.html#getPluginService--">getPluginService</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></h3>
+<code><a href="../../../org/scijava/service/Service.html#registerEventHandlers--">registerEventHandlers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="../../../org/scijava/plugin/RichPlugin.html#getIdentifier--">getIdentifier</a>, <a href="../../../org/scijava/plugin/RichPlugin.html#log--">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></h3>
+<code><a href="../../../org/scijava/Contextual.html#context--">context</a>, <a href="../../../org/scijava/Contextual.html#getContext--">getContext</a>, <a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a></h3>
+<code><a href="../../../org/scijava/Prioritized.html#compareTo-org.scijava.Prioritized-">compareTo</a>, <a href="../../../org/scijava/Prioritized.html#getPriority--">getPriority</a>, <a href="../../../org/scijava/Prioritized.html#setPriority-double-">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="../../../org/scijava/plugin/HasPluginInfo.html#getInfo--">getInfo</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html#setInfo-org.scijava.plugin.PluginInfo-">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a></h3>
+<code><a href="../../../org/scijava/Locatable.html#getLocation--">getLocation</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></h3>
+<code><a href="../../../org/scijava/Versioned.html#getVersion--">getVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Disposable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></h3>
+<code><a href="../../../org/scijava/Disposable.html#dispose--">dispose</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DefaultCommandService--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DefaultCommandService</h4>
+<pre>public&nbsp;DefaultCommandService()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="eventService--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eventService</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/event/EventService.html" title="interface in org.scijava.event">EventService</a>&nbsp;eventService()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#eventService--">eventService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="pluginService--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pluginService</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/plugin/PluginService.html" title="interface in org.scijava.plugin">PluginService</a>&nbsp;pluginService()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/plugin/PTService.html#pluginService--">PTService</a></code></span></div>
+<div class="block">Gets the service responsible for discovering and managing this service's
+ plugins.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/plugin/PTService.html#pluginService--">pluginService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/plugin/AbstractPTService.html#pluginService--">pluginService</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">AbstractPTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="moduleService--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moduleService</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/module/ModuleService.html" title="interface in org.scijava.module">ModuleService</a>&nbsp;moduleService()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#moduleService--">moduleService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommands--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommands</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;&nbsp;getCommands()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommands--">CommandService</a></code></span></div>
+<div class="block">Gets the list of all available <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommands--">getCommands</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommands-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommands</h4>
+<pre>public&nbsp;&lt;CT extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;&nbsp;getCommands(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a>&lt;CT&gt;&gt;&nbsp;plugins)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommands-java.util.List-">CommandService</a></code></span></div>
+<div class="block">Gets the list of <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s corresponding to the given plugins.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommands-java.util.List-">getCommands</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommandsOfType-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommandsOfType</h4>
+<pre>public&nbsp;&lt;CT extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;&nbsp;getCommandsOfType(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;CT&gt;&nbsp;type)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfType-java.lang.Class-">CommandService</a></code></span></div>
+<div class="block">Gets the list of <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>s of the given type.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfType-java.lang.Class-">getCommandsOfType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommand-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommand</h4>
+<pre>public&nbsp;&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;getCommand(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommand-java.lang.Class-">CommandService</a></code></span></div>
+<div class="block">Gets the first available command of the given class, or null if none.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommand-java.lang.Class-">getCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommand-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommand</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;getCommand(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommand-java.lang.String-">CommandService</a></code></span></div>
+<div class="block">Gets the first available command of the given class name, or null if none.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommand-java.lang.String-">getCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommandsOfClass-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommandsOfClass</h4>
+<pre>public&nbsp;&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;&nbsp;getCommandsOfClass(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfClass-java.lang.Class-">CommandService</a></code></span></div>
+<div class="block">Gets the list of commands of the given class.
+ <p>
+ Most classes will have only a single match, but some special classes (such
+ as ImageJ's <code>LegacyCommand</code>) may match many entries.
+ </p>
+ <p>
+ NB: Classes are matched by strict equality, not assignability; subtypes of
+ the specified class will not match. For this behavior, use
+ <a href="../../../org/scijava/command/CommandService.html#getCommandsOfType-java.lang.Class-"><code>CommandService.getCommandsOfType(Class)</code></a> on a common parent interface.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfClass-java.lang.Class-">getCommandsOfClass</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCommandsOfClass-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommandsOfClass</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&gt;&nbsp;getCommandsOfClass(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfClass-java.lang.String-">CommandService</a></code></span></div>
+<div class="block">Gets the list of commands with the given class name.
+ <p>
+ Most classes will have only a single match, but some special classes (such
+ as ImageJ's <code>LegacyCommand</code>) may match many entries.
+ </p>
+ <p>
+ NB: Classes are matched by strict equality, not assignability; subtypes of
+ the specified class will not match. For this behavior, use
+ <a href="../../../org/scijava/command/CommandService.html#getCommandsOfType-java.lang.Class-"><code>CommandService.getCommandsOfType(Class)</code></a> on a common parent interface.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#getCommandsOfClass-java.lang.String-">getCommandsOfClass</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="run-java.lang.String-boolean-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                                 boolean&nbsp;process,
+                                 <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.String-boolean-java.lang.Object...-">CommandService</a></code></span></div>
+<div class="block">Executes the first command of the given class name.
+ <p>
+ If no command with the given class name is registered with the service,
+ then a default one is created and then executed. This default command is
+ <em>not</em> registered with the service for subsequent usage.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.String-boolean-java.lang.Object...-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>className</code> - Class name of the command to execute.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputs</code> - List of input parameter names and values. The expected order
+          is in pairs: an input name followed by its value, for each desired
+          input to populate. Leaving some inputs unpopulated is allowed.
+          Passing the name of an input that is not valid for the plugin, or
+          passing a value of a type incompatible with the associated input
+          parameter, will issue an error and ignore that name/value pair.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="run-java.lang.String-boolean-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                                 boolean&nbsp;process,
+                                 <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.String-boolean-java.util.Map-">CommandService</a></code></span></div>
+<div class="block">Executes the first command of the given class name.
+ <p>
+ If no command with the given class name is registered with the service,
+ then a default one is created and then executed. This default command is
+ <em>not</em> registered with the service for subsequent usage.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.String-boolean-java.util.Map-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>className</code> - Class name of the command to execute.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputMap</code> - Table of input parameter values, with keys matching the
+          plugin's input parameter names. Passing a value of a type
+          incompatible with the associated input parameter will issue an
+          error and ignore that value.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="run-java.lang.Class-boolean-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass,
+                                                     boolean&nbsp;process,
+                                                     <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.Class-boolean-java.lang.Object...-">CommandService</a></code></span></div>
+<div class="block">Executes the first command of the given class.
+ <p>
+ If no command of the given class is registered with the service, then a
+ default one is created and then executed. This default command is
+ <em>not</em> registered with the service for subsequent usage.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.Class-boolean-java.lang.Object...-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>C</code> - Class of the command to execute.</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>commandClass</code> - Class object of the command to execute.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputs</code> - List of input parameter names and values. The expected order
+          is in pairs: an input name followed by its value, for each desired
+          input to populate. Leaving some inputs unpopulated is allowed.
+          Passing the name of an input that is not valid for the plugin, or
+          passing a value of a type incompatible with the associated input
+          parameter, will issue an error and ignore that name/value pair.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="run-java.lang.Class-boolean-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;&lt;C extends <a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;C&gt;&nbsp;commandClass,
+                                                     boolean&nbsp;process,
+                                                     <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.Class-boolean-java.util.Map-">CommandService</a></code></span></div>
+<div class="block">Executes the first command of the given class.
+ <p>
+ If no command of the given class is registered with the service, then a
+ default one is created and then executed. This default command is
+ <em>not</em> registered with the service for subsequent usage.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-java.lang.Class-boolean-java.util.Map-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>C</code> - Class of the command to execute.</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>commandClass</code> - Class object of the command to execute.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputMap</code> - Table of input parameter values, with keys matching the
+          plugin's input parameter names. Passing a value of a type
+          incompatible with the associated input parameter will issue an
+          error and ignore that value.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="run-org.scijava.command.CommandInfo-boolean-java.lang.Object...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+                                 boolean&nbsp;process,
+                                 <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>...&nbsp;inputs)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-org.scijava.command.CommandInfo-boolean-java.lang.Object...-">CommandService</a></code></span></div>
+<div class="block">Executes the given command.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-org.scijava.command.CommandInfo-boolean-java.lang.Object...-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>info</code> - The command to instantiate and run.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputs</code> - List of input parameter names and values. The expected order
+          is in pairs: an input name followed by its value, for each desired
+          input to populate. Leaving some inputs unpopulated is allowed.
+          Passing the name of an input that is not valid for the plugin, or
+          passing a value of a type incompatible with the associated input
+          parameter, will issue an error and ignore that name/value pair.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="run-org.scijava.command.CommandInfo-boolean-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent">Future</a>&lt;<a href="../../../org/scijava/command/CommandModule.html" title="class in org.scijava.command">CommandModule</a>&gt;&nbsp;run(<a href="../../../org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a>&nbsp;info,
+                                 boolean&nbsp;process,
+                                 <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;inputMap)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/command/CommandService.html#run-org.scijava.command.CommandInfo-boolean-java.util.Map-">CommandService</a></code></span></div>
+<div class="block">Executes the given command.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/command/CommandService.html#run-org.scijava.command.CommandInfo-boolean-java.util.Map-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/command/CommandService.html" title="interface in org.scijava.command">CommandService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>info</code> - The command to instantiate and run.</dd>
+<dd><code>process</code> - If true, executes the command with pre- and postprocessing
+          steps from all available <a href="../../../org/scijava/module/process/PreprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PreprocessorPlugin</code></a>s and
+          <a href="../../../org/scijava/module/process/PostprocessorPlugin.html" title="interface in org.scijava.module.process"><code>PostprocessorPlugin</code></a>s in the plugin index; if false,
+          executes the command with no pre- or postprocessing. For more
+          fine-grained control, see the <a href="../../../org/scijava/module/ModuleService.html#run-org.scijava.module.ModuleInfo-boolean-java.lang.Object...-"><code>ModuleService.run(org.scijava.module.ModuleInfo, boolean, java.lang.Object...)</code></a> methods.</dd>
+<dd><code>inputMap</code> - Table of input parameter values, with keys matching the
+          plugin's input parameter names. Passing a value of a type
+          incompatible with the associated input parameter will issue an
+          error and ignore that value.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true" title="class or interface in java.util.concurrent"><code>Future</code></a> of the module instance being executed. Calling
+         <a href="http://javadoc.imagej.net/Java/java/util/concurrent/Future.html?is-external=true#get--" title="class or interface in java.util.concurrent"><code>Future.get()</code></a> will block until execution is complete.</dd>
+</dl>
+</li>
+</ul>
+<a name="getPluginType--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPluginType</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;&nbsp;getPluginType()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/plugin/PTService.html#getPluginType--">PTService</a></code></span></div>
+<div class="block">Gets the type of plugins managed by this service.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/plugin/PTService.html#getPluginType--">getPluginType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../org/scijava/command/Command.html" title="interface in org.scijava.command">Command</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="initialize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialize</h4>
+<pre>public&nbsp;void&nbsp;initialize()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/service/Service.html#initialize--">Service</a></code></span></div>
+<div class="block">Performs any needed initialization when the service is first loaded.
+ <p>
+ NB: This method is not intended to be called directly. It is called by
+ the service framework itself (specifically by the <a href="../../../org/scijava/service/ServiceHelper.html" title="class in org.scijava.service"><code>ServiceHelper</code></a>)
+ when initializing the service. It should not be called a second time.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/Initializable.html#initialize--">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/service/Service.html#initialize--">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="onEvent-org.scijava.plugin.event.PluginsRemovedEvent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onEvent</h4>
+<pre>protected&nbsp;void&nbsp;onEvent(<a href="../../../org/scijava/plugin/event/PluginsRemovedEvent.html" title="class in org.scijava.plugin.event">PluginsRemovedEvent</a>&nbsp;event)</pre>
+</li>
+</ul>
+<a name="onEvent-org.scijava.plugin.event.PluginsAddedEvent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>onEvent</h4>
+<pre>protected&nbsp;void&nbsp;onEvent(<a href="../../../org/scijava/plugin/event/PluginsAddedEvent.html" title="class in org.scijava.plugin.event">PluginsAddedEvent</a>&nbsp;event)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/command/ContextCommand.html" title="class in org.scijava.command"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/command/DynamicCommand.html" title="class in org.scijava.command"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/command/DefaultCommandService.html" target="_top">Frames</a></li>
+<li><a href="DefaultCommandService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>
