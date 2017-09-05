@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Plane (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Plane (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/Parser.html" title="interface in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/Reader.html" title="interface in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/Plane.html" target="_top">Frames</a></li>
+<li><a href="Plane.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">io.scif</div>
+<h2 title="Interface Plane" class="title">Interface Plane</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></dd>
+</dl>
+<dl>
+<dt>All Known Subinterfaces:</dt>
+<dd><a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;T&gt;</dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../io/scif/AbstractPlane.html" title="class in io.scif">AbstractPlane</a>, <a href="../../io/scif/BufferedImagePlane.html" title="class in io.scif">BufferedImagePlane</a>, <a href="../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">Plane</span>
+extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></pre>
+<div class="block">Top-level interface for all Plane representations in SCIFIO.
+ <p>
+ Planes are X,Y slices of pixel data from a parent image, and potentially
+ include a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display"><code>ColorTable</code></a> if that parent uses indexed
+ color.
+ </p>
+ <p>
+ This interface guarantees that a Plane will have a ColorTable, and the pixel
+ data of a Plane can ultimately be converted to a byte[].</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Mark Hiner</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display"><code>ColorTable</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getBytes--">getBytes</a></span>()</code>
+<div class="block">Gets this plane's standardized pixel data.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getColorTable--">getColorTable</a></span>()</code>
+<div class="block">Gets this plane's ColorTable.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getImageMetadata--">getImageMetadata</a></span>()</code>
+<div class="block">Gets the <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> associated with this plane.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getLengths--">getLengths</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getOffsets--">getOffsets</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-long:A-long:A-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+        long[]&nbsp;planeOffsets,
+        long[]&nbsp;planeBounds)</code>
+<div class="block">Populates this planes offsets, dimensions and Metadata.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#populate-io.scif.Plane-">populate</a></span>(<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;p)</code>
+<div class="block">Populates this plane by copying the fields of the provided plane</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setColorTable-net.imglib2.display.ColorTable-">setColorTable</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a>&nbsp;lut)</code>
+<div class="block">Sets the ColorTable for this plane.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setImageMetadata-io.scif.ImageMetadata-">setImageMetadata</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta)</code>
+<div class="block">Sets the ImageMetadata representation of the underlying image.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setLengths-long:A-">setLengths</a></span>(long[]&nbsp;lengths)</code>
+<div class="block">Sets this plane's axis lengths</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setOffsets-long:A-">setOffsets</a></span>(long[]&nbsp;offsets)</code>
+<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setColorTable-net.imglib2.display.ColorTable-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setColorTable</h4>
+<pre>void&nbsp;setColorTable(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a>&nbsp;lut)</pre>
+<div class="block">Sets the ColorTable for this plane. ColorTables are used for indexed color
+ planes, where the underlying pixel data is an index into the associated
+ color (lookup) table.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lut</code> - - a ColorTable implementation.</dd>
+</dl>
+</li>
+</ul>
+<a name="getColorTable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getColorTable</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a>&nbsp;getColorTable()</pre>
+<div class="block">Gets this plane's ColorTable.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A reference to the ColorTable instance associated with this plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="getBytes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>byte[]&nbsp;getBytes()</pre>
+<div class="block">Gets this plane's standardized pixel data. This byte[] is guaranteed to be
+ consistent across multiple calls to this method, for a given native data
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The standardized representation of this plane's data.</dd>
+</dl>
+</li>
+</ul>
+<a name="getImageMetadata--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImageMetadata</h4>
+<pre><a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;getImageMetadata()</pre>
+<div class="block">Gets the <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> associated with this plane. The
+ ImageMetadata returned by this method can then be used to answer questions
+ about this plane.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>An ImageMetadata instance describing the image associated with this
+         plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="getOffsets--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOffsets</h4>
+<pre>long[]&nbsp;getOffsets()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The offsets of this Plane relative to the origin image</dd>
+</dl>
+</li>
+</ul>
+<a name="getLengths--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLengths</h4>
+<pre>long[]&nbsp;getLengths()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The lengths of each axis of this plane</dd>
+</dl>
+</li>
+</ul>
+<a name="populate-io.scif.ImageMetadata-long:A-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>populate</h4>
+<pre><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;populate(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+               long[]&nbsp;planeOffsets,
+               long[]&nbsp;planeBounds)</pre>
+<div class="block">Populates this planes offsets, dimensions and Metadata.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>meta</code> - - ImageMetadata to associate with this Plane</dd>
+<dd><code>planeOffsets</code> - minimal offsets of the planar axes</dd>
+<dd><code>planeBounds</code> - maximum values of the planar axes</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A reference to this Plane</dd>
+</dl>
+</li>
+</ul>
+<a name="populate-io.scif.Plane-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>populate</h4>
+<pre><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;populate(<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;p)</pre>
+<div class="block">Populates this plane by copying the fields of the provided plane</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>p</code> - - A Plane to copy</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A reference to this Plane</dd>
+</dl>
+</li>
+</ul>
+<a name="setImageMetadata-io.scif.ImageMetadata-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImageMetadata</h4>
+<pre>void&nbsp;setImageMetadata(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta)</pre>
+<div class="block">Sets the ImageMetadata representation of the underlying image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>meta</code> - - an initialized ImageMetadata instance.</dd>
+</dl>
+</li>
+</ul>
+<a name="setOffsets-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOffsets</h4>
+<pre>void&nbsp;setOffsets(long[]&nbsp;offsets)</pre>
+<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
+</li>
+</ul>
+<a name="setLengths-long:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setLengths</h4>
+<pre>void&nbsp;setLengths(long[]&nbsp;lengths)</pre>
+<div class="block">Sets this plane's axis lengths</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/Parser.html" title="interface in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/Reader.html" title="interface in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/Plane.html" target="_top">Frames</a></li>
+<li><a href="Plane.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+</body>
+</html>

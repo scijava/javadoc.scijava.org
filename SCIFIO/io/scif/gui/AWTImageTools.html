@@ -1,0 +1,2104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AWTImageTools (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AWTImageTools (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":9,"i52":9,"i53":9,"i54":9,"i55":9,"i56":9,"i57":9,"i58":9,"i59":9,"i60":9,"i61":9,"i62":9,"i63":9,"i64":9,"i65":9,"i66":9,"i67":9,"i68":9,"i69":9,"i70":9,"i71":9,"i72":9,"i73":9,"i74":9,"i75":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../io/scif/gui/BufferedImageReader.html" title="class in io.scif.gui"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?io/scif/gui/AWTImageTools.html" target="_top">Frames</a></li>
+<li><a href="AWTImageTools.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">io.scif.gui</div>
+<h2 title="Class AWTImageTools" class="title">Class AWTImageTools</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>io.scif.gui.AWTImageTools</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public final class <span class="typeNameLabel">AWTImageTools</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A utility class with convenience methods for manipulating images in
+ <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> form. To work with images in primitive
+ array form, use the <a href="../../../io/scif/util/ImageTools.html" title="class in io.scif.util"><code>ImageTools</code></a> class. Much code was
+ stolen and adapted from <a
+ href="http://forum.java.sun.com/thread.jspa?threadID=522483"> DrLaszloJamf's
+ posts</a> on the Java forums.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Curtis Rueden</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#autoscale-java.awt.image.BufferedImage-">autoscale</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img)</code>
+<div class="block">Perform autoscaling on the given BufferedImage.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#autoscale-java.awt.image.BufferedImage-int-int-">autoscale</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+         int&nbsp;min,
+         int&nbsp;max)</code>
+<div class="block">Perform autoscaling on the given BufferedImage; map min to 0 and max to
+ 255.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#blankImage-io.scif.ImageMetadata-long:A-int-">blankImage</a></span>(<a href="../../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+          long[]&nbsp;axes,
+          int&nbsp;type)</code>
+<div class="block">Creates a blank image with the given dimensions and transfer type.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#constructImage-int-int-int-int-boolean-boolean-java.awt.image.DataBuffer-">constructImage</a></span>(int&nbsp;c,
+              int&nbsp;type,
+              int&nbsp;w,
+              int&nbsp;h,
+              boolean&nbsp;interleaved,
+              boolean&nbsp;banded,
+              <a href="http://javadoc.imagej.net/Java/java/awt/image/DataBuffer.html?is-external=true" title="class or interface in java.awt.image">DataBuffer</a>&nbsp;buffer)</code>
+<div class="block">Creates an image with the given DataBuffer.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#constructImage-int-int-int-int-boolean-boolean-java.awt.image.DataBuffer-java.awt.image.ColorModel-">constructImage</a></span>(int&nbsp;c,
+              int&nbsp;type,
+              int&nbsp;w,
+              int&nbsp;h,
+              boolean&nbsp;interleaved,
+              boolean&nbsp;banded,
+              <a href="http://javadoc.imagej.net/Java/java/awt/image/DataBuffer.html?is-external=true" title="class or interface in java.awt.image">DataBuffer</a>&nbsp;buffer,
+              <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;colorModel)</code>
+<div class="block">Creates an image with the given DataBuffer.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#convertRenderedImage-java.awt.image.RenderedImage-">convertRenderedImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/RenderedImage.html?is-external=true" title="class or interface in java.awt.image">RenderedImage</a>&nbsp;img)</code>
+<div class="block">Converts a java.awt.image.RenderedImage into a
+ java.awt.image.BufferedImage.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#copyScaled-java.awt.image.BufferedImage-java.awt.image.BufferedImage-java.lang.Object-">copyScaled</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+          <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;target,
+          <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint)</code>
+<div class="block">Copies the source image into the target, applying scaling.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#get8BitLookupTable-java.awt.image.ColorModel-">get8BitLookupTable</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;model)</code>
+<div class="block">Converts an IndexColorModel to a 2D byte array.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getBytes-java.awt.image.BufferedImage-">getBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getBytes-java.awt.image.BufferedImage-boolean-">getBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+        boolean&nbsp;separated)</code>
+<div class="block">Get the bytes from an image, merging the channels as necessary.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getBytes-java.awt.image.WritableRaster-">getBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</code>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getBytes-java.awt.image.WritableRaster-int-int-int-int-">getBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+        int&nbsp;x,
+        int&nbsp;y,
+        int&nbsp;w,
+        int&nbsp;h)</code>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getDefaultConfiguration--">getDefaultConfiguration</a></span>()</code>
+<div class="block">Gets the default graphics configuration for the environment.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>static double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getDoubles-java.awt.image.BufferedImage-">getDoubles</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>static double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getDoubles-java.awt.image.WritableRaster-">getDoubles</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</code>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>static double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getDoubles-java.awt.image.WritableRaster-int-int-int-int-">getDoubles</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+          int&nbsp;x,
+          int&nbsp;y,
+          int&nbsp;w,
+          int&nbsp;h)</code>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>static float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getFloats-java.awt.image.BufferedImage-">getFloats</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>static float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getFloats-java.awt.image.WritableRaster-">getFloats</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</code>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>static float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getFloats-java.awt.image.WritableRaster-int-int-int-int-">getFloats</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>static int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getInts-java.awt.image.BufferedImage-">getInts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>static int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getInts-java.awt.image.WritableRaster-">getInts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</code>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>static int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getInts-java.awt.image.WritableRaster-int-int-int-int-">getInts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+       int&nbsp;x,
+       int&nbsp;y,
+       int&nbsp;w,
+       int&nbsp;h)</code>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>static short[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getLookupTable-java.awt.image.ColorModel-">getLookupTable</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;model)</code>
+<div class="block">Convers an Index16ColorModel to a 2D short array.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixelBytes-java.awt.image.BufferedImage-boolean-">getPixelBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+             boolean&nbsp;little)</code>
+<div class="block">Return a 2D array of bytes representing the image.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixelBytes-java.awt.image.BufferedImage-boolean-int-int-int-int-">getPixelBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+             boolean&nbsp;little,
+             int&nbsp;x,
+             int&nbsp;y,
+             int&nbsp;w,
+             int&nbsp;h)</code>
+<div class="block">Return a 2D array of bytes representing the image.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixelBytes-java.awt.image.WritableRaster-boolean-">getPixelBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+             boolean&nbsp;little)</code>
+<div class="block">Return a 2D array of bytes representing the image.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>static byte[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixelBytes-java.awt.image.WritableRaster-boolean-int-int-int-int-">getPixelBytes</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+             boolean&nbsp;little,
+             int&nbsp;x,
+             int&nbsp;y,
+             int&nbsp;w,
+             int&nbsp;h)</code>
+<div class="block">Return a 2D array of bytes representing the image.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixels-java.awt.image.BufferedImage-">getPixels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Gets the image's pixel data as arrays of primitives, one per channel.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixels-java.awt.image.BufferedImage-int-int-int-int-">getPixels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Gets the image's pixel data as arrays of primitives, one per channel.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixels-java.awt.image.WritableRaster-">getPixels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;raster)</code>
+<div class="block">Gets the raster's pixel data as arrays of primitives, one per channel.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixels-java.awt.image.WritableRaster-int-int-int-int-">getPixels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;raster,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Gets the raster's pixel data as arrays of primitives, one per channel.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getPixelType-java.awt.image.BufferedImage-">getPixelType</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Gets the pixel type of the given image.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>static short[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getShorts-java.awt.image.BufferedImage-">getShorts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>static short[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getShorts-java.awt.image.WritableRaster-">getShorts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</code>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>static short[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getShorts-java.awt.image.WritableRaster-int-int-int-int-">getShorts</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getSize-java.awt.Image-">getSize</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</code>
+<div class="block">Gets the width and height of the given AWT image, waiting for it to finish
+ loading if necessary.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getSubimage-java.awt.image.BufferedImage-boolean-int-int-int-int-">getSubimage</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+           boolean&nbsp;littleEndian,
+           int&nbsp;x,
+           int&nbsp;y,
+           int&nbsp;w,
+           int&nbsp;h)</code>
+<div class="block">Returns a subimage of the specified image.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#getSubimage-java.awt.image.BufferedImage-boolean-long:A-long:A-">getSubimage</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+           boolean&nbsp;littleEndian,
+           long[]&nbsp;planeMin,
+           long[]&nbsp;planeMax)</code>
+<div class="block">Returns a subimage of the specified image.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#indexedToRGB-java.awt.image.BufferedImage-boolean-">indexedToRGB</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+            boolean&nbsp;le)</code>
+<div class="block">Converts an indexed color BufferedImage to an RGB BufferedImage.</div>
+</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#loadImage-java.awt.Image-">loadImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</code>
+<div class="block">Ensures the given AWT image is fully loaded.</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeBuffered-java.awt.Image-">makeBuffered</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</code>
+<div class="block">Creates a buffered image from the given AWT image object.</div>
+</td>
+</tr>
+<tr id="i41" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeBuffered-java.awt.Image-java.awt.image.ColorModel-">makeBuffered</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image,
+            <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;cm)</code>
+<div class="block">Creates a buffered image possessing the given color model, from the
+ specified AWT image object.</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeColorModel-int-int-">makeColorModel</a></span>(int&nbsp;c,
+              int&nbsp;dataType)</code>
+<div class="block">Gets a color model for the given number of color components.</div>
+</td>
+</tr>
+<tr id="i43" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/color/ColorSpace.html?is-external=true" title="class or interface in java.awt.color">ColorSpace</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeColorSpace-int-">makeColorSpace</a></span>(int&nbsp;c)</code>
+<div class="block">Gets a color space for the given number of color components.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeCompatible-java.awt.image.BufferedImage-java.awt.GraphicsConfiguration-">makeCompatible</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+              <a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a>&nbsp;gc)</code>
+<div class="block">Creates a buffered image compatible with the given graphics configuration,
+ using the given buffered image as a source.</div>
+</td>
+</tr>
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-byte:A:A-int-int-boolean-">makeImage</a></span>(byte[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given byte data.</div>
+</td>
+</tr>
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-byte:A:A-int-int-int-boolean-boolean-boolean-">makeImage</a></span>(byte[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;bpp,
+         boolean&nbsp;fp,
+         boolean&nbsp;little,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given raw byte array, performing any necessary
+ type conversions.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-byte:A-int-int-boolean-">makeImage</a></span>(byte[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given single-channel byte data.</div>
+</td>
+</tr>
+<tr id="i48" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-byte:A-int-int-int-boolean-boolean-">makeImage</a></span>(byte[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given byte data.</div>
+</td>
+</tr>
+<tr id="i49" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-byte:A-int-int-int-boolean-int-boolean-boolean-boolean-">makeImage</a></span>(byte[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved,
+         int&nbsp;bpp,
+         boolean&nbsp;fp,
+         boolean&nbsp;little,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given raw byte array, performing any necessary
+ type conversions.</div>
+</td>
+</tr>
+<tr id="i50" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-double:A:A-int-int-">makeImage</a></span>(double[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Creates an image from the given double-precision floating point data.</div>
+</td>
+</tr>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-double:A-int-int-">makeImage</a></span>(double[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Creates an image from the given single-channel double data.</div>
+</td>
+</tr>
+<tr id="i52" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-double:A-int-int-int-boolean-">makeImage</a></span>(double[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved)</code>
+<div class="block">Creates an image from the given double data.</div>
+</td>
+</tr>
+<tr id="i53" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-float:A:A-int-int-">makeImage</a></span>(float[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Creates an image from the given single-precision floating point data.</div>
+</td>
+</tr>
+<tr id="i54" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-float:A-int-int-">makeImage</a></span>(float[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h)</code>
+<div class="block">Creates an image from the given single-channel float data.</div>
+</td>
+</tr>
+<tr id="i55" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-float:A-int-int-int-boolean-">makeImage</a></span>(float[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved)</code>
+<div class="block">Creates an image from the given float data.</div>
+</td>
+</tr>
+<tr id="i56" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-int:A:A-int-int-boolean-">makeImage</a></span>(int[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given int data.</div>
+</td>
+</tr>
+<tr id="i57" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-int:A-int-int-boolean-">makeImage</a></span>(int[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given single-channel int data.</div>
+</td>
+</tr>
+<tr id="i58" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-int:A-int-int-int-boolean-boolean-">makeImage</a></span>(int[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given int data.</div>
+</td>
+</tr>
+<tr id="i59" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-short:A:A-int-int-boolean-">makeImage</a></span>(short[][]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given short data.</div>
+</td>
+</tr>
+<tr id="i60" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-short:A-int-int-boolean-">makeImage</a></span>(short[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given single-channel short data.</div>
+</td>
+</tr>
+<tr id="i61" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeImage-short:A-int-int-int-boolean-boolean-">makeImage</a></span>(short[]&nbsp;data,
+         int&nbsp;w,
+         int&nbsp;h,
+         int&nbsp;c,
+         boolean&nbsp;interleaved,
+         boolean&nbsp;signed)</code>
+<div class="block">Creates an image from the given short data.</div>
+</td>
+</tr>
+<tr id="i62" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeRGBImage-byte:A:A-int-int-">makeRGBImage</a></span>(byte[][]&nbsp;data,
+            int&nbsp;w,
+            int&nbsp;h)</code>
+<div class="block">Creates an RGB image from the given raw byte array</div>
+</td>
+</tr>
+<tr id="i63" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeRGBImage-byte:A-int-int-int-boolean-">makeRGBImage</a></span>(byte[]&nbsp;data,
+            int&nbsp;c,
+            int&nbsp;w,
+            int&nbsp;h,
+            boolean&nbsp;interleaved)</code>
+<div class="block">Creates an RGB image from the given raw byte array, performing any
+ necessary type conversions.</div>
+</td>
+</tr>
+<tr id="i64" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#makeUnsigned-java.awt.image.BufferedImage-">makeUnsigned</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img)</code>
+<div class="block">Converts the given BufferedImage into an image with unsigned pixel data.</div>
+</td>
+</tr>
+<tr id="i65" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#mergeChannels-java.awt.image.BufferedImage:A-">mergeChannels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[]&nbsp;images)</code>
+<div class="block">Merges the given images into a single multi-channel image.</div>
+</td>
+</tr>
+<tr id="i66" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#openImage-io.scif.Plane-byte:A-io.scif.Reader-long:A-int-">openImage</a></span>(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+         byte[]&nbsp;bytes,
+         <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+         long[]&nbsp;axes,
+         int&nbsp;imageIndex)</code>
+<div class="block">Creates an image from the given Plane.</div>
+</td>
+</tr>
+<tr id="i67" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#openImage-io.scif.Plane-io.scif.Reader-int-">openImage</a></span>(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+         <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+         int&nbsp;imageIndex)</code>
+<div class="block">Creates an image from the given Plane.</div>
+</td>
+</tr>
+<tr id="i68" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#openImage-io.scif.Plane-io.scif.Reader-long:A-int-">openImage</a></span>(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+         <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+         long[]&nbsp;axes,
+         int&nbsp;imageIndex)</code>
+<div class="block">Creates an image from the given Plane.</div>
+</td>
+</tr>
+<tr id="i69" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#openThumbImage-io.scif.Plane-io.scif.Reader-int-long:A-int-int-boolean-">openThumbImage</a></span>(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+              <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+              int&nbsp;imageIndex,
+              long[]&nbsp;axes,
+              int&nbsp;thumbSizeX,
+              int&nbsp;thumbSizeY,
+              boolean&nbsp;pad)</code>
+<div class="block">Creates a thumbnail image from the provided plane, scaling it to the
+ specified thumbnail dimensions.</div>
+</td>
+</tr>
+<tr id="i70" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#padImage-java.awt.image.BufferedImage-int-int-">padImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+        int&nbsp;width,
+        int&nbsp;height)</code>
+<div class="block">Pads (or crops) the image to the given width and height.</div>
+</td>
+</tr>
+<tr id="i71" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#scale-java.awt.image.BufferedImage-int-int-boolean-">scale</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+     int&nbsp;width,
+     int&nbsp;height,
+     boolean&nbsp;pad)</code>
+<div class="block">Scales the image using the most appropriate API, with the resultant image
+ having the same color model as the original image.</div>
+</td>
+</tr>
+<tr id="i72" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#scale2D-java.awt.image.BufferedImage-int-int-java.lang.Object-java.awt.image.ColorModel-">scale2D</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+       int&nbsp;width,
+       int&nbsp;height,
+       <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint,
+       <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;cm)</code>
+<div class="block">Scales the image using the Java2D API, with the resultant image having the
+ given color model.</div>
+</td>
+</tr>
+<tr id="i73" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#scale2D-java.awt.image.BufferedImage-int-int-java.lang.Object-java.awt.GraphicsConfiguration-">scale2D</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+       int&nbsp;width,
+       int&nbsp;height,
+       <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint,
+       <a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a>&nbsp;gc)</code>
+<div class="block">Scales the image using the Java2D API, with the resultant image optimized
+ for the given graphics configuration.</div>
+</td>
+</tr>
+<tr id="i74" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#scaleAWT-java.awt.image.BufferedImage-int-int-int-">scaleAWT</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+        int&nbsp;width,
+        int&nbsp;height,
+        int&nbsp;hint)</code>
+<div class="block">Scales the image using the AWT Image API.</div>
+</td>
+</tr>
+<tr id="i75" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/gui/AWTImageTools.html#splitChannels-java.awt.image.BufferedImage-">splitChannels</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</code>
+<div class="block">Splits the given multi-channel image into single-channel images.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="makeImage-byte:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(byte[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given single-channel byte data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the byte values should be treated as signed (-128 to
+          127) instead of unsigned (0 to 255).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-short:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(short[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given single-channel short data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the short values should be treated as signed (-32768
+          to 32767) instead of unsigned (0 to 65535).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-int:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(int[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given single-channel int data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the int values should be treated as signed (-2^31 to
+          2^31-1) instead of unsigned (0 to 2^32-1).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-float:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(float[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h)</pre>
+<div class="block">Creates an image from the given single-channel float data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-double:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(double[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h)</pre>
+<div class="block">Creates an image from the given single-channel double data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-byte:A-int-int-int-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(byte[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given byte data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+<dd><code>signed</code> - Whether the byte values should be treated as signed (-128 to
+          127) instead of unsigned (0 to 255).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-short:A-int-int-int-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(short[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given short data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+<dd><code>signed</code> - Whether the short values should be treated as signed (-32768
+          to 32767) instead of unsigned (0 to 65535).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-int:A-int-int-int-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(int[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given int data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+<dd><code>signed</code> - Whether the int values should be treated as signed (-2^31 to
+          2^31-1) instead of unsigned (0 to 2^32-1).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-float:A-int-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(float[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved)</pre>
+<div class="block">Creates an image from the given float data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-double:A-int-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(double[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved)</pre>
+<div class="block">Creates an image from the given double data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-byte:A:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(byte[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given byte data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data. It is assumed that each channel
+          corresponds to one element of the array. For example, for RGB
+          data, data[0] is R, data[1] is G, and data[2] is B.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the byte values should be treated as signed (-128 to
+          127) instead of unsigned (0 to 255).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-short:A:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(short[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given short data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data. It is assumed that each channel
+          corresponds to one element of the array. For example, for RGB
+          data, data[0] is R, data[1] is G, and data[2] is B.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the short values should be treated as signed (-32768
+          to 32767) instead of unsigned (0 to 65535).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-int:A:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(int[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given int data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data. It is assumed that each channel
+          corresponds to one element of the array. For example, for RGB
+          data, data[0] is R, data[1] is G, and data[2] is B.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>signed</code> - Whether the int values should be treated as signed (-2^31 to
+          2^31-1) instead of unsigned (0 to 2^32-1).</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-float:A:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(float[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h)</pre>
+<div class="block">Creates an image from the given single-precision floating point data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data. It is assumed that each channel
+          corresponds to one element of the array. For example, for RGB
+          data, data[0] is R, data[1] is G, and data[2] is B.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-double:A:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(double[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h)</pre>
+<div class="block">Creates an image from the given double-precision floating point data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data. It is assumed that each channel
+          corresponds to one element of the array. For example, for RGB
+          data, data[0] is R, data[1] is G, and data[2] is B.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-byte:A-int-int-int-boolean-int-boolean-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(byte[]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;c,
+                                      boolean&nbsp;interleaved,
+                                      int&nbsp;bpp,
+                                      boolean&nbsp;fp,
+                                      boolean&nbsp;little,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given raw byte array, performing any necessary
+ type conversions.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>c</code> - Number of channels.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+<dd><code>bpp</code> - Denotes the number of bytes in the returned primitive type (e.g.
+          if bpp == 2, we should return an array of type short).</dd>
+<dd><code>fp</code> - If set and bpp == 4 or bpp == 8, then return floats or doubles.</dd>
+<dd><code>little</code> - Whether byte array is in little-endian order.</dd>
+<dd><code>signed</code> - Whether the data values should be treated as signed instead
+          of unsigned.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeImage-byte:A:A-int-int-int-boolean-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeImage(byte[][]&nbsp;data,
+                                      int&nbsp;w,
+                                      int&nbsp;h,
+                                      int&nbsp;bpp,
+                                      boolean&nbsp;fp,
+                                      boolean&nbsp;little,
+                                      boolean&nbsp;signed)</pre>
+<div class="block">Creates an image from the given raw byte array, performing any necessary
+ type conversions.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data, one channel per element.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>bpp</code> - Denotes the number of bytes in the returned primitive type (e.g.
+          if bpp == 2, we should return an array of type short).</dd>
+<dd><code>fp</code> - If set and bpp == 4 or bpp == 8, then return floats or doubles.</dd>
+<dd><code>little</code> - Whether byte array is in little-endian order.</dd>
+<dd><code>signed</code> - Whether the data values should be treated as signed instead
+          of unsigned.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeRGBImage-byte:A-int-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeRGBImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeRGBImage(byte[]&nbsp;data,
+                                         int&nbsp;c,
+                                         int&nbsp;w,
+                                         int&nbsp;h,
+                                         boolean&nbsp;interleaved)</pre>
+<div class="block">Creates an RGB image from the given raw byte array, performing any
+ necessary type conversions.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing image data.</dd>
+<dd><code>c</code> - Nuber of channels. NB: Channels over 4 will be discarded.</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+<dd><code>interleaved</code> - If set, the channels are assumed to be interleaved;
+          otherwise they are assumed to be sequential. For example, for RGB
+          data, the pattern "RGBRGBRGB..." is interleaved, while
+          "RRR...GGG...BBB..." is sequential.</dd>
+</dl>
+</li>
+</ul>
+<a name="makeRGBImage-byte:A:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeRGBImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeRGBImage(byte[][]&nbsp;data,
+                                         int&nbsp;w,
+                                         int&nbsp;h)</pre>
+<div class="block">Creates an RGB image from the given raw byte array</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Array containing channel-separated arrays of image data</dd>
+<dd><code>h</code> - Height of image plane.</dd>
+<dd><code>w</code> - Width of image plane.</dd>
+</dl>
+</li>
+</ul>
+<a name="blankImage-io.scif.ImageMetadata-long:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>blankImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;blankImage(<a href="../../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+                                       long[]&nbsp;axes,
+                                       int&nbsp;type)</pre>
+<div class="block">Creates a blank image with the given dimensions and transfer type.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>axes</code> - the ordered axis lengths for the new image. Only interested in
+          <a href="http://javadoc.imagej.net/ImageJ/net/imagej/axis/Axes.html?is-external=true#CHANNEL" title="class or interface in net.imagej.axis"><code>Axes.CHANNEL</code></a>, <a href="http://javadoc.imagej.net/ImageJ/net/imagej/axis/Axes.html?is-external=true#X" title="class or interface in net.imagej.axis"><code>Axes.X</code></a> and <a href="http://javadoc.imagej.net/ImageJ/net/imagej/axis/Axes.html?is-external=true#Y" title="class or interface in net.imagej.axis"><code>Axes.Y</code></a>.</dd>
+<dd><code>type</code> - One of the following types:
+          <ul>
+          <li>FormatTools.INT8 <b>** unsupported for now **</b></li>
+          <li>FormatTools.UINT8</li>
+          <li>FormatTools.INT16</li>
+          <li>FormatTools.UINT16</li>
+          <li>FormatTools.INT32</li>
+          <li>FormatTools.UINT32 <b>** unsupported for now **</b></li>
+          <li>FormatTools.FLOAT</li>
+          <li>FormatTools.DOUBLE</li>
+          </ul></dd>
+</dl>
+</li>
+</ul>
+<a name="constructImage-int-int-int-int-boolean-boolean-java.awt.image.DataBuffer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>constructImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;constructImage(int&nbsp;c,
+                                           int&nbsp;type,
+                                           int&nbsp;w,
+                                           int&nbsp;h,
+                                           boolean&nbsp;interleaved,
+                                           boolean&nbsp;banded,
+                                           <a href="http://javadoc.imagej.net/Java/java/awt/image/DataBuffer.html?is-external=true" title="class or interface in java.awt.image">DataBuffer</a>&nbsp;buffer)</pre>
+<div class="block">Creates an image with the given DataBuffer.</div>
+</li>
+</ul>
+<a name="constructImage-int-int-int-int-boolean-boolean-java.awt.image.DataBuffer-java.awt.image.ColorModel-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>constructImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;constructImage(int&nbsp;c,
+                                           int&nbsp;type,
+                                           int&nbsp;w,
+                                           int&nbsp;h,
+                                           boolean&nbsp;interleaved,
+                                           boolean&nbsp;banded,
+                                           <a href="http://javadoc.imagej.net/Java/java/awt/image/DataBuffer.html?is-external=true" title="class or interface in java.awt.image">DataBuffer</a>&nbsp;buffer,
+                                           <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;colorModel)</pre>
+<div class="block">Creates an image with the given DataBuffer.</div>
+</li>
+</ul>
+<a name="openImage-io.scif.Plane-io.scif.Reader-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;openImage(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+                                      <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+                                      int&nbsp;imageIndex)
+                               throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
+                                      <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Creates an image from the given Plane. Pulls additional image information
+ from the provided Reader's Metadata.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImage-io.scif.Plane-io.scif.Reader-long:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;openImage(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+                                      <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+                                      long[]&nbsp;axes,
+                                      int&nbsp;imageIndex)
+                               throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
+                                      <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Creates an image from the given Plane. Pulls additional image information
+ from the provided Reader's Metadata.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImage-io.scif.Plane-byte:A-io.scif.Reader-long:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;openImage(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+                                      byte[]&nbsp;bytes,
+                                      <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+                                      long[]&nbsp;axes,
+                                      int&nbsp;imageIndex)
+                               throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
+                                      <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Creates an image from the given Plane. Pulls additional image information
+ from the provided Reader's Metadata.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openThumbImage-io.scif.Plane-io.scif.Reader-int-long:A-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openThumbImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;openThumbImage(<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+                                           <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;r,
+                                           int&nbsp;imageIndex,
+                                           long[]&nbsp;axes,
+                                           int&nbsp;thumbSizeX,
+                                           int&nbsp;thumbSizeY,
+                                           boolean&nbsp;pad)
+                                    throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
+                                           <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Creates a thumbnail image from the provided plane, scaling it to the
+ specified thumbnail dimensions.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>plane</code> - - Plane to scale</dd>
+<dd><code>r</code> - - Reader used to open the provided Plane</dd>
+<dd><code>imageIndex</code> - - index of the image the plane was read from</dd>
+<dd><code>axes</code> - - Ordered list of planar dimension lengths</dd>
+<dd><code>thumbSizeX</code> - - width to scale to</dd>
+<dd><code>thumbSizeY</code> - - height to scale to</dd>
+<dd><code>pad</code> - - whether to pad when scaling</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPixels-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixels(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Gets the image's pixel data as arrays of primitives, one per channel. The
+ returned type will be either byte[][], short[][], int[][], float[][] or
+ double[][], depending on the image's transfer type.</div>
+</li>
+</ul>
+<a name="getPixels-java.awt.image.BufferedImage-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixels(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                               int&nbsp;x,
+                               int&nbsp;y,
+                               int&nbsp;w,
+                               int&nbsp;h)</pre>
+<div class="block">Gets the image's pixel data as arrays of primitives, one per channel. The
+ returned type will be either byte[][], short[][], int[][], float[][] or
+ double[][], depending on the image's transfer type.</div>
+</li>
+</ul>
+<a name="getPixels-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixels(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;raster)</pre>
+<div class="block">Gets the raster's pixel data as arrays of primitives, one per channel. The
+ returned type will be either byte[][], short[][], int[][], float[][] or
+ double[][], depending on the raster's transfer type.</div>
+</li>
+</ul>
+<a name="getPixels-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixels(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;raster,
+                               int&nbsp;x,
+                               int&nbsp;y,
+                               int&nbsp;w,
+                               int&nbsp;h)</pre>
+<div class="block">Gets the raster's pixel data as arrays of primitives, one per channel. The
+ returned type will be either byte[][], short[][], int[][], float[][] or
+ double[][], depending on the raster's transfer type.</div>
+</li>
+</ul>
+<a name="getBytes-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</li>
+</ul>
+<a name="getBytes-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</li>
+</ul>
+<a name="getBytes-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                int&nbsp;x,
+                                int&nbsp;y,
+                                int&nbsp;w,
+                                int&nbsp;h)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned bytes, one per channel.</div>
+</li>
+</ul>
+<a name="getShorts-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getShorts</h4>
+<pre>public static&nbsp;short[][]&nbsp;getShorts(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</li>
+</ul>
+<a name="getShorts-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getShorts</h4>
+<pre>public static&nbsp;short[][]&nbsp;getShorts(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</li>
+</ul>
+<a name="getShorts-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getShorts</h4>
+<pre>public static&nbsp;short[][]&nbsp;getShorts(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                  int&nbsp;x,
+                                  int&nbsp;y,
+                                  int&nbsp;w,
+                                  int&nbsp;h)</pre>
+<div class="block">Extracts pixel data as arrays of unsigned shorts, one per channel.</div>
+</li>
+</ul>
+<a name="getInts-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInts</h4>
+<pre>public static&nbsp;int[][]&nbsp;getInts(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</li>
+</ul>
+<a name="getInts-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInts</h4>
+<pre>public static&nbsp;int[][]&nbsp;getInts(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</pre>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</li>
+</ul>
+<a name="getInts-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInts</h4>
+<pre>public static&nbsp;int[][]&nbsp;getInts(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                              int&nbsp;x,
+                              int&nbsp;y,
+                              int&nbsp;w,
+                              int&nbsp;h)</pre>
+<div class="block">Extracts pixel data as arrays of signed integers, one per channel.</div>
+</li>
+</ul>
+<a name="getFloats-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloats</h4>
+<pre>public static&nbsp;float[][]&nbsp;getFloats(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</li>
+</ul>
+<a name="getFloats-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloats</h4>
+<pre>public static&nbsp;float[][]&nbsp;getFloats(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</pre>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</li>
+</ul>
+<a name="getFloats-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloats</h4>
+<pre>public static&nbsp;float[][]&nbsp;getFloats(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                  int&nbsp;x,
+                                  int&nbsp;y,
+                                  int&nbsp;w,
+                                  int&nbsp;h)</pre>
+<div class="block">Extracts pixel data as arrays of floats, one per channel.</div>
+</li>
+</ul>
+<a name="getDoubles-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDoubles</h4>
+<pre>public static&nbsp;double[][]&nbsp;getDoubles(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</li>
+</ul>
+<a name="getDoubles-java.awt.image.WritableRaster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDoubles</h4>
+<pre>public static&nbsp;double[][]&nbsp;getDoubles(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r)</pre>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</li>
+</ul>
+<a name="getDoubles-java.awt.image.WritableRaster-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDoubles</h4>
+<pre>public static&nbsp;double[][]&nbsp;getDoubles(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                    int&nbsp;x,
+                                    int&nbsp;y,
+                                    int&nbsp;w,
+                                    int&nbsp;h)</pre>
+<div class="block">Extracts pixel data as arrays of doubles, one per channel.</div>
+</li>
+</ul>
+<a name="getPixelBytes-java.awt.image.BufferedImage-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getPixelBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                                     boolean&nbsp;little)</pre>
+<div class="block">Return a 2D array of bytes representing the image. If the transfer type is
+ something other than DataBuffer.TYPE_BYTE, then each pixel value is
+ converted to the appropriate number of bytes. In other words, if we are
+ given an image with 16-bit data, each channel of the resulting array will
+ have width * height * 2 bytes.</div>
+</li>
+</ul>
+<a name="getPixelBytes-java.awt.image.WritableRaster-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getPixelBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                     boolean&nbsp;little)</pre>
+<div class="block">Return a 2D array of bytes representing the image. If the transfer type is
+ something other than DataBuffer.TYPE_BYTE, then each pixel value is
+ converted to the appropriate number of bytes. In other words, if we are
+ given an image with 16-bit data, each channel of the resulting array will
+ have width * height * 2 bytes.</div>
+</li>
+</ul>
+<a name="getPixelBytes-java.awt.image.BufferedImage-boolean-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getPixelBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                                     boolean&nbsp;little,
+                                     int&nbsp;x,
+                                     int&nbsp;y,
+                                     int&nbsp;w,
+                                     int&nbsp;h)</pre>
+<div class="block">Return a 2D array of bytes representing the image. If the transfer type is
+ something other than DataBuffer.TYPE_BYTE, then each pixel value is
+ converted to the appropriate number of bytes. In other words, if we are
+ given an image with 16-bit data, each channel of the resulting array will
+ have width * height * 2 bytes.</div>
+</li>
+</ul>
+<a name="getPixelBytes-java.awt.image.WritableRaster-boolean-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelBytes</h4>
+<pre>public static&nbsp;byte[][]&nbsp;getPixelBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/WritableRaster.html?is-external=true" title="class or interface in java.awt.image">WritableRaster</a>&nbsp;r,
+                                     boolean&nbsp;little,
+                                     int&nbsp;x,
+                                     int&nbsp;y,
+                                     int&nbsp;w,
+                                     int&nbsp;h)</pre>
+<div class="block">Return a 2D array of bytes representing the image. If the transfer type is
+ something other than DataBuffer.TYPE_BYTE, then each pixel value is
+ converted to the appropriate number of bytes. In other words, if we are
+ given an image with 16-bit data, each channel of the resulting array will
+ have width * height * 2 bytes.</div>
+</li>
+</ul>
+<a name="getPixelType-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelType</h4>
+<pre>public static&nbsp;int&nbsp;getPixelType(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Gets the pixel type of the given image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>One of the following types:
+         <ul>
+         <li>FormatReader.INT8</li>
+         <li>FormatReader.UINT8</li>
+         <li>FormatReader.INT16</li>
+         <li>FormatReader.UINT16</li>
+         <li>FormatReader.INT32</li>
+         <li>FormatReader.UINT32</li>
+         <li>FormatReader.FLOAT</li>
+         <li>FormatReader.DOUBLE</li>
+         <li>-1 (unknown type)</li>
+         </ul></dd>
+</dl>
+</li>
+</ul>
+<a name="convertRenderedImage-java.awt.image.RenderedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>convertRenderedImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;convertRenderedImage(<a href="http://javadoc.imagej.net/Java/java/awt/image/RenderedImage.html?is-external=true" title="class or interface in java.awt.image">RenderedImage</a>&nbsp;img)</pre>
+<div class="block">Converts a java.awt.image.RenderedImage into a
+ java.awt.image.BufferedImage. This code was adapted from <a
+ href="http://www.jguru.com/faq/view.jsp?EID=114602">a jGuru post</a>.</div>
+</li>
+</ul>
+<a name="getBytes-java.awt.image.BufferedImage-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>public static&nbsp;byte[]&nbsp;getBytes(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                              boolean&nbsp;separated)</pre>
+<div class="block">Get the bytes from an image, merging the channels as necessary.</div>
+</li>
+</ul>
+<a name="makeUnsigned-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeUnsigned</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeUnsigned(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img)</pre>
+<div class="block">Converts the given BufferedImage into an image with unsigned pixel data.</div>
+</li>
+</ul>
+<a name="getSubimage-java.awt.image.BufferedImage-boolean-long:A-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubimage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;getSubimage(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                                        boolean&nbsp;littleEndian,
+                                        long[]&nbsp;planeMin,
+                                        long[]&nbsp;planeMax)</pre>
+<div class="block">Returns a subimage of the specified image.</div>
+</li>
+</ul>
+<a name="getSubimage-java.awt.image.BufferedImage-boolean-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubimage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;getSubimage(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                                        boolean&nbsp;littleEndian,
+                                        int&nbsp;x,
+                                        int&nbsp;y,
+                                        int&nbsp;w,
+                                        int&nbsp;h)</pre>
+<div class="block">Returns a subimage of the specified image.</div>
+</li>
+</ul>
+<a name="splitChannels-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>splitChannels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[]&nbsp;splitChannels(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image)</pre>
+<div class="block">Splits the given multi-channel image into single-channel images.</div>
+</li>
+</ul>
+<a name="mergeChannels-java.awt.image.BufferedImage:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mergeChannels</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;mergeChannels(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[]&nbsp;images)</pre>
+<div class="block">Merges the given images into a single multi-channel image.</div>
+</li>
+</ul>
+<a name="padImage-java.awt.image.BufferedImage-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>padImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;padImage(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                                     int&nbsp;width,
+                                     int&nbsp;height)</pre>
+<div class="block">Pads (or crops) the image to the given width and height. The image will be
+ centered within the new bounds.</div>
+</li>
+</ul>
+<a name="autoscale-java.awt.image.BufferedImage-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>autoscale</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;autoscale(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img)</pre>
+<div class="block">Perform autoscaling on the given BufferedImage.</div>
+</li>
+</ul>
+<a name="autoscale-java.awt.image.BufferedImage-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>autoscale</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;autoscale(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                                      int&nbsp;min,
+                                      int&nbsp;max)</pre>
+<div class="block">Perform autoscaling on the given BufferedImage; map min to 0 and max to
+ 255. If the BufferedImage has 8 bit data, then nothing happens.</div>
+</li>
+</ul>
+<a name="copyScaled-java.awt.image.BufferedImage-java.awt.image.BufferedImage-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copyScaled</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;copyScaled(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+                                       <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;target,
+                                       <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint)</pre>
+<div class="block">Copies the source image into the target, applying scaling.</div>
+</li>
+</ul>
+<a name="scale2D-java.awt.image.BufferedImage-int-int-java.lang.Object-java.awt.GraphicsConfiguration-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scale2D</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;scale2D(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                                    int&nbsp;width,
+                                    int&nbsp;height,
+                                    <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint,
+                                    <a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a>&nbsp;gc)</pre>
+<div class="block">Scales the image using the Java2D API, with the resultant image optimized
+ for the given graphics configuration.</div>
+</li>
+</ul>
+<a name="scale2D-java.awt.image.BufferedImage-int-int-java.lang.Object-java.awt.image.ColorModel-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scale2D</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;scale2D(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                                    int&nbsp;width,
+                                    int&nbsp;height,
+                                    <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;hint,
+                                    <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;cm)</pre>
+<div class="block">Scales the image using the Java2D API, with the resultant image having the
+ given color model.</div>
+</li>
+</ul>
+<a name="scaleAWT-java.awt.image.BufferedImage-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scaleAWT</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;scaleAWT(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+                             int&nbsp;width,
+                             int&nbsp;height,
+                             int&nbsp;hint)</pre>
+<div class="block">Scales the image using the AWT Image API.</div>
+</li>
+</ul>
+<a name="scale-java.awt.image.BufferedImage-int-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scale</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;scale(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;source,
+                                  int&nbsp;width,
+                                  int&nbsp;height,
+                                  boolean&nbsp;pad)</pre>
+<div class="block">Scales the image using the most appropriate API, with the resultant image
+ having the same color model as the original image.</div>
+</li>
+</ul>
+<a name="makeBuffered-java.awt.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeBuffered</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeBuffered(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</pre>
+<div class="block">Creates a buffered image from the given AWT image object. If the AWT image
+ is already a buffered image, no new object is created.</div>
+</li>
+</ul>
+<a name="makeBuffered-java.awt.Image-java.awt.image.ColorModel-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeBuffered</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeBuffered(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image,
+                                         <a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;cm)</pre>
+<div class="block">Creates a buffered image possessing the given color model, from the
+ specified AWT image object. If the AWT image is already a buffered image
+ with the given color model, no new object is created.</div>
+</li>
+</ul>
+<a name="loadImage-java.awt.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadImage</h4>
+<pre>public static&nbsp;boolean&nbsp;loadImage(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</pre>
+<div class="block">Ensures the given AWT image is fully loaded.</div>
+</li>
+</ul>
+<a name="getSize-java.awt.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSize</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;getSize(<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;image)</pre>
+<div class="block">Gets the width and height of the given AWT image, waiting for it to finish
+ loading if necessary.</div>
+</li>
+</ul>
+<a name="makeCompatible-java.awt.image.BufferedImage-java.awt.GraphicsConfiguration-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeCompatible</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;makeCompatible(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;image,
+                                           <a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a>&nbsp;gc)</pre>
+<div class="block">Creates a buffered image compatible with the given graphics configuration,
+ using the given buffered image as a source. If gc is null, the default
+ graphics configuration is used.</div>
+</li>
+</ul>
+<a name="getDefaultConfiguration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultConfiguration</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/GraphicsConfiguration.html?is-external=true" title="class or interface in java.awt">GraphicsConfiguration</a>&nbsp;getDefaultConfiguration()</pre>
+<div class="block">Gets the default graphics configuration for the environment.</div>
+</li>
+</ul>
+<a name="makeColorSpace-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeColorSpace</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/color/ColorSpace.html?is-external=true" title="class or interface in java.awt.color">ColorSpace</a>&nbsp;makeColorSpace(int&nbsp;c)</pre>
+<div class="block">Gets a color space for the given number of color components.</div>
+</li>
+</ul>
+<a name="makeColorModel-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeColorModel</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;makeColorModel(int&nbsp;c,
+                                        int&nbsp;dataType)</pre>
+<div class="block">Gets a color model for the given number of color components.</div>
+</li>
+</ul>
+<a name="indexedToRGB-java.awt.image.BufferedImage-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>indexedToRGB</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;indexedToRGB(<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>&nbsp;img,
+                                         boolean&nbsp;le)</pre>
+<div class="block">Converts an indexed color BufferedImage to an RGB BufferedImage.</div>
+</li>
+</ul>
+<a name="get8BitLookupTable-java.awt.image.ColorModel-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get8BitLookupTable</h4>
+<pre>public static&nbsp;byte[][]&nbsp;get8BitLookupTable(<a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;model)</pre>
+<div class="block">Converts an IndexColorModel to a 2D byte array.</div>
+</li>
+</ul>
+<a name="getLookupTable-java.awt.image.ColorModel-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLookupTable</h4>
+<pre>public static&nbsp;short[][]&nbsp;getLookupTable(<a href="http://javadoc.imagej.net/Java/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;model)</pre>
+<div class="block">Convers an Index16ColorModel to a 2D short array.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../io/scif/gui/BufferedImageReader.html" title="class in io.scif.gui"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?io/scif/gui/AWTImageTools.html" target="_top">Frames</a></li>
+<li><a href="AWTImageTools.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+</body>
+</html>

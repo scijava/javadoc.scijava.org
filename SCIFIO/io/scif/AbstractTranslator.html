@@ -1,0 +1,545 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractTranslator (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AbstractTranslator (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":6,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/AbstractSCIFIOPlugin.html" title="class in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/AbstractWriter.html" title="class in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/AbstractTranslator.html" target="_top">Frames</a></li>
+<li><a href="AbstractTranslator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">io.scif</div>
+<h2 title="Class AbstractTranslator" class="title">Class AbstractTranslator&lt;M extends <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>,N extends <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../io/scif/AbstractSCIFIOPlugin.html" title="class in io.scif">io.scif.AbstractSCIFIOPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li>io.scif.AbstractTranslator&lt;M,N&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>M</code> - - The source Metadata type required by this Translator</dd>
+<dd><code>N</code> - - The destination Metadata type required by this Translator</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a>, <a href="../../io/scif/Translator.html" title="interface in io.scif">Translator</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SingletonPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SingletonPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../io/scif/formats/APNGFormat.APNGTranslator.html" title="class in io.scif.formats">APNGFormat.APNGTranslator</a>, <a href="../../io/scif/formats/AVIFormat.Translator.html" title="class in io.scif.formats">AVIFormat.Translator</a>, <a href="../../io/scif/DefaultTranslator.html" title="class in io.scif">DefaultTranslator</a>, <a href="../../io/scif/formats/FakeFormat.FakeTranslator.html" title="class in io.scif.formats">FakeFormat.FakeTranslator</a>, <a href="../../io/scif/formats/ICSFormat.ICSTranslator.html" title="class in io.scif.formats">ICSFormat.ICSTranslator</a>, <a href="../../io/scif/formats/ImageIOFormat.ImageIOTranslator.html" title="class in io.scif.formats">ImageIOFormat.ImageIOTranslator</a>, <a href="../../io/scif/formats/qt/LegacyQTFormat.LegacyQTTranslator.html" title="class in io.scif.formats.qt">LegacyQTFormat.LegacyQTTranslator</a>, <a href="../../io/scif/formats/qt/NativeQTFormat.NativeQTTranslator.html" title="class in io.scif.formats.qt">NativeQTFormat.NativeQTTranslator</a>, <a href="../../io/scif/ome/formats/OMETIFFFormat.OMETIFFTranslator.html" title="class in io.scif.ome.formats">OMETIFFFormat.OMETIFFTranslator</a>, <a href="../../io/scif/ome/translators/OMETranslator.html" title="class in io.scif.ome.translators">OMETranslator</a>, <a href="../../io/scif/ome/formats/OMEXMLFormat.OMEXMLTranslator.html" title="class in io.scif.ome.formats">OMEXMLFormat.OMEXMLTranslator</a>, <a href="../../io/scif/formats/TIFFFormat.TIFFTranslator.html" title="class in io.scif.formats">TIFFFormat.TIFFTranslator</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="typeNameLabel">AbstractTranslator&lt;M extends <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>,N extends <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&gt;</span>
+extends <a href="../../io/scif/AbstractSCIFIOPlugin.html" title="class in io.scif">AbstractSCIFIOPlugin</a>
+implements <a href="../../io/scif/Translator.html" title="interface in io.scif">Translator</a></pre>
+<div class="block">Abstract superclass of all SCIFIO <a href="../../io/scif/Translator.html" title="interface in io.scif"><code>Translator</code></a> components.
+ <p>
+ NB: this class provides a special abstract method:
+ <code>typedTranslate(Metadata, Metadata)</code>. That is the method which should
+ be overridden when extending this class, and not
+ <a href="../../io/scif/AbstractTranslator.html#translate-io.scif.Metadata-io.scif.Metadata-"><code>translate(Metadata, Metadata)</code></a> - which has been set up to translate
+ the type-general Metadata information, delegate to <code>typedTranslate</code>,
+ and then populate the ImageMetadata of the destination.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Mark Hiner</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../io/scif/Translator.html" title="interface in io.scif"><code>Translator</code></a>, 
+<a href="../../io/scif/services/TranslatorService.html" title="interface in io.scif.services"><code>TranslatorService</code></a>, 
+<a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#AbstractTranslator--">AbstractTranslator</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#translate-io.scif.Metadata-java.util.List-io.scif.Metadata-">translate</a></span>(<a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;source,
+         <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;sourceImgMeta,
+         <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;dest)</code>
+<div class="block">As <a href="../../io/scif/Translator.html#translate-io.scif.Metadata-io.scif.Metadata-"><code>Translator.translate(Metadata, Metadata)</code></a> with the format-specific and
+ image metadata explicitly split out.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#translate-io.scif.Metadata-io.scif.Metadata-">translate</a></span>(<a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;source,
+         <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;dest)</code>
+<div class="block">Uses the source <code>Metadata</code> to populate the destination
+ <code>Metadata</code>.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#translateFormatMetadata-M-N-">translateFormatMetadata</a></span>(<a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">M</a>&nbsp;source,
+                       <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;dest)</code>
+<div class="block">Use format-specific metadata from the source to populate the destination's
+ format-specific metadata.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#translateImageMetadata-java.util.List-N-">translateImageMetadata</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;source,
+                      <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;dest)</code>
+<div class="block">Use format-agnostic metadata (<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> to populate the
+ destination's format-specific metadata.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractTranslator.html#typedTranslate-M-java.util.List-N-">typedTranslate</a></span>(<a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">M</a>&nbsp;typedSource,
+              <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;sourceImgMeta,
+              <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;typedDest)</code>
+<div class="block">This method provides a hook for subclasses that need access to both the
+ <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> and <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractSCIFIOPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;io.scif.<a href="../../io/scif/AbstractSCIFIOPlugin.html" title="class in io.scif">AbstractSCIFIOPlugin</a></h3>
+<code><a href="../../io/scif/AbstractSCIFIOPlugin.html#getVersion--">getVersion</a>, <a href="../../io/scif/AbstractSCIFIOPlugin.html#log--">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getPriority--" title="class or interface in org.scijava.plugin">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setPriority-double-" title="class or interface in org.scijava.plugin">setPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#toString--" title="class or interface in org.scijava.plugin">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.Translator">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/Translator.html" title="interface in io.scif">Translator</a></h3>
+<code><a href="../../io/scif/Translator.html#dest--">dest</a>, <a href="../../io/scif/Translator.html#source--">source</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.SCIFIOPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a></h3>
+<code><a href="../../io/scif/SCIFIOPlugin.html#getVersion--">getVersion</a>, <a href="../../io/scif/SCIFIOPlugin.html#log--">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#getIdentifier--" title="class or interface in org.scijava.plugin">getIdentifier</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#compareTo-org.scijava.Prioritized-" title="class or interface in org.scijava">compareTo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#getPriority--" title="class or interface in org.scijava">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#setPriority-double-" title="class or interface in org.scijava">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true#getLocation--" title="class or interface in org.scijava">getLocation</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractTranslator--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractTranslator</h4>
+<pre>public&nbsp;AbstractTranslator()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="translate-io.scif.Metadata-io.scif.Metadata-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>translate</h4>
+<pre>public&nbsp;void&nbsp;translate(<a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;source,
+                      <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;dest)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Translator.html#translate-io.scif.Metadata-io.scif.Metadata-">Translator</a></code></span></div>
+<div class="block">Uses the source <code>Metadata</code> to populate the destination
+ <code>Metadata</code>. Specifically, the format-specific metadata and/or
+ <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> of the source are used to populate the format-
+ specific metadata of the destination (from which the destination's
+ <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> can be derived}.
+ <p>
+ Note that the destination does not have to be empty, but can be built up
+ through multiple translations. However each translation step is assumed to
+ overwrite any previously existing data.
+ </p>
+ <p>
+ For a reference to a fresh <code>Metadata</code> instance to use in translation,
+ consider the <a href="../../io/scif/Format.html#createMetadata--"><code>Format.createMetadata()</code></a> method.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../io/scif/Translator.html#translate-io.scif.Metadata-io.scif.Metadata-">translate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Translator.html" title="interface in io.scif">Translator</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - <code>Metadata</code> to use to populate</dd>
+<dd><code>dest</code> - <code>Metadata</code> to be populated</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../io/scif/Format.html#createMetadata--"><code>Format.createMetadata()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="translate-io.scif.Metadata-java.util.List-io.scif.Metadata-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>translate</h4>
+<pre>public&nbsp;void&nbsp;translate(<a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;source,
+                      <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;sourceImgMeta,
+                      <a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;dest)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Translator.html#translate-io.scif.Metadata-java.util.List-io.scif.Metadata-">Translator</a></code></span></div>
+<div class="block">As <a href="../../io/scif/Translator.html#translate-io.scif.Metadata-io.scif.Metadata-"><code>Translator.translate(Metadata, Metadata)</code></a> with the format-specific and
+ image metadata explicitly split out.
+ <p>
+ NB: it is NOT GUARANTEED that the <a href="../../io/scif/Metadata.html#getAll--"><code>Metadata.getAll()</code></a> method of the
+ source here will provide equivalent <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> as sourceImgMeta.
+ For example, if a <a href="../../io/scif/filters/MetadataWrapper.html" title="interface in io.scif.filters"><code>MetadataWrapper</code></a> was used, the two are unlikely to
+ match up. This is necessary, as <code>Translator</code> discovery depends on the
+ format of source and destination, but augmentation via wrapping must affect
+ the underlying <code>ImageMetadata</code> non-destructively.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../io/scif/Translator.html#translate-io.scif.Metadata-java.util.List-io.scif.Metadata-">translate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Translator.html" title="interface in io.scif">Translator</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - <code>Metadata</code> to use to populate</dd>
+<dd><code>sourceImgMeta</code> - <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> to use to populate</dd>
+<dd><code>dest</code> - <code>Metadata</code> to be populated</dd>
+</dl>
+</li>
+</ul>
+<a name="typedTranslate-io.scif.Metadata-java.util.List-io.scif.Metadata-">
+<!--   -->
+</a><a name="typedTranslate-M-java.util.List-N-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>typedTranslate</h4>
+<pre>protected&nbsp;void&nbsp;typedTranslate(<a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">M</a>&nbsp;typedSource,
+                              <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;sourceImgMeta,
+                              <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;typedDest)</pre>
+<div class="block">This method provides a hook for subclasses that need access to both the
+ <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> and <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a>. It is provided with concrete
+ typing for convenience and to limit code duplication.
+ <p>
+ NB: if this method is just used as a hook to perform some operation
+ mid-translation, then <code>super.typedTranslate</code> should be called at the
+ end of the method to continue the normal translation process.
+ </p></div>
+</li>
+</ul>
+<a name="translateImageMetadata-java.util.List-io.scif.Metadata-">
+<!--   -->
+</a><a name="translateImageMetadata-java.util.List-N-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>translateImageMetadata</h4>
+<pre>protected abstract&nbsp;void&nbsp;translateImageMetadata(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&gt;&nbsp;source,
+                                               <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;dest)</pre>
+<div class="block">Use format-agnostic metadata (<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> to populate the
+ destination's format-specific metadata.
+ <p>
+ This method must be implemented by every AbstractTranslator subclass, as it
+ covers the general case - agnostic of the source.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - </dd>
+<dd><code>dest</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="translateFormatMetadata-io.scif.Metadata-io.scif.Metadata-">
+<!--   -->
+</a><a name="translateFormatMetadata-M-N-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>translateFormatMetadata</h4>
+<pre>protected&nbsp;void&nbsp;translateFormatMetadata(<a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">M</a>&nbsp;source,
+                                       <a href="../../io/scif/AbstractTranslator.html" title="type parameter in AbstractTranslator">N</a>&nbsp;dest)</pre>
+<div class="block">Use format-specific metadata from the source to populate the destination's
+ format-specific metadata.
+ <p>
+ NB: Override this method when writing a translator from a concrete Metadata
+ type.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - </dd>
+<dd><code>dest</code> - </dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/AbstractSCIFIOPlugin.html" title="class in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/AbstractWriter.html" title="class in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/AbstractTranslator.html" target="_top">Frames</a></li>
+<li><a href="AbstractTranslator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+</body>
+</html>

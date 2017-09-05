@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Format (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Format (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/FilePatternBlock.html" title="class in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/FormatException.html" title="class in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/Format.html" target="_top">Frames</a></li>
+<li><a href="Format.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">io.scif</div>
+<h2 title="Interface Format" class="title">Interface Format</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../io/scif/AbstractFormat.html" title="class in io.scif">AbstractFormat</a>, <a href="../../io/scif/formats/APNGFormat.html" title="class in io.scif.formats">APNGFormat</a>, <a href="../../io/scif/formats/AVIFormat.html" title="class in io.scif.formats">AVIFormat</a>, <a href="../../io/scif/bf/BioFormatsFormat.html" title="class in io.scif.bf">BioFormatsFormat</a>, <a href="../../io/scif/formats/BMPFormat.html" title="class in io.scif.formats">BMPFormat</a>, <a href="../../io/scif/formats/DICOMFormat.html" title="class in io.scif.formats">DICOMFormat</a>, <a href="../../io/scif/formats/EPSFormat.html" title="class in io.scif.formats">EPSFormat</a>, <a href="../../io/scif/formats/FakeFormat.html" title="class in io.scif.formats">FakeFormat</a>, <a href="../../io/scif/formats/FITSFormat.html" title="class in io.scif.formats">FITSFormat</a>, <a href="../../io/scif/formats/GIFFormat.html" title="class in io.scif.formats">GIFFormat</a>, <a href="../../io/scif/formats/ICSFormat.html" title="class in io.scif.formats">ICSFormat</a>, <a href="../../io/scif/formats/ImageIOFormat.html" title="class in io.scif.formats">ImageIOFormat</a>, <a href="../../io/scif/formats/ImarisFormat.html" title="class in io.scif.formats">ImarisFormat</a>, <a href="../../io/scif/formats/JavaFormat.html" title="class in io.scif.formats">JavaFormat</a>, <a href="../../io/scif/formats/JPEG2000Format.html" title="class in io.scif.formats">JPEG2000Format</a>, <a href="../../io/scif/formats/JPEGFormat.html" title="class in io.scif.formats">JPEGFormat</a>, <a href="../../io/scif/formats/JPEGTileFormat.html" title="class in io.scif.formats">JPEGTileFormat</a>, <a href="../../io/scif/formats/KontronFormat.html" title="class in io.scif.formats">KontronFormat</a>, <a href="../../io/scif/formats/qt/LegacyQTFormat.html" title="class in io.scif.formats.qt">LegacyQTFormat</a>, <a href="../../io/scif/formats/MicromanagerFormat.html" title="class in io.scif.formats">MicromanagerFormat</a>, <a href="../../io/scif/formats/MinimalTIFFFormat.html" title="class in io.scif.formats">MinimalTIFFFormat</a>, <a href="../../io/scif/formats/MNGFormat.html" title="class in io.scif.formats">MNGFormat</a>, <a href="../../io/scif/formats/qt/NativeQTFormat.html" title="class in io.scif.formats.qt">NativeQTFormat</a>, <a href="../../io/scif/formats/NRRDFormat.html" title="class in io.scif.formats">NRRDFormat</a>, <a href="../../io/scif/formats/OBFFormat.html" title="class in io.scif.formats">OBFFormat</a>, <a href="../../io/scif/ome/formats/OMETIFFFormat.html" title="class in io.scif.ome.formats">OMETIFFFormat</a>, <a href="../../io/scif/ome/formats/OMEXMLFormat.html" title="class in io.scif.ome.formats">OMEXMLFormat</a>, <a href="../../io/scif/formats/PCXFormat.html" title="class in io.scif.formats">PCXFormat</a>, <a href="../../io/scif/formats/PGMFormat.html" title="class in io.scif.formats">PGMFormat</a>, <a href="../../io/scif/formats/qt/PICTFormat.html" title="class in io.scif.formats.qt">PICTFormat</a>, <a href="../../io/scif/formats/ScancoISQFormat.html" title="class in io.scif.formats">ScancoISQFormat</a>, <a href="../../io/scif/lifesci/SDTFormat.html" title="class in io.scif.lifesci">SDTFormat</a>, <a href="../../io/scif/formats/TextFormat.html" title="class in io.scif.formats">TextFormat</a>, <a href="../../io/scif/formats/TIFFFormat.html" title="class in io.scif.formats">TIFFFormat</a>, <a href="../../io/scif/formats/TIFFJAIFormat.html" title="class in io.scif.formats">TIFFJAIFormat</a>, <a href="../../io/scif/formats/ZipFormat.html" title="class in io.scif.formats">ZipFormat</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">Format</span>
+extends <a href="../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a></pre>
+<div class="block">Interface for all SCIFIO formats.
+ <p>
+ The <code>Format</code> is a bag for all other SCIFIO components associated with
+ image IO in a given image format. It acts as a bridge and a black box for
+ creating components, and facilitates component intercommunication.
+ </p>
+ <p>
+ <code>Formats</code> are typically accessed through the
+ <a href="../../io/scif/services/FormatService.html" title="interface in io.scif.services"><code>FormatService</code></a>, which maintains a list of singleton
+ <code>Formats</code> and has many convenience methods relating to their use.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Mark Hiner</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../io/scif/SCIFIO.html" title="class in io.scif"><code>SCIFIO</code></a>, 
+<a href="../../io/scif/services/FormatService.html" title="interface in io.scif.services"><code>FormatService</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/Checker.html" title="interface in io.scif">Checker</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#createChecker--">createChecker</a></span>()</code>
+<div class="block">Create an instance of the Checker associated with this format.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#createMetadata--">createMetadata</a></span>()</code>
+<div class="block">Create an instance of the Metadata associated with this format.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/Parser.html" title="interface in io.scif">Parser</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#createParser--">createParser</a></span>()</code>
+<div class="block">Create an instance of the Parser associated with this format.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#createReader--">createReader</a></span>()</code>
+<div class="block">Creates an instance of the Reader associated with this format.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#createWriter--">createWriter</a></span>()</code>
+<div class="block">Creates an instance of the Writer associated with this format.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getCheckerClass--">getCheckerClass</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getFormatName--">getFormatName</a></span>()</code>
+<div class="block">Gets the name of this file format.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getMetadataClass--">getMetadataClass</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getParserClass--">getParserClass</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getReaderClass--">getReaderClass</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getSuffixes--">getSuffixes</a></span>()</code>
+<div class="block">Gets the default file suffixes for this file format.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#getWriterClass--">getWriterClass</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#isEnabled--">isEnabled</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Format.html#setEnabled-boolean-">setEnabled</a></span>(boolean&nbsp;enabled)</code>
+<div class="block">Toggle whether this Format should be used when checking image
+ compatibility.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.SCIFIOPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a></h3>
+<code><a href="../../io/scif/SCIFIOPlugin.html#getVersion--">getVersion</a>, <a href="../../io/scif/SCIFIOPlugin.html#log--">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#getIdentifier--" title="class or interface in org.scijava.plugin">getIdentifier</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#compareTo-org.scijava.Prioritized-" title="class or interface in org.scijava">compareTo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#getPriority--" title="class or interface in org.scijava">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#setPriority-double-" title="class or interface in org.scijava">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true#getLocation--" title="class or interface in org.scijava">getLocation</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setEnabled-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEnabled</h4>
+<pre>void&nbsp;setEnabled(boolean&nbsp;enabled)</pre>
+<div class="block">Toggle whether this Format should be used when checking image
+ compatibility.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>enabled</code> - - if true, this Format will be used in image/IO. Default:
+          true</dd>
+</dl>
+</li>
+</ul>
+<a name="isEnabled--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEnabled</h4>
+<pre>boolean&nbsp;isEnabled()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if this Format is active when checking image compatibility.</dd>
+</dl>
+</li>
+</ul>
+<a name="getFormatName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFormatName</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getFormatName()</pre>
+<div class="block">Gets the name of this file format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a String representation of this Format's name</dd>
+</dl>
+</li>
+</ul>
+<a name="getSuffixes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSuffixes</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getSuffixes()</pre>
+<div class="block">Gets the default file suffixes for this file format.
+ <p>
+ Sample valid suffixes:
+ </p>
+ <ul>
+ <li>png</li>
+ <li>avi</li>
+ <li>bmp</li>
+ </ul></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of extensions associated with this Format</dd>
+</dl>
+</li>
+</ul>
+<a name="createMetadata--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createMetadata</h4>
+<pre><a href="../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;createMetadata()
+                 throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Create an instance of the Metadata associated with this format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> instance compatible with this
+         Format's components</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createChecker--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createChecker</h4>
+<pre><a href="../../io/scif/Checker.html" title="interface in io.scif">Checker</a>&nbsp;createChecker()
+               throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Create an instance of the Checker associated with this format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <a href="../../io/scif/Checker.html" title="interface in io.scif"><code>Checker</code></a> instance which can determine if
+         sources are compatible with this Format.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createParser--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createParser</h4>
+<pre><a href="../../io/scif/Parser.html" title="interface in io.scif">Parser</a>&nbsp;createParser()
+             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Create an instance of the Parser associated with this format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <a href="../../io/scif/Parser.html" title="interface in io.scif"><code>Parser</code></a> instance capable of populating
+         Metadata compatible with this Format.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createReader--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createReader</h4>
+<pre><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;createReader()
+             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Creates an instance of the Reader associated with this format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <a href="../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> instance capable of reading datasets
+         of this Format.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createWriter--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createWriter</h4>
+<pre><a href="../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;createWriter()
+             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Creates an instance of the Writer associated with this format.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new <a href="../../io/scif/Writer.html" title="interface in io.scif"><code>Writer</code></a> instance capable of writing datasets
+         of this Format.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getMetadataClass--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMetadataClass</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;getMetadataClass()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The class of the Metadata associated with this format</dd>
+</dl>
+</li>
+</ul>
+<a name="getCheckerClass--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCheckerClass</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;getCheckerClass()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The class of the Checker associated with this format</dd>
+</dl>
+</li>
+</ul>
+<a name="getParserClass--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getParserClass</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;getParserClass()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The class of the Parser associated with this format</dd>
+</dl>
+</li>
+</ul>
+<a name="getReaderClass--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReaderClass</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;getReaderClass()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The class of the Reader associated with this format</dd>
+</dl>
+</li>
+</ul>
+<a name="getWriterClass--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getWriterClass</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;getWriterClass()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The class of the Writer associated with this format</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../io/scif/FilePatternBlock.html" title="class in io.scif"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../io/scif/FormatException.html" title="class in io.scif"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?io/scif/Format.html" target="_top">Frames</a></li>
+<li><a href="Format.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+</body>
+</html>
