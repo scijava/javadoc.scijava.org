@@ -1,0 +1,1287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AudioDevice3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AudioDevice3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/AudioDevice3DL2.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/AudioDevice3D.html" target="_top">Frames</a></li>
+<li><a href="AudioDevice3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Interface AudioDevice3D" class="title">Interface AudioDevice3D</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a></dd>
+</dl>
+<dl>
+<dt>All Known Subinterfaces:</dt>
+<dd><a href="../../../org/scijava/java3d/AudioDevice3DL2.html" title="interface in org.scijava.java3d">AudioDevice3DL2</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../org/scijava/java3d/audioengines/AudioEngine3D.html" title="class in org.scijava.java3d.audioengines">AudioEngine3D</a>, <a href="../../../org/scijava/java3d/audioengines/AudioEngine3DL2.html" title="class in org.scijava.java3d.audioengines">AudioEngine3DL2</a>, <a href="../../../org/scijava/java3d/audioengines/javasound/JavaSoundMixer.html" title="class in org.scijava.java3d.audioengines.javasound">JavaSoundMixer</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">AudioDevice3D</span>
+extends <a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a></pre>
+<div class="block">The AudioDevice3D class defines a 3D audio device that is used to set
+ sound and aural attributes.
+<P>
+ After the application chooses the AudioDevice3D that Java3D sound
+ is to be rendered on, the Java 3D Sound Scheduler will call these
+ methods for all active sounds to render them on the audio device.
+<P>
+ The intent is for this interface to be implemented by AudioDevice Driver
+ developers using a software or hardware sound engine of their choice.
+<P>
+ Methods in this interface provide the Java3D Core a generic way to
+ set and query the audio device the application has chosen audio rendering
+ to be performed on.  Methods in this interface include:
+ <UL>
+    Set up and clear the sound as a sample on the device.
+ <P>
+    Start, stop, pause, unpause, mute, and unmute of sample on the device.
+ <P>
+    Set parameters for each sample corresponding to the fields in the
+    Sound node.
+ <P>
+    Set the current active aural parameters that affect all positional samples.
+ </UL>
+ <P>
+ Sound Types
+ <P>
+ Sound types match the Sound node classes defined for Java 3D core
+ for BackgroundSound, PointSound, and ConeSound.  The type of sound
+ a sample is loaded as determines which methods affect it.
+
+ <P>
+ Sound Data Types
+ <P>
+ Samples can be processed as streaming or buffered data.
+ Fully spatializing sound sources may require data to be buffered.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#BACKGROUND_SOUND">BACKGROUND_SOUND</a></span></code>
+<div class="block">Specifies the sound type as background sound.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#BUFFERED_AUDIO_DATA">BUFFERED_AUDIO_DATA</a></span></code>
+<div class="block">Sound data specified as Buffered is copied by the AudioDevice
+  driver implementation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#CONE_SOUND">CONE_SOUND</a></span></code>
+<div class="block">Specifies the sound type as cone sound.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#POINT_SOUND">POINT_SOUND</a></span></code>
+<div class="block">Specifies the sound type as point sound.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#STREAMING_AUDIO_DATA">STREAMING_AUDIO_DATA</a></span></code>
+<div class="block">Sound data specified as Streaming is not copied by the AudioDevice
+  driver implementation.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.AudioDevice">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a></h3>
+<code><a href="../../../org/scijava/java3d/AudioDevice.html#HEADPHONES">HEADPHONES</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#MONO_SPEAKER">MONO_SPEAKER</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#STEREO_SPEAKERS">STEREO_SPEAKERS</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#clearSound-int-">clearSound</a></span>(int&nbsp;index)</code>
+<div class="block">Requests that the AudioDevice free all
+ resources associated with sample with index id.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#getNumberOfChannelsUsed-int-">getNumberOfChannelsUsed</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the number of channels (on executing audio device) that
+ this sound is using, if it is playing, or is expected to use
+ if it were begun to be played.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#getNumberOfChannelsUsed-int-boolean-">getNumberOfChannelsUsed</a></span>(int&nbsp;index,
+                       boolean&nbsp;muted)</code>
+<div class="block">Retrieves the number of channels (on executing audio device) that
+ this sound is using, if it is playing, or is projected to use if
+ it were to be started playing.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#getSampleDuration-int-">getSampleDuration</a></span>(int&nbsp;index)</code>
+<div class="block">Returns the duration in milliseconds of the sound sample,
+ if this information can be determined.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#getStartTime-int-">getStartTime</a></span>(int&nbsp;index)</code>
+<div class="block">Returns the system time of when the sound
+ was last "started".</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#muteSample-int-">muteSample</a></span>(int&nbsp;index)</code>
+<div class="block">Makes the sample 'play silently'.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#pauseSample-int-">pauseSample</a></span>(int&nbsp;index)</code>
+<div class="block">Temporarily stops a cached sample from playing without resetting the
+ sample's current pointer back to the beginning of the sound data so
+ that it can be unpaused at a later time from the same location in the
+ sample when the pause was initiated.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#prepareSound-int-org.scijava.java3d.MediaContainer-">prepareSound</a></span>(int&nbsp;soundType,
+            <a href="../../../org/scijava/java3d/MediaContainer.html" title="class in org.scijava.java3d">MediaContainer</a>&nbsp;soundData)</code>
+<div class="block">Accepts a reference to the MediaContainer
+ which contains a reference to sound data and information about the
+ type of data it is.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setAngularAttenuation-int-int-double:A-float:A-float:A-">setAngularAttenuation</a></span>(int&nbsp;index,
+                     int&nbsp;filterType,
+                     double[]&nbsp;angle,
+                     float[]&nbsp;attenuationScaleFactor,
+                     float[]&nbsp;filterCutoff)</code>
+<div class="block">Sets this sound's angular gain attenuation (including filter)
+ by defining corresponding arrays containing angular offsets from
+ the sound's axis, gain scale factors, and frequency cutoff applied
+ to all active directional sounds.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setDirection-int-org.scijava.vecmath.Vector3d-">setDirection</a></span>(int&nbsp;index,
+            <a href="../../../org/scijava/vecmath/Vector3d.html" title="class in org.scijava.vecmath">Vector3d</a>&nbsp;direction)</code>
+<div class="block">Sets this sound's direction from the local coordinate vector provided.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setDistanceFilter-int-double:A-float:A-">setDistanceFilter</a></span>(int&nbsp;filterType,
+                 double[]&nbsp;distance,
+                 float[]&nbsp;filterCutoff)</code>
+<div class="block">Sets Distance Filter corresponding arrays containing distances and
+ frequency cutoff applied to all active positional sounds.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setDistanceGain-int-double:A-float:A-double:A-float:A-">setDistanceGain</a></span>(int&nbsp;index,
+               double[]&nbsp;frontDistance,
+               float[]&nbsp;frontAttenuationScaleFactor,
+               double[]&nbsp;backDistance,
+               float[]&nbsp;backAttenuationScaleFactor)</code>
+<div class="block">Sets this sound's distance gain elliptical attenuation (not
+ including filter cutoff frequency) by defining corresponding
+ arrays containing distances from the sound's origin and gain
+ scale factors applied to all active positional sounds.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setFrequencyScaleFactor-float-">setFrequencyScaleFactor</a></span>(float&nbsp;frequencyScaleFactor)</code>
+<div class="block">Specifies a scale factor applied to the frequency (or
+ wavelength).</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setLoop-int-int-">setLoop</a></span>(int&nbsp;index,
+       int&nbsp;count)</code>
+<div class="block">Sets a sound's loop count.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setPosition-int-org.scijava.vecmath.Point3d-">setPosition</a></span>(int&nbsp;index,
+           <a href="../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;position)</code>
+<div class="block">Sets this sound's location (in Local coordinates) from specified
+ Point.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setReflectionCoefficient-float-">setReflectionCoefficient</a></span>(float&nbsp;coefficient)</code>
+<div class="block">Sets the Reflective Coefficient scale factor applied to distinct
+ low-order early reflections of sound off the surfaces in the region
+ defined by the current listening region.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setReverbDelay-float-">setReverbDelay</a></span>(float&nbsp;reverbDelay)</code>
+<div class="block">Sets the reverberation delay time.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setReverbOrder-int-">setReverbOrder</a></span>(int&nbsp;reverbOrder)</code>
+<div class="block">Sets the reverberation order of reflections.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setRolloff-float-">setRolloff</a></span>(float&nbsp;rolloff)</code>
+<div class="block">Changes the speed of sound factor.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setSampleGain-int-float-">setSampleGain</a></span>(int&nbsp;index,
+             float&nbsp;scaleFactor)</code>
+<div class="block">Sets the overall gain scale factor applied to data associated with this
+ source to increase or decrease its overall amplitude.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setVelocityScaleFactor-float-">setVelocityScaleFactor</a></span>(float&nbsp;velocityScaleFactor)</code>
+<div class="block">Sets the Velocity scale factor applied during Doppler Effect calculation.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setView-org.scijava.java3d.View-">setView</a></span>(<a href="../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;reference)</code>
+<div class="block">Accepts a reference to the current View.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#setVworldXfrm-int-org.scijava.java3d.Transform3D-">setVworldXfrm</a></span>(int&nbsp;index,
+             <a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;trans)</code>
+<div class="block">Passes a reference to the concatenated transformation to be applied to
+ local sound position and direction parameters.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#startSample-int-">startSample</a></span>(int&nbsp;index)</code>
+<div class="block">Begins a sound playing on the AudioDevice.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#stopSample-int-">stopSample</a></span>(int&nbsp;index)</code>
+<div class="block">Stops the sound on the AudioDevice.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#unmuteSample-int-">unmuteSample</a></span>(int&nbsp;index)</code>
+<div class="block">Makes a silently playing sample audible.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#unpauseSample-int-">unpauseSample</a></span>(int&nbsp;index)</code>
+<div class="block">Restarts the paused sample from the location in the sample where
+ paused.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice3D.html#updateSample-int-">updateSample</a></span>(int&nbsp;index)</code>
+<div class="block">Explicitly updates a Sample.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.AudioDevice">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a></h3>
+<code><a href="../../../org/scijava/java3d/AudioDevice.html#close--">close</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getAngleOffsetToSpeaker--">getAngleOffsetToSpeaker</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getAudioPlaybackType--">getAudioPlaybackType</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getCenterEarToSpeaker--">getCenterEarToSpeaker</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getChannelsAvailable--">getChannelsAvailable</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getChannelsUsedForSound-org.scijava.java3d.Sound-">getChannelsUsedForSound</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#getTotalChannels--">getTotalChannels</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#initialize--">initialize</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#setAngleOffsetToSpeaker-float-">setAngleOffsetToSpeaker</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#setAudioPlaybackType-int-">setAudioPlaybackType</a>, <a href="../../../org/scijava/java3d/AudioDevice.html#setCenterEarToSpeaker-float-">setCenterEarToSpeaker</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="BACKGROUND_SOUND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BACKGROUND_SOUND</h4>
+<pre>static final&nbsp;int BACKGROUND_SOUND</pre>
+<div class="block">Specifies the sound type as background sound.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice3D.BACKGROUND_SOUND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="POINT_SOUND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POINT_SOUND</h4>
+<pre>static final&nbsp;int POINT_SOUND</pre>
+<div class="block">Specifies the sound type as point sound.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice3D.POINT_SOUND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CONE_SOUND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CONE_SOUND</h4>
+<pre>static final&nbsp;int CONE_SOUND</pre>
+<div class="block">Specifies the sound type as cone sound.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice3D.CONE_SOUND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STREAMING_AUDIO_DATA">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STREAMING_AUDIO_DATA</h4>
+<pre>static final&nbsp;int STREAMING_AUDIO_DATA</pre>
+<div class="block">Sound data specified as Streaming is not copied by the AudioDevice
+  driver implementation.  It is up to the application to ensure that
+  this data is continuously accessible during sound rendering.
+  Furthermore, full sound spatialization may not be possible, for
+  all AudioDevice3D implementations on unbuffered sound data.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice3D.STREAMING_AUDIO_DATA">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="BUFFERED_AUDIO_DATA">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BUFFERED_AUDIO_DATA</h4>
+<pre>static final&nbsp;int BUFFERED_AUDIO_DATA</pre>
+<div class="block">Sound data specified as Buffered is copied by the AudioDevice
+  driver implementation.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice3D.BUFFERED_AUDIO_DATA">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setView-org.scijava.java3d.View-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setView</h4>
+<pre>void&nbsp;setView(<a href="../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;reference)</pre>
+<div class="block">Accepts a reference to the current View.
+ Passes reference to current View Object.  The PhysicalEnvironment
+ parameters (with playback type and speaker placement), and the
+ PhysicalBody parameters (position/orientation of ears)
+ can be obtained from this object, and the transformations to/from
+ ViewPlatform coordinate (space the listener's head is in) and
+ Virtual World coordinates (space sounds are in).
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reference</code> - the current View</dd>
+</dl>
+</li>
+</ul>
+<a name="prepareSound-int-org.scijava.java3d.MediaContainer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareSound</h4>
+<pre>int&nbsp;prepareSound(int&nbsp;soundType,
+                 <a href="../../../org/scijava/java3d/MediaContainer.html" title="class in org.scijava.java3d">MediaContainer</a>&nbsp;soundData)</pre>
+<div class="block">Accepts a reference to the MediaContainer
+ which contains a reference to sound data and information about the
+ type of data it is.  A "sound type" input parameter denotes if the
+ Java 3D sound associated with this sample is a Background, Point, or
+ Cone Sound node.
+ Depending on the type of MediaContainer the sound data is and on the
+ implementation of the AudioDevice used, sound data preparation could
+ consist of opening, attaching, or loading sound data into the device.
+ Unless the cached flag is true, this sound data should NOT be copied,
+ if possible, into host or device memory.
+<P>
+ Once this preparation is complete for the sound sample, an AudioDevice
+ specific index, used to reference the sample in future method calls,
+ is returned.  All the rest of the methods described below require
+ this index as a parameter.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>soundType</code> - defines the type of Sound Node: Background, Point, and
+ Cone</dd>
+<dd><code>soundData</code> - reference to MediaContainer sound data and cached flag</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>device specific sample index used for referencing this sound</dd>
+</dl>
+</li>
+</ul>
+<a name="clearSound-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearSound</h4>
+<pre>void&nbsp;clearSound(int&nbsp;index)</pre>
+<div class="block">Requests that the AudioDevice free all
+ resources associated with sample with index id.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+<a name="getSampleDuration-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSampleDuration</h4>
+<pre>long&nbsp;getSampleDuration(int&nbsp;index)</pre>
+<div class="block">Returns the duration in milliseconds of the sound sample,
+ if this information can be determined.
+ For non-cached
+ streams, this method returns Sound.DURATION_UNKNOWN.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>sound duration in milliseconds if this can be determined,
+ otherwise (for non-cached streams) Sound.DURATION_UNKNOWN is returned</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumberOfChannelsUsed-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumberOfChannelsUsed</h4>
+<pre>int&nbsp;getNumberOfChannelsUsed(int&nbsp;index)</pre>
+<div class="block">Retrieves the number of channels (on executing audio device) that
+ this sound is using, if it is playing, or is expected to use
+ if it were begun to be played.  This form of this method takes the
+ sound's current state (including whether it is muted or unmuted)
+ into account.
+<P>
+ For some AudioDevice3D implementations:
+<UL>
+     Muted sound take channels up on the systems mixer (because they're
+         rendered as samples playing with gain zero.
+<P>
+     A single sound could be rendered using multiple samples, each taking
+         up mixer channels.
+</UL>
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of channels used by sound if it were playing</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumberOfChannelsUsed-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumberOfChannelsUsed</h4>
+<pre>int&nbsp;getNumberOfChannelsUsed(int&nbsp;index,
+                            boolean&nbsp;muted)</pre>
+<div class="block">Retrieves the number of channels (on executing audio device) that
+ this sound is using, if it is playing, or is projected to use if
+ it were to be started playing.  Rather than using the actual current
+ muted/unmuted state of the sound, the muted parameter is used in
+ making the determination.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>muted</code> - flag to use as the current muted state ignoring current
+ mute state</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of channels used by sound if it were playing</dd>
+</dl>
+</li>
+</ul>
+<a name="startSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startSample</h4>
+<pre>int&nbsp;startSample(int&nbsp;index)</pre>
+<div class="block">Begins a sound playing on the AudioDevice.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>flag denoting if sample was started; 1 if true, 0 if false</dd>
+</dl>
+</li>
+</ul>
+<a name="getStartTime-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStartTime</h4>
+<pre>long&nbsp;getStartTime(int&nbsp;index)</pre>
+<div class="block">Returns the system time of when the sound
+ was last "started".  Note that this start time will be as accurate
+ as the AudioDevice implementation can make it - but that it is not
+ guaranteed to be exact.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>system time in milliseconds of the last time sound was started</dd>
+</dl>
+</li>
+</ul>
+<a name="stopSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopSample</h4>
+<pre>int&nbsp;stopSample(int&nbsp;index)</pre>
+<div class="block">Stops the sound on the AudioDevice.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample
+ associated with sound data to be played</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>flag denoting if sample was stopped; 1 if true, 0 if false</dd>
+</dl>
+</li>
+</ul>
+<a name="setSampleGain-int-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSampleGain</h4>
+<pre>void&nbsp;setSampleGain(int&nbsp;index,
+                   float&nbsp;scaleFactor)</pre>
+<div class="block">Sets the overall gain scale factor applied to data associated with this
+ source to increase or decrease its overall amplitude.
+ The gain scale factor value passed into this method is the combined value
+ of the Sound node's Initial Gain and the current AuralAttribute Gain
+ scale factors.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>scaleFactor</code> - amplitude (gain) scale factor</dd>
+</dl>
+</li>
+</ul>
+<a name="setLoop-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLoop</h4>
+<pre>void&nbsp;setLoop(int&nbsp;index,
+             int&nbsp;count)</pre>
+<div class="block">Sets a sound's loop count.
+ A full description of this parameter and how it is used is in
+ the documentation for Sound.setLoop.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>count</code> - number of times sound is looped during play</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Sound.html#setLoop-int-"><code>Sound.setLoop(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setVworldXfrm-int-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVworldXfrm</h4>
+<pre>void&nbsp;setVworldXfrm(int&nbsp;index,
+                   <a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;trans)</pre>
+<div class="block">Passes a reference to the concatenated transformation to be applied to
+ local sound position and direction parameters.
+ <P>
+ This method should only be called by Java3D Core and NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>trans</code> - transformation matrix applied to local coordinate parameters</dd>
+</dl>
+</li>
+</ul>
+<a name="setPosition-int-org.scijava.vecmath.Point3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPosition</h4>
+<pre>void&nbsp;setPosition(int&nbsp;index,
+                 <a href="../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;position)</pre>
+<div class="block">Sets this sound's location (in Local coordinates) from specified
+ Point. The form of the position parameter matches those of the PointSound
+ method of the same name.
+ A full description of this parameter and how it is used is in
+ the documentation for PointSound class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>position</code> - location of Point or Cone Sound in Virtual World
+ coordinates</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/PointSound.html#setPosition-float-float-float-"><code>PointSound.setPosition(float x, float y, float z)</code></a>, 
+<a href="../../../org/scijava/java3d/PointSound.html#setPosition-org.scijava.vecmath.Point3f-"><code>PointSound.setPosition(Point3f position)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setDistanceGain-int-double:A-float:A-double:A-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDistanceGain</h4>
+<pre>void&nbsp;setDistanceGain(int&nbsp;index,
+                     double[]&nbsp;frontDistance,
+                     float[]&nbsp;frontAttenuationScaleFactor,
+                     double[]&nbsp;backDistance,
+                     float[]&nbsp;backAttenuationScaleFactor)</pre>
+<div class="block">Sets this sound's distance gain elliptical attenuation (not
+ including filter cutoff frequency) by defining corresponding
+ arrays containing distances from the sound's origin and gain
+ scale factors applied to all active positional sounds.
+ Gain scale factor is applied to sound based on the distance
+ the listener
+ is from sound source.
+ These attenuation parameters are ignored for BackgroundSound nodes.
+ The back attenuation parameter is ignored for PointSound nodes.
+ <P>
+ The form of the attenuation parameters match that of the ConeSound method
+ of the same name.
+ A full description of this parameter and how it is used is in
+ the documentation for ConeSound class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>frontDistance</code> - defines an array of distance along positive axis
+ through which ellipses pass</dd>
+<dd><code>frontAttenuationScaleFactor</code> - gain scale factors</dd>
+<dd><code>backDistance</code> - defines an array of distance along the negative axis
+ through which ellipses pass</dd>
+<dd><code>backAttenuationScaleFactor</code> - gain scale factors</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/ConeSound.html#setDistanceGain-float:A-float:A-float:A-float:A-"><code>ConeSound.setDistanceGain(float[] frontDistance, float[] frontGain,
+ float[] backDistance, float[] backGain)</code></a>, 
+<a href="../../../org/scijava/java3d/ConeSound.html#setDistanceGain-org.scijava.vecmath.Point2f:A-org.scijava.vecmath.Point2f:A-"><code>ConeSound.setDistanceGain(Point2f[] frontAttenuation,
+ Point2f[] backAttenuation)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setDirection-int-org.scijava.vecmath.Vector3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDirection</h4>
+<pre>void&nbsp;setDirection(int&nbsp;index,
+                  <a href="../../../org/scijava/vecmath/Vector3d.html" title="class in org.scijava.vecmath">Vector3d</a>&nbsp;direction)</pre>
+<div class="block">Sets this sound's direction from the local coordinate vector provided.
+ The form of the direction parameter matches that of the ConeSound method
+ of the same name.
+ A full description of this parameter and how it is used is in
+ the documentation for the ConeSound class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>direction</code> - the new direction vector in local coordinates</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/ConeSound.html#setDirection-float-float-float-"><code>ConeSound.setDirection(float x, float y, float z)</code></a>, 
+<a href="../../../org/scijava/java3d/ConeSound.html#setDirection-org.scijava.vecmath.Vector3f-"><code>ConeSound.setDirection(Vector3f direction)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setAngularAttenuation-int-int-double:A-float:A-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAngularAttenuation</h4>
+<pre>void&nbsp;setAngularAttenuation(int&nbsp;index,
+                           int&nbsp;filterType,
+                           double[]&nbsp;angle,
+                           float[]&nbsp;attenuationScaleFactor,
+                           float[]&nbsp;filterCutoff)</pre>
+<div class="block">Sets this sound's angular gain attenuation (including filter)
+ by defining corresponding arrays containing angular offsets from
+ the sound's axis, gain scale factors, and frequency cutoff applied
+ to all active directional sounds.
+ Gain scale factor is applied to sound based on the angle between the
+ sound's axis and the ray from the sound source origin to the listener.
+ The form of the attenuation parameter matches that of the ConeSound
+ method of the same name.
+ A full description of this parameter and how it is used is in
+ the documentation for the ConeSound class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+<dd><code>filterType</code> - describes type (if any) of filtering defined by attenuation</dd>
+<dd><code>angle</code> - array containing angular distances from sound axis</dd>
+<dd><code>attenuationScaleFactor</code> - array containing gain scale factor</dd>
+<dd><code>filterCutoff</code> - array containing filter cutoff frequencies.
+ The filter values for each tuples can be set to Sound.NO_FILTER.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/ConeSound.html#setAngularAttenuation-float:A-float:A-float:A-"><code>ConeSound.setAngularAttenuation(float[] distance, float[] gain,
+ float[] filter)</code></a>, 
+<a href="../../../org/scijava/java3d/ConeSound.html#setAngularAttenuation-org.scijava.vecmath.Point3f:A-"><code>ConeSound.setAngularAttenuation(Point3f[] attenuation)</code></a>, 
+<a href="../../../org/scijava/java3d/ConeSound.html#setAngularAttenuation-org.scijava.vecmath.Point2f:A-"><code>ConeSound.setAngularAttenuation(Point2f[] attenuation)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setRolloff-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRolloff</h4>
+<pre>void&nbsp;setRolloff(float&nbsp;rolloff)</pre>
+<div class="block">Changes the speed of sound factor.
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rolloff</code> - atmospheric gain scale factor (changing speed of sound)</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setRolloff-float-"><code>AuralAttributes.setRolloff(float)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setReflectionCoefficient-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReflectionCoefficient</h4>
+<pre>void&nbsp;setReflectionCoefficient(float&nbsp;coefficient)</pre>
+<div class="block">Sets the Reflective Coefficient scale factor applied to distinct
+ low-order early reflections of sound off the surfaces in the region
+ defined by the current listening region.
+ <P>
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>coefficient</code> - reflection/absorption factor applied to reverb</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setReflectionCoefficient-float-"><code>AuralAttributes.setReflectionCoefficient(float)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setReverbDelay-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReverbDelay</h4>
+<pre>void&nbsp;setReverbDelay(float&nbsp;reverbDelay)</pre>
+<div class="block">Sets the reverberation delay time.
+ In this form,  while reverberation is being rendered, the parameter
+ specifies the delay time between each order of late reflections
+ explicitly given in milliseconds.
+ A value for delay time of 0.0 disables
+ reverberation.
+ <P>
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reverbDelay</code> - time between each order of late reflection</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setReverbDelay-float-"><code>AuralAttributes.setReverbDelay(float reverbDelay)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setReverbOrder-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReverbOrder</h4>
+<pre>void&nbsp;setReverbOrder(int&nbsp;reverbOrder)</pre>
+<div class="block">Sets the reverberation order of reflections.
+ The reverbOrder parameter specifies the number of times reflections are added to
+ reverberation being calculated. A value of -1 specifies an unbounded
+ number of reverberations.
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reverbOrder</code> - number of times reflections added to reverb signal</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setReverbOrder-int-"><code>AuralAttributes.setReverbOrder(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setDistanceFilter-int-double:A-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDistanceFilter</h4>
+<pre>void&nbsp;setDistanceFilter(int&nbsp;filterType,
+                       double[]&nbsp;distance,
+                       float[]&nbsp;filterCutoff)</pre>
+<div class="block">Sets Distance Filter corresponding arrays containing distances and
+ frequency cutoff applied to all active positional sounds.
+ Gain scale factor is applied to sound based on the distance the listener
+ is from the sound source.
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>filterType</code> - denotes the type of filtering to be applied</dd>
+<dd><code>distance</code> - array of offset distances from sound origin</dd>
+<dd><code>filterCutoff</code> - array of frequency cutoff</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setDistanceFilter-float:A-float:A-"><code>AuralAttributes.setDistanceFilter(float[] distance,
+       float[] frequencyCutoff)</code></a>, 
+<a href="../../../org/scijava/java3d/AuralAttributes.html#setDistanceFilter-org.scijava.vecmath.Point2f:A-"><code>AuralAttributes.setDistanceFilter(Point2f[] attenuation)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setFrequencyScaleFactor-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFrequencyScaleFactor</h4>
+<pre>void&nbsp;setFrequencyScaleFactor(float&nbsp;frequencyScaleFactor)</pre>
+<div class="block">Specifies a scale factor applied to the frequency (or
+ wavelength).  A value less than 1.0 will result of slowing the playback
+ rate of the sample.  A value greater than 1.0 will increase the playback
+ rate.
+ This parameter is also used to expand or contract the usual
+ frequency shift applied to the sound source due to Doppler effect
+ calculations. Valid values are >= 0.0.
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>frequencyScaleFactor</code> - factor applied to change of frequency</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setFrequencyScaleFactor-float-"><code>AuralAttributes.setFrequencyScaleFactor(float)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setVelocityScaleFactor-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVelocityScaleFactor</h4>
+<pre>void&nbsp;setVelocityScaleFactor(float&nbsp;velocityScaleFactor)</pre>
+<div class="block">Sets the Velocity scale factor applied during Doppler Effect calculation.
+ This parameter specifies a scale factor applied to the velocity of sound
+ relative to the listener's position and movement in relation to the sound's
+ position and movement.  This scale factor is multipled by the calculated
+ velocity portion of the Doppler effect equation used during sound rendering.
+ A full description of this parameter and how it is used is in
+ the documentation for the AuralAttributes class.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>velocityScaleFactor</code> - applied to velocity of sound in relation
+ to listener</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/AuralAttributes.html#setVelocityScaleFactor-float-"><code>AuralAttributes.setVelocityScaleFactor(float)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="muteSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>muteSample</h4>
+<pre>void&nbsp;muteSample(int&nbsp;index)</pre>
+<div class="block">Makes the sample 'play silently'.
+ This method implements (as efficiently as possible) the muting
+ of a playing sound sample.  Ideally this is implemented by
+ stopping a sample and freeing channel resources (rather than
+ just setting the gain of the sample to zero).
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+<a name="unmuteSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unmuteSample</h4>
+<pre>void&nbsp;unmuteSample(int&nbsp;index)</pre>
+<div class="block">Makes a silently playing sample audible.
+ In the ideal, this restarts a muted sample by offset from the
+ beginning by the number of milliseconds since the time the sample
+ began playing (rather than setting gain to current non-zero gain).
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+<a name="pauseSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pauseSample</h4>
+<pre>void&nbsp;pauseSample(int&nbsp;index)</pre>
+<div class="block">Temporarily stops a cached sample from playing without resetting the
+ sample's current pointer back to the beginning of the sound data so
+ that it can be unpaused at a later time from the same location in the
+ sample when the pause was initiated.  Pausing a streaming, non-cached
+ sound sample will be treated as a mute.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+<a name="unpauseSample-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unpauseSample</h4>
+<pre>void&nbsp;unpauseSample(int&nbsp;index)</pre>
+<div class="block">Restarts the paused sample from the location in the sample where
+ paused.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+<a name="updateSample-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>updateSample</h4>
+<pre>void&nbsp;updateSample(int&nbsp;index)</pre>
+<div class="block">Explicitly updates a Sample.
+ This method is called when a Sound is to be explicitly updated.
+ It is only called when all a sounds parameters are known to have
+ been passed to the audio device.  In this way, an implementation
+ can choose to perform lazy-evaluation of a sample, rather than
+ updating the rendering state of the sample after every individual
+ parameter changed.
+ This method can be left as a null method if the implementor so chooses.
+ <P>
+ This method should only be called by Java3D Core and  NOT by any application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - device specific reference number to device driver sample</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/AudioDevice3DL2.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/AudioDevice3D.html" target="_top">Frames</a></li>
+<li><a href="AudioDevice3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Screen3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Screen3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Sensor.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Screen3D.html" target="_top">Frames</a></li>
+<li><a href="Screen3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class Screen3D" class="title">Class Screen3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.Screen3D</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Screen3D</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">The Screen3D Object contains all information about a particular screen.
+ All Canvas3D objects on the same physical screen (display device)
+ refer to the same Screen3D object.  Note that Screen3D has no public
+ constructors--it is obtained from the Canvas3D via the getScreen3D
+ method.
+ <p>
+ Default values for Screen3D parameters are as follows:
+ <ul>
+ physical screen width : 0.0254/90.0 * screen width (in pixels)<br>
+ physical screen height : 0.0254/90.0 * screen height (in pixels)<br>
+ tracker base to image plate transform : identity<br>
+ head tracker to left image plate transform : identity<br>
+ head tracker to right image plate transform : identity<br>
+ off-screen size : (0,0)<br>
+ </ul>
+ <P>
+ <b>Offscreen Rendering</b><P>
+ New for Java 3D 1.2, an off-screen rendering mode allows rendering
+ to a memory image, which is possibly larger than the screen. The
+ setSize and getSize methods are defined specifically for this
+ mode. Note that the off-screen size, physical width, and physical height
+ must be set prior to rendering
+ to the associated off-screen canvas. Failure to do so will result
+ in an exception.<P>
+ <b>Calibration Parameters</b><P>
+ The Screen3D object must be calibrated with the coexistence volume.
+ The Screen3D class provides several methods for defining the
+ calibration parameters.<P>
+ <UL>Measured Parameters<P>
+ The screen's (image plate's) physical width and height (in meters)
+ is set once, typically by a browser, calibration program, system
+ administrator, or system calibrator, not by an applet. These values
+ must be determined by measuring the display's active image width
+ and height. In the case of a head-mounted display, this should be
+ the display's apparent width and height at the focal plane. These
+ values are defined by the setPhysicalScreenWidth and
+ setPhysicalScreenHeight methods.<P>
+
+ Head-tracker Coordinate System<P>
+ If head tracking is enabled, one of two parameters need to be specified:<P>
+ <UL><LI>If the view policy is SCREEN_VIEW, the tracker-base-to-image-plate
+ coordinate system must be specified (setTrackerBaseToImagePlate method).
+ This coordinate system must be recalibrated whenever the image
+ plate moves relative to the tracker.</LI><P>
+
+ <LI>If the view policy is HMD_VIEW, the head-tracker-to-left-image-plate
+ and head-tracker-to-right-image-plate coordinate systems must be
+ specified (setHeadTrackerToLeftImagePlate and
+ setHeadTrackerToRightImagePlate methods).</LI><P></UL>
+ </UL><P>
+
+ <p>
+ <b>Additional Information</b>
+ <p>
+ For more information, see the
+ <a href="doc-files/intro.html">Introduction to the Java 3D API</a> and
+ <a href="doc-files/ViewModel.html">View Model</a>
+ documents.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d"><code>Canvas3D</code></a>, 
+<a href="../../../org/scijava/java3d/Canvas3D.html#getScreen3D--"><code>Canvas3D.getScreen3D()</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getHeadTrackerToLeftImagePlate-org.scijava.java3d.Transform3D-">getHeadTrackerToLeftImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Retrieves the head-tracker coordinate system to left image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getHeadTrackerToRightImagePlate-org.scijava.java3d.Transform3D-">getHeadTrackerToRightImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Retrieves the head-tracker coordinate system to right image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getPhysicalScreenHeight--">getPhysicalScreenHeight</a></span>()</code>
+<div class="block">Retrieves the the screen's physical height in meters.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getPhysicalScreenWidth--">getPhysicalScreenWidth</a></span>()</code>
+<div class="block">Retrieves the screen's physical width in meters.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getSize--">getSize</a></span>()</code>
+<div class="block">Retrieves the width and height (in pixels) of this Screen3D.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getSize-java.awt.Dimension-">getSize</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;rv)</code>
+<div class="block">Retrieves the width and height (in pixels) of this Screen3D
+ and copies it into the specified Dimension object.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#getTrackerBaseToImagePlate-org.scijava.java3d.Transform3D-">getTrackerBaseToImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Retrieves the tracker-base coordinate system to image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setHeadTrackerToLeftImagePlate-org.scijava.java3d.Transform3D-">setHeadTrackerToLeftImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Sets the head-tracker coordinate system to left image-plate coordinate
+ system transform.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setHeadTrackerToRightImagePlate-org.scijava.java3d.Transform3D-">setHeadTrackerToRightImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Sets the head-tracker coordinate system to right image-plate coordinate
+ system transform.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setPhysicalScreenHeight-double-">setPhysicalScreenHeight</a></span>(double&nbsp;height)</code>
+<div class="block">Sets the screen physical height in meters.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setPhysicalScreenWidth-double-">setPhysicalScreenWidth</a></span>(double&nbsp;width)</code>
+<div class="block">Sets the screen physical width in meters.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setSize-java.awt.Dimension-">setSize</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;d)</code>
+<div class="block">Sets the width and height (in pixels) of this off-screen Screen3D.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setSize-int-int-">setSize</a></span>(int&nbsp;width,
+       int&nbsp;height)</code>
+<div class="block">Sets the width and height (in pixels) of this off-screen Screen3D.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#setTrackerBaseToImagePlate-org.scijava.java3d.Transform3D-">setTrackerBaseToImagePlate</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Sets the tracker-base coordinate system to image-plate coordinate
+ system transform.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Screen3D.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getSize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSize</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;getSize()</pre>
+<div class="block">Retrieves the width and height (in pixels) of this Screen3D.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new Dimension object containing the width and height
+ of this Screen3D.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSize-java.awt.Dimension-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSize</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;getSize(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;rv)</pre>
+<div class="block">Retrieves the width and height (in pixels) of this Screen3D
+ and copies it into the specified Dimension object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rv</code> - Dimension object into which the size of
+ this Screen3D is copied.
+ If <code>rv</code> is null, a new Dimension object is allocated.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>rv</code></dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSize</h4>
+<pre>public&nbsp;void&nbsp;setSize(int&nbsp;width,
+                    int&nbsp;height)</pre>
+<div class="block">Sets the width and height (in pixels) of this off-screen Screen3D.
+ The default size for off-screen Screen3D objects is (0,0).
+ <br>
+ NOTE: the size must be
+ set prior to rendering to the associated off-screen canvas.
+ Failure to do so will result in an exception.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - the new width of this Screen3D object</dd>
+<dd><code>height</code> - the new height of this Screen3D object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if this Screen3D is not in
+ off-screen mode.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setSize-java.awt.Dimension-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSize</h4>
+<pre>public&nbsp;void&nbsp;setSize(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;d)</pre>
+<div class="block">Sets the width and height (in pixels) of this off-screen Screen3D.
+ The default size for off-screen Screen3D objects is (0,0).
+ <br>
+ NOTE: the size must be
+ set prior to rendering to the associated off-screen canvas.
+ Failure to do so will result in an exception.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>d</code> - the new dimension of this Screen3D object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if this Screen3D is not in
+ off-screen mode.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setPhysicalScreenWidth-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPhysicalScreenWidth</h4>
+<pre>public&nbsp;void&nbsp;setPhysicalScreenWidth(double&nbsp;width)</pre>
+<div class="block">Sets the screen physical width in meters.  In the case of a
+ head-mounted display, this should be the apparent width
+ at the focal plane.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - the screen's physical width in meters</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalScreenWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalScreenWidth</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalScreenWidth()</pre>
+<div class="block">Retrieves the screen's physical width in meters.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the screen's physical width in meters</dd>
+</dl>
+</li>
+</ul>
+<a name="setPhysicalScreenHeight-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPhysicalScreenHeight</h4>
+<pre>public&nbsp;void&nbsp;setPhysicalScreenHeight(double&nbsp;height)</pre>
+<div class="block">Sets the screen physical height in meters.  In the case of a
+ head-mounted display, this should be the apparent height
+ at the focal plane.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>height</code> - the screen's physical height in meters</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalScreenHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalScreenHeight</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalScreenHeight()</pre>
+<div class="block">Retrieves the the screen's physical height in meters.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the screen's physical height in meters</dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setTrackerBaseToImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTrackerBaseToImagePlate</h4>
+<pre>public&nbsp;void&nbsp;setTrackerBaseToImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Sets the tracker-base coordinate system to image-plate coordinate
+ system transform.  This transform
+ is typically a calibration constant.
+ This is used only in SCREEN_VIEW mode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the new transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not rigid</dd>
+</dl>
+</li>
+</ul>
+<a name="getTrackerBaseToImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrackerBaseToImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getTrackerBaseToImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Retrieves the tracker-base coordinate system to image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the object that will receive the transform</dd>
+</dl>
+</li>
+</ul>
+<a name="setHeadTrackerToLeftImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHeadTrackerToLeftImagePlate</h4>
+<pre>public&nbsp;void&nbsp;setHeadTrackerToLeftImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Sets the head-tracker coordinate system to left image-plate coordinate
+ system transform.  This transform
+ is typically a calibration constant.
+ This is used only in HMD_VIEW mode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the new transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not rigid</dd>
+</dl>
+</li>
+</ul>
+<a name="getHeadTrackerToLeftImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeadTrackerToLeftImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getHeadTrackerToLeftImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Retrieves the head-tracker coordinate system to left image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the object that will receive the transform</dd>
+</dl>
+</li>
+</ul>
+<a name="setHeadTrackerToRightImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHeadTrackerToRightImagePlate</h4>
+<pre>public&nbsp;void&nbsp;setHeadTrackerToRightImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Sets the head-tracker coordinate system to right image-plate coordinate
+ system transform.  This transform
+ is typically a calibration constant.
+ This is used only in HMD_VIEW mode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the new transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not rigid</dd>
+</dl>
+</li>
+</ul>
+<a name="getHeadTrackerToRightImagePlate-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getHeadTrackerToRightImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getHeadTrackerToRightImagePlate(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Retrieves the head-tracker coordinate system to right image-plate
+ coordinate system transform and copies it into the specified
+ Transform3D object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the object that will receive the transform</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Sensor.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Screen3D.html" target="_top">Frames</a></li>
+<li><a href="Screen3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

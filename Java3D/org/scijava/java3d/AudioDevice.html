@@ -1,0 +1,674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AudioDevice (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AudioDevice (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/AudioDevice3D.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/AudioDevice.html" target="_top">Frames</a></li>
+<li><a href="AudioDevice.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Interface AudioDevice" class="title">Interface AudioDevice</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Known Subinterfaces:</dt>
+<dd><a href="../../../org/scijava/java3d/AudioDevice3D.html" title="interface in org.scijava.java3d">AudioDevice3D</a>, <a href="../../../org/scijava/java3d/AudioDevice3DL2.html" title="interface in org.scijava.java3d">AudioDevice3DL2</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../org/scijava/java3d/audioengines/AudioEngine.html" title="class in org.scijava.java3d.audioengines">AudioEngine</a>, <a href="../../../org/scijava/java3d/audioengines/AudioEngine3D.html" title="class in org.scijava.java3d.audioengines">AudioEngine3D</a>, <a href="../../../org/scijava/java3d/audioengines/AudioEngine3DL2.html" title="class in org.scijava.java3d.audioengines">AudioEngine3DL2</a>, <a href="../../../org/scijava/java3d/audioengines/javasound/JavaSoundMixer.html" title="class in org.scijava.java3d.audioengines.javasound">JavaSoundMixer</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">AudioDevice</span></pre>
+<div class="block">The AudioDevice Class defines and encapsulates the
+ audio device's basic information and characteristics.
+ <P>
+ A Java3D application running on a particular machine could have one of
+ several options available to it for playing the audio image created by the
+ sound renderer. Perhaps the machine Java3D is executing on has more than
+ one sound card (e.g., one that is a Wave Table Synthesis card and the other
+ with accelerated sound spatialization hardware). Furthermore, suppose there
+ are Java3D audio device drivers that execute Java3D audio methods on each of
+ these specific cards. In such a case the application would have at least two
+ audio device drivers through which the audio could be produced. For such a
+ case the Java3D application must choose the audio device driver with which
+ sound rendering is to be performed. Once this audio device is chosen, the
+ application can additionally select the type of audio playback type the
+ rendered sound image is to be output on. The playback device (headphones or
+ speaker(s)) is physically connected to the port the selected device driver
+ outputs to.
+<P>
+ AudioDevice Interface
+<P>
+<UL> The selection of this device driver is done through methods in the
+     PhysicalEnvironment object - see PhysicalEnvironment class.
+     The application would query how many audio devices are available. For
+     each device, the user can get the AudioDevice object that describes it
+     and query its characteristics. Once a decision is made about which of
+     the available audio devices to use for a PhysicalEnvironment, the
+     particular device is set into this PhysicalEnvironment's fields. Each
+     PhysicalEnvironment object may use only a single audio device.
+<P>
+     The AudioDevice object interface specifies an abstract input device
+     that creators of Java3D class libraries would implement for a particular
+     device. Java3D's uses several methods to interact with specific devices.
+     Since all audio devices implement this consistent interface, the user
+     could have a portable means of initialize, set particular audio device
+     elements and query generic characteristics for any audio device.
+<P>
+Initialization
+<P><UL>
+  Each audio device driver must be initialized.
+  The chosen device driver should be initialized before any Java3D
+  Sound methods are executed because the implementation of the Sound
+  methods, in general, are potentially device driver dependent.</UL>
+<P>
+ Audio Playback Type
+<P><UL>
+  These methods set and retrieve the audio playback type used to output
+  the analog audio from rendering Java3D Sound nodes.
+  The audio playback type specifies that playback will be through:
+  stereo headphones, a monaural speaker,  or a pair of speakers.
+  For the stereo speakers, it is assumed that the two output speakers are
+  equally distant from the listener, both at same angle from the head
+  axis (thus oriented symmetrically about the listener), and at the same
+  elevation.
+  The type of playback chosen affects the sound image generated.
+  Cross-talk cancellation is applied to the audio image if playback over
+  stereo speakers is selected.</UL>
+<P>
+ Distance to Speaker
+<P><UL>
+ These methods set and retrieve the distance in meters from the center
+ ear (the midpoint between the left and right ears) and one of the
+ speakers in the listener's environment. For monaural speaker playback,
+ a typical distance from the listener to the speaker in a workstation
+ cabinet is 0.76 meters. For stereo speakers placed at the sides of the
+ display, this might be 0.82 meters.</UL>
+<P>
+  Angular Offset of Speakers
+<P><UL>
+  These methods set and retrieve the angle in radians between the vectors
+  from the center ear to each of the speaker transducers and the vectors
+  from the center ear parallel to the head coordinate's Z axis. Speakers
+  placed at the sides of the computer display typically range between
+  0.28 to 0.35 radians (between 10 and 20 degrees).</UL>
+<P>
+  Device Driver Specific Data
+<P><UL>
+  While the sound image created for final output to the playback system
+  is either only mono or stereo (for this version of Java3D) most device
+  driver implementations will mix the left and right image signals
+  generated for each rendered sound source before outputting the final
+  playback image. Each sound source will use N input channels of this
+  internal mixer. Each implemented Java3D audio device driver will have
+  its own limitations and driver-specific characteristics. These include
+  channel availability and usage (during rendering).  Methods for
+  querying these device-driver specific characteristics are provided.</UL></UL>
+<P>
+ Instantiating and Registering a New Device
+<P>
+<UL> A browser or applications developer must instantiate whatever system-
+     specific audio devices that he or she needs and that exist on the system.
+     This device information typically exists in a site configuration file.
+     The browser or application will instantiate the physical environment as
+     requested by the end-user.
+<P>
+     The API for instantiating devices is site-specific, but it consists of
+     a device object with a constructor and at least all of the methods
+     specified in the AudioDevice interface.
+<P>
+     Once instantiated, the browser or application must register the device
+     with the Java3D sound scheduler by associating this device with a
+     PhysicalEnvironment.  The setAudioDevice method introduces new devices
+     to the Java3D environment and the allAudioDevices method produces an
+     enumeration that allows examining all available devices within a Java3D
+     environment. See PhysicalEnvironment class for more details.</UL>
+ <P>
+ General Rules for calling AudioDevice methods:
+ It is illegal for an application to call any non-query AudioDevice method
+ if the AudioDevice is created then explicitly assigned to a
+ PhysicalEnvironment using PhysicalEnvironment.setAudioDevice();
+ When either PhysicalEnvironment.setAudioDevice() is called - including
+ when implicitly called by SimpleUniverse.getViewer().createAudioDevice()
+ - the Core creates a SoundScheduler thread which makes calls to
+ the AudioDevice.
+ <P>
+ If an application creates it's own instance of an AudioDevice and
+ initializes it directly, rather than using PhysicalEnvironment.
+ setAudioDevice(), that application may make <i>any</i> AudioDevice3D methods calls
+ without fear of the Java 3D Core also trying to control the AudioDevice.
+ Under this condition it is safe to call AudioDevice non-query methods.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#HEADPHONES">HEADPHONES</a></span></code>
+<div class="block">Choosing Headphones as the audio playback type
+     specifies that the audio playback will be through stereo headphones.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#MONO_SPEAKER">MONO_SPEAKER</a></span></code>
+<div class="block">Choosing a
+     single near-field monoaural speaker
+     as the audio playback type
+     specifies that the audio playback will be through a single speaker
+     some supplied distance away from the listener.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#STEREO_SPEAKERS">STEREO_SPEAKERS</a></span></code>
+<div class="block">Choosing a
+     two near-field stereo speakers
+     as the audio playback type
+     specifies that the audio playback will be through stereo speakers
+     some supplied distance away from, and at some given angle to
+     the listener.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#close--">close</a></span>()</code>
+<div class="block">Code to close the device and release resources.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getAngleOffsetToSpeaker--">getAngleOffsetToSpeaker</a></span>()</code>
+<div class="block">Get Angle Offset (in radians) To Speaker.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getAudioPlaybackType--">getAudioPlaybackType</a></span>()</code>
+<div class="block">Get Type of Audio Playback Output Device.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getCenterEarToSpeaker--">getCenterEarToSpeaker</a></span>()</code>
+<div class="block">Get Distance from interaural mid-point between Ears to a Speaker.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getChannelsAvailable--">getChannelsAvailable</a></span>()</code>
+<div class="block">Query number of channels currently available for use.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getChannelsUsedForSound-org.scijava.java3d.Sound-">getChannelsUsedForSound</a></span>(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;node)</code>
+<div class="block">Query number of channels that are used, or would be used to render
+ a particular sound node.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#getTotalChannels--">getTotalChannels</a></span>()</code>
+<div class="block">Query total number of channels available for sound rendering
+ for this audio device.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#initialize--">initialize</a></span>()</code>
+<div class="block">Initialize the audio device.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#setAngleOffsetToSpeaker-float-">setAngleOffsetToSpeaker</a></span>(float&nbsp;angle)</code>
+<div class="block">Set Angle Offset (in radians) To Speaker.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#setAudioPlaybackType-int-">setAudioPlaybackType</a></span>(int&nbsp;type)</code>
+<div class="block">Set Type of Audio Playback physical transducer(s) sound is output to.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/AudioDevice.html#setCenterEarToSpeaker-float-">setCenterEarToSpeaker</a></span>(float&nbsp;distance)</code>
+<div class="block">Set Distance from interaural mid-point between Ears to a Speaker.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="HEADPHONES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>HEADPHONES</h4>
+<pre>static final&nbsp;int HEADPHONES</pre>
+<div class="block">Choosing Headphones as the audio playback type
+     specifies that the audio playback will be through stereo headphones.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice.HEADPHONES">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="MONO_SPEAKER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MONO_SPEAKER</h4>
+<pre>static final&nbsp;int MONO_SPEAKER</pre>
+<div class="block">Choosing a
+     single near-field monoaural speaker
+     as the audio playback type
+     specifies that the audio playback will be through a single speaker
+     some supplied distance away from the listener.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice.MONO_SPEAKER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STEREO_SPEAKERS">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>STEREO_SPEAKERS</h4>
+<pre>static final&nbsp;int STEREO_SPEAKERS</pre>
+<div class="block">Choosing a
+     two near-field stereo speakers
+     as the audio playback type
+     specifies that the audio playback will be through stereo speakers
+     some supplied distance away from, and at some given angle to
+     the listener.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.AudioDevice.STEREO_SPEAKERS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="initialize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialize</h4>
+<pre>boolean&nbsp;initialize()</pre>
+<div class="block">Initialize the audio device.
+ Exactly what occurs during initialization is implementation dependent.
+ This method provides explicit control by the user over when this
+ initialization occurs.
+ Initialization must be initiated before any other AudioDevice
+ methods are called.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if initialization was successful without errors</dd>
+</dl>
+</li>
+</ul>
+<a name="close--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>boolean&nbsp;close()</pre>
+<div class="block">Code to close the device and release resources.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if close of device was successful without errors</dd>
+</dl>
+</li>
+</ul>
+<a name="setAudioPlaybackType-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAudioPlaybackType</h4>
+<pre>void&nbsp;setAudioPlaybackType(int&nbsp;type)</pre>
+<div class="block">Set Type of Audio Playback physical transducer(s) sound is output to.
+     Valid types are HEADPHONES, MONO_SPEAKER, STEREO_SPEAKERS</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>type</code> - audio playback type</dd>
+</dl>
+</li>
+</ul>
+<a name="getAudioPlaybackType--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAudioPlaybackType</h4>
+<pre>int&nbsp;getAudioPlaybackType()</pre>
+<div class="block">Get Type of Audio Playback Output Device.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>audio playback type</dd>
+</dl>
+</li>
+</ul>
+<a name="setCenterEarToSpeaker-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCenterEarToSpeaker</h4>
+<pre>void&nbsp;setCenterEarToSpeaker(float&nbsp;distance)</pre>
+<div class="block">Set Distance from interaural mid-point between Ears to a Speaker.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>distance</code> - from interaural midpoint between the ears to closest speaker</dd>
+</dl>
+</li>
+</ul>
+<a name="getCenterEarToSpeaker--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCenterEarToSpeaker</h4>
+<pre>float&nbsp;getCenterEarToSpeaker()</pre>
+<div class="block">Get Distance from interaural mid-point between Ears to a Speaker.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>distance from interaural midpoint between the ears to closest speaker</dd>
+</dl>
+</li>
+</ul>
+<a name="setAngleOffsetToSpeaker-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAngleOffsetToSpeaker</h4>
+<pre>void&nbsp;setAngleOffsetToSpeaker(float&nbsp;angle)</pre>
+<div class="block">Set Angle Offset (in radians) To Speaker.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>angle</code> - in radians from head Z axis and vector from center ear to speaker</dd>
+</dl>
+</li>
+</ul>
+<a name="getAngleOffsetToSpeaker--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAngleOffsetToSpeaker</h4>
+<pre>float&nbsp;getAngleOffsetToSpeaker()</pre>
+<div class="block">Get Angle Offset (in radians) To Speaker.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>angle in radians from head Z axis and vector from center ear to speaker</dd>
+</dl>
+</li>
+</ul>
+<a name="getTotalChannels--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTotalChannels</h4>
+<pre>int&nbsp;getTotalChannels()</pre>
+<div class="block">Query total number of channels available for sound rendering
+ for this audio device.  This returns the maximum number of channels
+ available for Java3D sound rendering for all sound sources.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>total number of channels that can be used for this audio device</dd>
+</dl>
+</li>
+</ul>
+<a name="getChannelsAvailable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChannelsAvailable</h4>
+<pre>int&nbsp;getChannelsAvailable()</pre>
+<div class="block">Query number of channels currently available for use.
+ During rendering, when sound nodes are playing, this method returns the
+ number of channels still available to Java3D for rendering additional
+ sound nodes.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>total number of channels current available</dd>
+</dl>
+</li>
+</ul>
+<a name="getChannelsUsedForSound-org.scijava.java3d.Sound-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getChannelsUsedForSound</h4>
+<pre>int&nbsp;getChannelsUsedForSound(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;node)</pre>
+<div class="block">Query number of channels that are used, or would be used to render
+ a particular sound node.  This method returns the number of channels
+ needed to render a particular Sound node.  The return value is the same
+ no matter if the Sound is currently active and enabled (being played) or
+ is inactive.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of channels a particular Sound node is using or would used
+ if enabled and activated (rendered).</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/AudioDevice3D.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/AudioDevice.html" target="_top">Frames</a></li>
+<li><a href="AudioDevice.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TextureCubeMap (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="TextureCubeMap (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/TextureAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureUnitState.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TextureCubeMap.html" target="_top">Frames</a></li>
+<li><a href="TextureCubeMap.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class TextureCubeMap" class="title">Class TextureCubeMap</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">org.scijava.java3d.Texture</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.TextureCubeMap</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">TextureCubeMap</span>
+extends <a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></pre>
+<div class="block">TextureCubeMap is a subclass of Texture class. It defines
+ a special kind of texture mapping which is composed of a set of six
+ 2D images representating the six faces of a cube. The texture coordinate
+ (s,t,r) is used as a 3D direction vector emanating from the center
+ of a cube to select a particular face of the cube based on the
+ largest magnitude coordinate (the major axis). A new 2D texture coordinate
+ (s,t) is then determined by dividing the other two coordinates (the minor
+ axes) by the major axis value. The new coordinate is then used for
+ texel lookup from the selected texture image of this cube map.
+
+ The TextureCubeMap image is defined by specifying the images for each
+ face of the cube. The cube map texture can be thought of as centered at
+ the orgin of and aligned to an XYZ coordinate system. The names
+ of the cube faces are:
+
+ <UL>
+ <LI>POSITIVE_X</LI>
+ <LI>NEGATIVE_X</LI>
+ <LI>POSITIVE_Y</LI>
+ <LI>NEGATIVE_Y</LI>
+ <LI>POSITIVE_Z</LI>
+ <LI>NEGATIVE_Z</LI>
+ </UL>
+
+ <p>
+ Note that as of Java 3D 1.5, the texture width and height are no longer
+ required to be an exact power of two. However, not all graphics devices
+ supports non-power-of-two textures. If non-power-of-two texture mapping is
+ unsupported on a particular Canvas3D, textures with a width or height that
+ are not an exact power of two are ignored for that canvas.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#NEGATIVE_X">NEGATIVE_X</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the negative x axis</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#NEGATIVE_Y">NEGATIVE_Y</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the negative y axis</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#NEGATIVE_Z">NEGATIVE_Z</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the negative z axis</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#POSITIVE_X">POSITIVE_X</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the positive x axis</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#POSITIVE_Y">POSITIVE_Y</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the positive y axis</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#POSITIVE_Z">POSITIVE_Z</a></span></code>
+<div class="block">Specifies the face of the cube that is pierced by the positive z axis</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Texture">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></h3>
+<code><a href="../../../org/scijava/java3d/Texture.html#ALLOW_ANISOTROPIC_FILTER_READ">ALLOW_ANISOTROPIC_FILTER_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_BOUNDARY_COLOR_READ">ALLOW_BOUNDARY_COLOR_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_BOUNDARY_MODE_READ">ALLOW_BOUNDARY_MODE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_ENABLE_READ">ALLOW_ENABLE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_ENABLE_WRITE">ALLOW_ENABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FILTER_READ">ALLOW_FILTER_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FILTER4_READ">ALLOW_FILTER4_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FORMAT_READ">ALLOW_FORMAT_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_IMAGE_READ">ALLOW_IMAGE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_IMAGE_WRITE">ALLOW_IMAGE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_LOD_RANGE_READ">ALLOW_LOD_RANGE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_LOD_RANGE_WRITE">ALLOW_LOD_RANGE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_MIPMAP_MODE_READ">ALLOW_MIPMAP_MODE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_SHARPEN_TEXTURE_READ">ALLOW_SHARPEN_TEXTURE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_SIZE_READ">ALLOW_SIZE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALPHA">ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#ANISOTROPIC_NONE">ANISOTROPIC_NONE</a>, <a href="../../../org/scijava/java3d/Texture.html#ANISOTROPIC_SINGLE_VALUE">ANISOTROPIC_SINGLE_VALUE</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL">BASE_LEVEL</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL_LINEAR">BASE_LEVEL_LINEAR</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL_POINT">BASE_LEVEL_POINT</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP">CLAMP</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP_TO_BOUNDARY">CLAMP_TO_BOUNDARY</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP_TO_EDGE">CLAMP_TO_EDGE</a>, <a href="../../../org/scijava/java3d/Texture.html#FASTEST">FASTEST</a>, <a href="../../../org/scijava/java3d/Texture.html#FILTER4">FILTER4</a>, <a href="../../../org/scijava/java3d/Texture.html#INTENSITY">INTENSITY</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN">LINEAR_SHARPEN</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN_ALPHA">LINEAR_SHARPEN_ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN_RGB">LINEAR_SHARPEN_RGB</a>, <a href="../../../org/scijava/java3d/Texture.html#LUMINANCE">LUMINANCE</a>, <a href="../../../org/scijava/java3d/Texture.html#LUMINANCE_ALPHA">LUMINANCE_ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_LINEAR">MULTI_LEVEL_LINEAR</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_MIPMAP">MULTI_LEVEL_MIPMAP</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_POINT">MULTI_LEVEL_POINT</a>, <a href="../../../org/scijava/java3d/Texture.html#NICEST">NICEST</a>, <a href="../../../org/scijava/java3d/Texture.html#RGB">RGB</a>, <a href="../../../org/scijava/java3d/Texture.html#RGBA">RGBA</a>, <a href="../../../org/scijava/java3d/Texture.html#WRAP">WRAP</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#TextureCubeMap--">TextureCubeMap</a></span>()</code>
+<div class="block">Constructs a texture object using default values.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#TextureCubeMap-int-int-int-">TextureCubeMap</a></span>(int&nbsp;mipmapMode,
+              int&nbsp;format,
+              int&nbsp;width)</code>
+<div class="block">Constructs an empty TextureCubeMap object with specified mipmapMode
+ format, and width.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#TextureCubeMap-int-int-int-int-">TextureCubeMap</a></span>(int&nbsp;mipmapMode,
+              int&nbsp;format,
+              int&nbsp;width,
+              int&nbsp;boundaryWidth)</code>
+<div class="block">Constructs an empty TextureCubeMap object with specified mipmapMode
+ format, width, and boundary width.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></span>(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#getImage-int-">getImage</a></span>(int&nbsp;level)</code>
+<div class="block">This method is not supported for TextureCubeMap.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#getImage-int-int-">getImage</a></span>(int&nbsp;level,
+        int&nbsp;face)</code>
+<div class="block">Retrieves the image for a specified mipmap level of a particular
+ face of the cube map.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#getImages--">getImages</a></span>()</code>
+<div class="block">This method is not supported for TextureCubeMap.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#getImages-int-">getImages</a></span>(int&nbsp;face)</code>
+<div class="block">Retrieves the array of images for all mipmap level of a particular
+ face of the cube map.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#setImage-int-org.scijava.java3d.ImageComponent-">setImage</a></span>(int&nbsp;level,
+        <a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>&nbsp;image)</code>
+<div class="block">This method is not supported for TextureCubeMap.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#setImage-int-int-org.scijava.java3d.ImageComponent2D-">setImage</a></span>(int&nbsp;level,
+        int&nbsp;face,
+        <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image)</code>
+<div class="block">Sets the image for a specified mipmap level of a specified face
+ of the cube map</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#setImages-org.scijava.java3d.ImageComponent:A-">setImages</a></span>(<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]&nbsp;images)</code>
+<div class="block">This method is not supported for TextureCubeMap.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureCubeMap.html#setImages-int-org.scijava.java3d.ImageComponent2D:A-">setImages</a></span>(int&nbsp;face,
+         <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>[]&nbsp;images)</code>
+<div class="block">Sets the array of images for mipmap levels from base level through
+ max level for a specified face of the cube map</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Texture">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></h3>
+<code><a href="../../../org/scijava/java3d/Texture.html#getAnisotropicFilterDegree--">getAnisotropicFilterDegree</a>, <a href="../../../org/scijava/java3d/Texture.html#getAnisotropicFilterMode--">getAnisotropicFilterMode</a>, <a href="../../../org/scijava/java3d/Texture.html#getBaseLevel--">getBaseLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryColor-org.scijava.vecmath.Color4f-">getBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryModeS--">getBoundaryModeS</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryModeT--">getBoundaryModeT</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryWidth--">getBoundaryWidth</a>, <a href="../../../org/scijava/java3d/Texture.html#getEnable--">getEnable</a>, <a href="../../../org/scijava/java3d/Texture.html#getFilter4Func-float:A-">getFilter4Func</a>, <a href="../../../org/scijava/java3d/Texture.html#getFilter4FuncPointsCount--">getFilter4FuncPointsCount</a>, <a href="../../../org/scijava/java3d/Texture.html#getFormat--">getFormat</a>, <a href="../../../org/scijava/java3d/Texture.html#getHeight--">getHeight</a>, <a href="../../../org/scijava/java3d/Texture.html#getLodOffset-org.scijava.vecmath.Tuple3f-">getLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#getMagFilter--">getMagFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#getMaximumLevel--">getMaximumLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#getMaximumLOD--">getMaximumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#getMinFilter--">getMinFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#getMinimumLOD--">getMinimumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#getMipMapMode--">getMipMapMode</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFunc-float:A-float:A-">getSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFunc-org.scijava.vecmath.Point2f:A-">getSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFuncPointsCount--">getSharpenTextureFuncPointsCount</a>, <a href="../../../org/scijava/java3d/Texture.html#getWidth--">getWidth</a>, <a href="../../../org/scijava/java3d/Texture.html#numMipMapLevels--">numMipMapLevels</a>, <a href="../../../org/scijava/java3d/Texture.html#setAnisotropicFilterDegree-float-">setAnisotropicFilterDegree</a>, <a href="../../../org/scijava/java3d/Texture.html#setAnisotropicFilterMode-int-">setAnisotropicFilterMode</a>, <a href="../../../org/scijava/java3d/Texture.html#setBaseLevel-int-">setBaseLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryColor-org.scijava.vecmath.Color4f-">setBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryColor-float-float-float-float-">setBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryModeS-int-">setBoundaryModeS</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryModeT-int-">setBoundaryModeT</a>, <a href="../../../org/scijava/java3d/Texture.html#setEnable-boolean-">setEnable</a>, <a href="../../../org/scijava/java3d/Texture.html#setFilter4Func-float:A-">setFilter4Func</a>, <a href="../../../org/scijava/java3d/Texture.html#setLodOffset-float-float-float-">setLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#setLodOffset-org.scijava.vecmath.Tuple3f-">setLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#setMagFilter-int-">setMagFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#setMaximumLevel-int-">setMaximumLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#setMaximumLOD-float-">setMaximumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#setMinFilter-int-">setMinFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#setMinimumLOD-float-">setMinimumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#setMipMapMode-int-">setMipMapMode</a>, <a href="../../../org/scijava/java3d/Texture.html#setSharpenTextureFunc-float:A-float:A-">setSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#setSharpenTextureFunc-org.scijava.vecmath.Point2f:A-">setSharpenTextureFunc</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="POSITIVE_X">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POSITIVE_X</h4>
+<pre>public static final&nbsp;int POSITIVE_X</pre>
+<div class="block">Specifies the face of the cube that is pierced by the positive x axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.POSITIVE_X">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NEGATIVE_X">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NEGATIVE_X</h4>
+<pre>public static final&nbsp;int NEGATIVE_X</pre>
+<div class="block">Specifies the face of the cube that is pierced by the negative x axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.NEGATIVE_X">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="POSITIVE_Y">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POSITIVE_Y</h4>
+<pre>public static final&nbsp;int POSITIVE_Y</pre>
+<div class="block">Specifies the face of the cube that is pierced by the positive y axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.POSITIVE_Y">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NEGATIVE_Y">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NEGATIVE_Y</h4>
+<pre>public static final&nbsp;int NEGATIVE_Y</pre>
+<div class="block">Specifies the face of the cube that is pierced by the negative y axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.NEGATIVE_Y">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="POSITIVE_Z">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POSITIVE_Z</h4>
+<pre>public static final&nbsp;int POSITIVE_Z</pre>
+<div class="block">Specifies the face of the cube that is pierced by the positive z axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.POSITIVE_Z">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NEGATIVE_Z">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>NEGATIVE_Z</h4>
+<pre>public static final&nbsp;int NEGATIVE_Z</pre>
+<div class="block">Specifies the face of the cube that is pierced by the negative z axis</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureCubeMap.NEGATIVE_Z">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TextureCubeMap--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TextureCubeMap</h4>
+<pre>public&nbsp;TextureCubeMap()</pre>
+<div class="block">Constructs a texture object using default values.
+ Note that the default constructor creates a texture object with
+ a width of 0 and is, therefore, not useful.</div>
+</li>
+</ul>
+<a name="TextureCubeMap-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TextureCubeMap</h4>
+<pre>public&nbsp;TextureCubeMap(int&nbsp;mipmapMode,
+                      int&nbsp;format,
+                      int&nbsp;width)</pre>
+<div class="block">Constructs an empty TextureCubeMap object with specified mipmapMode
+ format, and width. Image at base level
+ must be set by
+ the application using 'setImage' method. If mipmapMode is
+ set to MULTI_LEVEL_MIPMAP, images for base level through maximum level
+ must be set.
+ Note that cube map is square in dimensions, hence specifying width
+ is sufficient.
+ Note also that a texture with a non-power-of-two width will
+ only be rendered on a graphics device that supports non-power-of-two
+ textures.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mipmapMode</code> - type of mipmap for this Texture: One of
+ BASE_LEVEL, MULTI_LEVEL_MIPMAP.</dd>
+<dd><code>format</code> - data format of Textures saved in this object.
+ One of INTENSITY, LUMINANCE, ALPHA, LUMINANCE_ALPHA, RGB, RGBA.</dd>
+<dd><code>width</code> - width (and height) of image at level 0.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if width is not greater
+ than 0 OR invalid format/mipmapMode is specified.</dd>
+</dl>
+</li>
+</ul>
+<a name="TextureCubeMap-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TextureCubeMap</h4>
+<pre>public&nbsp;TextureCubeMap(int&nbsp;mipmapMode,
+                      int&nbsp;format,
+                      int&nbsp;width,
+                      int&nbsp;boundaryWidth)</pre>
+<div class="block">Constructs an empty TextureCubeMap object with specified mipmapMode
+ format, width, and boundary width. Image at base level
+ must be set by
+ the application using 'setImage' method. If mipmapMode is
+ set to MULTI_LEVEL_MIPMAP, images for base level through maximum level
+ must be set.
+ Note that cube map is square in dimensions, hence specifying width
+ is sufficient.
+ Note also that a texture with a non-power-of-two width will
+ only be rendered on a graphics device that supports non-power-of-two
+ textures.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mipmapMode</code> - type of mipmap for this Texture: One of
+ BASE_LEVEL, MULTI_LEVEL_MIPMAP.</dd>
+<dd><code>format</code> - data format of Textures saved in this object.
+ One of INTENSITY, LUMINANCE, ALPHA, LUMINANCE_ALPHA, RGB, RGBA.</dd>
+<dd><code>width</code> - width (and height) of image at level 0. This
+ does not include the width of the boundary.</dd>
+<dd><code>boundaryWidth</code> - width of the boundary, which must be 0 or 1.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if width is not
+ greater than 0 OR invalid format/mipmapMode is specified.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setImage-int-int-org.scijava.java3d.ImageComponent2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImage</h4>
+<pre>public&nbsp;void&nbsp;setImage(int&nbsp;level,
+                     int&nbsp;face,
+                     <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image)</pre>
+<div class="block">Sets the image for a specified mipmap level of a specified face
+ of the cube map</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>level</code> - mipmap level</dd>
+<dd><code>face</code> - face of the cube map. One of:
+ <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code>image</code> - ImageComponent2D object containing the image</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if
+ <code>face</code> has a value other
+ than <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if this TextureCubeMap is live and
+ the specified image is being used by a Canvas3D as an off-screen buffer.</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if this TextureCubeMap is
+ being used by an immediate mode context and
+ the specified image is being used by a Canvas3D as an off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="setImages-int-org.scijava.java3d.ImageComponent2D:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImages</h4>
+<pre>public&nbsp;void&nbsp;setImages(int&nbsp;face,
+                      <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>[]&nbsp;images)</pre>
+<div class="block">Sets the array of images for mipmap levels from base level through
+ max level for a specified face of the cube map</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>face</code> - face of the cube map. One of:
+ <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code>images</code> - array of ImageComponent2D objects containing the images</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if
+ <code>face</code> has a value other
+ than <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if this TextureCubeMap is live and
+ any of the specified images are being used by a Canvas3D as an
+ off-screen buffer.</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if this TextureCubeMap is
+ being used by an immediate mode context and
+ any of the specified images are being used by a Canvas3D as an
+ off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="getImage-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>&nbsp;getImage(int&nbsp;level,
+                               int&nbsp;face)</pre>
+<div class="block">Retrieves the image for a specified mipmap level of a particular
+ face of the cube map.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>level</code> - mipmap level to get.</dd>
+<dd><code>face</code> - face of the cube map. One of:
+ <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ImageComponent object containing the texture image at
+ the specified mipmap level.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if
+ <code>face</code> has a value other
+ than <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getImages-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImages</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]&nbsp;getImages(int&nbsp;face)</pre>
+<div class="block">Retrieves the array of images for all mipmap level of a particular
+ face of the cube map.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>face</code> - face of the cube map. One of:
+ <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of ImageComponent object for the particular face of
+ of the cube map.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if
+ <code>face</code> has a value other
+ than <code>POSITIVE_X</code>, <code>NEGATIVE_X</code>,
+ <code>POSITIVE_Y</code>, <code>NEGATIVE_Y</code>,
+ <code>POSITIVE_Z</code> or <code>NEGATIVE_Z</code>.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setImage-int-org.scijava.java3d.ImageComponent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImage</h4>
+<pre>public&nbsp;void&nbsp;setImage(int&nbsp;level,
+                     <a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>&nbsp;image)</pre>
+<div class="block">This method is not supported for TextureCubeMap.
+ A face of the cube map has to be specified when setting an image
+ for a particular level of the cube map.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Texture.html#setImage-int-org.scijava.java3d.ImageComponent-">setImage</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>level</code> - mipmap level to set: 0 is the base level</dd>
+<dd><code>image</code> - ImageComponent object containing the texture image
+ for the specified mipmap level</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - this method is not supported</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setImages-org.scijava.java3d.ImageComponent:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImages</h4>
+<pre>public&nbsp;void&nbsp;setImages(<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]&nbsp;images)</pre>
+<div class="block">This method is not supported for TextureCubeMap.
+ A face of the cube map has to be specified when setting images
+ for the cube map.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Texture.html#setImages-org.scijava.java3d.ImageComponent:A-">setImages</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>images</code> - array of ImageComponent objects
+ containing the texture images for all mipmap levels</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - this method is not supported</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getImage-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>&nbsp;getImage(int&nbsp;level)</pre>
+<div class="block">This method is not supported for TextureCubeMap.
+ A face of the cube map has to be specified when retrieving an image
+ for a particular level of the cube map.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Texture.html#getImage-int-">getImage</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>level</code> - mipmap level to get: 0 is the base level</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ImageComponent object containing the texture image at
+ the specified mipmap level.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - this method is not supported</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getImages--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImages</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d">ImageComponent</a>[]&nbsp;getImages()</pre>
+<div class="block">This method is not supported for TextureCubeMap.
+ A face of the cube map has to be specified when retrieving images
+ for the cube map.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Texture.html#getImages--">getImages</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the array of ImageComponent objects for this Texture.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - this method is not supported</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="duplicateNodeComponent-org.scijava.java3d.NodeComponent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>duplicateNodeComponent</h4>
+<pre>public&nbsp;void&nbsp;duplicateNodeComponent(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+<div class="block">NOTE: Applications should not call this method directly.
+ It should only be called by the cloneNode method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/TextureAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureUnitState.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TextureCubeMap.html" target="_top">Frames</a></li>
+<li><a href="TextureCubeMap.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

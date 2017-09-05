@@ -1,0 +1,1499 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GraphicsContext3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GraphicsContext3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/GraphicsConfigTemplate3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/GraphStructureChangeListener.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/GraphicsContext3D.html" target="_top">Frames</a></li>
+<li><a href="GraphicsContext3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class GraphicsContext3D" class="title">Class GraphicsContext3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.GraphicsContext3D</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">GraphicsContext3D</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A GraphicsContext3D object is used for immediate mode rendering into
+ a 3D canvas.  It is created by, and associated with, a specific
+ Canvas3D object.  A GraphicsContext3D defines methods to set 3D graphics
+ state and draw 3D geometric primitives.  There are no public
+ constructors of GraphicsContext3D. An application obtains a 3D graphics
+ context object from the Canvas3D object that the application wishes
+ to render into by using the getGraphicsContext3D method. A new graphics
+ context is created if one does not already exist.  A new GraphicsContext3D
+ initializes its state variables to the following defaults:
+ <UL>
+ <LI> Background object: null </LI>
+ <LI> Fog object: null </LI>
+ <LI> ModelClip object: null </LI>
+ <LI> Appearance object: null </LI>
+ <LI> List of Light objects: empty </LI>
+ <LI> high-res coordinate: (0, 0, 0) </LI>
+ <LI> modelTransform: identity </LI>
+ <LI> AuralAttributes object: null </LI>
+ <LI> List of Sound objects: empty </LI>
+ <LI> buffer override: false </LI>
+ <LI> front buffer rendering: false </LI>
+ <LI> stereo mode: <code>STEREO_BOTH</code> </LI>
+ </UL>
+
+ <p>
+ Note that the drawing methods in this class are not necessarily
+ executed immediately.  They may be buffered up for future
+ execution.  Applications must call the
+ <code><a href="#flush(boolean)">flush</a>(boolean)</code>
+ method to ensure that the rendering actually happens. The flush
+ method is implicitly called in the following cases:
+
+ <ul>
+ <li>The <code>readRaster</code> method calls
+ <code>flush(true)</code></li>
+ <li>The <code>Canvas3D.swap</code> method calls
+ <code>flush(true)</code></li>
+ <li>The Java 3D renderer calls <code>flush(true)</code> prior to
+ swapping the buffer for a double buffered on-screen Canvas3D</li>
+ <li>The Java 3D renderer calls <code>flush(true)</code> prior to
+ copying into the off-screen buffer of an off-screen Canvas3D</li>
+ <li>The Java 3D renderer calls <code>flush(false)</code> after
+ calling the preRender, renderField, postRender, and postSwap
+ Canvas3D callback methods.</li>
+ </ul>
+
+ <p>
+ A single-buffered, pure-immediate mode application must explicitly
+ call flush to ensure that the graphics will be rendered to the
+ Canvas3D.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#getGraphicsContext3D--"><code>Canvas3D.getGraphicsContext3D()</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#STEREO_BOTH">STEREO_BOTH</a></span></code>
+<div class="block">Specifies that rendering is done to both eyes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#STEREO_LEFT">STEREO_LEFT</a></span></code>
+<div class="block">Specifies that rendering is done to the left eye.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#STEREO_RIGHT">STEREO_RIGHT</a></span></code>
+<div class="block">Specifies that rendering is done to the right eye.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#addLight-org.scijava.java3d.Light-">addLight</a></span>(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light)</code>
+<div class="block">Appends the specified light to this graphics context's list of lights.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#addSound-org.scijava.java3d.Sound-">addSound</a></span>(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound)</code>
+<div class="block">Appends the specified sound to this graphics context's list of sounds.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#clear--">clear</a></span>()</code>
+<div class="block">Clear the Canvas3D to the color or image specified by the
+ current background node.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#draw-org.scijava.java3d.Geometry-">draw</a></span>(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry)</code>
+<div class="block">Draw the specified Geometry component object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#draw-org.scijava.java3d.Shape3D-">draw</a></span>(<a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>&nbsp;shape)</code>
+<div class="block">Draw the specified Shape3D leaf node object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#flush-boolean-">flush</a></span>(boolean&nbsp;wait)</code>
+<div class="block">Flushes all previously executed rendering operations to the
+ drawing buffer for this 3D graphics context.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getAllLights--">getAllLights</a></span>()</code>
+<div class="block">Retrieves the enumeration object of all the lights.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getAllSounds--">getAllSounds</a></span>()</code>
+<div class="block">Retrieves the enumeration object of all the sounds.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getAppearance--">getAppearance</a></span>()</code>
+<div class="block">Retrieves the current Appearance component object.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/AuralAttributes.html" title="class in org.scijava.java3d">AuralAttributes</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getAuralAttributes--">getAuralAttributes</a></span>()</code>
+<div class="block">Retrieves the current AuralAttributes component object.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Background.html" title="class in org.scijava.java3d">Background</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getBackground--">getBackground</a></span>()</code>
+<div class="block">Retrieves the current Background leaf node object.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getBufferOverride--">getBufferOverride</a></span>()</code>
+<div class="block">Returns the current buffer override flag.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getCanvas3D--">getCanvas3D</a></span>()</code>
+<div class="block">Gets the Canvas3D that created this GraphicsContext3D.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Fog.html" title="class in org.scijava.java3d">Fog</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getFog--">getFog</a></span>()</code>
+<div class="block">Retrieves the current Fog leaf node object.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getFrontBufferRendering--">getFrontBufferRendering</a></span>()</code>
+<div class="block">Returns the current front buffer rendering flag.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getHiRes-org.scijava.java3d.HiResCoord-">getHiRes</a></span>(<a href="../../../org/scijava/java3d/HiResCoord.html" title="class in org.scijava.java3d">HiResCoord</a>&nbsp;hiRes)</code>
+<div class="block">Retrieves the current HiRes coordinate of this context.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getLight-int-">getLight</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the index selected light.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ModelClip.html" title="class in org.scijava.java3d">ModelClip</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getModelClip--">getModelClip</a></span>()</code>
+<div class="block">Retrieves the current ModelClip leaf node object.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getModelTransform-org.scijava.java3d.Transform3D-">getModelTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Retrieves the current model transform.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getSound-int-">getSound</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the index selected sound.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#getStereoMode--">getStereoMode</a></span>()</code>
+<div class="block">Returns the current stereo mode.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#insertLight-org.scijava.java3d.Light-int-">insertLight</a></span>(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light,
+           int&nbsp;index)</code>
+<div class="block">Inserts the specified light at the specified index location.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#insertSound-org.scijava.java3d.Sound-int-">insertSound</a></span>(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound,
+           int&nbsp;index)</code>
+<div class="block">Inserts the specified sound at the specified index location.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#isSoundPlaying-int-">isSoundPlaying</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the sound playing flag.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#multiplyModelTransform-org.scijava.java3d.Transform3D-">multiplyModelTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Multiplies the current model transform by the specified
+ transform and stores the result back into the current
+ transform.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#numLights--">numLights</a></span>()</code>
+<div class="block">Retrieves the current number of lights in this graphics context.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#numSounds--">numSounds</a></span>()</code>
+<div class="block">Retrieves the current number of sounds in this graphics context.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#readRaster-org.scijava.java3d.Raster-">readRaster</a></span>(<a href="../../../org/scijava/java3d/Raster.html" title="class in org.scijava.java3d">Raster</a>&nbsp;raster)</code>
+<div class="block">Read an image from the frame buffer and copy it into the
+ ImageComponent and/or DepthComponent
+ objects referenced by the specified Raster object.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#removeLight-int-">removeLight</a></span>(int&nbsp;index)</code>
+<div class="block">Removes the light at the specified index location.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#removeSound-int-">removeSound</a></span>(int&nbsp;index)</code>
+<div class="block">Removes the sound at the specified index location.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setAppearance-org.scijava.java3d.Appearance-">setAppearance</a></span>(<a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance)</code>
+<div class="block">Sets the current Appearance object to the specified
+ Appearance component object.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setAuralAttributes-org.scijava.java3d.AuralAttributes-">setAuralAttributes</a></span>(<a href="../../../org/scijava/java3d/AuralAttributes.html" title="class in org.scijava.java3d">AuralAttributes</a>&nbsp;attributes)</code>
+<div class="block">Sets the current AuralAttributes object to the specified
+ AuralAttributes component object.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setBackground-org.scijava.java3d.Background-">setBackground</a></span>(<a href="../../../org/scijava/java3d/Background.html" title="class in org.scijava.java3d">Background</a>&nbsp;background)</code>
+<div class="block">Sets the current Background to the specified Background
+ leaf node object.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setBufferOverride-boolean-">setBufferOverride</a></span>(boolean&nbsp;bufferOverride)</code>
+<div class="block">Sets a flag that specifies whether the double buffering and
+ stereo mode from the Canvas3D are overridden.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setFog-org.scijava.java3d.Fog-">setFog</a></span>(<a href="../../../org/scijava/java3d/Fog.html" title="class in org.scijava.java3d">Fog</a>&nbsp;fog)</code>
+<div class="block">Sets the current Fog to the specified Fog
+ leaf node object.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setFrontBufferRendering-boolean-">setFrontBufferRendering</a></span>(boolean&nbsp;frontBufferRendering)</code>
+<div class="block">Sets a flag that enables or disables immediate mode rendering
+ into the front buffer of a double buffered Canvas3D.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setHiRes-org.scijava.java3d.HiResCoord-">setHiRes</a></span>(<a href="../../../org/scijava/java3d/HiResCoord.html" title="class in org.scijava.java3d">HiResCoord</a>&nbsp;hiRes)</code>
+<div class="block">Sets the HiRes coordinate of this context
+ to the location specified by the HiRes argument.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setHiRes-int:A-int:A-int:A-">setHiRes</a></span>(int[]&nbsp;x,
+        int[]&nbsp;y,
+        int[]&nbsp;z)</code>
+<div class="block">Sets the HiRes coordinate of this context to the location
+ specified by the parameters provided.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setLight-org.scijava.java3d.Light-int-">setLight</a></span>(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light,
+        int&nbsp;index)</code>
+<div class="block">Replaces the specified light with the light provided.</div>
+</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setModelClip-org.scijava.java3d.ModelClip-">setModelClip</a></span>(<a href="../../../org/scijava/java3d/ModelClip.html" title="class in org.scijava.java3d">ModelClip</a>&nbsp;modelClip)</code>
+<div class="block">Sets the current ModelClip leaf node to the specified object.</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setModelTransform-org.scijava.java3d.Transform3D-">setModelTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</code>
+<div class="block">Sets the current model transform to a copy of the specified
+ transform.</div>
+</td>
+</tr>
+<tr id="i41" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setSound-org.scijava.java3d.Sound-int-">setSound</a></span>(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound,
+        int&nbsp;index)</code>
+<div class="block">Replaces the specified sound with the sound provided.</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setStereoMode-int-">setStereoMode</a></span>(int&nbsp;stereoMode)</code>
+<div class="block">Sets the stereo mode for immediate mode rendering.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="STEREO_LEFT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STEREO_LEFT</h4>
+<pre>public static final&nbsp;int STEREO_LEFT</pre>
+<div class="block">Specifies that rendering is done to the left eye.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setStereoMode-int-"><code>setStereoMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.GraphicsContext3D.STEREO_LEFT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STEREO_RIGHT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STEREO_RIGHT</h4>
+<pre>public static final&nbsp;int STEREO_RIGHT</pre>
+<div class="block">Specifies that rendering is done to the right eye.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setStereoMode-int-"><code>setStereoMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.GraphicsContext3D.STEREO_RIGHT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STEREO_BOTH">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>STEREO_BOTH</h4>
+<pre>public static final&nbsp;int STEREO_BOTH</pre>
+<div class="block">Specifies that rendering is done to both eyes.  This is the
+ default.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setStereoMode-int-"><code>setStereoMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.GraphicsContext3D.STEREO_BOTH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getCanvas3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanvas3D</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;getCanvas3D()</pre>
+<div class="block">Gets the Canvas3D that created this GraphicsContext3D.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the Canvas3D that created this GraphicsContext3D</dd>
+</dl>
+</li>
+</ul>
+<a name="setAppearance-org.scijava.java3d.Appearance-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAppearance</h4>
+<pre>public&nbsp;void&nbsp;setAppearance(<a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance)</pre>
+<div class="block">Sets the current Appearance object to the specified
+ Appearance component object.
+ The graphics context stores a reference to the specified
+ Appearance object. This means that the application may modify
+ individual appearance attributes by using the appropriate
+ methods on the Appearance object.
+ If the Appearance object is null, default values will be used
+ for all appearance attributes - it is as if an
+ Appearance node were created using the default constructor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>appearance</code> - the new Appearance object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the specified appearance refers
+ to an ImageComponent2D that is being used by a Canvas3D as
+ an off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="getAppearance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppearance</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;getAppearance()</pre>
+<div class="block">Retrieves the current Appearance component object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current Appearance object</dd>
+</dl>
+</li>
+</ul>
+<a name="setBackground-org.scijava.java3d.Background-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBackground</h4>
+<pre>public&nbsp;void&nbsp;setBackground(<a href="../../../org/scijava/java3d/Background.html" title="class in org.scijava.java3d">Background</a>&nbsp;background)</pre>
+<div class="block">Sets the current Background to the specified Background
+ leaf node object.
+ The graphics context stores a reference to the specified
+ Background node. This means that the application may modify
+ the background color or image by using the appropriate
+ methods on the Background node. The Background node must
+ not be part of a live scene graph, nor may it subsequently
+ be made part of a live scene graph-an IllegalSharingException
+ is thrown in such cases. If the Background object is null,
+ the default background color of black (0,0,0) is used to clear
+ the canvas prior to rendering a new frame. The Background
+ node's application region is ignored for immediate-mode
+ rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>background</code> - the new Background object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Background node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the specified background node
+ refers to an ImageComponent2D that is being used by a Canvas3D as
+ an off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="getBackground--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBackground</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Background.html" title="class in org.scijava.java3d">Background</a>&nbsp;getBackground()</pre>
+<div class="block">Retrieves the current Background leaf node object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current Background object</dd>
+</dl>
+</li>
+</ul>
+<a name="setFog-org.scijava.java3d.Fog-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFog</h4>
+<pre>public&nbsp;void&nbsp;setFog(<a href="../../../org/scijava/java3d/Fog.html" title="class in org.scijava.java3d">Fog</a>&nbsp;fog)</pre>
+<div class="block">Sets the current Fog to the specified Fog
+ leaf node object.
+ The graphics context stores a reference to the specified
+ Fog node. This means that the application may modify the
+ fog attributes using the appropriate methods on the Fog
+ node object. The Fog node must not be part of a live
+ scene graph, nor may it subsequently be made part of a
+ live scene graph-an IllegalSharingException is thrown in
+ such cases. If the Fog object is null, fog is disabled.
+ Both the region of influence and the hierarchical scope
+ of the Fog node are ignored for immediate-mode rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fog</code> - the new Fog object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Fog node
+ is part of or is subsequently made part of a live scene graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="getFog--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFog</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Fog.html" title="class in org.scijava.java3d">Fog</a>&nbsp;getFog()</pre>
+<div class="block">Retrieves the current Fog leaf node object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current Fog object</dd>
+</dl>
+</li>
+</ul>
+<a name="setModelClip-org.scijava.java3d.ModelClip-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setModelClip</h4>
+<pre>public&nbsp;void&nbsp;setModelClip(<a href="../../../org/scijava/java3d/ModelClip.html" title="class in org.scijava.java3d">ModelClip</a>&nbsp;modelClip)</pre>
+<div class="block">Sets the current ModelClip leaf node to the specified object.
+ The graphics context stores a reference to the specified
+ ModelClip node. This means that the application may modify the
+ model clipping attributes using the appropriate methods on the
+ ModelClip node object. The ModelClip node must not be part of a
+ live scene graph, nor may it subsequently be made part of a
+ live scene graph-an IllegalSharingException is thrown in such
+ cases. If the ModelClip object is null, model clipping is
+ disabled.  Both the region of influence and the hierarchical
+ scope of the ModelClip node are ignored for immediate-mode
+ rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>modelClip</code> - the new ModelClip node</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the ModelClip node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getModelClip--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getModelClip</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ModelClip.html" title="class in org.scijava.java3d">ModelClip</a>&nbsp;getModelClip()</pre>
+<div class="block">Retrieves the current ModelClip leaf node object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current ModelClip object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setLight-org.scijava.java3d.Light-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLight</h4>
+<pre>public&nbsp;void&nbsp;setLight(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light,
+                     int&nbsp;index)</pre>
+<div class="block">Replaces the specified light with the light provided.
+ The graphics context stores a reference to each light
+ object in the list of lights. This means that the
+ application may modify the light attributes for
+ any of the lights using the appropriate methods on that
+ Light node object. None of the Light nodes in the list
+ of lights may be part of a live scene graph, nor may
+ they subsequently be made part of a live scene graph -
+ an IllegalSharingException is thrown in such cases.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>light</code> - the new light</dd>
+<dd><code>index</code> - which light to replace</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Light node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Light object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="insertLight-org.scijava.java3d.Light-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insertLight</h4>
+<pre>public&nbsp;void&nbsp;insertLight(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light,
+                        int&nbsp;index)</pre>
+<div class="block">Inserts the specified light at the specified index location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>light</code> - the new light</dd>
+<dd><code>index</code> - at which location to insert</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Light node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Light object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="removeLight-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeLight</h4>
+<pre>public&nbsp;void&nbsp;removeLight(int&nbsp;index)</pre>
+<div class="block">Removes the light at the specified index location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which light to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="getLight-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLight</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;getLight(int&nbsp;index)</pre>
+<div class="block">Retrieves the index selected light.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which light to return</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the light at location index</dd>
+</dl>
+</li>
+</ul>
+<a name="getAllLights--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllLights</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&gt;&nbsp;getAllLights()</pre>
+<div class="block">Retrieves the enumeration object of all the lights.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the enumeration object of all the lights</dd>
+</dl>
+</li>
+</ul>
+<a name="addLight-org.scijava.java3d.Light-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addLight</h4>
+<pre>public&nbsp;void&nbsp;addLight(<a href="../../../org/scijava/java3d/Light.html" title="class in org.scijava.java3d">Light</a>&nbsp;light)</pre>
+<div class="block">Appends the specified light to this graphics context's list of lights.
+ Adding a null Light object to the list will result
+ in a NullPointerException. Both the region of influence
+ and the hierarchical scope of all lights in the list
+ are ignored for immediate-mode rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>light</code> - the light to add</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Light node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Light object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="numLights--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numLights</h4>
+<pre>public&nbsp;int&nbsp;numLights()</pre>
+<div class="block">Retrieves the current number of lights in this graphics context.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current number of lights</dd>
+</dl>
+</li>
+</ul>
+<a name="setHiRes-int:A-int:A-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHiRes</h4>
+<pre>public&nbsp;void&nbsp;setHiRes(int[]&nbsp;x,
+                     int[]&nbsp;y,
+                     int[]&nbsp;z)</pre>
+<div class="block">Sets the HiRes coordinate of this context to the location
+ specified by the parameters provided.
+ The parameters x, y, and z are arrays of eight 32-bit
+ integers that specify the high-resolution coordinates point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - an eight element array specifying the x position</dd>
+<dd><code>y</code> - an eight element array specifying the y position</dd>
+<dd><code>z</code> - an eight element array specifying the z position</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/HiResCoord.html" title="class in org.scijava.java3d"><code>HiResCoord</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setHiRes-org.scijava.java3d.HiResCoord-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHiRes</h4>
+<pre>public&nbsp;void&nbsp;setHiRes(<a href="../../../org/scijava/java3d/HiResCoord.html" title="class in org.scijava.java3d">HiResCoord</a>&nbsp;hiRes)</pre>
+<div class="block">Sets the HiRes coordinate of this context
+ to the location specified by the HiRes argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>hiRes</code> - the HiRes coordinate specifying the a new location</dd>
+</dl>
+</li>
+</ul>
+<a name="getHiRes-org.scijava.java3d.HiResCoord-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHiRes</h4>
+<pre>public&nbsp;void&nbsp;getHiRes(<a href="../../../org/scijava/java3d/HiResCoord.html" title="class in org.scijava.java3d">HiResCoord</a>&nbsp;hiRes)</pre>
+<div class="block">Retrieves the current HiRes coordinate of this context.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>hiRes</code> - a HiResCoord object that will receive the
+ HiRes coordinate of this context</dd>
+</dl>
+</li>
+</ul>
+<a name="setModelTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setModelTransform</h4>
+<pre>public&nbsp;void&nbsp;setModelTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Sets the current model transform to a copy of the specified
+ transform.
+ A BadTransformException is thrown if an attempt is made
+ to specify an illegal Transform3D.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the new model transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not affine.</dd>
+</dl>
+</li>
+</ul>
+<a name="multiplyModelTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>multiplyModelTransform</h4>
+<pre>public&nbsp;void&nbsp;multiplyModelTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Multiplies the current model transform by the specified
+ transform and stores the result back into the current
+ transform. The specified transformation must be affine.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the model transform to be concatenated with the
+ current model transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not affine.</dd>
+</dl>
+</li>
+</ul>
+<a name="getModelTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getModelTransform</h4>
+<pre>public&nbsp;void&nbsp;getModelTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t)</pre>
+<div class="block">Retrieves the current model transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - the model transform that will receive the current
+ model transform</dd>
+</dl>
+</li>
+</ul>
+<a name="setSound-org.scijava.java3d.Sound-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSound</h4>
+<pre>public&nbsp;void&nbsp;setSound(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound,
+                     int&nbsp;index)</pre>
+<div class="block">Replaces the specified sound with the sound provided.
+ The graphics context stores a reference to each sound
+ object in the list of sounds. This means that the
+ application may modify the sound attributes for
+ any of the sounds by using the appropriate methods on
+ that Sound node object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sound</code> - the new sound</dd>
+<dd><code>index</code> - which sound to replace</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Sound node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Sound object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="insertSound-org.scijava.java3d.Sound-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insertSound</h4>
+<pre>public&nbsp;void&nbsp;insertSound(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound,
+                        int&nbsp;index)</pre>
+<div class="block">Inserts the specified sound at the specified index location.
+ Inserting a sound to the list of sounds implicitly starts the
+ sound playing. Once a sound is finished playing, it can be
+ restarted by setting the sound's enable flag to true.
+ The scheduling region of all sounds in the list is ignored
+ for immediate-mode rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sound</code> - the new sound</dd>
+<dd><code>index</code> - at which location to insert</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Sound node
+ is part or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Sound object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="removeSound-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeSound</h4>
+<pre>public&nbsp;void&nbsp;removeSound(int&nbsp;index)</pre>
+<div class="block">Removes the sound at the specified index location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which sound to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="getSound-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSound</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;getSound(int&nbsp;index)</pre>
+<div class="block">Retrieves the index selected sound.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which sound to return</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the sound at location index</dd>
+</dl>
+</li>
+</ul>
+<a name="getAllSounds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllSounds</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&gt;&nbsp;getAllSounds()</pre>
+<div class="block">Retrieves the enumeration object of all the sounds.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the enumeration object of all the sounds</dd>
+</dl>
+</li>
+</ul>
+<a name="addSound-org.scijava.java3d.Sound-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addSound</h4>
+<pre>public&nbsp;void&nbsp;addSound(<a href="../../../org/scijava/java3d/Sound.html" title="class in org.scijava.java3d">Sound</a>&nbsp;sound)</pre>
+<div class="block">Appends the specified sound to this graphics context's list of sounds.
+ Adding a sound to the list of sounds implicitly starts the
+ sound playing. Once a sound is finished playing, it can be
+ restarted by setting the sound's enable flag to true.
+ The scheduling region of all sounds in the list is ignored
+ for immediate-mode rendering.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sound</code> - the sound to add</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Sound node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the Sound object is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="numSounds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numSounds</h4>
+<pre>public&nbsp;int&nbsp;numSounds()</pre>
+<div class="block">Retrieves the current number of sounds in this graphics context.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current number of sounds</dd>
+</dl>
+</li>
+</ul>
+<a name="isSoundPlaying-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSoundPlaying</h4>
+<pre>public&nbsp;boolean&nbsp;isSoundPlaying(int&nbsp;index)</pre>
+<div class="block">Retrieves the sound playing flag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which sound</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>flag denoting if sound is currently playing</dd>
+</dl>
+</li>
+</ul>
+<a name="setAuralAttributes-org.scijava.java3d.AuralAttributes-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAuralAttributes</h4>
+<pre>public&nbsp;void&nbsp;setAuralAttributes(<a href="../../../org/scijava/java3d/AuralAttributes.html" title="class in org.scijava.java3d">AuralAttributes</a>&nbsp;attributes)</pre>
+<div class="block">Sets the current AuralAttributes object to the specified
+ AuralAttributes component object.
+ This means that the application may modify individual
+ audio attributes by using the appropriate methods in
+ the Aural-Attributes object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>attributes</code> - the new AuralAttributes object</dd>
+</dl>
+</li>
+</ul>
+<a name="getAuralAttributes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAuralAttributes</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/AuralAttributes.html" title="class in org.scijava.java3d">AuralAttributes</a>&nbsp;getAuralAttributes()</pre>
+<div class="block">Retrieves the current AuralAttributes component object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current AuralAttributes object</dd>
+</dl>
+</li>
+</ul>
+<a name="setBufferOverride-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferOverride</h4>
+<pre>public&nbsp;void&nbsp;setBufferOverride(boolean&nbsp;bufferOverride)</pre>
+<div class="block">Sets a flag that specifies whether the double buffering and
+ stereo mode from the Canvas3D are overridden.  When set to
+ true, this attribute enables the
+ <code>frontBufferRendering</code> and <code>stereoMode</code>
+ attributes.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bufferOverride</code> - the new buffer override flag</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setFrontBufferRendering-boolean-"><code>setFrontBufferRendering(boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/GraphicsContext3D.html#setStereoMode-int-"><code>setStereoMode(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getBufferOverride--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferOverride</h4>
+<pre>public&nbsp;boolean&nbsp;getBufferOverride()</pre>
+<div class="block">Returns the current buffer override flag.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if buffer override is enabled; otherwise,
+ false is returned</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setFrontBufferRendering-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFrontBufferRendering</h4>
+<pre>public&nbsp;void&nbsp;setFrontBufferRendering(boolean&nbsp;frontBufferRendering)</pre>
+<div class="block">Sets a flag that enables or disables immediate mode rendering
+ into the front buffer of a double buffered Canvas3D.
+ This attribute is only used when the
+ <code>bufferOverride</code> flag is enabled.
+ <p>
+ Note that this attribute has no effect if double buffering
+ is disabled or is not available on the Canvas3D.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>frontBufferRendering</code> - the new front buffer rendering flag</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setBufferOverride-boolean-"><code>setBufferOverride(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getFrontBufferRendering--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFrontBufferRendering</h4>
+<pre>public&nbsp;boolean&nbsp;getFrontBufferRendering()</pre>
+<div class="block">Returns the current front buffer rendering flag.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if front buffer rendering is enabled; otherwise,
+ false is returned</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setStereoMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStereoMode</h4>
+<pre>public&nbsp;void&nbsp;setStereoMode(int&nbsp;stereoMode)</pre>
+<div class="block">Sets the stereo mode for immediate mode rendering.  The
+ parameter specifies which stereo buffer or buffers is rendered
+ into.  This attribute is only used when the
+ <code>bufferOverride</code> flag is enabled.
+ <ul>
+ <li>
+ <code>STEREO_LEFT</code> specifies that rendering is done into
+ the left eye.
+ </li>
+ <li>
+ <code>STEREO_RIGHT</code> specifies that rendering is done into
+ the right eye.
+ </li>
+ <li>
+ <code>STEREO_BOTH</code> specifies that rendering is done into
+ both eyes.  This is the default.
+ </li>
+ </ul>
+
+ <p>
+ Note that this attribute has no effect if stereo is disabled or
+ is not available on the Canvas3D.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stereoMode</code> - the new stereo mode</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#setBufferOverride-boolean-"><code>setBufferOverride(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getStereoMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStereoMode</h4>
+<pre>public&nbsp;int&nbsp;getStereoMode()</pre>
+<div class="block">Returns the current stereo mode.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the stereo mode, one of <code>STEREO_LEFT</code>,
+ <code>STEREO_RIGHT</code>, or <code>STEREO_BOTH</code>.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="clear--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Clear the Canvas3D to the color or image specified by the
+ current background node.</div>
+</li>
+</ul>
+<a name="draw-org.scijava.java3d.Geometry-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>draw</h4>
+<pre>public&nbsp;void&nbsp;draw(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry)</pre>
+<div class="block">Draw the specified Geometry component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>geometry</code> - the Geometry object to draw.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the specified geometry is a
+ Raster that refers to an ImageComponent2D that is being used by a
+ Canvas3D as an off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="draw-org.scijava.java3d.Shape3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>draw</h4>
+<pre>public&nbsp;void&nbsp;draw(<a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>&nbsp;shape)</pre>
+<div class="block">Draw the specified Shape3D leaf node object.  This is
+ a convenience method that is identical to calling the
+ setAppearance(Appearance) and draw(Geometry) methods
+ passing the appearance and geometry component objects of
+ the specified shape node as arguments.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>shape</code> - the Shape3D node containing the Appearance component
+ object to set and Geometry component object to draw</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Shape3D node
+ is part of or is subsequently made part of a live scene graph.</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Shape3D node's Appearance
+ refers to an ImageComponent2D that is being used by a
+ Canvas3D as an off-screen buffer.</dd>
+</dl>
+</li>
+</ul>
+<a name="readRaster-org.scijava.java3d.Raster-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readRaster</h4>
+<pre>public&nbsp;void&nbsp;readRaster(<a href="../../../org/scijava/java3d/Raster.html" title="class in org.scijava.java3d">Raster</a>&nbsp;raster)</pre>
+<div class="block">Read an image from the frame buffer and copy it into the
+ ImageComponent and/or DepthComponent
+ objects referenced by the specified Raster object.
+ All parameters of the Raster object and the component ImageComponent
+ and/or DepthComponentImage objects must be set to the desired values
+ prior to calling this method.  These values determine the location,
+ size, and format of the pixel data that is read.
+ This method calls <code>flush(true)</code> prior to reading the
+ frame buffer.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>raster</code> - the Raster object used to read the
+ contents of the frame buffer</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the image class of the specified
+ Raster's ImageComponent2D is <i>not</i> ImageClass.BUFFERED_IMAGE.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified Raster's
+ ImageComponent2D is in by-reference mode and its
+ RenderedImage is null.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the the Raster's
+ ImageComponent2D format
+ is <i>not</i> a 3-component format (e.g., FORMAT_RGB)
+ or a 4-component format (e.g., FORMAT_RGBA).</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Raster object is
+ part of a live scene graph, or if the Raster's ImageComponent2D is
+ part of a live scene graph.</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if the Raster's ImageComponent2D is
+ being used by an immediate mode context, or by a Canvas3D as
+ an off-screen buffer.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsContext3D.html#flush-boolean-"><code>flush(boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/ImageComponent.html" title="class in org.scijava.java3d"><code>ImageComponent</code></a>, 
+<a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d"><code>DepthComponent</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="flush-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>flush</h4>
+<pre>public&nbsp;void&nbsp;flush(boolean&nbsp;wait)</pre>
+<div class="block">Flushes all previously executed rendering operations to the
+ drawing buffer for this 3D graphics context.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wait</code> - flag indicating whether or not to wait for the
+ rendering to be complete before returning from this call.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/GraphicsConfigTemplate3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/GraphStructureChangeListener.html" title="interface in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/GraphicsContext3D.html" target="_top">Frames</a></li>
+<li><a href="GraphicsContext3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

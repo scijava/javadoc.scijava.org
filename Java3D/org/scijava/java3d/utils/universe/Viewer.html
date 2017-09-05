@@ -1,0 +1,940 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Viewer (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Viewer (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":42,"i6":42,"i7":10,"i8":10,"i9":10,"i10":10,"i11":42,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/universe/SimpleUniverse.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/Viewer.html" target="_top">Frames</a></li>
+<li><a href="Viewer.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d.utils.universe</div>
+<h2 title="Class Viewer" class="title">Class Viewer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.utils.universe.Viewer</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Viewer</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">The Viewer class holds all the information that describes the physical
+ and virtual "presence" in the Java 3D universe.  The Viewer object
+ consists of:
+ <UL>
+ <LI>Physical Objects</LI>
+  <UL>
+   <LI>Canvas3D's - used to render with.</LI>
+   <LI>PhysicalEnvironment - holds characteristics of the hardware platform
+    being used to render on.</LI>
+   <LI>PhysicalBody -  holds the physical characteristics and personal
+    preferences of the person who will be viewing the Java 3D universe.</LI>
+  </UL>
+ <LI>Virtual Objects</LI>
+  <UL>
+   <LI>View - the Java 3D View object.</LI>
+   <LI>ViewerAvatar - the geometry that is used by Java 3D to represent the
+    person viewing the Java 3D universe.</LI>
+  </UL>
+ </UL>
+ If the Viewer object is created without any Canvas3D's, or indirectly
+ through a configuration file, it will create the Canvas3D's as needed.
+ The default Viewer creates one Canvas3D.  If the Viewer object creates
+ the Canvas3D's, it will also create a JPanel and JFrame for each Canvas3D.
+
+ Dynamic video resize is a new feature in Java 3D 1.3.1.
+ This feature provides a means for doing swap synchronous resizing
+ of the area that is to be magnified (or passed through) to the
+ output video resolution. This functionality allows an application
+ to draw into a smaller viewport in the framebuffer in order to reduce
+ the time spent doing pixel fill. The reduced size viewport is then
+ magnified up to the video output resolution using the SUN_video_resize
+ extension. This extension is only implemented in XVR-4000 and later
+ hardware with back end video out resizing capability.
+
+ If video size compensation is enable, the line widths, point sizes and pixel
+ operations will be scaled internally with the resize factor to approximately
+ compensate for video resizing. The location of the pixel ( x, y ) in the
+ resized framebuffer = ( floor( x * factor + 0.5 ), floor( y * factor + 0.5 ) )
+
+ <p></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d"><code>Canvas3D</code></a>, 
+<a href="../../../../../org/scijava/java3d/PhysicalEnvironment.html" title="class in org.scijava.java3d"><code>PhysicalEnvironment</code></a>, 
+<a href="../../../../../org/scijava/java3d/PhysicalBody.html" title="class in org.scijava.java3d"><code>PhysicalBody</code></a>, 
+<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d"><code>View</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe"><code>ViewerAvatar</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer--">Viewer</a></span>()</code>
+<div class="block">Creates a default viewer object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer-org.scijava.java3d.Canvas3D-">Viewer</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;userCanvas)</code>
+<div class="block">Creates a default viewer object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer-org.scijava.java3d.Canvas3D:A-">Viewer</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]&nbsp;userCanvases)</code>
+<div class="block">Creates a default viewer object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer-org.scijava.java3d.Canvas3D:A-org.scijava.java3d.PhysicalBody-org.scijava.java3d.PhysicalEnvironment-boolean-">Viewer</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]&nbsp;userCanvases,
+      <a href="../../../../../org/scijava/java3d/PhysicalBody.html" title="class in org.scijava.java3d">PhysicalBody</a>&nbsp;userBody,
+      <a href="../../../../../org/scijava/java3d/PhysicalEnvironment.html" title="class in org.scijava.java3d">PhysicalEnvironment</a>&nbsp;userEnvironment,
+      boolean&nbsp;setVisible)</code>
+<div class="block">Creates a viewer object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer-org.scijava.java3d.Canvas3D-java.net.URL-">Viewer</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;userCanvas,
+      <a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">create a ConfiguredUniverse to use a configuration file</span></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#Viewer-java.net.URL-">Viewer</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">create a ConfiguredUniverse to use a configuration file</span></div>
+</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#createAudioDevice--">createAudioDevice</a></span>()</code>
+<div class="block">Used to create and initialize a default AudioDevice3D used for sound
+ rendering.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe">ViewerAvatar</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getAvatar--">getAvatar</a></span>()</code>
+<div class="block">Gets the geometry associated with the viewer's avatar.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getCanvas3D--">getCanvas3D</a></span>()</code>
+<div class="block">Returns the 0th Canvas3D object associated with this Viewer object</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getCanvas3D-int-">getCanvas3D</a></span>(int&nbsp;canvasNum)</code>
+<div class="block">Returns the Canvas3D object at the specified index associated with
+ this Viewer object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getCanvas3Ds--">getCanvas3Ds</a></span>()</code>
+<div class="block">Returns all the Canvas3D objects associated with this Viewer object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getCanvases--">getCanvases</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">superceded by getCanvas3D()</span></div>
+</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Frame.html?is-external=true" title="class or interface in java.awt">Frame</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getFrame--">getFrame</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">AWT Frame components are no longer created by the
+  Viewer class.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getJFrame-int-">getJFrame</a></span>(int&nbsp;frameNum)</code>
+<div class="block">Returns the JFrame object created by this Viewer object at the
+ specified index.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getJFrames--">getJFrames</a></span>()</code>
+<div class="block">Returns all the JFrames created by this Viewer object.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getJPanel-int-">getJPanel</a></span>(int&nbsp;panelNum)</code>
+<div class="block">Returns the JPanel object created by this Viewer object at the
+ specified index.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getJPanels--">getJPanels</a></span>()</code>
+<div class="block">Returns all the JPanel objects created by this Viewer object.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Panel.html?is-external=true" title="class or interface in java.awt">Panel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getPanel--">getPanel</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">AWT Panel components are no longer created by the
+ Viewer class.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/PhysicalBody.html" title="class in org.scijava.java3d">PhysicalBody</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getPhysicalBody--">getPhysicalBody</a></span>()</code>
+<div class="block">Returns the PhysicalBody object associated with the Viewer object.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/PhysicalEnvironment.html" title="class in org.scijava.java3d">PhysicalEnvironment</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getPhysicalEnvironment--">getPhysicalEnvironment</a></span>()</code>
+<div class="block">Returns the PhysicalEnvironment object associated with the Viewer
+ object.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/utils/universe/SimpleUniverse.html" title="class in org.scijava.java3d.utils.universe">SimpleUniverse</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getUniverse--">getUniverse</a></span>()</code>
+<div class="block">Returns the Universe to which this Viewer is attached</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getView--">getView</a></span>()</code>
+<div class="block">Returns the View object associated with the Viewer object.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe">ViewingPlatform</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#getViewingPlatform--">getViewingPlatform</a></span>()</code>
+<div class="block">Get the ViewingPlatform object used by this Viewer.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#setAvatar-org.scijava.java3d.utils.universe.ViewerAvatar-">setAvatar</a></span>(<a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe">ViewerAvatar</a>&nbsp;avatar)</code>
+<div class="block">Sets the geometry to be associated with the viewer's avatar.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#setViewingPlatform-org.scijava.java3d.utils.universe.ViewingPlatform-">setViewingPlatform</a></span>(<a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe">ViewingPlatform</a>&nbsp;platform)</code>
+<div class="block">Set the ViewingPlatform object used by this Viewer.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/Viewer.html#setVisible-boolean-">setVisible</a></span>(boolean&nbsp;visible)</code>
+<div class="block">Call setVisible() on all Window components created by this Viewer.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Viewer--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer()</pre>
+<div class="block">Creates a default viewer object. The default values are used to create
+ the PhysicalBody and PhysicalEnvironment.  A single RGB, double buffered
+ and depth buffered Canvas3D object is created.  The View is created
+ with a front clip distance of 0.1f and a back clip distance of 10.0f.</div>
+</li>
+</ul>
+<a name="Viewer-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;userCanvas)</pre>
+<div class="block">Creates a default viewer object. The default values are used to create
+ the PhysicalBody and PhysicalEnvironment.  The View is created
+ with a front clip distance of 0.1f and a back clip distance of 10.0f.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userCanvas</code> - the Canvas3D object to be used for rendering;
+  if this is null then a single RGB, double buffered and depth buffered
+  Canvas3D object is created</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.1</dd>
+</dl>
+</li>
+</ul>
+<a name="Viewer-org.scijava.java3d.Canvas3D:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]&nbsp;userCanvases)</pre>
+<div class="block">Creates a default viewer object. The default values are used to create
+ the PhysicalBody and PhysicalEnvironment.  The View is created
+ with a front clip distance of 0.1f and a back clip distance of 10.0f.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userCanvases</code> - the Canvas3D objects to be used for rendering;
+  if this is null then a single RGB, double buffered and depth buffered
+  Canvas3D object is created</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="Viewer-org.scijava.java3d.Canvas3D:A-org.scijava.java3d.PhysicalBody-org.scijava.java3d.PhysicalEnvironment-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]&nbsp;userCanvases,
+              <a href="../../../../../org/scijava/java3d/PhysicalBody.html" title="class in org.scijava.java3d">PhysicalBody</a>&nbsp;userBody,
+              <a href="../../../../../org/scijava/java3d/PhysicalEnvironment.html" title="class in org.scijava.java3d">PhysicalEnvironment</a>&nbsp;userEnvironment,
+              boolean&nbsp;setVisible)</pre>
+<div class="block">Creates a viewer object. The Canvas3D objects, PhysicalEnvironment, and
+ PhysicalBody are taken from the arguments.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userCanvases</code> - the Canvas3D objects to be used for rendering;
+  if this is null then a single RGB, double buffered and depth buffered
+  Canvas3D object is created</dd>
+<dd><code>userBody</code> - the PhysicalBody to use for this Viewer; if it is
+  null, a default PhysicalBody object is created</dd>
+<dd><code>userEnvironment</code> - the PhysicalEnvironment to use for this Viewer;
+  if it is null, a default PhysicalEnvironment object is created</dd>
+<dd><code>setVisible</code> - determines if the Frames should be set to visible once created</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="Viewer-java.net.URL-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">create a ConfiguredUniverse to use a configuration file</span></div>
+<div class="block">Creates a default Viewer object. The default values are used to create
+ the PhysicalEnvironment and PhysicalBody.  A single RGB, double buffered
+ and depth buffered Canvas3D object is created.  The View is created
+ with a front clip distance of 0.1f and a back clip distance of 10.0f.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userConfig</code> - the URL of the user configuration file used to
+  initialize the PhysicalBody object; this is always ignored</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.1</dd>
+</dl>
+</li>
+</ul>
+<a name="Viewer-org.scijava.java3d.Canvas3D-java.net.URL-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Viewer</h4>
+<pre>public&nbsp;Viewer(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;userCanvas,
+              <a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">create a ConfiguredUniverse to use a configuration file</span></div>
+<div class="block">Creates a default viewer object. The default values are used to create
+ the PhysicalEnvironment and PhysicalBody.  The View is created
+ with a front clip distance of 0.1f and a back clip distance of 10.0f.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userCanvas</code> - the Canvas3D object to be used for rendering;
+  if this is null then a single RGB, double buffered and depth buffered
+  Canvas3D object is created</dd>
+<dd><code>userConfig</code> - the URL of the user configuration file used to
+  initialize the PhysicalBody object; this is always ignored</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.1</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setVisible-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVisible</h4>
+<pre>public&nbsp;void&nbsp;setVisible(boolean&nbsp;visible)</pre>
+<div class="block">Call setVisible() on all Window components created by this Viewer.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>visible</code> - boolean to be passed to the setVisible() calls on the
+  Window components created by this Viewer</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getView--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getView</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;getView()</pre>
+<div class="block">Returns the View object associated with the Viewer object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The View object of this Viewer.</dd>
+</dl>
+</li>
+</ul>
+<a name="setViewingPlatform-org.scijava.java3d.utils.universe.ViewingPlatform-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setViewingPlatform</h4>
+<pre>public&nbsp;void&nbsp;setViewingPlatform(<a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe">ViewingPlatform</a>&nbsp;platform)</pre>
+<div class="block">Set the ViewingPlatform object used by this Viewer.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>platform</code> - The ViewingPlatform object to set for this
+  Viewer object.  Use null to unset the current value and
+  not assign assign a new ViewingPlatform object.</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewingPlatform--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewingPlatform</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe">ViewingPlatform</a>&nbsp;getViewingPlatform()</pre>
+<div class="block">Get the ViewingPlatform object used by this Viewer.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The ViewingPlatform object used by this
+  Viewer object.</dd>
+</dl>
+</li>
+</ul>
+<a name="setAvatar-org.scijava.java3d.utils.universe.ViewerAvatar-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAvatar</h4>
+<pre>public&nbsp;void&nbsp;setAvatar(<a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe">ViewerAvatar</a>&nbsp;avatar)</pre>
+<div class="block">Sets the geometry to be associated with the viewer's avatar.  The
+ avatar is the geometry used to represent the viewer in the virtual
+ world.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>avatar</code> - The geometry to associate with this Viewer object.
+  Passing in null will cause any geometry associated with the Viewer
+  to be removed from the scen graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="getAvatar--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAvatar</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe">ViewerAvatar</a>&nbsp;getAvatar()</pre>
+<div class="block">Gets the geometry associated with the viewer's avatar.  The
+ avatar is the geometry used to represent the viewer in the virtual
+ world.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The root of the scene graph that is used to represent the
+  viewer's avatar.</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalBody--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalBody</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/PhysicalBody.html" title="class in org.scijava.java3d">PhysicalBody</a>&nbsp;getPhysicalBody()</pre>
+<div class="block">Returns the PhysicalBody object associated with the Viewer object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A reference to the PhysicalBody object.</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalEnvironment--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalEnvironment</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/PhysicalEnvironment.html" title="class in org.scijava.java3d">PhysicalEnvironment</a>&nbsp;getPhysicalEnvironment()</pre>
+<div class="block">Returns the PhysicalEnvironment object associated with the Viewer
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A reference to the PhysicalEnvironment object.</dd>
+</dl>
+</li>
+</ul>
+<a name="getCanvas3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanvas3D</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;getCanvas3D()</pre>
+<div class="block">Returns the 0th Canvas3D object associated with this Viewer object</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to the 0th Canvas3D object associated with this
+  Viewer object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCanvas3D-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanvas3D</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;getCanvas3D(int&nbsp;canvasNum)</pre>
+<div class="block">Returns the Canvas3D object at the specified index associated with
+ this Viewer object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>canvasNum</code> - the index of the Canvas3D object to retrieve;
+  if there is no Canvas3D object for the given index, null is returned</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to a Canvas3D object associated with this
+  Viewer object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCanvas3Ds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanvas3Ds</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>[]&nbsp;getCanvas3Ds()</pre>
+<div class="block">Returns all the Canvas3D objects associated with this Viewer object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of references to the Canvas3D objects associated with
+  this Viewer object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCanvases--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanvases</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;getCanvases()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">superceded by getCanvas3D()</span></div>
+<div class="block">Returns the canvas associated with this Viewer object.</div>
+</li>
+</ul>
+<a name="getFrame--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFrame</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Frame.html?is-external=true" title="class or interface in java.awt">Frame</a>&nbsp;getFrame()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">AWT Frame components are no longer created by the
+  Viewer class.</span></div>
+<div class="block">This method is no longer supported since Java 3D 1.3.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - if called.</dd>
+</dl>
+</li>
+</ul>
+<a name="getJFrame-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJFrame</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a>&nbsp;getJFrame(int&nbsp;frameNum)</pre>
+<div class="block">Returns the JFrame object created by this Viewer object at the
+ specified index.  If a Viewer is constructed without any Canvas3D
+ objects then the Viewer object will create a Canva3D object, a JPanel
+ containing the Canvas3D object, and a JFrame to place the JPanel in.
+ <p>
+ NOTE: When running under JDK 1.4 or newer, the JFrame always directly
+ contains the JPanel which contains the Canvas3D.  When running under
+ JDK 1.3.1 and creating a borderless full screen through a configuration
+ file, the JFrame will instead contain a JWindow which will contain the
+ JPanel and Canvas3D.
+ <p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>frameNum</code> - the index of the JFrame object to retrieve;
+  if there is no JFrame object for the given index, null is returned</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to JFrame object created by this Viewer object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getJFrames--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJFrames</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a>[]&nbsp;getJFrames()</pre>
+<div class="block">Returns all the JFrames created by this Viewer object.  If a Viewer is
+ constructed without any Canvas3D objects then the Viewer object will
+ create a Canva3D object, a JPanel containing the Canvas3D object, and a
+ JFrame to place the JPanel in.<p>
+
+ NOTE: When running under JDK 1.4 or newer, the JFrame always directly
+ contains the JPanel which contains the Canvas3D.  When running under
+ JDK 1.3.1 and creating a borderless full screen through a configuration
+ file, the JFrame will instead contain a JWindow which will contain the
+ JPanel and Canvas3D.<p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of references to the JFrame objects created by
+  this Viewer object, or null if no JFrame objects were created</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getPanel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPanel</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Panel.html?is-external=true" title="class or interface in java.awt">Panel</a>&nbsp;getPanel()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">AWT Panel components are no longer created by the
+ Viewer class.</span></div>
+<div class="block">This method is no longer supported since Java 3D 1.3.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - if called.</dd>
+</dl>
+</li>
+</ul>
+<a name="getJPanel-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJPanel</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a>&nbsp;getJPanel(int&nbsp;panelNum)</pre>
+<div class="block">Returns the JPanel object created by this Viewer object at the
+ specified index.  If a Viewer is constructed without any Canvas3D
+ objects then the Viewer object will create a Canva3D object and a
+ JPanel into which to place the Canvas3D object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>panelNum</code> - the index of the JPanel object to retrieve;
+  if there is no JPanel object for the given index, null is returned</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a reference to a JPanel object created by this Viewer object</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getJPanels--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJPanels</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a>[]&nbsp;getJPanels()</pre>
+<div class="block">Returns all the JPanel objects created by this Viewer object.  If a
+ Viewer is constructed without any Canvas3D objects then the Viewer
+ object will create a Canva3D object and a JPanel into which to place
+ the Canvas3D object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of references to the JPanel objects created by
+  this Viewer object, or null or no JPanel objects were created</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="createAudioDevice--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAudioDevice</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/AudioDevice.html" title="interface in org.scijava.java3d">AudioDevice</a>&nbsp;createAudioDevice()</pre>
+<div class="block">Used to create and initialize a default AudioDevice3D used for sound
+ rendering.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>reference to created AudioDevice, or null if error occurs.</dd>
+</dl>
+</li>
+</ul>
+<a name="getUniverse--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getUniverse</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/utils/universe/SimpleUniverse.html" title="class in org.scijava.java3d.utils.universe">SimpleUniverse</a>&nbsp;getUniverse()</pre>
+<div class="block">Returns the Universe to which this Viewer is attached</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the Universe to which this Viewer is attached</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/universe/SimpleUniverse.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/Viewer.html" target="_top">Frames</a></li>
+<li><a href="Viewer.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

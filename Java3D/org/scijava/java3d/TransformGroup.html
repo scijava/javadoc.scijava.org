@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TransformGroup (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="TransformGroup (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TransformInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TransformGroup.html" target="_top">Frames</a></li>
+<li><a href="TransformGroup.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class TransformGroup" class="title">Class TransformGroup</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">org.scijava.java3d.Node</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">org.scijava.java3d.Group</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.TransformGroup</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">TransformGroup</span>
+extends <a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></pre>
+<div class="block">Group node that contains a transform. The TransformGroup node
+ specifies a single spatial transformation, via a Transform3D
+ object, that can position, orient, and scale all of its children.
+ <P>
+ The specified transformation must be affine. Further, if the
+ TransformGroup node is used as an ancestor of a ViewPlatform node
+ in the scene graph, the transformation must be congruent-only
+ rotations, translations, and uniform scales are allowed in
+ a direct path from a Locale to a ViewPlatform node.
+ <P>
+ Note: Even though arbitrary affine transformations are
+ allowed, better performance will result if all matrices
+ within a branch graph are congruent, containing only rotations
+ translation, and uniform scale.
+ <P>
+ The effects of transformations in the scene graph are cumulative.
+ The concatenation of the transformations of each TransformGroup in
+ a direct path from the Locale to a Leaf node defines a composite
+ model transformation (CMT) that takes points in that Leaf node's
+ local coordinates and transforms them into Virtual World (Vworld)
+ coordinates. This composite transformation is used to
+ transform points, normals, and distances into Vworld coordinates.
+ Points are transformed by the CMT. Normals are transformed by the
+ inverse-transpose of the CMT. Distances are transformed by the scale
+ of the CMT. In the case of a transformation containing a nonuniform
+ scale or shear, the maximum scale value in
+ any direction is used. This ensures, for example, that a transformed
+ bounding sphere, which is specified as a point and a radius,
+ continues to enclose all objects that are also transformed using
+ a nonuniform scale.
+ <P></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#ALLOW_TRANSFORM_READ">ALLOW_TRANSFORM_READ</a></span></code>
+<div class="block">Specifies that the node allows access to
+ its object's transform information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#ALLOW_TRANSFORM_WRITE">ALLOW_TRANSFORM_WRITE</a></span></code>
+<div class="block">Specifies that the node allows writing
+ its object's transform information.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Group">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></h3>
+<code><a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_EXTEND">ALLOW_CHILDREN_EXTEND</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_READ">ALLOW_CHILDREN_READ</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_WRITE">ALLOW_CHILDREN_WRITE</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_COLLISION_BOUNDS_READ">ALLOW_COLLISION_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_COLLISION_BOUNDS_WRITE">ALLOW_COLLISION_BOUNDS_WRITE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_READ">ALLOW_AUTO_COMPUTE_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_WRITE">ALLOW_AUTO_COMPUTE_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_READ">ALLOW_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_WRITE">ALLOW_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_READ">ALLOW_COLLIDABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_WRITE">ALLOW_COLLIDABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCAL_TO_VWORLD_READ">ALLOW_LOCAL_TO_VWORLD_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCALE_READ">ALLOW_LOCALE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PARENT_READ">ALLOW_PARENT_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_READ">ALLOW_PICKABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_WRITE">ALLOW_PICKABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_COLLISION_REPORTING">ENABLE_COLLISION_REPORTING</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_PICK_REPORTING">ENABLE_PICK_REPORTING</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#TransformGroup--">TransformGroup</a></span>()</code>
+<div class="block">Constructs and initializes a TransformGroup using an
+ identity transform.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#TransformGroup-org.scijava.java3d.Transform3D-">TransformGroup</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</code>
+<div class="block">Constructs and initializes a TransformGroup from
+ the Transform passed.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#cloneNode-boolean-">cloneNode</a></span>(boolean&nbsp;forceDuplicate)</code>
+<div class="block">Creates a new instance of the node.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#getTransform-org.scijava.java3d.Transform3D-">getTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</code>
+<div class="block">Copies the transform component of this TransformGroup into
+ the passed transform object.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TransformGroup.html#setTransform-org.scijava.java3d.Transform3D-">setTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</code>
+<div class="block">Sets the transform component of this TransformGroup to the value of
+ the passed transform.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Group">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></h3>
+<code><a href="../../../org/scijava/java3d/Group.html#addChild-org.scijava.java3d.Node-">addChild</a>, <a href="../../../org/scijava/java3d/Group.html#getAllChildren--">getAllChildren</a>, <a href="../../../org/scijava/java3d/Group.html#getAlternateCollisionTarget--">getAlternateCollisionTarget</a>, <a href="../../../org/scijava/java3d/Group.html#getChild-int-">getChild</a>, <a href="../../../org/scijava/java3d/Group.html#getCollisionBounds--">getCollisionBounds</a>, <a href="../../../org/scijava/java3d/Group.html#indexOfChild-org.scijava.java3d.Node-">indexOfChild</a>, <a href="../../../org/scijava/java3d/Group.html#insertChild-org.scijava.java3d.Node-int-">insertChild</a>, <a href="../../../org/scijava/java3d/Group.html#moveTo-org.scijava.java3d.BranchGroup-">moveTo</a>, <a href="../../../org/scijava/java3d/Group.html#numChildren--">numChildren</a>, <a href="../../../org/scijava/java3d/Group.html#removeAllChildren--">removeAllChildren</a>, <a href="../../../org/scijava/java3d/Group.html#removeChild-int-">removeChild</a>, <a href="../../../org/scijava/java3d/Group.html#removeChild-org.scijava.java3d.Node-">removeChild</a>, <a href="../../../org/scijava/java3d/Group.html#setAlternateCollisionTarget-boolean-">setAlternateCollisionTarget</a>, <a href="../../../org/scijava/java3d/Group.html#setChild-org.scijava.java3d.Node-int-">setChild</a>, <a href="../../../org/scijava/java3d/Group.html#setCollisionBounds-org.scijava.java3d.Bounds-">setCollisionBounds</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#cloneTree--">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-">duplicateNode</a>, <a href="../../../org/scijava/java3d/Node.html#getBounds--">getBounds</a>, <a href="../../../org/scijava/java3d/Node.html#getBoundsAutoCompute--">getBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#getCollidable--">getCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#getLocale--">getLocale</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getParent--">getParent</a>, <a href="../../../org/scijava/java3d/Node.html#getPickable--">getPickable</a>, <a href="../../../org/scijava/java3d/Node.html#setBounds-org.scijava.java3d.Bounds-">setBounds</a>, <a href="../../../org/scijava/java3d/Node.html#setBoundsAutoCompute-boolean-">setBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#setCollidable-boolean-">setCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#setPickable-boolean-">setPickable</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_TRANSFORM_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_TRANSFORM_READ</h4>
+<pre>public static final&nbsp;int ALLOW_TRANSFORM_READ</pre>
+<div class="block">Specifies that the node allows access to
+ its object's transform information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TransformGroup.ALLOW_TRANSFORM_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_TRANSFORM_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_TRANSFORM_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_TRANSFORM_WRITE</pre>
+<div class="block">Specifies that the node allows writing
+ its object's transform information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TransformGroup.ALLOW_TRANSFORM_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TransformGroup--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TransformGroup</h4>
+<pre>public&nbsp;TransformGroup()</pre>
+<div class="block">Constructs and initializes a TransformGroup using an
+ identity transform.</div>
+</li>
+</ul>
+<a name="TransformGroup-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TransformGroup</h4>
+<pre>public&nbsp;TransformGroup(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</pre>
+<div class="block">Constructs and initializes a TransformGroup from
+ the Transform passed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t1</code> - the transform3D object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not affine.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransform</h4>
+<pre>public&nbsp;void&nbsp;setTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</pre>
+<div class="block">Sets the transform component of this TransformGroup to the value of
+ the passed transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t1</code> - the transform to be copied</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/BadTransformException.html" title="class in org.scijava.java3d">BadTransformException</a></code> - if the transform is not affine.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransform</h4>
+<pre>public&nbsp;void&nbsp;getTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;t1)</pre>
+<div class="block">Copies the transform component of this TransformGroup into
+ the passed transform object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t1</code> - the transform object to be copied into</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNode-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNode</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;cloneNode(boolean&nbsp;forceDuplicate)</pre>
+<div class="block">Creates a new instance of the node.  This routine is called
+ by <code>cloneTree</code> to duplicate the current node.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#cloneNode-boolean-">cloneNode</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>forceDuplicate</code> - when set to <code>true</code>, causes the
+  <code>duplicateOnCloneTree</code> flag to be ignored.  When
+  <code>false</code>, the value of each node's
+  <code>duplicateOnCloneTree</code> variable determines whether
+  NodeComponent data is duplicated or copied.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#cloneTree--"><code>Node.cloneTree()</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#cloneNode-boolean-"><code>Node.cloneNode(boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-"><code>Node.duplicateNode(org.scijava.java3d.Node, boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-"><code>NodeComponent.setDuplicateOnCloneTree(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TransformInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TransformGroup.html" target="_top">Frames</a></li>
+<li><a href="TransformGroup.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

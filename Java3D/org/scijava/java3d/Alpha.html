@@ -1,0 +1,1300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Alpha (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Alpha (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../org/scijava/java3d/AlternateAppearance.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Alpha.html" target="_top">Frames</a></li>
+<li><a href="Alpha.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class Alpha" class="title">Class Alpha</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.Alpha</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Alpha</span>
+extends <a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></pre>
+<div class="block">The alpha NodeComponent object provides common methods for
+ converting a time value into an alpha value (a value in the range 0
+ to 1).  The Alpha object is effectively a function of time that
+ generates alpha values in the range [0,1] when sampled: f(t) =
+ [0,1].  A primary use of the Alpha object is to provide alpha
+ values for Interpolator behaviors.  The function f(t) and the
+ characteristics of the Alpha object are determined by
+ user-definable parameters:
+
+ <p>
+ <ul>
+
+ <code>loopCount</code> -- This is the number of times to run this
+ Alpha; a value of -1 specifies that the Alpha loops
+ indefinitely.<p>
+
+ <code>triggerTime</code> -- This is the time in milliseconds since
+ the start time that this object first triggers.  If (startTime +
+ triggerTime >= currentTime) then the Alpha object starts running.<p>
+
+ <code>phaseDelayDuration</code> -- This is an additional number of
+ milliseconds to wait after triggerTime before actually starting
+ this Alpha.<p>
+
+ <code>mode</code> -- This can be set to INCREASING_ENABLE,
+ DECREASING_ENABLE, or the Or'ed value of the two.
+ INCREASING_ENABLE activates the increasing Alpha parameters listed
+ below; DECREASING_ENABLE activates the decreasing Alpha parameters
+ listed below.<p>
+
+ </ul> Increasing Alpha parameters:<p> <ul>
+
+ <code>increasingAlphaDuration</code> -- This is the period of time
+ during which Alpha goes from zero to one. <p>
+
+ <code>increasingAlphaRampDuration</code> -- This is the period of
+ time during which the Alpha step size increases at the beginning of
+ the increasingAlphaDuration and, correspondingly, decreases at the
+ end of the increasingAlphaDuration.  This parameter is clamped to
+ half of increasingAlphaDuration.  When this parameter is non-zero,
+ one gets constant acceleration while it is in effect; constant
+ positive acceleration at the beginning of the ramp and constant
+ negative acceleration at the end of the ramp.  If this parameter is
+ zero, then the effective velocity of the Alpha value is constant
+ and the acceleration is zero (ie, a linearly increasing alpha
+ ramp).<p>
+
+ <code>alphaAtOneDuration</code> -- This is the period of time that
+ Alpha stays at one.<p> </ul> Decreasing Alpha parameters:<p> <ul>
+
+ <code>decreasingAlphaDuration</code> -- This is the period of time
+ during which Alpha goes from one to zero.<p>
+
+ <code>decreasingAlphaRampDuration</code> -- This is the period of
+ time during which the Alpha step size increases at the beginning of
+ the decreasingAlphaDuration and, correspondingly, decreases at the
+ end of the decreasingAlphaDuration.  This parameter is clamped to
+ half of decreasingAlphaDuration.  When this parameter is non-zero,
+ one gets constant acceleration while it is in effect; constant
+ positive acceleration at the beginning of the ramp and constant
+ negative acceleration at the end of the ramp.  If this parameter is
+ zero, the effective velocity of the Alpha value is constant and the
+ acceleration is zero (i.e., a linearly-decreasing alpha ramp).<p>
+
+ <code>alphaAtZeroDuration</code> -- This is the period of time that
+ Alpha stays at zero.
+
+ </ul></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Interpolator.html" title="class in org.scijava.java3d"><code>Interpolator</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#DECREASING_ENABLE">DECREASING_ENABLE</a></span></code>
+<div class="block">Specifies that the decreasing component of the alpha is used</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#INCREASING_ENABLE">INCREASING_ENABLE</a></span></code>
+<div class="block">Specifies that the increasing component of the alpha is used.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#Alpha--">Alpha</a></span>()</code>
+<div class="block">Constructs an Alpha object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#Alpha-int-int-long-long-long-long-long-long-long-long-">Alpha</a></span>(int&nbsp;loopCount,
+     int&nbsp;mode,
+     long&nbsp;triggerTime,
+     long&nbsp;phaseDelayDuration,
+     long&nbsp;increasingAlphaDuration,
+     long&nbsp;increasingAlphaRampDuration,
+     long&nbsp;alphaAtOneDuration,
+     long&nbsp;decreasingAlphaDuration,
+     long&nbsp;decreasingAlphaRampDuration,
+     long&nbsp;alphaAtZeroDuration)</code>
+<div class="block">This constructor takes all of the Alpha user-definable parameters.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#Alpha-int-long-">Alpha</a></span>(int&nbsp;loopCount,
+     long&nbsp;increasingAlphaDuration)</code>
+<div class="block">This constructor takes only the loopCount and increasingAlphaDuration
+  as parameters and assigns the default values to all of the other
+  parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#Alpha-int-long-long-long-long-long-">Alpha</a></span>(int&nbsp;loopCount,
+     long&nbsp;triggerTime,
+     long&nbsp;phaseDelayDuration,
+     long&nbsp;increasingAlphaDuration,
+     long&nbsp;increasingAlphaRampDuration,
+     long&nbsp;alphaAtOneDuration)</code>
+<div class="block">Constructs a new Alpha object that assumes that the mode is
+ INCREASING_ENABLE.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#finished--">finished</a></span>()</code>
+<div class="block">Query to test if this alpha object is past its activity window,
+ that is, if it has finished looping.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getAlphaAtOneDuration--">getAlphaAtOneDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's alphaAtOneDuration.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getAlphaAtZeroDuration--">getAlphaAtZeroDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's alphaAtZeroDuration.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getDecreasingAlphaDuration--">getDecreasingAlphaDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's decreasingAlphaDuration.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getDecreasingAlphaRampDuration--">getDecreasingAlphaRampDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's decreasingAlphaRampDuration.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getIncreasingAlphaDuration--">getIncreasingAlphaDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's increasingAlphaDuration.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getIncreasingAlphaRampDuration--">getIncreasingAlphaRampDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's increasingAlphaRampDuration.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getLoopCount--">getLoopCount</a></span>()</code>
+<div class="block">Retrieves this alpha's loopCount.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getMode--">getMode</a></span>()</code>
+<div class="block">Retrieves this alpha's mode.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getPauseTime--">getPauseTime</a></span>()</code>
+<div class="block">Returns the time at which this alpha was paused.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getPhaseDelayDuration--">getPhaseDelayDuration</a></span>()</code>
+<div class="block">Retrieves this alpha's phaseDelayDuration.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getStartTime--">getStartTime</a></span>()</code>
+<div class="block">Retrieves this alpha's startTime, the base
+ for all relative time specifications; the default value
+ for startTime is the system start time.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#getTriggerTime--">getTriggerTime</a></span>()</code>
+<div class="block">Retrieves this alpha's triggerTime.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#isPaused--">isPaused</a></span>()</code>
+<div class="block">Returns true if this alpha object is paused.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#pause--">pause</a></span>()</code>
+<div class="block">Pauses this alpha object.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#pause-long-">pause</a></span>(long&nbsp;time)</code>
+<div class="block">Pauses this alpha object as of the specified time.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#resume--">resume</a></span>()</code>
+<div class="block">Resumes this alpha object.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#resume-long-">resume</a></span>(long&nbsp;time)</code>
+<div class="block">Resumes this alpha object as of the specified time.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setAlphaAtOneDuration-long-">setAlphaAtOneDuration</a></span>(long&nbsp;alphaAtOneDuration)</code>
+<div class="block">Set this alpha object's alphaAtOneDuration to the specified
+ value.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setAlphaAtZeroDuration-long-">setAlphaAtZeroDuration</a></span>(long&nbsp;alphaAtZeroDuration)</code>
+<div class="block">Set this alpha object's alphaAtZeroDuration to the specified
+ value.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setDecreasingAlphaDuration-long-">setDecreasingAlphaDuration</a></span>(long&nbsp;decreasingAlphaDuration)</code>
+<div class="block">Set this alpha's decreasingAlphaDuration to that specified in
+ the argument.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setDecreasingAlphaRampDuration-long-">setDecreasingAlphaRampDuration</a></span>(long&nbsp;decreasingAlphaRampDuration)</code>
+<div class="block">Set this alpha's decreasingAlphaRampDuration to that specified
+ in the argument.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setIncreasingAlphaDuration-long-">setIncreasingAlphaDuration</a></span>(long&nbsp;increasingAlphaDuration)</code>
+<div class="block">Set this alpha's increasingAlphaDuration to that specified in
+ the argument.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setIncreasingAlphaRampDuration-long-">setIncreasingAlphaRampDuration</a></span>(long&nbsp;increasingAlphaRampDuration)</code>
+<div class="block">Set this alpha's increasingAlphaRampDuration to that specified
+ in the argument.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setLoopCount-int-">setLoopCount</a></span>(int&nbsp;loopCount)</code>
+<div class="block">Set this alpha's loopCount to that specified in the argument.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setMode-int-">setMode</a></span>(int&nbsp;mode)</code>
+<div class="block">Set this alpha's mode to that specified in the argument.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setPhaseDelayDuration-long-">setPhaseDelayDuration</a></span>(long&nbsp;phaseDelayDuration)</code>
+<div class="block">Set this alpha's phaseDelayDuration to that specified in
+ the argument.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setStartTime-long-">setStartTime</a></span>(long&nbsp;startTime)</code>
+<div class="block">Sets this alpha's startTime to that specified in the argument;
+ startTime sets the base (or zero) for all relative time
+ computations; the default value for startTime is the system
+ start time.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#setTriggerTime-long-">setTriggerTime</a></span>(long&nbsp;triggerTime)</code>
+<div class="block">Set this alpha's triggerTime to that specified in the argument.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#value--">value</a></span>()</code>
+<div class="block">This method returns a value between 0.0 and 1.0 inclusive,
+ based on the current time and the time-to-alpha parameters
+ established for this alpha.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Alpha.html#value-long-">value</a></span>(long&nbsp;atTime)</code>
+<div class="block">This method returns a value between 0.0 and 1.0 inclusive,
+ based on the specified time and the time-to-alpha parameters
+ established for this alpha.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="INCREASING_ENABLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>INCREASING_ENABLE</h4>
+<pre>public static final&nbsp;int INCREASING_ENABLE</pre>
+<div class="block">Specifies that the increasing component of the alpha is used.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Alpha.INCREASING_ENABLE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="DECREASING_ENABLE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DECREASING_ENABLE</h4>
+<pre>public static final&nbsp;int DECREASING_ENABLE</pre>
+<div class="block">Specifies that the decreasing component of the alpha is used</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Alpha.DECREASING_ENABLE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Alpha--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Alpha</h4>
+<pre>public&nbsp;Alpha()</pre>
+<div class="block">Constructs an Alpha object with default parameters.  The default
+ values are as follows:
+ <ul>
+ loopCount                      : -1<br>
+ mode                           : INCREASING_ENABLE<br>
+ startTime                      : system start time<br>
+ triggerTime                    : 0<br>
+ phaseDelayDuration             : 0<br>
+ increasingAlphaDuration                : 1000<br>
+ increasingAlphaRampDuration    : 0<br>
+ alphaAtOneDuration             : 0<br>
+ decreasingAlphaDuration                : 0<br>
+ decreasingAlphaRampDuration    : 0<br>
+ alphaAtZeroDuration            : 0<br>
+ isPaused                               : false<br>
+ pauseTime                      : 0<br>
+ </ul></div>
+</li>
+</ul>
+<a name="Alpha-int-int-long-long-long-long-long-long-long-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Alpha</h4>
+<pre>public&nbsp;Alpha(int&nbsp;loopCount,
+             int&nbsp;mode,
+             long&nbsp;triggerTime,
+             long&nbsp;phaseDelayDuration,
+             long&nbsp;increasingAlphaDuration,
+             long&nbsp;increasingAlphaRampDuration,
+             long&nbsp;alphaAtOneDuration,
+             long&nbsp;decreasingAlphaDuration,
+             long&nbsp;decreasingAlphaRampDuration,
+             long&nbsp;alphaAtZeroDuration)</pre>
+<div class="block">This constructor takes all of the Alpha user-definable parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loopCount</code> - number of times to run this alpha; a value
+ of -1 specifies that the alpha loops indefinitely</dd>
+<dd><code>mode</code> - indicates whether the increasing alpha parameters or
+ the decreasing alpha parameters or both are active.  This parameter
+ accepts the following values, INCREASING_ENABLE or
+ DECREASING_ENABLE, which may be ORed together to specify
+ that both are active.
+ The increasing alpha parameters are increasingAlphaDuration,
+ increasingAlphaRampDuration, and alphaAtOneDuration.
+ The decreasing alpha parameters are decreasingAlphaDuration,
+ decreasingAlphaRampDuration, and alphaAtZeroDuration.</dd>
+<dd><code>triggerTime</code> - time in milliseconds since the start time
+ that this object first triggers</dd>
+<dd><code>phaseDelayDuration</code> - number of milliseconds to wait after
+ triggerTime before actually starting this alpha</dd>
+<dd><code>increasingAlphaDuration</code> - period of time during which alpha goes
+ from zero to one</dd>
+<dd><code>increasingAlphaRampDuration</code> - period of time during which
+ the alpha step size increases at the beginning of the
+ increasingAlphaDuration and, correspondingly, decreases at the end
+ of the increasingAlphaDuration. This value is clamped to half of
+ increasingAlphaDuration. NOTE: a value of zero means that the alpha
+ step size remains constant during the entire increasingAlphaDuration.</dd>
+<dd><code>alphaAtOneDuration</code> - period of time that alpha stays at one</dd>
+<dd><code>decreasingAlphaDuration</code> - period of time during which alpha goes
+ from one to zero</dd>
+<dd><code>decreasingAlphaRampDuration</code> - period of time during which
+ the alpha step size increases at the beginning of the
+ decreasingAlphaDuration and, correspondingly, decreases at the end
+ of the decreasingAlphaDuration. This value is clamped to half of
+ decreasingAlphaDuration. NOTE: a value of zero means that the alpha
+ step size remains constant during the entire decreasingAlphaDuration.</dd>
+<dd><code>alphaAtZeroDuration</code> - period of time that alpha stays at zero</dd>
+</dl>
+</li>
+</ul>
+<a name="Alpha-int-long-long-long-long-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Alpha</h4>
+<pre>public&nbsp;Alpha(int&nbsp;loopCount,
+             long&nbsp;triggerTime,
+             long&nbsp;phaseDelayDuration,
+             long&nbsp;increasingAlphaDuration,
+             long&nbsp;increasingAlphaRampDuration,
+             long&nbsp;alphaAtOneDuration)</pre>
+<div class="block">Constructs a new Alpha object that assumes that the mode is
+ INCREASING_ENABLE.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loopCount</code> - number of times to run this alpha; a value
+ of -1 specifies that the alpha loops indefinitely.</dd>
+<dd><code>triggerTime</code> - time in milliseconds since the start time
+ that this object first triggers</dd>
+<dd><code>phaseDelayDuration</code> - number of milliseconds to wait after
+ triggerTime before actually starting this alpha</dd>
+<dd><code>increasingAlphaDuration</code> - period of time during which alpha goes
+ from zero to one</dd>
+<dd><code>increasingAlphaRampDuration</code> - period of time during which
+ the alpha step size increases at the beginning of the
+ increasingAlphaDuration and, correspondingly, decreases at the end
+ of the increasingAlphaDuration. This value is clamped to half of
+ increasingAlphaDuration. NOTE: a value of zero means that the alpha
+ step size remains constant during the entire increasingAlphaDuration.</dd>
+<dd><code>alphaAtOneDuration</code> - period of time that alpha stays at one</dd>
+</dl>
+</li>
+</ul>
+<a name="Alpha-int-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Alpha</h4>
+<pre>public&nbsp;Alpha(int&nbsp;loopCount,
+             long&nbsp;increasingAlphaDuration)</pre>
+<div class="block">This constructor takes only the loopCount and increasingAlphaDuration
+  as parameters and assigns the default values to all of the other
+  parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loopCount</code> - number of times to run this alpha; a value
+ of -1 specifies that the alpha loops indefinitely</dd>
+<dd><code>increasingAlphaDuration</code> - period of time during which alpha goes
+ from zero to one</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="pause--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pause</h4>
+<pre>public&nbsp;void&nbsp;pause()</pre>
+<div class="block">Pauses this alpha object.  The current system time when this
+ method is called will be used in place of the actual current
+ time when calculating subsequent alpha values.  This has the
+ effect of freezing the interpolator at the time the method is
+ called.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="pause-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pause</h4>
+<pre>public&nbsp;void&nbsp;pause(long&nbsp;time)</pre>
+<div class="block">Pauses this alpha object as of the specified time.  The specified
+ time will be used in place of the actual current time when
+ calculating subsequent alpha values.  This has the effect of freezing
+ the interpolator at the specified time.  Note that specifying a
+ time in the future (that is, a time greater than
+ System.currentTimeMillis()) will cause the alpha to immediately
+ advance to that point before pausing.  Similarly, specifying a
+ time in the past (that is, a time less than
+ System.currentTimeMillis()) will cause the alpha to immediately
+ revert to that point before pausing.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>time</code> - the time at which to pause the alpha</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if time <= 0</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="resume--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resume</h4>
+<pre>public&nbsp;void&nbsp;resume()</pre>
+<div class="block">Resumes this alpha object.  If the alpha
+ object was paused, the difference between the current
+ time and the pause time will be used to adjust the startTime of
+ this alpha.  The equation is as follows:
+
+ <ul>
+ <code>startTime += System.currentTimeMillis() - pauseTime</code>
+ </ul>
+
+ Since the alpha object is no longer paused, this has the effect
+ of resuming the interpolator as of the current time.  If the
+ alpha object is not paused when this method is called, then this
+ method does nothing--the start time is not adjusted in this case.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="resume-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resume</h4>
+<pre>public&nbsp;void&nbsp;resume(long&nbsp;time)</pre>
+<div class="block">Resumes this alpha object as of the specified time.  If the alpha
+ object was paused, the difference between the specified
+ time and the pause time will be used to adjust the startTime of
+ this alpha.  The equation is as follows:
+
+ <ul><code>startTime += time - pauseTime</code></ul>
+
+ Since the alpha object is no longer paused, this has the effect
+ of resuming the interpolator as of the specified time.  If the
+ alpha object is not paused when this method is called, then this
+ method does nothing--the start time is not adjusted in this case.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>time</code> - the time at which to resume the alpha</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if time <= 0</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="isPaused--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPaused</h4>
+<pre>public&nbsp;boolean&nbsp;isPaused()</pre>
+<div class="block">Returns true if this alpha object is paused.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if this alpha object is paused, false otherwise</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getPauseTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPauseTime</h4>
+<pre>public&nbsp;long&nbsp;getPauseTime()</pre>
+<div class="block">Returns the time at which this alpha was paused.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pause time; returns 0 if this alpha is not paused</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="value--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>value</h4>
+<pre>public&nbsp;float&nbsp;value()</pre>
+<div class="block">This method returns a value between 0.0 and 1.0 inclusive,
+ based on the current time and the time-to-alpha parameters
+ established for this alpha.  If this alpha object is paused,
+ the value will be based on the pause time rather than the
+ current time.
+ This method will return the starting alpha value if the alpha
+ has not yet started (that is, if the current time is less
+ than startTime + triggerTime + phaseDelayDuration). This
+ method will return the ending alpha value if the alpha has
+ finished (that is, if the loop count has expired).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a value between 0.0 and 1.0 based on the current time</dd>
+</dl>
+</li>
+</ul>
+<a name="value-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>value</h4>
+<pre>public&nbsp;float&nbsp;value(long&nbsp;atTime)</pre>
+<div class="block">This method returns a value between 0.0 and 1.0 inclusive,
+ based on the specified time and the time-to-alpha parameters
+ established for this alpha.
+ This method will return the starting alpha value if the alpha
+ has not yet started (that is, if the specified time is less
+ than startTime + triggerTime + phaseDelayDuration). This
+ method will return the ending alpha value if the alpha has
+ finished (that is, if the loop count has expired).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>atTime</code> - The time for which we wish to compute alpha</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a value between 0.0 and 1.0 based on the specified time</dd>
+</dl>
+</li>
+</ul>
+<a name="getStartTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStartTime</h4>
+<pre>public&nbsp;long&nbsp;getStartTime()</pre>
+<div class="block">Retrieves this alpha's startTime, the base
+ for all relative time specifications; the default value
+ for startTime is the system start time.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's startTime.</dd>
+</dl>
+</li>
+</ul>
+<a name="setStartTime-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStartTime</h4>
+<pre>public&nbsp;void&nbsp;setStartTime(long&nbsp;startTime)</pre>
+<div class="block">Sets this alpha's startTime to that specified in the argument;
+ startTime sets the base (or zero) for all relative time
+ computations; the default value for startTime is the system
+ start time.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>startTime</code> - the new startTime value</dd>
+</dl>
+</li>
+</ul>
+<a name="getLoopCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLoopCount</h4>
+<pre>public&nbsp;int&nbsp;getLoopCount()</pre>
+<div class="block">Retrieves this alpha's loopCount.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's loopCount.</dd>
+</dl>
+</li>
+</ul>
+<a name="setLoopCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLoopCount</h4>
+<pre>public&nbsp;void&nbsp;setLoopCount(int&nbsp;loopCount)</pre>
+<div class="block">Set this alpha's loopCount to that specified in the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loopCount</code> - the new loopCount value</dd>
+</dl>
+</li>
+</ul>
+<a name="getMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMode</h4>
+<pre>public&nbsp;int&nbsp;getMode()</pre>
+<div class="block">Retrieves this alpha's mode.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's mode: any combination of
+ INCREASING_ENABLE and DECREASING_ENABLE</dd>
+</dl>
+</li>
+</ul>
+<a name="setMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMode</h4>
+<pre>public&nbsp;void&nbsp;setMode(int&nbsp;mode)</pre>
+<div class="block">Set this alpha's mode to that specified in the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mode</code> - indicates whether the increasing alpha parameters or
+ the decreasing alpha parameters or both are active.  This parameter
+ accepts the following values, INCREASING_ENABLE or
+ DECREASING_ENABLE, which may be ORed together to specify
+ that both are active.
+ The increasing alpha parameters are increasingAlphaDuration,
+ increasingAlphaRampDuration, and alphaAtOneDuration.
+ The decreasing alpha parameters are decreasingAlphaDuration,
+ decreasingAlphaRampDuration, and alphaAtZeroDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTriggerTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTriggerTime</h4>
+<pre>public&nbsp;long&nbsp;getTriggerTime()</pre>
+<div class="block">Retrieves this alpha's triggerTime.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's triggerTime.</dd>
+</dl>
+</li>
+</ul>
+<a name="setTriggerTime-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTriggerTime</h4>
+<pre>public&nbsp;void&nbsp;setTriggerTime(long&nbsp;triggerTime)</pre>
+<div class="block">Set this alpha's triggerTime to that specified in the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>triggerTime</code> - the new triggerTime</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhaseDelayDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhaseDelayDuration</h4>
+<pre>public&nbsp;long&nbsp;getPhaseDelayDuration()</pre>
+<div class="block">Retrieves this alpha's phaseDelayDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's phaseDelayDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setPhaseDelayDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPhaseDelayDuration</h4>
+<pre>public&nbsp;void&nbsp;setPhaseDelayDuration(long&nbsp;phaseDelayDuration)</pre>
+<div class="block">Set this alpha's phaseDelayDuration to that specified in
+ the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>phaseDelayDuration</code> - the new phaseDelayDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getIncreasingAlphaDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIncreasingAlphaDuration</h4>
+<pre>public&nbsp;long&nbsp;getIncreasingAlphaDuration()</pre>
+<div class="block">Retrieves this alpha's increasingAlphaDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's increasingAlphaDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setIncreasingAlphaDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIncreasingAlphaDuration</h4>
+<pre>public&nbsp;void&nbsp;setIncreasingAlphaDuration(long&nbsp;increasingAlphaDuration)</pre>
+<div class="block">Set this alpha's increasingAlphaDuration to that specified in
+ the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>increasingAlphaDuration</code> - the new increasingAlphaDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getIncreasingAlphaRampDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIncreasingAlphaRampDuration</h4>
+<pre>public&nbsp;long&nbsp;getIncreasingAlphaRampDuration()</pre>
+<div class="block">Retrieves this alpha's increasingAlphaRampDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's increasingAlphaRampDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setIncreasingAlphaRampDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIncreasingAlphaRampDuration</h4>
+<pre>public&nbsp;void&nbsp;setIncreasingAlphaRampDuration(long&nbsp;increasingAlphaRampDuration)</pre>
+<div class="block">Set this alpha's increasingAlphaRampDuration to that specified
+ in the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>increasingAlphaRampDuration</code> - the new increasingAlphaRampDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlphaAtOneDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlphaAtOneDuration</h4>
+<pre>public&nbsp;long&nbsp;getAlphaAtOneDuration()</pre>
+<div class="block">Retrieves this alpha's alphaAtOneDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's alphaAtOneDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlphaAtOneDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlphaAtOneDuration</h4>
+<pre>public&nbsp;void&nbsp;setAlphaAtOneDuration(long&nbsp;alphaAtOneDuration)</pre>
+<div class="block">Set this alpha object's alphaAtOneDuration to the specified
+ value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>alphaAtOneDuration</code> - the new alphaAtOneDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getDecreasingAlphaDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDecreasingAlphaDuration</h4>
+<pre>public&nbsp;long&nbsp;getDecreasingAlphaDuration()</pre>
+<div class="block">Retrieves this alpha's decreasingAlphaDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's decreasingAlphaDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setDecreasingAlphaDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDecreasingAlphaDuration</h4>
+<pre>public&nbsp;void&nbsp;setDecreasingAlphaDuration(long&nbsp;decreasingAlphaDuration)</pre>
+<div class="block">Set this alpha's decreasingAlphaDuration to that specified in
+ the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>decreasingAlphaDuration</code> - the new decreasingAlphaDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getDecreasingAlphaRampDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDecreasingAlphaRampDuration</h4>
+<pre>public&nbsp;long&nbsp;getDecreasingAlphaRampDuration()</pre>
+<div class="block">Retrieves this alpha's decreasingAlphaRampDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's decreasingAlphaRampDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setDecreasingAlphaRampDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDecreasingAlphaRampDuration</h4>
+<pre>public&nbsp;void&nbsp;setDecreasingAlphaRampDuration(long&nbsp;decreasingAlphaRampDuration)</pre>
+<div class="block">Set this alpha's decreasingAlphaRampDuration to that specified
+ in the argument.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>decreasingAlphaRampDuration</code> - the new decreasingAlphaRampDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlphaAtZeroDuration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlphaAtZeroDuration</h4>
+<pre>public&nbsp;long&nbsp;getAlphaAtZeroDuration()</pre>
+<div class="block">Retrieves this alpha's alphaAtZeroDuration.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this alpha's alphaAtZeroDuration.</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlphaAtZeroDuration-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlphaAtZeroDuration</h4>
+<pre>public&nbsp;void&nbsp;setAlphaAtZeroDuration(long&nbsp;alphaAtZeroDuration)</pre>
+<div class="block">Set this alpha object's alphaAtZeroDuration to the specified
+ value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>alphaAtZeroDuration</code> - the new alphaAtZeroDuration</dd>
+</dl>
+</li>
+</ul>
+<a name="finished--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>finished</h4>
+<pre>public&nbsp;boolean&nbsp;finished()</pre>
+<div class="block">Query to test if this alpha object is past its activity window,
+ that is, if it has finished looping.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if no longer looping, false otherwise</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../org/scijava/java3d/AlternateAppearance.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Alpha.html" target="_top">Frames</a></li>
+<li><a href="Alpha.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

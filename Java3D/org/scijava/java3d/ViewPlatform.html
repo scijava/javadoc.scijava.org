@@ -1,0 +1,584 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ViewPlatform (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ViewPlatform (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/ViewSpecificGroup.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/ViewPlatform.html" target="_top">Frames</a></li>
+<li><a href="ViewPlatform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class ViewPlatform" class="title">Class ViewPlatform</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">org.scijava.java3d.Node</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Leaf.html" title="class in org.scijava.java3d">org.scijava.java3d.Leaf</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.ViewPlatform</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ViewPlatform</span>
+extends <a href="../../../org/scijava/java3d/Leaf.html" title="class in org.scijava.java3d">Leaf</a></pre>
+<div class="block">The ViewPlatform leaf node object controls the position, orientation
+ and scale of the viewer.  It is the node in the scene graph that a
+ View object connects to. A viewer navigates through the virtual
+ universe by changing the transform in the scene graph hierarchy above
+ the ViewPlatform.
+ <p>
+ <b>The View Attach Policy</b>
+ <p>
+ The actual view that Java 3D's renderer draws depends on the view
+ attach policy specified within the currently attached ViewPlatform.
+ The view attach policy, set by the setViewAttachPolicy
+ method, is one of the following:
+ <p>
+ <UL>
+ <LI>View.NOMINAL_HEAD - ensures that the end-user's nominal eye
+ position in the physical world corresponds to the virtual eye's
+ nominal eye position in the virtual world (the ViewPlatform's origin).
+ In essence, this policy tells Java 3D to position the virtual eyepoint
+ relative to the ViewPlatform origin in the same way as the physical
+ eyepoint is positioned relative to its nominal physical-world
+ origin. Deviations in the physical eye's position and orientation from
+ nominal in the physical world generate corresponding deviations of the
+ virtual eye's position and orientation in the virtual world. This
+ is the default view attach policy.</LI>
+ <p>
+ <LI>View.NOMINAL_FEET - ensures that the end-user's virtual feet
+ always touch the virtual ground. This policy tells Java 3D to compute
+ the physical-to-virtual-world correspondence in a way that enforces
+ this constraint. Java 3D does so by appropriately offsetting the
+ physical eye's position by the end-user's physical height. Java 3D
+ uses the nominalEyeHeightFromGround parameter found in the
+ PhysicalBody object to perform this computation.</LI>
+ <p>
+ <LI>View.NOMINAL_SCREEN - allows an application to always have
+ the virtual eyepoint appear at some "viewable" distance from a point
+ of interest. This policy tells Java 3D to compute the
+ physical-to-virtual-world correspondence in a way
+ that ensures that the renderer moves the nominal virtual eyepoint
+ away from the point of interest by the amount specified by the
+ nominalEyeOffsetFromNominalScreen parameter found in the
+ PhysicalBody object.</LI></UL>
+ <p>
+ <b>Activation Radius</b>
+ <p>
+ The ViewPlatform's activation radius defines an activation
+ volume surrounding the center of the ViewPlatform. This activation
+ volume is a spherical region that intersects with the scheduling regions
+ and application regions
+ of other leaf node objects to determine which of those objects may
+ affect rendering.  Only active view platforms--that is, view platforms
+ attached to a View--will be used to schedule or select other leaf nodes.
+ <p>
+ Different leaf objects interact with the ViewPlatform's activation
+ volume differently. The Background, Clip, and Soundscape leaf objects
+ each define a set of attributes and an application region in which
+ those attributes are applied. If more than one node of a given type
+ (Background, Clip, or Soundscape) intersects an active ViewPlatform's
+ activation volume, the "most appropriate" node is selected for that View.
+ Sound leaf objects and Behavior objects become active when
+ their scheduling region intersects an active ViewPlatform's activation
+ volume.
+ <p>
+ The activation radius is in view platform coordinates. For the
+ default screen scale policy of SCALE_SCREEN_SIZE, the
+ activationRadius parameter value is multiplied by half the
+ monitor screen size to derive the actual activation radius. For example,
+ for the default screen size of 0.35 meters, and the default activation
+ radius value of 62, the actual activation radius would be 10.85
+ meters.
+ <p>
+ <UL>
+ <code>62 * 0.35 / 2 = 10.85</code>
+ </UL>
+ <p></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d"><code>View</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#ALLOW_POLICY_READ">ALLOW_POLICY_READ</a></span></code>
+<div class="block">Specifies that the ViewPlatform allows read access to its view
+ attach policy information at runtime.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#ALLOW_POLICY_WRITE">ALLOW_POLICY_WRITE</a></span></code>
+<div class="block">Specifies that the ViewPlatform allows write access to its view
+ attach policy information at runtime.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_READ">ALLOW_AUTO_COMPUTE_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_WRITE">ALLOW_AUTO_COMPUTE_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_READ">ALLOW_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_WRITE">ALLOW_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_READ">ALLOW_COLLIDABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_WRITE">ALLOW_COLLIDABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCAL_TO_VWORLD_READ">ALLOW_LOCAL_TO_VWORLD_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCALE_READ">ALLOW_LOCALE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PARENT_READ">ALLOW_PARENT_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_READ">ALLOW_PICKABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_WRITE">ALLOW_PICKABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_COLLISION_REPORTING">ENABLE_COLLISION_REPORTING</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_PICK_REPORTING">ENABLE_PICK_REPORTING</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#ViewPlatform--">ViewPlatform</a></span>()</code>
+<div class="block">Constructs a ViewPlatform object with default parameters.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#cloneNode-boolean-">cloneNode</a></span>(boolean&nbsp;forceDuplicate)</code>
+<div class="block">Used to create a new instance of the node.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#getActivationRadius--">getActivationRadius</a></span>()</code>
+<div class="block">Get the ViewPlatform's activation radius.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#getViewAttachPolicy--">getViewAttachPolicy</a></span>()</code>
+<div class="block">Returns the current coexistence center in virtual-world policy.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#setActivationRadius-float-">setActivationRadius</a></span>(float&nbsp;activationRadius)</code>
+<div class="block">Set the ViewPlatform's activation radius which defines an activation
+ volume around the view platform.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ViewPlatform.html#setViewAttachPolicy-int-">setViewAttachPolicy</a></span>(int&nbsp;policy)</code>
+<div class="block">Sets the view attach policy that determines the coexistence center
+ in the virtual world.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#cloneTree--">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-">duplicateNode</a>, <a href="../../../org/scijava/java3d/Node.html#getBounds--">getBounds</a>, <a href="../../../org/scijava/java3d/Node.html#getBoundsAutoCompute--">getBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#getCollidable--">getCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#getLocale--">getLocale</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getParent--">getParent</a>, <a href="../../../org/scijava/java3d/Node.html#getPickable--">getPickable</a>, <a href="../../../org/scijava/java3d/Node.html#setBounds-org.scijava.java3d.Bounds-">setBounds</a>, <a href="../../../org/scijava/java3d/Node.html#setBoundsAutoCompute-boolean-">setBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#setCollidable-boolean-">setCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#setPickable-boolean-">setPickable</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_POLICY_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POLICY_READ</h4>
+<pre>public static final&nbsp;int ALLOW_POLICY_READ</pre>
+<div class="block">Specifies that the ViewPlatform allows read access to its view
+ attach policy information at runtime.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ViewPlatform.ALLOW_POLICY_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POLICY_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_POLICY_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_POLICY_WRITE</pre>
+<div class="block">Specifies that the ViewPlatform allows write access to its view
+ attach policy information at runtime.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ViewPlatform.ALLOW_POLICY_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ViewPlatform--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ViewPlatform</h4>
+<pre>public&nbsp;ViewPlatform()</pre>
+<div class="block">Constructs a ViewPlatform object with default parameters.
+ The default values are as follows:
+ <ul>
+ view attach policy : View.NOMINAL_HEAD<br>
+ activation radius : 62<br>
+ </ul></div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setViewAttachPolicy-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setViewAttachPolicy</h4>
+<pre>public&nbsp;void&nbsp;setViewAttachPolicy(int&nbsp;policy)</pre>
+<div class="block">Sets the view attach policy that determines the coexistence center
+ in the virtual world. This policy determines how Java 3D places the
+ view platform relative to the position of the user's head, one of
+ View.NOMINAL_SCREEN, View.NOMINAL_HEAD, or View.NOMINAL_FEET.
+ The default policy is View.NOMINAL_HEAD.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>policy</code> - the new policy</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/View.html#NOMINAL_SCREEN"><code>View.NOMINAL_SCREEN</code></a>, 
+<a href="../../../org/scijava/java3d/View.html#NOMINAL_HEAD"><code>View.NOMINAL_HEAD</code></a>, 
+<a href="../../../org/scijava/java3d/View.html#NOMINAL_FEET"><code>View.NOMINAL_FEET</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getViewAttachPolicy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewAttachPolicy</h4>
+<pre>public&nbsp;int&nbsp;getViewAttachPolicy()</pre>
+<div class="block">Returns the current coexistence center in virtual-world policy.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>one of: View.NOMINAL_SCREEN, View.NOMINAL_HEAD, or
+ View.NOMINAL_FEET</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setActivationRadius-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setActivationRadius</h4>
+<pre>public&nbsp;void&nbsp;setActivationRadius(float&nbsp;activationRadius)</pre>
+<div class="block">Set the ViewPlatform's activation radius which defines an activation
+ volume around the view platform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>activationRadius</code> - the new activation radius</dd>
+</dl>
+</li>
+</ul>
+<a name="getActivationRadius--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActivationRadius</h4>
+<pre>public&nbsp;float&nbsp;getActivationRadius()</pre>
+<div class="block">Get the ViewPlatform's activation radius.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ViewPlatform activation radius</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNode-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNode</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;cloneNode(boolean&nbsp;forceDuplicate)</pre>
+<div class="block">Used to create a new instance of the node.  This routine is called
+ by <code>cloneTree</code> to duplicate the current node.
+ <code>cloneNode</code> should be overridden by any user subclassed
+ objects.  All subclasses must have their <code>cloneNode</code>
+ method consist of the following lines:
+ <P><blockquote><pre>
+     public Node cloneNode(boolean forceDuplicate) {
+         UserSubClass usc = new UserSubClass();
+         usc.duplicateNode(this, forceDuplicate);
+         return usc;
+     }
+ </pre></blockquote></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Node.html#cloneNode-boolean-">cloneNode</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>forceDuplicate</code> - when set to <code>true</code>, causes the
+  <code>duplicateOnCloneTree</code> flag to be ignored.  When
+  <code>false</code>, the value of each node's
+  <code>duplicateOnCloneTree</code> variable determines whether
+  NodeComponent data is duplicated or copied.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#cloneTree--"><code>Node.cloneTree()</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-"><code>Node.duplicateNode(org.scijava.java3d.Node, boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-"><code>NodeComponent.setDuplicateOnCloneTree(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/ViewSpecificGroup.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/ViewPlatform.html" target="_top">Frames</a></li>
+<li><a href="ViewPlatform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

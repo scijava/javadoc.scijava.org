@@ -1,0 +1,556 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Texture3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Texture3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Texture2D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Texture3D.html" target="_top">Frames</a></li>
+<li><a href="Texture3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.org.scijava.java3d.Texture">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class Texture3D" class="title">Class Texture3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">org.scijava.java3d.Texture</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.Texture3D</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Texture3D</span>
+extends <a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></pre>
+<div class="block">Texture3D is a subclass of Texture class. It extends Texture
+ class by adding a third coordinate, constructor and a mutator
+ method for setting a 3D texture image.
+ If 3D texture mapping is not supported on a particular Canvas3D,
+ 3D texture mapping is ignored for that canvas.
+
+ <p>
+ Note that as of Java 3D 1.5, the texture width, height, and depth
+ are no longer
+ required to be an exact power of two. However, not all graphics devices
+ supports non-power-of-two textures. If non-power-of-two texture mapping is
+ unsupported on a particular Canvas3D, textures with a width, height,
+ or depth that are not an exact power of two are ignored for that canvas.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Texture">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></h3>
+<code><a href="../../../org/scijava/java3d/Texture.html#ALLOW_ANISOTROPIC_FILTER_READ">ALLOW_ANISOTROPIC_FILTER_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_BOUNDARY_COLOR_READ">ALLOW_BOUNDARY_COLOR_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_BOUNDARY_MODE_READ">ALLOW_BOUNDARY_MODE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_ENABLE_READ">ALLOW_ENABLE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_ENABLE_WRITE">ALLOW_ENABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FILTER_READ">ALLOW_FILTER_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FILTER4_READ">ALLOW_FILTER4_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_FORMAT_READ">ALLOW_FORMAT_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_IMAGE_READ">ALLOW_IMAGE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_IMAGE_WRITE">ALLOW_IMAGE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_LOD_RANGE_READ">ALLOW_LOD_RANGE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_LOD_RANGE_WRITE">ALLOW_LOD_RANGE_WRITE</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_MIPMAP_MODE_READ">ALLOW_MIPMAP_MODE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_SHARPEN_TEXTURE_READ">ALLOW_SHARPEN_TEXTURE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALLOW_SIZE_READ">ALLOW_SIZE_READ</a>, <a href="../../../org/scijava/java3d/Texture.html#ALPHA">ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#ANISOTROPIC_NONE">ANISOTROPIC_NONE</a>, <a href="../../../org/scijava/java3d/Texture.html#ANISOTROPIC_SINGLE_VALUE">ANISOTROPIC_SINGLE_VALUE</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL">BASE_LEVEL</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL_LINEAR">BASE_LEVEL_LINEAR</a>, <a href="../../../org/scijava/java3d/Texture.html#BASE_LEVEL_POINT">BASE_LEVEL_POINT</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP">CLAMP</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP_TO_BOUNDARY">CLAMP_TO_BOUNDARY</a>, <a href="../../../org/scijava/java3d/Texture.html#CLAMP_TO_EDGE">CLAMP_TO_EDGE</a>, <a href="../../../org/scijava/java3d/Texture.html#FASTEST">FASTEST</a>, <a href="../../../org/scijava/java3d/Texture.html#FILTER4">FILTER4</a>, <a href="../../../org/scijava/java3d/Texture.html#INTENSITY">INTENSITY</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN">LINEAR_SHARPEN</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN_ALPHA">LINEAR_SHARPEN_ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#LINEAR_SHARPEN_RGB">LINEAR_SHARPEN_RGB</a>, <a href="../../../org/scijava/java3d/Texture.html#LUMINANCE">LUMINANCE</a>, <a href="../../../org/scijava/java3d/Texture.html#LUMINANCE_ALPHA">LUMINANCE_ALPHA</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_LINEAR">MULTI_LEVEL_LINEAR</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_MIPMAP">MULTI_LEVEL_MIPMAP</a>, <a href="../../../org/scijava/java3d/Texture.html#MULTI_LEVEL_POINT">MULTI_LEVEL_POINT</a>, <a href="../../../org/scijava/java3d/Texture.html#NICEST">NICEST</a>, <a href="../../../org/scijava/java3d/Texture.html#RGB">RGB</a>, <a href="../../../org/scijava/java3d/Texture.html#RGBA">RGBA</a>, <a href="../../../org/scijava/java3d/Texture.html#WRAP">WRAP</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#Texture3D--">Texture3D</a></span>()</code>
+<div class="block">Constructs a Texture3D object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#Texture3D-int-int-int-int-int-">Texture3D</a></span>(int&nbsp;mipmapMode,
+         int&nbsp;format,
+         int&nbsp;width,
+         int&nbsp;height,
+         int&nbsp;depth)</code>
+<div class="block">Constructs an empty Texture3D object with specified mipmapMode
+ format, width, height, and depth.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#Texture3D-int-int-int-int-int-int-">Texture3D</a></span>(int&nbsp;mipmapMode,
+         int&nbsp;format,
+         int&nbsp;width,
+         int&nbsp;height,
+         int&nbsp;depth,
+         int&nbsp;boundaryWidth)</code>
+<div class="block">Constructs an empty Texture3D object with specified mipmapMode
+ format, width, height, depth, and boundaryWidth.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></span>(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#getBoundaryModeR--">getBoundaryModeR</a></span>()</code>
+<div class="block">Retrieves the boundary mode for the R coordinate.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#getDepth--">getDepth</a></span>()</code>
+<div class="block">Retrieves the depth of this Texture3D object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Texture3D.html#setBoundaryModeR-int-">setBoundaryModeR</a></span>(int&nbsp;boundaryModeR)</code>
+<div class="block">Sets the boundary mode for the R coordinate in this texture object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Texture">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d">Texture</a></h3>
+<code><a href="../../../org/scijava/java3d/Texture.html#getAnisotropicFilterDegree--">getAnisotropicFilterDegree</a>, <a href="../../../org/scijava/java3d/Texture.html#getAnisotropicFilterMode--">getAnisotropicFilterMode</a>, <a href="../../../org/scijava/java3d/Texture.html#getBaseLevel--">getBaseLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryColor-org.scijava.vecmath.Color4f-">getBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryModeS--">getBoundaryModeS</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryModeT--">getBoundaryModeT</a>, <a href="../../../org/scijava/java3d/Texture.html#getBoundaryWidth--">getBoundaryWidth</a>, <a href="../../../org/scijava/java3d/Texture.html#getEnable--">getEnable</a>, <a href="../../../org/scijava/java3d/Texture.html#getFilter4Func-float:A-">getFilter4Func</a>, <a href="../../../org/scijava/java3d/Texture.html#getFilter4FuncPointsCount--">getFilter4FuncPointsCount</a>, <a href="../../../org/scijava/java3d/Texture.html#getFormat--">getFormat</a>, <a href="../../../org/scijava/java3d/Texture.html#getHeight--">getHeight</a>, <a href="../../../org/scijava/java3d/Texture.html#getImage-int-">getImage</a>, <a href="../../../org/scijava/java3d/Texture.html#getImages--">getImages</a>, <a href="../../../org/scijava/java3d/Texture.html#getLodOffset-org.scijava.vecmath.Tuple3f-">getLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#getMagFilter--">getMagFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#getMaximumLevel--">getMaximumLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#getMaximumLOD--">getMaximumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#getMinFilter--">getMinFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#getMinimumLOD--">getMinimumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#getMipMapMode--">getMipMapMode</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFunc-float:A-float:A-">getSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFunc-org.scijava.vecmath.Point2f:A-">getSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#getSharpenTextureFuncPointsCount--">getSharpenTextureFuncPointsCount</a>, <a href="../../../org/scijava/java3d/Texture.html#getWidth--">getWidth</a>, <a href="../../../org/scijava/java3d/Texture.html#numMipMapLevels--">numMipMapLevels</a>, <a href="../../../org/scijava/java3d/Texture.html#setAnisotropicFilterDegree-float-">setAnisotropicFilterDegree</a>, <a href="../../../org/scijava/java3d/Texture.html#setAnisotropicFilterMode-int-">setAnisotropicFilterMode</a>, <a href="../../../org/scijava/java3d/Texture.html#setBaseLevel-int-">setBaseLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryColor-org.scijava.vecmath.Color4f-">setBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryColor-float-float-float-float-">setBoundaryColor</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryModeS-int-">setBoundaryModeS</a>, <a href="../../../org/scijava/java3d/Texture.html#setBoundaryModeT-int-">setBoundaryModeT</a>, <a href="../../../org/scijava/java3d/Texture.html#setEnable-boolean-">setEnable</a>, <a href="../../../org/scijava/java3d/Texture.html#setFilter4Func-float:A-">setFilter4Func</a>, <a href="../../../org/scijava/java3d/Texture.html#setImage-int-org.scijava.java3d.ImageComponent-">setImage</a>, <a href="../../../org/scijava/java3d/Texture.html#setImages-org.scijava.java3d.ImageComponent:A-">setImages</a>, <a href="../../../org/scijava/java3d/Texture.html#setLodOffset-float-float-float-">setLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#setLodOffset-org.scijava.vecmath.Tuple3f-">setLodOffset</a>, <a href="../../../org/scijava/java3d/Texture.html#setMagFilter-int-">setMagFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#setMaximumLevel-int-">setMaximumLevel</a>, <a href="../../../org/scijava/java3d/Texture.html#setMaximumLOD-float-">setMaximumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#setMinFilter-int-">setMinFilter</a>, <a href="../../../org/scijava/java3d/Texture.html#setMinimumLOD-float-">setMinimumLOD</a>, <a href="../../../org/scijava/java3d/Texture.html#setMipMapMode-int-">setMipMapMode</a>, <a href="../../../org/scijava/java3d/Texture.html#setSharpenTextureFunc-float:A-float:A-">setSharpenTextureFunc</a>, <a href="../../../org/scijava/java3d/Texture.html#setSharpenTextureFunc-org.scijava.vecmath.Point2f:A-">setSharpenTextureFunc</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Texture3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Texture3D</h4>
+<pre>public&nbsp;Texture3D()</pre>
+<div class="block">Constructs a Texture3D object with default parameters.
+ The default values are as follows:
+ <ul>
+ depth : 0<br>
+ boundary mode R : WRAP<br>
+ </ul>
+ <p>
+ Note that the default constructor creates a texture object with
+ a width, height, and depth of 0 and is, therefore, not useful.</div>
+</li>
+</ul>
+<a name="Texture3D-int-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Texture3D</h4>
+<pre>public&nbsp;Texture3D(int&nbsp;mipmapMode,
+                 int&nbsp;format,
+                 int&nbsp;width,
+                 int&nbsp;height,
+                 int&nbsp;depth)</pre>
+<div class="block">Constructs an empty Texture3D object with specified mipmapMode
+ format, width, height, and depth. Image at base level must be set by
+ the application using 'setImage' method. If mipmapMode is
+ set to MULTI_LEVEL_MIPMAP, images for base level through
+ maximum level must be set.
+ Note that a texture with a non-power-of-two width, height, or depth will
+ only be rendered on a graphics device that supports non-power-of-two
+ textures.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mipmapMode</code> - type of mipmap for this Texture: One of
+ BASE_LEVEL, MULTI_LEVEL_MIPMAP.</dd>
+<dd><code>format</code> - data format of Textures saved in this object.
+ One of INTENSITY, LUMINANCE, ALPHA, LUMINANCE_ALPHA, RGB, RGBA.</dd>
+<dd><code>width</code> - width of image at level 0.</dd>
+<dd><code>height</code> - height of image at level 0.</dd>
+<dd><code>depth</code> - depth of image at level 0.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if width, height, or depth are not
+ greater than 0 OR invalid format/mipmapMode is specified.</dd>
+</dl>
+</li>
+</ul>
+<a name="Texture3D-int-int-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Texture3D</h4>
+<pre>public&nbsp;Texture3D(int&nbsp;mipmapMode,
+                 int&nbsp;format,
+                 int&nbsp;width,
+                 int&nbsp;height,
+                 int&nbsp;depth,
+                 int&nbsp;boundaryWidth)</pre>
+<div class="block">Constructs an empty Texture3D object with specified mipmapMode
+ format, width, height, depth, and boundaryWidth.
+ Image at base level must be set by
+ the application using 'setImage' method. If mipmapMode is
+ set to MULTI_LEVEL_MIPMAP, images for base level through
+ maximum level must be set.
+ Note that a texture with a non-power-of-two width, height, or depth will
+ only be rendered on a graphics device that supports non-power-of-two
+ textures.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mipmapMode</code> - type of mipmap for this Texture: One of
+ BASE_LEVEL, MULTI_LEVEL_MIPMAP.</dd>
+<dd><code>format</code> - data format of Textures saved in this object.
+ One of INTENSITY, LUMINANCE, ALPHA, LUMINANCE_ALPHA, RGB, RGBA.</dd>
+<dd><code>width</code> - width of image at level 0. This
+ does not include the width of the boundary.</dd>
+<dd><code>height</code> - height of image at level 0. This
+ does not include the width of the boundary.</dd>
+<dd><code>depth</code> - depth of image at level 0. This
+ does not include the width of the boundary.</dd>
+<dd><code>boundaryWidth</code> - width of the boundary, which must be 0 or 1.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if width, height, or depth are not
+ greater than 0 OR invalid format/mipmapMode is specified, or
+ if the boundaryWidth is &lt; 0 or &gt; 1</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setBoundaryModeR-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBoundaryModeR</h4>
+<pre>public&nbsp;void&nbsp;setBoundaryModeR(int&nbsp;boundaryModeR)</pre>
+<div class="block">Sets the boundary mode for the R coordinate in this texture object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>boundaryModeR</code> - the boundary mode for the R coordinate,
+ one of: CLAMP, WRAP, CLAMP_TO_EDGE, or CLAMP_TO_BOUNDARY</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if the method is called
+ when this object is part of live or compiled scene graph.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>boundaryModeR</code>
+ is a value other than <code>CLAMP</code>, <code>WRAP</code>,
+ <code>CLAMP_TO_EDGE</code>, or <code>CLAMP_TO_BOUNDARY</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getBoundaryModeR--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBoundaryModeR</h4>
+<pre>public&nbsp;int&nbsp;getBoundaryModeR()</pre>
+<div class="block">Retrieves the boundary mode for the R coordinate.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current boundary mode for the R coordinate.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if the method is called
+ when this object is part of live or compiled scene graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="getDepth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepth</h4>
+<pre>public&nbsp;int&nbsp;getDepth()</pre>
+<div class="block">Retrieves the depth of this Texture3D object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the depth of this Texture3D object.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="duplicateNodeComponent-org.scijava.java3d.NodeComponent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>duplicateNodeComponent</h4>
+<pre>public&nbsp;void&nbsp;duplicateNodeComponent(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+<div class="block">NOTE: Applications should <i>not</i> call this method directly.
+ It should only be called by the cloneNode method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Texture2D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Texture3D.html" target="_top">Frames</a></li>
+<li><a href="Texture3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.org.scijava.java3d.Texture">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

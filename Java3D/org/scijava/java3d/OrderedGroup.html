@@ -1,0 +1,831 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OrderedGroup (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="OrderedGroup (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/NodeReferenceTable.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/OrientedShape3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/OrderedGroup.html" target="_top">Frames</a></li>
+<li><a href="OrderedGroup.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class OrderedGroup" class="title">Class OrderedGroup</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">org.scijava.java3d.Node</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">org.scijava.java3d.Group</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.OrderedGroup</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../org/scijava/java3d/DecalGroup.html" title="class in org.scijava.java3d">DecalGroup</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">OrderedGroup</span>
+extends <a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></pre>
+<div class="block">The OrderedGroup node is a Group that ensures its children render
+ in a specified order.  In addition to the list of children
+ inherited from the base Group class, OrderedGroup defines an
+ integer array of child indices that specify the order in which its
+ children are rendered.  This provides a level of indirection in
+ determining the rendering order of its children.  By default, the
+ child index order array is null, and the children are rendered in
+ increasing index order.
+
+ <p>
+ When the child index order array is non-null, it must be the same
+ length as the number of children.  Every entry in the array must
+ have a unique value between 0 and <code>numChildren-1</code> (i.e.,
+ there must be no duplicate values and no missing indices).  The
+ order that the child indices appear in the child index order array
+ determines the order in which the children are rendered.  The child
+ at <code>childIndexOrder[0]</code> is rendered first, followed by
+ <code>childIndexOrder[1]</code>, and so on, with the child at
+ <code>childIndexOrder[numChildren-1]</code> rendered
+ last.
+
+ <p>
+ The child index order array only affects rendering.  List
+ operations that refer to a child by index, such as getChild(index),
+ will not be altered by the entries in this array.  They will get,
+ enumerate, add, remove, etc., the children based on the actual
+ index in the group node.  However, some of the list operations,
+ such as addChild, removeChild, etc., will update the child index
+ order array as a result of their operation.  For example,
+ removeChild will remove the entry in the child index order array
+ corresponding to the removed child's index and adjust the remaining
+ entries accordingly.  See the documentation for these methods for
+ more details.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#ALLOW_CHILD_INDEX_ORDER_READ">ALLOW_CHILD_INDEX_ORDER_READ</a></span></code>
+<div class="block">Specifies that this OrderedGroup node
+ allows reading its child index order information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#ALLOW_CHILD_INDEX_ORDER_WRITE">ALLOW_CHILD_INDEX_ORDER_WRITE</a></span></code>
+<div class="block">Specifies that this OrderedGroup node
+ allows writing its child index order information.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Group">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></h3>
+<code><a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_EXTEND">ALLOW_CHILDREN_EXTEND</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_READ">ALLOW_CHILDREN_READ</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_CHILDREN_WRITE">ALLOW_CHILDREN_WRITE</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_COLLISION_BOUNDS_READ">ALLOW_COLLISION_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Group.html#ALLOW_COLLISION_BOUNDS_WRITE">ALLOW_COLLISION_BOUNDS_WRITE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_READ">ALLOW_AUTO_COMPUTE_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_WRITE">ALLOW_AUTO_COMPUTE_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_READ">ALLOW_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_WRITE">ALLOW_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_READ">ALLOW_COLLIDABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_WRITE">ALLOW_COLLIDABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCAL_TO_VWORLD_READ">ALLOW_LOCAL_TO_VWORLD_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCALE_READ">ALLOW_LOCALE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PARENT_READ">ALLOW_PARENT_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_READ">ALLOW_PICKABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_WRITE">ALLOW_PICKABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_COLLISION_REPORTING">ENABLE_COLLISION_REPORTING</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_PICK_REPORTING">ENABLE_PICK_REPORTING</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#OrderedGroup--">OrderedGroup</a></span>()</code>
+<div class="block">Constructs and initializes a new OrderedGroup node object.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#addChild-org.scijava.java3d.Node-">addChild</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child)</code>
+<div class="block">Appends the specified child node to this group node's list of children.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#addChild-org.scijava.java3d.Node-int:A-">addChild</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child,
+        int[]&nbsp;childIndexOrder)</code>
+<div class="block">Appends the specified child node to this group node's list of
+ children, and sets the child index order array to the specified
+ array.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#cloneNode-boolean-">cloneNode</a></span>(boolean&nbsp;forceDuplicate)</code>
+<div class="block">Used to create a new instance of the node.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#getChildIndexOrder--">getChildIndexOrder</a></span>()</code>
+<div class="block">Retrieves the current childIndexOrder array.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#insertChild-org.scijava.java3d.Node-int-">insertChild</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child,
+           int&nbsp;index)</code>
+<div class="block">Inserts the specified child node in this group node's list of
+ children at the specified index.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#moveTo-org.scijava.java3d.BranchGroup-">moveTo</a></span>(<a href="../../../org/scijava/java3d/BranchGroup.html" title="class in org.scijava.java3d">BranchGroup</a>&nbsp;branchGroup)</code>
+<div class="block">Moves the specified branch group node from its existing location to
+ the end of this group node's list of children.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#removeAllChildren--">removeAllChildren</a></span>()</code>
+<div class="block">Removes all children from this Group node.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#removeChild-int-">removeChild</a></span>(int&nbsp;index)</code>
+<div class="block">Removes the child node at the specified index from this group node's
+ list of children.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#removeChild-org.scijava.java3d.Node-">removeChild</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child)</code>
+<div class="block">Removes the specified child node from this group node's
+ list of children.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrderedGroup.html#setChildIndexOrder-int:A-">setChildIndexOrder</a></span>(int[]&nbsp;childIndexOrder)</code>
+<div class="block">Sets the childIndexOrder array.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Group">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></h3>
+<code><a href="../../../org/scijava/java3d/Group.html#getAllChildren--">getAllChildren</a>, <a href="../../../org/scijava/java3d/Group.html#getAlternateCollisionTarget--">getAlternateCollisionTarget</a>, <a href="../../../org/scijava/java3d/Group.html#getChild-int-">getChild</a>, <a href="../../../org/scijava/java3d/Group.html#getCollisionBounds--">getCollisionBounds</a>, <a href="../../../org/scijava/java3d/Group.html#indexOfChild-org.scijava.java3d.Node-">indexOfChild</a>, <a href="../../../org/scijava/java3d/Group.html#numChildren--">numChildren</a>, <a href="../../../org/scijava/java3d/Group.html#setAlternateCollisionTarget-boolean-">setAlternateCollisionTarget</a>, <a href="../../../org/scijava/java3d/Group.html#setChild-org.scijava.java3d.Node-int-">setChild</a>, <a href="../../../org/scijava/java3d/Group.html#setCollisionBounds-org.scijava.java3d.Bounds-">setCollisionBounds</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#cloneTree--">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-">duplicateNode</a>, <a href="../../../org/scijava/java3d/Node.html#getBounds--">getBounds</a>, <a href="../../../org/scijava/java3d/Node.html#getBoundsAutoCompute--">getBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#getCollidable--">getCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#getLocale--">getLocale</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getParent--">getParent</a>, <a href="../../../org/scijava/java3d/Node.html#getPickable--">getPickable</a>, <a href="../../../org/scijava/java3d/Node.html#setBounds-org.scijava.java3d.Bounds-">setBounds</a>, <a href="../../../org/scijava/java3d/Node.html#setBoundsAutoCompute-boolean-">setBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#setCollidable-boolean-">setCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#setPickable-boolean-">setPickable</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_CHILD_INDEX_ORDER_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_CHILD_INDEX_ORDER_READ</h4>
+<pre>public static final&nbsp;int ALLOW_CHILD_INDEX_ORDER_READ</pre>
+<div class="block">Specifies that this OrderedGroup node
+ allows reading its child index order information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrderedGroup.ALLOW_CHILD_INDEX_ORDER_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_CHILD_INDEX_ORDER_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_CHILD_INDEX_ORDER_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_CHILD_INDEX_ORDER_WRITE</pre>
+<div class="block">Specifies that this OrderedGroup node
+ allows writing its child index order information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrderedGroup.ALLOW_CHILD_INDEX_ORDER_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="OrderedGroup--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>OrderedGroup</h4>
+<pre>public&nbsp;OrderedGroup()</pre>
+<div class="block">Constructs and initializes a new OrderedGroup node object.
+ The childIndexOrder array is initialized to null, meaning
+ that its children are rendered in increasing index order.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setChildIndexOrder-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChildIndexOrder</h4>
+<pre>public&nbsp;void&nbsp;setChildIndexOrder(int[]&nbsp;childIndexOrder)</pre>
+<div class="block">Sets the childIndexOrder array.  If the specified array is
+ null, this node's childIndexOrder array is set to null.  Its
+ children will then be rendered in increasing index order.  If
+ the specified array is not null, the entire array is copied to
+ this node's childIndexOrder array.  In this case, the length of
+ the array must be equal to the number of children in this
+ group, and every entry in the array must have a unique value
+ between 0 and <code>numChildren-1</code> (i.e., there must be
+ no duplicate values and no missing indices).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>childIndexOrder</code> - the array that is copied into this
+ node's child index order array; this can be null</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified array is
+ non-null and any of the following are true:
+ <ul>
+ <li><code>childIndexOrder.length != numChildren</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] < 0</code>,
+ for <i>i</i> in <code>[0, numChildren-1]</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] >= numChildren</code>,
+ for <i>i</i> in <code>[0, numChildren-1]</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] ==
+ childIndexOrder[</code><i>j</i><code>]</code>,
+ for <i>i</i>,<i>j</i> in <code>[0, numChildren-1]</code>,
+ <i>i</i> <code>!=</code> <i>j</i>;</li>
+ </ul></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getChildIndexOrder--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChildIndexOrder</h4>
+<pre>public&nbsp;int[]&nbsp;getChildIndexOrder()</pre>
+<div class="block">Retrieves the current childIndexOrder array.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a copy of this node's childIndexOrder array; this
+ can be null.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="addChild-org.scijava.java3d.Node-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addChild</h4>
+<pre>public&nbsp;void&nbsp;addChild(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child,
+                     int[]&nbsp;childIndexOrder)</pre>
+<div class="block">Appends the specified child node to this group node's list of
+ children, and sets the child index order array to the specified
+ array.  If the specified array is null, this node's
+ childIndexOrder array is set to null.  Its children will then
+ be rendered in increasing index order.  If the specified array
+ is not null, the entire array is copied to this node's
+ childIndexOrder array.  In this case, the length of the array
+ must be equal to the number of children in this group after the
+ new child has been added, and every entry in the array must
+ have a unique value between 0 and <code>numChildren-1</code>
+ (i.e., there must be no duplicate values and no missing
+ indices).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - the child to add to this node's list of children</dd>
+<dd><code>childIndexOrder</code> - the array that is copied into this
+ node's child index order array; this can be null</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the appropriate capability is
+ not set and this group node is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part
+ of live
+ or compiled scene graph and the child node being added is not
+ a BranchGroup node</dd>
+<dd><code><a href="../../../org/scijava/java3d/MultipleParentException.html" title="class in org.scijava.java3d">MultipleParentException</a></code> - if <code>child</code> has already
+ been added as a child of another group node.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified array is
+ non-null and any of the following are true:
+ <ul>
+ <li><code>childIndexOrder.length != numChildren</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] < 0</code>,
+ for <i>i</i> in <code>[0, numChildren-1]</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] >= numChildren</code>,
+ for <i>i</i> in <code>[0, numChildren-1]</code>;</li>
+ <li><code>childIndexOrder[</code><i>i</i><code>] ==
+ childIndexOrder[</code><i>j</i><code>]</code>,
+ for <i>i</i>,<i>j</i> in <code>[0, numChildren-1]</code>,
+ <i>i</i> <code>!=</code> <i>j</i>;</li>
+ </ul></dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="addChild-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addChild</h4>
+<pre>public&nbsp;void&nbsp;addChild(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child)</pre>
+<div class="block">Appends the specified child node to this group node's list of children.
+
+ <p>
+ If the current child index order array is non-null, the array
+ is increased in size by one element, and a new element
+ containing the index of the new child is added to the end of
+ the array.  Thus, this new child will be rendered last.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#addChild-org.scijava.java3d.Node-">addChild</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - the child to add to this node's list of children</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the appropriate capability is
+ not set and this group node is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part
+ of live
+ or compiled scene graph and the child node being added is not
+ a BranchGroup node</dd>
+<dd><code><a href="../../../org/scijava/java3d/MultipleParentException.html" title="class in org.scijava.java3d">MultipleParentException</a></code> - if <code>child</code> has already
+ been added as a child of another group node.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="insertChild-org.scijava.java3d.Node-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insertChild</h4>
+<pre>public&nbsp;void&nbsp;insertChild(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child,
+                        int&nbsp;index)</pre>
+<div class="block">Inserts the specified child node in this group node's list of
+ children at the specified index.
+ This method is only supported when the child index order array
+ is null.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#insertChild-org.scijava.java3d.Node-int-">insertChild</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - the new child</dd>
+<dd><code>index</code> - at which location to insert. The <code>index</code>
+ must be a value
+ greater than or equal to 0 and less than or equal to
+ <code>numChildren()</code>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the appropriate capability is
+ not set and this group node is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part of
+ live
+ or compiled scene graph and the child node being inserted is not
+ a BranchGroup node</dd>
+<dd><code><a href="../../../org/scijava/java3d/MultipleParentException.html" title="class in org.scijava.java3d">MultipleParentException</a></code> - if <code>child</code> has already
+ been added as a child of another group node.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> is invalid.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the childIndexOrder array is
+ not null.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="removeChild-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeChild</h4>
+<pre>public&nbsp;void&nbsp;removeChild(int&nbsp;index)</pre>
+<div class="block">Removes the child node at the specified index from this group node's
+ list of children.
+
+ <p>
+ If the current child index order array is non-null, the element
+ containing the removed child's index will be removed from the
+ child index order array, and the array will be reduced in size
+ by one element.  If the child removed was not the last child in
+ the Group, the values of the child index order array will be
+ updated to reflect the indices that were renumbered.  More
+ formally, each child whose index in the Group node was greater
+ than the removed element (before removal) will have its index
+ decremented by one.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#removeChild-int-">removeChild</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - which child to remove.  The <code>index</code>
+ must be a value
+ greater than or equal to 0 and less than <code>numChildren()</code>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the appropriate capability is
+ not set and this group node is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part of
+ live or compiled scene graph and the child node being removed is not
+ a BranchGroup node</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> is invalid.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="moveTo-org.scijava.java3d.BranchGroup-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>moveTo</h4>
+<pre>public&nbsp;void&nbsp;moveTo(<a href="../../../org/scijava/java3d/BranchGroup.html" title="class in org.scijava.java3d">BranchGroup</a>&nbsp;branchGroup)</pre>
+<div class="block">Moves the specified branch group node from its existing location to
+ the end of this group node's list of children.
+
+ <p>
+ If the current child index order array is non-null, the array
+ is increased in size by one element, and a new element
+ containing the index of the new child is added to the end of
+ the array.  Thus, this new child will be rendered last.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#moveTo-org.scijava.java3d.BranchGroup-">moveTo</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>branchGroup</code> - the branch group node to move to this node's list
+ of children</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the appropriate capability is
+ not set and this group node is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="removeChild-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeChild</h4>
+<pre>public&nbsp;void&nbsp;removeChild(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;child)</pre>
+<div class="block">Removes the specified child node from this group node's
+ list of children.
+ If the specified object is not in the list, the list is not modified.
+
+ <p>
+ If the current child index order array is non-null, the element
+ containing the removed child's index will be removed from the
+ child index order array, and the array will be reduced in size
+ by one element.  If the child removed was not the last child in
+ the Group, the values of the child index order array will be
+ updated to reflect the indices that were renumbered.  More
+ formally, each child whose index in the Group node was greater
+ than the removed element (before removal) will have its index
+ decremented by one.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#removeChild-org.scijava.java3d.Node-">removeChild</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - the child node to be removed.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part of
+ live or compiled scene graph and the child node being removed is not
+ a BranchGroup node</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="removeAllChildren--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeAllChildren</h4>
+<pre>public&nbsp;void&nbsp;removeAllChildren()</pre>
+<div class="block">Removes all children from this Group node.
+
+ <p>
+ If the current child index order array is non-null, then it is set to
+ a zero-length array (the empty set).  Note that a zero-length
+ child index order array is not the same as a null array in that
+ as new elements are added, the child index order array will grow
+ and will be used instead of the Group's natural child order.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#removeAllChildren--">removeAllChildren</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if this group node is part of
+ live or compiled scene graph and any of the children being removed are
+ not BranchGroup nodes</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNode-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNode</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;cloneNode(boolean&nbsp;forceDuplicate)</pre>
+<div class="block">Used to create a new instance of the node.  This routine is called
+ by <code>cloneTree</code> to duplicate the current node.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Group.html#cloneNode-boolean-">cloneNode</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Group.html" title="class in org.scijava.java3d">Group</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>forceDuplicate</code> - when set to <code>true</code>, causes the
+  <code>duplicateOnCloneTree</code> flag to be ignored.  When
+  <code>false</code>, the value of each node's
+  <code>duplicateOnCloneTree</code> variable determines whether
+  NodeComponent data is duplicated or copied.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#cloneTree--"><code>Node.cloneTree()</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#cloneNode-boolean-"><code>Node.cloneNode(boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-"><code>Node.duplicateNode(org.scijava.java3d.Node, boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-"><code>NodeComponent.setDuplicateOnCloneTree(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/NodeReferenceTable.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/OrientedShape3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/OrderedGroup.html" target="_top">Frames</a></li>
+<li><a href="OrderedGroup.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

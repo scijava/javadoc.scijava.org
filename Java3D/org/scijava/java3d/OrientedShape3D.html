@@ -1,0 +1,1211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OrientedShape3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="OrientedShape3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/OrderedGroup.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/PathInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/OrientedShape3D.html" target="_top">Frames</a></li>
+<li><a href="OrientedShape3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class OrientedShape3D" class="title">Class OrientedShape3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">org.scijava.java3d.Node</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Leaf.html" title="class in org.scijava.java3d">org.scijava.java3d.Leaf</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">org.scijava.java3d.Shape3D</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.OrientedShape3D</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">OrientedShape3D</span>
+extends <a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a></pre>
+<div class="block">The OrientedShape3D leaf node is a Shape3D node that is oriented
+ along a specified axis or about a specified point.  It defines an
+ alignment mode and a rotation point or axis.  This will cause
+ the local +<i>z</i> axis of the object to point at the viewer's eye
+ position. This is done regardless of the transforms above this
+ OrientedShape3D node in the scene graph.  It optionally defines a
+ scale value along with a constant scale enable flag that causes
+ this node to be scale invariant, subject only to its scale.
+
+ <p>
+ OrientedShape3D is similar in functionality to the Billboard
+ behavior, but OrientedShape3D nodes will orient themselves
+ correctly for each view, and they can be used within a SharedGroup.
+
+ <p>
+ If the alignment mode is ROTATE_ABOUT_AXIS, then the rotation will be
+ around the specified axis.  If the alignment mode is
+ ROTATE_ABOUT_POINT, then the rotation will be about the specified
+ point, with an additional rotation to align the +<i>y</i> axis of the
+ TransformGroup with the +<i>y</i> axis in the View.
+
+ <p>
+ If the constant scale enable flag is set, the object will be drawn
+ the same size in absolute screen coordinates (meters), regardless
+ of the following: any transforms above this OrientedShape3D node in
+ the scene graph, the view scale, the window scale, or the effects
+ of perspective correction.  This is done by scaling the geometry
+ about the local origin of this node, such that 1 unit in local
+ coordinates is equal to the number of meters specified by this
+ node's scale value.  If the constant scale enable flag is set to
+ false, then the scale is not used.  The default scale is 1.0
+ meters.
+
+ <p>
+ OrientedShape3D nodes are ideal for drawing screen-aligned text or
+ for drawing roughly-symmetrical objects.  A typical use might
+ consist of a quadrilateral that contains a texture of a tree.
+
+ <p>
+ Note that in a multiple View system, picking and interestion test
+ is done with the primary View only.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Billboard.html" title="class in org.scijava.java3d"><code>Billboard</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_AXIS_READ">ALLOW_AXIS_READ</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its alignment axis information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_AXIS_WRITE">ALLOW_AXIS_WRITE</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its alignment axis information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_MODE_READ">ALLOW_MODE_READ</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its alignment mode information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_MODE_WRITE">ALLOW_MODE_WRITE</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its alignment mode information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_POINT_READ">ALLOW_POINT_READ</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its rotation point information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_POINT_WRITE">ALLOW_POINT_WRITE</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its rotation point information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_SCALE_READ">ALLOW_SCALE_READ</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its scale and constant scale enable information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ALLOW_SCALE_WRITE">ALLOW_SCALE_WRITE</a></span></code>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its scale and constant scale enable information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ROTATE_ABOUT_AXIS">ROTATE_ABOUT_AXIS</a></span></code>
+<div class="block">Specifies that rotation should be about the specified axis.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ROTATE_ABOUT_POINT">ROTATE_ABOUT_POINT</a></span></code>
+<div class="block">Specifies that rotation should be about the specified point and
+ that the children's Y-axis should match the view object's Y-axis.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#ROTATE_NONE">ROTATE_NONE</a></span></code>
+<div class="block">Specifies that no rotation is done.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Shape3D">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a></h3>
+<code><a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_APPEARANCE_OVERRIDE_READ">ALLOW_APPEARANCE_OVERRIDE_READ</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_APPEARANCE_OVERRIDE_WRITE">ALLOW_APPEARANCE_OVERRIDE_WRITE</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_APPEARANCE_READ">ALLOW_APPEARANCE_READ</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_APPEARANCE_WRITE">ALLOW_APPEARANCE_WRITE</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_COLLISION_BOUNDS_READ">ALLOW_COLLISION_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_COLLISION_BOUNDS_WRITE">ALLOW_COLLISION_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_GEOMETRY_READ">ALLOW_GEOMETRY_READ</a>, <a href="../../../org/scijava/java3d/Shape3D.html#ALLOW_GEOMETRY_WRITE">ALLOW_GEOMETRY_WRITE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_READ">ALLOW_AUTO_COMPUTE_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_AUTO_COMPUTE_BOUNDS_WRITE">ALLOW_AUTO_COMPUTE_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_READ">ALLOW_BOUNDS_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_BOUNDS_WRITE">ALLOW_BOUNDS_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_READ">ALLOW_COLLIDABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_COLLIDABLE_WRITE">ALLOW_COLLIDABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCAL_TO_VWORLD_READ">ALLOW_LOCAL_TO_VWORLD_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_LOCALE_READ">ALLOW_LOCALE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PARENT_READ">ALLOW_PARENT_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_READ">ALLOW_PICKABLE_READ</a>, <a href="../../../org/scijava/java3d/Node.html#ALLOW_PICKABLE_WRITE">ALLOW_PICKABLE_WRITE</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_COLLISION_REPORTING">ENABLE_COLLISION_REPORTING</a>, <a href="../../../org/scijava/java3d/Node.html#ENABLE_PICK_REPORTING">ENABLE_PICK_REPORTING</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#OrientedShape3D--">OrientedShape3D</a></span>()</code>
+<div class="block">Constructs an OrientedShape3D node with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Point3f-">OrientedShape3D</a></span>(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+               <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+               int&nbsp;mode,
+               <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</code>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and rotation point.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Point3f-boolean-double-">OrientedShape3D</a></span>(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+               <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+               int&nbsp;mode,
+               <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point,
+               boolean&nbsp;constantScaleEnable,
+               double&nbsp;scale)</code>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and rotation point.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Vector3f-">OrientedShape3D</a></span>(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+               <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+               int&nbsp;mode,
+               <a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</code>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and axis.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Vector3f-boolean-double-">OrientedShape3D</a></span>(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+               <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+               int&nbsp;mode,
+               <a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis,
+               boolean&nbsp;constantScaleEnable,
+               double&nbsp;scale)</code>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, axis, constant scale
+ enable flag, and scale
+ The specified axis must not be parallel to the <i>Z</i>
+ axis--(0,0,<i>z</i>) for any value of <i>z</i>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#cloneNode-boolean-">cloneNode</a></span>(boolean&nbsp;forceDuplicate)</code>
+<div class="block">Used to create a new instance of the node.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#duplicateNode-org.scijava.java3d.Node-boolean-">duplicateNode</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;originalNode,
+             boolean&nbsp;forceDuplicate)</code>
+<div class="block">Copies all node information from <code>originalNode</code> into
+ the current node.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#getAlignmentAxis-org.scijava.vecmath.Vector3f-">getAlignmentAxis</a></span>(<a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</code>
+<div class="block">Retrieves the alignment axis of this OrientedShape3D node,
+ and copies it into the specified vector.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#getAlignmentMode--">getAlignmentMode</a></span>()</code>
+<div class="block">Retrieves the alignment mode.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#getConstantScaleEnable--">getConstantScaleEnable</a></span>()</code>
+<div class="block">Retrieves the constant scale enable flag.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#getRotationPoint-org.scijava.vecmath.Point3f-">getRotationPoint</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</code>
+<div class="block">Retrieves the rotation point of this OrientedShape3D node,
+ and copies it into the specified vector.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#getScale--">getScale</a></span>()</code>
+<div class="block">Retrieves the scale value for this OrientedShape3D.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentAxis-float-float-float-">setAlignmentAxis</a></span>(float&nbsp;x,
+                float&nbsp;y,
+                float&nbsp;z)</code>
+<div class="block">Sets the new alignment axis.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentAxis-org.scijava.vecmath.Vector3f-">setAlignmentAxis</a></span>(<a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</code>
+<div class="block">Sets the new alignment axis.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentMode-int-">setAlignmentMode</a></span>(int&nbsp;mode)</code>
+<div class="block">Sets the alignment mode.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setConstantScaleEnable-boolean-">setConstantScaleEnable</a></span>(boolean&nbsp;constantScaleEnable)</code>
+<div class="block">Sets the constant scale enable flag.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setRotationPoint-float-float-float-">setRotationPoint</a></span>(float&nbsp;x,
+                float&nbsp;y,
+                float&nbsp;z)</code>
+<div class="block">Sets the new rotation point.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setRotationPoint-org.scijava.vecmath.Point3f-">setRotationPoint</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</code>
+<div class="block">Sets the new rotation point.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/OrientedShape3D.html#setScale-double-">setScale</a></span>(double&nbsp;scale)</code>
+<div class="block">Sets the scale for this OrientedShape3D.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Shape3D">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a></h3>
+<code><a href="../../../org/scijava/java3d/Shape3D.html#addGeometry-org.scijava.java3d.Geometry-">addGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getAllGeometries--">getAllGeometries</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getAppearance--">getAppearance</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getAppearanceOverrideEnable--">getAppearanceOverrideEnable</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getBounds--">getBounds</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getCollisionBounds--">getCollisionBounds</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getGeometry--">getGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#getGeometry-int-">getGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#indexOfGeometry-org.scijava.java3d.Geometry-">indexOfGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#insertGeometry-org.scijava.java3d.Geometry-int-">insertGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#intersect-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.PickRay-double:A-">intersect</a>, <a href="../../../org/scijava/java3d/Shape3D.html#intersect-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.PickShape-">intersect</a>, <a href="../../../org/scijava/java3d/Shape3D.html#intersect-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.PickShape-double:A-">intersect</a>, <a href="../../../org/scijava/java3d/Shape3D.html#numGeometries--">numGeometries</a>, <a href="../../../org/scijava/java3d/Shape3D.html#removeAllGeometries--">removeAllGeometries</a>, <a href="../../../org/scijava/java3d/Shape3D.html#removeGeometry-org.scijava.java3d.Geometry-">removeGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#removeGeometry-int-">removeGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#setAppearance-org.scijava.java3d.Appearance-">setAppearance</a>, <a href="../../../org/scijava/java3d/Shape3D.html#setAppearanceOverrideEnable-boolean-">setAppearanceOverrideEnable</a>, <a href="../../../org/scijava/java3d/Shape3D.html#setCollisionBounds-org.scijava.java3d.Bounds-">setCollisionBounds</a>, <a href="../../../org/scijava/java3d/Shape3D.html#setGeometry-org.scijava.java3d.Geometry-">setGeometry</a>, <a href="../../../org/scijava/java3d/Shape3D.html#setGeometry-org.scijava.java3d.Geometry-int-">setGeometry</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Node">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></h3>
+<code><a href="../../../org/scijava/java3d/Node.html#cloneTree--">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#cloneTree-org.scijava.java3d.NodeReferenceTable-boolean-boolean-">cloneTree</a>, <a href="../../../org/scijava/java3d/Node.html#getBoundsAutoCompute--">getBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#getCollidable--">getCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#getLocale--">getLocale</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getLocalToVworld-org.scijava.java3d.Transform3D-">getLocalToVworld</a>, <a href="../../../org/scijava/java3d/Node.html#getParent--">getParent</a>, <a href="../../../org/scijava/java3d/Node.html#getPickable--">getPickable</a>, <a href="../../../org/scijava/java3d/Node.html#setBounds-org.scijava.java3d.Bounds-">setBounds</a>, <a href="../../../org/scijava/java3d/Node.html#setBoundsAutoCompute-boolean-">setBoundsAutoCompute</a>, <a href="../../../org/scijava/java3d/Node.html#setCollidable-boolean-">setCollidable</a>, <a href="../../../org/scijava/java3d/Node.html#setPickable-boolean-">setPickable</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ROTATE_ABOUT_AXIS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROTATE_ABOUT_AXIS</h4>
+<pre>public static final&nbsp;int ROTATE_ABOUT_AXIS</pre>
+<div class="block">Specifies that rotation should be about the specified axis.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentMode-int-"><code>setAlignmentMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ROTATE_ABOUT_AXIS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROTATE_ABOUT_POINT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROTATE_ABOUT_POINT</h4>
+<pre>public static final&nbsp;int ROTATE_ABOUT_POINT</pre>
+<div class="block">Specifies that rotation should be about the specified point and
+ that the children's Y-axis should match the view object's Y-axis.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentMode-int-"><code>setAlignmentMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ROTATE_ABOUT_POINT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROTATE_NONE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROTATE_NONE</h4>
+<pre>public static final&nbsp;int ROTATE_NONE</pre>
+<div class="block">Specifies that no rotation is done.  The OrientedShape3D will
+ not be aligned to the view.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/OrientedShape3D.html#setAlignmentMode-int-"><code>setAlignmentMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ROTATE_NONE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_MODE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_MODE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_MODE_READ</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its alignment mode information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_MODE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_MODE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_MODE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_MODE_WRITE</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its alignment mode information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_MODE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_AXIS_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_AXIS_READ</h4>
+<pre>public static final&nbsp;int ALLOW_AXIS_READ</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its alignment axis information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_AXIS_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_AXIS_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_AXIS_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_AXIS_WRITE</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its alignment axis information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_AXIS_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POINT_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POINT_READ</h4>
+<pre>public static final&nbsp;int ALLOW_POINT_READ</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its rotation point information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_POINT_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POINT_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POINT_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_POINT_WRITE</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its rotation point information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_POINT_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SCALE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SCALE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_SCALE_READ</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows reading its scale and constant scale enable information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_SCALE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SCALE_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_SCALE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_SCALE_WRITE</pre>
+<div class="block">Specifies that this OrientedShape3D node
+ allows writing its scale and constant scale enable information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.OrientedShape3D.ALLOW_SCALE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="OrientedShape3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OrientedShape3D</h4>
+<pre>public&nbsp;OrientedShape3D()</pre>
+<div class="block">Constructs an OrientedShape3D node with default parameters.
+ The default values are as follows:
+ <ul>
+ alignment mode : ROTATE_ABOUT_AXIS<br>
+ alignment axis : Y-axis (0,1,0)<br>
+ rotation point : (0,0,1)<br>
+ constant scale enable : false<br>
+ scale : 1.0<br>
+</ul></div>
+</li>
+</ul>
+<a name="OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OrientedShape3D</h4>
+<pre>public&nbsp;OrientedShape3D(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+                       <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+                       int&nbsp;mode,
+                       <a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</pre>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and axis.
+ The specified axis must not be parallel to the <i>Z</i>
+ axis--(0,0,<i>z</i>) for any value of <i>z</i>.  It is not
+ possible for the +<i>Z</i> axis to point at the viewer's eye
+ position by rotating about itself.  The target transform will
+ be set to the identity if the axis is (0,0,<i>z</i>).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>geometry</code> - the geometry component with which to initialize
+ this shape node</dd>
+<dd><code>appearance</code> - the appearance component of the shape node</dd>
+<dd><code>mode</code> - alignment mode, one of: ROTATE_ABOUT_AXIS,
+ ROTATE_ABOUT_POINT, or ROTATE_NONE</dd>
+<dd><code>axis</code> - the ray about which the OrientedShape3D rotates</dd>
+</dl>
+</li>
+</ul>
+<a name="OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OrientedShape3D</h4>
+<pre>public&nbsp;OrientedShape3D(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+                       <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+                       int&nbsp;mode,
+                       <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</pre>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and rotation point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>geometry</code> - the geometry component with which to initialize
+ this shape node</dd>
+<dd><code>appearance</code> - the appearance component of the shape node</dd>
+<dd><code>mode</code> - alignment mode, one of: ROTATE_ABOUT_AXIS,
+ ROTATE_ABOUT_POINT, or ROTATE_NONE</dd>
+<dd><code>point</code> - the position about which the OrientedShape3D rotates</dd>
+</dl>
+</li>
+</ul>
+<a name="OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Vector3f-boolean-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OrientedShape3D</h4>
+<pre>public&nbsp;OrientedShape3D(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+                       <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+                       int&nbsp;mode,
+                       <a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis,
+                       boolean&nbsp;constantScaleEnable,
+                       double&nbsp;scale)</pre>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, axis, constant scale
+ enable flag, and scale
+ The specified axis must not be parallel to the <i>Z</i>
+ axis--(0,0,<i>z</i>) for any value of <i>z</i>.  It is not
+ possible for the +<i>Z</i> axis to point at the viewer's eye
+ position by rotating about itself.  The target transform will
+ be set to the identity if the axis is (0,0,<i>z</i>).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>geometry</code> - the geometry component with which to initialize
+ this shape node</dd>
+<dd><code>appearance</code> - the appearance component of the shape node</dd>
+<dd><code>mode</code> - alignment mode, one of: ROTATE_ABOUT_AXIS,
+ ROTATE_ABOUT_POINT, or ROTATE_NONE</dd>
+<dd><code>axis</code> - the ray about which the OrientedShape3D rotates</dd>
+<dd><code>constantScaleEnable</code> - a flag indicating whether to enable
+ constant scale</dd>
+<dd><code>scale</code> - scale value used when constant scale is enabled</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="OrientedShape3D-org.scijava.java3d.Geometry-org.scijava.java3d.Appearance-int-org.scijava.vecmath.Point3f-boolean-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>OrientedShape3D</h4>
+<pre>public&nbsp;OrientedShape3D(<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a>&nbsp;geometry,
+                       <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a>&nbsp;appearance,
+                       int&nbsp;mode,
+                       <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point,
+                       boolean&nbsp;constantScaleEnable,
+                       double&nbsp;scale)</pre>
+<div class="block">Constructs an OrientedShape3D node with the specified geometry
+ component, appearance component, mode, and rotation point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>geometry</code> - the geometry component with which to initialize
+ this shape node</dd>
+<dd><code>appearance</code> - the appearance component of the shape node</dd>
+<dd><code>mode</code> - alignment mode, one of: ROTATE_ABOUT_AXIS,
+ ROTATE_ABOUT_POINT, or ROTATE_NONE</dd>
+<dd><code>point</code> - the position about which the OrientedShape3D rotates</dd>
+<dd><code>constantScaleEnable</code> - a flag indicating whether to enable
+ constant scale</dd>
+<dd><code>scale</code> - scale value used when constant scale is enabled</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setAlignmentMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlignmentMode</h4>
+<pre>public&nbsp;void&nbsp;setAlignmentMode(int&nbsp;mode)</pre>
+<div class="block">Sets the alignment mode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mode</code> - alignment mode, one of: ROTATE_ABOUT_AXIS,
+ ROTATE_ABOUT_POINT, or ROTATE_NONE</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlignmentMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlignmentMode</h4>
+<pre>public&nbsp;int&nbsp;getAlignmentMode()</pre>
+<div class="block">Retrieves the alignment mode.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>one of: ROTATE_ABOUT_AXIS, ROTATE_ABOUT_POINT,
+ or ROTATE_NONE</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlignmentAxis-org.scijava.vecmath.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlignmentAxis</h4>
+<pre>public&nbsp;void&nbsp;setAlignmentAxis(<a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</pre>
+<div class="block">Sets the new alignment axis.  This is the ray about which this
+ OrientedShape3D rotates when the mode is ROTATE_ABOUT_AXIS.
+ The specified axis must not be parallel to the <i>Z</i>
+ axis--(0,0,<i>z</i>) for any value of <i>z</i>.  It is not
+ possible for the +<i>Z</i> axis to point at the viewer's eye
+ position by rotating about itself.  The target transform will
+ be set to the identity if the axis is (0,0,<i>z</i>).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>axis</code> - the new alignment axis</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlignmentAxis-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlignmentAxis</h4>
+<pre>public&nbsp;void&nbsp;setAlignmentAxis(float&nbsp;x,
+                             float&nbsp;y,
+                             float&nbsp;z)</pre>
+<div class="block">Sets the new alignment axis.  This is the ray about which this
+ OrientedShape3D rotates when the mode is ROTATE_ABOUT_AXIS.
+ The specified axis must not be parallel to the <i>Z</i>
+ axis--(0,0,<i>z</i>) for any value of <i>z</i>.  It is not
+ possible for the +<i>Z</i> axis to point at the viewer's eye
+ position by rotating about itself.  The target transform will
+ be set to the identity if the axis is (0,0,<i>z</i>).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the x component of the alignment axis</dd>
+<dd><code>y</code> - the y component of the alignment axis</dd>
+<dd><code>z</code> - the z component of the alignment axis</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlignmentAxis-org.scijava.vecmath.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlignmentAxis</h4>
+<pre>public&nbsp;void&nbsp;getAlignmentAxis(<a href="../../../org/scijava/vecmath/Vector3f.html" title="class in org.scijava.vecmath">Vector3f</a>&nbsp;axis)</pre>
+<div class="block">Retrieves the alignment axis of this OrientedShape3D node,
+ and copies it into the specified vector.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>axis</code> - the vector that will contain the alignment axis</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setRotationPoint-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRotationPoint</h4>
+<pre>public&nbsp;void&nbsp;setRotationPoint(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</pre>
+<div class="block">Sets the new rotation point.  This is the point about which the
+ OrientedShape3D rotates when the mode is ROTATE_ABOUT_POINT.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - the new rotation point</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setRotationPoint-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRotationPoint</h4>
+<pre>public&nbsp;void&nbsp;setRotationPoint(float&nbsp;x,
+                             float&nbsp;y,
+                             float&nbsp;z)</pre>
+<div class="block">Sets the new rotation point.  This is the point about which the
+ OrientedShape3D rotates when the mode is ROTATE_ABOUT_POINT.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the x component of the rotation point</dd>
+<dd><code>y</code> - the y component of the rotation point</dd>
+<dd><code>z</code> - the z component of the rotation point</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getRotationPoint-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRotationPoint</h4>
+<pre>public&nbsp;void&nbsp;getRotationPoint(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;point)</pre>
+<div class="block">Retrieves the rotation point of this OrientedShape3D node,
+ and copies it into the specified vector.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - the point that will contain the rotation point</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setConstantScaleEnable-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConstantScaleEnable</h4>
+<pre>public&nbsp;void&nbsp;setConstantScaleEnable(boolean&nbsp;constantScaleEnable)</pre>
+<div class="block">Sets the constant scale enable flag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>constantScaleEnable</code> - a flag indicating whether to enable
+ constant scale</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getConstantScaleEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConstantScaleEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getConstantScaleEnable()</pre>
+<div class="block">Retrieves the constant scale enable flag.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current constant scale enable flag</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setScale-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setScale</h4>
+<pre>public&nbsp;void&nbsp;setScale(double&nbsp;scale)</pre>
+<div class="block">Sets the scale for this OrientedShape3D.  This scale is used when
+ the constant scale enable flag is set to true.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - the scale value</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getScale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getScale</h4>
+<pre>public&nbsp;double&nbsp;getScale()</pre>
+<div class="block">Retrieves the scale value for this OrientedShape3D.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current scale value</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNode-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneNode</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;cloneNode(boolean&nbsp;forceDuplicate)</pre>
+<div class="block">Used to create a new instance of the node.  This routine is called
+ by <code>cloneTree</code> to duplicate the current node.
+ <code>cloneNode</code> should be overridden by any user subclassed
+ objects.  All subclasses must have their <code>cloneNode</code>
+ method consist of the following lines:
+ <P><blockquote><pre>
+     public Node cloneNode(boolean forceDuplicate) {
+         UserSubClass usc = new UserSubClass();
+         usc.duplicateNode(this, forceDuplicate);
+         return usc;
+     }
+ </pre></blockquote></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Shape3D.html#cloneNode-boolean-">cloneNode</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>forceDuplicate</code> - when set to <code>true</code>, causes the
+  <code>duplicateOnCloneTree</code> flag to be ignored.  When
+  <code>false</code>, the value of each node's
+  <code>duplicateOnCloneTree</code> variable determines whether
+  NodeComponent data is duplicated or copied.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#cloneTree--"><code>Node.cloneTree()</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#duplicateNode-org.scijava.java3d.Node-boolean-"><code>Node.duplicateNode(org.scijava.java3d.Node, boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-"><code>NodeComponent.setDuplicateOnCloneTree(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="duplicateNode-org.scijava.java3d.Node-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>duplicateNode</h4>
+<pre>public&nbsp;void&nbsp;duplicateNode(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;originalNode,
+                          boolean&nbsp;forceDuplicate)</pre>
+<div class="block">Copies all node information from <code>originalNode</code> into
+ the current node.  This method is called from the
+ <code>cloneNode</code> method which is, in turn, called by the
+ <code>cloneTree</code> method.
+ <P>
+ For any <code>NodeComponent</code> objects
+ contained by the object being duplicated, each <code>NodeComponent</code>
+ object's <code>duplicateOnCloneTree</code> value is used to determine
+ whether the <code>NodeComponent</code> should be duplicated in the new node
+ or if just a reference to the current node should be placed in the
+ new node.  This flag can be overridden by setting the
+ <code>forceDuplicate</code> parameter in the <code>cloneTree</code>
+ method to <code>true</code>.
+ <br>
+ NOTE: Applications should <i>not</i> call this method directly.
+ It should only be called by the cloneNode method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Shape3D.html#duplicateNode-org.scijava.java3d.Node-boolean-">duplicateNode</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>originalNode</code> - the original node to duplicate.</dd>
+<dd><code>forceDuplicate</code> - when set to <code>true</code>, causes the
+  <code>duplicateOnCloneTree</code> flag to be ignored.  When
+  <code>false</code>, the value of each node's
+  <code>duplicateOnCloneTree</code> variable determines whether
+  NodeComponent data is duplicated or copied.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></code> - if originalNode is not an instance of
+  <code>Shape3D</code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#cloneTree--"><code>Node.cloneTree()</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#cloneNode-boolean-"><code>Node.cloneNode(boolean)</code></a>, 
+<a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-"><code>NodeComponent.setDuplicateOnCloneTree(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/OrderedGroup.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/PathInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/OrientedShape3D.html" target="_top">Frames</a></li>
+<li><a href="OrientedShape3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

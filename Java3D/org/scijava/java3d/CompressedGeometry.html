@@ -1,0 +1,783 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CompressedGeometry (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="CompressedGeometry (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/ColorInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/CompressedGeometry.html" target="_top">Frames</a></li>
+<li><a href="CompressedGeometry.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class CompressedGeometry" class="title">Class CompressedGeometry</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">org.scijava.java3d.Geometry</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.CompressedGeometry</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">As of Java 3D version 1.4.</span></div>
+</div>
+<br>
+<pre>public class <span class="typeNameLabel">CompressedGeometry</span>
+extends <a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></pre>
+<div class="block">The compressed geometry object is used to store geometry in a
+ compressed format. Using compressed geometry may increase the speed
+ objects can be sent over the network. Note that the geometry will
+ be decompressed in memory, so the application will not see any
+ memory savings.
+ <p>
+ Compressed geometry may be passed to this CompressedGeometry object
+ in one of two ways: by copying the data into this object using the
+ existing constructor, or by passing a reference to the data.
+ <p>
+ <ul>
+ <li>
+ <b>By Copying:</b>
+ The existing CompressedGeometry constructor copies the buffer of
+ compressed geometry data into this CompressedGeometry object.  This
+ is appropriate for many applications, and allows Java 3D to verify
+ the data once and then not worry about it again.
+ </li>
+ <li><b>By Reference:</b>
+ A new constructor and set of methods in Java 3D version 1.2 allows
+ compressed geometry data to be accessed by reference, directly from
+ the user's array.  To use this feature, you need to construct a
+ CompressedGeometry object with the <code>byReference</code> flag
+ set to <code>true</code>.  In this mode, a reference to the input
+ data is saved, but the data itself is not necessarily copied.  Note
+ that the compressed geometry header is still copied into this
+ compressed geometry object.  Data referenced by a
+ CompressedGeometry object must not be modified after the
+ CompressedGeometry object is constructed.
+ Applications
+ must exercise care not to violate this rule.  If any referenced
+ compressed geometry data is modified after construction,
+ the results are undefined.
+ </li>
+ </ul></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#ALLOW_COUNT_READ">ALLOW_COUNT_READ</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ byte count information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#ALLOW_GEOMETRY_READ">ALLOW_GEOMETRY_READ</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ geometry data component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#ALLOW_HEADER_READ">ALLOW_HEADER_READ</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ header information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#ALLOW_REF_DATA_READ">ALLOW_REF_DATA_READ</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry allows reading the geometry
+ data reference information for this object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Geometry">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></h3>
+<code><a href="../../../org/scijava/java3d/Geometry.html#ALLOW_INTERSECT">ALLOW_INTERSECT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-byte:A-">CompressedGeometry</a></span>(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                  byte[]&nbsp;compressedGeometry)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Creates a new CompressedGeometry NodeComponent by copying
+ the specified compressed geometry data into this object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-byte:A-boolean-">CompressedGeometry</a></span>(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                  byte[]&nbsp;compressedGeometry,
+                  boolean&nbsp;byReference)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Creates a new CompressedGeometry NodeComponent.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-org.scijava.java3d.J3DBuffer-">CompressedGeometry</a></span>(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                  <a href="../../../org/scijava/java3d/J3DBuffer.html" title="class in org.scijava.java3d">J3DBuffer</a>&nbsp;compressedGeometry)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This constructor is not implemented.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#decompress--">decompress</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Decompresses the compressed geometry.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#getByteCount--">getByteCount</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the size, in bytes, of the compressed geometry buffer.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#getCompressedGeometry-byte:A-">getCompressedGeometry</a></span>(byte[]&nbsp;compressedGeometry)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Retrieves the compressed geometry associated with the
+ CompressedGeometry NodeComponent object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/J3DBuffer.html" title="class in org.scijava.java3d">J3DBuffer</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#getCompressedGeometryBuffer--">getCompressedGeometryBuffer</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Gets the compressed geometry data buffer reference, which is
+ always null since NIO buffers are not supported for
+ CompressedGeometry objects.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#getCompressedGeometryHeader-org.scijava.java3d.CompressedGeometryHeader-">getCompressedGeometryHeader</a></span>(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Copies the compressed geometry header from the CompressedGeometry
+ NodeComponent into the passed in parameter.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#getCompressedGeometryRef--">getCompressedGeometryRef</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Gets the compressed geometry data reference.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/CompressedGeometry.html#isByReference--">isByReference</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Retrieves the data access mode for this CompressedGeometry object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_COUNT_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_COUNT_READ</h4>
+<pre>public static final&nbsp;int ALLOW_COUNT_READ</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ byte count information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.CompressedGeometry.ALLOW_COUNT_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_HEADER_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_HEADER_READ</h4>
+<pre>public static final&nbsp;int ALLOW_HEADER_READ</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ header information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.CompressedGeometry.ALLOW_HEADER_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_GEOMETRY_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_GEOMETRY_READ</h4>
+<pre>public static final&nbsp;int ALLOW_GEOMETRY_READ</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry object allows reading its
+ geometry data component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.CompressedGeometry.ALLOW_GEOMETRY_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_REF_DATA_READ">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_REF_DATA_READ</h4>
+<pre>public static final&nbsp;int ALLOW_REF_DATA_READ</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Specifies that this CompressedGeometry allows reading the geometry
+ data reference information for this object.  This is only used in
+ by-reference geometry mode.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.CompressedGeometry.ALLOW_REF_DATA_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-byte:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CompressedGeometry</h4>
+<pre>public&nbsp;CompressedGeometry(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                          byte[]&nbsp;compressedGeometry)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Creates a new CompressedGeometry NodeComponent by copying
+ the specified compressed geometry data into this object.
+ If the version number of compressed geometry, as specified by
+ the CompressedGeometryHeader, is incompatible with the
+ supported version of compressed geometry in the current version
+ of Java 3D, then the compressed geometry object will not be
+ rendered.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>hdr</code> - the compressed geometry header.  This is copied
+ into the CompressedGeometry NodeComponent.</dd>
+<dd><code>compressedGeometry</code> - the compressed geometry data.  The
+ geometry must conform to the format described in Appendix B of
+ the <i>Java 3D API Specification</i>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if a problem is detected with the
+ header</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d"><code>CompressedGeometryHeader</code></a>, 
+<a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-byte:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CompressedGeometry</h4>
+<pre>public&nbsp;CompressedGeometry(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                          byte[]&nbsp;compressedGeometry,
+                          boolean&nbsp;byReference)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Creates a new CompressedGeometry NodeComponent.  The
+ specified compressed geometry data is either copied into this
+ object or is accessed by reference.
+ If the version number of compressed geometry, as specified by
+ the CompressedGeometryHeader, is incompatible with the
+ supported version of compressed geometry in the current version
+ of Java 3D, the compressed geometry object will not be
+ rendered.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>hdr</code> - the compressed geometry header.  This is copied
+ into the CompressedGeometry NodeComponent.</dd>
+<dd><code>compressedGeometry</code> - the compressed geometry data.  The
+ geometry must conform to the format described in Appendix B of
+ the <i>Java 3D API Specification</i>.</dd>
+<dd><code>byReference</code> - a flag that indicates whether the data is copied
+ into this compressed geometry object or is accessed by reference.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if a problem is detected with the
+ header</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d"><code>CompressedGeometryHeader</code></a>, 
+<a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="CompressedGeometry-org.scijava.java3d.CompressedGeometryHeader-org.scijava.java3d.J3DBuffer-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CompressedGeometry</h4>
+<pre>public&nbsp;CompressedGeometry(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr,
+                          <a href="../../../org/scijava/java3d/J3DBuffer.html" title="class in org.scijava.java3d">J3DBuffer</a>&nbsp;compressedGeometry)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">This constructor is not implemented.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - this constructor is not
+ implemented</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getByteCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getByteCount</h4>
+<pre>public&nbsp;int&nbsp;getByteCount()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the size, in bytes, of the compressed geometry buffer.
+ The size of the compressed geometry header is not included.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the size, in bytes, of the compressed geometry buffer.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getCompressedGeometryHeader-org.scijava.java3d.CompressedGeometryHeader-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompressedGeometryHeader</h4>
+<pre>public&nbsp;void&nbsp;getCompressedGeometryHeader(<a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d">CompressedGeometryHeader</a>&nbsp;hdr)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Copies the compressed geometry header from the CompressedGeometry
+ NodeComponent into the passed in parameter.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>hdr</code> - the CompressedGeometryHeader object into which to copy the
+ CompressedGeometry NodeComponent's header; the offset field may differ
+ from that which was originally specified if a copy of the original
+ compressed geometry byte array was created.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d"><code>CompressedGeometryHeader</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCompressedGeometry-byte:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompressedGeometry</h4>
+<pre>public&nbsp;void&nbsp;getCompressedGeometry(byte[]&nbsp;compressedGeometry)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Retrieves the compressed geometry associated with the
+ CompressedGeometry NodeComponent object.  Copies the compressed
+ geometry from the CompressedGeometry node into the given array.
+ The array must be large enough to hold all of the bytes.
+ The individual array elements must be allocated by the caller.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>compressedGeometry</code> - the array into which to copy the compressed
+ geometry.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the data access mode for this
+ object is by-reference.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/ArrayIndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">ArrayIndexOutOfBoundsException</a></code> - if compressedGeometry byte
+ array is not large enough to receive the compressed geometry</dd>
+</dl>
+</li>
+</ul>
+<a name="decompress--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>decompress</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>[]&nbsp;decompress()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Decompresses the compressed geometry.  Returns an array of Shape nodes
+ containing the decompressed geometry objects, or null if the version
+ number of the compressed geometry is incompatible with the decompressor
+ in the current version of Java 3D.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of Shape nodes containing the
+  geometry decompressed from this CompressedGeometry NodeComponent
+  object, or null if its version is incompatible</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+  not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="isByReference--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isByReference</h4>
+<pre>public&nbsp;boolean&nbsp;isByReference()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Retrieves the data access mode for this CompressedGeometry object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the data access mode for this
+ CompressedGeometry object is by-reference;
+ <code>false</code> if the data access mode is by-copying.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getCompressedGeometryRef--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompressedGeometryRef</h4>
+<pre>public&nbsp;byte[]&nbsp;getCompressedGeometryRef()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Gets the compressed geometry data reference.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current compressed geometry data reference.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the data access mode for this
+ object is not by-reference.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+  not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getCompressedGeometryBuffer--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompressedGeometryBuffer</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/J3DBuffer.html" title="class in org.scijava.java3d">J3DBuffer</a>&nbsp;getCompressedGeometryBuffer()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Gets the compressed geometry data buffer reference, which is
+ always null since NIO buffers are not supported for
+ CompressedGeometry objects.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>null</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+  not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/ColorInterpolator.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/CompressedGeometryHeader.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/CompressedGeometry.html" target="_top">Frames</a></li>
+<li><a href="CompressedGeometry.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,1835 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ViewInfo (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ViewInfo (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/ViewInfo.html" target="_top">Frames</a></li>
+<li><a href="ViewInfo.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d.utils.universe</div>
+<h2 title="Class ViewInfo" class="title">Class ViewInfo</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.utils.universe.ViewInfo</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ViewInfo</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Provides methods to extract synchronized transform information from a View.
+ These transforms are derived from application scene graph information, as
+ opposed to similar core Java 3D methods that derive transforms from
+ internally maintained data.    This allows updates to the scene graph to be
+ synchronized with the current view platform position.<p>
+
+ The architecture of the Java 3D 1.3 sample implementation introduces a
+ frame latency between updates to the application scene graph structure and
+ their effects on internal Java 3D state. <code>getImagePlateToVworld</code>
+ and other methods in the core Java 3D classes use a transform from view
+ platform coordinates to virtual world coordinates that can be out of date
+ with respect to the state of the view platform as set by the application.
+ When an application uses the transforms returned by those methods to update
+ view dependent parts of the scene graph, those updates might not be
+ synchronized with what the viewer actually sees.<p>
+
+ The methods in this class work around this problem at the expense of
+ querying the application state of the scene graph to get the current
+ transform from view platform to virtual world coordinates.  This can
+ involve a potential performance degradation, however, since the application
+ scene graph state is not designed for high performance queries.  The view
+ platform must also have <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability
+ set, which potentially inhibits internal scene graph optimization.<p>
+
+ On the other hand, application behaviors that create the view platform
+ transformation directly will have access to it without the need to query it
+ from the scene graph; in that case, the transforms from physical
+ coordinates to view platform coordinates provided by this class are all
+ that are needed.  The <code>ALLOW_LOCAL_TO_VWORLD_READ</code> view platform
+ capability doesn't need to be set for these applications.<p>
+
+ <b>Other Synchronization Issues</b><p>
+
+ Scene graph updates are guaranteed to take effect in the same frame only
+ if run from the processStimulus() method of a Behavior. Updates from
+ multiple behaviors are only guaranteed to take effect in the same frame if
+ they're responding to a WakeupOnElapsedFrames(0) condition.  Use a single
+ behavior to perform view dependent updates if possible; otherwise, use
+ WakeupOnElapsedFrames(0) and set behavior scheduling intervals to ensure
+ that behaviors that need the current view platform transform are run after
+ it's set.  Updating scene graph elements from anything other than the
+ Behavior thread, such as an external input thread or a renderer callback
+ in Canvas3D, will not necessarily be synchronized with rendering.<p>
+
+ Direct updates to geometry data have a different frame latency than
+ updates to scene graph transforms and structure. In the Java 3D 1.3
+ architecture, updates to by-reference geometry arrays and texture data have
+ a 1-frame latency, while updates to transforms and scene graph structure
+ have a 2-frame latency.  Because of bug 4799494, which is outstanding
+ in Java 3D 1.3.1, updates to by-copy geometry arrays also have a 1-frame
+ latency.  It is therefore recommended that view dependent scene graph
+ updates be limited to transforms and scene graph structure only.<p>
+
+ If it is not possible to avoid updating geometry directly, then these
+ updates must be delayed by one frame in order to remain synchronized with
+ the view platform.  This can be accomplished by creating an additional
+ behavior to actually update the geometry, separate from the behavior that
+ computes the changes that need to be made based on current view state.  If
+ the update behavior is awakened by a behavior post from the computing
+ behavior then the update will be delayed by a single frame.<p>
+
+ <b>Implementation Notes</b><p>
+
+ This utility is essentially a rewrite of a few private Java 3D core
+ classes, but designed for public use and source code availability.  The
+ source code may be helpful in understanding some of the more complex
+ aspects of the view model, especially with regards to various interactions
+ between attributes which are not adequately documented.  None of the actual
+ core Java 3D source code is used, but the code is designed to comply with
+ the view model as defined by the Java 3D Specification, so it can be
+ considered an alternative implementation.  This class will produce the
+ same results as the Java 3D core implementation except for:<p><ul>
+
+ <li>The frame latency issue for virtual world transforms.</li><p>
+
+ <li>Active clip node status.    If a clip node is active in the scene graph,
+     it should override the view's back clip plane.  This class has no such
+     information, so this can't be implemented.</li><p>
+
+ <li>"Infinite" view transforms for background geometry.  These are simply
+     the rotation components of the normal view transforms with adjusted
+     clip planes. Again, this function depends upon scene graph content
+     inaccessible to this class.</li><p>
+
+ <li>Small floating point precision differences resulting from the
+     alternative computations.</li><p>
+
+ <li>Bugs in this class and the Java 3D core.</li><p>
+
+ <li>Tracked head position.</li></ul><p>
+
+ The last item deserves some mention.    Java 3D provides no way to directly
+ query the tracked head position being used by the renderer.    The View's
+ <code>getUserHeadToVworld</code> method always incorporates a virtual world
+ transform that is out of date with respect to the application scene graph
+ state.  ViewInfo reads data from the head tracking sensor directly, but
+ since head trackers are continuous input devices, getting the same data
+ that the renderer is using is unlikely.  See the source code for the
+ private method <code>getHeadInfo</code> in this class for more information
+ and possible workarounds.<p>
+
+ <b>Thread Safety</b><p>
+
+ All transforms are lazily evaluated.  The <code>updateScreen</code>,
+ <code>updateCanvas</code>, <code>updateViewPlatform</code>,
+ <code>updateView</code>, and <code>updateHead</code> methods just set flags
+ indicating that derived transforms need to be recomputed; they are safe to
+ call from any thread.  <code>updateCanvas</code>, for example, can safely
+ be called from an AWT event listener.<p>
+
+ Screens and view platforms can be shared between separate views in the Java
+ 3D view model.  To remain accurate, ViewInfo also allows this sharing.
+ Since it is likely that a multi-view application has separate threads
+ managing each view, potential concurrent modification of data associated
+ with a screen or a view platform is internally synchronized in this class.
+ It is safe for each thread to use its own instance of a ViewInfo
+ corresponding to the view it is managing.<p>
+
+ Otherwise, none of the other methods in this class are internally
+ synchronized.  <i>Except for the update methods mentioned above, a single
+ instance of ViewInfo should not be used by more than one concurrent thread
+ without external synchronization.</i><p></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3.1</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#CANVAS_AUTO_UPDATE">CANVAS_AUTO_UPDATE</a></span></code>
+<div class="block">Indicates that updates to a Canvas3D associated with the View should
+ be automatically checked with each call to a public method in this
+ class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#HEAD_AUTO_UPDATE">HEAD_AUTO_UPDATE</a></span></code>
+<div class="block">Indicates that updates to the tracked head position should be
+ automatically checked with each call to a public method in this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#PLATFORM_AUTO_UPDATE">PLATFORM_AUTO_UPDATE</a></span></code>
+<div class="block">Indicates that updates to the ViewPlatform <code>localToVworld</code>
+ transform should be automatically checked with each call to a public
+ method in this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#SCREEN_AUTO_UPDATE">SCREEN_AUTO_UPDATE</a></span></code>
+<div class="block">Indicates that updates to a Screen3D associated with the View should
+ be automatically checked with each call to a public method in this
+ class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#VIEW_AUTO_UPDATE">VIEW_AUTO_UPDATE</a></span></code>
+<div class="block">Indicates that updates to the View should be automatically checked
+ with each call to a public method in this class.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#ViewInfo-org.scijava.java3d.View-">ViewInfo</a></span>(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view)</code>
+<div class="block">Creates a new ViewInfo for the specified View.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#ViewInfo-org.scijava.java3d.View-int-">ViewInfo</a></span>(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view,
+        int&nbsp;autoUpdateFlags)</code>
+<div class="block">Creates a new ViewInfo for the specified View.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#ViewInfo-org.scijava.java3d.View-int-java.util.Map-java.util.Map-">ViewInfo</a></span>(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view,
+        int&nbsp;autoUpdateFlags,
+        <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;screenMap,
+        <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;viewPlatformMap)</code>
+<div class="block">Creates a new ViewInfo for the specified View.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#clear--">clear</a></span>()</code>
+<div class="block">Release all static memory references held by ViewInfo, if any.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getCoexistenceToImagePlate-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getCoexistenceToImagePlate</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2ipl,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2ipr)</code>
+<div class="block">Gets the current transforms from coexistence coordinates to image plate
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getCoexistenceToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">getCoexistenceToViewPlatform</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                            <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2vp)</code>
+<div class="block">Gets the current transform from coexistence coordinates to
+ view platform coordinates and copies it into the given transform.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getCoexistenceToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">getCoexistenceToVworld</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                      <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2vw)</code>
+<div class="block">Gets the current transform from coexistence coordinates to virtual
+ world coordinates and copies it into the given transform.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getEyeToImagePlate-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getEyeToImagePlate</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                  <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ipl,
+                  <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ipr)</code>
+<div class="block">Gets the transforms from eye coordinates to image plate coordinates and
+ copies them into the Transform3Ds specified.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getEyeToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getEyeToViewPlatform</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vpl,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vpr)</code>
+<div class="block">Gets the current transforms from eye coordinates to view platform
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getEyeToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getEyeToVworld</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+              <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vwl,
+              <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vwr)</code>
+<div class="block">Gets the current transforms from eye coordinates to virtual world
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getHeadTrackerToTrackerBase--">getHeadTrackerToTrackerBase</a></span>()</code>
+<div class="block">Returns a reference to a Transform3D containing the current transform
+ from head tracker coordinates to tracker base coordinates.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getImagePlateToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getImagePlateToViewPlatform</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                           <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vpl,
+                           <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vpr)</code>
+<div class="block">Gets the current transforms from image plate coordinates to view
+ platform coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getImagePlateToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getImagePlateToVworld</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                     <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vwl,
+                     <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vwr)</code>
+<div class="block">Gets the current transforms from image plate coordinates to virtual
+ world coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getInverseProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getInverseProjection</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2el,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2er)</code>
+<div class="block">Gets the transforms from clipping coordinates to eye coordinates
+ and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getInverseViewPlatformProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getInverseViewPlatformProjection</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vpl,
+                                <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vpr)</code>
+<div class="block">Gets the transforms from clipping coordinates to view platform
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getInverseVworldProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getInverseVworldProjection</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vwl,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vwr)</code>
+<div class="block">Gets the transforms from clipping coordinates to virtual world
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalBackClipDistance-org.scijava.java3d.Canvas3D-">getPhysicalBackClipDistance</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the back clip distance scaled to physical meters.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalFrontClipDistance-org.scijava.java3d.Canvas3D-">getPhysicalFrontClipDistance</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the front clip distance scaled to physical meters.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalHeight-org.scijava.java3d.Canvas3D-">getPhysicalHeight</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the height of the specified canvas scaled to physical meters.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalLocation-org.scijava.java3d.Canvas3D-org.scijava.vecmath.Point3d-">getPhysicalLocation</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                   <a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;location)</code>
+<div class="block">Gets the location of the specified canvas relative to the image plate
+ origin.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalToViewPlatformScale-org.scijava.java3d.Canvas3D-">getPhysicalToViewPlatformScale</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the scale factor from physical meters to view platform units.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalToVirtualScale-org.scijava.java3d.Canvas3D-">getPhysicalToVirtualScale</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the scale factor from physical meters to virtual units.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalWidth-org.scijava.java3d.Canvas3D-">getPhysicalWidth</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Gets the width of the specified canvas scaled to physical meters.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPixelLocationInImagePlate-org.scijava.java3d.Canvas3D-int-int-org.scijava.vecmath.Point3d-">getPixelLocationInImagePlate</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                            int&nbsp;x,
+                            int&nbsp;y,
+                            <a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;location)</code>
+<div class="block">Gets the location of the AWT pixel value and copies it into the
+ specified Point3d.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getProjection</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+             <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ccl,
+             <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ccr)</code>
+<div class="block">Gets the transforms from eye coordinates to clipping coordinates
+ and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getSensorToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Sensor-org.scijava.java3d.Transform3D-">getSensorToVworld</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                 <a href="../../../../../org/scijava/java3d/Sensor.html" title="class in org.scijava.java3d">Sensor</a>&nbsp;sensor,
+                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;s2vw)</code>
+<div class="block">Gets a read from the specified sensor and transforms it to virtual
+ world coordinates.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getTrackerBaseToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">getTrackerBaseToViewPlatform</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                            <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;tb2vp)</code>
+<div class="block">Gets the transform from tracker base coordinates to view platform
+ coordinates and copies it into the specified Transform3D.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getTrackerBaseToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">getTrackerBaseToVworld</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                      <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;tb2vw)</code>
+<div class="block">Gets the transform from tracker base coordinates to virtual world
+ coordinates and copies it into the specified Transform3D.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">getViewPlatformToCoexistence</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                            <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2coe)</code>
+<div class="block">Gets the current transform from view platform coordinates to
+ coexistence coordinates and copies it into the given transform.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToEye-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">getViewPlatformToEye</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2el,
+                    <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2er)</code>
+<div class="block">Gets the current transforms from view platform coordinates to eye
+ coordinates and copies them into the given Transform3Ds.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateCanvas-org.scijava.java3d.Canvas3D-">updateCanvas</a></span>(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</code>
+<div class="block">Arrange for an update of cached canvas parameters.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateHead--">updateHead</a></span>()</code>
+<div class="block">Arrange for an update of the cached head position if head tracking is
+ enabled.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateScreen-org.scijava.java3d.Screen3D-">updateScreen</a></span>(<a href="../../../../../org/scijava/java3d/Screen3D.html" title="class in org.scijava.java3d">Screen3D</a>&nbsp;s3d)</code>
+<div class="block">Arrange for an update of cached screen parameters.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateView--">updateView</a></span>()</code>
+<div class="block">Arrange for an update of cached view parameters.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateViewPlatform--">updateViewPlatform</a></span>()</code>
+<div class="block">Arrange for an update of the cached <code>localToVworld</code>
+ transform of the view platform.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#useHeadTracking--">useHeadTracking</a></span>()</code>
+<div class="block">Returns <code>true</code> if head tracking should be used.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="SCREEN_AUTO_UPDATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SCREEN_AUTO_UPDATE</h4>
+<pre>public static final&nbsp;int SCREEN_AUTO_UPDATE</pre>
+<div class="block">Indicates that updates to a Screen3D associated with the View should
+ be automatically checked with each call to a public method in this
+ class.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.universe.ViewInfo.SCREEN_AUTO_UPDATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CANVAS_AUTO_UPDATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CANVAS_AUTO_UPDATE</h4>
+<pre>public static final&nbsp;int CANVAS_AUTO_UPDATE</pre>
+<div class="block">Indicates that updates to a Canvas3D associated with the View should
+ be automatically checked with each call to a public method in this
+ class.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.universe.ViewInfo.CANVAS_AUTO_UPDATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VIEW_AUTO_UPDATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VIEW_AUTO_UPDATE</h4>
+<pre>public static final&nbsp;int VIEW_AUTO_UPDATE</pre>
+<div class="block">Indicates that updates to the View should be automatically checked
+ with each call to a public method in this class.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.universe.ViewInfo.VIEW_AUTO_UPDATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="HEAD_AUTO_UPDATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>HEAD_AUTO_UPDATE</h4>
+<pre>public static final&nbsp;int HEAD_AUTO_UPDATE</pre>
+<div class="block">Indicates that updates to the tracked head position should be
+ automatically checked with each call to a public method in this class.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.universe.ViewInfo.HEAD_AUTO_UPDATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PLATFORM_AUTO_UPDATE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PLATFORM_AUTO_UPDATE</h4>
+<pre>public static final&nbsp;int PLATFORM_AUTO_UPDATE</pre>
+<div class="block">Indicates that updates to the ViewPlatform <code>localToVworld</code>
+ transform should be automatically checked with each call to a public
+ method in this class.  The View must be attached to a ViewPlatform
+ which is part of a live scene graph, and the ViewPlatform node must
+ have its <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.universe.ViewInfo.PLATFORM_AUTO_UPDATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ViewInfo-org.scijava.java3d.View-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ViewInfo</h4>
+<pre>public&nbsp;ViewInfo(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view)</pre>
+<div class="block">Creates a new ViewInfo for the specified View.<p>
+
+ Applications are responsible for informing this class of changes to the
+ View, its Canvas3D and Screen3D components, the tracked head position,
+ and the ViewPlatform's <code>localToVworld</code> transform.  These
+ notifications are performed with the <code>updateView</code>,
+ <code>updateCanvas</code>, <code>updateScreen</code>,
+ <code>updateHead</code>, and <code>updateViewPlatform</code>
+ methods.<p>
+
+ The View must be attached to a ViewPlatform.  If the ViewPlatform is
+ attached to a live scene graph, then <code>ALLOW_POLICY_READ</code>
+ capability must be set on the ViewPlatform node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>view</code> - the View to use</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateView"><code>updateView</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateCanvas-org.scijava.java3d.Canvas3D-"><code>updateCanvas(Canvas3D)</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateScreen-org.scijava.java3d.Screen3D-"><code>updateScreen(Screen3D)</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateHead"><code>updateHead</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateViewPlatform--"><code>updateViewPlatform()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="ViewInfo-org.scijava.java3d.View-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ViewInfo</h4>
+<pre>public&nbsp;ViewInfo(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view,
+                int&nbsp;autoUpdateFlags)</pre>
+<div class="block">Creates a new ViewInfo for the specified View.  The View must be
+ attached to a ViewPlatform.  If the ViewPlatform is attached to a live
+ scene graph, then <code>ALLOW_POLICY_READ</code> capability must be set
+ on the ViewPlatform node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>view</code> - the View to use<p></dd>
+<dd><code>autoUpdateFlags</code> - a logical <code>OR</code> of any of the
+        <code>VIEW_AUTO_UPDATE</code>, <code>CANVAS_AUTO_UPDATE</code>,
+        <code>SCREEN_AUTO_UPDATE</code>, <code>HEAD_AUTO_UPDATE</code>, or
+        <code>PLATFORM_AUTO_UPDATE</code> flags to control whether changes to
+        the View, its Canvas3D or Screen3D components, the tracked head
+        position, or the ViewPlatform's <code>localToVworld</code> transform
+        are checked automatically with each call to a public method of this
+        class; if a flag is not set, then the application must inform this
+        class of updates to the corresponding data</dd>
+</dl>
+</li>
+</ul>
+<a name="ViewInfo-org.scijava.java3d.View-int-java.util.Map-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ViewInfo</h4>
+<pre>public&nbsp;ViewInfo(<a href="../../../../../org/scijava/java3d/View.html" title="class in org.scijava.java3d">View</a>&nbsp;view,
+                int&nbsp;autoUpdateFlags,
+                <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;screenMap,
+                <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;viewPlatformMap)</pre>
+<div class="block">Creates a new ViewInfo for the specified View.  The View must be
+ attached to a ViewPlatform.  If the ViewPlatform is attached to a live
+ scene graph, then <code>ALLOW_POLICY_READ</code> capability must be set
+ on the ViewPlatform node.<p>
+
+ ViewInfo caches Screen3D and ViewPlatform data, but Screen3D and
+ ViewPlatform instances are shared across multiple Views in the Java 3D
+ view model.  Since ViewInfo is per-View, all ViewInfo constructors
+ except for this one use static references to manage the shared Screen3D
+ and ViewPlatform objects.  In this constructor, however, the caller
+ supplies two Map instances to hold these references for all ViewInfo
+ instances, so static references can be avoided; it can be used to wrap
+ this class into a multi-view context that provides the required
+ maps.<p>
+
+ Alternatively, the other constructors can be used by calling
+ <code>ViewInfo.clear</code> when done with ViewInfo, or by simply
+ retaining the static references until the JVM exits.<p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>view</code> - the View to use<p></dd>
+<dd><code>autoUpdateFlags</code> - a logical <code>OR</code> of any of the
+        <code>VIEW_AUTO_UPDATE</code>, <code>CANVAS_AUTO_UPDATE</code>,
+        <code>SCREEN_AUTO_UPDATE</code>, <code>HEAD_AUTO_UPDATE</code>, or
+        <code>PLATFORM_AUTO_UPDATE</code> flags to control whether changes to
+        the View, its Canvas3D or Screen3D components, the tracked head
+        position, or the ViewPlatform's <code>localToVworld</code> transform
+        are checked automatically with each call to a public method of this
+        class; if a flag is not set, then the application must inform this
+        class of updates to the corresponding data<p></dd>
+<dd><code>screenMap</code> - a writeable Map to hold Screen3D information</dd>
+<dd><code>viewPlatformMap</code> - a writeable Map to hold ViewPlatform information</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getImagePlateToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImagePlateToViewPlatform</h4>
+<pre>public&nbsp;void&nbsp;getImagePlateToViewPlatform(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                        <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vpl,
+                                        <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vpr)</pre>
+<div class="block">Gets the current transforms from image plate coordinates to view
+ platform coordinates and copies them into the given Transform3Ds.<p>
+
+ With a monoscopic canvas the image plate transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left image plate transform, and
+ if the second argument is non-null it receives the right image plate
+ transform.  These transforms are always the same unless a head mounted
+ display driven by a single stereo canvas is in use.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D associated with the image plate</dd>
+<dd><code>ip2vpl</code> - the Transform3D to receive the left transform</dd>
+<dd><code>ip2vpr</code> - the Transform3D to receive the right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getImagePlateToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImagePlateToVworld</h4>
+<pre>public&nbsp;void&nbsp;getImagePlateToVworld(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                  <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vwl,
+                                  <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;ip2vwr)</pre>
+<div class="block">Gets the current transforms from image plate coordinates to virtual
+ world coordinates and copies them into the given Transform3Ds.<p>
+
+ With a monoscopic canvas the image plate transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left image plate transform, and
+ if the second argument is non-null it receives the right image plate
+ transform.  These transforms are always the same unless a head mounted
+ display driven by a single stereo canvas is in use.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D associated with the image plate</dd>
+<dd><code>ip2vwl</code> - the Transform3D to receive the left transform</dd>
+<dd><code>ip2vwr</code> - the Transform3D to receive the right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getCoexistenceToImagePlate-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoexistenceToImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getCoexistenceToImagePlate(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                       <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2ipl,
+                                       <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2ipr)</pre>
+<div class="block">Gets the current transforms from coexistence coordinates to image plate
+ coordinates and copies them into the given Transform3Ds.  The default
+ coexistence centering enable and window movement policies are
+ <code>true</code> and <code>PHYSICAL_WORLD</code> respectively, which
+ will center coexistence coordinates to the middle of the canvas,
+ aligned with the screen (image plate). A movement policy of
+ <code>VIRTUAL_WORLD</code> centers coexistence coordinates to the
+ middle of the screen.<p>
+
+ If coexistence centering is turned off, then canvases and screens can
+ have arbitrary positions with respect to coexistence, set through the
+ the Screen3D <code>trackerBaseToImagePlate</code> transform and the
+ PhysicalEnvironment <code>coexistenceToTrackerBase</code> transform.
+ These are calibration constants used for multiple fixed screen displays.
+ For head mounted displays the transform is determined by the user head
+ position along with calibration parameters found in Screen3D and
+ PhysicalBody. (See the source code for the private method
+ <code>getEyesHMD</code> for more information).<p>
+
+ With a monoscopic canvas the image plate transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left image plate transform, and
+ if the second argument is non-null it receives the right image plate
+ transform.  These transforms are always the same unless a head mounted
+ display driven by a single stereo canvas is in use.<p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D associated with the image plate</dd>
+<dd><code>coe2ipl</code> - the Transform3D to receive the left transform</dd>
+<dd><code>coe2ipr</code> - the Transform3D to receive the right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewPlatformToCoexistence</h4>
+<pre>public&nbsp;void&nbsp;getViewPlatformToCoexistence(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                         <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2coe)</pre>
+<div class="block">Gets the current transform from view platform coordinates to
+ coexistence coordinates and copies it into the given transform.        View
+ platform coordinates are always aligned with coexistence coordinates
+ but may differ in scale and in Y and Z offset.  The scale is derived
+ from the window resize and screen scale policies, while the offset is
+ derived from the view attach policy.<p>
+
+ Java 3D constructs a view from the physical position of the eyes
+ relative to the physical positions of the image plates; it then uses a
+ view platform to position that physical configuration into the virtual
+ world and from there computes the correct projections of the virtual
+ world onto the physical image plates.  Coexistence coordinates are used
+ to place the physical positions of the view platform, eyes, head, image
+ plate, sensors, and tracker base in relation to each other. The view
+ platform is positioned with respect to the virtual world through the
+ scene graph, so the view platform to coexistence transform defines the
+ space in which the virtual world and physical world coexist.<p>
+
+ This method requires a Canvas3D.        A different transform may be returned
+ for each canvas in the view if any of the following apply:<p><ul>
+
+ <li>The window resize policy is <code>PHYSICAL_WORLD</code>, which
+           alters the scale depending upon the width of the canvas.</li><p>
+
+ <li>The screen scale policy is <code>SCALE_SCREEN_SIZE</code>,
+           which alters the scale depending upon the width of the screen
+           associated with the canvas.</li><p>
+
+ <li>A window eyepoint policy of <code>RELATIVE_TO_FIELD_OF_VIEW</code>
+           with a view attach policy of <code>NOMINAL_HEAD</code> in effect,
+           which sets the view platform Z offset in coexistence coordinates
+           based on the width of the canvas.  These are the default policies.
+           The offset also follows the width of the canvas when the
+           <code>NOMINAL_FEET</code> view attach policy is used.</li></ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>vp2coe</code> - the Transform3D to receive the transform</dd>
+</dl>
+</li>
+</ul>
+<a name="getCoexistenceToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoexistenceToViewPlatform</h4>
+<pre>public&nbsp;void&nbsp;getCoexistenceToViewPlatform(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                         <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2vp)</pre>
+<div class="block">Gets the current transform from coexistence coordinates to
+ view platform coordinates and copies it into the given transform.<p>
+
+ This method requires a Canvas3D.        The returned transform may differ
+ across canvases for the same reasons as discussed in the description of
+ <code>getViewPlatformToCoexistence</code>.<p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>coe2vp</code> - the Transform3D to receive the transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-"><code>getViewPlatformToCoexistence(Canvas3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCoexistenceToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoexistenceToVworld</h4>
+<pre>public&nbsp;void&nbsp;getCoexistenceToVworld(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                   <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;coe2vw)</pre>
+<div class="block">Gets the current transform from coexistence coordinates to virtual
+ world coordinates and copies it into the given transform.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.<p>
+
+ This method requires a Canvas3D.        The returned transform may differ
+ across canvases for the same reasons as discussed in the description of
+ <code>getViewPlatformToCoexistence</code>.<p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>coe2vw</code> - the Transform3D to receive the transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-"><code>getViewPlatformToCoexistence(Canvas3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getEyeToImagePlate-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEyeToImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getEyeToImagePlate(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                               <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ipl,
+                               <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ipr)</pre>
+<div class="block">Gets the transforms from eye coordinates to image plate coordinates and
+ copies them into the Transform3Ds specified.<p>
+
+ When head tracking is used the eye positions are taken from the head
+ position and set in relation to the image plates with each Screen3D's
+ <code>trackerBaseToImagePlate</code> transform.        Otherwise the window
+ eyepoint policy is used to derive the eyepoint relative to the image
+ plate.  When using a head mounted display the eye position is
+ determined solely by calibration constants in Screen3D and
+ PhysicalBody; see the source code for the private method
+ <code>getEyesHMD</code> for more information.<p>
+
+ Eye coordinates are always aligned with image plate coordinates, so
+ these transforms are always just translations.  With a monoscopic
+ canvas the eye transform is copied to the first argument and the second
+ argument is not used.  For a stereo canvas the first argument receives
+ the left eye transform, and if the second argument is non-null it
+ receives the right eye transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D associated with the image plate</dd>
+<dd><code>e2ipl</code> - the Transform3D to receive left transform</dd>
+<dd><code>e2ipr</code> - the Transform3D to receive right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getEyeToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEyeToViewPlatform</h4>
+<pre>public&nbsp;void&nbsp;getEyeToViewPlatform(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vpl,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vpr)</pre>
+<div class="block">Gets the current transforms from eye coordinates to view platform
+ coordinates and copies them into the given Transform3Ds.<p>
+
+ With a monoscopic canvas the eye transform is copied to the first
+ argument and the second argument is not used.  For a stereo canvas the
+ first argument receives the left eye transform, and if the second
+ argument is non-null it receives the right eye transform.<p>
+
+ This method requires a Canvas3D.        When using a head mounted display,
+ head tracking with fixed screens, or a window eyepoint policy of
+ <code>RELATIVE_TO_COEXISTENCE</code>, then the transforms returned may
+ be different for each canvas if stereo is not in use and they have
+ different monoscopic view policies.  They may additionally differ in
+ scale across canvases with the <code>PHYSICAL_WORLD</code> window
+ resize policy or the <code>SCALE_SCREEN_SIZE</code> screen scale
+ policy, which alter the scale depending upon the width of the canvas or
+ the width of the screen respectively.<p>
+
+ With window eyepoint policies of <code>RELATIVE_TO_FIELD_OF_VIEW</code>,
+ <code>RELATIVE_TO_SCREEN</code>, or <code>RELATIVE_TO_WINDOW</code>,
+ then the transforms returned may differ across canvases due to
+ the following additional conditions:<p><ul>
+
+ <li>The window eyepoint policy is <code>RELATIVE_TO_WINDOW</code> or
+           <code>RELATIVE_TO_SCREEN</code>, in which case the manual eye
+           position in image plate can be set differently for each
+           canvas.</li><p>
+
+ <li>The window eyepoint policy is <code>RELATIVE_TO_FIELD_OF_VIEW</code>
+           and the view attach policy is <code>NOMINAL_SCREEN</code>, which
+           decouples the view platform's canvas Z offset from the eyepoint's
+           canvas Z offset.</li><p>
+
+ <li>The eyepoint X and Y coordinates are centered in the canvas with a
+           window eyepoint policy of <code>RELATIVE_TO_FIELD_OF_VIEW</code>
+           or <code>RELATIVE_TO_WINDOW</code>, and a window movement policy
+           of <code>VIRTUAL_WORLD</code> centers the view platform's X and Y
+           coordinates to the middle of the screen.</li><p>
+
+ <li>Coexistence centering is set false, which allows each canvas and
+           screen to have a different position with respect to coexistence
+           coordinates.</li></ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>e2vpl</code> - the Transform3D to receive the left transform</dd>
+<dd><code>e2vpr</code> - the Transform3D to receive the right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewPlatformToEye-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewPlatformToEye</h4>
+<pre>public&nbsp;void&nbsp;getViewPlatformToEye(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2el,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;vp2er)</pre>
+<div class="block">Gets the current transforms from view platform coordinates to eye
+ coordinates and copies them into the given Transform3Ds.<p>
+
+ With a monoscopic canvas the eye transform is copied to the first
+ argument and the second argument is not used.  For a stereo canvas the
+ first argument receives the left eye transform, and if the second
+ argument is non-null it receives the right eye transform.<p>
+
+ This method requires a Canvas3D.        The transforms returned may differ
+ across canvases for all the same reasons discussed in the description
+ of <code>getEyeToViewPlatform</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>vp2el</code> - the Transform3D to receive the left transform</dd>
+<dd><code>vp2er</code> - the Transform3D to receive the right transform, or null</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getEyeToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-"><code>getEyeToViewPlatform(Canvas3D, Transform3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getEyeToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEyeToVworld</h4>
+<pre>public&nbsp;void&nbsp;getEyeToVworld(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                           <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vwl,
+                           <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2vwr)</pre>
+<div class="block">Gets the current transforms from eye coordinates to virtual world
+ coordinates and copies them into the given Transform3Ds.<p>
+
+ With a monoscopic canvas the eye transform is copied to the first
+ argument and the second argument is not used.  For a stereo canvas the
+ first argument receives the left eye transform, and if the second
+ argument is non-null it receives the right eye transform.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.<p>
+
+ This method requires a Canvas3D.        The transforms returned may differ
+ across canvases for all the same reasons discussed in the description
+ of <code>getEyeToViewPlatform</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>e2vwl</code> - the Transform3D to receive the left transform</dd>
+<dd><code>e2vwr</code> - the Transform3D to receive the right transform, or null</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getEyeToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-"><code>getEyeToViewPlatform(Canvas3D, Transform3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProjection</h4>
+<pre>public&nbsp;void&nbsp;getProjection(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ccl,
+                          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;e2ccr)</pre>
+<div class="block">Gets the transforms from eye coordinates to clipping coordinates
+ and copies them into the given Transform3Ds.  These transforms take
+ a viewing volume bounded by the physical canvas edges and the
+ physical front and back clip planes and project it into a range
+ bound to [-1.0 .. +1.0] on each of the X, Y, and Z axes.        If a
+ perspective projection has been specified then the physical image
+ plate eye location defines the apex of a viewing frustum;
+ otherwise, the orientation of the image plate determines the
+ direction of a parallel projection.<p>
+
+ With a monoscopic canvas the projection transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left projection transform,
+ and if the second argument is non-null it receives the right
+ projection transform.<p>
+
+ If either of the clip policies <code>VIRTUAL_EYE</code> or
+ <code>VIRTUAL_SCREEN</code> are used, then the View should be attached
+ to a ViewPlatform that is part of a live scene graph and that has its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set; otherwise, a
+ scale factor of 1.0 will be used for the scale factor from virtual
+ world units to view platform units.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>e2ccl</code> - the Transform3D to receive left transform</dd>
+<dd><code>e2ccr</code> - the Transform3D to receive right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getInverseProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInverseProjection</h4>
+<pre>public&nbsp;void&nbsp;getInverseProjection(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2el,
+                                 <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2er)</pre>
+<div class="block">Gets the transforms from clipping coordinates to eye coordinates
+ and copies them into the given Transform3Ds.  These transforms take
+ the clip space volume bounded by the range [-1.0 .. + 1.0] on each
+ of the X, Y, and Z and project it into eye coordinates.<p>
+
+ With a monoscopic canvas the projection transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left projection transform, and
+ if the second argument is non-null it receives the right projection
+ transform.<p>
+
+ If either of the clip policies <code>VIRTUAL_EYE</code> or
+ <code>VIRTUAL_SCREEN</code> are used, then the View should be attached
+ to a ViewPlatform that is part of a live scene graph and that has its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set; otherwise, a
+ scale factor of 1.0 will be used for the scale factor from virtual
+ world units to view platform units.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>cc2el</code> - the Transform3D to receive left transform</dd>
+<dd><code>cc2er</code> - the Transform3D to receive right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getInverseViewPlatformProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInverseViewPlatformProjection</h4>
+<pre>public&nbsp;void&nbsp;getInverseViewPlatformProjection(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                             <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vpl,
+                                             <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vpr)</pre>
+<div class="block">Gets the transforms from clipping coordinates to view platform
+ coordinates and copies them into the given Transform3Ds.        These
+ transforms take the clip space volume bounded by the range
+ [-1.0 .. +1.0] on each of the X, Y, and Z axes and project into
+ the view platform coordinate system.<p>
+
+ With a monoscopic canvas the projection transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left projection transform, and
+ if the second argument is non-null it receives the right projection
+ transform.<p>
+
+ If either of the clip policies <code>VIRTUAL_EYE</code> or
+ <code>VIRTUAL_SCREEN</code> are used, then the View should be attached
+ to a ViewPlatform that is part of a live scene graph and that has its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set; otherwise, a
+ scale factor of 1.0 will be used for the scale factor from virtual
+ world units to view platform units.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>cc2vpl</code> - the Transform3D to receive left transform</dd>
+<dd><code>cc2vpr</code> - the Transform3D to receive right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getInverseVworldProjection-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInverseVworldProjection</h4>
+<pre>public&nbsp;void&nbsp;getInverseVworldProjection(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                       <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vwl,
+                                       <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;cc2vwr)</pre>
+<div class="block">Gets the transforms from clipping coordinates to virtual world
+ coordinates and copies them into the given Transform3Ds.        These
+ transforms take the clip space volume bounded by the range
+ [-1.0 .. +1.0] on each of the X, Y, and Z axes and project into
+ the virtual world.<p>
+
+ With a monoscopic canvas the projection transform is copied to the
+ first argument and the second argument is not used.  For a stereo
+ canvas the first argument receives the left projection transform, and
+ if the second argument is non-null it receives the right projection
+ transform.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>cc2vwl</code> - the Transform3D to receive left transform</dd>
+<dd><code>cc2vwr</code> - the Transform3D to receive right transform, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalFrontClipDistance-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalFrontClipDistance</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalFrontClipDistance(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the front clip distance scaled to physical meters.  This is useful
+ for ensuring that objects positioned relative to a physical coordinate
+ system (such as eye, image plate, or coexistence) will be within the
+ viewable Z depth.  This distance will be relative to either the eye or
+ the image plate depending upon the front clip policy.<p>
+
+ Note that this is not necessarily the clip distance as set by
+ <code>setFrontClipDistance</code>, even when the front clip policy
+ is <code>PHYSICAL_SCREEN</code> or <code>PHYSICAL_EYE</code>.  <i>If
+ the window resize policy is <code>PHYSICAL_WORLD</code>, then physical
+ clip distances as specified are in fact scaled by the ratio of the
+ window width to the screen width.</i> The Java 3D view model does this
+ to prevent the physical clip planes from moving with respect to the
+ virtual world when the window is resized.<p>
+
+ If either of the clip policies <code>VIRTUAL_EYE</code> or
+ <code>VIRTUAL_SCREEN</code> are used, then the View should be attached
+ to a ViewPlatform that is part of a live scene graph and that has its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set; otherwise, a
+ scale factor of 1.0 will be used for the scale factor from virtual
+ world units to view platform units.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the physical front clip distance</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalBackClipDistance-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalBackClipDistance</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalBackClipDistance(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the back clip distance scaled to physical meters.  This is useful
+ for ensuring that objects positioned relative to a physical coordinate
+ system (such as eye, image plate, or coexistence) will be within the
+ viewable Z depth.  This distance will be relative to either the eye or
+ the image plate depending upon the back clip policy.<p>
+
+ Note that this is not necessarily the clip distance as set by
+ <code>setBackClipDistance</code>, even when the back clip policy
+ is <code>PHYSICAL_SCREEN</code> or <code>PHYSICAL_EYE</code>.  <i>If
+ the window resize policy is <code>PHYSICAL_WORLD</code>, then physical
+ clip distances as specified are in fact scaled by the ratio of the
+ window width to the screen width.</i> The Java 3D view model does this
+ to prevent the physical clip planes from moving with respect to the
+ virtual world when the window is resized.<p>
+
+ If either of the clip policies <code>VIRTUAL_EYE</code> or
+ <code>VIRTUAL_SCREEN</code> are used, then the View should be attached
+ to a ViewPlatform that is part of a live scene graph and that has its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set; otherwise, a
+ scale factor of 1.0 will be used for the scale factor from virtual
+ world units to view platform units.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the physical back clip distance</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalToViewPlatformScale-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalToViewPlatformScale</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalToViewPlatformScale(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the scale factor from physical meters to view platform units.<p>
+
+ This method requires a Canvas3D.        A different scale may be returned
+ for each canvas in the view if any of the following apply:<p><ul>
+
+ <li>The window resize policy is <code>PHYSICAL_WORLD</code>, which
+           alters the scale depending upon the width of the canvas.</li><p>
+
+ <li>The screen scale policy is <code>SCALE_SCREEN_SIZE</code>,
+           which alters the scale depending upon the width of the screen
+           associated with the canvas.</li></ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the physical to view platform scale</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalToVirtualScale-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalToVirtualScale</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalToVirtualScale(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the scale factor from physical meters to virtual units.<p>
+
+ This method requires a Canvas3D.        A different scale may be returned
+ across canvases for the same reasons as discussed in the description of
+ <code>getPhysicalToViewPlatformScale</code>.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the physical to virtual scale</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getPhysicalToViewPlatformScale-org.scijava.java3d.Canvas3D-"><code>getPhysicalToViewPlatformScale(Canvas3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalWidth-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalWidth</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalWidth(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the width of the specified canvas scaled to physical meters.  This
+ is derived from the physical screen width as reported by the Screen3D
+ associated with the canvas.  If the screen width is not explicitly set
+ using the <code>setPhysicalScreenWidth</code> method of Screen3D, then
+ Java 3D will derive the screen width based on a screen resolution of 90
+ pixels/inch.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the width of the canvas scaled to physical meters</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalHeight-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalHeight</h4>
+<pre>public&nbsp;double&nbsp;getPhysicalHeight(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Gets the height of the specified canvas scaled to physical meters.  This
+ is derived from the physical screen height as reported by the Screen3D
+ associated with the canvas.  If the screen height is not explicitly set
+ using the <code>setPhysicalScreenHeight</code> method of Screen3D, then
+ Java 3D will derive the screen height based on a screen resolution of 90
+ pixels/inch.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the height of the canvas scaled to physical meters</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalLocation-org.scijava.java3d.Canvas3D-org.scijava.vecmath.Point3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalLocation</h4>
+<pre>public&nbsp;void&nbsp;getPhysicalLocation(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                <a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;location)</pre>
+<div class="block">Gets the location of the specified canvas relative to the image plate
+ origin.  This is derived from the physical screen parameters as
+ reported by the Screen3D associated with the canvas.  If the screen
+ width and height are not explicitly set in Screen3D, then Java 3D will
+ derive those screen parameters based on a screen resolution of 90
+ pixels/inch.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>location</code> - the output position, in meters, of the lower-left
+  corner of the canvas relative to the image plate lower-left corner; Z
+  is always 0.0</dd>
+</dl>
+</li>
+</ul>
+<a name="getPixelLocationInImagePlate-org.scijava.java3d.Canvas3D-int-int-org.scijava.vecmath.Point3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelLocationInImagePlate</h4>
+<pre>public&nbsp;void&nbsp;getPixelLocationInImagePlate(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                         int&nbsp;x,
+                                         int&nbsp;y,
+                                         <a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;location)</pre>
+<div class="block">Gets the location of the AWT pixel value and copies it into the
+ specified Point3d.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>x</code> - the X coordinate of the pixel relative to the upper-left
+  corner of the canvas</dd>
+<dd><code>y</code> - the Y coordinate of the pixel relative to the upper-left
+  corner of the canvas</dd>
+<dd><code>location</code> - the output position, in meters, relative to the
+  lower-left corner of the image plate; Z is always 0.0</dd>
+</dl>
+</li>
+</ul>
+<a name="getSensorToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Sensor-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSensorToVworld</h4>
+<pre>public&nbsp;void&nbsp;getSensorToVworld(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                              <a href="../../../../../org/scijava/java3d/Sensor.html" title="class in org.scijava.java3d">Sensor</a>&nbsp;sensor,
+                              <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;s2vw)</pre>
+<div class="block">Gets a read from the specified sensor and transforms it to virtual
+ world coordinates.  The View must be attached to a ViewPlatform which
+ is part of a live scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.<p>
+
+ This method requires a Canvas3D.        The returned transform may differ
+ across canvases for the same reasons as discussed in the description of
+ <code>getViewPlatformToCoexistence</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sensor</code> - the Sensor instance to read</dd>
+<dd><code>s2vw</code> - the output transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-"><code>getViewPlatformToCoexistence(Canvas3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getTrackerBaseToViewPlatform-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrackerBaseToViewPlatform</h4>
+<pre>public&nbsp;void&nbsp;getTrackerBaseToViewPlatform(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                         <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;tb2vp)</pre>
+<div class="block">Gets the transform from tracker base coordinates to view platform
+ coordinates and copies it into the specified Transform3D.<p>
+
+ This method requires a Canvas3D.        The returned transform may differ
+ across canvases for the same reasons as discussed in the description of
+ <code>getViewPlatformToCoexistence</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>tb2vp</code> - the output transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-"><code>getViewPlatformToCoexistence(Canvas3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getTrackerBaseToVworld-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrackerBaseToVworld</h4>
+<pre>public&nbsp;void&nbsp;getTrackerBaseToVworld(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d,
+                                   <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;tb2vw)</pre>
+<div class="block">Gets the transform from tracker base coordinates to virtual world
+ coordinates and copies it into the specified Transform3D.  The View
+ must be attached to a ViewPlatform which is part of a live scene graph,
+ and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.<p>
+
+ This method requires a Canvas3D.        The returned transform may differ
+ across canvases for the same reasons as discussed in the description of
+ <code>getViewPlatformToCoexistence</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to use</dd>
+<dd><code>tb2vw</code> - the output transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#getViewPlatformToCoexistence-org.scijava.java3d.Canvas3D-org.scijava.java3d.Transform3D-"><code>getViewPlatformToCoexistence(Canvas3D, Transform3D)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="clear--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public static&nbsp;void&nbsp;clear()</pre>
+<div class="block">Release all static memory references held by ViewInfo, if any.  These
+ are the Screen3D and ViewPlatform maps shared by all existing ViewInfo
+ instances if they're not provided by a constructor.  Releasing the
+ screen references effectively releases all canvas references in all
+ ViewInfo instances as well.<p>
+
+ It is safe to continue using existing ViewInfo instances after calling
+ this method; the data in the released maps will be re-derived as
+ needed.</div>
+</li>
+</ul>
+<a name="updateScreen-org.scijava.java3d.Screen3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateScreen</h4>
+<pre>public&nbsp;void&nbsp;updateScreen(<a href="../../../../../org/scijava/java3d/Screen3D.html" title="class in org.scijava.java3d">Screen3D</a>&nbsp;s3d)</pre>
+<div class="block">Arrange for an update of cached screen parameters.  If automatic update
+ has not been enabled, then this method should be called if any of the
+ attributes of the Screen3D have changed.        This method should also be
+ called if the screen changes pixel resolution.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>s3d</code> - the Screen3D to update</dd>
+</dl>
+</li>
+</ul>
+<a name="updateCanvas-org.scijava.java3d.Canvas3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateCanvas</h4>
+<pre>public&nbsp;void&nbsp;updateCanvas(<a href="../../../../../org/scijava/java3d/Canvas3D.html" title="class in org.scijava.java3d">Canvas3D</a>&nbsp;c3d)</pre>
+<div class="block">Arrange for an update of cached canvas parameters.  If automatic update
+ has not been enabled, then this method should be called if any of the
+ attributes of the Canvas3D have changed.        These attributes include the
+ canvas position and size, but do <i>not</i> include the attributes of
+ the associated Screen3D, which are cached separately.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c3d</code> - the Canvas3D to update</dd>
+</dl>
+</li>
+</ul>
+<a name="updateView--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateView</h4>
+<pre>public&nbsp;void&nbsp;updateView()</pre>
+<div class="block">Arrange for an update of cached view parameters.         If automatic update
+ has not been enabled for the View, then this method should be called if
+ any of the attributes of the View associated with this object have
+ changed.<p>
+
+ These do <i>not</i> include the attributes of the existing Canvas3D or
+ Screen3D components of the View, but do include the attributes of all
+ other components such as the PhysicalEnvironment and PhysicalBody, and
+ all attributes of the attached ViewPlatform except for its
+ <code>localToVworld</code> transform.  The screen and canvas components
+ as well as the ViewPlatform's <code>localToVworld</code> are cached
+ separately.<p>
+
+ This method should also be called if the ViewPlatform is replaced with
+ another using the View's <code>attachViewPlatform</code> method, or if
+ any of the <code>setCanvas3D</code>, <code>addCanvas3D</code>,
+ <code>insertCanvas3D</code>, <code>removeCanvas3D</code>, or
+ <code>removeAllCanvas3Ds</code> methods of View are called to change
+ the View's canvas list.<p>
+
+ Calling this method causes most transforms to be re-derived.  It should
+ be used only when necessary.</div>
+</li>
+</ul>
+<a name="updateHead--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateHead</h4>
+<pre>public&nbsp;void&nbsp;updateHead()</pre>
+<div class="block">Arrange for an update of the cached head position if head tracking is
+ enabled.        If automatic update has not enabled for the head position,
+ then this method should be called anytime a new head position is to be
+ read.</div>
+</li>
+</ul>
+<a name="updateViewPlatform--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateViewPlatform</h4>
+<pre>public&nbsp;void&nbsp;updateViewPlatform()</pre>
+<div class="block">Arrange for an update of the cached <code>localToVworld</code>
+ transform of the view platform.        If automatic update has not been
+ enabled for this transform, then this method should be called anytime
+ the view platform has been repositioned in the virtual world and a
+ transform involving virtual world coordinates is desired.<p>
+
+ The View must be attached to a ViewPlatform which is part of a live
+ scene graph, and the ViewPlatform node must have its
+ <code>ALLOW_LOCAL_TO_VWORLD_READ</code> capability set.</div>
+</li>
+</ul>
+<a name="getHeadTrackerToTrackerBase--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeadTrackerToTrackerBase</h4>
+<pre>protected&nbsp;<a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;getHeadTrackerToTrackerBase()</pre>
+<div class="block">Returns a reference to a Transform3D containing the current transform
+ from head tracker coordinates to tracker base coordinates.  It is only
+ called if <code>useHeadTracking</code> returns true and a head position
+ update is specified with <code>updateHead</code> or the
+ <code>HEAD_AUTO_UPDATE</code> constructor flag.<p>
+
+ The default implementation uses the head tracking sensor specified by
+ the View's PhysicalEnvironment, and reads it by calling the sensor's
+ <code>getRead</code> method directly.  The result is a sensor reading
+ that may have been taken at a slightly different time from the one used
+ by the renderer.  This method can be overridden to synchronize the two
+ readings through an external mechanism.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>current head tracker to tracker base transform</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#useHeadTracking--"><code>useHeadTracking()</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#updateHead"><code>updateHead</code></a>, 
+<a href="../../../../../org/scijava/java3d/utils/universe/ViewInfo.html#HEAD_AUTO_UPDATE"><code>HEAD_AUTO_UPDATE</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="useHeadTracking--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>useHeadTracking</h4>
+<pre>protected&nbsp;boolean&nbsp;useHeadTracking()</pre>
+<div class="block">Returns <code>true</code> if head tracking should be used.<p>
+
+ The default implementation returns <code>true</code> if the View's
+ <code>getTrackingEnable</code> method and the PhysicalEnvironment's
+ <code>getTrackingAvailable</code> method both return <code>true</code>.
+ These are the same conditions under which the Java 3D renderer uses
+ head tracking.  This method can be overridden if there is any need to
+ decouple the head tracking status of ViewInfo from the renderer.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if ViewInfo should use head tracking</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewerAvatar.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ViewingPlatform.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/ViewInfo.html" target="_top">Frames</a></li>
+<li><a href="ViewInfo.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

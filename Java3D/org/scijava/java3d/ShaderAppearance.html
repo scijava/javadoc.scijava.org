@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ShaderAppearance (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ShaderAppearance (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Shader.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/ShaderAttribute.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/ShaderAppearance.html" target="_top">Frames</a></li>
+<li><a href="ShaderAppearance.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class ShaderAppearance" class="title">Class ShaderAppearance</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">org.scijava.java3d.Appearance</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.ShaderAppearance</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ShaderAppearance</span>
+extends <a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></pre>
+<div class="block"><p>The ShaderAppearance object defines programmable shading attributes
+ that can be set as a component object of a Shape3D node. The
+ ShaderAppearance rendering state adds the following attributes in
+ addition to those defined by Appearance:</p>
+
+ <ul>
+ <li>Shader program - specifies the shader program...</li>
+
+ <p></p>
+ <li>Shader attribute set - specifies the shader parameters, both as
+ explicit attributes and as implicit bindings to Java 3D
+ state...</li>
+ </ul>
+
+ <p>The ShaderAppearance object modifies the definition of some of the
+ attributes in Appearance:</p>
+
+ <ul>
+ <li>Coloring attributes - XXXXX</li>
+
+ <p></p>
+ <li>Line attributes - XXXXX</li>
+
+ <p></p>
+ <li>Point attributes - XXXXX</li>
+
+ <p></p>
+ <li>Polygon attributes - XXXXX</li>
+
+ <p></p>
+ <li>Rendering attributes - XXXXX</li>
+
+ <p></p>
+ <li>Transparency attributes - XXXXX</li>
+
+ <p></p>
+ <li>Material - XXXXX</li>
+
+ <p></p>
+ <li>Texture - XXXXX</li>
+
+ <p></p>
+ <li>Texture attributes - XXXXX</li>
+
+ <p></p>
+ <li>Texture coordinate generation - XXXXX</li>
+
+ <p></p>
+ <li>Texture unit state - XXXXX</li>
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/ShaderProgram.html" title="class in org.scijava.java3d"><code>ShaderProgram</code></a>, 
+<a href="../../../org/scijava/java3d/ShaderAttributeSet.html" title="class in org.scijava.java3d"><code>ShaderAttributeSet</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#ALLOW_SHADER_ATTRIBUTE_SET_READ">ALLOW_SHADER_ATTRIBUTE_SET_READ</a></span></code>
+<div class="block">Specifies that this ShaderAppearance object allows reading its
+ ShaderAttributeSet component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#ALLOW_SHADER_ATTRIBUTE_SET_WRITE">ALLOW_SHADER_ATTRIBUTE_SET_WRITE</a></span></code>
+<div class="block">Specifies that this ShaderAppearance object allows writing its
+ ShaderAttributeSet component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#ALLOW_SHADER_PROGRAM_READ">ALLOW_SHADER_PROGRAM_READ</a></span></code>
+<div class="block">Specifies that this ShaderAppearance object allows reading its
+ ShaderProgram component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#ALLOW_SHADER_PROGRAM_WRITE">ALLOW_SHADER_PROGRAM_WRITE</a></span></code>
+<div class="block">Specifies that this ShaderAppearance object allows writing its
+ ShaderProgram component information.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Appearance">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></h3>
+<code><a href="../../../org/scijava/java3d/Appearance.html#ALLOW_COLORING_ATTRIBUTES_READ">ALLOW_COLORING_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_COLORING_ATTRIBUTES_WRITE">ALLOW_COLORING_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_LINE_ATTRIBUTES_READ">ALLOW_LINE_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_LINE_ATTRIBUTES_WRITE">ALLOW_LINE_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_MATERIAL_READ">ALLOW_MATERIAL_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_MATERIAL_WRITE">ALLOW_MATERIAL_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_POINT_ATTRIBUTES_READ">ALLOW_POINT_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_POINT_ATTRIBUTES_WRITE">ALLOW_POINT_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_POLYGON_ATTRIBUTES_READ">ALLOW_POLYGON_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_POLYGON_ATTRIBUTES_WRITE">ALLOW_POLYGON_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_RENDERING_ATTRIBUTES_READ">ALLOW_RENDERING_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_RENDERING_ATTRIBUTES_WRITE">ALLOW_RENDERING_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXGEN_READ">ALLOW_TEXGEN_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXGEN_WRITE">ALLOW_TEXGEN_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_ATTRIBUTES_READ">ALLOW_TEXTURE_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_ATTRIBUTES_WRITE">ALLOW_TEXTURE_ATTRIBUTES_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_READ">ALLOW_TEXTURE_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_UNIT_STATE_READ">ALLOW_TEXTURE_UNIT_STATE_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_UNIT_STATE_WRITE">ALLOW_TEXTURE_UNIT_STATE_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TEXTURE_WRITE">ALLOW_TEXTURE_WRITE</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TRANSPARENCY_ATTRIBUTES_READ">ALLOW_TRANSPARENCY_ATTRIBUTES_READ</a>, <a href="../../../org/scijava/java3d/Appearance.html#ALLOW_TRANSPARENCY_ATTRIBUTES_WRITE">ALLOW_TRANSPARENCY_ATTRIBUTES_WRITE</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#ShaderAppearance--">ShaderAppearance</a></span>()</code>
+<div class="block">Constructs a ShaderAppearance component object using defaults for all
+ state variables.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></span>(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ShaderAttributeSet.html" title="class in org.scijava.java3d">ShaderAttributeSet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#getShaderAttributeSet--">getShaderAttributeSet</a></span>()</code>
+<div class="block">Retrieves the current ShaderAttributeSet object.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ShaderProgram.html" title="class in org.scijava.java3d">ShaderProgram</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#getShaderProgram--">getShaderProgram</a></span>()</code>
+<div class="block">Retrieves the current ShaderProgram object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#setShaderAttributeSet-org.scijava.java3d.ShaderAttributeSet-">setShaderAttributeSet</a></span>(<a href="../../../org/scijava/java3d/ShaderAttributeSet.html" title="class in org.scijava.java3d">ShaderAttributeSet</a>&nbsp;shaderAttributeSet)</code>
+<div class="block">Sets the ShaderAttributeSet object to the specified object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/ShaderAppearance.html#setShaderProgram-org.scijava.java3d.ShaderProgram-">setShaderProgram</a></span>(<a href="../../../org/scijava/java3d/ShaderProgram.html" title="class in org.scijava.java3d">ShaderProgram</a>&nbsp;shaderProgram)</code>
+<div class="block">Sets the ShaderProgram object to the specified object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.Appearance">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></h3>
+<code><a href="../../../org/scijava/java3d/Appearance.html#getColoringAttributes--">getColoringAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getLineAttributes--">getLineAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getMaterial--">getMaterial</a>, <a href="../../../org/scijava/java3d/Appearance.html#getPointAttributes--">getPointAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getPolygonAttributes--">getPolygonAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getRenderingAttributes--">getRenderingAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTexCoordGeneration--">getTexCoordGeneration</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTexture--">getTexture</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTextureAttributes--">getTextureAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTextureUnitCount--">getTextureUnitCount</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTextureUnitState--">getTextureUnitState</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTextureUnitState-int-">getTextureUnitState</a>, <a href="../../../org/scijava/java3d/Appearance.html#getTransparencyAttributes--">getTransparencyAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setColoringAttributes-org.scijava.java3d.ColoringAttributes-">setColoringAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setLineAttributes-org.scijava.java3d.LineAttributes-">setLineAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setMaterial-org.scijava.java3d.Material-">setMaterial</a>, <a href="../../../org/scijava/java3d/Appearance.html#setPointAttributes-org.scijava.java3d.PointAttributes-">setPointAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setPolygonAttributes-org.scijava.java3d.PolygonAttributes-">setPolygonAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setRenderingAttributes-org.scijava.java3d.RenderingAttributes-">setRenderingAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTexCoordGeneration-org.scijava.java3d.TexCoordGeneration-">setTexCoordGeneration</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTexture-org.scijava.java3d.Texture-">setTexture</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTextureAttributes-org.scijava.java3d.TextureAttributes-">setTextureAttributes</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTextureUnitState-int-org.scijava.java3d.TextureUnitState-">setTextureUnitState</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTextureUnitState-org.scijava.java3d.TextureUnitState:A-">setTextureUnitState</a>, <a href="../../../org/scijava/java3d/Appearance.html#setTransparencyAttributes-org.scijava.java3d.TransparencyAttributes-">setTransparencyAttributes</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_SHADER_PROGRAM_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SHADER_PROGRAM_READ</h4>
+<pre>public static final&nbsp;int ALLOW_SHADER_PROGRAM_READ</pre>
+<div class="block">Specifies that this ShaderAppearance object allows reading its
+ ShaderProgram component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ShaderAppearance.ALLOW_SHADER_PROGRAM_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SHADER_PROGRAM_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SHADER_PROGRAM_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_SHADER_PROGRAM_WRITE</pre>
+<div class="block">Specifies that this ShaderAppearance object allows writing its
+ ShaderProgram component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ShaderAppearance.ALLOW_SHADER_PROGRAM_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SHADER_ATTRIBUTE_SET_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SHADER_ATTRIBUTE_SET_READ</h4>
+<pre>public static final&nbsp;int ALLOW_SHADER_ATTRIBUTE_SET_READ</pre>
+<div class="block">Specifies that this ShaderAppearance object allows reading its
+ ShaderAttributeSet component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ShaderAppearance.ALLOW_SHADER_ATTRIBUTE_SET_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SHADER_ATTRIBUTE_SET_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_SHADER_ATTRIBUTE_SET_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_SHADER_ATTRIBUTE_SET_WRITE</pre>
+<div class="block">Specifies that this ShaderAppearance object allows writing its
+ ShaderAttributeSet component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.ShaderAppearance.ALLOW_SHADER_ATTRIBUTE_SET_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ShaderAppearance--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ShaderAppearance</h4>
+<pre>public&nbsp;ShaderAppearance()</pre>
+<div class="block">Constructs a ShaderAppearance component object using defaults for all
+ state variables. All component object references are initialized
+ to null.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setShaderProgram-org.scijava.java3d.ShaderProgram-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setShaderProgram</h4>
+<pre>public&nbsp;void&nbsp;setShaderProgram(<a href="../../../org/scijava/java3d/ShaderProgram.html" title="class in org.scijava.java3d">ShaderProgram</a>&nbsp;shaderProgram)</pre>
+<div class="block">Sets the ShaderProgram object to the specified object.  Setting it to
+ null causes a default pass-through shader to be used ???</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>shaderProgram</code> - object that specifies the desired shader program</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getShaderProgram--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getShaderProgram</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ShaderProgram.html" title="class in org.scijava.java3d">ShaderProgram</a>&nbsp;getShaderProgram()</pre>
+<div class="block">Retrieves the current ShaderProgram object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ShaderProgram object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setShaderAttributeSet-org.scijava.java3d.ShaderAttributeSet-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setShaderAttributeSet</h4>
+<pre>public&nbsp;void&nbsp;setShaderAttributeSet(<a href="../../../org/scijava/java3d/ShaderAttributeSet.html" title="class in org.scijava.java3d">ShaderAttributeSet</a>&nbsp;shaderAttributeSet)</pre>
+<div class="block">Sets the ShaderAttributeSet object to the specified object.  Setting it to
+ null is equivalent to specifying an empty set of attributes.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>shaderAttributeSet</code> - object that specifies the desired shader attributes</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getShaderAttributeSet--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getShaderAttributeSet</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ShaderAttributeSet.html" title="class in org.scijava.java3d">ShaderAttributeSet</a>&nbsp;getShaderAttributeSet()</pre>
+<div class="block">Retrieves the current ShaderAttributeSet object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the ShaderAttributeSet object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Appearance.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="duplicateNodeComponent-org.scijava.java3d.NodeComponent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>duplicateNodeComponent</h4>
+<pre>public&nbsp;void&nbsp;duplicateNodeComponent(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+<div class="block">NOTE: Applications should <i>not</i> call this method directly.
+ It should only be called by the cloneNode method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/Appearance.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d">Appearance</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Shader.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/ShaderAttribute.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/ShaderAppearance.html" target="_top">Frames</a></li>
+<li><a href="ShaderAppearance.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

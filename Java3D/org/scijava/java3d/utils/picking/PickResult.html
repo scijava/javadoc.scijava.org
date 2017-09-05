@@ -1,0 +1,876 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PickResult (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="PickResult (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/picking/PickTool.html" title="class in org.scijava.java3d.utils.picking"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/picking/PickResult.html" target="_top">Frames</a></li>
+<li><a href="PickResult.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d.utils.picking</div>
+<h2 title="Class PickResult" class="title">Class PickResult</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.utils.picking.PickResult</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">PickResult</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Stores information about a pick hit.
+ Detailed information about the pick and each intersection of the PickShape
+ with the picked Node can be inquired.  The PickResult is constructed with
+ basic information and more detailed information is generated as needed.  The
+ additional information is only available if capability bits on the scene
+ graph Nodes are set properly;
+ <A HREF="PickTool.html#setCapabilities(org.scijava.java3d.Node, int)">
+ <code>PickTool.setCapabilties(Node, int)</code></A>
+ can
+ be used to ensure correct capabilites are set. Inquiring data which is not
+ available due to capabilties not being set will generate a
+ <code>CapabilityNotSet</code> exception.
+ <p>
+ A PickResult can be used to calculate intersections on Node which is not part
+ of a live scene graph using the constructor which takes a local to VWorld
+ transformation for the Node.
+ <p>
+ Pick hits on TriangleStrip primitives will store the triangle points in the
+ PickIntersection with
+ the verticies in counter-clockwise order. For triangles which start with
+ an odd numbered vertex this will be the the opposite of the
+ order of the points in the TriangleStrip.
+ This way the triangle in
+ the PickIntersection will display the same was as the triangle in the
+ strip.
+ <p>
+ If the Shape3D being picked has multiple geometry arrays, the arrays are
+ stored in the PickResult and referred to by a geometry index.
+ <p>
+ If the Shape3D refers to a CompressedGeometry, the geometry is decompressed
+ into an array of Shape3D nodes which can be inquired.  The geometry
+ NodeComponents for the Shape3D nodes are stored and used as if the Shape3D
+ had multiple geometries.  If there are multiple CompressedGeometries on the
+ Shape3D, the decompressed Shape3Ds and GeometryArrays will be stored
+ sequentially.
+ <p>
+ The intersection point for Morph nodes cannot be calculated using the
+ displayed geometry
+ due to limitations in  the current Java3D core API (the current
+ geometry of the the Morph cannot be inquired).  Instead
+ the geometry at index 0 in the Morph is used. This limitation may
+ be eliminated in a future release of Java3D.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#BRANCH_GROUP">BRANCH_GROUP</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>BranchGroup</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#GROUP">GROUP</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Group</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#LINK">LINK</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Link</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#MORPH">MORPH</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Morph</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#PRIMITIVE">PRIMITIVE</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+
+ to return a
+ <code>Primitive</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#SHAPE3D">SHAPE3D</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Shape3D</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#SWITCH">SWITCH</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Switch</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#TRANSFORM_GROUP">TRANSFORM_GROUP</a></span></code>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>TransformGroup</code> node from
+ the <code>SceneGraphPath</code>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#PickResult-org.scijava.java3d.Node-org.scijava.java3d.Transform3D-org.scijava.java3d.PickShape-">PickResult</a></span>(<a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;pn,
+          <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;l2vw,
+          <a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a>&nbsp;ps)</code>
+<div class="block">Construct a PickResult using the Node and localToVWorld transform</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#PickResult-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.PickShape-">PickResult</a></span>(<a href="../../../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;sgp,
+          <a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a>&nbsp;ps)</code>
+<div class="block">Construct a PickResult using a SceneGraphPath</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking">PickIntersection</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getClosestIntersection-org.scijava.vecmath.Point3d-">getClosestIntersection</a></span>(<a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;pt)</code>
+<div class="block">Gets the PickIntersection in this PickResult that is closest to a point</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getCompressedGeometryShape3Ds--">getCompressedGeometryShape3Ds</a></span>()</code>
+<div class="block">Get the array of Shape3Ds that came from decompressing a
+      CompressedGeometry on the picked node.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getFirstPickEnable--">getFirstPickEnable</a></span>()</code>
+<div class="block">Return the "first intersection only" value.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/GeometryArray.html" title="class in org.scijava.java3d">GeometryArray</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getGeometryArray--">getGeometryArray</a></span>()</code>
+<div class="block">Get the GeometryArray at index 0 for the picked node</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/GeometryArray.html" title="class in org.scijava.java3d">GeometryArray</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getGeometryArrays--">getGeometryArrays</a></span>()</code>
+<div class="block">Get the array of GeometryArrays for the picked node</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking">PickIntersection</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getIntersection-int-">getIntersection</a></span>(int&nbsp;index)</code>
+<div class="block">Returns a specific PickIntersection object</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getLocalToVworld--">getLocalToVworld</a></span>()</code>
+<div class="block">Get the localToVworld transform for the Node</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getNode-int-">getNode</a></span>(int&nbsp;flags)</code>
+<div class="block">Get the first node of a certain type up the SceneGraphPath</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getObject--">getObject</a></span>()</code>
+<div class="block">Get the picked node</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getPickShape--">getPickShape</a></span>()</code>
+<div class="block">Get the PickShape used for intersections</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#getSceneGraphPath--">getSceneGraphPath</a></span>()</code>
+<div class="block">Get the SceneGraphPath.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#numCompressedGeometryShape3Ds--">numCompressedGeometryShape3Ds</a></span>()</code>
+<div class="block">Get the number of Shape3Ds that came from decompressing a
+      CompressedGeometry on the picked node.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#numGeometryArrays--">numGeometryArrays</a></span>()</code>
+<div class="block">Get the number of GeometryArrays for the picked node</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#numIntersections--">numIntersections</a></span>()</code>
+<div class="block">Returns the number of PickIntersections in the PickResult.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#setFirstIntersectOnly-boolean-">setFirstIntersectOnly</a></span>(boolean&nbsp;flag)</code>
+<div class="block">Set the PickResult to find only the first intersection of the PickShape
+ with the Node.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/picking/PickResult.html#toString--">toString</a></span>()</code>
+<div class="block">Returns String representation</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="SHAPE3D">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SHAPE3D</h4>
+<pre>public static final&nbsp;int SHAPE3D</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Shape3D</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.SHAPE3D">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="MORPH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MORPH</h4>
+<pre>public static final&nbsp;int MORPH</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Morph</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.MORPH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PRIMITIVE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PRIMITIVE</h4>
+<pre>public static final&nbsp;int PRIMITIVE</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+
+ to return a
+ <code>Primitive</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.PRIMITIVE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LINK">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LINK</h4>
+<pre>public static final&nbsp;int LINK</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Link</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.LINK">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GROUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GROUP</h4>
+<pre>public static final&nbsp;int GROUP</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Group</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.GROUP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="TRANSFORM_GROUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TRANSFORM_GROUP</h4>
+<pre>public static final&nbsp;int TRANSFORM_GROUP</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>TransformGroup</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.TRANSFORM_GROUP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="BRANCH_GROUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BRANCH_GROUP</h4>
+<pre>public static final&nbsp;int BRANCH_GROUP</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>BranchGroup</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.BRANCH_GROUP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SWITCH">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SWITCH</h4>
+<pre>public static final&nbsp;int SWITCH</pre>
+<div class="block">Flag to pass to
+ <CODE>getNode(int)</CODE>
+ to return a
+ <code>Switch</code> node from
+ the <code>SceneGraphPath</code>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.utils.picking.PickResult.SWITCH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="PickResult-org.scijava.java3d.SceneGraphPath-org.scijava.java3d.PickShape-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PickResult</h4>
+<pre>public&nbsp;PickResult(<a href="../../../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;sgp,
+                  <a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a>&nbsp;ps)</pre>
+<div class="block">Construct a PickResult using a SceneGraphPath</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sgp</code> - SceneGraphPath associated with this PickResult</dd>
+<dd><code>ps</code> - The pickShape to intersect against</dd>
+</dl>
+</li>
+</ul>
+<a name="PickResult-org.scijava.java3d.Node-org.scijava.java3d.Transform3D-org.scijava.java3d.PickShape-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PickResult</h4>
+<pre>public&nbsp;PickResult(<a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;pn,
+                  <a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;l2vw,
+                  <a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a>&nbsp;ps)</pre>
+<div class="block">Construct a PickResult using the Node and localToVWorld transform</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pn</code> - The picked node.</dd>
+<dd><code>l2vw</code> - The local to VWorld transformation for the node</dd>
+<dd><code>ps</code> - The PickShape to intersect against</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If the node is not a Morph or Shape3D.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getSceneGraphPath--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSceneGraphPath</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;getSceneGraphPath()</pre>
+<div class="block">Get the SceneGraphPath. This will be null if the non SceneGraphPath
+  constructor was used.</div>
+</li>
+</ul>
+<a name="getLocalToVworld--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLocalToVworld</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;getLocalToVworld()</pre>
+<div class="block">Get the localToVworld transform for the Node</div>
+</li>
+</ul>
+<a name="getGeometryArray--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGeometryArray</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/GeometryArray.html" title="class in org.scijava.java3d">GeometryArray</a>&nbsp;getGeometryArray()</pre>
+<div class="block">Get the GeometryArray at index 0 for the picked node</div>
+</li>
+</ul>
+<a name="getGeometryArrays--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGeometryArrays</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/GeometryArray.html" title="class in org.scijava.java3d">GeometryArray</a>[]&nbsp;getGeometryArrays()</pre>
+<div class="block">Get the array of GeometryArrays for the picked node</div>
+</li>
+</ul>
+<a name="numGeometryArrays--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numGeometryArrays</h4>
+<pre>public&nbsp;int&nbsp;numGeometryArrays()</pre>
+<div class="block">Get the number of GeometryArrays for the picked node</div>
+</li>
+</ul>
+<a name="numCompressedGeometryShape3Ds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numCompressedGeometryShape3Ds</h4>
+<pre>public&nbsp;int&nbsp;numCompressedGeometryShape3Ds()</pre>
+<div class="block">Get the number of Shape3Ds that came from decompressing a
+      CompressedGeometry on the picked node.</div>
+</li>
+</ul>
+<a name="getCompressedGeometryShape3Ds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompressedGeometryShape3Ds</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Shape3D.html" title="class in org.scijava.java3d">Shape3D</a>[]&nbsp;getCompressedGeometryShape3Ds()</pre>
+<div class="block">Get the array of Shape3Ds that came from decompressing a
+      CompressedGeometry on the picked node.</div>
+</li>
+</ul>
+<a name="getPickShape--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPickShape</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/PickShape.html" title="class in org.scijava.java3d">PickShape</a>&nbsp;getPickShape()</pre>
+<div class="block">Get the PickShape used for intersections</div>
+</li>
+</ul>
+<a name="setFirstIntersectOnly-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFirstIntersectOnly</h4>
+<pre>public&nbsp;void&nbsp;setFirstIntersectOnly(boolean&nbsp;flag)</pre>
+<div class="block">Set the PickResult to find only the first intersection of the PickShape
+ with the Node. The default is <code>false</code> (all intersections are
+ found)</div>
+</li>
+</ul>
+<a name="getFirstPickEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFirstPickEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getFirstPickEnable()</pre>
+<div class="block">Return the "first intersection only" value.</div>
+</li>
+</ul>
+<a name="numIntersections--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numIntersections</h4>
+<pre>public&nbsp;int&nbsp;numIntersections()</pre>
+<div class="block">Returns the number of PickIntersections in the PickResult.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of intersections</dd>
+</dl>
+</li>
+</ul>
+<a name="getIntersection-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIntersection</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking">PickIntersection</a>&nbsp;getIntersection(int&nbsp;index)</pre>
+<div class="block">Returns a specific PickIntersection object</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - the index number</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the PickIntersection referenced by the index number</dd>
+</dl>
+</li>
+</ul>
+<a name="getClosestIntersection-org.scijava.vecmath.Point3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClosestIntersection</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking">PickIntersection</a>&nbsp;getClosestIntersection(<a href="../../../../../org/scijava/vecmath/Point3d.html" title="class in org.scijava.vecmath">Point3d</a>&nbsp;pt)</pre>
+<div class="block">Gets the PickIntersection in this PickResult that is closest to a point</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pt</code> - the point to use for distance calculations</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the closest PickIntersection object</dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">Returns String representation</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>string representation of this object</dd>
+</dl>
+</li>
+</ul>
+<a name="getObject--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObject</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;getObject()</pre>
+<div class="block">Get the picked node</div>
+</li>
+</ul>
+<a name="getNode-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getNode</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;getNode(int&nbsp;flags)</pre>
+<div class="block">Get the first node of a certain type up the SceneGraphPath</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>flags</code> - the type of node we are interested in</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a Node object</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/scijava/java3d/utils/picking/PickIntersection.html" title="class in org.scijava.java3d.utils.picking"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../org/scijava/java3d/utils/picking/PickTool.html" title="class in org.scijava.java3d.utils.picking"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/picking/PickResult.html" target="_top">Frames</a></li>
+<li><a href="PickResult.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

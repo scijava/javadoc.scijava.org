@@ -1,0 +1,1100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ConfigContainer (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ConfigContainer (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ConfiguredUniverse.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/ConfigContainer.html" target="_top">Frames</a></li>
+<li><a href="ConfigContainer.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d.utils.universe</div>
+<h2 title="Class ConfigContainer" class="title">Class ConfigContainer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.utils.universe.ConfigContainer</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ConfigContainer</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Loads a Java 3D configuration file and creates a container of named objects
+ that will effect the viewing configuration specified in the file.  These
+ can include Viewers, ViewingPlatforms, ViewPlatformBehaviors, InputDevices,
+ Sensors, and other objects.<p>
+
+ Clients can construct the view side of a scene graph by retrieving these
+ objects using the accessor methods provided by this class.  This could
+ involve as little as just attaching ViewingPlatforms to a Locale, depending
+ upon how completely the viewing configuration is specified in the file.
+ The ConfiguredUniverse class is an example of a ConfigContainer client and
+ how it can be used.<p>
+
+ ConfigContainer can be useful for clients other than ConfiguredUniverse.
+ InputDevice and ViewPlatformBehavior configuration is fully supported, so a
+ given Java 3D installation can provide configuration files to an
+ application that will allow it to fully utilize whatever site-specific
+ devices and behaviors are available.  The configuration mechanism can be
+ extended for any target object through the use of the
+ <code>NewObject</code> and <code>ObjectProperty</code> configuration
+ commands.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3.1</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ConfiguredUniverse.html" title="class in org.scijava.java3d.utils.universe"><code>ConfiguredUniverse</code></a>, 
+<a href="doc-files/config-syntax.html">
+      The Java 3D Configuration File</a>, 
+<a href="doc-files/config-examples.html">
+      Example Configuration Files</a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#ConfigContainer-java.net.URL-">ConfigContainer</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</code>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#ConfigContainer-java.net.URL-boolean-int-">ConfigContainer</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+               boolean&nbsp;setVisible,
+               int&nbsp;transformCount)</code>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#ConfigContainer-java.net.URL-boolean-int-java.lang.ClassLoader-">ConfigContainer</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+               boolean&nbsp;setVisible,
+               int&nbsp;transformCount,
+               <a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</code>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#ConfigContainer-java.net.URL-java.lang.ClassLoader-">ConfigContainer</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+               <a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</code>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#clear--">clear</a></span>()</code>
+<div class="block">Release memory references used by this ConfigContainer.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getConfigURL--">getConfigURL</a></span>()</code>
+<div class="block">Returns the config file URL based on system properties.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getConfigURL-java.lang.String-">getConfigURL</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultURLString)</code>
+<div class="block">Returns the config file URL based on system properties.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getGenericObjects--">getGenericObjects</a></span>()</code>
+<div class="block">Returns a read-only Set of all generic configuration object
+ instances in the order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getInputDevices--">getInputDevices</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured InputDevice instances in the
+ order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedCanvases-java.lang.String-">getNamedCanvases</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;viewName)</code>
+<div class="block">Returns a read-only Map containing the named Canvas3D instances used by
+ the specified Viewer.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedGenericObjects--">getNamedGenericObjects</a></span>()</code>
+<div class="block">Returns a read-only Map that maps generic object names to
+ instances.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedInputDevices--">getNamedInputDevices</a></span>()</code>
+<div class="block">Returns a read-only Map that maps InputDevice names to instances.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedPhysicalBodies--">getNamedPhysicalBodies</a></span>()</code>
+<div class="block">Returns a read-only Map that maps PhysicalBody names to instances.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedPhysicalEnvironments--">getNamedPhysicalEnvironments</a></span>()</code>
+<div class="block">Returns a read-only Map that maps PhysicalEnvironment names to
+ instances.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedSensors--">getNamedSensors</a></span>()</code>
+<div class="block">Returns a read-only Map that maps Sensor names to instances.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedViewers--">getNamedViewers</a></span>()</code>
+<div class="block">Returns a read-only Map that maps Viewer names to instances.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedViewingPlatforms--">getNamedViewingPlatforms</a></span>()</code>
+<div class="block">Returns a read-only Map that maps ViewingPlatform names to instances.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getNamedViewPlatformBehaviors--">getNamedViewPlatformBehaviors</a></span>()</code>
+<div class="block">Returns a read-only Map that maps ViewPlatformBehavior names to
+ instances.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getPhysicalBodies--">getPhysicalBodies</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured PhysicalBody instances in the
+ order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getPhysicalEnvironments--">getPhysicalEnvironments</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured PhysicalEnvironment instances
+ in the order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getSensors--">getSensors</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured Sensor instances in the order
+ they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewers--">getViewers</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured Viewer instances in the order
+ they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewerVisibility--">getViewerVisibility</a></span>()</code>
+<div class="block">Returns whether Viewers should be created with their AWT components
+ initially visible or invisible.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewingPlatforms--">getViewingPlatforms</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured ViewingPlatform instances in
+ the order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewPlatformBehaviors--">getViewPlatformBehaviors</a></span>()</code>
+<div class="block">Returns a read-only Set of all configured ViewPlatformBehavior
+ instances in the order they were defined in the configuration file.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewPlatformTransformCount--">getViewPlatformTransformCount</a></span>()</code>
+<div class="block">Returns the number of TransformGroups with which ViewingPlatforms
+ should be created.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ConfigContainer-java.net.URL-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ConfigContainer</h4>
+<pre>public&nbsp;ConfigContainer(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig)</pre>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.  All ViewingPlatform instances are created with a single
+ TransformGroup and all Viewer components are initially invisible.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userConfig</code> - URL of the configuration file to load</dd>
+</dl>
+</li>
+</ul>
+<a name="ConfigContainer-java.net.URL-java.lang.ClassLoader-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ConfigContainer</h4>
+<pre>public&nbsp;ConfigContainer(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+                       <a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</pre>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.  All ViewingPlatform instances are created with a single
+ TransformGroup and all Viewer components are initially invisible.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userConfig</code> - URL of the configuration file to load</dd>
+<dd><code>classLoader</code> - the class loader to use to load classes specified
+ in the config file.</dd>
+</dl>
+</li>
+</ul>
+<a name="ConfigContainer-java.net.URL-boolean-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ConfigContainer</h4>
+<pre>public&nbsp;ConfigContainer(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+                       boolean&nbsp;setVisible,
+                       int&nbsp;transformCount)</pre>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.  Any ViewingPlatform instantiated by the configuration
+ file will be created with the specified number of transforms.  Viewer
+ components may be set initially visible or invisible with the
+ <code>setVisible</code> flag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userConfig</code> - URL of the configuration file to load</dd>
+<dd><code>setVisible</code> - if true, <code>setVisible(true)</code> is called on
+  all Viewers</dd>
+<dd><code>transformCount</code> - number of transforms to be included in any
+  ViewingPlatform created; must be greater than 0</dd>
+</dl>
+</li>
+</ul>
+<a name="ConfigContainer-java.net.URL-boolean-int-java.lang.ClassLoader-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ConfigContainer</h4>
+<pre>public&nbsp;ConfigContainer(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;userConfig,
+                       boolean&nbsp;setVisible,
+                       int&nbsp;transformCount,
+                       <a href="http://javadoc.imagej.net/Java/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</pre>
+<div class="block">Creates a new ConfigContainer and loads the configuration file at the
+ specified URL.  Any ViewingPlatform instantiated by the configuration
+ file will be created with the specified number of transforms.  Viewer
+ components may be set initially visible or invisible with the
+ <code>setVisible</code> flag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userConfig</code> - URL of the configuration file to load</dd>
+<dd><code>setVisible</code> - if true, <code>setVisible(true)</code> is called on
+  all Viewers</dd>
+<dd><code>transformCount</code> - number of transforms to be included in any
+  ViewingPlatform created; must be greater than 0</dd>
+<dd><code>classLoader</code> - the class loader to use to load classes specified
+ in the config file.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getPhysicalBodies--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalBodies</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getPhysicalBodies()</pre>
+<div class="block">Returns a read-only Set of all configured PhysicalBody instances in the
+ order they were defined in the configuration file.
+
+ PhysicalBody instances are created with the following command:<p>
+ <blockquote>
+ (NewPhysicalBody <i>&lt;instance name&gt;</i>
+ [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ The PhysicalBody is configured through the following command:<p>
+ <blockquote>
+ (PhysicalBodyProperty <i>&lt;instance name&gt;
+ &lt;property name&gt; &lt;property value&gt;</i>)
+ </blockquote></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedPhysicalBodies--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedPhysicalBodies</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedPhysicalBodies()</pre>
+<div class="block">Returns a read-only Map that maps PhysicalBody names to instances.
+ Names may be aliases and if so will map to the original instances.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to PhysicalBody instances, or null if
+  no instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getPhysicalEnvironments--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPhysicalEnvironments</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getPhysicalEnvironments()</pre>
+<div class="block">Returns a read-only Set of all configured PhysicalEnvironment instances
+ in the order they were defined in the configuration file.<p>
+
+ PhysicalEnvironment instances are created with the following command:<p>
+ <blockquote>
+ (NewPhysicalEnvironment <i>&lt;instance name&gt;</i>
+ [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ The PhysicalEnvironment is configured through the following command:<p>
+ <blockquote>
+ (PhysicalEnvironmentProperty <i>&lt;instance name&gt;
+ &lt;property name&gt; &lt;property value&gt;</i>)
+ </blockquote></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedPhysicalEnvironments--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedPhysicalEnvironments</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedPhysicalEnvironments()</pre>
+<div class="block">Returns a read-only Map that maps PhysicalEnvironment names to
+ instances.  Names may be aliases and if so will map to the original
+ instances.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to PhysicalEnvironment instances, or
+  null if no instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewers--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewers</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getViewers()</pre>
+<div class="block">Returns a read-only Set of all configured Viewer instances in the order
+ they were defined in the configuration file.  The Viewers will have
+ incorporated any PhysicalEnvironment and PhysicalBody objects specfied
+ for them in the configuration file, and will be attached to any
+ ViewingPlatforms specified for them.<p>
+
+ Viewer instances are created with the following command:<p>
+ <blockquote>
+ (NewView <i>&lt;instance name&gt;</i> [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ The Viewer is configured through the following command:<p>
+ <blockquote>
+ (ViewProperty <i>&lt;instance name&gt;
+ &lt;property name&gt; &lt;property value&gt;</i>)
+ </blockquote></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedViewers--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedViewers</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedViewers()</pre>
+<div class="block">Returns a read-only Map that maps Viewer names to instances.
+ Names may be aliases and if so will map to the original instances.
+ The Viewers will have incorporated any PhysicalEnvironment and
+ PhysicalBody objects specfied for them in the configuration file, and
+ will be attached to any ViewingPlatforms specified for them.<p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to Viewer instances, or
+  null if no instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getInputDevices--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInputDevices</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getInputDevices()</pre>
+<div class="block">Returns a read-only Set of all configured InputDevice instances in the
+ order they were defined in the configuration file.  All InputDevice
+ instances in the set are initialized and registered with any
+ PhysicalEnvironments that reference them.<p>
+
+ InputDevice instances are created with the following command:<p>
+ <blockquote>
+ (NewDevice <i>&lt;instanceName&gt; &lt;className&gt;</i>
+ [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ <i>className</i> must be the fully-qualified name of a class that
+ implements the InputDevice interface.  The implementation
+ must provide a parameterless constructor.<p>
+
+ The InputDevice is configured through the DeviceProperty command:<p>
+ <blockquote>
+ (DeviceProperty <i>&lt;instanceName&gt; &lt;propertyName&gt;
+  &lt;arg0&gt; ... &lt;argn&gt;</i>)
+ </blockquote>
+
+ <i>propertyName</i> must be the name of a input device method that
+ takes an array of Objects as its only parameter; the array is populated
+ with the values of <i>arg0</i> through <i>argn</i> when the method is
+ invoked to set the property.  These additional requirements for
+ configurable input devices can usually be fulfilled by extending or
+ wrapping available InputDevice implementations.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedInputDevices--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedInputDevices</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedInputDevices()</pre>
+<div class="block">Returns a read-only Map that maps InputDevice names to instances.
+ Names may be aliases and if so will map to the original instances.  All
+ InputDevice instances in the map are initialized and registered with
+ any PhysicalEnvironments that reference them.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to InputDevice instances, or
+  null if no instances</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getInputDevices--"><code>getInputDevices()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getSensors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSensors</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getSensors()</pre>
+<div class="block">Returns a read-only Set of all configured Sensor instances in the order
+ they were defined in the configuration file.  The associated
+ InputDevices are all initialized and registered with any
+ PhysicalEnvironments that reference them.<p>
+
+ Sensor instances are named with the following command:<p>
+ <blockquote>
+ (NewSensor <i>&lt;instance name&gt; &lt;device name&gt;
+ &lt;sensor index&gt;</i> [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ <i>device name</i> is the instance name of a previously defined
+ InputDevice, and <i>sensor index</i> is the index of the Sensor to be
+ bound to <i>instance name</i>.  The InputDevice implementation is
+ responsible for creating its own Sensor objects, so this command does
+ not create any new instances.<p>
+
+ The Sensor is configured through the SensorProperty command:<p>
+ <blockquote>
+ (SensorProperty <i>&lt;instance name&gt; &lt;property name&gt;
+ &lt;property value&gt;</i>)
+ </blockquote>
+
+ With the sole exception of the Sensor assigned to the head tracker,
+ none of the Sensors defined in the configuration file are placed into
+ the Sensor array maintained by a PhysicalEnvironment.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedSensors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedSensors</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedSensors()</pre>
+<div class="block">Returns a read-only Map that maps Sensor names to instances.  Names may
+ be aliases and if so will map to the original instances.  The
+ associated InputDevices are all initialized and registered with any
+ PhysicalEnvironments that reference them.<p>
+
+ With the sole exception of the Sensor assigned to the head tracker,
+ none of the Sensors defined in the configuration file are placed into
+ the Sensor array maintained by a PhysicalEnvironment.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to Sensor instances, or
+  null if no instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewingPlatforms--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewingPlatforms</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getViewingPlatforms()</pre>
+<div class="block">Returns a read-only Set of all configured ViewingPlatform instances in
+ the order they were defined in the configuration file.  The
+ ConfigContainer class itself does not attach the ViewingPlatform
+ instances to any scengraph components or universe Locales; they are not
+ "live" until made so by a separate client such as ConfiguredUniverse.
+
+ ViewingPlatform instances are created with the following command:<p>
+ <blockquote>
+ (NewViewPlatform <i>&lt;instance name&gt;</i>
+ [Alias <i>&lt;alias name&gt;</i>])
+ </blockquote>
+
+ The ViewingPlatform is configured through the following command:<p>
+ <blockquote>
+ (ViewPlatformProperty <i>&lt;instance name&gt; &lt;property name&gt;
+ &lt;property value&gt;</i>)
+ </blockquote></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedViewingPlatforms--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedViewingPlatforms</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedViewingPlatforms()</pre>
+<div class="block">Returns a read-only Map that maps ViewingPlatform names to instances.
+ Names may be aliases and if so will map to the original instances.  The
+ ConfigContainer class itself does not attach the ViewingPlatform
+ instances to any scengraph components or universe Locales; they are not
+ "live" until made so by a separate client such as ConfiguredUniverse.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to ViewingPlatform instances, or
+  null if no instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewPlatformBehaviors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewPlatformBehaviors</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getViewPlatformBehaviors()</pre>
+<div class="block">Returns a read-only Set of all configured ViewPlatformBehavior
+ instances in the order they were defined in the configuration file.<p>
+
+ The behaviors are attached to any ViewingPlatforms that specified them;
+ that is, the <code>setViewPlatformBehavior</code> and
+ <code>setViewingPlatform</code> methods of ViewingPlatform and
+ ViewPlatformBehavior have been called if appropriate.  However, a
+ behavior's <code>initialize</code> method is not called until the
+ ViewingPlatform to which it is attached is made live.<p>
+
+ ViewPlatformBehavior instances are created by the following command:<p>
+ <blockquote>
+ (NewViewPlatformBehavior <i>&lt;instanceName&gt; &lt;className&gt;</i>)
+ </blockquote>
+
+ <i>className</i> must be the fully qualified name of a concrete class
+ that extends the abstract ViewPlatformBehavior class.  The
+ implementation must provide a parameterless constructor.<p>
+
+ The behavior is configured using ViewPlatformBehaviorProperty:<p>
+ <blockquote>
+ (ViewPlatformBehaviorProperty <i>&lt;instanceName&gt;
+  &lt;propertyName&gt; &lt;arg0&gt; ... &lt;argn&gt;</i>)
+ </blockquote>
+
+ ViewPlatformBehavior subclasses inherit a number of pre-defined
+ properties that can be directly specified with the <i>propertyName</i>
+ string; see the configuration file documentation for details.<p>
+
+ Concrete ViewPlatformBehavior instances can also define their own
+ unique properties.  In those cases, <i>propertyName</i> must be the
+ name of a behavior method that takes an array of Objects as its only
+ parameter; the array is populated with the values of <i>arg0</i>
+ through <i>argn</i> when the method is invoked to set the property.
+ These additional requirements for configurable behaviors can usually be
+ fulfilled by extending or wrapping available ViewPlatformBehavior
+ subclasses.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedViewPlatformBehaviors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedViewPlatformBehaviors</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedViewPlatformBehaviors()</pre>
+<div class="block">Returns a read-only Map that maps ViewPlatformBehavior names to
+ instances.  Names may be aliases and if so will map to the original
+ instances.<p>
+
+ The behaviors are attached to any ViewingPlatforms that specified them;
+ that is, the <code>setViewPlatformBehavior</code> and
+ <code>setViewingPlatform</code> methods of ViewingPlatform and
+ ViewPlatformBehavior have been called if appropriate.  However, a
+ behavior's <code>initialize</code> method is not called until the
+ ViewingPlatform to which it is attached is made live.<p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to ViewPlatformBehavior instances, or
+  null if no instances</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getViewPlatformBehaviors--"><code>getViewPlatformBehaviors()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedCanvases-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedCanvases</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedCanvases(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;viewName)</pre>
+<div class="block">Returns a read-only Map containing the named Canvas3D instances used by
+ the specified Viewer.  Names may be aliases and if so will map to the
+ original instances.  The set of unique Canvas3D instances used by a
+ Viewer may be obtained by calling the Viewer's accessor methods
+ directly.<p>
+
+ A named Canvas3D is created and added to a Viewer whenever any of the
+ following configuration commands are used:<p>
+ <blockquote>
+ (ViewProperty <i>&lt;view&gt;</i> Screen <i>&lt;screenName&gt;</i>)<br>
+ (ViewProperty <i>&lt;view&gt;</i> Window <i>&lt;windowName&gt;</i>)
+ </blockquote>
+
+ <i>view</i> is the name of a Viewer created with the NewView command.
+ The <i>screenName</i> and <i>windowName</i> parameters of the above
+ commands are the keys to use when looking up the associated Canvas3D
+ instances in the Map returned by this method.  <b>Note:</b> the
+ NewScreen and NewWindow commands do <i>not</i> create Canvas3D
+ instances themselves; they are created only by the above configuration
+ commands.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>viewName</code> - the name of the Viewer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map containing the Viewer's named Canvas3D instances</dd>
+</dl>
+</li>
+</ul>
+<a name="getGenericObjects--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGenericObjects</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&nbsp;getGenericObjects()</pre>
+<div class="block">Returns a read-only Set of all generic configuration object
+ instances in the order they were defined in the configuration file.<p>
+
+ Generic object instances are created with the following command:<p>
+ <blockquote>
+ (NewObject <i>&lt;instanceName&gt; &lt;className&gt;</i>)
+ </blockquote>
+
+ <i>className</i> must be the fully-qualified name of a class that
+ provides a parameterless constructor.<p>
+
+ The object is configured through the ObjectProperty command:<p>
+ <blockquote>
+ (ObjectProperty <i>&lt;instanceName&gt; &lt;propertyName&gt;
+  &lt;arg0&gt; ... &lt;argn&gt;</i>)
+ </blockquote>
+
+ <i>propertyName</i> must be the name of a method provided by object
+ <i>instanceName</i>.  It must take an array of Objects as its only
+ parameter; the array is populated with the values of <i>arg0</i>
+ through <i>argn</i> when the method is invoked to set the property.
+ These additional requirements for configurable objects can usually be
+ fulfilled by extending or wrapping available object classes.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Set of all unique instances, or null</dd>
+</dl>
+</li>
+</ul>
+<a name="getNamedGenericObjects--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNamedGenericObjects</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;getNamedGenericObjects()</pre>
+<div class="block">Returns a read-only Map that maps generic object names to
+ instances.  Names may be aliases and if so will map to the original
+ instances.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read-only Map from names to generic object instances, or
+  null if no instances</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/scijava/java3d/utils/universe/ConfigContainer.html#getGenericObjects--"><code>getGenericObjects()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getViewPlatformTransformCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewPlatformTransformCount</h4>
+<pre>public&nbsp;int&nbsp;getViewPlatformTransformCount()</pre>
+<div class="block">Returns the number of TransformGroups with which ViewingPlatforms
+ should be created.  This is useful for clients that wish to provide a
+ default ViewingPlatform if the configuration file doesn't specify one.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of TransformGroups</dd>
+</dl>
+</li>
+</ul>
+<a name="getViewerVisibility--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getViewerVisibility</h4>
+<pre>public&nbsp;boolean&nbsp;getViewerVisibility()</pre>
+<div class="block">Returns whether Viewers should be created with their AWT components
+ initially visible or invisible.  This is useful for clients that wish
+ to provide a default Viewer if the configuration file doesn't specify
+ one.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if Viewer components should be initially visible; false
+  otherwise</dd>
+</dl>
+</li>
+</ul>
+<a name="clear--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Release memory references used by this ConfigContainer.  All Sets and
+ Maps obtained from this ConfigContainer are cleared.</div>
+</li>
+</ul>
+<a name="getConfigURL--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConfigURL</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;getConfigURL()</pre>
+<div class="block">Returns the config file URL based on system properties.  The current
+ implementation of this method parses the j3d.configURL property as a
+ URL string.  For example, the following command line would specify that
+ the config file is taken from the file "j3dconfig" in the current
+ directory:
+ <ul>
+ <code>java -Dj3d.configURL=file:j3dconfig ...</code>
+ </ul></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the URL of the config file; null is returned if no valid
+  URL is defined by the system properties</dd>
+</dl>
+</li>
+</ul>
+<a name="getConfigURL-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getConfigURL</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;getConfigURL(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultURLString)</pre>
+<div class="block">Returns the config file URL based on system properties.  The current
+ implementation of this method parses the j3d.configURL property as a
+ URL string.  For example, the following command line would specify that
+ the config file is taken from the file "j3dconfig" in the current
+ directory:
+ <ul>
+ <code>java -Dj3d.configURL=file:j3dconfig ...</code>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>defaultURLString</code> - the default string used to construct
+  the URL if the appropriate system properties are not defined</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the URL of the config file; null is returned if no
+  valid URL is defined either by the system properties or the
+  default URL string</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../../org/scijava/java3d/utils/universe/ConfiguredUniverse.html" title="class in org.scijava.java3d.utils.universe"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/utils/universe/ConfigContainer.html" target="_top">Frames</a></li>
+<li><a href="ConfigContainer.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ObjectFile (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ObjectFile (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/loaders/objectfile/ObjectFile.html" target="_top">Frames</a></li>
+<li><a href="ObjectFile.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d.loaders.objectfile</div>
+<h2 title="Class ObjectFile" class="title">Class ObjectFile</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.loaders.objectfile.ObjectFile</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ObjectFile</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></pre>
+<div class="block">The ObjectFile class implements the Loader interface for the Wavefront
+ .obj file format, a standard 3D object file format created for use with
+ Wavefront's Advanced Visualizer (tm) and available for purchase from
+ Viewpoint DataLabs, as well as other 3D model companies.  Object Files
+ are text based
+ files supporting both polygonal and free-form geometry (curves
+ and surfaces).  The Java 3D .obj file loader supports a subset of the
+ file format, but it is enough to load almost all commonly available
+ Object Files.  Free-form geometry is not supported.</p>
+
+ The Object File tokens currently supported by this loader are:</p>
+ <code>v <i>float</i> <i>float</i> <i>float</i></code></p>
+   <dl><dd>A single vertex's geometric position in space.  The first vertex
+   listed in the file has index 1,
+   and subsequent vertices are numbered sequentially.</dl></p>
+ <code>vn <i>float</i> <i>float</i> <i>float</i></code></p>
+   <dl><dd>A normal.  The first normal in the file is index 1, and
+   subsequent normals are numbered sequentially.</dl></p>
+ <code>vt <i>float</i> <i>float</i></code></p>
+   <dl><dd>A texture coordinate.  The first texture coordinate in the file is
+   index 1, and subsequent normals are numbered sequentially.</dl></p>
+ <code>f <i>int</i> <i>int</i> <i>int</i> . . .</code></p>
+   <dl><dd><i><b>or</b></i></dl></p>
+ <code>f <i>int</i>/<i>int</i> <i>int</i>/<i>int</i> <i>int</i>/<i>int</i> . . .</code></p>
+   <dl><dd><i><b>or</i></b></dl></p>
+ <code>f <i>int</i>/<i>int</i>/<i>int</i> <i>int</i>/<i>int</i>/<i>int</i> <i>int</i>/<i>int</i>/<i>int</i> . . .</code></p>
+   <dl><dd>A polygonal face.  The numbers are indexes into the arrays of
+   vertex positions, texture coordinates, and normals respectively.
+   There is no maximum number of vertices that a single polygon may
+   contain.  The .obj file specification says that each face must
+   be flat and convex, but if the TRIANGULATE flag is sent to the
+   ObjectFile constructor, each face will be triangulated by the
+   Java 3D Triangulator, and therefore may be concave.
+   A number may be omitted if, for example, texture coordinates are
+   not being defined in the model.  Numbers are normally positive
+   indexes, but may also be negative.  An index of -1 means the last
+   member added to the respective array, -2 is the one before that,
+   and so on.</dl></p>
+ <code>g <i>name</i></code></p>
+   <dl><dd>Faces defined after this token will be added to the named group.
+   These geometry groups are returned as separated Shape3D objects
+   attached to the parent SceneGroup.  Each named Shape3D will also
+   be in the Hashtable returned by Scene.getNamedObjects().  It is
+   legal to add faces to a group, switch to another group, and then
+   add more faces to the original group by reissuing the same name
+   with the g token.  If faces are added to the model before the g
+   token is seen, the faces are put into the default group called
+   "default."</dl></p>
+ <code>s <i>int</i></code></p>
+   <dl><dd><i><b>or</i></b></dl></p>
+ <code>s off</code></p>
+   <dl><dd>If the vn token is not used in the file to specify vertex normals
+   for the model, this token may be used to put faces into groups
+   for normal calculation ("smoothing groups") in the same manner as
+   the 'g' token
+   is used to group faces geometrically.  Faces in the same smoothing
+   group will have their normals calculated as if they are part of
+   the same smooth surface.  To do this, we use the Java 3D NormalGenerator
+   utility with the creaseAngle parameter set to PI (180 degrees -
+   smooth shading, no creases) or to whatever the user has set the
+   creaseAngle.  Faces in group 0 or 'off' use a
+   creaseAngle of zero, meaning there is no smoothing (the normal
+   of the face is used at all vertices giving the surface a faceted
+   look; there will be a
+   crease, or "Hard Edge," between each face in group zero).  There is
+   also an implied hard edge <i>between</i> each smoothing group, where they
+   meet each other.</p>
+   </p>
+   If neither the vn nor the s token is used in the file, then normals
+   are calculated using the creaseAngle set in the contructor.
+   Normals are calculated on each geometry
+   group separately, meaning there will be a hard edge between each
+   geometry group.</dl></p>
+   </p>
+ <code>usemtl <i>name</i></code></p>
+   <dl><dd>The current (and subsequent) geometry groups (specified with
+   the 'g' token) have applied
+   to them the named material property.  The following set of material
+   properties are available by default:</dl></p>
+   <pre>
+     amber           amber_trans       aqua            aqua_filter
+     archwhite       archwhite2        bflesh          black
+     blondhair       blue_pure         bluegrey        bluetint
+     blugrn          blutan            bluteal         bone
+     bone1           bone2             brass           brnhair
+     bronze          brown             brownlips       brownskn
+     brzskin         chappie           charcoal        deepgreen
+     default         dkblue            dkblue_pure     dkbrown
+     dkdkgrey        dkgreen           dkgrey          dkorange
+     dkpurple        dkred             dkteal          emerald
+     fgreen          flaqua            flblack         flblonde
+     flblue_pure     flbrown           fldkblue_pure   fldkdkgrey
+     fldkgreen       fldkgreen2        fldkgrey        fldkolivegreen
+     fldkpurple      fldkred           flesh           fleshtransparent
+     flgrey          fllime            flltbrown       flltgrey
+     flltolivegreen  flmintgreen       flmustard       florange
+     flpinegreen     flpurple          flred           fltan
+     flwhite         flwhite1          flyellow        glass
+     glassblutint    glasstransparent  gold            green
+     greenskn        grey              hair            iris
+     jetflame        lavendar          lcdgreen        lighttan
+     lighttan2       lighttan3         lighttannew     lightyellow
+     lime            lips              ltbrown         ltgrey
+     meh             metal             mintgrn         muscle
+     navy_blue       offwhite.cool     offwhite.warm   olivegreen
+     orange          pale_green        pale_pink       pale_yellow
+     peach           periwinkle        pink            pinktan
+     plasma          purple            red             redbrick
+     redbrown        redorange         redwood         rubber
+     ruby            sand_stone        sapphire        shadow
+     ship2           silver            skin            sky_blue
+     smoked_glass    tan               taupe           teeth
+     violet          white             yellow          yellow_green
+     yellowbrt       yelloworng
+   </pre>
+ <code>mtllib <i>filename</i></code></p>
+   <dl><dd>Load material properties from the named file.  Materials
+   with the same name as the predefined materials above will override
+   the default value.  Any directory path information in (filename)
+   is ignored.  The .mtl files are assumed to be in the same directory
+   as the .obj file.  If they are in a different directory, use
+   Loader.setBasePath() (or Loader.setBaseUrl() ).  The format of the
+   material properties files
+   are as follows:</p>
+   <code>newmtl <i>name</i></code></p>
+     <dl><dd>Start the definition of a new named material property.</dl></p>
+   <code>Ka <i>float</i> <i>float</i> <i>float</i></code></p>
+     <dl><dd>Ambient color.</dl></p>
+   <code>Kd <i>float</i> <i>float</i> <i>float</i></code></p>
+     <dl><dd>Diffuse color.</dl></p>
+   <code>Ks <i>float</i> <i>float</i> <i>float</i></code></p>
+     <dl><dd>Specular color.</dl></p>
+   <code>illum <i>(0, 1, or 2)</i></code></p>
+     <dl><dd>0 to disable lighting, 1 for ambient & diffuse only (specular
+     color set to black), 2 for full lighting.</dl></p>
+   <code>Ns <i>float</i></code></p>
+     <dl><dd>Shininess (clamped to 1.0 - 128.0).</dl></p>
+   <code>map_Kd <i>filename</i></code></p>
+     <dl><dd>Texture map.  Supports .rgb, .rgba, .int, .inta, .sgi, and
+     .bw files in addition to those supported by
+     <a href="../../utils/image/TextureLoader.html">TextureLoader</a>.
+     </dl></dl></p></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#RESIZE">RESIZE</a></span></code>
+<div class="block">Flag sent to constructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#REVERSE">REVERSE</a></span></code>
+<div class="block">Flag sent to constructor.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#STRIPIFY">STRIPIFY</a></span></code>
+<div class="block">Flag sent to contructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#TRIANGULATE">TRIANGULATE</a></span></code>
+<div class="block">Flag sent to constructor.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.loaders.Loader">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.scijava.java3d.loaders.<a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></h3>
+<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_ALL">LOAD_ALL</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_BACKGROUND_NODES">LOAD_BACKGROUND_NODES</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_BEHAVIOR_NODES">LOAD_BEHAVIOR_NODES</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_FOG_NODES">LOAD_FOG_NODES</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_LIGHT_NODES">LOAD_LIGHT_NODES</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_SOUND_NODES">LOAD_SOUND_NODES</a>, <a href="../../../../../org/scijava/java3d/loaders/Loader.html#LOAD_VIEW_GROUPS">LOAD_VIEW_GROUPS</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#ObjectFile--">ObjectFile</a></span>()</code>
+<div class="block">Default constructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#ObjectFile-int-">ObjectFile</a></span>(int&nbsp;flags)</code>
+<div class="block">Constructor.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#ObjectFile-int-float-">ObjectFile</a></span>(int&nbsp;flags,
+          float&nbsp;radians)</code>
+<div class="block">Constructor.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#getBasePath--">getBasePath</a></span>()</code>
+<div class="block">Return the path where files associated with this .obj file (like material
+ files) are located.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#getBaseUrl--">getBaseUrl</a></span>()</code>
+<div class="block">Return the URL where files associated with this .obj file (like
+ material properties files) will be found.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#getFlags--">getFlags</a></span>()</code>
+<div class="block">Get the parameters currently defined for loading the model.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#load-java.io.Reader-">load</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)</code>
+<div class="block">The Object File is loaded from the already opened file.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#load-java.lang.String-">load</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</code>
+<div class="block">The Object File is loaded from the .obj file specified by
+ the filename.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#load-java.net.URL-">load</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url)</code>
+<div class="block">The object file is loaded off of the web.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#setBasePath-java.lang.String-">setBasePath</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pathName)</code>
+<div class="block">Set the path where files associated with this .obj file are
+ located.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#setBaseUrl-java.net.URL-">setBaseUrl</a></span>(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url)</code>
+<div class="block">For an .obj file loaded from a URL, set the URL where associated files
+ (like material properties files) will be found.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/java3d/loaders/objectfile/ObjectFile.html#setFlags-int-">setFlags</a></span>(int&nbsp;flags)</code>
+<div class="block">Set parameters for loading the model.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="RESIZE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RESIZE</h4>
+<pre>public static final&nbsp;int RESIZE</pre>
+<div class="block">Flag sent to constructor.  The object's vertices will be changed
+ so that the object is centered at (0,0,0) and the coordinate
+ positions are all in the range of (-1,-1,-1) to (1,1,1).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.loaders.objectfile.ObjectFile.RESIZE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="TRIANGULATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TRIANGULATE</h4>
+<pre>public static final&nbsp;int TRIANGULATE</pre>
+<div class="block">Flag sent to constructor.  The Shape3D object will be created
+ by using the GeometryInfo POLYGON_ARRAY primitive, causing
+ them to be Triangulated by GeometryInfo.  Use
+ this if you suspect concave or other non-behaving polygons
+ in your model.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.loaders.objectfile.ObjectFile.TRIANGULATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="REVERSE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REVERSE</h4>
+<pre>public static final&nbsp;int REVERSE</pre>
+<div class="block">Flag sent to constructor.  Use if the vertices in your .obj
+ file were specified with clockwise winding (Java 3D wants
+ counter-clockwise) so you see the back of the polygons and
+ not the front.  Calls GeometryInfo.reverse().</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.loaders.objectfile.ObjectFile.REVERSE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STRIPIFY">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>STRIPIFY</h4>
+<pre>public static final&nbsp;int STRIPIFY</pre>
+<div class="block">Flag sent to contructor.  After normals are generated the data
+ will be analyzed to find triangle strips.  Use this if your
+ hardware supports accelerated rendering of strips.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.scijava.java3d.loaders.objectfile.ObjectFile.STRIPIFY">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ObjectFile-int-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ObjectFile</h4>
+<pre>public&nbsp;ObjectFile(int&nbsp;flags,
+                  float&nbsp;radians)</pre>
+<div class="block">Constructor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>flags</code> - The constants from above or from
+ org.scijava.java3d.loaders.Loader, possibly "or'ed" (|) together.</dd>
+<dd><code>radians</code> - Ignored if the vn token is present in the model (user
+ normals supplied).  Otherwise, crease angle to use within smoothing
+ groups, or within geometry groups if the s token isn't present either.</dd>
+</dl>
+</li>
+</ul>
+<a name="ObjectFile-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ObjectFile</h4>
+<pre>public&nbsp;ObjectFile(int&nbsp;flags)</pre>
+<div class="block">Constructor.  Crease Angle set to default of
+ 44 degrees (see NormalGenerator utility for details).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>flags</code> - The constants from above or from
+ org.scijava.java3d.loaders.Loader, possibly "or'ed" (|) together.</dd>
+</dl>
+</li>
+</ul>
+<a name="ObjectFile--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ObjectFile</h4>
+<pre>public&nbsp;ObjectFile()</pre>
+<div class="block">Default constructor.  Crease Angle set to default of
+ 44 degrees (see NormalGenerator utility for details).  Flags
+ set to zero (0).</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="load-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>load</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a>&nbsp;load(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)
+           throws <a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></pre>
+<div class="block">The Object File is loaded from the .obj file specified by
+ the filename.
+ To attach the model to your scene, call getSceneGroup() on
+ the Scene object passed back, and attach the returned
+ BranchGroup to your scene graph.  For an example, see
+ j3d-examples/ObjLoad/ObjLoad.java.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#load-java.lang.String-">load</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="load-java.net.URL-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>load</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a>&nbsp;load(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url)
+           throws <a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></pre>
+<div class="block">The object file is loaded off of the web.
+ To attach the model to your scene, call getSceneGroup() on
+ the Scene object passed back, and attach the returned
+ BranchGroup to your scene graph.  For an example, see
+ j3d-examples/ObjLoad/ObjLoad.java.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#load-java.net.URL-">load</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="load-java.io.Reader-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>load</h4>
+<pre>public&nbsp;<a href="../../../../../org/scijava/java3d/loaders/Scene.html" title="interface in org.scijava.java3d.loaders">Scene</a>&nbsp;load(<a href="http://javadoc.imagej.net/Java/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)
+           throws <a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a>,
+                  <a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></pre>
+<div class="block">The Object File is loaded from the already opened file.
+ To attach the model to your scene, call getSceneGroup() on
+ the Scene object passed back, and attach the returned
+ BranchGroup to your scene graph.  For an example, see
+ j3d-examples/ObjLoad/ObjLoad.java.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#load-java.io.Reader-">load</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/IncorrectFormatException.html" title="class in org.scijava.java3d.loaders">IncorrectFormatException</a></code></dd>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/ParsingErrorException.html" title="class in org.scijava.java3d.loaders">ParsingErrorException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setBaseUrl-java.net.URL-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBaseUrl</h4>
+<pre>public&nbsp;void&nbsp;setBaseUrl(<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url)</pre>
+<div class="block">For an .obj file loaded from a URL, set the URL where associated files
+ (like material properties files) will be found.
+ Only needs to be called to set it to a different URL
+ from that containing the .obj file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#setBaseUrl-java.net.URL-">setBaseUrl</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getBaseUrl--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBaseUrl</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;getBaseUrl()</pre>
+<div class="block">Return the URL where files associated with this .obj file (like
+ material properties files) will be found.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#getBaseUrl--">getBaseUrl</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setBasePath-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBasePath</h4>
+<pre>public&nbsp;void&nbsp;setBasePath(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pathName)</pre>
+<div class="block">Set the path where files associated with this .obj file are
+ located.
+ Only needs to be called to set it to a different directory
+ from that containing the .obj file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#setBasePath-java.lang.String-">setBasePath</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getBasePath--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBasePath</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getBasePath()</pre>
+<div class="block">Return the path where files associated with this .obj file (like material
+ files) are located.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#getBasePath--">getBasePath</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setFlags-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFlags</h4>
+<pre>public&nbsp;void&nbsp;setFlags(int&nbsp;flags)</pre>
+<div class="block">Set parameters for loading the model.
+ Flags defined in Loader.java are ignored by the ObjectFile Loader
+ because the .obj file format doesn't include lights, fog, background,
+ behaviors, views, or sounds.  However, several flags are defined
+ specifically for use with the ObjectFile Loader (see above).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#setFlags-int-">setFlags</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getFlags--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getFlags</h4>
+<pre>public&nbsp;int&nbsp;getFlags()</pre>
+<div class="block">Get the parameters currently defined for loading the model.
+ Flags defined in Loader.java are ignored by the ObjectFile Loader
+ because the .obj file format doesn't include lights, fog, background,
+ behaviors, views, or sounds.  However, several flags are defined
+ specifically for use with the ObjectFile Loader (see above).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/scijava/java3d/loaders/Loader.html#getFlags--">getFlags</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/java3d/loaders/Loader.html" title="interface in org.scijava.java3d.loaders">Loader</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/scijava/java3d/loaders/objectfile/ObjectFile.html" target="_top">Frames</a></li>
+<li><a href="ObjectFile.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

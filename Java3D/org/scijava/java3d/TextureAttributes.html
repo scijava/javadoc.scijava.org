@@ -1,0 +1,2204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TextureAttributes (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="TextureAttributes (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Texture3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureCubeMap.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TextureAttributes.html" target="_top">Frames</a></li>
+<li><a href="TextureAttributes.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class TextureAttributes" class="title">Class TextureAttributes</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.TextureAttributes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">TextureAttributes</span>
+extends <a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></pre>
+<div class="block">The TextureAttributes object defines attributes that apply to
+ texture mapping.
+ The texture attributes include the following:<P>
+ <UL>
+ <LI>Texture mode - defines how the object and texture colors
+ are blended. The mode may be one of the following:</LI><P>
+ <UL>
+ <LI>MODULATE - modulates the incoming color with the texture
+ color.<P>
+ <UL>
+ C' = C Ct
+ </UL></LI><P>
+ <LI>DECAL - applies the texture color to the incoming color as a decal.<P>
+ <UL>
+ C'<sub>rgb</sub> = C<sub>rgb</sub> (1 - Ct<sub>a</sub>) + Ct<sub>rgb</sub> Ct<sub>a</sub><P>
+ C'<sub>a</sub> = C<sub>a</sub>
+ </UL></LI><P>
+ <LI>BLEND - blends the texture blend color with the incoming color.<P>
+ <UL>
+ C'<sub>rgb</sub> = C<sub>rgb</sub> (1 - Ct<sub>rgb</sub>) + Cb<sub>rgb</sub> Ct<sub>rgb</sub><P>
+ C'<sub>a</sub> = C<sub>a</sub> Ct<sub>a</sub><P>
+ </UL>
+ Note that if the texture format is INTENSITY, alpha is computed identically
+ to red, green, and blue: <P>
+ <UL>
+ C'<sub>a</sub> = C<sub>a</sub> (1 - Ct<sub>a</sub>) + Cb<sub>a</sub> Ct<sub>a</sub>
+ </UL></LI><P>
+ <LI>REPLACE - replaces the incoming color with the texture color.<P>
+ <UL>
+ C' = Ct <P>
+ </UL></LI><P>
+ <LI>COMBINE - combines the object color with the texture color or texture
+ blend color according to the combine operation as specified in the
+ texture combine mode. </LI><P>
+ <p>
+ </UL>
+ C  = Incoming color to the texture unit state. For texture unit state 0, C is the object color
+ Ct = Texture color<br>
+ Cb = Texture blend color<br>
+ <p>
+ <LI>Combine Mode - defines the combine operation when texture mode
+ specifies COMBINE. The combine mode includes the following:<p>
+ <UL>
+ <LI>COMBINE_REPLACE<P>
+ <UL>
+ C' = C<sub>0</sub> <P>
+ </UL></LI><P>
+ <LI>COMBINE_MODULATE<P>
+ <UL>
+ C' = C<sub>0</sub> C<sub>1</sub>
+ </UL></LI><P>
+ <LI>COMBINE_ADD<P>
+ <UL>
+ C' = C<sub>0</sub> + C<sub>1</sub> <P>
+ </UL></LI><P>
+ <LI>COMBINE_ADD_SIGNED <P>
+ <UL>
+ C' = C<sub>0</sub> + C<sub>1</sub> - 0.5 <P>
+ </UL></LI><P>
+ <LI>COMBINE_SUBTRACT <P>
+ <UL>
+ C' = C<sub>0</sub> - C<sub>1</sub> <P>
+ </UL></LI><P>
+ <LI>COMBINE_INTERPOLATE<P>
+ <UL>
+ C' = C<sub>0</sub> C<sub>2</sub> + C<sub>1</sub> (1 - C<sub>2</sub>) <P>
+ </UL></LI><P>
+ <LI>COMBINE_DOT3<P>
+ <UL>
+ C' = 4 * (
+ (C<sub>0<sub>r</sub></sub> - 0.5) * (C<sub>1<sub>r</sub></sub> - 0.5) +
+ (C<sub>0<sub>g</sub></sub> - 0.5) * (C<sub>1<sub>g</sub></sub> - 0.5) +
+ (C<sub>0<sub>b</sub></sub> - 0.5) * (C<sub>1<sub>b</sub></sub> - 0.5))<P>
+ where C<sub>N<sub>x</sub></sub> is the x component of the Nth color operand
+ in the combine operation.<P>
+ The value C' will be placed to the all three r,g,b components or the
+ a component of the output.
+ </UL></LI><P>
+ </UL></LI><P>
+ where C<sub>0</sub>, C<sub>1</sub> and C<sub>2</sub> are determined by
+ the color source, and the color operand.
+ </UL></LI><P>
+ <UL>
+ <LI>Combine Color Source - defines the source for a color operand in the
+ combine operation. The color source includes the following:<p>
+ <UL>
+ <LI> COMBINE_OBJECT_COLOR  - object color<P>
+ <LI> COMBINE_TEXTURE_COLOR  - texture color<P>
+ <LI> COMBINE_CONSTANT_COLOR - texture blend color<P>
+ <LI> COMBINE_PREVIOUS_TEXTURE_UNIT_STATE - color from the previous texture
+ unit state. For texture unit state 0, this is equivalent to
+ COMBINE_OBJECT_COLOR.<P>
+ </UL></LI><P>
+ <LI>Combine Color Function - specifies the function for a color operand
+ in the combine operation. The valid values are:<P>
+ <UL>
+ <LI>COMBINE_SRC_COLOR - the color function is f = C<sub>rgb</sub><P>
+ <LI>COMBINE_ONE_MINUS_SRC_COLOR - the color function is f = (1 - C<sub>rgb</sub>)<P>
+ <LI>COMBINE_SRC_ALPHA - the color function is f = C<sub>a</sub><P>
+ <LI>COMBINE_ONE_MINUS_SRC_ALPHA - the color function is f = (1 - C<sub>a</sub>)<P>
+ </UL></LI><P>
+ <LI>Combine scale factor - specifies the scale factor to be applied to
+ the output color of the combine operation. The valid values include:
+ 1, 2, or 4.</LI><P>
+ <LI>Transform - the texture transform object used to transform
+ texture coordinates. The texture transform can translate, scale,
+ or rotate the texture coordinates before the texture is applied
+ to the object.</LI><P>
+ <LI>Blend color - the constant texture blend color</LI><P>
+ <LI>Perspective correction - the perspective correction mode
+ used for color and texture coordinate interpolation. One of
+ the following:</LI><P>
+ <UL>
+ <LI>NICEST - uses the nicest (highest quality) available
+ method for texture mapping perspective correction.</LI><P>
+ <LI>FASTEST - uses the fastest available method for texture
+ mapping perspective correction.</LI><P>
+ </UL>
+ <LI>Texture color table - defines a table that is used to look up
+ texture colors before applying the texture mode.</LI>
+ </UL></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d"><code>Appearance</code></a>, 
+<a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_BLEND_COLOR_READ">ALLOW_BLEND_COLOR_READ</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture blend color component
+ information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_BLEND_COLOR_WRITE">ALLOW_BLEND_COLOR_WRITE</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture blend color component
+ information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_COLOR_TABLE_READ">ALLOW_COLOR_TABLE_READ</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture color table component
+ information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_COLOR_TABLE_WRITE">ALLOW_COLOR_TABLE_WRITE</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture color table component
+ information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_COMBINE_READ">ALLOW_COMBINE_READ</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture combine mode information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_COMBINE_WRITE">ALLOW_COMBINE_WRITE</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture combine mode information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_MODE_READ">ALLOW_MODE_READ</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture mode component
+ information and perspective correction mode.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_MODE_WRITE">ALLOW_MODE_WRITE</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture mode component
+ information and perspective correction mode.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_TRANSFORM_READ">ALLOW_TRANSFORM_READ</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture transform component
+ information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#ALLOW_TRANSFORM_WRITE">ALLOW_TRANSFORM_WRITE</a></span></code>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture transform component
+ information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#BLEND">BLEND</a></span></code>
+<div class="block">Blend the texture blend color with the object color.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE">COMBINE</a></span></code>
+<div class="block">Combine the object color with texture color as specified in
+ the combine mode.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_ADD">COMBINE_ADD</a></span></code>
+<div class="block">Add two colors.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_ADD_SIGNED">COMBINE_ADD_SIGNED</a></span></code>
+<div class="block">Add two colors plus an implicit offset.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_CONSTANT_COLOR">COMBINE_CONSTANT_COLOR</a></span></code>
+<div class="block">Texture blend color.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_DOT3">COMBINE_DOT3</a></span></code>
+<div class="block">Dot product of two colors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_INTERPOLATE">COMBINE_INTERPOLATE</a></span></code>
+<div class="block">Interpolate two colors with a factor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_MODULATE">COMBINE_MODULATE</a></span></code>
+<div class="block">Modulates one color with another color.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_OBJECT_COLOR">COMBINE_OBJECT_COLOR</a></span></code>
+<div class="block">Object color coming into the texturing state.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_ONE_MINUS_SRC_ALPHA">COMBINE_ONE_MINUS_SRC_ALPHA</a></span></code>
+<div class="block">Color function is f = (1 - C<sub>a</sub>)</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_ONE_MINUS_SRC_COLOR">COMBINE_ONE_MINUS_SRC_COLOR</a></span></code>
+<div class="block">Color function is f = (1 - C<sub>rgb</sub>)</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_PREVIOUS_TEXTURE_UNIT_STATE">COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</a></span></code>
+<div class="block">Color from the previous texture unit state.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_REPLACE">COMBINE_REPLACE</a></span></code>
+<div class="block">Replace the input color with the specified color.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_SRC_ALPHA">COMBINE_SRC_ALPHA</a></span></code>
+<div class="block">Color function is f = C<sub>a</sub></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_SRC_COLOR">COMBINE_SRC_COLOR</a></span></code>
+<div class="block">Color function is f = C<sub>rgb</sub></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_SUBTRACT">COMBINE_SUBTRACT</a></span></code>
+<div class="block">Subtract one color from another color.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#COMBINE_TEXTURE_COLOR">COMBINE_TEXTURE_COLOR</a></span></code>
+<div class="block">Texture color of the corresponding texture unit state.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#DECAL">DECAL</a></span></code>
+<div class="block">Apply the texture color to the object as a decal.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#FASTEST">FASTEST</a></span></code>
+<div class="block">Use the fastest available method for perspective correction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#MODULATE">MODULATE</a></span></code>
+<div class="block">Modulate the object color with the texture color.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#NICEST">NICEST</a></span></code>
+<div class="block">Use the nicest (highest quality) available method for texture
+ mapping perspective correction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#REPLACE">REPLACE</a></span></code>
+<div class="block">Replace the object color with the texture color.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#TextureAttributes--">TextureAttributes</a></span>()</code>
+<div class="block">Constructs a TextureAttributes object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#TextureAttributes-int-org.scijava.java3d.Transform3D-org.scijava.vecmath.Color4f-int-">TextureAttributes</a></span>(int&nbsp;textureMode,
+                 <a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform,
+                 <a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor,
+                 int&nbsp;perspCorrectionMode)</code>
+<div class="block">Constructs a TextureAttributes object with the specified values.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineAlphaFunction-int-">getCombineAlphaFunction</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the function for the alpha component of the specified color
+ operand for this object.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineAlphaMode--">getCombineAlphaMode</a></span>()</code>
+<div class="block">Retrieves the combine mode for the alpha component of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineAlphaScale--">getCombineAlphaScale</a></span>()</code>
+<div class="block">Retrieves the scale factor for the alpha component of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineAlphaSource-int-">getCombineAlphaSource</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the source for the alpha component of the specified
+ color operand for this object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineRgbFunction-int-">getCombineRgbFunction</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the function for the rgb components of the specified color
+ operand for this object.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineRgbMode--">getCombineRgbMode</a></span>()</code>
+<div class="block">Retrieves the combine mode for the rgb components of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineRgbScale--">getCombineRgbScale</a></span>()</code>
+<div class="block">Retrieves the scale factor for the rgb components of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getCombineRgbSource-int-">getCombineRgbSource</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the source for the rgb components of the specified
+ color operand for this object.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getNumTextureColorTableComponents--">getNumTextureColorTableComponents</a></span>()</code>
+<div class="block">Retrieves the number of color components in the current texture
+ color table.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getPerspectiveCorrectionMode--">getPerspectiveCorrectionMode</a></span>()</code>
+<div class="block">Gets perspective correction mode value.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getTextureBlendColor-org.scijava.vecmath.Color4f-">getTextureBlendColor</a></span>(<a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor)</code>
+<div class="block">Gets the texture blend color for this
+ appearance component object.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getTextureColorTable-int:A:A-">getTextureColorTable</a></span>(int[][]&nbsp;table)</code>
+<div class="block">Retrieves the texture color table and copies it into the
+ specified array.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getTextureColorTableSize--">getTextureColorTableSize</a></span>()</code>
+<div class="block">Retrieves the size of the current texture color table.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getTextureMode--">getTextureMode</a></span>()</code>
+<div class="block">Gets the texture  mode parameter for this
+ texture attributes object.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#getTextureTransform-org.scijava.java3d.Transform3D-">getTextureTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform)</code>
+<div class="block">Retrieves a copy of the texture transform object.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaFunction-int-int-">setCombineAlphaFunction</a></span>(int&nbsp;index,
+                       int&nbsp;function)</code>
+<div class="block">Sets the function for the alpha component of the specified color operand
+ for this object.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-">setCombineAlphaMode</a></span>(int&nbsp;combineMode)</code>
+<div class="block">Sets the combine mode for the alpha component of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaScale-int-">setCombineAlphaScale</a></span>(int&nbsp;scale)</code>
+<div class="block">Sets the scale factor for the alpha component of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaSource-int-int-">setCombineAlphaSource</a></span>(int&nbsp;index,
+                     int&nbsp;src)</code>
+<div class="block">Sets the source for the alpha component of the specified color operand
+ for this object.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbFunction-int-int-">setCombineRgbFunction</a></span>(int&nbsp;index,
+                     int&nbsp;function)</code>
+<div class="block">Sets the function for the rgb components of the specified color operand
+ for this object.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-">setCombineRgbMode</a></span>(int&nbsp;combineMode)</code>
+<div class="block">Sets the combine mode for the rgb components of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbScale-int-">setCombineRgbScale</a></span>(int&nbsp;scale)</code>
+<div class="block">Sets the scale factor for the rgb components of the output color
+ for this object.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbSource-int-int-">setCombineRgbSource</a></span>(int&nbsp;index,
+                   int&nbsp;src)</code>
+<div class="block">Sets the source for the rgb components of the specified color operand
+ for this object.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setPerspectiveCorrectionMode-int-">setPerspectiveCorrectionMode</a></span>(int&nbsp;mode)</code>
+<div class="block">Sets perspective correction mode to be used for color
+ and/or texture coordinate interpolation.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureBlendColor-org.scijava.vecmath.Color4f-">setTextureBlendColor</a></span>(<a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor)</code>
+<div class="block">Sets the texture constant color for this
+ texture attributes object.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureBlendColor-float-float-float-float-">setTextureBlendColor</a></span>(float&nbsp;r,
+                    float&nbsp;g,
+                    float&nbsp;b,
+                    float&nbsp;a)</code>
+<div class="block">Sets the texture blend color for this
+ appearance component object.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureColorTable-int:A:A-">setTextureColorTable</a></span>(int[][]&nbsp;table)</code>
+<div class="block">Sets the texture color table from the specified table.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-">setTextureMode</a></span>(int&nbsp;textureMode)</code>
+<div class="block">Sets the texture  mode parameter for this
+ appearance component object.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureTransform-org.scijava.java3d.Transform3D-">setTextureTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform)</code>
+<div class="block">Sets the texture transform object used to transform texture
+ coordinates.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_MODE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_MODE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_MODE_READ</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture mode component
+ information and perspective correction mode.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_MODE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_MODE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_MODE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_MODE_WRITE</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture mode component
+ information and perspective correction mode.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_MODE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_BLEND_COLOR_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_BLEND_COLOR_READ</h4>
+<pre>public static final&nbsp;int ALLOW_BLEND_COLOR_READ</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture blend color component
+ information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_BLEND_COLOR_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_BLEND_COLOR_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_BLEND_COLOR_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_BLEND_COLOR_WRITE</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture blend color component
+ information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_BLEND_COLOR_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_TRANSFORM_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_TRANSFORM_READ</h4>
+<pre>public static final&nbsp;int ALLOW_TRANSFORM_READ</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture transform component
+ information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_TRANSFORM_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_TRANSFORM_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_TRANSFORM_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_TRANSFORM_WRITE</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture transform component
+ information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_TRANSFORM_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_COLOR_TABLE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_COLOR_TABLE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_COLOR_TABLE_READ</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture color table component
+ information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_COLOR_TABLE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_COLOR_TABLE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_COLOR_TABLE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_COLOR_TABLE_WRITE</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture color table component
+ information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_COLOR_TABLE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_COMBINE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_COMBINE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_COMBINE_READ</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ reading its texture combine mode information. (e.g. combine mode,
+ combine color source, combine color function, combine scale factor)</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_COMBINE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_COMBINE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_COMBINE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_COMBINE_WRITE</pre>
+<div class="block">Specifies that this TextureAttributes object allows
+ writing its texture combine mode information. (e.g. combine mode,
+ combine color source, combine color function, combine scale factor)</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.ALLOW_COMBINE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="FASTEST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FASTEST</h4>
+<pre>public static final&nbsp;int FASTEST</pre>
+<div class="block">Use the fastest available method for perspective correction.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setPerspectiveCorrectionMode-int-"><code>setPerspectiveCorrectionMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.FASTEST">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NICEST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NICEST</h4>
+<pre>public static final&nbsp;int NICEST</pre>
+<div class="block">Use the nicest (highest quality) available method for texture
+ mapping perspective correction.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setPerspectiveCorrectionMode-int-"><code>setPerspectiveCorrectionMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.NICEST">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="MODULATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MODULATE</h4>
+<pre>public static final&nbsp;int MODULATE</pre>
+<div class="block">Modulate the object color with the texture color.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-"><code>setTextureMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.MODULATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="DECAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DECAL</h4>
+<pre>public static final&nbsp;int DECAL</pre>
+<div class="block">Apply the texture color to the object as a decal.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-"><code>setTextureMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.DECAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="BLEND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BLEND</h4>
+<pre>public static final&nbsp;int BLEND</pre>
+<div class="block">Blend the texture blend color with the object color.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-"><code>setTextureMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.BLEND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="REPLACE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REPLACE</h4>
+<pre>public static final&nbsp;int REPLACE</pre>
+<div class="block">Replace the object color with the texture color.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-"><code>setTextureMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.REPLACE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE</h4>
+<pre>public static final&nbsp;int COMBINE</pre>
+<div class="block">Combine the object color with texture color as specified in
+ the combine mode.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setTextureMode-int-"><code>setTextureMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_REPLACE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_REPLACE</h4>
+<pre>public static final&nbsp;int COMBINE_REPLACE</pre>
+<div class="block">Replace the input color with the specified color.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_REPLACE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_MODULATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_MODULATE</h4>
+<pre>public static final&nbsp;int COMBINE_MODULATE</pre>
+<div class="block">Modulates one color with another color.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_MODULATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_ADD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_ADD</h4>
+<pre>public static final&nbsp;int COMBINE_ADD</pre>
+<div class="block">Add two colors.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_ADD">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_ADD_SIGNED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_ADD_SIGNED</h4>
+<pre>public static final&nbsp;int COMBINE_ADD_SIGNED</pre>
+<div class="block">Add two colors plus an implicit offset.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_ADD_SIGNED">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_SUBTRACT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_SUBTRACT</h4>
+<pre>public static final&nbsp;int COMBINE_SUBTRACT</pre>
+<div class="block">Subtract one color from another color.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_SUBTRACT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_INTERPOLATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_INTERPOLATE</h4>
+<pre>public static final&nbsp;int COMBINE_INTERPOLATE</pre>
+<div class="block">Interpolate two colors with a factor.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_INTERPOLATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_DOT3">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_DOT3</h4>
+<pre>public static final&nbsp;int COMBINE_DOT3</pre>
+<div class="block">Dot product of two colors.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbMode-int-"><code>setCombineRgbMode(int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaMode-int-"><code>setCombineAlphaMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_DOT3">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_OBJECT_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_OBJECT_COLOR</h4>
+<pre>public static final&nbsp;int COMBINE_OBJECT_COLOR</pre>
+<div class="block">Object color coming into the texturing state.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbSource-int-int-"><code>setCombineRgbSource(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaSource-int-int-"><code>setCombineAlphaSource(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_OBJECT_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_TEXTURE_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_TEXTURE_COLOR</h4>
+<pre>public static final&nbsp;int COMBINE_TEXTURE_COLOR</pre>
+<div class="block">Texture color of the corresponding texture unit state.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbSource-int-int-"><code>setCombineRgbSource(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaSource-int-int-"><code>setCombineAlphaSource(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_TEXTURE_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_CONSTANT_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_CONSTANT_COLOR</h4>
+<pre>public static final&nbsp;int COMBINE_CONSTANT_COLOR</pre>
+<div class="block">Texture blend color.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbSource-int-int-"><code>setCombineRgbSource(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaSource-int-int-"><code>setCombineAlphaSource(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_CONSTANT_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_PREVIOUS_TEXTURE_UNIT_STATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</h4>
+<pre>public static final&nbsp;int COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</pre>
+<div class="block">Color from the previous texture unit state.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbSource-int-int-"><code>setCombineRgbSource(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaSource-int-int-"><code>setCombineAlphaSource(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_PREVIOUS_TEXTURE_UNIT_STATE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_SRC_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_SRC_COLOR</h4>
+<pre>public static final&nbsp;int COMBINE_SRC_COLOR</pre>
+<div class="block">Color function is f = C<sub>rgb</sub></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbFunction-int-int-"><code>setCombineRgbFunction(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_SRC_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_ONE_MINUS_SRC_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_ONE_MINUS_SRC_COLOR</h4>
+<pre>public static final&nbsp;int COMBINE_ONE_MINUS_SRC_COLOR</pre>
+<div class="block">Color function is f = (1 - C<sub>rgb</sub>)</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbFunction-int-int-"><code>setCombineRgbFunction(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_ONE_MINUS_SRC_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_SRC_ALPHA">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMBINE_SRC_ALPHA</h4>
+<pre>public static final&nbsp;int COMBINE_SRC_ALPHA</pre>
+<div class="block">Color function is f = C<sub>a</sub></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbFunction-int-int-"><code>setCombineRgbFunction(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaFunction-int-int-"><code>setCombineAlphaFunction(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_SRC_ALPHA">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMBINE_ONE_MINUS_SRC_ALPHA">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>COMBINE_ONE_MINUS_SRC_ALPHA</h4>
+<pre>public static final&nbsp;int COMBINE_ONE_MINUS_SRC_ALPHA</pre>
+<div class="block">Color function is f = (1 - C<sub>a</sub>)</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineRgbFunction-int-int-"><code>setCombineRgbFunction(int, int)</code></a>, 
+<a href="../../../org/scijava/java3d/TextureAttributes.html#setCombineAlphaFunction-int-int-"><code>setCombineAlphaFunction(int, int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.TextureAttributes.COMBINE_ONE_MINUS_SRC_ALPHA">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TextureAttributes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TextureAttributes</h4>
+<pre>public&nbsp;TextureAttributes()</pre>
+<div class="block">Constructs a TextureAttributes object with default parameters.
+ The default values are as follows:
+ <ul>
+ texture mode : REPLACE<br>
+ blend color : black (0,0,0,0)<br>
+ transform : identity<br>
+ perspective correction mode : NICEST<br>
+ texture color table : null<br>
+ combine rgb mode : COMBINE_MODULATE<br>
+ combine alpha mode : COMBINE_MODULATE<br>
+ combine rgb source :
+ <ul>
+                C<sub>0</sub>=COMBINE_TEXTURE_COLOR<br>
+          C<sub>1</sub>=COMBINE_PREVIOUS_TEXTURE_UNIT_STATE<br>
+          C<sub>2</sub>=COMBINE_CONSTANT_COLOR<br>
+ </ul>
+ combine alpha source :
+ <ul>
+                C<sub>0</sub>=COMBINE_TEXTURE_COLOR<br>
+          C<sub>1</sub>=COMBINE_PREVIOUS_TEXTURE_UNIT_STATE<br>
+          C<sub>2</sub>=COMBINE_CONSTANT_COLOR<br>
+ </ul>
+ combine rgb function : COMBINE_SRC_COLOR<br>
+ combine alpha function : COMBINE_SRC_ALPHA<br>
+ combine rgb scale : 1<br>
+ combine alpha scale : 1<br>
+ </ul></div>
+</li>
+</ul>
+<a name="TextureAttributes-int-org.scijava.java3d.Transform3D-org.scijava.vecmath.Color4f-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TextureAttributes</h4>
+<pre>public&nbsp;TextureAttributes(int&nbsp;textureMode,
+                         <a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform,
+                         <a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor,
+                         int&nbsp;perspCorrectionMode)</pre>
+<div class="block">Constructs a TextureAttributes object with the specified values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>textureMode</code> - the texture mode; one of <code>MODULATE</code>,
+ <code>DECAL</code>, <code>BLEND</code>, <code>REPLACE</code>, or
+ <code>COMBINE</code></dd>
+<dd><code>transform</code> - the transform object, used to transform texture
+ coordinates</dd>
+<dd><code>textureBlendColor</code> - the texture constant color</dd>
+<dd><code>perspCorrectionMode</code> - the perspective correction mode to
+ be used for color and/or texture coordinate interpolation;
+ one of <code>NICEST</code> or <code>FASTEST</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>textureMode</code>
+ is a value other than <code>MODULATE</code>,
+ <code>DECAL</code>, <code>BLEND</code>, <code>REPLACE</code>, or
+ <code>COMBINE</code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if mode value is other
+ than <code>FASTEST</code> or <code>NICEST</code>.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setTextureMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTextureMode</h4>
+<pre>public&nbsp;void&nbsp;setTextureMode(int&nbsp;textureMode)</pre>
+<div class="block">Sets the texture  mode parameter for this
+ appearance component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>textureMode</code> - the texture  mode, one of: <code>MODULATE</code>,
+ <code>DECAL</code>, <code>BLEND</code>, <code>REPLACE</code>, or
+ <code>COMBINE</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>textureMode</code>
+ is a value other than <code>MODULATE</code>,
+ <code>DECAL</code>, <code>BLEND</code>, <code>REPLACE</code>, or
+ <code>COMBINE</code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getTextureMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTextureMode</h4>
+<pre>public&nbsp;int&nbsp;getTextureMode()</pre>
+<div class="block">Gets the texture  mode parameter for this
+ texture attributes object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>textureMode the texture  mode</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setTextureBlendColor-org.scijava.vecmath.Color4f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTextureBlendColor</h4>
+<pre>public&nbsp;void&nbsp;setTextureBlendColor(<a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor)</pre>
+<div class="block">Sets the texture constant color for this
+ texture attributes object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>textureBlendColor</code> - the texture constant color</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setTextureBlendColor-float-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTextureBlendColor</h4>
+<pre>public&nbsp;void&nbsp;setTextureBlendColor(float&nbsp;r,
+                                 float&nbsp;g,
+                                 float&nbsp;b,
+                                 float&nbsp;a)</pre>
+<div class="block">Sets the texture blend color for this
+ appearance component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>r</code> - the red component of the color</dd>
+<dd><code>g</code> - the green component of the color</dd>
+<dd><code>b</code> - the blue component of the color</dd>
+<dd><code>a</code> - the alpha component of the color</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getTextureBlendColor-org.scijava.vecmath.Color4f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTextureBlendColor</h4>
+<pre>public&nbsp;void&nbsp;getTextureBlendColor(<a href="../../../org/scijava/vecmath/Color4f.html" title="class in org.scijava.vecmath">Color4f</a>&nbsp;textureBlendColor)</pre>
+<div class="block">Gets the texture blend color for this
+ appearance component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>textureBlendColor</code> - the vector that will receive the texture
+ constant color</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setTextureTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTextureTransform</h4>
+<pre>public&nbsp;void&nbsp;setTextureTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform)</pre>
+<div class="block">Sets the texture transform object used to transform texture
+ coordinates.  A copy of the specified Transform3D object is
+ stored in this TextureAttributes object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - the new transform object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the method is called
+ when this object is part of live or compiled scene graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTextureTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTextureTransform</h4>
+<pre>public&nbsp;void&nbsp;getTextureTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;transform)</pre>
+<div class="block">Retrieves a copy of the texture transform object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - the transform object that will receive the
+ current texture transform</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if the method is called
+ when this object is part of live or compiled scene graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="setPerspectiveCorrectionMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPerspectiveCorrectionMode</h4>
+<pre>public&nbsp;void&nbsp;setPerspectiveCorrectionMode(int&nbsp;mode)</pre>
+<div class="block">Sets perspective correction mode to be used for color
+ and/or texture coordinate interpolation.
+ A value of <code>NICEST</code> indicates that perspective correction should be
+ performed and that the highest quality method should be used.
+ A value of <code>FASTEST</code> indicates that the most efficient perspective
+ correction method should be used.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mode</code> - one of <code>NICEST</code> or <code>FASTEST</code>
+ The default value is <code>NICEST</code>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if mode value is other
+ than <code>FASTEST</code> or <code>NICEST</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getPerspectiveCorrectionMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPerspectiveCorrectionMode</h4>
+<pre>public&nbsp;int&nbsp;getPerspectiveCorrectionMode()</pre>
+<div class="block">Gets perspective correction mode value.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>mode the value of perspective correction mode</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setTextureColorTable-int:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTextureColorTable</h4>
+<pre>public&nbsp;void&nbsp;setTextureColorTable(int[][]&nbsp;table)</pre>
+<div class="block">Sets the texture color table from the specified table.  The
+ individual integer array elements are copied.  The array is
+ indexed first by color component (<i>r</i>, <i>g</i>, <i>b</i>,
+ and <i>a</i>, respectively) and then by color value;
+ <code>table.length</code> defines the number of color
+ components and <code>table[0].length</code> defines the texture
+ color table size.  If the table is non-null, the number of
+ color components must either be 3, for <i>rgb</i> data, or 4,
+ for <i>rgba</i> data.  The size of each array for each color
+ component must be the same and must be a power of 2.  If table
+ is null or if the texture color table size is 0, the texture
+ color table is disabled.  If the texture color table size is
+ greater than the device-dependent maximum texture color table
+ size for a particular Canvas3D, the texture color table is
+ ignored for that canvas.
+
+ <p>
+ When enabled, the texture color table is applied after the
+ texture filtering operation and before texture application.
+ Each of the <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i>
+ components are clamped to the range [0,1], multiplied by
+ <code>textureColorTableSize-1</code>, and rounded to the
+ nearest integer.  The resulting value for each component is
+ then used as an index into the respective table for that
+ component.  If the texture color table contains 3 components,
+ alpha is passed through unmodified.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>table</code> - the new texture color table</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>table.length</code>
+ is not 3 or 4, or if the arrays for each component are not all
+ the same length, or if the texture color table size
+ is not a power of 2</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getTextureColorTable-int:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTextureColorTable</h4>
+<pre>public&nbsp;void&nbsp;getTextureColorTable(int[][]&nbsp;table)</pre>
+<div class="block">Retrieves the texture color table and copies it into the
+ specified array.  If the current texture color table is null,
+ no values are copied.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>table</code> - the array that will receive a copy of the
+ texture color table from this TextureAttributes object.
+ The array must be allocated by the caller and must be large
+ enough to hold the entire table (that is,
+ <code>int[numTextureColorTableComponents][textureColorTableSize]</code>).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumTextureColorTableComponents--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumTextureColorTableComponents</h4>
+<pre>public&nbsp;int&nbsp;getNumTextureColorTableComponents()</pre>
+<div class="block">Retrieves the number of color components in the current texture
+ color table.  A value of 0 is returned if the texture color
+ table is null.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of color components in the texture color
+ table, or 0 if the table is null</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getTextureColorTableSize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTextureColorTableSize</h4>
+<pre>public&nbsp;int&nbsp;getTextureColorTableSize()</pre>
+<div class="block">Retrieves the size of the current texture color table.  A value
+ of 0 is returned if the texture color table is null.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the size of the texture color table, or 0 if the table
+ is null</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineRgbMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineRgbMode</h4>
+<pre>public&nbsp;void&nbsp;setCombineRgbMode(int&nbsp;combineMode)</pre>
+<div class="block">Sets the combine mode for the rgb components of the output color
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>combineMode</code> - the combine  mode, one of:
+ <code>COMBINE_REPLACE</code>,
+ <code>COMBINE_MODULATE</code>, <code>COMBINE_ADD</code>,
+ <code>COMBINE_ADD_SIGNED</code>, <code>COMBINE_SUBTRACT</code>,
+ <code>COMBINE_INTERPOLATE</code>, or <code>COMBINE_DOT3</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>combineMode</code>
+ is a value other than <code>COMBINE_REPLACE</code>,
+ <code>COMBINE_MODULATE</code>, <code>COMBINE_ADD</code>,
+ <code>COMBINE_ADD_SIGNED</code>, <code>COMBINE_SUBTRACT</code>,
+ <code>COMBINE_INTERPOLATE</code>, or <code>COMBINE_DOT3</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineAlphaMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineAlphaMode</h4>
+<pre>public&nbsp;void&nbsp;setCombineAlphaMode(int&nbsp;combineMode)</pre>
+<div class="block">Sets the combine mode for the alpha component of the output color
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>combineMode</code> - the combine  mode, one of:
+ <code>COMBINE_REPLACE</code>,
+ <code>COMBINE_MODULATE</code>, <code>COMBINE_ADD</code>,
+ <code>COMBINE_ADD_SIGNED</code>, <code>COMBINE_SUBTRACT</code>,
+ <code>COMBINE_INTERPOLATE</code>, or <code>COMBINE_DOT3</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>combineMode</code>
+ is a value other than <code>COMBINE_REPLACE</code>,
+ <code>COMBINE_MODULATE</code>, <code>COMBINE_ADD</code>,
+ <code>COMBINE_ADD_SIGNED</code>, <code>COMBINE_SUBTRACT</code>,
+ <code>COMBINE_INTERPOLATE</code>, or <code>COMBINE_DOT3</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineRgbMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineRgbMode</h4>
+<pre>public&nbsp;int&nbsp;getCombineRgbMode()</pre>
+<div class="block">Retrieves the combine mode for the rgb components of the output color
+ for this object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the combine mode for the rgb components.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineAlphaMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineAlphaMode</h4>
+<pre>public&nbsp;int&nbsp;getCombineAlphaMode()</pre>
+<div class="block">Retrieves the combine mode for the alpha component of the output color
+ for this object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the combine mode for the alpha component.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineRgbSource-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineRgbSource</h4>
+<pre>public&nbsp;void&nbsp;setCombineRgbSource(int&nbsp;index,
+                                int&nbsp;src)</pre>
+<div class="block">Sets the source for the rgb components of the specified color operand
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dd><code>src</code> - the color source, one of: <code>COMBINE_OBJECT_COLOR</code>,
+ <code>COMBINE_TEXTURE_COLOR</code>,
+ <code>COMBINE_CONSTANT_COLOR</code>, or
+ <code>COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>src</code>
+ is a value other than <code>COMBINE_OBJECT_COLOR</code>,
+ <code>COMBINE_TEXTURE_COLOR</code>,
+ <code>COMBINE_CONSTANT_COLOR</code>, or
+ <code>COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineAlphaSource-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineAlphaSource</h4>
+<pre>public&nbsp;void&nbsp;setCombineAlphaSource(int&nbsp;index,
+                                  int&nbsp;src)</pre>
+<div class="block">Sets the source for the alpha component of the specified color operand
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dd><code>src</code> - the color source, one of: <code>COMBINE_OBJECT_COLOR</code>,
+ <code>COMBINE_TEXTURE_COLOR</code>,
+ <code>COMBINE_CONSTANT_COLOR</code>, or
+ <code>COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>src</code>
+ is a value other than <code>COMBINE_OBJECT_COLOR</code>,
+ <code>COMBINE_TEXTURE_COLOR</code>,
+ <code>COMBINE_CONSTANT_COLOR</code>, or
+ <code>COMBINE_PREVIOUS_TEXTURE_UNIT_STATE</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineRgbSource-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineRgbSource</h4>
+<pre>public&nbsp;int&nbsp;getCombineRgbSource(int&nbsp;index)</pre>
+<div class="block">Retrieves the source for the rgb components of the specified
+ color operand for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the source for the rgb components of the specified color
+ operand for this object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineAlphaSource-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineAlphaSource</h4>
+<pre>public&nbsp;int&nbsp;getCombineAlphaSource(int&nbsp;index)</pre>
+<div class="block">Retrieves the source for the alpha component of the specified
+ color operand for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the source for the alpha component of the specified color
+ operand for this object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineRgbFunction-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineRgbFunction</h4>
+<pre>public&nbsp;void&nbsp;setCombineRgbFunction(int&nbsp;index,
+                                  int&nbsp;function)</pre>
+<div class="block">Sets the function for the rgb components of the specified color operand
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dd><code>function</code> - the color function, one of:
+ <code>COMBINE_SRC_COLOR</code>,
+ <code>COMBINE_ONE_MINUS_SRC_COLOR</code>,
+ <code>COMBINE_SRC_ALPHA</code>, or
+ <code>COMBINE_ONE_MINUS_SRC_ALPHA</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>function</code>
+ is a value other than <code>COMBINE_SRC_COLOR</code>,
+ <code>COMBINE_ONE_MINUS_SRC_COLOR</code>,
+ <code>COMBINE_SRC_ALPHA</code>, or
+ <code>COMBINE_ONE_MINUS_SRC_ALPHA</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineAlphaFunction-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineAlphaFunction</h4>
+<pre>public&nbsp;void&nbsp;setCombineAlphaFunction(int&nbsp;index,
+                                    int&nbsp;function)</pre>
+<div class="block">Sets the function for the alpha component of the specified color operand
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dd><code>function</code> - the color function, one of:
+ <code>COMBINE_SRC_ALPHA</code>, or
+ <code>COMBINE_ONE_MINUS_SRC_ALPHA</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>function</code>
+ is a value other than
+ <code>COMBINE_SRC_ALPHA</code> or
+ <code>COMBINE_ONE_MINUS_SRC_ALPHA</code></dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineRgbFunction-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineRgbFunction</h4>
+<pre>public&nbsp;int&nbsp;getCombineRgbFunction(int&nbsp;index)</pre>
+<div class="block">Retrieves the function for the rgb components of the specified color
+ operand for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the function for the rgb components of the specified color
+ operand for this object.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineAlphaFunction-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineAlphaFunction</h4>
+<pre>public&nbsp;int&nbsp;getCombineAlphaFunction(int&nbsp;index)</pre>
+<div class="block">Retrieves the function for the alpha component of the specified color
+ operand for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - color operand in the combine operation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the function for the alpha component of the specified color
+ operand for this object.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">IndexOutOfBoundsException</a></code> - if <code>index</code> < 0 or
+ <code>index</code> > 2</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineRgbScale-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineRgbScale</h4>
+<pre>public&nbsp;void&nbsp;setCombineRgbScale(int&nbsp;scale)</pre>
+<div class="block">Sets the scale factor for the rgb components of the output color
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - the scale factor for the rgb components of the output
+ color. It must be one of the following: 1, 2, or 4.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>scale</code> is a
+ value other than 1, 2, or 4.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setCombineAlphaScale-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCombineAlphaScale</h4>
+<pre>public&nbsp;void&nbsp;setCombineAlphaScale(int&nbsp;scale)</pre>
+<div class="block">Sets the scale factor for the alpha component of the output color
+ for this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - the scale factor for the alpha component of the output
+ color. It must be one of the following: 1, 2, or 4.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>scale</code> is a
+ value other than 1, 2, or 4.</dd>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Canvas3D.html#queryProperties--"><code>Canvas3D.queryProperties()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineRgbScale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineRgbScale</h4>
+<pre>public&nbsp;int&nbsp;getCombineRgbScale()</pre>
+<div class="block">Retrieves the scale factor for the rgb components of the output color
+ for this object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the scale factor for the rgb components of the output color</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getCombineAlphaScale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCombineAlphaScale</h4>
+<pre>public&nbsp;int&nbsp;getCombineAlphaScale()</pre>
+<div class="block">Retrieves the scale factor for the alpha component of the output color
+ for this object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the scale factor for the alpha component of the output color</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Texture3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/TextureCubeMap.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/TextureAttributes.html" target="_top">Frames</a></li>
+<li><a href="TextureAttributes.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

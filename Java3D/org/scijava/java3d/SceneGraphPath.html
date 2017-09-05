@@ -1,0 +1,729 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SceneGraphPath (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SceneGraphPath (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Screen3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/SceneGraphPath.html" target="_top">Frames</a></li>
+<li><a href="SceneGraphPath.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class SceneGraphPath" class="title">Class SceneGraphPath</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.SceneGraphPath</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SceneGraphPath</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A SceneGraphPath object represents the path from a Locale to a
+ terminal node in the scene graph.  This path consists of a Locale, a
+ terminal node, and an array of internal nodes that are in the path
+ from the Locale to the terminal node.  The terminal node may be
+ either a Leaf node or a Group node.  A valid SceneGraphPath must
+ uniquely identify a specific instance of the terminal node.  For
+ nodes that are not under a SharedGroup, the minimal SceneGraphPath
+ consists of the Locale and the terminal node itself.  For nodes that
+ are under a SharedGroup, the minimal SceneGraphPath consists of the
+ Locale, the terminal node, and a list of all Link nodes in the path
+ from the Locale to the terminal node.  A SceneGraphPath may optionally
+ contain other interior nodes that are in the path.
+ A SceneGraphPath is verified for correctness and uniqueness when
+ it is sent as an argument to other methods of Java 3D.
+ <p>
+ In the array of internal nodes, the node at index 0 is the node
+ closest to the Locale.  The indices increase along the path to the
+ terminal node, with the node at index length-1 being the node closest
+ to the terminal node.  The array of nodes does not contain either the
+ Locale (which is not a node) or the terminal node.
+ <p>
+ When a SceneGraphPath is returned from the picking or collision
+ methods of Java 3D, it will also contain the value of the
+ LocalToVworld transform of the terminal node that was in effect at
+ the time the pick or collision occurred.
+ Note that ENABLE_PICK_REPORTING and ENABLE_COLLISION_REPORTING are
+ disabled by default.  This means that the picking and collision
+ methods will return the minimal SceneGraphPath by default.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Node.html#ENABLE_PICK_REPORTING"><code>Node.ENABLE_PICK_REPORTING</code></a>, 
+<a href="../../../org/scijava/java3d/Node.html#ENABLE_COLLISION_REPORTING"><code>Node.ENABLE_COLLISION_REPORTING</code></a>, 
+<a href="../../../org/scijava/java3d/BranchGroup.html#pickAll-org.scijava.java3d.PickShape-"><code>BranchGroup.pickAll(org.scijava.java3d.PickShape)</code></a>, 
+<a href="../../../org/scijava/java3d/BranchGroup.html#pickAllSorted-org.scijava.java3d.PickShape-"><code>BranchGroup.pickAllSorted(org.scijava.java3d.PickShape)</code></a>, 
+<a href="../../../org/scijava/java3d/BranchGroup.html#pickClosest-org.scijava.java3d.PickShape-"><code>BranchGroup.pickClosest(org.scijava.java3d.PickShape)</code></a>, 
+<a href="../../../org/scijava/java3d/BranchGroup.html#pickAny-org.scijava.java3d.PickShape-"><code>BranchGroup.pickAny(org.scijava.java3d.PickShape)</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#SceneGraphPath--">SceneGraphPath</a></span>()</code>
+<div class="block">Constructs a SceneGraphPath object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#SceneGraphPath-org.scijava.java3d.Locale-org.scijava.java3d.Node-">SceneGraphPath</a></span>(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;root,
+              <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</code>
+<div class="block">Constructs a new SceneGraphPath object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#SceneGraphPath-org.scijava.java3d.Locale-org.scijava.java3d.Node:A-org.scijava.java3d.Node-">SceneGraphPath</a></span>(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;root,
+              <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>[]&nbsp;nodes,
+              <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</code>
+<div class="block">Constructs a new SceneGraphPath object.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#equals-java.lang.Object-">equals</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o1)</code>
+<div class="block">Returns true if the Object o1 is of type SceneGraphPath and all of the
+ data members of o1 are equal to the corresponding data members in
+ this SceneGraphPath  and if the values of the transforms is equal.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#equals-org.scijava.java3d.SceneGraphPath-">equals</a></span>(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;testPath)</code>
+<div class="block">Returns true if all of the data members of path testPath are
+ equal to the corresponding data members in this SceneGraphPath and
+ if the values of the transforms is equal.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#getLocale--">getLocale</a></span>()</code>
+<div class="block">Retrieves the path's Locale</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#getNode-int-">getNode</a></span>(int&nbsp;index)</code>
+<div class="block">Retrieves the node at the specified index.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#getObject--">getObject</a></span>()</code>
+<div class="block">Retrieves the path's terminal node object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#getTransform--">getTransform</a></span>()</code>
+<div class="block">Returns a copy of the transform associated with this SceneGraphPath;
+  returns null if there is no transform associated.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#hashCode--">hashCode</a></span>()</code>
+<div class="block">Returns a hash number based on the data values in this
+ object.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#isSamePath-org.scijava.java3d.SceneGraphPath-">isSamePath</a></span>(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;testPath)</code>
+<div class="block">Determines whether two SceneGraphPath objects represent the same
+ path in the scene graph; either object might include a different
+ subset of internal nodes; only the internal link nodes, the Locale,
+ and the Node itself are compared.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#nodeCount--">nodeCount</a></span>()</code>
+<div class="block">Retrieves the number of nodes in this path.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#set-org.scijava.java3d.SceneGraphPath-">set</a></span>(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;newPath)</code>
+<div class="block">Sets this path's values to that of the specified path.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#setLocale-org.scijava.java3d.Locale-">setLocale</a></span>(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;newLocale)</code>
+<div class="block">Sets this path's Locale to the specified Locale.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#setNode-int-org.scijava.java3d.Node-">setNode</a></span>(int&nbsp;index,
+       <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;newNode)</code>
+<div class="block">Replaces the node at the specified index with newNode.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#setNodes-org.scijava.java3d.Node:A-">setNodes</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>[]&nbsp;nodes)</code>
+<div class="block">Sets this path's node objects to the specified node objects.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#setObject-org.scijava.java3d.Node-">setObject</a></span>(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</code>
+<div class="block">Sets this path's terminal node to the specified node object.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#setTransform-org.scijava.java3d.Transform3D-">setTransform</a></span>(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;trans)</code>
+<div class="block">Sets the transform component of this SceneGraphPath to the value of
+ the passed transform.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/SceneGraphPath.html#toString--">toString</a></span>()</code>
+<div class="block">Returns a string representation of this object;
+ the string contains the class names of all Nodes in the SceneGraphPath,
+ the toString() method of any associated user data provided by
+ SceneGraphObject.getUserData(), and also prints out the transform,
+ if it is not null.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SceneGraphPath--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SceneGraphPath</h4>
+<pre>public&nbsp;SceneGraphPath()</pre>
+<div class="block">Constructs a SceneGraphPath object with default parameters.
+ The default values are as follows:
+ <ul>
+ root : null<br>
+ object : null<br>
+ list of (interior) nodes : null<br>
+ transform : identity<br>
+ </ul></div>
+</li>
+</ul>
+<a name="SceneGraphPath-org.scijava.java3d.Locale-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SceneGraphPath</h4>
+<pre>public&nbsp;SceneGraphPath(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;root,
+                      <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</pre>
+<div class="block">Constructs a new SceneGraphPath object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>root</code> - the Locale object of this path</dd>
+<dd><code>object</code> - the terminal node of this path</dd>
+</dl>
+</li>
+</ul>
+<a name="SceneGraphPath-org.scijava.java3d.Locale-org.scijava.java3d.Node:A-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SceneGraphPath</h4>
+<pre>public&nbsp;SceneGraphPath(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;root,
+                      <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>[]&nbsp;nodes,
+                      <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</pre>
+<div class="block">Constructs a new SceneGraphPath object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>root</code> - the Locale object of this path</dd>
+<dd><code>nodes</code> - an array of node objects in the path from
+ the Locale to the terminal node</dd>
+<dd><code>object</code> - the terminal node of this path</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="set-org.scijava.java3d.SceneGraphPath-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>set</h4>
+<pre>public final&nbsp;void&nbsp;set(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;newPath)</pre>
+<div class="block">Sets this path's values to that of the specified path.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>newPath</code> - the SceneGraphPath to copy</dd>
+</dl>
+</li>
+</ul>
+<a name="setLocale-org.scijava.java3d.Locale-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLocale</h4>
+<pre>public final&nbsp;void&nbsp;setLocale(<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;newLocale)</pre>
+<div class="block">Sets this path's Locale to the specified Locale.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>newLocale</code> - The new Locale</dd>
+</dl>
+</li>
+</ul>
+<a name="setObject-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setObject</h4>
+<pre>public final&nbsp;void&nbsp;setObject(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;object)</pre>
+<div class="block">Sets this path's terminal node to the specified node object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>object</code> - the new terminal node</dd>
+</dl>
+</li>
+</ul>
+<a name="setNodes-org.scijava.java3d.Node:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNodes</h4>
+<pre>public final&nbsp;void&nbsp;setNodes(<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>[]&nbsp;nodes)</pre>
+<div class="block">Sets this path's node objects to the specified node objects.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>nodes</code> - an array of node objects in the path from
+ the Locale to the terminal node</dd>
+</dl>
+</li>
+</ul>
+<a name="setNode-int-org.scijava.java3d.Node-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNode</h4>
+<pre>public final&nbsp;void&nbsp;setNode(int&nbsp;index,
+                          <a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;newNode)</pre>
+<div class="block">Replaces the node at the specified index with newNode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - the index of the node to replace</dd>
+<dd><code>newNode</code> - the new node</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the node array pointer is null.</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransform-org.scijava.java3d.Transform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransform</h4>
+<pre>public final&nbsp;void&nbsp;setTransform(<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;trans)</pre>
+<div class="block">Sets the transform component of this SceneGraphPath to the value of
+ the passed transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trans</code> - the transform to be copied. trans should be the
+ localToVworld matrix of this SceneGraphPath object.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTransform--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransform</h4>
+<pre>public final&nbsp;<a href="../../../org/scijava/java3d/Transform3D.html" title="class in org.scijava.java3d">Transform3D</a>&nbsp;getTransform()</pre>
+<div class="block">Returns a copy of the transform associated with this SceneGraphPath;
+  returns null if there is no transform associated.
+  If this SceneGraphPath was returned by a Java 3D picking or
+  collision method, the local coordinate to virtual world
+  coordinate transform for this scene graph object at the
+  time of the pick or collision is recorded.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the local to VWorld transform</dd>
+</dl>
+</li>
+</ul>
+<a name="getLocale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLocale</h4>
+<pre>public final&nbsp;<a href="../../../org/scijava/java3d/Locale.html" title="class in org.scijava.java3d">Locale</a>&nbsp;getLocale()</pre>
+<div class="block">Retrieves the path's Locale</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this path's Locale</dd>
+</dl>
+</li>
+</ul>
+<a name="getObject--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObject</h4>
+<pre>public final&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;getObject()</pre>
+<div class="block">Retrieves the path's terminal node object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the terminal node</dd>
+</dl>
+</li>
+</ul>
+<a name="nodeCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nodeCount</h4>
+<pre>public final&nbsp;int&nbsp;nodeCount()</pre>
+<div class="block">Retrieves the number of nodes in this path.  The number of nodes
+ does not include the Locale or the terminal node object itself.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a count of the number of nodes in this path</dd>
+</dl>
+</li>
+</ul>
+<a name="getNode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNode</h4>
+<pre>public final&nbsp;<a href="../../../org/scijava/java3d/Node.html" title="class in org.scijava.java3d">Node</a>&nbsp;getNode(int&nbsp;index)</pre>
+<div class="block">Retrieves the node at the specified index.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - the index specifying which node to retrieve</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the specified node</dd>
+</dl>
+</li>
+</ul>
+<a name="equals-org.scijava.java3d.SceneGraphPath-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;testPath)</pre>
+<div class="block">Returns true if all of the data members of path testPath are
+ equal to the corresponding data members in this SceneGraphPath and
+ if the values of the transforms is equal.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>testPath</code> - the path we will compare this object's path against.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true or false</dd>
+</dl>
+</li>
+</ul>
+<a name="equals-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o1)</pre>
+<div class="block">Returns true if the Object o1 is of type SceneGraphPath and all of the
+ data members of o1 are equal to the corresponding data members in
+ this SceneGraphPath  and if the values of the transforms is equal.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o1</code> - the object we will compare this SceneGraphPath's path against.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true or false</dd>
+</dl>
+</li>
+</ul>
+<a name="hashCode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<div class="block">Returns a hash number based on the data values in this
+ object. Two different SceneGraphPath objects with identical data
+ values (ie, returns true for trans.equals(SceneGraphPath) ) will
+ return the same hash number.  Two Paths with different data members
+ may return the same hash value, although this is not likely.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the integer hash value</dd>
+</dl>
+</li>
+</ul>
+<a name="isSamePath-org.scijava.java3d.SceneGraphPath-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSamePath</h4>
+<pre>public final&nbsp;boolean&nbsp;isSamePath(<a href="../../../org/scijava/java3d/SceneGraphPath.html" title="class in org.scijava.java3d">SceneGraphPath</a>&nbsp;testPath)</pre>
+<div class="block">Determines whether two SceneGraphPath objects represent the same
+ path in the scene graph; either object might include a different
+ subset of internal nodes; only the internal link nodes, the Locale,
+ and the Node itself are compared.  The paths are not validated for
+ correctness or uniqueness.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>testPath</code> - the SceneGraphPath to be compared to this SceneGraphPath</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true or false</dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">Returns a string representation of this object;
+ the string contains the class names of all Nodes in the SceneGraphPath,
+ the toString() method of any associated user data provided by
+ SceneGraphObject.getUserData(), and also prints out the transform,
+ if it is not null.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>String representation of this object</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Screen3D.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/SceneGraphPath.html" target="_top">Frames</a></li>
+<li><a href="SceneGraphPath.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

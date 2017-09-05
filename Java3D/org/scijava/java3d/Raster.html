@@ -1,0 +1,1489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Raster (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Raster (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":10,"i3":10,"i4":10,"i5":10,"i6":42,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":42,"i17":42,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/QuadArray.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/RenderingAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Raster.html" target="_top">Frames</a></li>
+<li><a href="Raster.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class Raster" class="title">Class Raster</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">org.scijava.java3d.Geometry</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.Raster</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Raster</span>
+extends <a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></pre>
+<div class="block">The Raster object extends Geometry to allow drawing a raster image
+ that is attached to a 3D location in the virtual world.
+ It contains a 3D point that is defined in the local object
+ coordinate system of the Shape3D node that references the Raster.
+ It also contains a type specifier, a clipping mode, a reference to
+ a ImageComponent2D object and/or a DepthComponent object, an
+ integer x,y source offset and a size (width, height) to allow
+ reading or writing a portion of the referenced image, and an
+ integer x,y destination offset to position the raster relative to
+ the transformed 3D point.
+ In addition to being used as a type of geometry for drawing,
+ a Raster may be used to readback pixel data (color and/or z-buffer)
+ from the frame buffer in immediate mode.
+ <p>
+ The geometric extent of a Raster object is a single 3D point, specified
+ by the raster position.  This means that geometry-based picking or
+ collision with a Raster object will only intersect the object at
+ this single point; the 2D raster image is neither pickable
+ nor collidable.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_CLIP_MODE_READ">ALLOW_CLIP_MODE_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the clip mode.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_CLIP_MODE_WRITE">ALLOW_CLIP_MODE_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the clip mode.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_DEPTH_COMPONENT_READ">ALLOW_DEPTH_COMPONENT_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the depth component.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_DEPTH_COMPONENT_WRITE">ALLOW_DEPTH_COMPONENT_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the depth component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_IMAGE_READ">ALLOW_IMAGE_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the image.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_IMAGE_WRITE">ALLOW_IMAGE_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the image.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_OFFSET_READ">ALLOW_OFFSET_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the source or
+ destination offset.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_OFFSET_WRITE">ALLOW_OFFSET_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the source or
+ destination offset.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_POSITION_READ">ALLOW_POSITION_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the position.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_POSITION_WRITE">ALLOW_POSITION_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the position.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_SIZE_READ">ALLOW_SIZE_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the size.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_SIZE_WRITE">ALLOW_SIZE_WRITE</a></span></code>
+<div class="block">Specifies that this Raster allows writing the size.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#ALLOW_TYPE_READ">ALLOW_TYPE_READ</a></span></code>
+<div class="block">Specifies that this Raster allows reading the type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#CLIP_IMAGE">CLIP_IMAGE</a></span></code>
+<div class="block">Specifies that the raster object is clipped as an image after
+ the raster position has been transformed.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#CLIP_POSITION">CLIP_POSITION</a></span></code>
+<div class="block">Specifies that this raster object is not drawn
+ if the raster position is outside the viewing volume.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#RASTER_COLOR">RASTER_COLOR</a></span></code>
+<div class="block">Specifies a Raster object with color data.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#RASTER_COLOR_DEPTH">RASTER_COLOR_DEPTH</a></span></code>
+<div class="block">Specifies a Raster object with both color and depth (z-buffer) data.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#RASTER_DEPTH">RASTER_DEPTH</a></span></code>
+<div class="block">Specifies a Raster object with depth (z-buffer) data.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Geometry">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></h3>
+<code><a href="../../../org/scijava/java3d/Geometry.html#ALLOW_INTERSECT">ALLOW_INTERSECT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#Raster--">Raster</a></span>()</code>
+<div class="block">Constructs a Raster object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#Raster-org.scijava.vecmath.Point3f-int-int-int-int-int-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">Raster</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+      int&nbsp;type,
+      int&nbsp;xSrcOffset,
+      int&nbsp;ySrcOffset,
+      int&nbsp;width,
+      int&nbsp;height,
+      <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+      <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</code>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#Raster-org.scijava.vecmath.Point3f-int-int-java.awt.Point-java.awt.Dimension-java.awt.Point-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">Raster</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+      int&nbsp;type,
+      int&nbsp;clipMode,
+      <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset,
+      <a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size,
+      <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset,
+      <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+      <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</code>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#Raster-org.scijava.vecmath.Point3f-int-java.awt.Point-java.awt.Dimension-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">Raster</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+      int&nbsp;type,
+      <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset,
+      <a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size,
+      <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+      <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</code>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></span>(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getClipMode--">getClipMode</a></span>()</code>
+<div class="block">Retrieves the current clipping mode of this raster object.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getDepthComponent--">getDepthComponent</a></span>()</code>
+<div class="block">Retrieves the current depth image object.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getDstOffset-java.awt.Point-">getDstOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset)</code>
+<div class="block">Retrieves the current destination pixel offset.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getImage--">getImage</a></span>()</code>
+<div class="block">Retrieves the current pixel array object.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getOffset-java.awt.Point-">getOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>getSrcOffset(java.awt.Point)</code></span></div>
+</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getPosition-org.scijava.vecmath.Point3f-">getPosition</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos)</code>
+<div class="block">Retrieves the current position in object coordinates of this raster.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getSize-java.awt.Dimension-">getSize</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size)</code>
+<div class="block">Retrieves the current raster size.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getSrcOffset-java.awt.Point-">getSrcOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</code>
+<div class="block">Retrieves the current source pixel offset.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#getType--">getType</a></span>()</code>
+<div class="block">Retrieves the current type of this raster object, one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setClipMode-int-">setClipMode</a></span>(int&nbsp;clipMode)</code>
+<div class="block">Sets the clipping mode of this raster object.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setDepthComponent-org.scijava.java3d.DepthComponent-">setDepthComponent</a></span>(<a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</code>
+<div class="block">Sets the depth image used to copy pixels to/from a Canvas3D.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setDstOffset-int-int-">setDstOffset</a></span>(int&nbsp;xDstOffset,
+            int&nbsp;yDstOffset)</code>
+<div class="block">Sets the destination pixel offset of the upper-left corner of
+ the rendered image relative to the transformed position.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setDstOffset-java.awt.Point-">setDstOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset)</code>
+<div class="block">Sets the destination pixel offset of the upper-left corner of
+ the rendered image relative to the transformed position.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setImage-org.scijava.java3d.ImageComponent2D-">setImage</a></span>(<a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image)</code>
+<div class="block">Sets the pixel array used to copy pixels to/from a Canvas3D.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setOffset-int-int-">setOffset</a></span>(int&nbsp;xSrcOffset,
+         int&nbsp;ySrcOffset)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>setSrcOffset(int,int)</code></span></div>
+</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setOffset-java.awt.Point-">setOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>setSrcOffset(java.awt.Point)</code></span></div>
+</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setPosition-org.scijava.vecmath.Point3f-">setPosition</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos)</code>
+<div class="block">Sets the position in object coordinates of this raster.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setSize-java.awt.Dimension-">setSize</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size)</code>
+<div class="block">Sets the size of the array of pixels to be copied.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setSize-int-int-">setSize</a></span>(int&nbsp;width,
+       int&nbsp;height)</code>
+<div class="block">Sets the number of pixels to be copied from the pixel array.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setSrcOffset-int-int-">setSrcOffset</a></span>(int&nbsp;xSrcOffset,
+            int&nbsp;ySrcOffset)</code>
+<div class="block">Sets the offset within the source array of pixels
+ at which to start copying.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setSrcOffset-java.awt.Point-">setSrcOffset</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</code>
+<div class="block">Sets the offset within the source array of pixels
+ at which to start copying.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Raster.html#setType-int-">setType</a></span>(int&nbsp;type)</code>
+<div class="block">Sets the type of this raster object to one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="RASTER_COLOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RASTER_COLOR</h4>
+<pre>public static final&nbsp;int RASTER_COLOR</pre>
+<div class="block">Specifies a Raster object with color data.
+ In this mode, the image reference must point to
+ a valid ImageComponent object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Raster.html#setType-int-"><code>setType(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Raster.RASTER_COLOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="RASTER_DEPTH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RASTER_DEPTH</h4>
+<pre>public static final&nbsp;int RASTER_DEPTH</pre>
+<div class="block">Specifies a Raster object with depth (z-buffer) data.
+ In this mode, the depthImage reference must point to
+ a valid DepthComponent object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Raster.html#setType-int-"><code>setType(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Raster.RASTER_DEPTH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="RASTER_COLOR_DEPTH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RASTER_COLOR_DEPTH</h4>
+<pre>public static final&nbsp;int RASTER_COLOR_DEPTH</pre>
+<div class="block">Specifies a Raster object with both color and depth (z-buffer) data.
+ In this mode, the image reference must point to
+ a valid ImageComponent object, and the depthImage reference
+ must point to a valid DepthComponent object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Raster.html#setType-int-"><code>setType(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Raster.RASTER_COLOR_DEPTH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CLIP_POSITION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CLIP_POSITION</h4>
+<pre>public static final&nbsp;int CLIP_POSITION</pre>
+<div class="block">Specifies that this raster object is not drawn
+ if the raster position is outside the viewing volume.
+ In this mode, the raster is not drawn when the transformed
+ raster position is clipped out, even if part of the raster would
+ have been visible.  This is the default mode.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Raster.html#setClipMode-int-"><code>setClipMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Raster.CLIP_POSITION">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CLIP_IMAGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CLIP_IMAGE</h4>
+<pre>public static final&nbsp;int CLIP_IMAGE</pre>
+<div class="block">Specifies that the raster object is clipped as an image after
+ the raster position has been transformed.  In this mode, part
+ of the raster may be drawn even when the transformed raster
+ position is clipped out.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Raster.html#setClipMode-int-"><code>setClipMode(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Raster.CLIP_IMAGE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POSITION_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POSITION_READ</h4>
+<pre>public static final&nbsp;int ALLOW_POSITION_READ</pre>
+<div class="block">Specifies that this Raster allows reading the position.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_POSITION_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POSITION_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POSITION_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_POSITION_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the position.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_POSITION_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_OFFSET_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_OFFSET_READ</h4>
+<pre>public static final&nbsp;int ALLOW_OFFSET_READ</pre>
+<div class="block">Specifies that this Raster allows reading the source or
+ destination offset.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_OFFSET_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_OFFSET_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_OFFSET_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_OFFSET_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the source or
+ destination offset.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_OFFSET_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_IMAGE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_IMAGE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_IMAGE_READ</pre>
+<div class="block">Specifies that this Raster allows reading the image.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_IMAGE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_IMAGE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_IMAGE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_IMAGE_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the image.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_IMAGE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_COMPONENT_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_COMPONENT_READ</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_COMPONENT_READ</pre>
+<div class="block">Specifies that this Raster allows reading the depth component.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_DEPTH_COMPONENT_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_COMPONENT_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_COMPONENT_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_COMPONENT_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the depth component.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_DEPTH_COMPONENT_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SIZE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SIZE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_SIZE_READ</pre>
+<div class="block">Specifies that this Raster allows reading the size.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_SIZE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_SIZE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_SIZE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_SIZE_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the size.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_SIZE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_TYPE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_TYPE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_TYPE_READ</pre>
+<div class="block">Specifies that this Raster allows reading the type.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_TYPE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_CLIP_MODE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_CLIP_MODE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_CLIP_MODE_READ</pre>
+<div class="block">Specifies that this Raster allows reading the clip mode.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_CLIP_MODE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_CLIP_MODE_WRITE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALLOW_CLIP_MODE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_CLIP_MODE_WRITE</pre>
+<div class="block">Specifies that this Raster allows writing the clip mode.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Raster.ALLOW_CLIP_MODE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Raster--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Raster</h4>
+<pre>public&nbsp;Raster()</pre>
+<div class="block">Constructs a Raster object with default parameters.
+ The default values are as follows:
+ <ul>
+ type : RASTER_COLOR<br>
+ clipMode : CLIP_POSITION<br>
+ position : (0,0,0)<br>
+ srcOffset : (0,0)<br>
+ size : (0,0)<br>
+ dstOffset : (0,0)<br>
+ image : null<br>
+ depth component : null<br>
+ </ul></div>
+</li>
+</ul>
+<a name="Raster-org.scijava.vecmath.Point3f-int-int-int-int-int-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Raster</h4>
+<pre>public&nbsp;Raster(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+              int&nbsp;type,
+              int&nbsp;xSrcOffset,
+              int&nbsp;ySrcOffset,
+              int&nbsp;width,
+              int&nbsp;height,
+              <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+              <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</pre>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pos</code> - the position in object coordinates of the upper-left
+ corner of the raster</dd>
+<dd><code>type</code> - the type of raster object, one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH</dd>
+<dd><code>xSrcOffset</code> - the x offset within the source array of pixels
+ at which to start copying</dd>
+<dd><code>ySrcOffset</code> - the y offset within the source array of pixels
+ at which to start copying</dd>
+<dd><code>width</code> - the number of columns of pixels to copy</dd>
+<dd><code>height</code> - the number of rows of pixels to copy</dd>
+<dd><code>image</code> - the ImageComponent2D object containing the
+ color data</dd>
+<dd><code>depthComponent</code> - the DepthComponent object containing the depth
+ (z-buffer) data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the image class of the specified
+ ImageComponent2D is ImageClass.NIO_IMAGE_BUFFER.</dd>
+</dl>
+</li>
+</ul>
+<a name="Raster-org.scijava.vecmath.Point3f-int-java.awt.Point-java.awt.Dimension-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Raster</h4>
+<pre>public&nbsp;Raster(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+              int&nbsp;type,
+              <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset,
+              <a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size,
+              <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+              <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</pre>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pos</code> - the position in object coordinates of the upper-left
+ corner of the raster</dd>
+<dd><code>type</code> - the type of raster object, one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH</dd>
+<dd><code>srcOffset</code> - the offset within the source array of pixels
+ at which to start copying</dd>
+<dd><code>size</code> - the width and height of the image to be copied</dd>
+<dd><code>image</code> - the ImageComponent2D object containing the
+ color data</dd>
+<dd><code>depthComponent</code> - the DepthComponent object containing the depth
+ (z-buffer) data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the image class of the specified
+ ImageComponent2D is ImageClass.NIO_IMAGE_BUFFER.</dd>
+</dl>
+</li>
+</ul>
+<a name="Raster-org.scijava.vecmath.Point3f-int-int-java.awt.Point-java.awt.Dimension-java.awt.Point-org.scijava.java3d.ImageComponent2D-org.scijava.java3d.DepthComponent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Raster</h4>
+<pre>public&nbsp;Raster(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos,
+              int&nbsp;type,
+              int&nbsp;clipMode,
+              <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset,
+              <a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size,
+              <a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset,
+              <a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image,
+              <a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</pre>
+<div class="block">Constructs a new Raster object with the specified values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pos</code> - the position in object coordinates of the upper-left
+ corner of the raster</dd>
+<dd><code>type</code> - the type of raster object, one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH</dd>
+<dd><code>clipMode</code> - the clipping mode of the raster object, one of:
+ CLIP_POSITION or CLIP_IMAGE</dd>
+<dd><code>srcOffset</code> - the offset within the source array of pixels
+ at which to start copying</dd>
+<dd><code>size</code> - the width and height of the image to be copied</dd>
+<dd><code>dstOffset</code> - the destination pixel offset of the upper-left
+ corner of the rendered image relative to the transformed position</dd>
+<dd><code>image</code> - the ImageComponent2D object containing the
+ color data</dd>
+<dd><code>depthComponent</code> - the DepthComponent object containing the depth
+ (z-buffer) data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the image class of the specified
+ ImageComponent2D is ImageClass.NIO_IMAGE_BUFFER.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setPosition-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPosition</h4>
+<pre>public&nbsp;void&nbsp;setPosition(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos)</pre>
+<div class="block">Sets the position in object coordinates of this raster.  This
+ position is transformed into device coordinates and is used as
+ the upper-left corner of the raster.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pos</code> - the new position of this raster</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getPosition-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPosition</h4>
+<pre>public&nbsp;void&nbsp;getPosition(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;pos)</pre>
+<div class="block">Retrieves the current position in object coordinates of this raster.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pos</code> - the vector that will receive the current position</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setType-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setType</h4>
+<pre>public&nbsp;void&nbsp;setType(int&nbsp;type)</pre>
+<div class="block">Sets the type of this raster object to one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>type</code> - the new type of this raster</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/RestrictedAccessException.html" title="class in org.scijava.java3d">RestrictedAccessException</a></code> - if the method is called
+ when this object is part of live or compiled scene graph.</dd>
+</dl>
+</li>
+</ul>
+<a name="getType--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getType</h4>
+<pre>public&nbsp;int&nbsp;getType()</pre>
+<div class="block">Retrieves the current type of this raster object, one of: RASTER_COLOR,
+ RASTER_DEPTH, or RASTER_COLOR_DEPTH.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>type the type of this raster</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setClipMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClipMode</h4>
+<pre>public&nbsp;void&nbsp;setClipMode(int&nbsp;clipMode)</pre>
+<div class="block">Sets the clipping mode of this raster object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>clipMode</code> - the new clipping mode of this raster,
+ one of: CLIP_POSITION or CLIP_IMAGE.  The default mode
+ is CLIP_POSITION.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getClipMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClipMode</h4>
+<pre>public&nbsp;int&nbsp;getClipMode()</pre>
+<div class="block">Retrieves the current clipping mode of this raster object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>clipMode the clipping mode of this raster,
+ one of: CLIP_POSITION or CLIP_IMAGE.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setOffset-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOffset</h4>
+<pre>public&nbsp;void&nbsp;setOffset(int&nbsp;xSrcOffset,
+                      int&nbsp;ySrcOffset)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>setSrcOffset(int,int)</code></span></div>
+</li>
+</ul>
+<a name="setOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOffset</h4>
+<pre>public&nbsp;void&nbsp;setOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>setSrcOffset(java.awt.Point)</code></span></div>
+</li>
+</ul>
+<a name="getOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOffset</h4>
+<pre>public&nbsp;void&nbsp;getOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">As of Java 3D version 1.3, replaced by
+ <code>getSrcOffset(java.awt.Point)</code></span></div>
+</li>
+</ul>
+<a name="setSrcOffset-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSrcOffset</h4>
+<pre>public&nbsp;void&nbsp;setSrcOffset(int&nbsp;xSrcOffset,
+                         int&nbsp;ySrcOffset)</pre>
+<div class="block">Sets the offset within the source array of pixels
+ at which to start copying.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xSrcOffset</code> - the x offset within the source array of pixels
+ at which to start copying</dd>
+<dd><code>ySrcOffset</code> - the y offset within the source array of pixels
+ at which to start copying</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setSrcOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSrcOffset</h4>
+<pre>public&nbsp;void&nbsp;setSrcOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</pre>
+<div class="block">Sets the offset within the source array of pixels
+ at which to start copying.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srcOffset</code> - the new source pixel offset</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getSrcOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSrcOffset</h4>
+<pre>public&nbsp;void&nbsp;getSrcOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;srcOffset)</pre>
+<div class="block">Retrieves the current source pixel offset.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srcOffset</code> - the object that will receive the source offset</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSize</h4>
+<pre>public&nbsp;void&nbsp;setSize(int&nbsp;width,
+                    int&nbsp;height)</pre>
+<div class="block">Sets the number of pixels to be copied from the pixel array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - the number of columns in the array of pixels to copy</dd>
+<dd><code>height</code> - the number of rows in the array of pixels to copy</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setSize-java.awt.Dimension-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSize</h4>
+<pre>public&nbsp;void&nbsp;setSize(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size)</pre>
+<div class="block">Sets the size of the array of pixels to be copied.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>size</code> - the new size</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getSize-java.awt.Dimension-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSize</h4>
+<pre>public&nbsp;void&nbsp;getSize(<a href="http://javadoc.imagej.net/Java/java/awt/Dimension.html?is-external=true" title="class or interface in java.awt">Dimension</a>&nbsp;size)</pre>
+<div class="block">Retrieves the current raster size.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>size</code> - the object that will receive the size</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setDstOffset-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDstOffset</h4>
+<pre>public&nbsp;void&nbsp;setDstOffset(int&nbsp;xDstOffset,
+                         int&nbsp;yDstOffset)</pre>
+<div class="block">Sets the destination pixel offset of the upper-left corner of
+ the rendered image relative to the transformed position.  This
+ pixel offset is added to the transformed raster position prior
+ to rendering the image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xDstOffset</code> - the x coordinate of the new offset</dd>
+<dd><code>yDstOffset</code> - the y coordinate of the new offset</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setDstOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDstOffset</h4>
+<pre>public&nbsp;void&nbsp;setDstOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset)</pre>
+<div class="block">Sets the destination pixel offset of the upper-left corner of
+ the rendered image relative to the transformed position.  This
+ pixel offset is added to the transformed raster position prior
+ to rendering the image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dstOffset</code> - the new destination pixel offset</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="getDstOffset-java.awt.Point-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDstOffset</h4>
+<pre>public&nbsp;void&nbsp;getDstOffset(<a href="http://javadoc.imagej.net/Java/java/awt/Point.html?is-external=true" title="class or interface in java.awt">Point</a>&nbsp;dstOffset)</pre>
+<div class="block">Retrieves the current destination pixel offset.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dstOffset</code> - the object that will receive the destination offset</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+</dl>
+</li>
+</ul>
+<a name="setImage-org.scijava.java3d.ImageComponent2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImage</h4>
+<pre>public&nbsp;void&nbsp;setImage(<a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;image)</pre>
+<div class="block">Sets the pixel array used to copy pixels to/from a Canvas3D.
+ This is used when the type is RASTER_COLOR or RASTER_COLOR_DEPTH.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - the ImageComponent2D object containing the
+ color data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dd><code><a href="../../../org/scijava/java3d/IllegalSharingException.html" title="class in org.scijava.java3d">IllegalSharingException</a></code> - if this Raster is live and
+ the specified image is being used by a Canvas3D as an off-screen buffer.</dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the image class of the specified
+ ImageComponent2D is ImageClass.NIO_IMAGE_BUFFER.</dd>
+</dl>
+</li>
+</ul>
+<a name="getImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/ImageComponent2D.html" title="class in org.scijava.java3d">ImageComponent2D</a>&nbsp;getImage()</pre>
+<div class="block">Retrieves the current pixel array object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>image the ImageComponent2D object containing the
+ color data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setDepthComponent-org.scijava.java3d.DepthComponent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepthComponent</h4>
+<pre>public&nbsp;void&nbsp;setDepthComponent(<a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;depthComponent)</pre>
+<div class="block">Sets the depth image used to copy pixels to/from a Canvas3D.
+ This is used when the type is RASTER_DEPTH or RASTER_COLOR_DEPTH.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depthComponent</code> - the DepthComponent object containing the
+ depth (z-buffer) data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getDepthComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepthComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/DepthComponent.html" title="class in org.scijava.java3d">DepthComponent</a>&nbsp;getDepthComponent()</pre>
+<div class="block">Retrieves the current depth image object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>depthImage DepthComponent containing the
+ depth (z-buffer) data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="duplicateNodeComponent-org.scijava.java3d.NodeComponent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>duplicateNodeComponent</h4>
+<pre>public&nbsp;void&nbsp;duplicateNodeComponent(<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;originalNodeComponent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with duplicateNodeComponent(
+  NodeComponent originalNodeComponent, boolean forceDuplicate)</span></div>
+<div class="block">NOTE: Applications should <i>not</i> call this method directly.
+ It should only be called by the cloneNode method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/QuadArray.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/RenderingAttributes.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Raster.html" target="_top">Frames</a></li>
+<li><a href="Raster.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

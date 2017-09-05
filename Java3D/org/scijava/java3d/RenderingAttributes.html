@@ -1,0 +1,2566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RenderingAttributes (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="RenderingAttributes (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Raster.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/RenderingError.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/RenderingAttributes.html" target="_top">Frames</a></li>
+<li><a href="RenderingAttributes.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class RenderingAttributes" class="title">Class RenderingAttributes</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.RenderingAttributes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">RenderingAttributes</span>
+extends <a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></pre>
+<div class="block">The RenderingAttributes object defines common rendering attributes
+ for all primitive types. The rendering attributes are:<p>
+ <ul>
+ <li>Depth test function - used to compare the incoming (source) depth of
+ each pixel with depth of the pixel stored in frame buffer. If the test
+ passes, the pixel is written, otherwise the pixel is not written. The depth test
+ function is set with the <code>setDepthTestFunction</code>
+ method. By default, LESS_OR_EQUAL is the function used. The depth test
+ function is one of the following:</li><p>
+ <ul>
+ <li>ALWAYS - pixels are always drawn, irrespective of the depth
+ value. This effectively disables depth testing.</li><p>
+
+ <li>NEVER - pixels are never drawn, irrespective of the depth
+ value.</li><p>
+
+ <li>EQUAL - pixels are drawn if the incoming pixel depth is equal
+ to the stored pixel depth in the frame buffer.</li><p>
+
+ <li>NOT_EQUAL - pixels are drawn if the incoming pixel depth is
+ not equal to the stored pixel depth in the frame buffer.</li><p>
+
+ <li>LESS - pixels are drawn if the incoming pixel depth is less
+ than the stored pixel depth in the frame buffer.</li><p>
+
+ <li>LESS_OR_EQUAL - pixels are drawn if the incoming pixel depth
+ is less than or equal to the stored pixel depth in the frame buffer.
+ This is the default setting.</li><p>
+
+ <li>GREATER - pixels are drawn if the incoming pixel depth is greater
+ than the stored pixel depth in the frame buffer.</li><p>
+
+ <li>GREATER_OR_EQUAL - pixels are drawn if the incoming pixel depth
+ is greater than or equal to the stored pixel depth in the frame buffer.</li><p>
+ </ul>
+
+ <li>Alpha test function - used to compare the incoming (source) alpha value
+ of each pixel with the alpha test value. If the test passes, the pixel is
+ written, otherwise the pixel is not written. The alpha test
+ function is set with the <code>setAlphaTestFunction</code>
+ method. The alpha test
+ function is one of the following:</li><p>
+ <ul>
+ <li>ALWAYS - pixels are always drawn, irrespective of the alpha
+ value. This effectively disables alpha testing.
+ This is the default setting.</li><p>
+
+ <li>NEVER - pixels are never drawn, irrespective of the alpha
+ value.</li><p>
+
+ <li>EQUAL - pixels are drawn if the incoming pixel alpha value is equal
+ to the alpha test value.</li><p>
+
+ <li>NOT_EQUAL - pixels are drawn if the incoming pixel alpha value is
+ not equal to the alpha test value.</li><p>
+
+ <li>LESS - pixels are drawn if the incoming pixel alpha value is less
+ than the alpha test value.</li><p>
+
+ <li>LESS_OR_EQUAL - pixels are drawn if the incoming pixel alpha value
+ is less than or equal to the alpha test value.</li><p>
+
+ <li>GREATER - pixels are drawn if the incoming pixel alpha value is greater
+ than the alpha test value.</li><p>
+
+ <li>GREATER_OR_EQUAL - pixels are drawn if the incoming pixel alpha
+ value is greater than or equal to the alpha test value.</li><p>
+ </ul>
+
+ <li>Alpha test value - the test value used by the alpha test function.
+ This value is compared to the alpha value of each rendered pixel.
+ The alpha test value is set with the <code>setAlphaTestValue</code>
+ method. The default alpha test value is 0.0.</li><p>
+
+ <li>Raster operation - the raster operation function for this
+ RenderingAttributes component object. The raster operation is
+ set with the <code>setRasterOp</code> method. The raster operation
+ is enabled or disabled with the <code>setRasterOpEnable</code>
+ method. The raster operation is one of the following:</li><p>
+ <ul>
+ <li>ROP_CLEAR - DST = 0.</li>
+ <li>ROP_AND DST = SRC & DST.</li>
+ <li>ROP_AND_REVERSE DST = SRC & ~DST.</li>
+ <li>ROP_COPY - DST = SRC. This is the default operation.</li>
+ <li>ROP_AND_INVERTED - DST = ~SRC & DST.</li>
+ <li>ROP_NOOP - DST = DST.</li>
+ <li>ROP_XOR - DST = SRC ^ DST.</li>
+ <li>ROP_OR - DST = DST | SRC.</li>
+ <li>ROP_NOR - DST = ~( DST | SRC .)</li>
+ <li>ROP_EQUIV - DST = ~( DST ^ SRC .)</li>
+ <li>ROP_INVERT - DST = ~DST.</li>
+ <li>ROP_OR_REVERSE - DST = src | ~DST.</li>
+ <li>ROP_COPY_INVERTED - DST = ~SRC.</li>
+ <li>ROP_OR_INVERTED - DST = ~SRC | DST.</li>
+ <li>ROP_NAND - DST = ~(SRC & DST.)</li>
+ <li>ROP_SET - DST = 1.</li><p>
+ </ul>
+ <li>Vertex colors - vertex colors can be ignored for this
+ RenderingAttributes object. This capability is set with the
+ <code>setIgnoreVertexColors</code> method. If
+ ignoreVertexColors is false, per-vertex colors are used, when
+ present in the associated geometry objects, taking
+ precedence over the ColoringAttributes color and the
+ specified Material color(s). If ignoreVertexColors is true, per-vertex
+ colors are ignored. In this case, if lighting is enabled, the
+ Material diffuse color will be used as the object color.
+ if lighting is disabled, the ColoringAttributes color is
+ used. The default value is false.</li><p>
+
+ <li>Visibility flag - when set, invisible objects are
+ not rendered (subject to the visibility policy for
+ the current view), but they can be picked or collided with.
+ This flag is set with the <code>setVisible</code>
+ method. By default, the visibility flag is true.</li><p>
+
+ <li>Depth buffer - can be enabled or disabled for this
+ RenderingAttributes component object. The
+ <code>setDepthBufferEnable</code> method enables
+ or disabled the depth buffer. The
+ <code>setDepthBufferWriteEnable</code> method enables or disables
+ writing the depth buffer for this object. During the transparent
+ rendering pass, this attribute can be overridden by the
+ depthBufferFreezeTransparent attribute in the View
+ object. Transparent objects include BLENDED transparent and
+ antialiased lines and points. Transparent objects do not
+ include opaque objects or primitives rendered with
+ SCREEN_DOOR transparency. By default, the depth buffer
+ is enabled and the depth buffer write is enabled.</li><p>
+
+ <li>Stencil buffer - can be enabled or disabled for this RenderingAttributes
+ component object using the <code>setStencilEnable</code> method. If the
+ stencil buffer is disabled, the stencil operation and function are ignored.
+ If a scene graph is rendered on a Canvas3D that does not have a stencil
+ buffer, the stencil buffer will be implicitly disabled for that
+ canvas.</li><p>
+
+ <li>Stencil write mask - mask that controls which bits of the stencil
+ buffer are written when the stencil buffer is enabled. The default value is
+ <code>~0</code> (all ones).</li><p>
+
+ <li>Stencil operation - a set of three stencil operations performed
+ when: 1)&nbsp;the stencil test fails; 2)&nbsp;the stencil test passes, but
+ the depth test fails; or 3)&nbsp;both the stencil test and depth test pass.
+ The stencil operations are set with the <code>setStencilOp</code>
+ method. The stencil operation is one of the following:</li><p>
+ <ul>
+ <li>STENCIL_KEEP - keeps the current value (no operation performed).
+ This is the default setting.</li>
+ <li>STENCIL_ZERO - Sets the stencil buffer value to 0.</li>
+ <li>STENCIL_REPLACE - Sets the stencil buffer value to
+ <code>refValue</code>, as specified by <code>setStencilFunction</code>.</li>
+ <li>STENCIL_INCR - Increments the current stencil buffer value.</li>
+ <li>STENCIL_DECR - Decrements the current stencil buffer value.</li>
+ <li>STENCIL_INVERT - Bitwise inverts the current stencil buffer value.</li><p>
+ </ul>
+
+ <li>Stencil test function - used to compare the stencil reference value with
+ the per-pixel stencil value stored in the frame buffer. If the test passes,
+ the pixel is written, otherwise the pixel is not written. The stencil
+ test function, reference value, and comparison mask are set with the
+ <code>setStencilFunction</code> method. The stencil comparison mask is
+ bitwise-ANDed with both the stencil reference value and the stored stencil
+ value prior to doing the comparison. The default value for the reference value
+ is 0. The default value for the comparison mask is <code>~0</code> (all ones).
+ The stencil test function is one of the following:</li><p>
+ <ul>
+ <li>ALWAYS - pixels are always drawn, irrespective of the stencil
+ value. This effectively disables stencil testing.
+ This is the default setting.</li><p>
+
+ <li>NEVER - pixels are never drawn, irrespective of the stencil
+ value.</li><p>
+
+ <li>EQUAL - pixels are drawn if the stencil reference value is equal
+ to the stored stencil value in the frame buffer.</li><p>
+
+ <li>NOT_EQUAL - pixels are drawn if the stencil reference value is
+ not equal to the stored stencil value in the frame buffer.</li><p>
+
+ <li>LESS - pixels are drawn if the stencil reference value is less
+ than the stored stencil value in the frame buffer.</li><p>
+
+ <li>LESS_OR_EQUAL - pixels are drawn if the stencil reference value
+ is less than or equal to the stored stencil value in the frame buffer.</li><p>
+
+ <li>GREATER - pixels are drawn if the stencil reference value is greater
+ than the stored stencil value in the frame buffer.</li><p>
+
+ <li>GREATER_OR_EQUAL - pixels are drawn if the stencil reference value
+ is greater than or equal to the stored stencil value in the frame buffer.</li><p>
+ </ul>
+
+ </ul>
+
+ <p>Note: the alpha test, depth test, and stencil functions all use
+ the same enums.</p></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Appearance.html" title="class in org.scijava.java3d"><code>Appearance</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_ALPHA_TEST_FUNCTION_READ">ALLOW_ALPHA_TEST_FUNCTION_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its alpha test function component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_ALPHA_TEST_FUNCTION_WRITE">ALLOW_ALPHA_TEST_FUNCTION_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its alpha test function component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_ALPHA_TEST_VALUE_READ">ALLOW_ALPHA_TEST_VALUE_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its alpha test value component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_ALPHA_TEST_VALUE_WRITE">ALLOW_ALPHA_TEST_VALUE_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its alpha test value component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_DEPTH_ENABLE_READ">ALLOW_DEPTH_ENABLE_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its depth buffer enable and depth buffer write enable
+ component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_DEPTH_ENABLE_WRITE">ALLOW_DEPTH_ENABLE_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its depth buffer enable and depth buffer write enable
+ component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_DEPTH_TEST_FUNCTION_READ">ALLOW_DEPTH_TEST_FUNCTION_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its depth test function component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_DEPTH_TEST_FUNCTION_WRITE">ALLOW_DEPTH_TEST_FUNCTION_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its depth test function component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_IGNORE_VERTEX_COLORS_READ">ALLOW_IGNORE_VERTEX_COLORS_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its ignore vertex colors information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_IGNORE_VERTEX_COLORS_WRITE">ALLOW_IGNORE_VERTEX_COLORS_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its ignore vertex colors information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_RASTER_OP_READ">ALLOW_RASTER_OP_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its raster operation information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_RASTER_OP_WRITE">ALLOW_RASTER_OP_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its raster operation information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_STENCIL_ATTRIBUTES_READ">ALLOW_STENCIL_ATTRIBUTES_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object allows reading
+ its stencil enable, stencil op, stencil function, and
+ stencil write mask information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_STENCIL_ATTRIBUTES_WRITE">ALLOW_STENCIL_ATTRIBUTES_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object allows writing
+ its stencil enable, stencil op, stencil function, and
+ stencil write mask information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_VISIBLE_READ">ALLOW_VISIBLE_READ</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its visibility information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALLOW_VISIBLE_WRITE">ALLOW_VISIBLE_WRITE</a></span></code>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its visibility information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ALWAYS">ALWAYS</a></span></code>
+<div class="block">Specifies that pixels are always drawn irrespective of the
+ values being tested.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#EQUAL">EQUAL</a></span></code>
+<div class="block">Specifies that pixels are drawn if the two values being tested are equal.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#GREATER">GREATER</a></span></code>
+<div class="block">Specifies that pixels are drawn if the source/reference value is greater
+ than the destination/test value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#GREATER_OR_EQUAL">GREATER_OR_EQUAL</a></span></code>
+<div class="block">Specifies that pixels are drawn if the source/reference value is greater
+ than or equal to the destination/test value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#LESS">LESS</a></span></code>
+<div class="block">Specifies that pixels are drawn if the source/reference value is less
+ than the destination/test value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#LESS_OR_EQUAL">LESS_OR_EQUAL</a></span></code>
+<div class="block">Specifies that pixels are drawn if the source/reference value is less
+ than or equal to the destination/test value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#NEVER">NEVER</a></span></code>
+<div class="block">Specifies that pixels are never drawn irrespective of the
+ values being tested.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#NOT_EQUAL">NOT_EQUAL</a></span></code>
+<div class="block">Specifies that pixels are drawn if the two values being tested are not equal.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_AND">ROP_AND</a></span></code>
+<div class="block">Raster operation: <code>DST = SRC & DST</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_AND_INVERTED">ROP_AND_INVERTED</a></span></code>
+<div class="block">Raster operation: <code>DST = ~SRC & DST</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_AND_REVERSE">ROP_AND_REVERSE</a></span></code>
+<div class="block">Raster operation: <code>DST = SRC & ~DST</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_CLEAR">ROP_CLEAR</a></span></code>
+<div class="block">Raster operation: <code>DST = 0</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_COPY">ROP_COPY</a></span></code>
+<div class="block">Raster operation: <code>DST = SRC</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_COPY_INVERTED">ROP_COPY_INVERTED</a></span></code>
+<div class="block">Raster operation: <code>DST = ~SRC</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_EQUIV">ROP_EQUIV</a></span></code>
+<div class="block">Raster operation: <code>DST = ~( DST ^ SRC )</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_INVERT">ROP_INVERT</a></span></code>
+<div class="block">Raster operation: <code>DST = ~DST</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_NAND">ROP_NAND</a></span></code>
+<div class="block">Raster operation: <code>DST = ~(SRC & DST)</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_NOOP">ROP_NOOP</a></span></code>
+<div class="block">Raster operation: <code>DST = DST</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_NOR">ROP_NOR</a></span></code>
+<div class="block">Raster operation: <code>DST = ~( DST | SRC )</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_OR">ROP_OR</a></span></code>
+<div class="block">Raster operation: <code>DST = DST | SRC</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_OR_INVERTED">ROP_OR_INVERTED</a></span></code>
+<div class="block">Raster operation: <code>DST = ~SRC | DST</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_OR_REVERSE">ROP_OR_REVERSE</a></span></code>
+<div class="block">Raster operation: <code>DST = src | ~DST</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_SET">ROP_SET</a></span></code>
+<div class="block">Raster operation: <code>DST = 1</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#ROP_XOR">ROP_XOR</a></span></code>
+<div class="block">Raster operation: <code>DST = SRC ^ DST</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_DECR">STENCIL_DECR</a></span></code>
+<div class="block">Stencil operation: <code>DST = DST - 1</code></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_INCR">STENCIL_INCR</a></span></code>
+<div class="block">Stencil operation: <code>DST = DST + 1</code></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_INVERT">STENCIL_INVERT</a></span></code>
+<div class="block">Stencil operation: <code>DST = ~DST</code></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_KEEP">STENCIL_KEEP</a></span></code>
+<div class="block">Stencil operation: <code>DST = DST</code></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_REPLACE">STENCIL_REPLACE</a></span></code>
+<div class="block">Stencil operation: <code>DST = REF</code></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#STENCIL_ZERO">STENCIL_ZERO</a></span></code>
+<div class="block">Stencil operation: <code>DST = 0</code></div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#RenderingAttributes--">RenderingAttributes</a></span>()</code>
+<div class="block">Constructs a RenderingAttributes object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#RenderingAttributes-boolean-boolean-float-int-">RenderingAttributes</a></span>(boolean&nbsp;depthBufferEnable,
+                   boolean&nbsp;depthBufferWriteEnable,
+                   float&nbsp;alphaTestValue,
+                   int&nbsp;alphaTestFunction)</code>
+<div class="block">Constructs a RenderingAttributes object with specified values.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#RenderingAttributes-boolean-boolean-float-int-boolean-boolean-boolean-int-">RenderingAttributes</a></span>(boolean&nbsp;depthBufferEnable,
+                   boolean&nbsp;depthBufferWriteEnable,
+                   float&nbsp;alphaTestValue,
+                   int&nbsp;alphaTestFunction,
+                   boolean&nbsp;visible,
+                   boolean&nbsp;ignoreVertexColors,
+                   boolean&nbsp;rasterOpEnable,
+                   int&nbsp;rasterOp)</code>
+<div class="block">Constructs a RenderingAttributes object with specified values</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getAlphaTestFunction--">getAlphaTestFunction</a></span>()</code>
+<div class="block">Retrieves current alpha test function.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getAlphaTestValue--">getAlphaTestValue</a></span>()</code>
+<div class="block">Retrieves the alpha test value.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getDepthBufferEnable--">getDepthBufferEnable</a></span>()</code>
+<div class="block">Retrieves the state of zBuffer Enable flag</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getDepthBufferWriteEnable--">getDepthBufferWriteEnable</a></span>()</code>
+<div class="block">Retrieves the state of Depth Buffer Write Enable flag.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getDepthTestFunction--">getDepthTestFunction</a></span>()</code>
+<div class="block">Retrieves current depth test function.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getIgnoreVertexColors--">getIgnoreVertexColors</a></span>()</code>
+<div class="block">Retrieves the ignoreVertexColors flag for this
+ RenderingAttributes object.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getRasterOp--">getRasterOp</a></span>()</code>
+<div class="block">Retrieves the current raster operation for this RenderingAttributes
+ object.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getRasterOpEnable--">getRasterOpEnable</a></span>()</code>
+<div class="block">Retrieves the rasterOp enable flag for this RenderingAttributes
+ object.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getStencilEnable--">getStencilEnable</a></span>()</code>
+<div class="block">Retrieves the stencil buffer enable flag for this RenderingAttributes
+ object.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getStencilFunction-int:A-">getStencilFunction</a></span>(int[]&nbsp;params)</code>
+<div class="block">Retrieves the stencil function, reference value, and comparison mask,
+ and copies them into the specified array.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getStencilOp-int:A-">getStencilOp</a></span>(int[]&nbsp;stencilOps)</code>
+<div class="block">Retrieves the current set of stencil operations, and copies them
+ into the specified array.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getStencilWriteMask--">getStencilWriteMask</a></span>()</code>
+<div class="block">Retrieves the current stencil write mask for this RenderingAttributes
+ object.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#getVisible--">getVisible</a></span>()</code>
+<div class="block">Retrieves the visibility flag for this RenderingAttributes object.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-">setAlphaTestFunction</a></span>(int&nbsp;function)</code>
+<div class="block">Set alpha test function.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestValue-float-">setAlphaTestValue</a></span>(float&nbsp;value)</code>
+<div class="block">Set alpha test value used by alpha test function.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthBufferEnable-boolean-">setDepthBufferEnable</a></span>(boolean&nbsp;state)</code>
+<div class="block">Enables or disables depth buffer mode for this RenderingAttributes
+ component object.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthBufferWriteEnable-boolean-">setDepthBufferWriteEnable</a></span>(boolean&nbsp;state)</code>
+<div class="block">Enables or disables writing the depth buffer for this object.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-">setDepthTestFunction</a></span>(int&nbsp;function)</code>
+<div class="block">Set depth test function.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setIgnoreVertexColors-boolean-">setIgnoreVertexColors</a></span>(boolean&nbsp;ignoreVertexColors)</code>
+<div class="block">Sets a flag that indicates whether vertex colors are ignored
+ for this RenderingAttributes object.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-">setRasterOp</a></span>(int&nbsp;rasterOp)</code>
+<div class="block">Sets the raster operation function for this RenderingAttributes
+ component object.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOpEnable-boolean-">setRasterOpEnable</a></span>(boolean&nbsp;rasterOpEnable)</code>
+<div class="block">Sets the rasterOp enable flag for this RenderingAttributes
+ component object.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilEnable-boolean-">setStencilEnable</a></span>(boolean&nbsp;state)</code>
+<div class="block">Enables or disables the stencil buffer for this RenderingAttributes
+ component object.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int:A-">setStencilFunction</a></span>(int[]&nbsp;params)</code>
+<div class="block">Sets the stencil function, reference value, and comparison mask
+ for this RenderingAttributes object to the specified parameters.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-">setStencilFunction</a></span>(int&nbsp;function,
+                  int&nbsp;refValue,
+                  int&nbsp;compareMask)</code>
+<div class="block">Sets the stencil function, reference value, and comparison mask
+ for this RenderingAttributes object to the specified parameters.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int:A-">setStencilOp</a></span>(int[]&nbsp;stencilOps)</code>
+<div class="block">Sets the stencil operations for this RenderingAttributes object to the
+ specified parameters.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-">setStencilOp</a></span>(int&nbsp;failOp,
+            int&nbsp;zFailOp,
+            int&nbsp;zPassOp)</code>
+<div class="block">Sets the stencil operations for this RenderingAttributes object to the
+ specified parameters.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilWriteMask-int-">setStencilWriteMask</a></span>(int&nbsp;mask)</code>
+<div class="block">Sets the stencil write mask for this RenderingAttributes
+ object.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/RenderingAttributes.html#setVisible-boolean-">setVisible</a></span>(boolean&nbsp;visible)</code>
+<div class="block">Sets the visibility flag for this RenderingAttributes
+ component object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_ALPHA_TEST_VALUE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALPHA_TEST_VALUE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_ALPHA_TEST_VALUE_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its alpha test value component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_ALPHA_TEST_VALUE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_ALPHA_TEST_VALUE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALPHA_TEST_VALUE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_ALPHA_TEST_VALUE_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its alpha test value component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_ALPHA_TEST_VALUE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_ALPHA_TEST_FUNCTION_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALPHA_TEST_FUNCTION_READ</h4>
+<pre>public static final&nbsp;int ALLOW_ALPHA_TEST_FUNCTION_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its alpha test function component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_ALPHA_TEST_FUNCTION_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_ALPHA_TEST_FUNCTION_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALPHA_TEST_FUNCTION_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_ALPHA_TEST_FUNCTION_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its alpha test function component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_ALPHA_TEST_FUNCTION_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_TEST_FUNCTION_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_TEST_FUNCTION_READ</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_TEST_FUNCTION_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its depth test function component information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_DEPTH_TEST_FUNCTION_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_TEST_FUNCTION_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_TEST_FUNCTION_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_TEST_FUNCTION_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its depth test function component information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_DEPTH_TEST_FUNCTION_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_ENABLE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_ENABLE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_ENABLE_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its depth buffer enable and depth buffer write enable
+ component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_DEPTH_ENABLE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_DEPTH_ENABLE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_DEPTH_ENABLE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_DEPTH_ENABLE_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its depth buffer enable and depth buffer write enable
+ component information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.3</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_DEPTH_ENABLE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_VISIBLE_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_VISIBLE_READ</h4>
+<pre>public static final&nbsp;int ALLOW_VISIBLE_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its visibility information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_VISIBLE_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_VISIBLE_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_VISIBLE_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_VISIBLE_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its visibility information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_VISIBLE_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_IGNORE_VERTEX_COLORS_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_IGNORE_VERTEX_COLORS_READ</h4>
+<pre>public static final&nbsp;int ALLOW_IGNORE_VERTEX_COLORS_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its ignore vertex colors information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_IGNORE_VERTEX_COLORS_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_IGNORE_VERTEX_COLORS_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_IGNORE_VERTEX_COLORS_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_IGNORE_VERTEX_COLORS_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its ignore vertex colors information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_IGNORE_VERTEX_COLORS_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_RASTER_OP_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_RASTER_OP_READ</h4>
+<pre>public static final&nbsp;int ALLOW_RASTER_OP_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows reading its raster operation information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_RASTER_OP_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_RASTER_OP_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_RASTER_OP_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_RASTER_OP_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object
+ allows writing its raster operation information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_RASTER_OP_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_STENCIL_ATTRIBUTES_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_STENCIL_ATTRIBUTES_READ</h4>
+<pre>public static final&nbsp;int ALLOW_STENCIL_ATTRIBUTES_READ</pre>
+<div class="block">Specifies that this RenderingAttributes object allows reading
+ its stencil enable, stencil op, stencil function, and
+ stencil write mask information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_STENCIL_ATTRIBUTES_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_STENCIL_ATTRIBUTES_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_STENCIL_ATTRIBUTES_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_STENCIL_ATTRIBUTES_WRITE</pre>
+<div class="block">Specifies that this RenderingAttributes object allows writing
+ its stencil enable, stencil op, stencil function, and
+ stencil write mask information.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALLOW_STENCIL_ATTRIBUTES_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALWAYS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALWAYS</h4>
+<pre>public static final&nbsp;int ALWAYS</pre>
+<div class="block">Specifies that pixels are always drawn irrespective of the
+ values being tested.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.
+ This setting effectively disables alpha, depth, or stencil testing.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ALWAYS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NEVER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NEVER</h4>
+<pre>public static final&nbsp;int NEVER</pre>
+<div class="block">Specifies that pixels are never drawn irrespective of the
+ values being tested.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.NEVER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="EQUAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>EQUAL</h4>
+<pre>public static final&nbsp;int EQUAL</pre>
+<div class="block">Specifies that pixels are drawn if the two values being tested are equal.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.EQUAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="NOT_EQUAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NOT_EQUAL</h4>
+<pre>public static final&nbsp;int NOT_EQUAL</pre>
+<div class="block">Specifies that pixels are drawn if the two values being tested are not equal.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.NOT_EQUAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LESS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LESS</h4>
+<pre>public static final&nbsp;int LESS</pre>
+<div class="block">Specifies that pixels are drawn if the source/reference value is less
+ than the destination/test value.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.LESS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LESS_OR_EQUAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LESS_OR_EQUAL</h4>
+<pre>public static final&nbsp;int LESS_OR_EQUAL</pre>
+<div class="block">Specifies that pixels are drawn if the source/reference value is less
+ than or equal to the destination/test value.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.LESS_OR_EQUAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GREATER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GREATER</h4>
+<pre>public static final&nbsp;int GREATER</pre>
+<div class="block">Specifies that pixels are drawn if the source/reference value is greater
+ than the destination/test value.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.GREATER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GREATER_OR_EQUAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GREATER_OR_EQUAL</h4>
+<pre>public static final&nbsp;int GREATER_OR_EQUAL</pre>
+<div class="block">Specifies that pixels are drawn if the source/reference value is greater
+ than or equal to the destination/test value.
+ Can be used to specify the alpha test function, the depth test function,
+ or the stencil function.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setAlphaTestFunction-int-"><code>setAlphaTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setDepthTestFunction-int-"><code>setDepthTestFunction(int)</code></a>, 
+<a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.GREATER_OR_EQUAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_CLEAR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_CLEAR</h4>
+<pre>public static final&nbsp;int ROP_CLEAR</pre>
+<div class="block">Raster operation: <code>DST = 0</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_CLEAR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_AND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_AND</h4>
+<pre>public static final&nbsp;int ROP_AND</pre>
+<div class="block">Raster operation: <code>DST = SRC & DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_AND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_AND_REVERSE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_AND_REVERSE</h4>
+<pre>public static final&nbsp;int ROP_AND_REVERSE</pre>
+<div class="block">Raster operation: <code>DST = SRC & ~DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_AND_REVERSE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_COPY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_COPY</h4>
+<pre>public static final&nbsp;int ROP_COPY</pre>
+<div class="block">Raster operation: <code>DST = SRC</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_COPY">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_AND_INVERTED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_AND_INVERTED</h4>
+<pre>public static final&nbsp;int ROP_AND_INVERTED</pre>
+<div class="block">Raster operation: <code>DST = ~SRC & DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_AND_INVERTED">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_NOOP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_NOOP</h4>
+<pre>public static final&nbsp;int ROP_NOOP</pre>
+<div class="block">Raster operation: <code>DST = DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_NOOP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_XOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_XOR</h4>
+<pre>public static final&nbsp;int ROP_XOR</pre>
+<div class="block">Raster operation: <code>DST = SRC ^ DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_XOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_OR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_OR</h4>
+<pre>public static final&nbsp;int ROP_OR</pre>
+<div class="block">Raster operation: <code>DST = DST | SRC</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_OR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_NOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_NOR</h4>
+<pre>public static final&nbsp;int ROP_NOR</pre>
+<div class="block">Raster operation: <code>DST = ~( DST | SRC )</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_NOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_EQUIV">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_EQUIV</h4>
+<pre>public static final&nbsp;int ROP_EQUIV</pre>
+<div class="block">Raster operation: <code>DST = ~( DST ^ SRC )</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_EQUIV">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_INVERT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_INVERT</h4>
+<pre>public static final&nbsp;int ROP_INVERT</pre>
+<div class="block">Raster operation: <code>DST = ~DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_INVERT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_OR_REVERSE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_OR_REVERSE</h4>
+<pre>public static final&nbsp;int ROP_OR_REVERSE</pre>
+<div class="block">Raster operation: <code>DST = src | ~DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_OR_REVERSE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_COPY_INVERTED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_COPY_INVERTED</h4>
+<pre>public static final&nbsp;int ROP_COPY_INVERTED</pre>
+<div class="block">Raster operation: <code>DST = ~SRC</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_COPY_INVERTED">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_OR_INVERTED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_OR_INVERTED</h4>
+<pre>public static final&nbsp;int ROP_OR_INVERTED</pre>
+<div class="block">Raster operation: <code>DST = ~SRC | DST</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_OR_INVERTED">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_NAND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_NAND</h4>
+<pre>public static final&nbsp;int ROP_NAND</pre>
+<div class="block">Raster operation: <code>DST = ~(SRC & DST)</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_NAND">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ROP_SET">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ROP_SET</h4>
+<pre>public static final&nbsp;int ROP_SET</pre>
+<div class="block">Raster operation: <code>DST = 1</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.ROP_SET">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_KEEP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STENCIL_KEEP</h4>
+<pre>public static final&nbsp;int STENCIL_KEEP</pre>
+<div class="block">Stencil operation: <code>DST = DST</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_KEEP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_ZERO">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STENCIL_ZERO</h4>
+<pre>public static final&nbsp;int STENCIL_ZERO</pre>
+<div class="block">Stencil operation: <code>DST = 0</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_ZERO">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_REPLACE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STENCIL_REPLACE</h4>
+<pre>public static final&nbsp;int STENCIL_REPLACE</pre>
+<div class="block">Stencil operation: <code>DST = REF</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_REPLACE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_INCR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STENCIL_INCR</h4>
+<pre>public static final&nbsp;int STENCIL_INCR</pre>
+<div class="block">Stencil operation: <code>DST = DST + 1</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_INCR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_DECR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>STENCIL_DECR</h4>
+<pre>public static final&nbsp;int STENCIL_DECR</pre>
+<div class="block">Stencil operation: <code>DST = DST - 1</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_DECR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="STENCIL_INVERT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>STENCIL_INVERT</h4>
+<pre>public static final&nbsp;int STENCIL_INVERT</pre>
+<div class="block">Stencil operation: <code>DST = ~DST</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.RenderingAttributes.STENCIL_INVERT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RenderingAttributes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RenderingAttributes</h4>
+<pre>public&nbsp;RenderingAttributes()</pre>
+<div class="block">Constructs a RenderingAttributes object with default parameters.
+ The default values are as follows:
+ <ul>
+ depth buffer enable : true<br>
+ depth buffer write enable : true<br>
+ alpha test function : ALWAYS<br>
+ alpha test value : 0.0f<br>
+ visible : true<br>
+ ignore vertex colors : false<br>
+ raster operation enable : false<br>
+ raster operation : ROP_COPY<br>
+ depth test: LESS_OR_EQUAL<br>
+ stencil enable : false<br>
+ stencil write mask : ~0 (all ones)<br>
+ stencil op - failOp : STENCIL_KEEP<br>
+ stencil op - zFailOp : STENCIL_KEEP<br>
+ stencil op - zPassOp : STENCIL_KEEP<br>
+ stencil function : ALWAYS<br>
+ stencil reference value : 0<br>
+ stencil comparison mask : ~0 (all ones)
+ </ul></div>
+</li>
+</ul>
+<a name="RenderingAttributes-boolean-boolean-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RenderingAttributes</h4>
+<pre>public&nbsp;RenderingAttributes(boolean&nbsp;depthBufferEnable,
+                           boolean&nbsp;depthBufferWriteEnable,
+                           float&nbsp;alphaTestValue,
+                           int&nbsp;alphaTestFunction)</pre>
+<div class="block">Constructs a RenderingAttributes object with specified values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depthBufferEnable</code> - a flag to turn depth buffer on/off</dd>
+<dd><code>depthBufferWriteEnable</code> - a flag to to make depth buffer
+ read/write or read only</dd>
+<dd><code>alphaTestValue</code> - the alpha test reference value</dd>
+<dd><code>alphaTestFunction</code> - the function for comparing alpha values</dd>
+</dl>
+</li>
+</ul>
+<a name="RenderingAttributes-boolean-boolean-float-int-boolean-boolean-boolean-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RenderingAttributes</h4>
+<pre>public&nbsp;RenderingAttributes(boolean&nbsp;depthBufferEnable,
+                           boolean&nbsp;depthBufferWriteEnable,
+                           float&nbsp;alphaTestValue,
+                           int&nbsp;alphaTestFunction,
+                           boolean&nbsp;visible,
+                           boolean&nbsp;ignoreVertexColors,
+                           boolean&nbsp;rasterOpEnable,
+                           int&nbsp;rasterOp)</pre>
+<div class="block">Constructs a RenderingAttributes object with specified values</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>depthBufferEnable</code> - a flag to turn depth buffer on/off</dd>
+<dd><code>depthBufferWriteEnable</code> - a flag to make depth buffer
+ read/write or read only</dd>
+<dd><code>alphaTestValue</code> - the alpha test reference value</dd>
+<dd><code>alphaTestFunction</code> - the function for comparing alpha values</dd>
+<dd><code>visible</code> - a flag that specifies whether the object is visible</dd>
+<dd><code>ignoreVertexColors</code> - a flag to enable or disable
+ the ignoring of per-vertex colors</dd>
+<dd><code>rasterOpEnable</code> - a flag that specifies whether logical
+ raster operations are enabled for this RenderingAttributes object.
+ This disables all alpha blending operations.</dd>
+<dd><code>rasterOp</code> - the logical raster operation, one of:
+ ROP_CLEAR, ROP_AND, ROP_AND_REVERSE, ROP_COPY, ROP_AND_INVERTED,
+ ROP_NOOP, ROP_XOR, ROP_OR, ROP_NOR, ROP_EQUIV, ROP_INVERT,
+ ROP_OR_REVERSE, ROP_COPY_INVERTED, ROP_OR_INVERTED, ROP_NAND or ROP_SET</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setDepthBufferEnable-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepthBufferEnable</h4>
+<pre>public&nbsp;void&nbsp;setDepthBufferEnable(boolean&nbsp;state)</pre>
+<div class="block">Enables or disables depth buffer mode for this RenderingAttributes
+ component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - true or false to enable or disable depth buffer mode</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsConfigTemplate3D.html#setDepthSize-int-"><code>GraphicsConfigTemplate3D.setDepthSize(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getDepthBufferEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepthBufferEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getDepthBufferEnable()</pre>
+<div class="block">Retrieves the state of zBuffer Enable flag</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if depth buffer mode is enabled, false
+ if depth buffer mode is disabled</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setDepthBufferWriteEnable-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepthBufferWriteEnable</h4>
+<pre>public&nbsp;void&nbsp;setDepthBufferWriteEnable(boolean&nbsp;state)</pre>
+<div class="block">Enables or disables writing the depth buffer for this object.
+ During the transparent rendering pass,
+ this attribute can be overridden by
+ the depthBufferFreezeTransparent attribute in the View object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - true or false to enable or disable depth buffer Write mode</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/View.html#setDepthBufferFreezeTransparent-boolean-"><code>View.setDepthBufferFreezeTransparent(boolean)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getDepthBufferWriteEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepthBufferWriteEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getDepthBufferWriteEnable()</pre>
+<div class="block">Retrieves the state of Depth Buffer Write Enable flag.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if depth buffer is writable, false
+ if depth buffer is read-only</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlphaTestValue-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlphaTestValue</h4>
+<pre>public&nbsp;void&nbsp;setAlphaTestValue(float&nbsp;value)</pre>
+<div class="block">Set alpha test value used by alpha test function.  This value is
+ compared to the alpha value of each rendered pixel.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - the alpha test value</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlphaTestValue--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlphaTestValue</h4>
+<pre>public&nbsp;float&nbsp;getAlphaTestValue()</pre>
+<div class="block">Retrieves the alpha test value.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the alpha test value.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setAlphaTestFunction-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlphaTestFunction</h4>
+<pre>public&nbsp;void&nbsp;setAlphaTestFunction(int&nbsp;function)</pre>
+<div class="block">Set alpha test function. This function is used to compare
+ each incoming (source) per-pixel alpha value with the alpha test value.
+ If the test passes, the pixel is written otherwise the pixel is not
+ written.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the new alpha test function.  One of
+ ALWAYS, NEVER, EQUAL, NOT_EQUAL, LESS, LESS_OR_EQUAL, GREATER,
+ GREATER_OR_EQUAL</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getAlphaTestFunction--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlphaTestFunction</h4>
+<pre>public&nbsp;int&nbsp;getAlphaTestFunction()</pre>
+<div class="block">Retrieves current alpha test function.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current alpha test function</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setVisible-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVisible</h4>
+<pre>public&nbsp;void&nbsp;setVisible(boolean&nbsp;visible)</pre>
+<div class="block">Sets the visibility flag for this RenderingAttributes
+ component object.  Invisible objects are not rendered (subject to
+ the visibility policy for the current view), but they can be picked
+ or collided with. The default value is true.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>visible</code> - true or false to enable or disable visibility</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/View.html#setVisibilityPolicy-int-"><code>View.setVisibilityPolicy(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getVisible--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVisible</h4>
+<pre>public&nbsp;boolean&nbsp;getVisible()</pre>
+<div class="block">Retrieves the visibility flag for this RenderingAttributes object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the object is visible; false
+ if the object is invisible.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setIgnoreVertexColors-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIgnoreVertexColors</h4>
+<pre>public&nbsp;void&nbsp;setIgnoreVertexColors(boolean&nbsp;ignoreVertexColors)</pre>
+<div class="block">Sets a flag that indicates whether vertex colors are ignored
+ for this RenderingAttributes object.  If
+ <code>ignoreVertexColors</code> is false, per-vertex
+ colors are used, when present in the associated Geometry
+ objects, taking precedence over the ColoringAttributes color
+ and the specified Material color(s).  If <code>ignoreVertexColors</code>
+ is true, per-vertex colors are ignored.  In this case, if
+ lighting is enabled, the Material diffuse color will be
+ used as the object color.  If lighting is disabled, the
+ ColoringAttributes color will be used.  The default value is false.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ignoreVertexColors</code> - true or false to enable or disable
+ the ignoring of per-vertex colors</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/ColoringAttributes.html" title="class in org.scijava.java3d"><code>ColoringAttributes</code></a>, 
+<a href="../../../org/scijava/java3d/Material.html" title="class in org.scijava.java3d"><code>Material</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getIgnoreVertexColors--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIgnoreVertexColors</h4>
+<pre>public&nbsp;boolean&nbsp;getIgnoreVertexColors()</pre>
+<div class="block">Retrieves the ignoreVertexColors flag for this
+ RenderingAttributes object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if per-vertex colors are ignored; false
+ if per-vertex colors are used.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setRasterOpEnable-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRasterOpEnable</h4>
+<pre>public&nbsp;void&nbsp;setRasterOpEnable(boolean&nbsp;rasterOpEnable)</pre>
+<div class="block">Sets the rasterOp enable flag for this RenderingAttributes
+ component object.  When set to true, this enables logical
+ raster operations as specified by the setRasterOp method.
+ Enabling raster operations effectively disables alpha blending,
+ which is used for transparency and antialiasing.  Raster
+ operations, especially XOR mode, are primarily useful when
+ rendering to the front buffer in immediate mode.  Most
+ applications will not wish to enable this mode.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rasterOpEnable</code> - true or false to enable or disable
+ raster operations</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setRasterOp-int-"><code>setRasterOp(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getRasterOpEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRasterOpEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getRasterOpEnable()</pre>
+<div class="block">Retrieves the rasterOp enable flag for this RenderingAttributes
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if raster operations are enabled; false
+ if raster operations are disabled.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="setRasterOp-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRasterOp</h4>
+<pre>public&nbsp;void&nbsp;setRasterOp(int&nbsp;rasterOp)</pre>
+<div class="block">Sets the raster operation function for this RenderingAttributes
+ component object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rasterOp</code> - the logical raster operation, one of:
+ ROP_CLEAR, ROP_AND, ROP_AND_REVERSE, ROP_COPY, ROP_AND_INVERTED,
+ ROP_NOOP, ROP_XOR, ROP_OR, ROP_NOR, ROP_EQUIV, ROP_INVERT,
+ ROP_OR_REVERSE, ROP_COPY_INVERTED, ROP_OR_INVERTED, ROP_NAND or ROP_SET.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="getRasterOp--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRasterOp</h4>
+<pre>public&nbsp;int&nbsp;getRasterOp()</pre>
+<div class="block">Retrieves the current raster operation for this RenderingAttributes
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>one of:
+ ROP_CLEAR, ROP_AND, ROP_AND_REVERSE, ROP_COPY, ROP_AND_INVERTED,
+ ROP_NOOP, ROP_XOR, ROP_OR, ROP_NOR, ROP_EQUIV, ROP_INVERT,
+ ROP_OR_REVERSE, ROP_COPY_INVERTED, ROP_OR_INVERTED, ROP_NAND or ROP_SET</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.2</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setDepthTestFunction-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepthTestFunction</h4>
+<pre>public&nbsp;void&nbsp;setDepthTestFunction(int&nbsp;function)</pre>
+<div class="block">Set depth test function.  This function is used to compare each
+ incoming (source) per-pixel depth test value with the stored per-pixel
+ depth value in the frame buffer.  If the test
+ passes, the pixel is written, otherwise the pixel is not
+ written.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the new depth test function.  One of
+ ALWAYS, NEVER, EQUAL, NOT_EQUAL, LESS, LESS_OR_EQUAL, GREATER,
+ or GREATER_OR_EQUAL.
+ The default value is LESS_OR_EQUAL.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="getDepthTestFunction--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepthTestFunction</h4>
+<pre>public&nbsp;int&nbsp;getDepthTestFunction()</pre>
+<div class="block">Retrieves current depth test function.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current depth test function</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilEnable-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilEnable</h4>
+<pre>public&nbsp;void&nbsp;setStencilEnable(boolean&nbsp;state)</pre>
+<div class="block">Enables or disables the stencil buffer for this RenderingAttributes
+ component object. If the stencil buffer is disabled, the
+ stencil operation and function are ignored.  If a scene graph
+ is rendered on a Canvas3D that does not have a stencil buffer,
+ the stencil buffer will be implicitly disabled for that canvas.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - true or false to enable or disable stencil buffer
+ operations.
+ If this is set to false, the stencilOp and stencilFunction parameters
+ are not used.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/GraphicsConfigTemplate3D.html#setStencilSize-int-"><code>GraphicsConfigTemplate3D.setStencilSize(int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getStencilEnable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStencilEnable</h4>
+<pre>public&nbsp;boolean&nbsp;getStencilEnable()</pre>
+<div class="block">Retrieves the stencil buffer enable flag for this RenderingAttributes
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if stencil buffer operations are enabled; false
+ if stencil buffer operations are disabled.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilOp-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilOp</h4>
+<pre>public&nbsp;void&nbsp;setStencilOp(int&nbsp;failOp,
+                         int&nbsp;zFailOp,
+                         int&nbsp;zPassOp)</pre>
+<div class="block">Sets the stencil operations for this RenderingAttributes object to the
+ specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>failOp</code> - operation performed when the stencil test fails, one of:
+ STENCIL_KEEP, STENCIL_ZERO, STENCIL_REPLACE, STENCIL_INCR, STENCIL_DECR,
+ or STENCIL_INVERT.</dd>
+<dd><code>zFailOp</code> - operation performed when the stencil test passes and the
+ depth test fails, one of:
+ STENCIL_KEEP, STENCIL_ZERO, STENCIL_REPLACE, STENCIL_INCR, STENCIL_DECR,
+ or STENCIL_INVERT.</dd>
+<dd><code>zPassOp</code> - operation performed when both the stencil test and the
+ depth test pass, one of:
+ STENCIL_KEEP, STENCIL_ZERO, STENCIL_REPLACE, STENCIL_INCR, STENCIL_DECR,
+ or STENCIL_INVERT.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilOp-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilOp</h4>
+<pre>public&nbsp;void&nbsp;setStencilOp(int[]&nbsp;stencilOps)</pre>
+<div class="block">Sets the stencil operations for this RenderingAttributes object to the
+ specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stencilOps</code> - an array of three integers that specifies the new
+ set of stencil operations. Element 0 of the array specifies the
+ <code>failOp</code> parameter, element 1 specifies the
+ <code>zFailOp</code> parameter, and element 2 specifies the
+ <code>zPassOp</code> parameter.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilOp-int-int-int-"><code>setStencilOp(int,int,int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getStencilOp-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStencilOp</h4>
+<pre>public&nbsp;void&nbsp;getStencilOp(int[]&nbsp;stencilOps)</pre>
+<div class="block">Retrieves the current set of stencil operations, and copies them
+ into the specified array. The caller must ensure that this array
+ has been allocated with enough space to hold the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stencilOps</code> - array that will receive the current set of
+ three stencil operations. The <code>failOp</code> parameter is copied
+ into element 0 of the array, the <code>zFailOp</code> parameter is copied
+ into element 1, and the <code>zPassOp</code> parameter is copied
+ into element 2.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilFunction-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilFunction</h4>
+<pre>public&nbsp;void&nbsp;setStencilFunction(int&nbsp;function,
+                               int&nbsp;refValue,
+                               int&nbsp;compareMask)</pre>
+<div class="block">Sets the stencil function, reference value, and comparison mask
+ for this RenderingAttributes object to the specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the stencil test function, used to compare the
+ stencil reference value with the stored per-pixel
+ stencil value in the frame buffer.  If the test
+ passes, the pixel is written, otherwise the pixel is not
+ written. The stencil function is one of:
+ ALWAYS, NEVER, EQUAL, NOT_EQUAL, LESS, LESS_OR_EQUAL, GREATER,
+ or GREATER_OR_EQUAL.</dd>
+<dd><code>refValue</code> - the stencil reference value that is tested against
+ the stored per-pixel stencil value</dd>
+<dd><code>compareMask</code> - a mask that limits which bits are compared; it is
+ bitwise-ANDed with both the stencil reference value and the stored
+ per-pixel stencil value before doing the comparison.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilFunction-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilFunction</h4>
+<pre>public&nbsp;void&nbsp;setStencilFunction(int[]&nbsp;params)</pre>
+<div class="block">Sets the stencil function, reference value, and comparison mask
+ for this RenderingAttributes object to the specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>params</code> - an array of three integers that specifies the new
+ stencil function, reference value, and comparison mask.
+ Element 0 of the array specifies the
+ stencil function, element 1 specifies the
+ reference value, and element 2 specifies the
+ comparison mask.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/RenderingAttributes.html#setStencilFunction-int-int-int-"><code>setStencilFunction(int,int,int)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getStencilFunction-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStencilFunction</h4>
+<pre>public&nbsp;void&nbsp;getStencilFunction(int[]&nbsp;params)</pre>
+<div class="block">Retrieves the stencil function, reference value, and comparison mask,
+ and copies them into the specified array. The caller must ensure
+ that this array has been allocated with enough space to hold the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>params</code> - array that will receive the current stencil function,
+ reference value, and comparison mask. The stencil function is copied
+ into element 0 of the array, the reference value is copied
+ into element 1, and the comparison mask is copied
+ into element 2.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="setStencilWriteMask-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStencilWriteMask</h4>
+<pre>public&nbsp;void&nbsp;setStencilWriteMask(int&nbsp;mask)</pre>
+<div class="block">Sets the stencil write mask for this RenderingAttributes
+ object. This mask controls which bits of the
+ stencil buffer are written.
+ The default value is <code>~0</code> (all ones).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mask</code> - the new stencil write mask.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+<a name="getStencilWriteMask--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getStencilWriteMask</h4>
+<pre>public&nbsp;int&nbsp;getStencilWriteMask()</pre>
+<div class="block">Retrieves the current stencil write mask for this RenderingAttributes
+ object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the stencil write mask.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>Java 3D 1.4</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/Raster.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/RenderingError.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/RenderingAttributes.html" target="_top">Frames</a></li>
+<li><a href="RenderingAttributes.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

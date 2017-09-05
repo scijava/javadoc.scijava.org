@@ -1,0 +1,1324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Text3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Text3D (Java 3D Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/TexCoordGeneration.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Text3D.html" target="_top">Frames</a></li>
+<li><a href="Text3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.java3d</div>
+<h2 title="Class Text3D" class="title">Class Text3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">org.scijava.java3d.SceneGraphObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">org.scijava.java3d.NodeComponent</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">org.scijava.java3d.Geometry</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.java3d.Text3D</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">Text3D</span>
+extends <a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></pre>
+<div class="block">A Text3D object is a text string that has been converted to 3D
+ geometry.  The Font3D object determines the appearance of the
+ Text3D NodeComponent object. Each Text3D object has the following
+ parameters:<P>
+ <UL>
+ <LI>Font3D object - describes the font style of the text string,
+ such as the font family (Helvetica, Courier, etc.), style (Italic,
+ bold, etc.), and point size. The size of the resulting characters will
+ be equal to the point size. For example, a 12 point font will result in
+ a Font3D with characters 12 meters tall.  </LI><P>
+ <LI>Text string - the text string to be written.</LI><P>
+ <LI>Position - determines the initial placement of the Text3D string
+ in three-space.</LI><P>
+ <LI>Alignment - specifies how glyphs in the string are placed in
+ relation to the position parameter. Valid values are:
+ <UL>
+ <LI> ALIGN_CENTER - the center of the string is placed on the
+  <code>position</code> point.</LI>
+ <LI> ALIGN_FIRST - the first character of the string is placed on
+   the <code>position</code> point.</LI>
+ <LI> ALIGN_LAST - the last character of the string is placed on the
+   <code>position</code> point.</LI>
+ </UL><P>
+ <LI>Path - specifies how succeeding glyphs in the string are placed
+ in relation to the previous glyph. Valid values are:</LI><P>
+ <UL>
+ <LI> PATH_LEFT - succeeding glyphs are placed to the left of the
+  current glyph.</LI>
+ <LI> PATH_RIGHT - succeeding glyphs are placed to the right of the
+  current glyph.</LI>
+ <LI> PATH_UP - succeeding glyphs are placed above the current glyph.</LI>
+ <LI> PATH_DOWN - succeeding glyphs are placed below the current glyph.</LI>
+ </UL><P>
+ <LI>Character spacing - the space between characters. This spacing is
+ in addition to the regular spacing between glyphs as defined in the
+ Font object.</LI></UL><P></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALIGN_CENTER">ALIGN_CENTER</a></span></code>
+<div class="block"><code>alignment</code>: the center of the string is placed on the
+ <code>position</code> point.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALIGN_FIRST">ALIGN_FIRST</a></span></code>
+<div class="block"><code>alignment</code>: the first character of the string is placed
+ on the <code>position</code> point.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALIGN_LAST">ALIGN_LAST</a></span></code>
+<div class="block"><code>alignment</code>: the last character of the string is placed
+ on the <code>position</code> point.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_ALIGNMENT_READ">ALLOW_ALIGNMENT_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the text alignment value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_ALIGNMENT_WRITE">ALLOW_ALIGNMENT_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the text alignment value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_BOUNDING_BOX_READ">ALLOW_BOUNDING_BOX_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the text string bounding box value</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_CHARACTER_SPACING_READ">ALLOW_CHARACTER_SPACING_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the text character spacing value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_CHARACTER_SPACING_WRITE">ALLOW_CHARACTER_SPACING_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the text character spacing value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_FONT3D_READ">ALLOW_FONT3D_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the Font3D component information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_FONT3D_WRITE">ALLOW_FONT3D_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the Font3D component information.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_PATH_READ">ALLOW_PATH_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the text path value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_PATH_WRITE">ALLOW_PATH_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the text path value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_POSITION_READ">ALLOW_POSITION_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the text position value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_POSITION_WRITE">ALLOW_POSITION_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the text position value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_STRING_READ">ALLOW_STRING_READ</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ reading the String object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#ALLOW_STRING_WRITE">ALLOW_STRING_WRITE</a></span></code>
+<div class="block">Specifies that this Text3D object allows
+ writing the String object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#PATH_DOWN">PATH_DOWN</a></span></code>
+<div class="block"><code>path</code>: succeeding glyphs are placed below the
+ current glyph.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#PATH_LEFT">PATH_LEFT</a></span></code>
+<div class="block"><code>path</code>: succeeding glyphs are placed to the left of
+ the current glyph.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#PATH_RIGHT">PATH_RIGHT</a></span></code>
+<div class="block"><code>path</code>: succeeding glyphs are placed to the left of
+ the current glyph.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#PATH_UP">PATH_UP</a></span></code>
+<div class="block"><code>path</code>: succeeding glyphs are placed above the
+ current glyph.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.scijava.java3d.Geometry">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/Geometry.html" title="class in org.scijava.java3d">Geometry</a></h3>
+<code><a href="../../../org/scijava/java3d/Geometry.html#ALLOW_INTERSECT">ALLOW_INTERSECT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#Text3D--">Text3D</a></span>()</code>
+<div class="block">Constructs a Text3D object with default parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#Text3D-org.scijava.java3d.Font3D-">Text3D</a></span>(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D)</code>
+<div class="block">Creates a Text3D object with the given Font3D object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#Text3D-org.scijava.java3d.Font3D-java.lang.String-">Text3D</a></span>(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>
+<div class="block">Creates a Text3D object given a Font3D object and a string.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#Text3D-org.scijava.java3d.Font3D-java.lang.String-org.scijava.vecmath.Point3f-">Text3D</a></span>(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string,
+      <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</code>
+<div class="block">Creates a Text3D object given a Font3D, a string and position.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#Text3D-org.scijava.java3d.Font3D-java.lang.String-org.scijava.vecmath.Point3f-int-int-">Text3D</a></span>(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string,
+      <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position,
+      int&nbsp;alignment,
+      int&nbsp;path)</code>
+<div class="block">Creates a Text3D object given a Font3D, string, position, alignment
+ and path along which string is to be placed.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#cloneNodeComponent--">cloneNodeComponent</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--">getAlignment</a></span>()</code>
+<div class="block">Retrieves the text alignment policy for this Text3D NodeComponent
+ object.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getBoundingBox-org.scijava.java3d.BoundingBox-">getBoundingBox</a></span>(<a href="../../../org/scijava/java3d/BoundingBox.html" title="class in org.scijava.java3d">BoundingBox</a>&nbsp;bounds)</code>
+<div class="block">Retrieves the 3D bounding box that encloses this Text3D object.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getCharacterSpacing--">getCharacterSpacing</a></span>()</code>
+<div class="block">Retrieves the character spacing used to construct the Text3D string.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getFont3D--">getFont3D</a></span>()</code>
+<div class="block">Returns the Font3D objects used by this Text3D NodeComponent object.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getPath--">getPath</a></span>()</code>
+<div class="block">Retrieves the node's <code>path</code> field.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getPosition-org.scijava.vecmath.Point3f-">getPosition</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</code>
+<div class="block">Copies the node's <code>position</code> field into the supplied
+ parameter.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#getString--">getString</a></span>()</code>
+<div class="block">Copies the character string used in the construction of the
+ Text3D node into the supplied parameter.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setAlignment-int-">setAlignment</a></span>(int&nbsp;alignment)</code>
+<div class="block">Sets the text alignment policy for this Text3D NodeComponent
+ object.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setCharacterSpacing-float-">setCharacterSpacing</a></span>(float&nbsp;characterSpacing)</code>
+<div class="block">Sets the character spacing used when constructing the Text3D string.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setFont3D-org.scijava.java3d.Font3D-">setFont3D</a></span>(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3d)</code>
+<div class="block">Sets the Font3D object used by this Text3D NodeComponent object.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setPath-int-">setPath</a></span>(int&nbsp;path)</code>
+<div class="block">Sets the node's <code>path</code> field.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setPosition-org.scijava.vecmath.Point3f-">setPosition</a></span>(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</code>
+<div class="block">Sets the node's <code>position</code> field to the supplied
+ parameter.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/java3d/Text3D.html#setString-java.lang.String-">setString</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>
+<div class="block">Copies the character string from the supplied parameter into the
+ Text3D node.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.NodeComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></h3>
+<code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent-boolean-">cloneNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#duplicateNodeComponent-org.scijava.java3d.NodeComponent-boolean-">duplicateNodeComponent</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#getDuplicateOnCloneTree--">getDuplicateOnCloneTree</a>, <a href="../../../org/scijava/java3d/NodeComponent.html#setDuplicateOnCloneTree-boolean-">setDuplicateOnCloneTree</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.java3d.SceneGraphObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.java3d.<a href="../../../org/scijava/java3d/SceneGraphObject.html" title="class in org.scijava.java3d">SceneGraphObject</a></h3>
+<code><a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapability-int-">clearCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#clearCapabilityIsFrequent-int-">clearCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#duplicateSceneGraphObject-org.scijava.java3d.SceneGraphObject-">duplicateSceneGraphObject</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapability-int-">getCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getCapabilityIsFrequent-int-">getCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getName--">getName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#getUserData--">getUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isCompiled--">isCompiled</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#isLive--">isLive</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapability-int-">setCapability</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setCapabilityIsFrequent-int-">setCapabilityIsFrequent</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setName-java.lang.String-">setName</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#setUserData-java.lang.Object-">setUserData</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#toString--">toString</a>, <a href="../../../org/scijava/java3d/SceneGraphObject.html#updateNodeReferences-org.scijava.java3d.NodeReferenceTable-">updateNodeReferences</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ALLOW_FONT3D_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_FONT3D_READ</h4>
+<pre>public static final&nbsp;int ALLOW_FONT3D_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the Font3D component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_FONT3D_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_FONT3D_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_FONT3D_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_FONT3D_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the Font3D component information.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_FONT3D_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_STRING_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_STRING_READ</h4>
+<pre>public static final&nbsp;int ALLOW_STRING_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the String object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_STRING_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_STRING_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_STRING_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_STRING_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the String object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_STRING_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POSITION_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POSITION_READ</h4>
+<pre>public static final&nbsp;int ALLOW_POSITION_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the text position value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_POSITION_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_POSITION_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_POSITION_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_POSITION_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the text position value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_POSITION_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_ALIGNMENT_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALIGNMENT_READ</h4>
+<pre>public static final&nbsp;int ALLOW_ALIGNMENT_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the text alignment value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_ALIGNMENT_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_ALIGNMENT_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_ALIGNMENT_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_ALIGNMENT_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the text alignment value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_ALIGNMENT_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_PATH_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_PATH_READ</h4>
+<pre>public static final&nbsp;int ALLOW_PATH_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the text path value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_PATH_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_PATH_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_PATH_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_PATH_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the text path value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_PATH_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_CHARACTER_SPACING_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_CHARACTER_SPACING_READ</h4>
+<pre>public static final&nbsp;int ALLOW_CHARACTER_SPACING_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the text character spacing value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_CHARACTER_SPACING_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_CHARACTER_SPACING_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_CHARACTER_SPACING_WRITE</h4>
+<pre>public static final&nbsp;int ALLOW_CHARACTER_SPACING_WRITE</pre>
+<div class="block">Specifies that this Text3D object allows
+ writing the text character spacing value.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_CHARACTER_SPACING_WRITE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALLOW_BOUNDING_BOX_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_BOUNDING_BOX_READ</h4>
+<pre>public static final&nbsp;int ALLOW_BOUNDING_BOX_READ</pre>
+<div class="block">Specifies that this Text3D object allows
+ reading the text string bounding box value</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALLOW_BOUNDING_BOX_READ">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALIGN_CENTER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALIGN_CENTER</h4>
+<pre>public static final&nbsp;int ALIGN_CENTER</pre>
+<div class="block"><code>alignment</code>: the center of the string is placed on the
+ <code>position</code> point.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--"><code>getAlignment()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALIGN_CENTER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALIGN_FIRST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALIGN_FIRST</h4>
+<pre>public static final&nbsp;int ALIGN_FIRST</pre>
+<div class="block"><code>alignment</code>: the first character of the string is placed
+ on the <code>position</code> point.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--"><code>getAlignment()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALIGN_FIRST">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ALIGN_LAST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALIGN_LAST</h4>
+<pre>public static final&nbsp;int ALIGN_LAST</pre>
+<div class="block"><code>alignment</code>: the last character of the string is placed
+ on the <code>position</code> point.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--"><code>getAlignment()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.ALIGN_LAST">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PATH_LEFT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PATH_LEFT</h4>
+<pre>public static final&nbsp;int PATH_LEFT</pre>
+<div class="block"><code>path</code>: succeeding glyphs are placed to the left of
+ the current glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.PATH_LEFT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PATH_RIGHT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PATH_RIGHT</h4>
+<pre>public static final&nbsp;int PATH_RIGHT</pre>
+<div class="block"><code>path</code>: succeeding glyphs are placed to the left of
+ the current glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.PATH_RIGHT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PATH_UP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PATH_UP</h4>
+<pre>public static final&nbsp;int PATH_UP</pre>
+<div class="block"><code>path</code>: succeeding glyphs are placed above the
+ current glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.PATH_UP">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="PATH_DOWN">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PATH_DOWN</h4>
+<pre>public static final&nbsp;int PATH_DOWN</pre>
+<div class="block"><code>path</code>: succeeding glyphs are placed below the
+ current glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a>, 
+<a href="../../../constant-values.html#org.scijava.java3d.Text3D.PATH_DOWN">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Text3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Text3D</h4>
+<pre>public&nbsp;Text3D()</pre>
+<div class="block">Constructs a Text3D object with default parameters.
+ The default values are as follows:
+ <ul>
+ font 3D : null<br>
+ string : null<br>
+ position : (0,0,0)<br>
+ alignment : ALIGN_FIRST<br>
+ path : PATH_RIGHT<br>
+ character spacing : 0.0<br>
+ </ul></div>
+</li>
+</ul>
+<a name="Text3D-org.scijava.java3d.Font3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Text3D</h4>
+<pre>public&nbsp;Text3D(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D)</pre>
+<div class="block">Creates a Text3D object with the given Font3D object.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="Text3D-org.scijava.java3d.Font3D-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Text3D</h4>
+<pre>public&nbsp;Text3D(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
+<div class="block">Creates a Text3D object given a Font3D object and a string.  The
+ string is converted into 3D glyphs.  The first glyph from the
+ string is placed at (0.0, 0.0, 0.0) and succeeding glyphs are
+ placed to the right of the initial glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="Text3D-org.scijava.java3d.Font3D-java.lang.String-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Text3D</h4>
+<pre>public&nbsp;Text3D(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string,
+              <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</pre>
+<div class="block">Creates a Text3D object given a Font3D, a string and position. The
+ string is converted into 3D glyphs.  The first glyph from the
+ string is placed at position <code>position</code> and succeeding
+ glyphs are placed to the right of the initial glyph.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="Text3D-org.scijava.java3d.Font3D-java.lang.String-org.scijava.vecmath.Point3f-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Text3D</h4>
+<pre>public&nbsp;Text3D(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3D,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string,
+              <a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position,
+              int&nbsp;alignment,
+              int&nbsp;path)</pre>
+<div class="block">Creates a Text3D object given a Font3D, string, position, alignment
+ and path along which string is to be placed. The
+ string is converted into 3D glyphs.  The placement of the glyphs
+ with respect to the <code>position</code> position depends on
+ the alignment parameter and the path parameter.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d"><code>Font3D</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getFont3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFont3D</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;getFont3D()</pre>
+<div class="block">Returns the Font3D objects used by this Text3D NodeComponent object.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the Font3D object of this Text3D node - null if no Font3D
+  has been associated with this node.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setFont3D-org.scijava.java3d.Font3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFont3D</h4>
+<pre>public&nbsp;void&nbsp;setFont3D(<a href="../../../org/scijava/java3d/Font3D.html" title="class in org.scijava.java3d">Font3D</a>&nbsp;font3d)</pre>
+<div class="block">Sets the Font3D object used by this Text3D NodeComponent object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>font3d</code> - the Font3D object to associate with this Text3D node.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getString()</pre>
+<div class="block">Copies the character string used in the construction of the
+ Text3D node into the supplied parameter.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a copy of the String object in this Text3D node.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setString-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setString</h4>
+<pre>public&nbsp;void&nbsp;setString(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
+<div class="block">Copies the character string from the supplied parameter into the
+ Text3D node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>string</code> - the String object to recieve the Text3D node's string.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getPosition-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPosition</h4>
+<pre>public&nbsp;void&nbsp;getPosition(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</pre>
+<div class="block">Copies the node's <code>position</code> field into the supplied
+ parameter.  The <code>position</code> is used to determine the
+ initial placement of the Text3D string.  The position, combined with
+ the path and alignment control how the text is displayed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - the point to position the text.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--"><code>getAlignment()</code></a>, 
+<a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setPosition-org.scijava.vecmath.Point3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPosition</h4>
+<pre>public&nbsp;void&nbsp;setPosition(<a href="../../../org/scijava/vecmath/Point3f.html" title="class in org.scijava.vecmath">Point3f</a>&nbsp;position)</pre>
+<div class="block">Sets the node's <code>position</code> field to the supplied
+ parameter.  The <code>position</code> is used to determine the
+ initial placement of the Text3D string.  The position, combined with
+ the path and alignment control how the text is displayed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - the point to position the text.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getAlignment--"><code>getAlignment()</code></a>, 
+<a href="../../../org/scijava/java3d/Text3D.html#getPath--"><code>getPath()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getAlignment--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlignment</h4>
+<pre>public&nbsp;int&nbsp;getAlignment()</pre>
+<div class="block">Retrieves the text alignment policy for this Text3D NodeComponent
+ object. The <code>alignment</code> is used to specify how
+ glyphs in the string are placed in relation to the
+ <code>position</code> field.  Valid values for this field
+ are:
+ <UL>
+ <LI> ALIGN_CENTER - the center of the string is placed on the
+  <code>position</code> point.
+ <LI> ALIGN_FIRST - the first character of the string is placed on
+   the <code>position</code> point.
+ <LI> ALIGN_LAST - the last character of the string is placed on the
+   <code>position</code> point.
+ </UL>
+ The default value of this field is <code>ALIGN_FIRST</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current alingment policy for this node.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPosition-org.scijava.vecmath.Point3f-"><code>getPosition(org.scijava.vecmath.Point3f)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setAlignment-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlignment</h4>
+<pre>public&nbsp;void&nbsp;setAlignment(int&nbsp;alignment)</pre>
+<div class="block">Sets the text alignment policy for this Text3D NodeComponent
+ object. The <code>alignment</code> is used to specify how
+ glyphs in the string are placed in relation to the
+ <code>position</code> field.  Valid values for this field
+ are:
+ <UL>
+ <LI> ALIGN_CENTER - the center of the string is placed on the
+  <code>position</code> point.
+ <LI> ALIGN_FIRST - the first character of the string is placed on
+   the <code>position</code> point.
+ <LI> ALIGN_LAST - the last character of the string is placed on the
+   <code>position</code> point.
+ </UL>
+ The default value of this field is <code>ALIGN_FIRST</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>alignment</code> - specifies how glyphs in the string are placed
+ in relation to the position field</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/Text3D.html#getPosition-org.scijava.vecmath.Point3f-"><code>getPosition(org.scijava.vecmath.Point3f)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getPath--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPath</h4>
+<pre>public&nbsp;int&nbsp;getPath()</pre>
+<div class="block">Retrieves the node's <code>path</code> field.  This field
+ is used  to specify how succeeding
+ glyphs in the string are placed in relation to the previous glyph.
+ Valid values for this field are:
+ <UL>
+ <LI> PATH_LEFT: - succeeding glyphs are placed to the left of the
+  current glyph.
+ <LI> PATH_RIGHT: - succeeding glyphs are placed to the right of the
+  current glyph.
+ <LI> PATH_UP: - succeeding glyphs are placed above the current glyph.
+ <LI> PATH_DOWN: - succeeding glyphs are placed below the current glyph.
+ </UL>
+ The default value of this field is <code>PATH_RIGHT</code>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current alingment policy for this node.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setPath-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPath</h4>
+<pre>public&nbsp;void&nbsp;setPath(int&nbsp;path)</pre>
+<div class="block">Sets the node's <code>path</code> field.  This field
+ is used  to specify how succeeding
+ glyphs in the string are placed in relation to the previous glyph.
+ Valid values for this field are:
+ <UL>
+ <LI> PATH_LEFT - succeeding glyphs are placed to the left of the
+  current glyph.
+ <LI> PATH_RIGHT - succeeding glyphs are placed to the right of the
+  current glyph.
+ <LI> PATH_UP - succeeding glyphs are placed above the current glyph.
+ <LI> PATH_DOWN - succeeding glyphs are placed below the current glyph.
+ </UL>
+ The default value of this field is <code>PATH_RIGHT</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - the value to set the path to</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="getBoundingBox-org.scijava.java3d.BoundingBox-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBoundingBox</h4>
+<pre>public&nbsp;void&nbsp;getBoundingBox(<a href="../../../org/scijava/java3d/BoundingBox.html" title="class in org.scijava.java3d">BoundingBox</a>&nbsp;bounds)</pre>
+<div class="block">Retrieves the 3D bounding box that encloses this Text3D object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bounds</code> - the object to copy the bounding information to.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../org/scijava/java3d/BoundingBox.html" title="class in org.scijava.java3d"><code>BoundingBox</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getCharacterSpacing--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCharacterSpacing</h4>
+<pre>public&nbsp;float&nbsp;getCharacterSpacing()</pre>
+<div class="block">Retrieves the character spacing used to construct the Text3D string.
+ This spacing is in addition to the regular spacing between glyphs as
+ defined in the Font object.  1.0 in this space is measured as the
+ width of the largest glyph in the 2D Font.  The default value is
+ 0.0.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current character spacing value</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="setCharacterSpacing-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCharacterSpacing</h4>
+<pre>public&nbsp;void&nbsp;setCharacterSpacing(float&nbsp;characterSpacing)</pre>
+<div class="block">Sets the character spacing used when constructing the Text3D string.
+ This spacing is in addition to the regular spacing between glyphs as
+ defined in the Font object.  1.0 in this space is measured as the
+ width of the largest glyph in the 2D Font.  The default value is
+ 0.0.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>characterSpacing</code> - the new character spacing value</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/CapabilityNotSetException.html" title="class in org.scijava.java3d">CapabilityNotSetException</a></code> - if appropriate capability is
+ not set and this object is part of live or compiled scene graph</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneNodeComponent--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cloneNodeComponent</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a>&nbsp;cloneNodeComponent()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">replaced with cloneNodeComponent(boolean forceDuplicate)</span></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../org/scijava/java3d/NodeComponent.html#cloneNodeComponent--">cloneNodeComponent</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/scijava/java3d/NodeComponent.html" title="class in org.scijava.java3d">NodeComponent</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/java3d/TexCoordGeneration.html" title="class in org.scijava.java3d"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/java3d/Texture.html" title="class in org.scijava.java3d"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/java3d/Text3D.html" target="_top">Frames</a></li>
+<li><a href="Text3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>
