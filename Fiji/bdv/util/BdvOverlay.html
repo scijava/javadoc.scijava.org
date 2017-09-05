@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BdvOverlay (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BdvOverlay (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../bdv/util/BdvOptions.Values.html" title="class in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../bdv/util/BdvOverlaySource.html" title="class in bdv.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?bdv/util/BdvOverlay.html" target="_top">Frames</a></li>
+<li><a href="BdvOverlay.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">bdv.util</div>
+<h2 title="Class BdvOverlay" class="title">Class BdvOverlay</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>bdv.util.BdvOverlay</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true" title="class or interface in net.imglib2.ui">OverlayRenderer</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../bdv/util/PointsOverlay.html" title="class in bdv.util">PointsOverlay</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="typeNameLabel">BdvOverlay</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true" title="class or interface in net.imglib2.ui">OverlayRenderer</a></pre>
+<div class="block">An overlay that can be shown with
+ <a href="../../bdv/util/BdvFunctions.html#showOverlay-O-java.lang.String-bdv.util.BdvOptions-"><code>BdvFunctions.showOverlay(BdvOverlay, String, BdvOptions)</code></a>: This method
+ will add a dummy <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer"><code>Source</code></a> and <a href="../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness"><code>ConverterSetup</code></a> to the
+ <a href="../../bdv/BigDataViewer.html" title="class in bdv"><code>BigDataViewer</code></a> such that the visibility, display range, and color for
+ the overlay can be adjusted by the user, like for a normal <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer"><code>Source</code></a>.
+ <p>
+ Derived classes need to implement <a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-"><code>draw(Graphics2D)</code></a>.
+ They can access the current viewr transform using <a href="../../bdv/util/BdvOverlay.html#getCurrentTransform2D-net.imglib2.realtransform.AffineTransform2D-"><code>getCurrentTransform2D(AffineTransform2D)</code></a>, <a href="../../bdv/util/BdvOverlay.html#getCurrentTransform3D-net.imglib2.realtransform.AffineTransform3D-"><code>getCurrentTransform3D(AffineTransform3D)</code></a>.
+ They can access the user-set display range and color via <a href="../../bdv/util/BdvOverlay.html#info"><code>info</code></a>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch &lt;tobias.pietzsch@gmail.com&gt;</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../bdv/util/PlaceHolderOverlayInfo.html" title="class in bdv.util">PlaceHolderOverlayInfo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#info">info</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#sourceTransform">sourceTransform</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#BdvOverlay--">BdvOverlay</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-">draw</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Graphics2D.html?is-external=true" title="class or interface in java.awt">Graphics2D</a>&nbsp;g)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#drawOverlays-java.awt.Graphics-">drawOverlays</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Graphics.html?is-external=true" title="class or interface in java.awt">Graphics</a>&nbsp;g)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#getCurrentTransform2D-net.imglib2.realtransform.AffineTransform2D-">getCurrentTransform2D</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform2D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform2D</a>&nbsp;transform)</code>
+<div class="block">Can be used by derived classes in the <a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-"><code>draw(Graphics2D)</code></a> method to
+ get the current transform from 2D source coordinates to screen
+ coordinates.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#getCurrentTransform3D-net.imglib2.realtransform.AffineTransform3D-">getCurrentTransform3D</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Can be used by derived classes in the <a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-"><code>draw(Graphics2D)</code></a> method to
+ get the current transform from 3D source coordinates to 3D screen
+ coordinates (where Z coordinate is distance from the slice shown on the
+ screen).</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#setCanvasSize-int-int-">setCanvasSize</a></span>(int&nbsp;width,
+             int&nbsp;height)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#setOverlayInfo-bdv.util.PlaceHolderOverlayInfo-">setOverlayInfo</a></span>(<a href="../../bdv/util/PlaceHolderOverlayInfo.html" title="class in bdv.util">PlaceHolderOverlayInfo</a>&nbsp;info)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvOverlay.html#setSourceTransform-net.imglib2.realtransform.AffineTransform3D-">setSourceTransform</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;t)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sourceTransform">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sourceTransform</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> sourceTransform</pre>
+</li>
+</ul>
+<a name="info">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>info</h4>
+<pre>protected&nbsp;<a href="../../bdv/util/PlaceHolderOverlayInfo.html" title="class in bdv.util">PlaceHolderOverlayInfo</a> info</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BdvOverlay--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BdvOverlay</h4>
+<pre>public&nbsp;BdvOverlay()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setOverlayInfo-bdv.util.PlaceHolderOverlayInfo-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOverlayInfo</h4>
+<pre>public&nbsp;void&nbsp;setOverlayInfo(<a href="../../bdv/util/PlaceHolderOverlayInfo.html" title="class in bdv.util">PlaceHolderOverlayInfo</a>&nbsp;info)</pre>
+</li>
+</ul>
+<a name="setSourceTransform-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSourceTransform</h4>
+<pre>public&nbsp;void&nbsp;setSourceTransform(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;t)</pre>
+</li>
+</ul>
+<a name="drawOverlays-java.awt.Graphics-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawOverlays</h4>
+<pre>public&nbsp;void&nbsp;drawOverlays(<a href="http://javadoc.imagej.net/Java/java/awt/Graphics.html?is-external=true" title="class or interface in java.awt">Graphics</a>&nbsp;g)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true#drawOverlays-java.awt.Graphics-" title="class or interface in net.imglib2.ui">drawOverlays</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true" title="class or interface in net.imglib2.ui">OverlayRenderer</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCurrentTransform2D-net.imglib2.realtransform.AffineTransform2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentTransform2D</h4>
+<pre>protected&nbsp;void&nbsp;getCurrentTransform2D(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform2D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform2D</a>&nbsp;transform)</pre>
+<div class="block">Can be used by derived classes in the <a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-"><code>draw(Graphics2D)</code></a> method to
+ get the current transform from 2D source coordinates to screen
+ coordinates.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="getCurrentTransform3D-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentTransform3D</h4>
+<pre>protected&nbsp;void&nbsp;getCurrentTransform3D(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block">Can be used by derived classes in the <a href="../../bdv/util/BdvOverlay.html#draw-java.awt.Graphics2D-"><code>draw(Graphics2D)</code></a> method to
+ get the current transform from 3D source coordinates to 3D screen
+ coordinates (where Z coordinate is distance from the slice shown on the
+ screen).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="draw-java.awt.Graphics2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>draw</h4>
+<pre>protected abstract&nbsp;void&nbsp;draw(<a href="http://javadoc.imagej.net/Java/java/awt/Graphics2D.html?is-external=true" title="class or interface in java.awt">Graphics2D</a>&nbsp;g)</pre>
+</li>
+</ul>
+<a name="setCanvasSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setCanvasSize</h4>
+<pre>public&nbsp;void&nbsp;setCanvasSize(int&nbsp;width,
+                          int&nbsp;height)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true#setCanvasSize-int-int-" title="class or interface in net.imglib2.ui">setCanvasSize</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/OverlayRenderer.html?is-external=true" title="class or interface in net.imglib2.ui">OverlayRenderer</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../bdv/util/BdvOptions.Values.html" title="class in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../bdv/util/BdvOverlaySource.html" title="class in bdv.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?bdv/util/BdvOverlay.html" target="_top">Frames</a></li>
+<li><a href="BdvOverlay.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AssignOperation (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AssignOperation (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../imglib/ops/operation/MultiImageIterator.html" title="class in imglib.ops.operation"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?imglib/ops/operation/AssignOperation.html" target="_top">Frames</a></li>
+<li><a href="AssignOperation.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">imglib.ops.operation</div>
+<h2 title="Class AssignOperation" class="title">Class AssignOperation&lt;T extends <a href="../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>imglib.ops.operation.AssignOperation&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">AssignOperation&lt;T extends <a href="../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">An AssignOperation computes values in an output image. The output image is preallocated here. The AssignOperation uses a RealFunction
+  to compute each pixel value from any number of input images. The passed in function must accept the same number of parameters as the
+  number of input images given. (Better name welcomed: ImageAssignment? FunctionalEvaluation? Others?)
+ 
+ A user of this class creates an AssignOperation, constrains it as desired, and calls execute(). Note that execute() can be
+ interrupted from another Thread using the quit() method. (this code is currently single threaded).
+ 
+ The operation can be constrained in a number of ways:
+ 
+ - the output image and each input image can be constrained to sample values only within user specified rectangular subregions. All subregions
+ must be shape compatible before calling execute(). See setInputRegion() and setOutputRegion().
+ 
+ - the generation of an output pixel can be further constrained by Conditions - up to one per image. An output pixel is changed at a pixel location
+ only when all Conditions are satisfied. Conditions can be as complex as desired and can be composed of other Conditions. Conditions can even have
+ a spatial component. See setInputCondition() and setOutputCondition().
+ 
+ - the execute() iteration can be observed by any class implementing an Observer interface. A statistical query could be constructed this way.
+ 
+ An image can be repeated multiple times within the input image list. Therefore separate regions of one image can be used as input.
+ 
+ An image can act as both input and output. Thus one can transform an existing image in place.
+ 
+ Limitations
+ 
+  - the regions are shape compatible. Thus one pixel is computed from some function of all the pixels located in the same place relative
+ to their own images. Thus you can't compute a function on a neighborhood very easily. As it stands you could create an AssignOperation on 9 input
+ images that are the same input image with 9 different subregions. You could then pass a MedianFunction to calculate a median filter. Could be better.
+ (With appropriate out of bounds behavior this is how you could do a convolution too).
+ 
+ - if a user reuses an input image as an output image they have to take care to not change pixels used in further input calculations. Usually this is
+ not a problem unless you are using a spatial Condition or if you have set the output image subregion to partially overlap it's input image region.
+ We could add some checking.
+ 
+ Ideally we'd enhance Imglib such that functions are more integrated in the core. An Image is just a function that maps input coordinates to
+ output values. An image with an out of bounds behavior is a function composed of two functions: the image function and the out of bounds function.
+ A neighborhood is a function that maps input coordinates to output values over a subdomain (thus it should be an Img also). A RealFunction could
+ operate on neighborhoods and return values. Neighborhoods could be within one Image or span multiple Images. But really Image is wrong here
+ as it could just be a function we sample. If a neighborhood can't span multiple images then we'd want ways to compose images out of other images
+ that is all done by reference and delegation. i.e. a 3d composed z stack image made of thirteen 2d images. See how imgib2 supports these concepts.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#AssignOperation-mpicbg.imglib.image.Image:A-mpicbg.imglib.image.Image-imglib.ops.function.RealFunction-">AssignOperation</a></span>(<a href="../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;[]&nbsp;inputs,
+               <a href="../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;output,
+               <a href="../../../imglib/ops/function/RealFunction.html" title="interface in imglib.ops.function">RealFunction</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;func)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#addObserver-java.util.Observer-">addObserver</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Observer.html?is-external=true" title="class or interface in java.util">Observer</a>&nbsp;o)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#deleteObserver-java.util.Observer-">deleteObserver</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Observer.html?is-external=true" title="class or interface in java.util">Observer</a>&nbsp;o)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#execute--">execute</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#intersectConditions--">intersectConditions</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#quit--">quit</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#setInputCondition-int-imglib.ops.condition.Condition-">setInputCondition</a></span>(int&nbsp;i,
+                 <a href="../../../imglib/ops/condition/Condition.html" title="interface in imglib.ops.condition">Condition</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#setInputRegion-int-int:A-int:A-">setInputRegion</a></span>(int&nbsp;i,
+              int[]&nbsp;origin,
+              int[]&nbsp;span)</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#setOutputCondition-imglib.ops.condition.Condition-">setOutputCondition</a></span>(<a href="../../../imglib/ops/condition/Condition.html" title="interface in imglib.ops.condition">Condition</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#setOutputRegion-int:A-int:A-">setOutputRegion</a></span>(int[]&nbsp;origin,
+               int[]&nbsp;span)</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../imglib/ops/operation/AssignOperation.html#unionConditions--">unionConditions</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AssignOperation-mpicbg.imglib.image.Image:A-mpicbg.imglib.image.Image-imglib.ops.function.RealFunction-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AssignOperation</h4>
+<pre>public&nbsp;AssignOperation(<a href="../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;[]&nbsp;inputs,
+                       <a href="../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;output,
+                       <a href="../../../imglib/ops/function/RealFunction.html" title="interface in imglib.ops.function">RealFunction</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;func)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="addObserver-java.util.Observer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addObserver</h4>
+<pre>public&nbsp;void&nbsp;addObserver(<a href="http://javadoc.imagej.net/Java/java/util/Observer.html?is-external=true" title="class or interface in java.util">Observer</a>&nbsp;o)</pre>
+</li>
+</ul>
+<a name="deleteObserver-java.util.Observer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deleteObserver</h4>
+<pre>public&nbsp;void&nbsp;deleteObserver(<a href="http://javadoc.imagej.net/Java/java/util/Observer.html?is-external=true" title="class or interface in java.util">Observer</a>&nbsp;o)</pre>
+</li>
+</ul>
+<a name="setOutputRegion-int:A-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutputRegion</h4>
+<pre>public&nbsp;void&nbsp;setOutputRegion(int[]&nbsp;origin,
+                            int[]&nbsp;span)</pre>
+</li>
+</ul>
+<a name="setOutputCondition-imglib.ops.condition.Condition-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutputCondition</h4>
+<pre>public&nbsp;void&nbsp;setOutputCondition(<a href="../../../imglib/ops/condition/Condition.html" title="interface in imglib.ops.condition">Condition</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;c)</pre>
+</li>
+</ul>
+<a name="setInputRegion-int-int:A-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInputRegion</h4>
+<pre>public&nbsp;void&nbsp;setInputRegion(int&nbsp;i,
+                           int[]&nbsp;origin,
+                           int[]&nbsp;span)</pre>
+</li>
+</ul>
+<a name="setInputCondition-int-imglib.ops.condition.Condition-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInputCondition</h4>
+<pre>public&nbsp;void&nbsp;setInputCondition(int&nbsp;i,
+                              <a href="../../../imglib/ops/condition/Condition.html" title="interface in imglib.ops.condition">Condition</a>&lt;<a href="../../../imglib/ops/operation/AssignOperation.html" title="type parameter in AssignOperation">T</a>&gt;&nbsp;c)</pre>
+</li>
+</ul>
+<a name="intersectConditions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>intersectConditions</h4>
+<pre>public&nbsp;void&nbsp;intersectConditions()</pre>
+</li>
+</ul>
+<a name="unionConditions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unionConditions</h4>
+<pre>public&nbsp;void&nbsp;unionConditions()</pre>
+</li>
+</ul>
+<a name="execute--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>execute</h4>
+<pre>public&nbsp;void&nbsp;execute()</pre>
+</li>
+</ul>
+<a name="quit--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>quit</h4>
+<pre>public&nbsp;void&nbsp;quit()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../imglib/ops/operation/MultiImageIterator.html" title="class in imglib.ops.operation"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?imglib/ops/operation/AssignOperation.html" target="_top">Frames</a></li>
+<li><a href="AssignOperation.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

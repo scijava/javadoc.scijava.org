@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SparseCostMatrix (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SparseCostMatrix (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" target="_top">Frames</a></li>
+<li><a href="SparseCostMatrix.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.tracking.sparselap.linker</div>
+<h2 title="Class SparseCostMatrix" class="title">Class SparseCostMatrix</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SparseCostMatrix</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A class to represent a sparse cost matrix.
+ <p>
+ This class aims at representing in a memory-efficient way a possibly
+ rectangular double matrix used in linear assignment problems (LAP). It is
+ useful when the number of sources (rows of the matrix) and the number of
+ targets (columns of the matrix) are large, but only a fraction of the costs
+ are not infinite (assignment forbidden). In this case, infinite cost can be
+ omitted and it is implicitly understood that missing values of the matrix
+ represent infinite costs. This situation is very common in single-particle
+ tracking for Life-Sciences, and this class is especially designed for these
+ problems.
+ <p>
+ This class does not do much. It just stores the arrays (described below) that
+ represent the matrix. It is the caller responsibility to ensure they are
+ properly arranged and that they represent the desired cost matrix. The arrays
+ are accessible via <code>default</code> visibility.
+ <p>
+ This matrix follow the row compressed storage convention, taken from the
+ Volgenant paper: <code>Volgenant. Linear and semi-assignment problems: A core
+ oriented approach. Computers &amp; Operations Research (1996) vol. 23 (10) pp.
+ 917-932</code></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez - 2014</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#SparseCostMatrix-double:A-int:A-int:A-int-">SparseCostMatrix</a></span>(double[]&nbsp;cc,
+                int[]&nbsp;kk,
+                int[]&nbsp;number,
+                int&nbsp;nCols)</code>
+<div class="block">Instantiate a new sparse cost matrix.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#fillWith-double-">fillWith</a></span>(double&nbsp;value)</code>
+<div class="block">Replace all the non-infinite values of this matrix by the specified
+ value.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#get-int-int-double-">get</a></span>(int&nbsp;i,
+   int&nbsp;j,
+   double&nbsp;missingValue)</code>
+<div class="block">Returns the value stored by this matrix at the specified row and column.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#getCosts--">getCosts</a></span>()</code>
+<div class="block">Exposes the array of all the non-infinite costs.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#getNCols--">getNCols</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#getNRows--">getNRows</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#hcat-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">hcat</a></span>(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;B)</code>
+<div class="block">Returns the horizontal concatenation of this matrix with the specified
+ one.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#toFullMatrix--">toFullMatrix</a></span>()</code>
+<div class="block">Creates and returns a new <code>double[][]</code> matrix representing a
+ non-sparse version of this cost matrix.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#toString-java.util.List-java.util.List-">toString</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;rows,
+        <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;columns)</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#totalAssignmentCost-int:A-">totalAssignmentCost</a></span>(int[]&nbsp;rowAssignment)</code>
+<div class="block">Computes the total cost for an assignment specified by row.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#transpose--">transpose</a></span>()</code>
+<div class="block">Returns the transpose of this matrix.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html#vcat-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">vcat</a></span>(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;B)</code>
+<div class="block">Returns the vertical concatenation of this matrix with the specified one.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SparseCostMatrix-double:A-int:A-int:A-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SparseCostMatrix</h4>
+<pre>public&nbsp;SparseCostMatrix(double[]&nbsp;cc,
+                        int[]&nbsp;kk,
+                        int[]&nbsp;number,
+                        int&nbsp;nCols)</pre>
+<div class="block">Instantiate a new sparse cost matrix. The caller must provide 3 arrays:
+ <ol>
+ <li> <code>cc</code>, the <code>double[]</code> array containing all the
+ non-infinite costs.
+ <li> <code>kk</code>, an <code>int[]</code> array of the same length that
+ <code>cc</code>, and that contains the columns of the cost.
+ </ol>
+ These two arrays must be arranged row by row, starting with the first
+ one. And in each row, the columns must be sorted in increasing order (to
+ facilitate index search). Also, each row must have at least one
+ non-infinte cost. If not, an <a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> is thrown.
+ <ol start="3">
+ <li> <code>number</code> an <code>int[]</code> array, with one element per
+ row, that contains the number of non infinite cost for a row.
+ </ol></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cc</code> - the cost array.</dd>
+<dd><code>kk</code> - the column index of each cost.</dd>
+<dd><code>number</code> - the number of element for each row.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the cost and column arrays are not of the same size, if
+             the column array is not sorted row by row, of if one row has
+             0 non-infinite costs.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString-java.util.List-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;rows,
+                       <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;columns)</pre>
+</li>
+</ul>
+<a name="totalAssignmentCost-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>totalAssignmentCost</h4>
+<pre>public&nbsp;double&nbsp;totalAssignmentCost(int[]&nbsp;rowAssignment)</pre>
+<div class="block">Computes the total cost for an assignment specified by row. It is
+ supposed that row <code>i</code> is assigned to column
+ <code>rowAssignment[i]</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rowAssignment</code> - the assignment, specified by row.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the total cost for this assignment.</dd>
+</dl>
+</li>
+</ul>
+<a name="toFullMatrix--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toFullMatrix</h4>
+<pre>public&nbsp;double[][]&nbsp;toFullMatrix()</pre>
+<div class="block">Creates and returns a new <code>double[][]</code> matrix representing a
+ non-sparse version of this cost matrix. Missing costs are replace by
+ <a href="http://javadoc.imagej.net/Java/java/lang/Double.html?is-external=true#MAX_VALUE" title="class or interface in java.lang"><code>Double.MAX_VALUE</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new <code>double[][]</code></dd>
+</dl>
+</li>
+</ul>
+<a name="get-int-int-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get</h4>
+<pre>public final&nbsp;double&nbsp;get(int&nbsp;i,
+                        int&nbsp;j,
+                        double&nbsp;missingValue)</pre>
+<div class="block">Returns the value stored by this matrix at the specified row and column.
+ If a value is not present in the sparse matrix, the specified missing
+ value is returned.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>i</code> - the row.</dd>
+<dd><code>j</code> - the column.</dd>
+<dd><code>missingValue</code> - what to return if the sparse matrix does not store a value at
+            the specified row and column.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the value.</dd>
+</dl>
+</li>
+</ul>
+<a name="getCosts--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCosts</h4>
+<pre>public&nbsp;double[]&nbsp;getCosts()</pre>
+<div class="block">Exposes the array of all the non-infinite costs.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the costs.</dd>
+</dl>
+</li>
+</ul>
+<a name="getNCols--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNCols</h4>
+<pre>public&nbsp;int&nbsp;getNCols()</pre>
+</li>
+</ul>
+<a name="getNRows--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNRows</h4>
+<pre>public&nbsp;int&nbsp;getNRows()</pre>
+</li>
+</ul>
+<a name="vcat-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vcat</h4>
+<pre>public final&nbsp;<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;vcat(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;B)</pre>
+<div class="block">Returns the vertical concatenation of this matrix with the specified one.
+ So that if this matrix is A and the specified matrix is B, you get
+ 
+ <pre>
+ -----
+ | A |
+ | B |
+ -----
+ </pre></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>B</code> - the matrix to concatenate this matrix with</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new sparse matrix.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if B does not have the same number of columns as this matrix.</dd>
+</dl>
+</li>
+</ul>
+<a name="hcat-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hcat</h4>
+<pre>public final&nbsp;<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;hcat(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;B)</pre>
+<div class="block">Returns the horizontal concatenation of this matrix with the specified
+ one. So that if this matrix is A and the specified matrix is B, you get
+ 
+ <pre>
+ -------
+ | A B |
+ -------
+ </pre></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>B</code> - the matrix to concatenate this matrix with</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new sparse matrix.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if B does not have the same number of rows as this matrix.</dd>
+</dl>
+</li>
+</ul>
+<a name="transpose--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>transpose</h4>
+<pre>public final&nbsp;<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;transpose()</pre>
+<div class="block">Returns the transpose of this matrix.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new sparse matrix.</dd>
+</dl>
+</li>
+</ul>
+<a name="fillWith-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>fillWith</h4>
+<pre>public&nbsp;void&nbsp;fillWith(double&nbsp;value)</pre>
+<div class="block">Replace all the non-infinite values of this matrix by the specified
+ value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - the value to write in this matrix.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" target="_top">Frames</a></li>
+<li><a href="SparseCostMatrix.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,1315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ThinPlateR2LogRSplineKernelTransform (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ThinPlateR2LogRSplineKernelTransform (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../jitk/spline/TransformInverseGradientDescent.html" title="class in jitk.spline"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?jitk/spline/ThinPlateR2LogRSplineKernelTransform.html" target="_top">Frames</a></li>
+<li><a href="ThinPlateR2LogRSplineKernelTransform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">jitk.spline</div>
+<h2 title="Class ThinPlateR2LogRSplineKernelTransform" class="title">Class ThinPlateR2LogRSplineKernelTransform</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>jitk.spline.ThinPlateR2LogRSplineKernelTransform</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ThinPlateR2LogRSplineKernelTransform</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
+<div class="block">Implements an n-dimensional thin plate spline transform.
+ Began as a port of itk's itkKernelTransform.hxx
+ <p>
+ M. H. Davis, a Khotanzad, D. P. Flamig, and S. E. Harms, “A physics-based
+ coordinate transformation for 3-D image matching.,” IEEE Trans. Med. Imaging,
+ vol. 16, no. 3, pp. 317–28, Jun. 1997.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Kitware (ITK), John Bogovic</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../serialized-form.html#jitk.spline.ThinPlateR2LogRSplineKernelTransform">Serialized Form</a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#aMatrix">aMatrix</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#bVector">bVector</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeAffine">computeAffine</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected org.ejml.data.DenseMatrix64F</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#dMatrix">dMatrix</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#EPS">EPS</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static org.apache.log4j.Logger</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#logger">logger</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ndims">ndims</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#nLandmarks">nLandmarks</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#sourceLandmarks">sourceLandmarks</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#stiffness">stiffness</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#weights">weights</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#wMatrixComputeD">wMatrixComputeD</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-double:A:A-double:A:A-double:A-double:A-">ThinPlateR2LogRSplineKernelTransform</a></span>(double[][]&nbsp;srcPts,
+                                    double[][]&nbsp;aMatrix,
+                                    double[]&nbsp;bVector,
+                                    double[]&nbsp;dMatrixData)</code>
+<div class="block">Constructor with transformation parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims,
+                                    double[][]&nbsp;srcPts,
+                                    double[][]&nbsp;tgtPts)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-boolean-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims,
+                                    double[][]&nbsp;srcPts,
+                                    double[][]&nbsp;tgtPts,
+                                    boolean&nbsp;computeAffine)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-double:A-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims,
+                                    double[][]&nbsp;srcPts,
+                                    double[][]&nbsp;tgtPts,
+                                    double[]&nbsp;weights)</code>
+<div class="block">Constructor with weighted point matches</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-float:A:A-float:A:A-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims,
+                                    float[][]&nbsp;srcPts,
+                                    float[][]&nbsp;tgtPts)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#ThinPlateR2LogRSplineKernelTransform-int-float:A:A-float:A:A-boolean-">ThinPlateR2LogRSplineKernelTransform</a></span>(int&nbsp;ndims,
+                                    float[][]&nbsp;srcPts,
+                                    float[][]&nbsp;tgtPts,
+                                    boolean&nbsp;computeAffine)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#apply-double:A-">apply</a></span>(double[]&nbsp;pt)</code>
+<div class="block">Transforms the input point according to the thin plate spline stored by
+ this object.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#apply-double:A-double:A-">apply</a></span>(double[]&nbsp;pt,
+     double[]&nbsp;result)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#apply-double:A-double:A-boolean-">apply</a></span>(double[]&nbsp;pt,
+     double[]&nbsp;result,
+     boolean&nbsp;debug)</code>
+<div class="block">Transform a source vector pt into a target vector result.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#applyInPlace-double:A-">applyInPlace</a></span>(double[]&nbsp;pt)</code>
+<div class="block">Transform pt in place.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>org.ejml.data.DenseMatrix64F</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#buildDisplacements-double:A:A-">buildDisplacements</a></span>(double[][]&nbsp;targetLandmarks)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>org.ejml.data.DenseMatrix64F</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#buildDisplacements-float:A:A-">buildDisplacements</a></span>(float[][]&nbsp;targetLandmarks)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Fiji/jitk/spline/ThinPlateR2LogRSplineKernelTransform.IndexDistancePair.html?is-external=true" title="class or interface in jitk.spline">jitk.spline.ThinPlateR2LogRSplineKernelTransform.IndexDistancePair</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#closestTargetLandmarkAndDistance-double:A-">closestTargetLandmarkAndDistance</a></span>(double[]&nbsp;target)</code>
+<div class="block">Returns the index of the target landmark closest to the input point as well
+ as the distance to that landmark.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeDeformationContribution-double:A-double:A-">computeDeformationContribution</a></span>(double[]&nbsp;thispt,
+                              double[]&nbsp;result)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeG-double:A-org.ejml.data.DenseMatrix64F-">computeG</a></span>(double[]&nbsp;pt,
+        org.ejml.data.DenseMatrix64F&nbsp;mtx)</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeG-double:A-org.ejml.data.DenseMatrix64F-double-">computeG</a></span>(double[]&nbsp;pt,
+        org.ejml.data.DenseMatrix64F&nbsp;mtx,
+        double&nbsp;w)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeK-org.ejml.data.DenseMatrix64F-">computeK</a></span>(org.ejml.data.DenseMatrix64F&nbsp;kMatrix)</code>
+<div class="block">Builds the K matrix from landmark points and G matrix.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>protected org.ejml.data.DenseMatrix64F</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeL-org.ejml.data.DenseMatrix64F-org.ejml.data.DenseMatrix64F-">computeL</a></span>(org.ejml.data.DenseMatrix64F&nbsp;kMatrix,
+        org.ejml.data.DenseMatrix64F&nbsp;pMatrix)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeP-org.ejml.data.DenseMatrix64F-">computeP</a></span>(org.ejml.data.DenseMatrix64F&nbsp;pMatrix)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>protected org.ejml.data.DenseMatrix64F</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeReflexiveG--">computeReflexiveG</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#computeW-org.ejml.data.DenseMatrix64F-">computeW</a></span>(org.ejml.data.DenseMatrix64F&nbsp;yMatrix)</code>
+<div class="block">The main workhorse method.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getAffine--">getAffine</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getKnotWeights--">getKnotWeights</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getNumDims--">getNumDims</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getNumLandmarks--">getNumLandmarks</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getSourceLandmarks--">getSourceLandmarks</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#getTranslation--">getTranslation</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#initialGuessAtInverse-double:A-">initialGuessAtInverse</a></span>(double[]&nbsp;target)</code>
+<div class="block">Approximates the inverse of the input target point by taking the best of several
+ available approximation methods.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#inverse-double:A-double-">inverse</a></span>(double[]&nbsp;target,
+       double&nbsp;tolerance)</code>
+<div class="block">Computes the inverse of this transformation.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#inverse-double:A-double:A-double-int-">inverse</a></span>(double[]&nbsp;target,
+       double[]&nbsp;result,
+       double&nbsp;tolerance,
+       int&nbsp;maxIters)</code>
+<div class="block">Computes the inverse of this transformation.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#inverseGuessAffineInv-double:A-">inverseGuessAffineInv</a></span>(double[]&nbsp;target)</code>
+<div class="block">Quickly approximates the inverse of the input target point, 
+ using the affine portion of the transform only.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#inverseTol-double:A-double:A-double-int-">inverseTol</a></span>(double[]&nbsp;target,
+          double[]&nbsp;guess,
+          double&nbsp;tolerance,
+          int&nbsp;maxIters)</code>&nbsp;</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#jacobian-double:A-">jacobian</a></span>(double[]&nbsp;p)</code>
+<div class="block">Computes the jacobian of this tranformation around the point p.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#normSqrd-double:A-">normSqrd</a></span>(double[]&nbsp;v)</code>&nbsp;</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#printXfmBacks2d-int-int-int-int-">printXfmBacks2d</a></span>(int&nbsp;maxx,
+               int&nbsp;maxy,
+               int&nbsp;delx,
+               int&nbsp;dely)</code>&nbsp;</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#r2LogrDerivative-double:A-">r2LogrDerivative</a></span>(double[]&nbsp;p)</code>
+<div class="block">The derivative of component j of the output point, with respect to x_d
+ (the dth component of the vector) is:
+
+ \sum_i D[ d, l ] G'( r ) ( x_j - l_ij ) / ( sqrt( N_l(p) ))
+
+ where: D is the D matrix i indexes the landmarks N_l(p) is the squared
+ euclidean norm between landmark l and point p l_ij is the jth component
+ of landmark i G' is the derivative of the kernel function.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#reorganizeW-org.ejml.data.DenseMatrix64F-">reorganizeW</a></span>(org.ejml.data.DenseMatrix64F&nbsp;wMatrix)</code>
+<div class="block">Copies data from the W matrix to the D, A, and b matrices which represent
+ the deformable, affine and translational portions of the transformation,
+ respectively.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#setDoAffine-boolean-">setDoAffine</a></span>(boolean&nbsp;estimateAffine)</code>&nbsp;</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#srcPtDisplacement-int-double:A-double:A-">srcPtDisplacement</a></span>(int&nbsp;i,
+                 double[]&nbsp;pt,
+                 double[]&nbsp;res)</code>
+<div class="block">Computes the displacement between the i^th source point and the input
+ point.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#srcPtDisplacement-int-int-double:A-">srcPtDisplacement</a></span>(int&nbsp;i,
+                 int&nbsp;j,
+                 double[]&nbsp;res)</code>
+<div class="block">Computes the displacement between the i^th and j^th source points.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#stepInDerivativeDirection-double:A:A-double:A-double:A-double-">stepInDerivativeDirection</a></span>(double[][]&nbsp;derivative,
+                         double[]&nbsp;start,
+                         double[]&nbsp;dest,
+                         double&nbsp;stepLength)</code>&nbsp;</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#tgtPtDisplacement-int-double:A-double:A-">tgtPtDisplacement</a></span>(int&nbsp;i,
+                 double[]&nbsp;pt,
+                 double[]&nbsp;res)</code>
+<div class="block">Computes the displacement between the i^th source point and the input
+ point.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../jitk/spline/ThinPlateR2LogRSplineKernelTransform.html#transformPointAffine-double:A-">transformPointAffine</a></span>(double[]&nbsp;pt)</code>
+<div class="block">Transforms the input point according to the affine part of the thin plate
+ spline stored by this object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ndims">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ndims</h4>
+<pre>protected final&nbsp;int ndims</pre>
+</li>
+</ul>
+<a name="dMatrix">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dMatrix</h4>
+<pre>protected&nbsp;org.ejml.data.DenseMatrix64F dMatrix</pre>
+</li>
+</ul>
+<a name="aMatrix">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aMatrix</h4>
+<pre>protected&nbsp;double[][] aMatrix</pre>
+</li>
+</ul>
+<a name="bVector">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bVector</h4>
+<pre>protected&nbsp;double[] bVector</pre>
+</li>
+</ul>
+<a name="stiffness">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stiffness</h4>
+<pre>protected&nbsp;double stiffness</pre>
+</li>
+</ul>
+<a name="wMatrixComputeD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wMatrixComputeD</h4>
+<pre>protected&nbsp;boolean wMatrixComputeD</pre>
+</li>
+</ul>
+<a name="computeAffine">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeAffine</h4>
+<pre>protected&nbsp;boolean computeAffine</pre>
+</li>
+</ul>
+<a name="nLandmarks">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nLandmarks</h4>
+<pre>protected&nbsp;int nLandmarks</pre>
+</li>
+</ul>
+<a name="sourceLandmarks">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sourceLandmarks</h4>
+<pre>protected final&nbsp;double[][] sourceLandmarks</pre>
+</li>
+</ul>
+<a name="weights">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>weights</h4>
+<pre>protected&nbsp;double[] weights</pre>
+</li>
+</ul>
+<a name="EPS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>EPS</h4>
+<pre>protected static final&nbsp;double EPS</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#jitk.spline.ThinPlateR2LogRSplineKernelTransform.EPS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="logger">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>logger</h4>
+<pre>protected static&nbsp;org.apache.log4j.Logger logger</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims)</pre>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims,
+                                            double[][]&nbsp;srcPts,
+                                            double[][]&nbsp;tgtPts)</pre>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-float:A:A-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims,
+                                            float[][]&nbsp;srcPts,
+                                            float[][]&nbsp;tgtPts)</pre>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims,
+                                            double[][]&nbsp;srcPts,
+                                            double[][]&nbsp;tgtPts,
+                                            boolean&nbsp;computeAffine)</pre>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-float:A:A-float:A:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims,
+                                            float[][]&nbsp;srcPts,
+                                            float[][]&nbsp;tgtPts,
+                                            boolean&nbsp;computeAffine)</pre>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-int-double:A:A-double:A:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(int&nbsp;ndims,
+                                            double[][]&nbsp;srcPts,
+                                            double[][]&nbsp;tgtPts,
+                                            double[]&nbsp;weights)</pre>
+<div class="block">Constructor with weighted point matches</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ndims</code> - num dimensions</dd>
+<dd><code>srcPts</code> - source points</dd>
+<dd><code>tgtPts</code> - target points</dd>
+<dd><code>weights</code> - point weights</dd>
+</dl>
+</li>
+</ul>
+<a name="ThinPlateR2LogRSplineKernelTransform-double:A:A-double:A:A-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ThinPlateR2LogRSplineKernelTransform</h4>
+<pre>public&nbsp;ThinPlateR2LogRSplineKernelTransform(double[][]&nbsp;srcPts,
+                                            double[][]&nbsp;aMatrix,
+                                            double[]&nbsp;bVector,
+                                            double[]&nbsp;dMatrixData)</pre>
+<div class="block">Constructor with transformation parameters. aMatrix and bVector are
+ allowed to be null</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srcPts</code> - source points</dd>
+<dd><code>aMatrix</code> - A matrix</dd>
+<dd><code>bVector</code> - b vector</dd>
+<dd><code>dMatrixData</code> - D matrix</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getNumLandmarks--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumLandmarks</h4>
+<pre>public&nbsp;int&nbsp;getNumLandmarks()</pre>
+</li>
+</ul>
+<a name="getNumDims--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumDims</h4>
+<pre>public&nbsp;int&nbsp;getNumDims()</pre>
+</li>
+</ul>
+<a name="getSourceLandmarks--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSourceLandmarks</h4>
+<pre>public&nbsp;double[][]&nbsp;getSourceLandmarks()</pre>
+</li>
+</ul>
+<a name="getAffine--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAffine</h4>
+<pre>public&nbsp;double[][]&nbsp;getAffine()</pre>
+</li>
+</ul>
+<a name="getTranslation--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTranslation</h4>
+<pre>public&nbsp;double[]&nbsp;getTranslation()</pre>
+</li>
+</ul>
+<a name="getKnotWeights--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKnotWeights</h4>
+<pre>public&nbsp;double[]&nbsp;getKnotWeights()</pre>
+</li>
+</ul>
+<a name="setDoAffine-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDoAffine</h4>
+<pre>public&nbsp;void&nbsp;setDoAffine(boolean&nbsp;estimateAffine)</pre>
+</li>
+</ul>
+<a name="computeReflexiveG--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeReflexiveG</h4>
+<pre>protected&nbsp;org.ejml.data.DenseMatrix64F&nbsp;computeReflexiveG()</pre>
+</li>
+</ul>
+<a name="normSqrd-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>normSqrd</h4>
+<pre>protected&nbsp;double&nbsp;normSqrd(double[]&nbsp;v)</pre>
+</li>
+</ul>
+<a name="buildDisplacements-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>buildDisplacements</h4>
+<pre>public&nbsp;org.ejml.data.DenseMatrix64F&nbsp;buildDisplacements(double[][]&nbsp;targetLandmarks)</pre>
+</li>
+</ul>
+<a name="buildDisplacements-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>buildDisplacements</h4>
+<pre>public&nbsp;org.ejml.data.DenseMatrix64F&nbsp;buildDisplacements(float[][]&nbsp;targetLandmarks)</pre>
+</li>
+</ul>
+<a name="computeW-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeW</h4>
+<pre>protected&nbsp;void&nbsp;computeW(org.ejml.data.DenseMatrix64F&nbsp;yMatrix)</pre>
+<div class="block">The main workhorse method.
+ <p>
+ Implements Equation (5) in Davis et al. and calls reorganizeW.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>yMatrix</code> - the y matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="computeL-org.ejml.data.DenseMatrix64F-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeL</h4>
+<pre>protected&nbsp;org.ejml.data.DenseMatrix64F&nbsp;computeL(org.ejml.data.DenseMatrix64F&nbsp;kMatrix,
+                                                org.ejml.data.DenseMatrix64F&nbsp;pMatrix)</pre>
+</li>
+</ul>
+<a name="computeP-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeP</h4>
+<pre>protected&nbsp;void&nbsp;computeP(org.ejml.data.DenseMatrix64F&nbsp;pMatrix)</pre>
+</li>
+</ul>
+<a name="computeK-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeK</h4>
+<pre>protected&nbsp;void&nbsp;computeK(org.ejml.data.DenseMatrix64F&nbsp;kMatrix)</pre>
+<div class="block">Builds the K matrix from landmark points and G matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>kMatrix</code> - the k matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="reorganizeW-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reorganizeW</h4>
+<pre>protected&nbsp;void&nbsp;reorganizeW(org.ejml.data.DenseMatrix64F&nbsp;wMatrix)</pre>
+<div class="block">Copies data from the W matrix to the D, A, and b matrices which represent
+ the deformable, affine and translational portions of the transformation,
+ respectively.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wMatrix</code> - the w matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="computeG-double:A-org.ejml.data.DenseMatrix64F-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeG</h4>
+<pre>public&nbsp;void&nbsp;computeG(double[]&nbsp;pt,
+                     org.ejml.data.DenseMatrix64F&nbsp;mtx)</pre>
+</li>
+</ul>
+<a name="computeG-double:A-org.ejml.data.DenseMatrix64F-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeG</h4>
+<pre>public&nbsp;void&nbsp;computeG(double[]&nbsp;pt,
+                     org.ejml.data.DenseMatrix64F&nbsp;mtx,
+                     double&nbsp;w)</pre>
+</li>
+</ul>
+<a name="computeDeformationContribution-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeDeformationContribution</h4>
+<pre>public&nbsp;void&nbsp;computeDeformationContribution(double[]&nbsp;thispt,
+                                           double[]&nbsp;result)</pre>
+</li>
+</ul>
+<a name="r2LogrDerivative-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>r2LogrDerivative</h4>
+<pre>public&nbsp;double[][]&nbsp;r2LogrDerivative(double[]&nbsp;p)</pre>
+<div class="block">The derivative of component j of the output point, with respect to x_d
+ (the dth component of the vector) is:
+
+ \sum_i D[ d, l ] G'( r ) ( x_j - l_ij ) / ( sqrt( N_l(p) ))
+
+ where: D is the D matrix i indexes the landmarks N_l(p) is the squared
+ euclidean norm between landmark l and point p l_ij is the jth component
+ of landmark i G' is the derivative of the kernel function. for a TPS, the
+ kernel function is (r^2)logr, the derivative wrt r of which is: r( 2logr
+ + 1 )
+
+ See the documentation for a derivation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>p</code> - The point at which to evaluate the derivative</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The Jacobian matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="jacobian-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>jacobian</h4>
+<pre>public&nbsp;double[][]&nbsp;jacobian(double[]&nbsp;p)</pre>
+<div class="block">Computes the jacobian of this tranformation around the point p.
+ <p>
+ The result is stored in a new double array where element [ i ][ j ] gives
+ the derivative of variable i with respect to variable j</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>p</code> - the point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the jacobian array</dd>
+</dl>
+</li>
+</ul>
+<a name="stepInDerivativeDirection-double:A:A-double:A-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stepInDerivativeDirection</h4>
+<pre>public&nbsp;void&nbsp;stepInDerivativeDirection(double[][]&nbsp;derivative,
+                                      double[]&nbsp;start,
+                                      double[]&nbsp;dest,
+                                      double&nbsp;stepLength)</pre>
+</li>
+</ul>
+<a name="printXfmBacks2d-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>printXfmBacks2d</h4>
+<pre>public&nbsp;void&nbsp;printXfmBacks2d(int&nbsp;maxx,
+                            int&nbsp;maxy,
+                            int&nbsp;delx,
+                            int&nbsp;dely)</pre>
+</li>
+</ul>
+<a name="transformPointAffine-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>transformPointAffine</h4>
+<pre>public&nbsp;double[]&nbsp;transformPointAffine(double[]&nbsp;pt)</pre>
+<div class="block">Transforms the input point according to the affine part of the thin plate
+ spline stored by this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pt</code> - the point to be transformed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed point</dd>
+</dl>
+</li>
+</ul>
+<a name="apply-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>apply</h4>
+<pre>public&nbsp;void&nbsp;apply(double[]&nbsp;pt,
+                  double[]&nbsp;result)</pre>
+</li>
+</ul>
+<a name="apply-double:A-double:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>apply</h4>
+<pre>public&nbsp;void&nbsp;apply(double[]&nbsp;pt,
+                  double[]&nbsp;result,
+                  boolean&nbsp;debug)</pre>
+<div class="block">Transform a source vector pt into a target vector result. pt and result
+ must NOT be the same vector.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pt</code> - the point</dd>
+<dd><code>result</code> - the result</dd>
+<dd><code>debug</code> - do debug</dd>
+</dl>
+</li>
+</ul>
+<a name="apply-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>apply</h4>
+<pre>public&nbsp;double[]&nbsp;apply(double[]&nbsp;pt)</pre>
+<div class="block">Transforms the input point according to the thin plate spline stored by
+ this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pt</code> - the point to be transformed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed point</dd>
+</dl>
+</li>
+</ul>
+<a name="applyInPlace-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>applyInPlace</h4>
+<pre>public&nbsp;void&nbsp;applyInPlace(double[]&nbsp;pt)</pre>
+<div class="block">Transform pt in place.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pt</code> - the point</dd>
+</dl>
+</li>
+</ul>
+<a name="closestTargetLandmarkAndDistance-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closestTargetLandmarkAndDistance</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Fiji/jitk/spline/ThinPlateR2LogRSplineKernelTransform.IndexDistancePair.html?is-external=true" title="class or interface in jitk.spline">jitk.spline.ThinPlateR2LogRSplineKernelTransform.IndexDistancePair</a>&nbsp;closestTargetLandmarkAndDistance(double[]&nbsp;target)</pre>
+<div class="block">Returns the index of the target landmark closest to the input point as well
+ as the distance to that landmark.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - the point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a pair containing the closest landmark point and its squared
+         distance to that landmark</dd>
+</dl>
+</li>
+</ul>
+<a name="initialGuessAtInverse-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialGuessAtInverse</h4>
+<pre>public&nbsp;double[]&nbsp;initialGuessAtInverse(double[]&nbsp;target)</pre>
+<div class="block">Approximates the inverse of the input target point by taking the best of several
+ available approximation methods.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - the target point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the approximate inverse point</dd>
+</dl>
+</li>
+</ul>
+<a name="inverseGuessAffineInv-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inverseGuessAffineInv</h4>
+<pre>public&nbsp;double[]&nbsp;inverseGuessAffineInv(double[]&nbsp;target)</pre>
+<div class="block">Quickly approximates the inverse of the input target point, 
+ using the affine portion of the transform only.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - a point in the target space</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>approximate inverse</dd>
+</dl>
+</li>
+</ul>
+<a name="inverse-double:A-double:A-double-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inverse</h4>
+<pre>public&nbsp;double&nbsp;inverse(double[]&nbsp;target,
+                      double[]&nbsp;result,
+                      double&nbsp;tolerance,
+                      int&nbsp;maxIters)</pre>
+<div class="block">Computes the inverse of this transformation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - the target point</dd>
+<dd><code>result</code> - array in which to store the result</dd>
+<dd><code>tolerance</code> - the desired precision - must be greater than zero</dd>
+<dd><code>maxIters</code> - maximum number of iterations</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the result is within the specified tolerance, false otherwise</dd>
+</dl>
+</li>
+</ul>
+<a name="inverse-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inverse</h4>
+<pre>public&nbsp;double[]&nbsp;inverse(double[]&nbsp;target,
+                        double&nbsp;tolerance)</pre>
+<div class="block">Computes the inverse of this transformation.  Performs a maximum of 100,000 iterations, 
+ returning whatever the estimate is at that point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - the target point</dd>
+<dd><code>tolerance</code> - the desired precision - must be greater than zero</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the result of applying the inverse transform to the target point</dd>
+</dl>
+</li>
+</ul>
+<a name="inverseTol-double:A-double:A-double-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inverseTol</h4>
+<pre>public&nbsp;double&nbsp;inverseTol(double[]&nbsp;target,
+                         double[]&nbsp;guess,
+                         double&nbsp;tolerance,
+                         int&nbsp;maxIters)</pre>
+</li>
+</ul>
+<a name="srcPtDisplacement-int-int-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>srcPtDisplacement</h4>
+<pre>protected&nbsp;void&nbsp;srcPtDisplacement(int&nbsp;i,
+                                 int&nbsp;j,
+                                 double[]&nbsp;res)</pre>
+<div class="block">Computes the displacement between the i^th and j^th source points.
+
+ Stores the result in the input array 'res' Does not validate inputs.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>i</code> - first index</dd>
+<dd><code>j</code> - second index</dd>
+<dd><code>res</code> - result</dd>
+</dl>
+</li>
+</ul>
+<a name="srcPtDisplacement-int-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>srcPtDisplacement</h4>
+<pre>protected&nbsp;void&nbsp;srcPtDisplacement(int&nbsp;i,
+                                 double[]&nbsp;pt,
+                                 double[]&nbsp;res)</pre>
+<div class="block">Computes the displacement between the i^th source point and the input
+ point.
+
+ Stores the result in the input array 'res'. Does not validate inputs.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>i</code> - first index</dd>
+<dd><code>pt</code> - the point</dd>
+<dd><code>res</code> - the result</dd>
+</dl>
+</li>
+</ul>
+<a name="tgtPtDisplacement-int-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>tgtPtDisplacement</h4>
+<pre>protected&nbsp;void&nbsp;tgtPtDisplacement(int&nbsp;i,
+                                 double[]&nbsp;pt,
+                                 double[]&nbsp;res)</pre>
+<div class="block">Computes the displacement between the i^th source point and the input
+ point.
+
+ Stores the result in the input array 'res'. Does not validate inputs.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>i</code> - first index</dd>
+<dd><code>pt</code> - the point</dd>
+<dd><code>res</code> - the result</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../jitk/spline/TransformInverseGradientDescent.html" title="class in jitk.spline"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?jitk/spline/ThinPlateR2LogRSplineKernelTransform.html" target="_top">Frames</a></li>
+<li><a href="ThinPlateR2LogRSplineKernelTransform.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

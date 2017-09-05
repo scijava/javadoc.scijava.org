@@ -1,0 +1,906 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SioxSegmentator (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SioxSegmentator (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?org/siox/SioxSegmentator.html" target="_top">Frames</a></li>
+<li><a href="SioxSegmentator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.siox</div>
+<h2 title="Class SioxSegmentator" class="title">Class SioxSegmentator</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.siox.SioxSegmentator</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SioxSegmentator</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Image segmentator based on
+<em>SIOX: Simple Interactive Object Extraction</em>.
+ <P>
+ To segmentate an image one has to perform the following steps.
+ <OL><LI>Construct an instance of <code>SioxSegmentator</code>.
+ </LI><LI>Create a confidence matrix, where each entry marks its
+      corresponding image pixel to belong to the foreground, to the
+      background, or being of unknown type.
+ </LI><LI>Call <code>segmentate</code> on the image with the confidence
+       matrix. This stores the result as new foreground confidence into
+       the confidence matrix, with each entry being either
+       zero (<code>CERTAIN_BACKGROUND_CONFIDENCE</code>) or one
+       (<code>CERTAIN_FOREGROUND_CONFIDENCE</code>).
+ </LI><LI>Optionally call <code>subpixelRefine</code> to areas
+      where pixels contain both foreground and background (e.g.
+      object borders or highly detailed features like flowing hairs).
+      The pixel are then assigned confidence values between zero and
+      one to give them a measure of "foregroundness".
+      This step may be repeated as often as needed.
+ </LI></OL>
+ <P>
+ For algorithm documentation refer to
+ G. Friedland, K. Jantz, L. Knipping, R. Rojas:<i>
+ Image Segmentation by Uniform Color Clustering
+  -- Approach and Benchmark Results</i>,
+ <A HREF="http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf">Technical Report B-05-07</A>,
+ Department of Computer Science, Freie Universitaet Berlin, June 2005.<br>
+ <P>
+ See <A HREF="http://www.siox.org/" target="_new">http://www.siox.org</A> for more information.<br>
+ <P>
+ Algorithm idea by Gerald Friedland.</div>
+<dl>
+<dt><span class="simpleTagLabel">Version:</span></dt>
+<dd>1.13</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Gerald Friedland, Kristian Jantz, Lars Knipping</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#ADD_EDGE">ADD_EDGE</a></span></code>
+<div class="block">Add mode for the subpixel refinement.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#BACKGROUND_CONFIDENCE">BACKGROUND_CONFIDENCE</a></span></code>
+<div class="block">Confidence for a region likely being background.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#CERTAIN_BACKGROUND_CONFIDENCE">CERTAIN_BACKGROUND_CONFIDENCE</a></span></code>
+<div class="block">Confidence corresponding to a certain background region (equals zero).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#CERTAIN_FOREGROUND_CONFIDENCE">CERTAIN_FOREGROUND_CONFIDENCE</a></span></code>
+<div class="block">Confidence corresponding to a certain foreground region (equals one).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#FOREGROUND_CONFIDENCE">FOREGROUND_CONFIDENCE</a></span></code>
+<div class="block">Confidence for a region likely being foreground.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#SUB_EDGE">SUB_EDGE</a></span></code>
+<div class="block">Subtract mode for the subpixel refinement.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#UNKNOWN_REGION_CONFIDENCE">UNKNOWN_REGION_CONFIDENCE</a></span></code>
+<div class="block">Confidence for foreground or background type being equally likely.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#SioxSegmentator-int-int-float:A-">SioxSegmentator</a></span>(int&nbsp;w,
+               int&nbsp;h,
+               float[]&nbsp;limits)</code>
+<div class="block">Constructs a SioxSegmentator Object to be used for image segmentation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#SioxSegmentator-int-int-float:A-float:A:A-float:A:A-">SioxSegmentator</a></span>(int&nbsp;w,
+               int&nbsp;h,
+               float[]&nbsp;limits,
+               float[][]&nbsp;bgSignature,
+               float[][]&nbsp;fgSignature)</code>
+<div class="block">Constructs a SioxSegmentator Object to be used for image segmentation.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#applyPrecomputedSignatures-int:A-float:A-int-double-">applyPrecomputedSignatures</a></span>(int[]&nbsp;image,
+                          float[]&nbsp;cm,
+                          int&nbsp;smoothness,
+                          double&nbsp;sizeFactorToKeep)</code>
+<div class="block">Segments the given image with the previously calculated color signatures.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#getBgSignature--">getBgSignature</a></span>()</code>
+<div class="block">Get background signature</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#getFgSignature--">getFgSignature</a></span>()</code>
+<div class="block">Get foreground signature</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#keepOnlyLargeComponents-float:A-float-double-">keepOnlyLargeComponents</a></span>(float[]&nbsp;cm,
+                       float&nbsp;threshold,
+                       double&nbsp;sizeFactorToKeep)</code>
+<div class="block">Clears given confidence matrix except entries for the largest connected
+ component and every component with
+ <code>size*sizeFactorToKeep &gt;= sizeOfLargestComponent</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#keepOnlyLargeComponents-float:A-float-double-org.siox.util.IntArrayList-">keepOnlyLargeComponents</a></span>(float[]&nbsp;cm,
+                       float&nbsp;threshold,
+                       double&nbsp;sizeFactorToKeep,
+                       <a href="../../org/siox/util/IntArrayList.html" title="class in org.siox.util">IntArrayList</a>&nbsp;predefinedFgPixels)</code>
+<div class="block">Clears given confidence matrix except entries for the user-defined connected
+ component and every component with
+ <code>size*sizeFactorToKeep &gt;= sizeOfLargestComponent</code>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#segmentate-int:A-float:A-int-double-">segmentate</a></span>(int[]&nbsp;image,
+          float[]&nbsp;cm,
+          int&nbsp;smoothness,
+          double&nbsp;sizeFactorToKeep)</code>
+<div class="block">Segments the given image with information from the confidence
+ matrix.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#segmentatevideo_firstframe-int:A-float:A-double-">segmentatevideo_firstframe</a></span>(int[]&nbsp;image,
+                          float[]&nbsp;cm,
+                          double&nbsp;sizeFactorToKeep)</code>
+<div class="block">Segments the first frame of a scene in a video.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#segmentatevideo_nextframe-int:A-float:A-double-">segmentatevideo_nextframe</a></span>(int[]&nbsp;image,
+                         float[]&nbsp;cm,
+                         double&nbsp;sizeFactorToKeep)</code>
+<div class="block">Segment the further frames of a scene in a video.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#subpixelRefine-java.awt.geom.Area-java.lang.String-float-float:A-">subpixelRefine</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/geom/Area.html?is-external=true" title="class or interface in java.awt.geom">Area</a>&nbsp;area,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;brushmode,
+              float&nbsp;threshold,
+              float[]&nbsp;cf)</code>
+<div class="block">Refines the classification stored in the confidence matrix by modifying
+ the confidences for regions which have characteristics to both
+ foreground and background if they fall into the specified area.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/siox/SioxSegmentator.html#subpixelRefine-int-int-java.lang.String-float-float:A-int-">subpixelRefine</a></span>(int&nbsp;x,
+              int&nbsp;y,
+              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;brushmode,
+              float&nbsp;threshold,
+              float[]&nbsp;cf,
+              int&nbsp;brushsize)</code>
+<div class="block">Refines the classification stored in the confidence matrix by modifying
+ the confidences for regions which have characteristics to both
+ foreground and background if they fall into the specified square.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ADD_EDGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ADD_EDGE</h4>
+<pre>public static final&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADD_EDGE</pre>
+<div class="block">Add mode for the subpixel refinement.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.ADD_EDGE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SUB_EDGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SUB_EDGE</h4>
+<pre>public static final&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> SUB_EDGE</pre>
+<div class="block">Subtract mode for the subpixel refinement.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.SUB_EDGE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CERTAIN_FOREGROUND_CONFIDENCE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CERTAIN_FOREGROUND_CONFIDENCE</h4>
+<pre>public static final&nbsp;float CERTAIN_FOREGROUND_CONFIDENCE</pre>
+<div class="block">Confidence corresponding to a certain foreground region (equals one).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.CERTAIN_FOREGROUND_CONFIDENCE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="FOREGROUND_CONFIDENCE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FOREGROUND_CONFIDENCE</h4>
+<pre>public static final&nbsp;float FOREGROUND_CONFIDENCE</pre>
+<div class="block">Confidence for a region likely being foreground.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.FOREGROUND_CONFIDENCE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="UNKNOWN_REGION_CONFIDENCE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>UNKNOWN_REGION_CONFIDENCE</h4>
+<pre>public static final&nbsp;float UNKNOWN_REGION_CONFIDENCE</pre>
+<div class="block">Confidence for foreground or background type being equally likely.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.UNKNOWN_REGION_CONFIDENCE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="BACKGROUND_CONFIDENCE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BACKGROUND_CONFIDENCE</h4>
+<pre>public static final&nbsp;float BACKGROUND_CONFIDENCE</pre>
+<div class="block">Confidence for a region likely being background.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.BACKGROUND_CONFIDENCE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CERTAIN_BACKGROUND_CONFIDENCE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CERTAIN_BACKGROUND_CONFIDENCE</h4>
+<pre>public static final&nbsp;float CERTAIN_BACKGROUND_CONFIDENCE</pre>
+<div class="block">Confidence corresponding to a certain background region (equals zero).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#org.siox.SioxSegmentator.CERTAIN_BACKGROUND_CONFIDENCE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SioxSegmentator-int-int-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SioxSegmentator</h4>
+<pre>public&nbsp;SioxSegmentator(int&nbsp;w,
+                       int&nbsp;h,
+                       float[]&nbsp;limits)</pre>
+<div class="block">Constructs a SioxSegmentator Object to be used for image segmentation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>w</code> - X resolution of the image to be segmented.</dd>
+<dd><code>h</code> - Y resolution of the image to be segmented.</dd>
+<dd><code>limits</code> - Size of the cluster on LAB axises.
+        If <code>null</code>, the default value {0.64f,1.28f,2.56f}
+        is used.</dd>
+</dl>
+</li>
+</ul>
+<a name="SioxSegmentator-int-int-float:A-float:A:A-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SioxSegmentator</h4>
+<pre>public&nbsp;SioxSegmentator(int&nbsp;w,
+                       int&nbsp;h,
+                       float[]&nbsp;limits,
+                       float[][]&nbsp;bgSignature,
+                       float[][]&nbsp;fgSignature)</pre>
+<div class="block">Constructs a SioxSegmentator Object to be used for image segmentation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>w</code> - X resolution of the image to be segmented.</dd>
+<dd><code>h</code> - Y resolution of the image to be segmented.</dd>
+<dd><code>limits</code> - Size of the cluster on LAB axises.
+        If <code>null</code>, the default value {0.64f,1.28f,2.56f}
+        is used.</dd>
+<dd><code>bgSignature</code> - background color signature</dd>
+<dd><code>fgSignature</code> - foreground color signature</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="segmentate-int:A-float:A-int-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>segmentate</h4>
+<pre>public&nbsp;boolean&nbsp;segmentate(int[]&nbsp;image,
+                          float[]&nbsp;cm,
+                          int&nbsp;smoothness,
+                          double&nbsp;sizeFactorToKeep)</pre>
+<div class="block">Segments the given image with information from the confidence
+ matrix. For faster segmentation in videos, use the methods
+ <tt>segmentatevideo_firstframe()</tt> and <tt>segmentatevideo_nextframe()</tt>.
+ <P>
+ The confidence entries  of <code>BACKGROUND_CONFIDENCE</code> or less
+ are mark known background pixel for the segmentation, those
+ of at least <code>FOREGROUND_CONFIDENCE</code> mark known
+ foreground pixel for the segmentation. Any other entry is treated
+ as region of unknown affiliation.
+ <P>
+ As result, each pixel is classified either as foreground or
+ background, stored back into its <code>cm</code> entry as confidence
+ <code>CERTAIN_FOREGROUND_CONFIDENCE</code> or
+ <code>CERTAIN_BACKGROUND_CONFIDENCE</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - Pixel data of the image to be segmented.
+        Every integer represents one ARGB-value.</dd>
+<dd><code>cm</code> - Confidence matrix specifying the probability of an image
+        belonging to the foreground before and after the segmentation.</dd>
+<dd><code>smoothness</code> - Number of smoothing steps in the post processing.</dd>
+<dd><code>sizeFactorToKeep</code> - Segmentation retains the largest connected
+        foreground component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><CODE>true</CODE> if the segmentation algorithm succeeded,
+         <CODE>false</CODE> if segmentation is impossible</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the confidence matrix defines no
+         image foreground.</dd>
+</dl>
+</li>
+</ul>
+<a name="applyPrecomputedSignatures-int:A-float:A-int-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>applyPrecomputedSignatures</h4>
+<pre>public&nbsp;boolean&nbsp;applyPrecomputedSignatures(int[]&nbsp;image,
+                                          float[]&nbsp;cm,
+                                          int&nbsp;smoothness,
+                                          double&nbsp;sizeFactorToKeep)</pre>
+<div class="block">Segments the given image with the previously calculated color signatures.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - Pixel data of the image to be segmented.
+        Every integer represents one ARGB-value.</dd>
+<dd><code>cm</code> - Confidence matrix specifying the probability of an image
+        belonging to the foreground before and after the segmentation.</dd>
+<dd><code>smoothness</code> - Number of smoothing steps in the post processing.</dd>
+<dd><code>sizeFactorToKeep</code> - Segmentation retains the largest connected
+        foreground component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><CODE>true</CODE> if the segmentation algorithm succeeded,
+         <CODE>false</CODE> if segmentation is impossible</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the confidence matrix defines no
+         image foreground.</dd>
+</dl>
+</li>
+</ul>
+<a name="segmentatevideo_firstframe-int:A-float:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>segmentatevideo_firstframe</h4>
+<pre>public&nbsp;boolean&nbsp;segmentatevideo_firstframe(int[]&nbsp;image,
+                                          float[]&nbsp;cm,
+                                          double&nbsp;sizeFactorToKeep)</pre>
+<div class="block">Segments the first frame of a scene in a video. Only a reduced postprocessing
+ is applied. Still image segmentation should be performed with <tt>segmentate()</tt>.
+ This methods also rebuilds the color signatures.
+ <P>
+ The confidence entries  of <code>BACKGROUND_CONFIDENCE</code> or less
+ are mark known background pixel for the segmentation, those
+ of at least <code>FOREGROUND_CONFIDENCE</code> mark known
+ foreground pixel for the segmentation. Any other entry is treated
+ as region of unknown affiliation.
+ <P>
+ As result, each pixel is classified either as foreground or
+ background, stored back into its <code>cm</code> entry as confidence
+ <code>CERTAIN_FOREGROUND_CONFIDENCE</code> or
+ <code>CERTAIN_BACKGROUND_CONFIDENCE</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - Pixel data of the image to be segmented.
+        Every integer represents one ARGB-value.</dd>
+<dd><code>cm</code> - Confidence matrix specifying the probability of an image
+        belonging to the foreground before and after the segmentation.</dd>
+<dd><code>sizeFactorToKeep</code> - Segmentation retains the largest connected
+        foreground component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><CODE>true</CODE> if the segmentation algorithm succeeded,
+         <CODE>false</CODE> if segmentation is impossible</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the confidence matrix defines no
+         image foreground.</dd>
+</dl>
+</li>
+</ul>
+<a name="segmentatevideo_nextframe-int:A-float:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>segmentatevideo_nextframe</h4>
+<pre>public&nbsp;boolean&nbsp;segmentatevideo_nextframe(int[]&nbsp;image,
+                                         float[]&nbsp;cm,
+                                         double&nbsp;sizeFactorToKeep)</pre>
+<div class="block">Segment the further frames of a scene in a video. Only a reduced postprocessing
+ is applied. The methods DOES NOT rebuild the color signatures.
+ This method can only be used after a call to <tt>segmentate()</tt> or
+ <tt>segmentatevideo_firstframe()</tt>.
+ <P>
+ The confidence entries  of <code>BACKGROUND_CONFIDENCE</code> or less
+ are mark known background pixel for the segmentation, those
+ of at least <code>FOREGROUND_CONFIDENCE</code> mark known
+ foreground pixel for the segmentation. Any other entry is treated
+ as region of unknown affiliation. This method does not require any known
+ confidences in a frame.
+ <P>
+ As result, each pixel is classified either as foreground or
+ background, stored back into its <code>cm</code> entry as confidence
+ <code>CERTAIN_FOREGROUND_CONFIDENCE</code> or
+ <code>CERTAIN_BACKGROUND_CONFIDENCE</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - Pixel data of the image to be segmented.
+        Every integer represents one ARGB-value.</dd>
+<dd><code>cm</code> - Confidence matrix specifying the probability of an image
+        belonging to the foreground before and after the segmentation.</dd>
+<dd><code>sizeFactorToKeep</code> - Segmentation retains the largest connected
+        foreground component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><CODE>true</CODE> if the segmentation algorithm succeeded,
+         <CODE>false</CODE> if segmentation is impossible</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if no color signature has been defined
+ before calling this method.</dd>
+</dl>
+</li>
+</ul>
+<a name="keepOnlyLargeComponents-float:A-float-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keepOnlyLargeComponents</h4>
+<pre>protected&nbsp;void&nbsp;keepOnlyLargeComponents(float[]&nbsp;cm,
+                                       float&nbsp;threshold,
+                                       double&nbsp;sizeFactorToKeep)</pre>
+<div class="block">Clears given confidence matrix except entries for the largest connected
+ component and every component with
+ <code>size*sizeFactorToKeep &gt;= sizeOfLargestComponent</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cm</code> - Confidence matrix to be analyzed</dd>
+<dd><code>threshold</code> - Pixel visibility threshold.
+        Exactly those cm entries larger than threshold are considered
+        to be a "visible" foreground pixel.</dd>
+<dd><code>sizeFactorToKeep</code> - This method keeps the largest connected
+        component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+</dl>
+</li>
+</ul>
+<a name="keepOnlyLargeComponents-float:A-float-double-org.siox.util.IntArrayList-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keepOnlyLargeComponents</h4>
+<pre>protected&nbsp;void&nbsp;keepOnlyLargeComponents(float[]&nbsp;cm,
+                                       float&nbsp;threshold,
+                                       double&nbsp;sizeFactorToKeep,
+                                       <a href="../../org/siox/util/IntArrayList.html" title="class in org.siox.util">IntArrayList</a>&nbsp;predefinedFgPixels)</pre>
+<div class="block">Clears given confidence matrix except entries for the user-defined connected
+ component and every component with
+ <code>size*sizeFactorToKeep &gt;= sizeOfLargestComponent</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cm</code> - Confidence matrix to be analyzed</dd>
+<dd><code>threshold</code> - Pixel visibility threshold.
+        Exactly those cm entries larger than threshold are considered
+        to be a "visible" foreground pixel.</dd>
+<dd><code>sizeFactorToKeep</code> - This method keeps the largest connected
+        component plus any component with size at least
+        <CODE>sizeOfLargestComponent/sizeFactorToKeep</CODE>.</dd>
+<dd><code>predefinedFgPixels</code> - list of pixels defined for the user as foreground.</dd>
+</dl>
+</li>
+</ul>
+<a name="subpixelRefine-int-int-java.lang.String-float-float:A-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>subpixelRefine</h4>
+<pre>public&nbsp;void&nbsp;subpixelRefine(int&nbsp;x,
+                           int&nbsp;y,
+                           <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;brushmode,
+                           float&nbsp;threshold,
+                           float[]&nbsp;cf,
+                           int&nbsp;brushsize)</pre>
+<div class="block">Refines the classification stored in the confidence matrix by modifying
+ the confidences for regions which have characteristics to both
+ foreground and background if they fall into the specified square.
+ <P>
+ The can be used in displaying the image by assigning the alpha values
+ of the pixels according to the confidence entries.
+ <P>
+ In the algorithm descriptions and examples GUIs this step is referred
+ to as <EM>Detail Refinement (Brush)</EM>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - Horizontal coordinate of the squares center.</dd>
+<dd><code>y</code> - Vertical coordinate of the squares center.</dd>
+<dd><code>brushmode</code> - Mode of the refinement applied, <CODE>ADD_EDGE</CODE>
+        or <CODE>SUB_EDGE</CODE>. Add mode only modifies pixels
+        formerly classified as background, sub mode only those
+        formerly classified as foreground.</dd>
+<dd><code>threshold</code> - Threshold for the add and sub refinement, deciding
+        at the confidence level to stop at.</dd>
+<dd><code>cf</code> - The confidence matrix to modify, generated by
+        <CODE>segmentate</CODE>, possibly already refined by previous
+        calls to <CODE>subpixelRefine</CODE>.</dd>
+<dd><code>brushsize</code> - Halfed diameter of the square shaped brush.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if there is no segmentation calculated
+            yet to be refined</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../org/siox/SioxSegmentator.html#segmentate-int:A-float:A-int-double-"><code>segmentate(int[], float[], int, double)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="subpixelRefine-java.awt.geom.Area-java.lang.String-float-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>subpixelRefine</h4>
+<pre>public&nbsp;void&nbsp;subpixelRefine(<a href="http://javadoc.imagej.net/Java/java/awt/geom/Area.html?is-external=true" title="class or interface in java.awt.geom">Area</a>&nbsp;area,
+                           <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;brushmode,
+                           float&nbsp;threshold,
+                           float[]&nbsp;cf)</pre>
+<div class="block">Refines the classification stored in the confidence matrix by modifying
+ the confidences for regions which have characteristics to both
+ foreground and background if they fall into the specified area.
+ <P>
+ The can be used in displaying the image by assigning the alpha values
+ of the pixels according to the confidence entries.
+ <P>
+ In the algorithm descriptions and examples GUIs this step is referrered
+ to as <EM>Detail Refinement (Brush)</EM>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>area</code> - Area in which the reworking of the segmentation is
+        applied to.</dd>
+<dd><code>brushmode</code> - Mode of the refinement applied, <CODE>ADD_EDGE</CODE>
+        or <CODE>SUB_EDGE</CODE>. Add mode only modifies pixels
+        formerly classified as background, sub mode only those
+        formerly classified as foreground.</dd>
+<dd><code>threshold</code> - Threshold for the add and sub refinement, deciding
+        at the confidence level to stop at.</dd>
+<dd><code>cf</code> - The confidence matrix to modify, generated by
+        <CODE>segmentate</CODE>, possibly already refined by privious
+        calls to <CODE>subpixelRefine</CODE>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if there is no segmentation
+            calculated yet to be refined</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../org/siox/SioxSegmentator.html#segmentate-int:A-float:A-int-double-"><code>segmentate(int[], float[], int, double)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getBgSignature--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBgSignature</h4>
+<pre>public&nbsp;float[][]&nbsp;getBgSignature()</pre>
+<div class="block">Get background signature</div>
+</li>
+</ul>
+<a name="getFgSignature--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getFgSignature</h4>
+<pre>public&nbsp;float[][]&nbsp;getFgSignature()</pre>
+<div class="block">Get foreground signature</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?org/siox/SioxSegmentator.html" target="_top">Frames</a></li>
+<li><a href="SioxSegmentator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

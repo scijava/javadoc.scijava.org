@@ -1,0 +1,784 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TransformedSource (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="TransformedSource (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../bdv/tools/transformation/ManualTransformationEditor.html" title="class in bdv.tools.transformation"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../bdv/tools/transformation/XmlIoTransformedSources.html" title="class in bdv.tools.transformation"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?bdv/tools/transformation/TransformedSource.html" target="_top">Frames</a></li>
+<li><a href="TransformedSource.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">bdv.tools.transformation</div>
+<h2 title="Class TransformedSource" class="title">Class TransformedSource&lt;T&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>bdv.tools.transformation.TransformedSource&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of the original source.</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a>, <a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;T&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">TransformedSource&lt;T&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;T&gt;, <a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></pre>
+<div class="block">A <a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer"><code>Source</code></a> that wraps another <a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer"><code>Source</code></a> and allows to decorate it
+ with an extra <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform"><code>AffineTransform3D</code></a>.
+ <p>
+ This extra transformation is made to capture manual editing of the actual
+ transform in the SpimViewer.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez - Sept 2013</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.bdv.viewer.render.MipmapOrdering">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;bdv.viewer.render.<a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></h3>
+<code><a href="../../../bdv/viewer/render/MipmapOrdering.Level.html" title="class in bdv.viewer.render">MipmapOrdering.Level</a>, <a href="../../../bdv/viewer/render/MipmapOrdering.MipmapHints.html" title="class in bdv.viewer.render">MipmapOrdering.MipmapHints</a>, <a href="../../../bdv/viewer/render/MipmapOrdering.PrefetchOrderComparator.html" title="class in bdv.viewer.render">MipmapOrdering.PrefetchOrderComparator</a>, <a href="../../../bdv/viewer/render/MipmapOrdering.RenderOrderComparator.html" title="class in bdv.viewer.render">MipmapOrdering.RenderOrderComparator</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#composed">composed</a></span></code>
+<div class="block">temporary.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#fixedTransform">fixedTransform</a></span></code>
+<div class="block">Fixed part of the extra transformation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#incrementalTransform">incrementalTransform</a></span></code>
+<div class="block">Incremental part of the extra transformation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#source">source</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#sourceMipmapOrdering">sourceMipmapOrdering</a></span></code>
+<div class="block">This is either the <a href="../../../bdv/tools/transformation/TransformedSource.html#source"><code>source</code></a> itself, if it implements
+ <a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render"><code>MipmapOrdering</code></a>, or a <a href="../../../bdv/viewer/render/DefaultMipmapOrdering.html" title="class in bdv.viewer.render"><code>DefaultMipmapOrdering</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#sourceTransform">sourceTransform</a></span></code>
+<div class="block">Extra transformation.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.bdv.viewer.render.MipmapOrdering">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;bdv.viewer.render.<a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></h3>
+<code><a href="../../../bdv/viewer/render/MipmapOrdering.html#prefetchOrderComparator">prefetchOrderComparator</a>, <a href="../../../bdv/viewer/render/MipmapOrdering.html#renderOrderComparator">renderOrderComparator</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#TransformedSource-bdv.viewer.Source-">TransformedSource</a></span>(<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;source)</code>
+<div class="block">Instantiates a new <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> wrapping the specified
+ source with the identity transform.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#TransformedSource-bdv.viewer.Source-bdv.tools.transformation.TransformedSource-">TransformedSource</a></span>(<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;source,
+                 <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation">TransformedSource</a>&lt;?&gt;&nbsp;shareTransform)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getFixedTransform-net.imglib2.realtransform.AffineTransform3D-">getFixedTransform</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Get the fixed part of the extra transformation.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-">getIncrementalTransform</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Get the incremental part of the extra transformation.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getInterpolatedSource-int-int-bdv.viewer.Interpolation-">getInterpolatedSource</a></span>(int&nbsp;t,
+                     int&nbsp;level,
+                     <a href="../../../bdv/viewer/Interpolation.html" title="enum in bdv.viewer">Interpolation</a>&nbsp;method)</code>
+<div class="block">Get the 3D stack at timepoint index t, extended to infinity and interpolated.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../bdv/viewer/render/MipmapOrdering.MipmapHints.html" title="class in bdv.viewer.render">MipmapOrdering.MipmapHints</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getMipmapHints-net.imglib2.realtransform.AffineTransform3D-int-int-">getMipmapHints</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;screenTransform,
+              int&nbsp;timepoint,
+              int&nbsp;previousTimepoint)</code>
+<div class="block">Evaluate mipmap levels such that they can be ordered for rendering and/or
+ prefetching.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getName--">getName</a></span>()</code>
+<div class="block">Get the name of the source.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getNumMipmapLevels--">getNumMipmapLevels</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getSource-int-int-">getSource</a></span>(int&nbsp;t,
+         int&nbsp;level)</code>
+<div class="block">Get the 3D stack at timepoint index t.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getSourceTransform-int-int-net.imglib2.realtransform.AffineTransform3D-">getSourceTransform</a></span>(int&nbsp;t,
+                  int&nbsp;level,
+                  <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Get the transform from the <a href="../../../bdv/viewer/Source.html#getSource-int-int-"><code>source</code></a> at the
+ given timepoint index and mipmap level into the global coordinate system.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getType--">getType</a></span>()</code>
+<div class="block">Get an instance of the pixel type.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../mpicbg/spim/data/sequence/VoxelDimensions.html" title="interface in mpicbg.spim.data.sequence">VoxelDimensions</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getVoxelDimensions--">getVoxelDimensions</a></span>()</code>
+<div class="block">Get voxel size and unit for this source.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#getWrappedSource--">getWrappedSource</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#isPresent-int-">isPresent</a></span>(int&nbsp;t)</code>
+<div class="block">Is there a stack at timepoint index t?</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#setFixedTransform-net.imglib2.realtransform.AffineTransform3D-">setFixedTransform</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Sets the fixed part of the extra transformation to the specified
+ transform.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/transformation/TransformedSource.html#setIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-">setIncrementalTransform</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</code>
+<div class="block">Sets the incremental part of the extra transformation to the specified
+ transform.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="source">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>source</h4>
+<pre>protected final&nbsp;<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt; source</pre>
+</li>
+</ul>
+<a name="sourceMipmapOrdering">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sourceMipmapOrdering</h4>
+<pre>protected final&nbsp;<a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a> sourceMipmapOrdering</pre>
+<div class="block">This is either the <a href="../../../bdv/tools/transformation/TransformedSource.html#source"><code>source</code></a> itself, if it implements
+ <a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render"><code>MipmapOrdering</code></a>, or a <a href="../../../bdv/viewer/render/DefaultMipmapOrdering.html" title="class in bdv.viewer.render"><code>DefaultMipmapOrdering</code></a>.</div>
+</li>
+</ul>
+<a name="incrementalTransform">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>incrementalTransform</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> incrementalTransform</pre>
+<div class="block">Incremental part of the extra transformation.</div>
+</li>
+</ul>
+<a name="fixedTransform">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fixedTransform</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> fixedTransform</pre>
+<div class="block">Fixed part of the extra transformation.</div>
+</li>
+</ul>
+<a name="sourceTransform">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sourceTransform</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> sourceTransform</pre>
+<div class="block">Extra transformation. Concatenation of <a href="../../../bdv/tools/transformation/TransformedSource.html#incrementalTransform"><code>incrementalTransform</code></a> *
+ <a href="../../../bdv/tools/transformation/TransformedSource.html#fixedTransform"><code>fixedTransform</code></a>.</div>
+</li>
+</ul>
+<a name="composed">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>composed</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> composed</pre>
+<div class="block">temporary. concatenation of <a href="../../../bdv/tools/transformation/TransformedSource.html#sourceTransform"><code>sourceTransform</code></a> and the transform
+ obtained from the decorated source.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TransformedSource-bdv.viewer.Source-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TransformedSource</h4>
+<pre>public&nbsp;TransformedSource(<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;source)</pre>
+<div class="block">Instantiates a new <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> wrapping the specified
+ source with the identity transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source to wrap.</dd>
+</dl>
+</li>
+</ul>
+<a name="TransformedSource-bdv.viewer.Source-bdv.tools.transformation.TransformedSource-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TransformedSource</h4>
+<pre>public&nbsp;TransformedSource(<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;source,
+                         <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation">TransformedSource</a>&lt;?&gt;&nbsp;shareTransform)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setFixedTransform-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFixedTransform</h4>
+<pre>public&nbsp;void&nbsp;setFixedTransform(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block">Sets the fixed part of the extra transformation to the specified
+ transform.
+ <p>
+ The extra transformation applied by the <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> is a
+ concatenation of an <a href="../../../bdv/tools/transformation/TransformedSource.html#getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-"><code>incremental</code></a> and a <a href="../../../bdv/tools/transformation/TransformedSource.html#getFixedTransform-net.imglib2.realtransform.AffineTransform3D-"><code>fixed</code></a>
+ transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - is copied to the <a href="../../../bdv/tools/transformation/TransformedSource.html#getFixedTransform-net.imglib2.realtransform.AffineTransform3D-"><code>fixed</code></a> transform.</dd>
+</dl>
+</li>
+</ul>
+<a name="getFixedTransform-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFixedTransform</h4>
+<pre>public&nbsp;void&nbsp;getFixedTransform(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block">Get the fixed part of the extra transformation.
+ <p>
+ The extra transformation applied by the <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> is a
+ concatenation of an <a href="../../../bdv/tools/transformation/TransformedSource.html#getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-"><code>incremental</code></a> and this fixed transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - is set to the fixed transform.</dd>
+</dl>
+</li>
+</ul>
+<a name="setIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIncrementalTransform</h4>
+<pre>public&nbsp;void&nbsp;setIncrementalTransform(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block">Sets the incremental part of the extra transformation to the specified
+ transform.
+ <p>
+ The extra transformation applied by the <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> is a
+ concatenation of an <a href="../../../bdv/tools/transformation/TransformedSource.html#getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-"><code>incremental</code></a> and a <a href="../../../bdv/tools/transformation/TransformedSource.html#getFixedTransform-net.imglib2.realtransform.AffineTransform3D-"><code>fixed</code></a>
+ transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - is copied to the <a href="../../../bdv/tools/transformation/TransformedSource.html#getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-"><code>incremental</code></a> transform.</dd>
+</dl>
+</li>
+</ul>
+<a name="getIncrementalTransform-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIncrementalTransform</h4>
+<pre>public&nbsp;void&nbsp;getIncrementalTransform(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block">Get the incremental part of the extra transformation.
+ <p>
+ The extra transformation applied by the <a href="../../../bdv/tools/transformation/TransformedSource.html" title="class in bdv.tools.transformation"><code>TransformedSource</code></a> is a
+ concatenation of this incremental transform and a
+ <a href="../../../bdv/tools/transformation/TransformedSource.html#getFixedTransform-net.imglib2.realtransform.AffineTransform3D-"><code>fixed</code></a> transform.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>transform</code> - is set to the incremental transform.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSourceTransform-int-int-net.imglib2.realtransform.AffineTransform3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSourceTransform</h4>
+<pre>public&nbsp;void&nbsp;getSourceTransform(int&nbsp;t,
+                               int&nbsp;level,
+                               <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;transform)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getSourceTransform-int-int-net.imglib2.realtransform.AffineTransform3D-">Source</a></code></span></div>
+<div class="block">Get the transform from the <a href="../../../bdv/viewer/Source.html#getSource-int-int-"><code>source</code></a> at the
+ given timepoint index and mipmap level into the global coordinate system.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getSourceTransform-int-int-net.imglib2.realtransform.AffineTransform3D-">getSourceTransform</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - timepoint index</dd>
+<dd><code>level</code> - mipmap level</dd>
+<dd><code>transform</code> - is set to the source-to-global transform, that transforms
+            source coordinates into the global coordinates</dd>
+</dl>
+</li>
+</ul>
+<a name="isPresent-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPresent</h4>
+<pre>public&nbsp;boolean&nbsp;isPresent(int&nbsp;t)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#isPresent-int-">Source</a></code></span></div>
+<div class="block">Is there a stack at timepoint index t?</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#isPresent-int-">isPresent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - timepoint index</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true, if there is data for timepoint index t.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSource-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSource</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;getSource(int&nbsp;t,
+                                             int&nbsp;level)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getSource-int-int-">Source</a></code></span></div>
+<div class="block">Get the 3D stack at timepoint index t.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getSource-int-int-">getSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - timepoint index</dd>
+<dd><code>level</code> - mipmap level</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2"><code>stack</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getInterpolatedSource-int-int-bdv.viewer.Interpolation-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInterpolatedSource</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;getInterpolatedSource(int&nbsp;t,
+                                                     int&nbsp;level,
+                                                     <a href="../../../bdv/viewer/Interpolation.html" title="enum in bdv.viewer">Interpolation</a>&nbsp;method)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getInterpolatedSource-int-int-bdv.viewer.Interpolation-">Source</a></code></span></div>
+<div class="block">Get the 3D stack at timepoint index t, extended to infinity and interpolated.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getInterpolatedSource-int-int-bdv.viewer.Interpolation-">getInterpolatedSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - timepoint index</dd>
+<dd><code>level</code> - mipmap level</dd>
+<dd><code>method</code> - interpolation method to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the extended and interpolated <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2"><code>stack</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getType--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getType</h4>
+<pre>public&nbsp;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&nbsp;getType()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getType--">Source</a></code></span></div>
+<div class="block">Get an instance of the pixel type.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getType--">getType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>instance of pixel type.</dd>
+</dl>
+</li>
+</ul>
+<a name="getName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getName--">Source</a></code></span></div>
+<div class="block">Get the name of the source.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getName--">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the name of the source.</dd>
+</dl>
+</li>
+</ul>
+<a name="getVoxelDimensions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVoxelDimensions</h4>
+<pre>public&nbsp;<a href="../../../mpicbg/spim/data/sequence/VoxelDimensions.html" title="interface in mpicbg.spim.data.sequence">VoxelDimensions</a>&nbsp;getVoxelDimensions()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/Source.html#getVoxelDimensions--">Source</a></code></span></div>
+<div class="block">Get voxel size and unit for this source. May return null.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getVoxelDimensions--">getVoxelDimensions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>voxel size and unit or <code>null</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumMipmapLevels--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumMipmapLevels</h4>
+<pre>public&nbsp;int&nbsp;getNumMipmapLevels()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/Source.html#getNumMipmapLevels--">getNumMipmapLevels</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getMipmapHints-net.imglib2.realtransform.AffineTransform3D-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMipmapHints</h4>
+<pre>public&nbsp;<a href="../../../bdv/viewer/render/MipmapOrdering.MipmapHints.html" title="class in bdv.viewer.render">MipmapOrdering.MipmapHints</a>&nbsp;getMipmapHints(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;screenTransform,
+                                                 int&nbsp;timepoint,
+                                                 int&nbsp;previousTimepoint)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../bdv/viewer/render/MipmapOrdering.html#getMipmapHints-net.imglib2.realtransform.AffineTransform3D-int-int-">MipmapOrdering</a></code></span></div>
+<div class="block">Evaluate mipmap levels such that they can be ordered for rendering and/or
+ prefetching.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../bdv/viewer/render/MipmapOrdering.html#getMipmapHints-net.imglib2.realtransform.AffineTransform3D-int-int-">getMipmapHints</a></code>&nbsp;in interface&nbsp;<code><a href="../../../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>screenTransform</code> - transforms screen coordinates to global coordinates.</dd>
+<dd><code>timepoint</code> - current timepoint index</dd>
+<dd><code>previousTimepoint</code> - previous timepoint index</dd>
+</dl>
+</li>
+</ul>
+<a name="getWrappedSource--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getWrappedSource</h4>
+<pre>public&nbsp;<a href="../../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../../../bdv/tools/transformation/TransformedSource.html" title="type parameter in TransformedSource">T</a>&gt;&nbsp;getWrappedSource()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../bdv/tools/transformation/ManualTransformationEditor.html" title="class in bdv.tools.transformation"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../bdv/tools/transformation/XmlIoTransformedSources.html" title="class in bdv.tools.transformation"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?bdv/tools/transformation/TransformedSource.html" target="_top">Frames</a></li>
+<li><a href="TransformedSource.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

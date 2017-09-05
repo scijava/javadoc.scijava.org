@@ -1,0 +1,656 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DataCache (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DataCache (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../hr/irb/fastRandomForest/Benchmark.html" title="class in hr.irb.fastRandomForest"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../hr/irb/fastRandomForest/FastRandomForest.html" title="class in hr.irb.fastRandomForest"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?hr/irb/fastRandomForest/DataCache.html" target="_top">Frames</a></li>
+<li><a href="DataCache.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">hr.irb.fastRandomForest</div>
+<h2 title="Class DataCache" class="title">Class DataCache</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>hr.irb.fastRandomForest.DataCache</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">DataCache</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Stores a dataset that in FastRandomTrees use for training. The data points
+ are stored in a single-precision array indexed by attribute first, and then
+ by instance, to make access by FastRandomTrees faster. 
+ 
+ Also stores the sorted order of the instances by any attribute, can create
+ bootstrap samples, and seed a random number generator from the stored data.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Fran Supek (fran.supek[AT]irb.hr)</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#attNumVals">attNumVals</a></span></code>
+<div class="block">Attribute description - holds a 0 for numeric attributes, and the number
+ of available categories for nominal attributes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#classIndex">classIndex</a></span></code>
+<div class="block">Numeric index of the class attribute.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#inBag">inBag</a></span></code>
+<div class="block">Is instance in 'bag' created by bootstrap sampling.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#instClassValues">instClassValues</a></span></code>
+<div class="block">The class an instance belongs to.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#instWeights">instWeights</a></span></code>
+<div class="block">Weights of instances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#numAttributes">numAttributes</a></span></code>
+<div class="block">Number of attributes, including the class attribute.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#numClasses">numClasses</a></span></code>
+<div class="block">Number of classes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#numInBag">numInBag</a></span></code>
+<div class="block">How many instances are in 'bag' created by bootstrap sampling.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#numInstances">numInstances</a></span></code>
+<div class="block">Number of instances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#reusableRandomGenerator">reusableRandomGenerator</a></span></code>
+<div class="block">Used in training of FastRandomTrees.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#sortedIndices">sortedIndices</a></span></code>
+<div class="block">Ordering of instances, indexed by attribute, then by instance.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#vals">vals</a></span></code>
+<div class="block">The dataset, first indexed by attribute, then by instance.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#whatGoesWhere">whatGoesWhere</a></span></code>
+<div class="block">Used in training of FastRandomTrees.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#DataCache-hr.irb.fastRandomForest.DataCache-">DataCache</a></span>(<a href="../../../hr/irb/fastRandomForest/DataCache.html" title="class in hr.irb.fastRandomForest">DataCache</a>&nbsp;origData)</code>
+<div class="block">Makes a copy of a DataCache.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#DataCache-weka.core.Instances-">DataCache</a></span>(weka.core.Instances&nbsp;origData)</code>
+<div class="block">Creates a DataCache by copying data from a weka.core.Instances object.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#createInBagSortedIndices--">createInBagSortedIndices</a></span>()</code>
+<div class="block">Invoked only when tree is trained.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#getRandomNumberGenerator-long-">getRandomNumberGenerator</a></span>(long&nbsp;seed)</code>
+<div class="block">Returns a random number generator.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#isAttrNominal-int-">isAttrNominal</a></span>(int&nbsp;attIndex)</code>
+<div class="block">Is an attribute with the given index nominal?</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#isValueMissing-int-int-">isValueMissing</a></span>(int&nbsp;attIndex,
+              int&nbsp;instIndex)</code>
+<div class="block">Does the given attribute - instance combination contain a missing value?</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../hr/irb/fastRandomForest/DataCache.html" title="class in hr.irb.fastRandomForest">DataCache</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#resample-int-java.util.Random-">resample</a></span>(int&nbsp;bagSize,
+        <a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;random)</code>
+<div class="block">Uses sampling with replacement to create a new DataCache from an existing
+ one.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../hr/irb/fastRandomForest/DataCache.html#scrambleOneAttribute-int-java.util.Random-">scrambleOneAttribute</a></span>(int&nbsp;attIndex,
+                    <a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;random)</code>
+<div class="block">Randomizes one attribute in the vals[][]; returns a copy of the vals[] 
+ before randomization.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="vals">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vals</h4>
+<pre>protected final&nbsp;float[][] vals</pre>
+<div class="block">The dataset, first indexed by attribute, then by instance.</div>
+</li>
+</ul>
+<a name="attNumVals">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>attNumVals</h4>
+<pre>protected final&nbsp;int[] attNumVals</pre>
+<div class="block">Attribute description - holds a 0 for numeric attributes, and the number
+ of available categories for nominal attributes.</div>
+</li>
+</ul>
+<a name="classIndex">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>classIndex</h4>
+<pre>protected final&nbsp;int classIndex</pre>
+<div class="block">Numeric index of the class attribute.</div>
+</li>
+</ul>
+<a name="numAttributes">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numAttributes</h4>
+<pre>protected final&nbsp;int numAttributes</pre>
+<div class="block">Number of attributes, including the class attribute.</div>
+</li>
+</ul>
+<a name="numClasses">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numClasses</h4>
+<pre>protected final&nbsp;int numClasses</pre>
+<div class="block">Number of classes.</div>
+</li>
+</ul>
+<a name="numInstances">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numInstances</h4>
+<pre>protected final&nbsp;int numInstances</pre>
+<div class="block">Number of instances.</div>
+</li>
+</ul>
+<a name="instClassValues">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>instClassValues</h4>
+<pre>protected final&nbsp;int[] instClassValues</pre>
+<div class="block">The class an instance belongs to.</div>
+</li>
+</ul>
+<a name="sortedIndices">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sortedIndices</h4>
+<pre>protected&nbsp;int[][] sortedIndices</pre>
+<div class="block">Ordering of instances, indexed by attribute, then by instance.</div>
+</li>
+</ul>
+<a name="instWeights">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>instWeights</h4>
+<pre>protected&nbsp;double[] instWeights</pre>
+<div class="block">Weights of instances.</div>
+</li>
+</ul>
+<a name="inBag">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inBag</h4>
+<pre>protected&nbsp;boolean[] inBag</pre>
+<div class="block">Is instance in 'bag' created by bootstrap sampling.</div>
+</li>
+</ul>
+<a name="numInBag">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numInBag</h4>
+<pre>protected&nbsp;int numInBag</pre>
+<div class="block">How many instances are in 'bag' created by bootstrap sampling.</div>
+</li>
+</ul>
+<a name="whatGoesWhere">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>whatGoesWhere</h4>
+<pre>protected&nbsp;int[] whatGoesWhere</pre>
+<div class="block">Used in training of FastRandomTrees.</div>
+</li>
+</ul>
+<a name="reusableRandomGenerator">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>reusableRandomGenerator</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a> reusableRandomGenerator</pre>
+<div class="block">Used in training of FastRandomTrees. Each tree can store its own
+ custom-seeded random generator in this field.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DataCache-weka.core.Instances-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DataCache</h4>
+<pre>public&nbsp;DataCache(weka.core.Instances&nbsp;origData)
+          throws <a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Creates a DataCache by copying data from a weka.core.Instances object.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="DataCache-hr.irb.fastRandomForest.DataCache-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DataCache</h4>
+<pre>public&nbsp;DataCache(<a href="../../../hr/irb/fastRandomForest/DataCache.html" title="class in hr.irb.fastRandomForest">DataCache</a>&nbsp;origData)</pre>
+<div class="block">Makes a copy of a DataCache. Most array fields are shallow copied, with the
+ exception of in inBag and whatGoesWhere arrays, which are created anew.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>origData</code> - </dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="scrambleOneAttribute-int-java.util.Random-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scrambleOneAttribute</h4>
+<pre>public&nbsp;float[]&nbsp;scrambleOneAttribute(int&nbsp;attIndex,
+                                    <a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;random)</pre>
+<div class="block">Randomizes one attribute in the vals[][]; returns a copy of the vals[] 
+ before randomization.</div>
+</li>
+</ul>
+<a name="resample-int-java.util.Random-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resample</h4>
+<pre>public&nbsp;<a href="../../../hr/irb/fastRandomForest/DataCache.html" title="class in hr.irb.fastRandomForest">DataCache</a>&nbsp;resample(int&nbsp;bagSize,
+                          <a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;random)</pre>
+<div class="block">Uses sampling with replacement to create a new DataCache from an existing
+ one.
+ 
+ The probability of sampling a specific instance does not depend on its
+ weight. When an instance is sampled multiple times, its weight in the new
+ DataCache increases to a multiple of the original weight.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bagSize</code> - If this is equal to the DataCache.numInstances, makes a
+ a bootstrap sample (n of of in</dd>
+<dd><code>random</code> - A random number generator.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new DataCache - consult "DataCache(DataCache origData)"
+ constructor to see what's deep / shallow copied</dd>
+</dl>
+</li>
+</ul>
+<a name="createInBagSortedIndices--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createInBagSortedIndices</h4>
+<pre>protected&nbsp;void&nbsp;createInBagSortedIndices()</pre>
+<div class="block">Invoked only when tree is trained.</div>
+</li>
+</ul>
+<a name="isValueMissing-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isValueMissing</h4>
+<pre>public final&nbsp;boolean&nbsp;isValueMissing(int&nbsp;attIndex,
+                                    int&nbsp;instIndex)</pre>
+<div class="block">Does the given attribute - instance combination contain a missing value?</div>
+</li>
+</ul>
+<a name="isAttrNominal-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAttrNominal</h4>
+<pre>public final&nbsp;boolean&nbsp;isAttrNominal(int&nbsp;attIndex)</pre>
+<div class="block">Is an attribute with the given index nominal?</div>
+</li>
+</ul>
+<a name="getRandomNumberGenerator-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getRandomNumberGenerator</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;getRandomNumberGenerator(long&nbsp;seed)</pre>
+<div class="block">Returns a random number generator. The initial seed of the random
+ number generator depends on the given seed and the contents of the
+ sortedIndices array (a single attribute is picked, its sortedIndices
+ converted to String and a hashcode computed).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>seed</code> - the given seed</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the random number generator</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../hr/irb/fastRandomForest/Benchmark.html" title="class in hr.irb.fastRandomForest"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../hr/irb/fastRandomForest/FastRandomForest.html" title="class in hr.irb.fastRandomForest"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?hr/irb/fastRandomForest/DataCache.html" target="_top">Frames</a></li>
+<li><a href="DataCache.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

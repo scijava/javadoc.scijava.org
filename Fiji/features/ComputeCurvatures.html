@@ -1,0 +1,1068 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ComputeCurvatures (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+<script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ComputeCurvatures (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../features/ComputeCurvatures.FloatArray.html" title="class in features"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?features/ComputeCurvatures.html" target="_top">Frames</a></li>
+<li><a href="ComputeCurvatures.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">features</div>
+<h2 title="Class ComputeCurvatures" class="title">Class ComputeCurvatures</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>features.ComputeCurvatures</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ComputeCurvatures</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></pre>
+<div class="block">Principle Curvature Plugin for ImageJ
+ <p>
+ Description: Computes the Principle Curvatures of for 2D and 3D
+   images except the pixels/voxels directly at the borders of the
+   image
+         </p>
+ <p>
+ Changes in this version:
+ </p>
+ <ul>
+ <li>Made the top level plugin a wrapper for this class so that "features"
+ package so that it can be used by classes in other packages.</li>
+ <li>Now implements Runnable, with the void run() method creating the
+ Gaussian and reporting progress via an optional callback. (If used in this
+ way you need to use the constructor where you supply an ImagePlus, sigma and
+ an optional callback.</li>
+ <li>Switched to using Johannes's JacobiDouble / JacobiFloat classes for
+ finding the eigenvalues instead of the Jama classes, so we don't introduce
+ an additional dependency.  It's about 15% faster with JacobiDouble, but I
+ haven't yet measured any speed gain due to using floats rather than
+ doubles.</li>
+ <li>Added options to only generate particular eigenvalue images, and some
+ other slight changes to the initial dialog.</li>
+ <li>Added additional methods using floats for calculation (and the
+ interface) in case clients only need floats.</li>
+ <li>Added ordering of the eigenvalues (optionally on absolute values).</li>
+ <li>Added normalisation of the eigenvalues to that the largest has size 1
+ (some papers use methods that require this)</li>
+ <li>Now we take notice of the calibration information (or not, if that
+ option is deselected).</li>
+ <li>Use some faster eigenvalue calculation code for the 3x3 case.</li>
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Version:</span></dt>
+<dd>1.0</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Stephan Preibisch, Mark Longair</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.FloatArray.html" title="class in features">ComputeCurvatures.FloatArray</a></span></code>
+<div class="block">This class is the abstract class for my FloatArrayXDs,
+ which are a one dimensional structures with methods for access in n dimensions</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a></span></code>
+<div class="block">The 2D implementation of the FloatArray</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a></span></code>
+<div class="block">The 3D implementation of the FloatArray</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#callback">callback</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#imp">imp</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#sigma">sigma</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#useCalibration">useCalibration</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#ComputeCurvatures--">ComputeCurvatures</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#ComputeCurvatures-ij.ImagePlus-double-features.GaussianGenerationCallback-boolean-">ComputeCurvatures</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp,
+                 double&nbsp;sigma,
+                 <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                 boolean&nbsp;useCalibration)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#cancelGaussianGeneration--">cancelGaussianGeneration</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeEigenValues-double:A:A-">computeEigenValues</a></span>(double[][]&nbsp;matrix)</code>
+<div class="block">This method computes the Eigenvalues of the Hessian Matrix, the
+ Eigenvalues correspond to the Principle Curvatures.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeEigenValues-float:A:A-">computeEigenValues</a></span>(float[][]&nbsp;matrix)</code>
+<div class="block">This method computes the Eigenvalues of the Hessian Matrix, the
+ Eigenvalues correspond to the Principle Curvatures.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeGaussianFastMirror-features.ComputeCurvatures.FloatArray2D-float-features.GaussianGenerationCallback-ij.measure.Calibration-">computeGaussianFastMirror</a></span>(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;input,
+                         float&nbsp;sigma,
+                         <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                         <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/Calibration.html?is-external=true" title="class or interface in ij.measure">Calibration</a>&nbsp;calibration)</code>
+<div class="block">This method does the gaussian filtering of an image.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeGaussianFastMirror-features.ComputeCurvatures.FloatArray3D-float-features.GaussianGenerationCallback-ij.measure.Calibration-">computeGaussianFastMirror</a></span>(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;input,
+                         float&nbsp;sigma,
+                         <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                         <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/Calibration.html?is-external=true" title="class or interface in ij.measure">Calibration</a>&nbsp;calibration)</code>
+<div class="block">This method does the gaussian filtering of an 3D image.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeHessianMatrix2DDouble-features.ComputeCurvatures.FloatArray2D-int-int-double-float-float-">computeHessianMatrix2DDouble</a></span>(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;laPlace,
+                            int&nbsp;x,
+                            int&nbsp;y,
+                            double&nbsp;sigma,
+                            float&nbsp;sepX,
+                            float&nbsp;sepY)</code>
+<div class="block">This method computes the Hessian Matrix for the 3x3 environment of a certain pixel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy <br>
+ yx yy <br></div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeHessianMatrix2DFloat-features.ComputeCurvatures.FloatArray2D-int-int-double-float-float-">computeHessianMatrix2DFloat</a></span>(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;laPlace,
+                           int&nbsp;x,
+                           int&nbsp;y,
+                           double&nbsp;sigma,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY)</code>
+<div class="block">This method computes the Hessian Matrix for the 3x3 environment of a certain pixel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy <br>
+ yx yy <br></div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeHessianMatrix3DDouble-features.ComputeCurvatures.FloatArray3D-int-int-int-double-float-float-float-">computeHessianMatrix3DDouble</a></span>(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;img,
+                            int&nbsp;x,
+                            int&nbsp;y,
+                            int&nbsp;z,
+                            double&nbsp;sigma,
+                            float&nbsp;sepX,
+                            float&nbsp;sepY,
+                            float&nbsp;sepZ)</code>
+<div class="block">This method computes the Hessian Matrix for the 3x3x3 environment of a certain voxel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy xz <br>
+ yx yy yz <br>
+ zx zy zz <br></div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#computeHessianMatrix3DFloat-features.ComputeCurvatures.FloatArray3D-int-int-int-double-float-float-float-">computeHessianMatrix3DFloat</a></span>(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;img,
+                           int&nbsp;x,
+                           int&nbsp;y,
+                           int&nbsp;z,
+                           double&nbsp;sigma,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY,
+                           float&nbsp;sepZ)</code>
+<div class="block">This method computes the Hessian Matrix for the 3x3x3 environment of a certain voxel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy xz <br>
+ yx yy yz <br>
+ zx zy zz <br></div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#createGaussianKernel1D-float-boolean-">createGaussianKernel1D</a></span>(float&nbsp;sigma,
+                      boolean&nbsp;normalize)</code>
+<div class="block">This method creates a gaussian kernel</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#FloatArrayToFloatProcessor-ij.process.ImageProcessor-features.ComputeCurvatures.FloatArray2D-">FloatArrayToFloatProcessor</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+                          <a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;pixels)</code>
+<div class="block">This method converts my FloatArray2D to an ImageJ ImageProcessor</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#FloatArrayToImagePlus-features.ComputeCurvatures.FloatArray2D-java.lang.String-float-float-">FloatArrayToImagePlus</a></span>(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;image,
+                     <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                     float&nbsp;min,
+                     float&nbsp;max)</code>
+<div class="block">This method converts my FloatArray2D to an ImageJ ImagePlus</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#FloatArrayToStack-features.ComputeCurvatures.FloatArray3D-java.lang.String-float-float-">FloatArrayToStack</a></span>(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;image,
+                 <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                 float&nbsp;min,
+                 float&nbsp;max)</code>
+<div class="block">This method converts my FloatArray3D to an ImageJ image stack packed into an ImagePlus</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#hessianEigenvaluesAtPoint2D-int-int-boolean-double:A-boolean-boolean-float-float-">hessianEigenvaluesAtPoint2D</a></span>(int&nbsp;x,
+                           int&nbsp;y,
+                           boolean&nbsp;orderOnAbsoluteSize,
+                           double[]&nbsp;result,
+                           boolean&nbsp;normalize,
+                           boolean&nbsp;fixUp,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#hessianEigenvaluesAtPoint2D-int-int-boolean-float:A-boolean-boolean-float-float-">hessianEigenvaluesAtPoint2D</a></span>(int&nbsp;x,
+                           int&nbsp;y,
+                           boolean&nbsp;orderOnAbsoluteSize,
+                           float[]&nbsp;result,
+                           boolean&nbsp;normalize,
+                           boolean&nbsp;fixUp,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#hessianEigenvaluesAtPoint3D-int-int-int-boolean-double:A-boolean-boolean-float-float-float-">hessianEigenvaluesAtPoint3D</a></span>(int&nbsp;x,
+                           int&nbsp;y,
+                           int&nbsp;z,
+                           boolean&nbsp;orderOnAbsoluteSize,
+                           double[]&nbsp;result,
+                           boolean&nbsp;normalize,
+                           boolean&nbsp;fixUp,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY,
+                           float&nbsp;sepZ)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#hessianEigenvaluesAtPoint3D-int-int-int-boolean-float:A-boolean-boolean-float-float-float-">hessianEigenvaluesAtPoint3D</a></span>(int&nbsp;x,
+                           int&nbsp;y,
+                           int&nbsp;z,
+                           boolean&nbsp;orderOnAbsoluteSize,
+                           float[]&nbsp;result,
+                           boolean&nbsp;normalize,
+                           boolean&nbsp;fixUp,
+                           float&nbsp;sepX,
+                           float&nbsp;sepY,
+                           float&nbsp;sepZ)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#ImageToFloatArray-ij.process.ImageProcessor-">ImageToFloatArray</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip)</code>
+<div class="block">This method convertes an ImageJ ImageProcessor to my FloatArray2D,
+ which is a one dimensional structure with methods for 2D access</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#run--">run</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#runAsPlugIn-java.lang.String-">runAsPlugIn</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</code>
+<div class="block">This method will be called when running the PlugIn, it coordinates the main process.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#setup--">setup</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code><a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../features/ComputeCurvatures.html#StackToFloatArray-ij.ImageStack-">StackToFloatArray</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;stack)</code>
+<div class="block">This method convertes an ImageJ image stack to my FloatArray3D,
+ which is a one dimensional structure with methods for 3D access</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="imp">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>imp</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a> imp</pre>
+</li>
+</ul>
+<a name="sigma">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sigma</h4>
+<pre>protected&nbsp;double sigma</pre>
+</li>
+</ul>
+<a name="useCalibration">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>useCalibration</h4>
+<pre>protected&nbsp;boolean useCalibration</pre>
+</li>
+</ul>
+<a name="callback">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>callback</h4>
+<pre>protected&nbsp;<a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a> callback</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ComputeCurvatures--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ComputeCurvatures</h4>
+<pre>public&nbsp;ComputeCurvatures()</pre>
+</li>
+</ul>
+<a name="ComputeCurvatures-ij.ImagePlus-double-features.GaussianGenerationCallback-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ComputeCurvatures</h4>
+<pre>public&nbsp;ComputeCurvatures(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp,
+                         double&nbsp;sigma,
+                         <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                         boolean&nbsp;useCalibration)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="runAsPlugIn-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>runAsPlugIn</h4>
+<pre>public&nbsp;void&nbsp;runAsPlugIn(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</pre>
+<div class="block">This method will be called when running the PlugIn, it coordinates the main process.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arg</code> - UNUSED</dd>
+</dl>
+</li>
+</ul>
+<a name="cancelGaussianGeneration--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cancelGaussianGeneration</h4>
+<pre>public&nbsp;void&nbsp;cancelGaussianGeneration()</pre>
+</li>
+</ul>
+<a name="run--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setup--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setup</h4>
+<pre>public&nbsp;void&nbsp;setup()</pre>
+</li>
+</ul>
+<a name="hessianEigenvaluesAtPoint2D-int-int-boolean-float:A-boolean-boolean-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hessianEigenvaluesAtPoint2D</h4>
+<pre>public&nbsp;boolean&nbsp;hessianEigenvaluesAtPoint2D(int&nbsp;x,
+                                           int&nbsp;y,
+                                           boolean&nbsp;orderOnAbsoluteSize,
+                                           float[]&nbsp;result,
+                                           boolean&nbsp;normalize,
+                                           boolean&nbsp;fixUp,
+                                           float&nbsp;sepX,
+                                           float&nbsp;sepY)</pre>
+</li>
+</ul>
+<a name="hessianEigenvaluesAtPoint2D-int-int-boolean-double:A-boolean-boolean-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hessianEigenvaluesAtPoint2D</h4>
+<pre>public&nbsp;boolean&nbsp;hessianEigenvaluesAtPoint2D(int&nbsp;x,
+                                           int&nbsp;y,
+                                           boolean&nbsp;orderOnAbsoluteSize,
+                                           double[]&nbsp;result,
+                                           boolean&nbsp;normalize,
+                                           boolean&nbsp;fixUp,
+                                           float&nbsp;sepX,
+                                           float&nbsp;sepY)</pre>
+</li>
+</ul>
+<a name="hessianEigenvaluesAtPoint3D-int-int-int-boolean-float:A-boolean-boolean-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hessianEigenvaluesAtPoint3D</h4>
+<pre>public&nbsp;boolean&nbsp;hessianEigenvaluesAtPoint3D(int&nbsp;x,
+                                           int&nbsp;y,
+                                           int&nbsp;z,
+                                           boolean&nbsp;orderOnAbsoluteSize,
+                                           float[]&nbsp;result,
+                                           boolean&nbsp;normalize,
+                                           boolean&nbsp;fixUp,
+                                           float&nbsp;sepX,
+                                           float&nbsp;sepY,
+                                           float&nbsp;sepZ)</pre>
+</li>
+</ul>
+<a name="hessianEigenvaluesAtPoint3D-int-int-int-boolean-double:A-boolean-boolean-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hessianEigenvaluesAtPoint3D</h4>
+<pre>public&nbsp;boolean&nbsp;hessianEigenvaluesAtPoint3D(int&nbsp;x,
+                                           int&nbsp;y,
+                                           int&nbsp;z,
+                                           boolean&nbsp;orderOnAbsoluteSize,
+                                           double[]&nbsp;result,
+                                           boolean&nbsp;normalize,
+                                           boolean&nbsp;fixUp,
+                                           float&nbsp;sepX,
+                                           float&nbsp;sepY,
+                                           float&nbsp;sepZ)</pre>
+</li>
+</ul>
+<a name="FloatArrayToImagePlus-features.ComputeCurvatures.FloatArray2D-java.lang.String-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FloatArrayToImagePlus</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;FloatArrayToImagePlus(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;image,
+                                              <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                                              float&nbsp;min,
+                                              float&nbsp;max)</pre>
+<div class="block">This method converts my FloatArray2D to an ImageJ ImagePlus</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - The image as FloatArray2D</dd>
+<dd><code>name</code> - The name of the ImagePlus</dd>
+<dd><code>min</code> - Lowest brightness value that will be displayed (see Brightness&amp;Contrast in Imagej)</dd>
+<dd><code>max</code> - Highest brightness value that will be displayed (set both to zero for automatic)</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>ImagePlus The ImageJ image</dd>
+</dl>
+</li>
+</ul>
+<a name="FloatArrayToFloatProcessor-ij.process.ImageProcessor-features.ComputeCurvatures.FloatArray2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FloatArrayToFloatProcessor</h4>
+<pre>public static&nbsp;void&nbsp;FloatArrayToFloatProcessor(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+                                              <a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;pixels)</pre>
+<div class="block">This method converts my FloatArray2D to an ImageJ ImageProcessor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ip</code> - ImageProcessor; will be overwritten with the data from the FloatArray2D</dd>
+<dd><code>pixels</code> - The image as FloatArray2D</dd>
+</dl>
+</li>
+</ul>
+<a name="FloatArrayToStack-features.ComputeCurvatures.FloatArray3D-java.lang.String-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FloatArrayToStack</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;FloatArrayToStack(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;image,
+                                   <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                                   float&nbsp;min,
+                                   float&nbsp;max)</pre>
+<div class="block">This method converts my FloatArray3D to an ImageJ image stack packed into an ImagePlus</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - The image as FloatArray3D</dd>
+<dd><code>name</code> - The name of the ImagePlus</dd>
+<dd><code>min</code> - Lowest brightness value that will be displayed (see Brightness&amp;Contrast in Imagej)</dd>
+<dd><code>max</code> - Highest brightness value that will be displayed (set both to zero for automatic)</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>ImagePlus The ImageJ image</dd>
+</dl>
+</li>
+</ul>
+<a name="computeEigenValues-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeEigenValues</h4>
+<pre>public&nbsp;double[]&nbsp;computeEigenValues(double[][]&nbsp;matrix)</pre>
+<div class="block">This method computes the Eigenvalues of the Hessian Matrix, the
+ Eigenvalues correspond to the Principle Curvatures.  (MHL
+ modified to use the JacobiDouble class in math3d, or an optimized
+ version for the special case of 3x3 matrices.)<br>
+
+ <br>
+ Note: If the Eigenvalues contain imaginary numbers, this method will return null</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>matrix</code> - The hessian Matrix</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The Real Parts of the Eigenvalues or null (if there were imganiary parts)</dd>
+</dl>
+</li>
+</ul>
+<a name="computeEigenValues-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeEigenValues</h4>
+<pre>public&nbsp;float[]&nbsp;computeEigenValues(float[][]&nbsp;matrix)</pre>
+<div class="block">This method computes the Eigenvalues of the Hessian Matrix, the
+ Eigenvalues correspond to the Principle Curvatures.  (MHL
+ modified to use the JacobiFloat class in math3d.)<br>
+
+ <br>
+ Note: If the Eigenvalues contain imaginary numbers, this method will return null</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>matrix</code> - float[][] The hessian Matrix</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The Real Parts of the Eigenvalues or null (if there were imganiary parts)</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix2DDouble-features.ComputeCurvatures.FloatArray2D-int-int-double-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix2DDouble</h4>
+<pre>public&nbsp;double[][]&nbsp;computeHessianMatrix2DDouble(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;laPlace,
+                                               int&nbsp;x,
+                                               int&nbsp;y,
+                                               double&nbsp;sigma,
+                                               float&nbsp;sepX,
+                                               float&nbsp;sepY)</pre>
+<div class="block">This method computes the Hessian Matrix for the 3x3 environment of a certain pixel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy <br>
+ yx yy <br></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>laPlace</code> - The image as FloatArray3D</dd>
+<dd><code>x</code> - The x-position of the voxel</dd>
+<dd><code>y</code> - The y-position of the voxel</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>double[][] The 2D - Hessian Matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix2DFloat-features.ComputeCurvatures.FloatArray2D-int-int-double-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix2DFloat</h4>
+<pre>public&nbsp;float[][]&nbsp;computeHessianMatrix2DFloat(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;laPlace,
+                                             int&nbsp;x,
+                                             int&nbsp;y,
+                                             double&nbsp;sigma,
+                                             float&nbsp;sepX,
+                                             float&nbsp;sepY)</pre>
+<div class="block">This method computes the Hessian Matrix for the 3x3 environment of a certain pixel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy <br>
+ yx yy <br></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>laPlace</code> - The image as FloatArray3D</dd>
+<dd><code>x</code> - The x-position of the voxel</dd>
+<dd><code>y</code> - The y-position of the voxel</dd>
+<dd><code>sigma</code> - </dd>
+<dd><code>sepX</code> - </dd>
+<dd><code>sepY</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The 2D - Hessian Matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix3DDouble-features.ComputeCurvatures.FloatArray3D-int-int-int-double-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix3DDouble</h4>
+<pre>public&nbsp;double[][]&nbsp;computeHessianMatrix3DDouble(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;img,
+                                               int&nbsp;x,
+                                               int&nbsp;y,
+                                               int&nbsp;z,
+                                               double&nbsp;sigma,
+                                               float&nbsp;sepX,
+                                               float&nbsp;sepY,
+                                               float&nbsp;sepZ)</pre>
+<div class="block">This method computes the Hessian Matrix for the 3x3x3 environment of a certain voxel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy xz <br>
+ yx yy yz <br>
+ zx zy zz <br></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>img</code> - The image as FloatArray3D</dd>
+<dd><code>x</code> - The x-position of the voxel</dd>
+<dd><code>y</code> - The y-position of the voxel</dd>
+<dd><code>z</code> - The z-position of the voxel</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>double[][] The 3D - Hessian Matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix3DFloat-features.ComputeCurvatures.FloatArray3D-int-int-int-double-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix3DFloat</h4>
+<pre>public&nbsp;float[][]&nbsp;computeHessianMatrix3DFloat(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;img,
+                                             int&nbsp;x,
+                                             int&nbsp;y,
+                                             int&nbsp;z,
+                                             double&nbsp;sigma,
+                                             float&nbsp;sepX,
+                                             float&nbsp;sepY,
+                                             float&nbsp;sepZ)</pre>
+<div class="block">This method computes the Hessian Matrix for the 3x3x3 environment of a certain voxel <br><br>
+
+ The 3D Hessian Matrix:<br>
+ xx xy xz <br>
+ yx yy yz <br>
+ zx zy zz <br></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>img</code> - The image as FloatArray3D</dd>
+<dd><code>x</code> - The x-position of the voxel</dd>
+<dd><code>y</code> - The y-position of the voxel</dd>
+<dd><code>z</code> - The z-position of the voxel</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>float[][] The 3D - Hessian Matrix</dd>
+</dl>
+</li>
+</ul>
+<a name="createGaussianKernel1D-float-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createGaussianKernel1D</h4>
+<pre>public static&nbsp;float[]&nbsp;createGaussianKernel1D(float&nbsp;sigma,
+                                             boolean&nbsp;normalize)</pre>
+<div class="block">This method creates a gaussian kernel</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sigma</code> - Standard Derivation of the gaussian function</dd>
+<dd><code>normalize</code> - Normalize integral of gaussian function to 1 or not...</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>float[] The gaussian kernel</dd>
+</dl>
+</li>
+</ul>
+<a name="computeGaussianFastMirror-features.ComputeCurvatures.FloatArray2D-float-features.GaussianGenerationCallback-ij.measure.Calibration-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeGaussianFastMirror</h4>
+<pre>public&nbsp;<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;computeGaussianFastMirror(<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;input,
+                                                                float&nbsp;sigma,
+                                                                <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                                                                <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/Calibration.html?is-external=true" title="class or interface in ij.measure">Calibration</a>&nbsp;calibration)</pre>
+<div class="block">This method does the gaussian filtering of an image. On the edges of
+ the image it does mirror the pixels. It also uses the seperability of
+ the gaussian convolution.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - FloatProcessor which will be folded (will not be touched)</dd>
+<dd><code>sigma</code> - Standard Derivation of the gaussian function</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>FloatProcessor The folded image</dd>
+</dl>
+</li>
+</ul>
+<a name="computeGaussianFastMirror-features.ComputeCurvatures.FloatArray3D-float-features.GaussianGenerationCallback-ij.measure.Calibration-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeGaussianFastMirror</h4>
+<pre>public&nbsp;<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;computeGaussianFastMirror(<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;input,
+                                                                float&nbsp;sigma,
+                                                                <a href="../features/GaussianGenerationCallback.html" title="interface in features">GaussianGenerationCallback</a>&nbsp;callback,
+                                                                <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/Calibration.html?is-external=true" title="class or interface in ij.measure">Calibration</a>&nbsp;calibration)</pre>
+<div class="block">This method does the gaussian filtering of an 3D image. On the edges of
+ the image it does mirror the pixels. It also uses the seperability of
+ the gaussian convolution.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - FloatProcessor which will be folded (will not be touched)</dd>
+<dd><code>sigma</code> - Standard Derivation of the gaussian function</dd>
+<dd><code>calibration</code> - Calibration data for the image, or null if we assume separation in all three dimensions is 1</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>FloatProcessor The folded image</dd>
+</dl>
+</li>
+</ul>
+<a name="StackToFloatArray-ij.ImageStack-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>StackToFloatArray</h4>
+<pre>public&nbsp;<a href="../features/ComputeCurvatures.FloatArray3D.html" title="class in features">ComputeCurvatures.FloatArray3D</a>&nbsp;StackToFloatArray(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;stack)</pre>
+<div class="block">This method convertes an ImageJ image stack to my FloatArray3D,
+ which is a one dimensional structure with methods for 3D access</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stack</code> - ImageJ image stack</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>FloatArray3D The image packed into a FloatArray3D</dd>
+</dl>
+</li>
+</ul>
+<a name="ImageToFloatArray-ij.process.ImageProcessor-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ImageToFloatArray</h4>
+<pre>public&nbsp;<a href="../features/ComputeCurvatures.FloatArray2D.html" title="class in features">ComputeCurvatures.FloatArray2D</a>&nbsp;ImageToFloatArray(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip)</pre>
+<div class="block">This method convertes an ImageJ ImageProcessor to my FloatArray2D,
+ which is a one dimensional structure with methods for 2D access</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ip</code> - ImageJ ImageProcessor</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>FloatArray2D The image packed into a FloatArray2D</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../features/ComputeCurvatures.FloatArray.html" title="class in features"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?features/ComputeCurvatures.html" target="_top">Frames</a></li>
+<li><a href="ComputeCurvatures.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

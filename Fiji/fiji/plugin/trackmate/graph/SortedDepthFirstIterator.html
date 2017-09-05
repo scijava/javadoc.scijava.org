@@ -1,0 +1,510 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SortedDepthFirstIterator (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SortedDepthFirstIterator (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../fiji/plugin/trackmate/graph/RecursiveCumSum.html" title="class in fiji.plugin.trackmate.graph"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../fiji/plugin/trackmate/graph/StringFormater.html" title="interface in fiji.plugin.trackmate.graph"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" target="_top">Frames</a></li>
+<li><a href="SortedDepthFirstIterator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.graph</div>
+<h2 title="Class SortedDepthFirstIterator" class="title">Class SortedDepthFirstIterator&lt;V,E&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.jgrapht.traverse.AbstractGraphIterator&lt;V,E&gt;</li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.graph.SortedDepthFirstIterator&lt;V,E&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;V&gt;, org.jgrapht.traverse.GraphIterator&lt;V,E&gt;</dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../fiji/plugin/trackmate/graph/TimeDirectedDepthFirstIterator.html" title="class in fiji.plugin.trackmate.graph">TimeDirectedDepthFirstIterator</a>, <a href="../../../../fiji/plugin/trackmate/graph/TimeDirectedSortedDepthFirstIterator.html" title="class in fiji.plugin.trackmate.graph">TimeDirectedSortedDepthFirstIterator</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SortedDepthFirstIterator&lt;V,E&gt;</span>
+extends org.jgrapht.traverse.AbstractGraphIterator&lt;V,E&gt;</pre>
+<div class="block">A depth-first iterator, that - when branching - chooses the next vertex
+ according to a specified comparator.
+ <p>
+ I had to copy-paste whole sections of JGraphT code to make this one: I could
+ not extend the desired class, for the interesting method and field were
+ private.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez 2012-2013</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#comparator">comparator</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected org.jgrapht.Graph&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#graph">graph</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="http://javadoc.imagej.net/Fiji/fiji/plugin/trackmate/graph/SortedDepthFirstIterator.VisitColor.html?is-external=true" title="class or interface in fiji.plugin.trackmate.graph">fiji.plugin.trackmate.graph.SortedDepthFirstIterator.VisitColor</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#seen">seen</a></span></code>
+<div class="block">Stores the vertices that have been seen during iteration and (optionally)
+ some additional traversal info regarding each vertex.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Fiji/fiji/plugin/trackmate/graph/SortedDepthFirstIterator.Specifics.html?is-external=true" title="class or interface in fiji.plugin.trackmate.graph">fiji.plugin.trackmate.graph.SortedDepthFirstIterator.Specifics</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#specifics">specifics</a></span></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.org.jgrapht.traverse.AbstractGraphIterator">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.jgrapht.traverse.AbstractGraphIterator</h3>
+<code>nListeners</code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#SortedDepthFirstIterator-org.jgrapht.Graph-V-java.util.Comparator-">SortedDepthFirstIterator</a></span>(org.jgrapht.Graph&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;&nbsp;g,
+                        <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;startVertex,
+                        <a href="http://javadoc.imagej.net/Java/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&gt;&nbsp;comparator)</code>
+<div class="block">Creates a new iterator for the specified graph.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#addUnseenChildrenOf-V-">addUnseenChildrenOf</a></span>(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex)</code>
+<div class="block">This is where we add the multiple children in proper sorted order.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected org.jgrapht.event.EdgeTraversalEvent&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#createEdgeTraversalEvent-E-">createEdgeTraversalEvent</a></span>(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#encounterVertex-V-E-">encounterVertex</a></span>(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex,
+               <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#encounterVertexAgain-V-E-">encounterVertexAgain</a></span>(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex,
+                    <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#hasNext--">hasNext</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html#next--">next</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.jgrapht.traverse.AbstractGraphIterator">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.jgrapht.traverse.AbstractGraphIterator</h3>
+<code>addTraversalListener, fireConnectedComponentFinished, fireConnectedComponentStarted, fireEdgeTraversed, fireVertexFinished, fireVertexTraversed, isCrossComponentTraversal, isReuseEvents, remove, removeTraversalListener, setCrossComponentTraversal, setReuseEvents</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.util.Iterator">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.util.<a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true#forEachRemaining-java.util.function.Consumer-" title="class or interface in java.util">forEachRemaining</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="seen">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>seen</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="http://javadoc.imagej.net/Fiji/fiji/plugin/trackmate/graph/SortedDepthFirstIterator.VisitColor.html?is-external=true" title="class or interface in fiji.plugin.trackmate.graph">fiji.plugin.trackmate.graph.SortedDepthFirstIterator.VisitColor</a>&gt; seen</pre>
+<div class="block">Stores the vertices that have been seen during iteration and (optionally)
+ some additional traversal info regarding each vertex.</div>
+</li>
+</ul>
+<a name="specifics">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>specifics</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Fiji/fiji/plugin/trackmate/graph/SortedDepthFirstIterator.Specifics.html?is-external=true" title="class or interface in fiji.plugin.trackmate.graph">fiji.plugin.trackmate.graph.SortedDepthFirstIterator.Specifics</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt; specifics</pre>
+</li>
+</ul>
+<a name="graph">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>graph</h4>
+<pre>protected final&nbsp;org.jgrapht.Graph&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt; graph</pre>
+</li>
+</ul>
+<a name="comparator">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>comparator</h4>
+<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&gt; comparator</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SortedDepthFirstIterator-org.jgrapht.Graph-java.lang.Object-java.util.Comparator-">
+<!--   -->
+</a><a name="SortedDepthFirstIterator-org.jgrapht.Graph-V-java.util.Comparator-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SortedDepthFirstIterator</h4>
+<pre>public&nbsp;SortedDepthFirstIterator(org.jgrapht.Graph&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;&nbsp;g,
+                                <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;startVertex,
+                                <a href="http://javadoc.imagej.net/Java/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&gt;&nbsp;comparator)</pre>
+<div class="block">Creates a new iterator for the specified graph. Iteration will start at
+ the specified start vertex. If the specified start vertex is <code>
+ null</code>, Iteration will start at an arbitrary graph vertex.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>g</code> - the graph to be iterated.</dd>
+<dd><code>startVertex</code> - the vertex iteration to be started.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>g==null</code> or does not contain
+             <code>startVertex</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="hasNext--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasNext</h4>
+<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true#hasNext--" title="class or interface in java.util"><code>Iterator.hasNext()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="next--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>next</h4>
+<pre>public&nbsp;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;next()</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true#next--" title="class or interface in java.util"><code>Iterator.next()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="addUnseenChildrenOf-java.lang.Object-">
+<!--   -->
+</a><a name="addUnseenChildrenOf-V-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addUnseenChildrenOf</h4>
+<pre>protected&nbsp;void&nbsp;addUnseenChildrenOf(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex)</pre>
+<div class="block">This is where we add the multiple children in proper sorted order.</div>
+</li>
+</ul>
+<a name="createEdgeTraversalEvent-java.lang.Object-">
+<!--   -->
+</a><a name="createEdgeTraversalEvent-E-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createEdgeTraversalEvent</h4>
+<pre>protected&nbsp;org.jgrapht.event.EdgeTraversalEvent&lt;<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>,<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&gt;&nbsp;createEdgeTraversalEvent(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</pre>
+</li>
+</ul>
+<a name="encounterVertex-java.lang.Object-java.lang.Object-">
+<!--   -->
+</a><a name="encounterVertex-V-E-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encounterVertex</h4>
+<pre>protected&nbsp;void&nbsp;encounterVertex(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex,
+                               <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>CrossComponentIterator.encounterVertex(Object,
+      Object)</code></dd>
+</dl>
+</li>
+</ul>
+<a name="encounterVertexAgain-java.lang.Object-java.lang.Object-">
+<!--   -->
+</a><a name="encounterVertexAgain-V-E-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>encounterVertexAgain</h4>
+<pre>protected&nbsp;void&nbsp;encounterVertexAgain(<a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">V</a>&nbsp;vertex,
+                                    <a href="../../../../fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" title="type parameter in SortedDepthFirstIterator">E</a>&nbsp;edge)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>CrossComponentIterator.encounterVertexAgain(Object,
+      Object)</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../fiji/plugin/trackmate/graph/RecursiveCumSum.html" title="class in fiji.plugin.trackmate.graph"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../fiji/plugin/trackmate/graph/StringFormater.html" title="interface in fiji.plugin.trackmate.graph"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?fiji/plugin/trackmate/graph/SortedDepthFirstIterator.html" target="_top">Frames</a></li>
+<li><a href="SortedDepthFirstIterator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

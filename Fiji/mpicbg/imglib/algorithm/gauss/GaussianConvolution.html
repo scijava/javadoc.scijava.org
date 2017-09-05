@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GaussianConvolution (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GaussianConvolution (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/gauss/DownSample.html" title="class in mpicbg.imglib.algorithm.gauss"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution2.html" title="class in mpicbg.imglib.algorithm.gauss"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" target="_top">Frames</a></li>
+<li><a href="GaussianConvolution.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">mpicbg.imglib.algorithm.gauss</div>
+<h2 title="Class GaussianConvolution" class="title">Class GaussianConvolution&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">mpicbg.imglib.algorithm.gauss.GaussianConvolution3</a>&lt;T,T,T&gt;</li>
+<li>
+<ul class="inheritance">
+<li>mpicbg.imglib.algorithm.gauss.GaussianConvolution&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a>, <a href="../../../../mpicbg/imglib/algorithm/Benchmark.html" title="interface in mpicbg.imglib.algorithm">Benchmark</a>, <a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a>, <a href="../../../../mpicbg/imglib/algorithm/OutputAlgorithm.html" title="interface in mpicbg.imglib.algorithm">OutputAlgorithm</a>&lt;T&gt;</dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolutionReal.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolutionReal</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">GaussianConvolution&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;T&gt;&gt;</span>
+extends <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a>&lt;T,T,T&gt;</pre>
+<div class="block">TODO</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Stephan Preibisch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#GaussianConvolution-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double-">GaussianConvolution</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;image,
+                   <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;outOfBoundsFactory,
+                   double&nbsp;sigma)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#GaussianConvolution-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double:A-">GaussianConvolution</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;image,
+                   <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;outOfBoundsFactory,
+                   double[]&nbsp;sigma)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected static &lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;T&gt;&gt;<br><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#computeGaussFloatArray3D-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double:A:A-int-">computeGaussFloatArray3D</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;T&gt;&nbsp;image,
+                        <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;T&gt;&nbsp;outOfBoundsFactory,
+                        double[][]&nbsp;kernel,
+                        int&nbsp;numThreads)</code>
+<div class="block">This class does the gaussian filtering of an image.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#getConvolvedImage--">getConvolvedImage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#getTempImage1-int-">getTempImage1</a></span>(int&nbsp;currentDim)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#getTempImage2-int-">getTempImage2</a></span>(int&nbsp;currentDim)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html#processWithOptimizedMethod--">processWithOptimizedMethod</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.mpicbg.imglib.algorithm.gauss.GaussianConvolution3">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;mpicbg.imglib.algorithm.gauss.<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a></h3>
+<code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#checkInput--">checkInput</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#computeKernel--">computeKernel</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#convolve-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.cursor.LocalizableCursor-int-double:A-long-long-">convolve</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#convolveDim-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.cursor.LocalizableCursor-int-long-long-">convolveDim</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#createArray-mpicbg.imglib.image.Image-double-">createArray</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getErrorMessage--">getErrorMessage</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getImage--">getImage</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getInputImage--">getInputImage</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getInputIterator-mpicbg.imglib.image.Image-mpicbg.imglib.image.Image-int-">getInputIterator</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getKernelSize-int-">getKernelSize</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getNumThreads--">getNumThreads</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getOutputIterator-mpicbg.imglib.image.Image-mpicbg.imglib.image.Image-int-">getOutputIterator</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getProcessingTime--">getProcessingTime</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getResult--">getResult</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getSigma--">getSigma</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getSigmas--">getSigmas</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#process--">process</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#setImage-mpicbg.imglib.image.Image-">setImage</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#setNumThreads--">setNumThreads</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#setNumThreads-int-">setNumThreads</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#setSigma-double-">setSigma</a>, <a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#setSigma-double:A-">setSigma</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GaussianConvolution-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GaussianConvolution</h4>
+<pre>public&nbsp;GaussianConvolution(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;image,
+                           <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;outOfBoundsFactory,
+                           double[]&nbsp;sigma)</pre>
+</li>
+</ul>
+<a name="GaussianConvolution-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GaussianConvolution</h4>
+<pre>public&nbsp;GaussianConvolution(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;image,
+                           <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;outOfBoundsFactory,
+                           double&nbsp;sigma)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getTempImage1-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTempImage1</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;getTempImage1(int&nbsp;currentDim)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getTempImage1-int-">getTempImage1</a></code>&nbsp;in class&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getTempImage2-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTempImage2</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;getTempImage2(int&nbsp;currentDim)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getTempImage2-int-">getTempImage2</a></code>&nbsp;in class&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getConvolvedImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConvolvedImage</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&nbsp;getConvolvedImage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#getConvolvedImage--">getConvolvedImage</a></code>&nbsp;in class&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="processWithOptimizedMethod--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processWithOptimizedMethod</h4>
+<pre>protected&nbsp;boolean&nbsp;processWithOptimizedMethod()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html#processWithOptimizedMethod--">processWithOptimizedMethod</a></code>&nbsp;in class&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution3.html" title="class in mpicbg.imglib.algorithm.gauss">GaussianConvolution3</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;,<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" title="type parameter in GaussianConvolution">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="computeGaussFloatArray3D-mpicbg.imglib.image.Image-mpicbg.imglib.outofbounds.OutOfBoundsStrategyFactory-double:A:A-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>computeGaussFloatArray3D</h4>
+<pre>protected static&nbsp;&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/NumericType.html" title="interface in mpicbg.imglib.type.numeric">NumericType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;T&gt;&nbsp;computeGaussFloatArray3D(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;T&gt;&nbsp;image,
+                                                                              <a href="../../../../mpicbg/imglib/outofbounds/OutOfBoundsStrategyFactory.html" title="class in mpicbg.imglib.outofbounds">OutOfBoundsStrategyFactory</a>&lt;T&gt;&nbsp;outOfBoundsFactory,
+                                                                              double[][]&nbsp;kernel,
+                                                                              int&nbsp;numThreads)</pre>
+<div class="block">This class does the gaussian filtering of an image. On the edges of
+ the image it does mirror the pixels. It also uses the seperability of
+ the gaussian convolution.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - FloatProcessor which should be folded (will not be touched)</dd>
+<dd><code>sigma</code> - Standard Derivation of the gaussian function</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>FloatProcessor The folded image</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/gauss/DownSample.html" title="class in mpicbg.imglib.algorithm.gauss"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../mpicbg/imglib/algorithm/gauss/GaussianConvolution2.html" title="class in mpicbg.imglib.algorithm.gauss"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/gauss/GaussianConvolution.html" target="_top">Frames</a></li>
+<li><a href="GaussianConvolution.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

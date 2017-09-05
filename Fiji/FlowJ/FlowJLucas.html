@@ -1,0 +1,829 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FlowJLucas (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+<script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="FlowJLucas (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../FlowJ/FlowJFlow.html" title="class in FlowJ"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../FlowJ/FlowJMapper.html" title="class in FlowJ"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?FlowJ/FlowJLucas.html" target="_top">Frames</a></li>
+<li><a href="FlowJLucas.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">FlowJ</div>
+<h2 title="Class FlowJLucas" class="title">Class FlowJLucas</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>FlowJ.FlowJLucas</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">FlowJLucas</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">This is a class that implements the Lucas and Kanade optical flow algorithm.
+ Implementation based on convolutions, with local field properties,
+ gradient computation with different kernels including scalable Gaussian derivatives.<br>
+ <pre>
+ References:
+      Lucas and Kanade, Proc IJNA 1981
+      Barron, Fleet, Beauchemin, 1994, IJCV 12, 1, 43-77
+      Abramoff et al, 2002, IEEE TMI.
+ </pre>
+
+ Copyright (c) 1999-2002, Michael Abramoff. All rights reserved.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#CENTRALDIFF">CENTRALDIFF</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#debug">debug</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#density">density</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#displayon">displayon</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#dt">dt</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#dx">dx</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#dy">dy</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel.html" title="class in volume">Kernel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#G">G</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#GAUSSIANDERIV">GAUSSIANDERIV</a></span></code>
+<div class="block">Types of derivative computation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel.html" title="class in volume">Kernel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#gradientKernel">gradientKernel</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#includeNormals">includeNormals</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#REG_AVERAGE">REG_AVERAGE</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#REG_GAUSSIAN">REG_GAUSSIAN</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#REG_GAUSSIAN_1D">REG_GAUSSIAN_1D</a></span></code>
+<div class="block">Types of regularization (smoothness constraint) computation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#sderiv">sderiv</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#sgradientKernel">sgradientKernel</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#sKernel">sKernel</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#SOBEL2D">SOBEL2D</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#SOBEL3D">SOBEL3D</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#sregul">sregul</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#SUBTRACT">SUBTRACT</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#support">support</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#tau">tau</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#tgradientKernel">tgradientKernel</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#tKernel">tKernel</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#FlowJLucas--">FlowJLucas</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#computeFull-FlowJ.FlowJFlow-boolean-float-float-int-">computeFull</a></span>(<a href="../FlowJ/FlowJFlow.html" title="class in FlowJ">FlowJFlow</a>&nbsp;flow,
+           boolean&nbsp;includeNormals,
+           float&nbsp;sigmaw,
+           float&nbsp;tau,
+           int&nbsp;regularizationMethod)</code>
+<div class="block">Compute full flow field from the first order gradients in dx, dy, dt
+ for a weighted local neighborhood omega (weighted by G defined by sigmaw)
+ around every image location.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#filterAll-ij.ImageStack-int-float-float-int-">filterAll</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+         int&nbsp;center,
+         float&nbsp;sigmat,
+         float&nbsp;sigmas,
+         int&nbsp;gradientType)</code>
+<div class="block">Do filtering.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#firstFrame-ij.ImageStack-float-int-">firstFrame</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+          float&nbsp;sigmat,
+          int&nbsp;gradientType)</code>
+<div class="block">Return the first frame for which you can compute the flow.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#getSupport-float-int-">getSupport</a></span>(float&nbsp;sigmat,
+          int&nbsp;gradientType)</code>
+<div class="block">Return the number of frames needed for specific sigmat and gradient type.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#lastFrame-ij.ImageStack-float-int-">lastFrame</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+         float&nbsp;sigmat,
+         int&nbsp;gradientType)</code>
+<div class="block">Return the last frame for which you can compute the flow.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../FlowJ/FlowJLucas.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="debug">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>debug</h4>
+<pre>public final&nbsp;boolean debug</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.debug">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="displayon">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>displayon</h4>
+<pre>public final&nbsp;boolean displayon</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.displayon">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GAUSSIANDERIV">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GAUSSIANDERIV</h4>
+<pre>protected static final&nbsp;int GAUSSIANDERIV</pre>
+<div class="block">Types of derivative computation.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.GAUSSIANDERIV">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="CENTRALDIFF">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CENTRALDIFF</h4>
+<pre>protected static final&nbsp;int CENTRALDIFF</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.CENTRALDIFF">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SOBEL2D">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SOBEL2D</h4>
+<pre>protected static final&nbsp;int SOBEL2D</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.SOBEL2D">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SOBEL3D">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SOBEL3D</h4>
+<pre>protected static final&nbsp;int SOBEL3D</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.SOBEL3D">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SUBTRACT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SUBTRACT</h4>
+<pre>protected static final&nbsp;int SUBTRACT</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.SUBTRACT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="sderiv">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sderiv</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] sderiv</pre>
+</li>
+</ul>
+<a name="tau">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tau</h4>
+<pre>protected&nbsp;float tau</pre>
+</li>
+</ul>
+<a name="sKernel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sKernel</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a> sKernel</pre>
+</li>
+</ul>
+<a name="tKernel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tKernel</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a> tKernel</pre>
+</li>
+</ul>
+<a name="gradientKernel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gradientKernel</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel.html" title="class in volume">Kernel</a> gradientKernel</pre>
+</li>
+</ul>
+<a name="sgradientKernel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sgradientKernel</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a> sgradientKernel</pre>
+</li>
+</ul>
+<a name="tgradientKernel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tgradientKernel</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel1D.html" title="class in volume">Kernel1D</a> tgradientKernel</pre>
+</li>
+</ul>
+<a name="G">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>G</h4>
+<pre>protected&nbsp;<a href="../volume/Kernel.html" title="class in volume">Kernel</a> G</pre>
+</li>
+</ul>
+<a name="density">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>density</h4>
+<pre>protected&nbsp;float density</pre>
+</li>
+</ul>
+<a name="dx">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dx</h4>
+<pre>protected&nbsp;<a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a> dx</pre>
+</li>
+</ul>
+<a name="dy">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dy</h4>
+<pre>protected&nbsp;<a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a> dy</pre>
+</li>
+</ul>
+<a name="dt">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dt</h4>
+<pre>protected&nbsp;<a href="../volume/VolumeFloat.html" title="class in volume">VolumeFloat</a> dt</pre>
+</li>
+</ul>
+<a name="REG_GAUSSIAN_1D">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REG_GAUSSIAN_1D</h4>
+<pre>protected final&nbsp;int REG_GAUSSIAN_1D</pre>
+<div class="block">Types of regularization (smoothness constraint) computation.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.REG_GAUSSIAN_1D">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="REG_GAUSSIAN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REG_GAUSSIAN</h4>
+<pre>protected final&nbsp;int REG_GAUSSIAN</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.REG_GAUSSIAN">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="REG_AVERAGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REG_AVERAGE</h4>
+<pre>protected final&nbsp;int REG_AVERAGE</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#FlowJ.FlowJLucas.REG_AVERAGE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="sregul">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sregul</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] sregul</pre>
+</li>
+</ul>
+<a name="support">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>support</h4>
+<pre>protected&nbsp;int support</pre>
+</li>
+</ul>
+<a name="includeNormals">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>includeNormals</h4>
+<pre>protected&nbsp;boolean includeNormals</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="FlowJLucas--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>FlowJLucas</h4>
+<pre>public&nbsp;FlowJLucas()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getSupport-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSupport</h4>
+<pre>public static&nbsp;int&nbsp;getSupport(float&nbsp;sigmat,
+                             int&nbsp;gradientType)</pre>
+<div class="block">Return the number of frames needed for specific sigmat and gradient type.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sigmat</code> - temporal sigma of the kernel.</dd>
+<dd><code>gradientType</code> - the type of gradient, one of
+ GAUSSIANDERIV, CENTRALDIFF, SOBEL2D, SOBEL3D, SUBTRACT</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of frames needed.</dd>
+</dl>
+</li>
+</ul>
+<a name="firstFrame-ij.ImageStack-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>firstFrame</h4>
+<pre>public static&nbsp;int&nbsp;firstFrame(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+                             float&nbsp;sigmat,
+                             int&nbsp;gradientType)</pre>
+<div class="block">Return the first frame for which you can compute the flow.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>is</code> - an ImageStack containing the images.</dd>
+<dd><code>sigmat</code> - temporal sigma of the kernel.</dd>
+<dd><code>gradientType</code> - the type of gradient, one of
+ GAUSSIANDERIV, CENTRALDIFF, SOBEL2D, SOBEL3D, SUBTRACT</dd>
+</dl>
+</li>
+</ul>
+<a name="lastFrame-ij.ImageStack-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastFrame</h4>
+<pre>public static&nbsp;int&nbsp;lastFrame(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+                            float&nbsp;sigmat,
+                            int&nbsp;gradientType)</pre>
+<div class="block">Return the last frame for which you can compute the flow.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>is</code> - an ImageStack containing the images.</dd>
+<dd><code>sigmat</code> - temporal sigma of the kernel.</dd>
+<dd><code>gradientType</code> - the type of gradient, one of
+ GAUSSIANDERIV, CENTRALDIFF, SOBEL2D, SOBEL3D, SUBTRACT</dd>
+</dl>
+</li>
+</ul>
+<a name="filterAll-ij.ImageStack-int-float-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>filterAll</h4>
+<pre>public&nbsp;void&nbsp;filterAll(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;is,
+                      int&nbsp;center,
+                      float&nbsp;sigmat,
+                      float&nbsp;sigmas,
+                      int&nbsp;gradientType)
+               throws <a href="../FlowJ/FlowJException.html" title="class in FlowJ">FlowJException</a></pre>
+<div class="block">Do filtering.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../FlowJ/FlowJException.html" title="class in FlowJ">FlowJException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="computeFull-FlowJ.FlowJFlow-boolean-float-float-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeFull</h4>
+<pre>public&nbsp;void&nbsp;computeFull(<a href="../FlowJ/FlowJFlow.html" title="class in FlowJ">FlowJFlow</a>&nbsp;flow,
+                        boolean&nbsp;includeNormals,
+                        float&nbsp;sigmaw,
+                        float&nbsp;tau,
+                        int&nbsp;regularizationMethod)</pre>
+<div class="block">Compute full flow field from the first order gradients in dx, dy, dt
+ for a weighted local neighborhood omega (weighted by G defined by sigmaw)
+ around every image location.
+ Find the best fit for that location using a LSE using the pseudoinverse.
+ A SVD decreased speed and did not influence errors.
+ All elements with eigenvalues of the pseudoinverse matrix m smaller than threshold
+ tau are rejected.
+ Only if the second eigenvalue of the pseudoinverse is larger than tau,
+ normal flow instead of full flow is computed for that location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>flow</code> - will contain the x,y flows.</dd>
+<dd><code>includeNormals</code> - a flag whether to include normals or not.</dd>
+<dd><code>sigmaw</code> - SD of the probability function associated with the Gaussian defining the size of the neighborhood</dd>
+<dd><code>tau</code> - the eigenvalue threshold</dd>
+<dd><code>regularizationMethod</code> - is one of REG_GAUSSIAN, REG_GAUSSIAN_1D, 0 defines how the local neighborhood is filtered.</dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../FlowJ/FlowJFlow.html" title="class in FlowJ"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../FlowJ/FlowJMapper.html" title="class in FlowJ"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?FlowJ/FlowJLucas.html" target="_top">Frames</a></li>
+<li><a href="FlowJLucas.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

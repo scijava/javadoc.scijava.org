@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LAPJV (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="LAPJV (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/JaqamanLinker.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html" target="_top">Frames</a></li>
+<li><a href="LAPJV.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.tracking.sparselap.linker</div>
+<h2 title="Class LAPJV" class="title">Class LAPJV</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.tracking.sparselap.linker.LAPJV</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true" title="class or interface in net.imglib2.algorithm">Benchmark</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;int[]&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">LAPJV</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;int[]&gt;, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true" title="class or interface in net.imglib2.algorithm">Benchmark</a></pre>
+<div class="block">Implements the Jonker-Volgenant algorithm for linear assignment problems,
+ tailored for sparse cost matrices.
+ <p>
+ We rely on the <a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><code>SparseCostMatrix</code></a> class to represent these costs. The
+ implementation itself is an unlikely mix between:
+ <ul>
+ <li>my (JYT) limited understanding of the original Volgemant paper (
+ <code>Volgenant. Linear and semi-assignment problems:
+ A core oriented approach. Computers &amp; Operations Research (1996) vol. 23 (10)
+ pp. 917-932</code>);</li>
+ <li>my limited understanding of Lee Kamensky python implementation of the
+ same algorithm in python using numpy for the CellProfilter project;</li>
+ <li>Johannes java implementation of the algorithm for non-sparse matrices.
+ </li>
+ </ul>
+ <p>
+ Computation time performance degrades significantly compared to the
+ non-sparse version. Benchmarks show that when increasing the density from
+ 0.1% to 70%, the computation time increased by a factor ranging from 1.5 to 7
+ compared to the non-sparse version. For a given density, the comparison
+ depends very weakly on the matrix size.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez - 2014, Johannes Schindelin</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href=
+      "http://www.sciencedirect.com/science/article/pii/030505489600010X"> A.
+      Volgenant
+      "Linear and semi-assignment problems: A core oriented approach"</a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#LAPJV-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">LAPJV</a></span>(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;cm)</code>
+<div class="block">Instantiates a new Jonker-Volgenant algorithm for the specified sparse
+ cost matrix.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#getErrorMessage--">getErrorMessage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#getProcessingTime--">getProcessingTime</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#getResult--">getResult</a></span>()</code>
+<div class="block">Returns JVS results as row assignments.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#resultToString--">resultToString</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#resultToString-java.util.List-java.util.List-">resultToString</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;rows,
+              <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;cols)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="LAPJV-fiji.plugin.trackmate.tracking.sparselap.linker.SparseCostMatrix-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LAPJV</h4>
+<pre>public&nbsp;LAPJV(<a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker">SparseCostMatrix</a>&nbsp;cm)</pre>
+<div class="block">Instantiates a new Jonker-Volgenant algorithm for the specified sparse
+ cost matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cm</code> - the cost matrix of the linear assignment problem to solve.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#process--" title="class or interface in net.imglib2.algorithm">process</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#checkInput--" title="class or interface in net.imglib2.algorithm">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getErrorMessage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getErrorMessage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getErrorMessage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#getErrorMessage--" title="class or interface in net.imglib2.algorithm">getErrorMessage</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getProcessingTime--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProcessingTime</h4>
+<pre>public&nbsp;long&nbsp;getProcessingTime()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true#getProcessingTime--" title="class or interface in net.imglib2.algorithm">getProcessingTime</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true" title="class or interface in net.imglib2.algorithm">Benchmark</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getResult--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResult</h4>
+<pre>public&nbsp;int[]&nbsp;getResult()</pre>
+<div class="block">Returns JVS results as row assignments. The row <code>i</code> is
+ associated to the column <code>x[i]</code> in the cost matrix.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true#getResult--" title="class or interface in net.imglib2.algorithm">getResult</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;int[]&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the row assignments as an <code>int[]</code> array. This array is
+         re-instantiated upon calling <a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html#process--"><code>process()</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="resultToString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resultToString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resultToString()</pre>
+</li>
+</ul>
+<a name="resultToString-java.util.List-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>resultToString</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resultToString(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;rows,
+                             <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;?&gt;&nbsp;cols)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/JaqamanLinker.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/sparselap/linker/SparseCostMatrix.html" title="class in fiji.plugin.trackmate.tracking.sparselap.linker"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/sparselap/linker/LAPJV.html" target="_top">Frames</a></li>
+<li><a href="LAPJV.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

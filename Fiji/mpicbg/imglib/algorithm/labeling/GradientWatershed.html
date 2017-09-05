@@ -1,0 +1,1051 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GradientWatershed (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GradientWatershed (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/labeling/BinaryInterpolation2D.html" title="class in mpicbg.imglib.algorithm.labeling"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../mpicbg/imglib/algorithm/labeling/Watershed.html" title="class in mpicbg.imglib.algorithm.labeling"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/labeling/GradientWatershed.html" target="_top">Frames</a></li>
+<li><a href="GradientWatershed.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">mpicbg.imglib.algorithm.labeling</div>
+<h2 title="Class GradientWatershed" class="title">Class GradientWatershed&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;,L extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;L&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>mpicbg.imglib.algorithm.labeling.GradientWatershed&lt;T,L&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - The type of the image.</dd>
+<dd><code>L</code> - The type of the labeling, typically Integer</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a>, <a href="../../../../mpicbg/imglib/algorithm/OutputAlgorithm.html" title="interface in mpicbg.imglib.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;L&gt;&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">GradientWatershed&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;,L extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;L&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../mpicbg/imglib/algorithm/OutputAlgorithm.html" title="interface in mpicbg.imglib.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;L&gt;&gt;</pre>
+<div class="block">This class labels an image where the objects in question have
+ edges that are defined by sharp intensity gradients and have
+ centers of high intensity and a low intensity background.
+ 
+ The algorithm:
+ Smooth the image by convolving with a Gaussian of sigma = sigma2.
+ Find and label local minima and maxima of the given scale (in pixels).
+ Label the minima with a single label.
+ Take the difference of Gaussians (DoG) - convolve the original image with
+ the kernel, G(sigma2) - G(sigma1). The original method uses the Sobel
+ transform of a smoothed image which is much the same.
+ Perform a seeded watershed using the minima/maxima labels on
+ the DoG image.
+ Remove the labeling from the pixels labeled as background.
+ 
+ The method is adapted from Wahlby & Bengtsson, Segmentation of
+ Cell Nuclei in Tissue by Combining Seeded Watersheds with Gradient
+ Information, Image Analysis: 13th Scandinavian Conference Proceedings,
+ pp 408-414, 2003</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#error_message">error_message</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#floatFactory">floatFactory</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#floatImage">floatImage</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#input">input</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#labelingFactory">labelingFactory</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#minBackgroundPeakHeight">minBackgroundPeakHeight</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#minForegroundPeakHeight">minForegroundPeakHeight</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#names">names</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#numQuanta">numQuanta</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/labeling/Labeling.html" title="class in mpicbg.imglib.labeling">Labeling</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#output">output</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#scale">scale</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#sigma1">sigma1</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#sigma2">sigma2</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#structuringElement">structuringElement</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#wantsToQuantize">wantsToQuantize</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#GradientWatershed-mpicbg.imglib.image.Image-double:A-double:A-double:A-java.util.Iterator-">GradientWatershed</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">T</a>&gt;&nbsp;input,
+                 double[]&nbsp;scale,
+                 double[]&nbsp;sigma1,
+                 double[]&nbsp;sigma2,
+                 <a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&nbsp;names)</code>
+<div class="block">Constructor</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#checkDimensions-double:A-">checkDimensions</a></span>(double[]&nbsp;array)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#checkDimensions-int:A-">checkDimensions</a></span>(int[]&nbsp;array)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected static int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#cloneStructuringElement-int:A:A-">cloneStructuringElement</a></span>(int[][]&nbsp;structuringElement)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#enableQuantization-boolean-">enableQuantization</a></span>(boolean&nbsp;enable)</code>
+<div class="block">The watershed repetitively evaluates the lowest intensity unlabeled pixel
+ starting from the seeds.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#filterPeak-mpicbg.imglib.cursor.LocalizableByDimCursor-int:A-int:A-boolean-">filterPeak</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;&nbsp;imageCursor,
+          int[]&nbsp;peak,
+          int[]&nbsp;dimensions,
+          boolean&nbsp;find_minimum)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getErrorMessage--">getErrorMessage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getFloatFactory--">getFloatFactory</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getFloatImage--">getFloatImage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getGradientImage--">getGradientImage</a></span>()</code>
+<div class="block">Return a difference of gaussian image that measures the gradient
+ at a scale defined by the two sigmas of the gaussians.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getMinBackgroundPeakHeight--">getMinBackgroundPeakHeight</a></span>()</code>
+<div class="block">See setMinBackgroundPeakHeight</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getMinForegroundPeakHeight--">getMinForegroundPeakHeight</a></span>()</code>
+<div class="block">See setMinForegroundPeakHeight</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getNumQuanta--">getNumQuanta</a></span>()</code>
+<div class="block">See setNumQuanta</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getOutputImageFactory--">getOutputImageFactory</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getResult--">getResult</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getScale--">getScale</a></span>()</code>
+<div class="block">Return the scale of the objects to be found.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#getStructuringElement--">getStructuringElement</a></span>()</code>
+<div class="block">Get the current structuring element.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#isQuantized--">isQuantized</a></span>()</code>
+<div class="block">see enableQuantization</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setMinBackgroundPeakHeight-double-">setMinBackgroundPeakHeight</a></span>(double&nbsp;height)</code>
+<div class="block">The algorithm finds both foreground (local maxima) and
+ background peaks (local minima) to act as seeds for the watershed.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setMinForegroundPeakHeight-double-">setMinForegroundPeakHeight</a></span>(double&nbsp;height)</code>
+<div class="block">The algorithm finds both foreground (local maxima) and
+ background peaks (local minima) to act as seeds for the watershed.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setNumQuanta-int-">setNumQuanta</a></span>(int&nbsp;numQuanta)</code>
+<div class="block">See enableQuantization
+ You must enableQuantization as well as set the number of quanta.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setOutputImageFactory-mpicbg.imglib.image.ImageFactory-">setOutputImageFactory</a></span>(<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&nbsp;factory)</code>
+<div class="block">Set the image factory to use when creating the Labeling.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setOutputLabeling-mpicbg.imglib.labeling.Labeling-">setOutputLabeling</a></span>(<a href="../../../../mpicbg/imglib/labeling/Labeling.html" title="class in mpicbg.imglib.labeling">Labeling</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&nbsp;labeling)</code>
+<div class="block">Supply a labeling that will be filled with labelings by the image.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setScale-double:A-">setScale</a></span>(double[]&nbsp;scale)</code>
+<div class="block">Set the scale of the objects to be found.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html#setStructuringElement-int:A:A-">setStructuringElement</a></span>(int[][]&nbsp;structuringElement)</code>
+<div class="block">Set the current structuring element.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="input">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>input</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">T</a> extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">T</a>&gt;&gt; input</pre>
+</li>
+</ul>
+<a name="output">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>output</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/labeling/Labeling.html" title="class in mpicbg.imglib.labeling">Labeling</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt; output</pre>
+</li>
+</ul>
+<a name="scale">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>scale</h4>
+<pre>protected&nbsp;double[] scale</pre>
+</li>
+</ul>
+<a name="sigma1">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sigma1</h4>
+<pre>protected&nbsp;double[] sigma1</pre>
+</li>
+</ul>
+<a name="sigma2">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sigma2</h4>
+<pre>protected&nbsp;double[] sigma2</pre>
+</li>
+</ul>
+<a name="names">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>names</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt; names</pre>
+</li>
+</ul>
+<a name="minBackgroundPeakHeight">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>minBackgroundPeakHeight</h4>
+<pre>protected&nbsp;double minBackgroundPeakHeight</pre>
+</li>
+</ul>
+<a name="minForegroundPeakHeight">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>minForegroundPeakHeight</h4>
+<pre>protected&nbsp;double minForegroundPeakHeight</pre>
+</li>
+</ul>
+<a name="wantsToQuantize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wantsToQuantize</h4>
+<pre>protected&nbsp;boolean wantsToQuantize</pre>
+</li>
+</ul>
+<a name="numQuanta">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numQuanta</h4>
+<pre>protected&nbsp;int numQuanta</pre>
+</li>
+</ul>
+<a name="structuringElement">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>structuringElement</h4>
+<pre>protected&nbsp;int[][] structuringElement</pre>
+</li>
+</ul>
+<a name="error_message">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>error_message</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> error_message</pre>
+</li>
+</ul>
+<a name="labelingFactory">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>labelingFactory</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&gt; labelingFactory</pre>
+</li>
+</ul>
+<a name="floatImage">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>floatImage</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt; floatImage</pre>
+</li>
+</ul>
+<a name="floatFactory">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>floatFactory</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt; floatFactory</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GradientWatershed-mpicbg.imglib.image.Image-double:A-double:A-double:A-java.util.Iterator-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GradientWatershed</h4>
+<pre>public&nbsp;GradientWatershed(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">T</a>&gt;&nbsp;input,
+                         double[]&nbsp;scale,
+                         double[]&nbsp;sigma1,
+                         double[]&nbsp;sigma2,
+                         <a href="http://javadoc.imagej.net/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&nbsp;names)</pre>
+<div class="block">Constructor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - The intensity image to be labeled</dd>
+<dd><code>scale</code> - the minimum distance between maxima of objects. Less
+ technically, this should be the diameter of the smallest object.</dd>
+<dd><code>sigma1</code> - the standard deviation for the larger smoothing. The
+ difference between sigma1 and sigma2 should be roughly the width
+ of the desired edge in the DoG image. A larger difference will obscure
+ small, faint edges.</dd>
+<dd><code>sigma2</code> - the standard deviation for the smaller smoothing. This
+ should be on the order of the largest insignificant feature in the image.</dd>
+<dd><code>names</code> - - an iterator that generates names of type L for the labels.
+ The iterator will waste the last name taken on the background label.
+ You can use AllConnectedComponents.getIntegerNames() as your name
+ generator if you don't care about names.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getStructuringElement--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStructuringElement</h4>
+<pre>public&nbsp;int[][]&nbsp;getStructuringElement()</pre>
+<div class="block">Get the current structuring element. The structuring element is an
+ array of coordinate tuple arrays where each coordinate is the offset
+ to a component to connect using the watershed algorithm.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the structuring element that defines connectivity</dd>
+</dl>
+</li>
+</ul>
+<a name="cloneStructuringElement-int:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cloneStructuringElement</h4>
+<pre>protected static&nbsp;int[][]&nbsp;cloneStructuringElement(int[][]&nbsp;structuringElement)</pre>
+</li>
+</ul>
+<a name="setStructuringElement-int:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStructuringElement</h4>
+<pre>public&nbsp;void&nbsp;setStructuringElement(int[][]&nbsp;structuringElement)</pre>
+<div class="block">Set the current structuring element. 
+ See <code>AllConnectedComponents.getStructuringElement</code> for a
+ discussion of the structuring element format. The structuring element
+ determines which pixels are considered neighbors of a newly-added
+ pixel in the watershed algorithm.
+ 
+ By default, an 8-connected (neighbors + diagonals) or its N-dimensional
+ analog structuring element is used.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>structuringElement</code> - - the new structuring element.</dd>
+</dl>
+</li>
+</ul>
+<a name="getScale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getScale</h4>
+<pre>public&nbsp;double[]&nbsp;getScale()</pre>
+<div class="block">Return the scale of the objects to be found. This should be the
+ diameter of a typical object. The scale is a N-dimensional vector
+ to take into account possible differences in axis scaling.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>- the scale</dd>
+</dl>
+</li>
+</ul>
+<a name="setScale-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setScale</h4>
+<pre>public&nbsp;void&nbsp;setScale(double[]&nbsp;scale)</pre>
+<div class="block">Set the scale of the objects to be found. This should be the diameter
+ of a typical object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="setMinBackgroundPeakHeight-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMinBackgroundPeakHeight</h4>
+<pre>public&nbsp;void&nbsp;setMinBackgroundPeakHeight(double&nbsp;height)</pre>
+<div class="block">The algorithm finds both foreground (local maxima) and
+ background peaks (local minima) to act as seeds for the watershed. 
+ This can result in false peaks in areas where there is little
+ difference in intensity. The MinBackgroundPeakHeight is the minimum difference
+ in intensity between the intensity at the peak and the intensity
+ of the strongest signal within 1/2 of the scale of the peak. 
+ The algorithm will ignore peaks if the intensity difference is
+ less than this minimum value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>height</code> - - the minimum intensity difference between the peak
+ and the highest intensity pixel in its neighborhood</dd>
+</dl>
+</li>
+</ul>
+<a name="getMinBackgroundPeakHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMinBackgroundPeakHeight</h4>
+<pre>public&nbsp;double&nbsp;getMinBackgroundPeakHeight()</pre>
+<div class="block">See setMinBackgroundPeakHeight</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current minimum background peak height.</dd>
+</dl>
+</li>
+</ul>
+<a name="setMinForegroundPeakHeight-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMinForegroundPeakHeight</h4>
+<pre>public&nbsp;void&nbsp;setMinForegroundPeakHeight(double&nbsp;height)</pre>
+<div class="block">The algorithm finds both foreground (local maxima) and
+ background peaks (local minima) to act as seeds for the watershed. 
+ This can result in false peaks in areas where there is little
+ difference in intensity. The MinForegroundPeakHeight is the minimum difference
+ in intensity between the intensity at the peak and the intensity
+ of the weakest signal within 1/2 of the scale of the peak. 
+ The algorithm will ignore peaks if the intensity difference is
+ less than this minimum value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>height</code> - - the minimum intensity difference between the peak
+ and the lowest intensity pixel in its neighborhood</dd>
+</dl>
+</li>
+</ul>
+<a name="getMinForegroundPeakHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMinForegroundPeakHeight</h4>
+<pre>public&nbsp;double&nbsp;getMinForegroundPeakHeight()</pre>
+<div class="block">See setMinForegroundPeakHeight</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current minimum background peak height.</dd>
+</dl>
+</li>
+</ul>
+<a name="enableQuantization-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>enableQuantization</h4>
+<pre>public&nbsp;void&nbsp;enableQuantization(boolean&nbsp;enable)</pre>
+<div class="block">The watershed repetitively evaluates the lowest intensity unlabeled pixel
+ starting from the seeds. If two pixels have identical intensities,
+ it picks the first one that was put on the list of pixels to process.
+ The effect of this is to propagate out from the seeds in a consistent
+ and predictable manner in regions that have identical intensities.
+ 
+ This setting enables or disables quantizing of the gradient image.
+ Quantizing divides the intensities in the image into a fixed number
+ of levels so that pixels of roughly the same intensity generally
+ have the same value and the algorithm will propagate the seeds in
+ those regions rather than rely on small and insignificant gradient
+ differences to direct the watershed operation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>enable</code> - - true to enable quantization, false to disable.</dd>
+</dl>
+</li>
+</ul>
+<a name="isQuantized--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isQuantized</h4>
+<pre>public&nbsp;boolean&nbsp;isQuantized()</pre>
+<div class="block">see enableQuantization</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a name="setNumQuanta-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumQuanta</h4>
+<pre>public&nbsp;void&nbsp;setNumQuanta(int&nbsp;numQuanta)</pre>
+<div class="block">See enableQuantization
+ You must enableQuantization as well as set the number of quanta.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numQuanta</code> - - the number of quanta in the quantization</dd>
+</dl>
+</li>
+</ul>
+<a name="setOutputImageFactory-mpicbg.imglib.image.ImageFactory-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutputImageFactory</h4>
+<pre>public&nbsp;void&nbsp;setOutputImageFactory(<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&nbsp;factory)</pre>
+<div class="block">Set the image factory to use when creating the Labeling.
+ 
+ By default, we use an image factory that has the same container
+ factory as the input image, but you can customize by supplying
+ an alternate factory.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>factory</code> - - a customized factory for generating the labeling
+ containers.</dd>
+</dl>
+</li>
+</ul>
+<a name="getOutputImageFactory--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutputImageFactory</h4>
+<pre>public&nbsp;<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&nbsp;getOutputImageFactory()</pre>
+</li>
+</ul>
+<a name="setOutputLabeling-mpicbg.imglib.labeling.Labeling-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutputLabeling</h4>
+<pre>public&nbsp;void&nbsp;setOutputLabeling(<a href="../../../../mpicbg/imglib/labeling/Labeling.html" title="class in mpicbg.imglib.labeling">Labeling</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&nbsp;labeling)</pre>
+<div class="block">Supply a labeling that will be filled with labelings by the image.
+ 
+ This method allows the caller to reuse a labeling container
+ rather than create one from scratch for each use.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - - a labeling container that will hold the labeling
+ of the image after process() is called.</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumQuanta--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumQuanta</h4>
+<pre>public&nbsp;int&nbsp;getNumQuanta()</pre>
+<div class="block">See setNumQuanta</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#checkInput--">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="checkDimensions-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkDimensions</h4>
+<pre>protected&nbsp;boolean&nbsp;checkDimensions(int[]&nbsp;array)</pre>
+</li>
+</ul>
+<a name="checkDimensions-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkDimensions</h4>
+<pre>protected&nbsp;boolean&nbsp;checkDimensions(double[]&nbsp;array)</pre>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#process--">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getFloatFactory--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloatFactory</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/ImageFactory.html" title="class in mpicbg.imglib.image">ImageFactory</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;&nbsp;getFloatFactory()</pre>
+</li>
+</ul>
+<a name="getFloatImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloatImage</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;&nbsp;getFloatImage()</pre>
+</li>
+</ul>
+<a name="getErrorMessage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getErrorMessage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getErrorMessage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#getErrorMessage--">getErrorMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getResult--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResult</h4>
+<pre>public&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&nbsp;getResult()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/OutputAlgorithm.html#getResult--">getResult</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/OutputAlgorithm.html" title="interface in mpicbg.imglib.algorithm">OutputAlgorithm</a>&lt;<a href="../../../../mpicbg/imglib/labeling/LabelingType.html" title="class in mpicbg.imglib.labeling">LabelingType</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/labeling/GradientWatershed.html" title="type parameter in GradientWatershed">L</a>&gt;&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="filterPeak-mpicbg.imglib.cursor.LocalizableByDimCursor-int:A-int:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>filterPeak</h4>
+<pre>protected&nbsp;boolean&nbsp;filterPeak(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;&nbsp;imageCursor,
+                             int[]&nbsp;peak,
+                             int[]&nbsp;dimensions,
+                             boolean&nbsp;find_minimum)</pre>
+</li>
+</ul>
+<a name="getGradientImage--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getGradientImage</h4>
+<pre>public&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/FloatType.html" title="class in mpicbg.imglib.type.numeric.real">FloatType</a>&gt;&nbsp;getGradientImage()</pre>
+<div class="block">Return a difference of gaussian image that measures the gradient
+ at a scale defined by the two sigmas of the gaussians.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image</code> - </dd>
+<dd><code>sigma1</code> - </dd>
+<dd><code>sigma2</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/labeling/BinaryInterpolation2D.html" title="class in mpicbg.imglib.algorithm.labeling"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../mpicbg/imglib/algorithm/labeling/Watershed.html" title="class in mpicbg.imglib.algorithm.labeling"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/labeling/GradientWatershed.html" target="_top">Frames</a></li>
+<li><a href="GradientWatershed.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

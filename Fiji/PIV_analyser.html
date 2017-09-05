@@ -1,0 +1,793 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PIV_analyser (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="PIV_analyser (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="deprecated-list.html">Deprecated</a></li>
+<li><a href="index-all.html">Index</a></li>
+<li><a href="help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="parObject.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="PIV_analyser.PairingParam.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="index.html?PIV_analyser.html" target="_top">Frames</a></li>
+<li><a href="PIV_analyser.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<h2 title="Class PIV_analyser" class="title">Class PIV_analyser</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>PIV_analyser</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true" title="class or interface in ij.plugin.filter">PlugInFilter</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">PIV_analyser</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true" title="class or interface in ij.plugin.filter">PlugInFilter</a></pre>
+<div class="block"><h3>PIV analysis</h3>
+ 
+ This plugin calculates the optic flow for each pair of images made with the
+ given stack. It does using the PIV method, which is the most basic technique
+ for optic flow, and is a block-based method. This a technique, mainly used in
+ acoustics or in fluids mechanics, that enables the measurements of a velocity
+ field in one plane, using imaging and image analysis. It can be seen as one
+ of the most simple pattern matching problem implementation.
+ <p>
+ See the book <cite>Raffael, M.; Willert, C. &amp; Kompenhans, J. (2007),
+ Particle Image Velocimetry: A Practical Guide (2nd ed.), Berlin:
+ Springer-Verlag, ISBN 978-3-540-72307-3 </cite>
+ <p>
+ PIV analysis is based on inferring in what direction and in what amount a
+ part of an image has moved between two successive instant. In the
+ aforementioned domains, a flow is visualized by seeding it with
+ light-reflecting particle (smoke in air, bubbles, glass beads in water, ...)
+ and imaged at two very close instant. The cross-correlation between parts of
+ the two images where pattern generated by particles can be seen is then used
+ to compute the velocity field.
+ <p>
+ The PIV algorithm is made of the following steps:
+ <ol>
+ <li>two images are acquired of the same object are acquired at two successive
+ instant;
+ <li>they are spliced in small pieces called interrogation windows;
+ <li>the cross-correlation between the two images is computed for each small
+ window;
+ <li>the peak in the resulting correlation image is searched for. The peak
+ location gives the displacement for which the two image parts look the best
+ alike, that is: the amount by which the second image has to be moved to look
+ like the first image the best;
+ <li>the velocity vector at this point is defined as the peak's position. This
+ assume that between the two successive instants, the image did not change too
+ much in content, but moved or deformed.
+ </ol>
+ 
+ 
+ <h3>Application to Life-science images</h3>
+ 
+ Here are two examples of its first applications in Biology:
+ <ul>
+ <li>comparing flows in a drosophila embryo during gastrulation in control
+ situations and after photo-ablation - <cite>Supatto, W.; Débarre, D. &amp;
+ Moulia, B. et al. (2005), "In vivo modulation of morphogenetic movements in
+ Drosophila embryos with femtosecond laser pulses", PNAS 102: 1047-1052, PMID
+ 15657140</cite>
+ 
+ <li>quantifying blood flow during cardiogenesis in zebrafish embryo - <cite>
+ Hove, J.R. (2003), "Intracardiac fluid forces are an essential epigenetic
+ factor for embryonic cardiogenesis", Nature 421: 172-177, PMID
+ 12520305</cite>
+ </ul>
+ 
+ For us, the main interest of this technique is that it allows the computation
+ of a velocity field without having to segment objects out of an image and
+ track them, which makes it particularly interesting when dealing with
+ brightfield or DIC images. The trade off is loss of precision, but also the
+ fact that you might get completely irrelevant vectors.
+ 
+ <h3>Algorithm</h3>
+ 
+ As stated before, this plugin implements a very naive and promotive
+ algorithm, without a sense of subtlety. It has a very pedestrian approach,
+ that make it slow. For each pixel away from the border of the image, a block
+ is extracted for the front image and the back image. The correlation matrix
+ is then calculated from these two blocks, and the result is analyzed to
+ produce a flow vector. This is a highly redundant process, for when the
+ algorithm moves to the next pixel to the right, the blocks content change
+ only a little (only one column is replaced actually, and the rest is shifted
+ left), but the whole correlation matrix is recalculated from scratch (a lot
+ of wasted CPU cycles).
+ <p>
+ Typically, on a MacBook (grey model, 2009), for an 8-bit stack with a window
+ size of 8x8, the plugin, the plugin can process a stack of 200x200 in
+ approximatively 2 seconds. I recommend downsampling the images, this would
+ diminish the density of results, but make this plugin affordable.
+ 
+ <h3>How to use</h3>
+ 
+ <h4>ROI selection</h4>
+ 
+ If you want to restrain the analysis to only a certain portion of the image,
+ select it in a ROI of any shape.
+ 
+ <h4>Image features</h4>
+ 
+ Tough you don't need to have traceable objects for PIV, there is still some
+ requirements for it.
+ <p>
+ PIV is based on a very simple pattern matching algorithm. This means that, to
+ be effective, there must be some patterns in your image. Typically, the dotty
+ structures of aggregate in a epi-fluorescence movie or the granularity that
+ can be see on a brightfield image will do. As a rule of thumb if you can see
+ something moving by eye, the PIV might be able to get it quantitatively;
+ otherwise not of course.
+ <p>
+ Also keep in mind that (so far) it works only for a 2D plane. With optical
+ sections, the algorithm might become puzzled by the appearance of grains
+ moving in the Z direction. Also with thick specimen imaged in brightfield:
+ the image of a dot deforms while moving in Z, which may lead to irrelevant
+ values.
+ 
+ <h4>Choice of the interrogation window size</h4>
+ 
+ To perform pattern matching, the image is spliced in small pieces. Since you
+ want to have clear patterns to match, it is a good idea to choose you
+ interrogation window size bigger than the image feature whose movement you
+ interested in.
+ <p>
+ Let us suppose that one one image, some structure can be found in the shape
+ of 'grains' whose size is about 10-15 pixels. To always get at least a full
+ one, a window of 32x32 pixels would be relevant.
+ 
+ <h4>Averaging</h4>
+ 
+ In fluid dynamics, velocity fields resulting from PIV are generally heavily
+ spatially filtered afterward. In these cases, each of this vector represents
+ velocity in a fluid for which the flow is generally spatially correlated on a
+ large scale, so filtering in the spatial domain makes sense.
+ <p>
+ One can recommend to filter temporally, that is: for every vector in the
+ field, replace its value by the moving average from a few frames before until
+ a few frames after. If your movie is oversampled temporally, that might be
+ effective in averaging outliers.
+ 
+ <h4>Filtering</h4>
+ The plugin returns also a stack made of the peak height and a tentative
+ signal/noise ratio for the analysis.
+ <p>
+ The peak height is just the value of the correlation peak for each pixels.
+ This can be used to mask irrelevant part of the result image. The algorithm
+ will be typically puzzled where there is no structure to correlate. In these
+ parts of the image, the peak height will be typically low; one can then
+ threshold the peak height image, and use it to mask the result image.
+ 
+ <h3>Version history</h3>
+ 
+ <ul>
+ <li> 1.0 - 18 April 2009 - First public release.
+ <li> 1.1 - 19 April 2009 - is now interruptible
+ <li> 1.2 - 20 April 2009 - is now multithreaded
+ </ul>
+ 
+ <h3>License: GPL</h3>
+ <p>
+ This program is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License 2 as published by the Free
+ Software Foundation.
+ <p>
+ This program is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details.
+ <p>
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ Place - Suite 330, Boston, MA 02111-1307, USA.</div>
+<dl>
+<dt><span class="simpleTagLabel">Version:</span></dt>
+<dd>1.1</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.PairingParam.html" title="class in &lt;Unnamed&gt;">PIV_analyser.PairingParam</a></span></code>
+<div class="block">Utility class used to store parameters specifying how to pair images 
+ for PIV analysis.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.PIVresult.html" title="class in &lt;Unnamed&gt;">PIV_analyser.PIVresult</a></span></code>
+<div class="block">Utility class used to store flow vector at each point.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.WINDOW_SIZE.html" title="enum in &lt;Unnamed&gt;">PIV_analyser.WINDOW_SIZE</a></span></code>
+<div class="block">Enumeration constant that stores all possible window size for this plugin.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.ij.plugin.filter.PlugInFilter">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;ij.plugin.filter.<a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true" title="class or interface in ij.plugin.filter">PlugInFilter</a></h3>
+<code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#CONVERT_TO_FLOAT" title="class or interface in ij.plugin.filter">CONVERT_TO_FLOAT</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_16" title="class or interface in ij.plugin.filter">DOES_16</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_32" title="class or interface in ij.plugin.filter">DOES_32</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_8C" title="class or interface in ij.plugin.filter">DOES_8C</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_8G" title="class or interface in ij.plugin.filter">DOES_8G</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_ALL" title="class or interface in ij.plugin.filter">DOES_ALL</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_RGB" title="class or interface in ij.plugin.filter">DOES_RGB</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DOES_STACKS" title="class or interface in ij.plugin.filter">DOES_STACKS</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#DONE" title="class or interface in ij.plugin.filter">DONE</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#FINAL_PROCESSING" title="class or interface in ij.plugin.filter">FINAL_PROCESSING</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#KEEP_THRESHOLD" title="class or interface in ij.plugin.filter">KEEP_THRESHOLD</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#NO_CHANGES" title="class or interface in ij.plugin.filter">NO_CHANGES</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#NO_IMAGE_REQUIRED" title="class or interface in ij.plugin.filter">NO_IMAGE_REQUIRED</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#NO_UNDO" title="class or interface in ij.plugin.filter">NO_UNDO</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#PARALLELIZE_IMAGES" title="class or interface in ij.plugin.filter">PARALLELIZE_IMAGES</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#PARALLELIZE_STACKS" title="class or interface in ij.plugin.filter">PARALLELIZE_STACKS</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#ROI_REQUIRED" title="class or interface in ij.plugin.filter">ROI_REQUIRED</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#SNAPSHOT" title="class or interface in ij.plugin.filter">SNAPSHOT</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#STACK_REQUIRED" title="class or interface in ij.plugin.filter">STACK_REQUIRED</a>, <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#SUPPORTS_MASKING" title="class or interface in ij.plugin.filter">SUPPORTS_MASKING</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="PIV_analyser.html#PIV_analyser--">PIV_analyser</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#colorCircle-ij.process.ColorProcessor-">colorCircle</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ColorProcessor.html?is-external=true" title="class or interface in ij.process">ColorProcessor</a>&nbsp;ip)</code>
+<div class="block">Generate a color circle that shows the mapping between color and
+ orientation, to use in conjunction with
+ <a href="PIV_analyser.html#colorVector-float-float-float-"><code>colorVector(float, float, float)</code></a>.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#colorVector-float-float-float-">colorVector</a></span>(float&nbsp;xs,
+           float&nbsp;ys,
+           float&nbsp;maxDistance)</code>
+<div class="block">Returns an int that encodes for a color describing the orientation of the
+ vector whose coordinates are given in argument.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#displayColorCircle-float-">displayColorCircle</a></span>(float&nbsp;maxDisplacement)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#exec-boolean-">exec</a></span>(boolean&nbsp;show_calculation)</code>
+<div class="block">Executes the calculation for the value passed to this plugin's fields.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="PIV_analyser.PIVresult.html" title="class in &lt;Unnamed&gt;">PIV_analyser.PIVresult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#findMax-ij.process.FHT-boolean-">findMax</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FHT.html?is-external=true" title="class or interface in ij.process">FHT</a>&nbsp;pcm,
+       boolean&nbsp;interpolate)</code>
+<div class="block">Finds the maximum location in a correlation matrix.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#getImagePairs--">getImagePairs</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#getInterpolation--">getInterpolation</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#getMax-float:A:A-">getMax</a></span>(float[][]&nbsp;arr)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#getWinsize--">getWinsize</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#run-ij.process.ImageProcessor-">run</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip)</code>
+<div class="block">Generate a generic dialog for the user to parameterize this plugin.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#setImagePairs-int:A:A-">setImagePairs</a></span>(int[][]&nbsp;image_pairs)</code>
+<div class="block">Specifies on what pair of images to do the analysis.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#setInterpolation-boolean-">setInterpolation</a></span>(boolean&nbsp;doit)</code>
+<div class="block">If set to true, the vector flow will be interpolated to get a sub-pixel
+ accuracy, using a Taylor expansion on a 3x3 neighborhood around the
+ maximum position.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#setup-java.lang.String-ij.ImagePlus-">setup</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg,
+     <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
+<div class="block">Sets the ImagePlus that this plugin should analyze.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#setWinsize-PIV_analyser.WINDOW_SIZE-">setWinsize</a></span>(<a href="PIV_analyser.WINDOW_SIZE.html" title="enum in &lt;Unnamed&gt;">PIV_analyser.WINDOW_SIZE</a>&nbsp;ws)</code>
+<div class="block">Sets the size of the interrogation window for the analysis.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="PIV_analyser.html#startAndJoin-java.lang.Thread:A-">startAndJoin</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</a>[]&nbsp;threads)</code>
+<div class="block">Start all given threads and wait on each of them until all are done.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="PIV_analyser--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PIV_analyser</h4>
+<pre>public&nbsp;PIV_analyser()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setup-java.lang.String-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setup</h4>
+<pre>public&nbsp;int&nbsp;setup(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg,
+                 <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
+<div class="block">Sets the ImagePlus that this plugin should analyze.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#setup-java.lang.String-ij.ImagePlus-" title="class or interface in ij.plugin.filter">setup</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true" title="class or interface in ij.plugin.filter">PlugInFilter</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arg</code> - Ignored</dd>
+<dd><code>imp</code> - The ImagePlus to analyze</dd>
+</dl>
+</li>
+</ul>
+<a name="run-ij.process.ImageProcessor-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip)</pre>
+<div class="block">Generate a generic dialog for the user to parameterize this plugin.
+ Should not be called, else by ImageJ menu itself.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true#run-ij.process.ImageProcessor-" title="class or interface in ij.plugin.filter">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/filter/PlugInFilter.html?is-external=true" title="class or interface in ij.plugin.filter">PlugInFilter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="exec-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>exec</h4>
+<pre>public final&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>[]&nbsp;exec(boolean&nbsp;show_calculation)</pre>
+<div class="block">Executes the calculation for the value passed to this plugin's fields.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>show_calculation</code> - If true, results will be displayed during calculation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of ImagePlus containing: the image for the U compoenent of 
+ vector flow, the V component, the correlation peak height, and the color
+ encoded direction of the flow.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="PIV_analyser.html#setup-java.lang.String-ij.ImagePlus-"><code>setup</code></a>, 
+<a href="PIV_analyser.html#setImagePairs-int:A:A-"><code>setImagePairs</code></a>, 
+<a href="PIV_analyser.html#setWinsize-PIV_analyser.WINDOW_SIZE-"><code>setWinsize</code></a>, 
+<a href="PIV_analyser.html#setInterpolation-boolean-"><code>setInterpolation</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="findMax-ij.process.FHT-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findMax</h4>
+<pre>public final&nbsp;<a href="PIV_analyser.PIVresult.html" title="class in &lt;Unnamed&gt;">PIV_analyser.PIVresult</a>&nbsp;findMax(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FHT.html?is-external=true" title="class or interface in ij.process">FHT</a>&nbsp;pcm,
+                                            boolean&nbsp;interpolate)</pre>
+<div class="block">Finds the maximum location in a correlation matrix. In the framework of
+ this plugin, this will give the flow vector.
+ <p>
+ If the flag <i>interpolate</i> is set to true, the maximum location will
+ be interpolated (to get sub-pixel accuracy) using a Taylor expansion over
+ a 3x3 neighborhood around the maxima.
+ The peak value (non-interpolated) is returned for futher filtering
+ purpose. So far, there is no estimation of the signal/noise ratio
+ calculated.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pcm</code> - The correlation matrix</dd>
+<dd><code>interpolate</code> - Boolean flag</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The maximum location and value</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="http://javadoc.imagej.net/ImageJ1/ij/process/FHT.html?is-external=true" title="class or interface in ij.process"><code>FHT</code></a>, 
+<a href="PIV_analyser.PIVresult.html" title="class in &lt;Unnamed&gt;"><code>PIV_analyser.PIVresult</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="colorVector-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>colorVector</h4>
+<pre>protected static final&nbsp;int&nbsp;colorVector(float&nbsp;xs,
+                                       float&nbsp;ys,
+                                       float&nbsp;maxDistance)</pre>
+<div class="block">Returns an int that encodes for a color describing the orientation of the
+ vector whose coordinates are given in argument. The luminance value
+ encodes the length of the vector normalized by a max value.
+ <p>
+ Taken from Stephan Saalfeld Optic_Flow.java plugin.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xs</code> - The X coordinate of the vector</dd>
+<dd><code>ys</code> - The Y coordinate of the vector</dd>
+<dd><code>maxDistance</code> - The max expected length of a vector</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an int encoding for a color</dd>
+</dl>
+</li>
+</ul>
+<a name="colorCircle-ij.process.ColorProcessor-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>colorCircle</h4>
+<pre>public static final&nbsp;void&nbsp;colorCircle(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ColorProcessor.html?is-external=true" title="class or interface in ij.process">ColorProcessor</a>&nbsp;ip)</pre>
+<div class="block">Generate a color circle that shows the mapping between color and
+ orientation, to use in conjunction with
+ <a href="PIV_analyser.html#colorVector-float-float-float-"><code>colorVector(float, float, float)</code></a>.
+ <p>
+ Taken and modified from Stephan Saalfeld Optic_Flow.java plugin.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ip</code> - The ImageProcessor to draw the color circle in</dd>
+</dl>
+</li>
+</ul>
+<a name="displayColorCircle-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>displayColorCircle</h4>
+<pre>public static final&nbsp;void&nbsp;displayColorCircle(float&nbsp;maxDisplacement)</pre>
+</li>
+</ul>
+<a name="startAndJoin-java.lang.Thread:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startAndJoin</h4>
+<pre>public static&nbsp;void&nbsp;startAndJoin(<a href="http://javadoc.imagej.net/Java/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</a>[]&nbsp;threads)</pre>
+<div class="block">Start all given threads and wait on each of them until all are done. 
+ From Stephan Preibisch's Multithreading.java class. See: 
+ http://repo.or.cz/w/trakem2.git?a=blob;f=mpi/fruitfly/general/MultiThreading.java;hb=HEAD</div>
+</li>
+</ul>
+<a name="getMax-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMax</h4>
+<pre>public static final&nbsp;float&nbsp;getMax(float[][]&nbsp;arr)</pre>
+</li>
+</ul>
+<a name="setImagePairs-int:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setImagePairs</h4>
+<pre>public&nbsp;void&nbsp;setImagePairs(int[][]&nbsp;image_pairs)</pre>
+<div class="block">Specifies on what pair of images to do the analysis. The
+ <i>image_pair</i> argument must be a nx2 int array, specifying the back
+ and front image for the n desired steps.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>image_pairs</code> - The nx2 array of int specifying the image pairs.</dd>
+</dl>
+</li>
+</ul>
+<a name="getImagePairs--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImagePairs</h4>
+<pre>public&nbsp;int[][]&nbsp;getImagePairs()</pre>
+</li>
+</ul>
+<a name="setWinsize-PIV_analyser.WINDOW_SIZE-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWinsize</h4>
+<pre>public&nbsp;void&nbsp;setWinsize(<a href="PIV_analyser.WINDOW_SIZE.html" title="enum in &lt;Unnamed&gt;">PIV_analyser.WINDOW_SIZE</a>&nbsp;ws)</pre>
+<div class="block">Sets the size of the interrogation window for the analysis. So far, only
+ square window of power of 2 size are allowed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ws</code> - The window size, specified by an enum</dd>
+</dl>
+</li>
+</ul>
+<a name="getWinsize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWinsize</h4>
+<pre>public&nbsp;int[]&nbsp;getWinsize()</pre>
+</li>
+</ul>
+<a name="setInterpolation-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInterpolation</h4>
+<pre>public&nbsp;void&nbsp;setInterpolation(boolean&nbsp;doit)</pre>
+<div class="block">If set to true, the vector flow will be interpolated to get a sub-pixel
+ accuracy, using a Taylor expansion on a 3x3 neighborhood around the
+ maximum position.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>doit</code> - The boolean flag</dd>
+</dl>
+</li>
+</ul>
+<a name="getInterpolation--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getInterpolation</h4>
+<pre>public&nbsp;boolean&nbsp;getInterpolation()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="deprecated-list.html">Deprecated</a></li>
+<li><a href="index-all.html">Index</a></li>
+<li><a href="help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="parObject.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="PIV_analyser.PairingParam.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="index.html?PIV_analyser.html" target="_top">Frames</a></li>
+<li><a href="PIV_analyser.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StainMatrix (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="StainMatrix (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../sc/fiji/colourDeconvolution/Colour_Deconvolution.html" title="class in sc.fiji.colourDeconvolution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?sc/fiji/colourDeconvolution/StainMatrix.html" target="_top">Frames</a></li>
+<li><a href="StainMatrix.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">sc.fiji.colourDeconvolution</div>
+<h2 title="Class StainMatrix" class="title">Class StainMatrix</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>sc.fiji.colourDeconvolution.StainMatrix</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">StainMatrix</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">This abstract class contains all the library methods to perform image deconvolution based on custom vector.
+ <code>
+ boolean showMatrix=false;//To not display the Matrix used to do the deconvolution in a popup at the end of the process
+ boolean hideLegend=true; //To not display the deconvolution legend in a popup at the end of the process
+ mt = new StainMatrix();  // Create a new Matrix_Custom
+ //Populate the Transformation Matrix
+ mt.getMODx()[0]=0.650;
+ mt.getMODy()[0]=0.704;
+ mt.getMODz()[0]=0.286;
+ mt.getMODx()[1]=0.072;
+ mt.getMODy()[1]=0.990;
+ mt.getMODz()[1]=0.105;
+ mt.getMODx()[2]=0.268;
+ mt.getMODy()[2]=0.570;
+ mt.getMODz()[2]=0.776; // Create a new MatrixTransformation corresponding to your stain.
+ //Compute the Deconvolution images and return a Stack array of three 8-bit images.
+ ImageStack[] stacks = mt.compute(showMatrix, hideLegend, imp);
+ //Then if you want to display them:
+ new ImagePlus(title+"-(Colour_1)",stack[0]).show();
+ new ImagePlus(title+"-(Colour_2)",stack[1]).show();
+ new ImagePlus(title+"-(Colour_3)",stack[2]).show();
+ </code>
+ If you want to perform it from a ROIs, you need to have 3 ROIs, one for each Colour:
+ boolean showMatrix=false; //To not display the Matrix used to do the deconvolution in a popup at the end of the process
+ boolean hideLegend=true; //To not display the deconvolution legend in a popup at the end of the process
+ // Create a new Custom Matrix Transformation and give 3 ROIs, one for each Colour
+ mt = new Matrix_Custom(rois, imp.getProcessor);// Create a new Matrix_Custom and populate the Transformation Matrix from the ROIs
+ //Compute the Deconvolution images and return a Stack array of three 8-bit images. 
+ ImageStack[] stacks = mt.compute(showMatrix, hideLegend, imp);
+ Then if you want to display them:
+ new ImagePlus(title+"-(Colour_1)",stack[0]).show();
+ new ImagePlus(title+"-(Colour_2)",stack[1]).show();
+ new ImagePlus(title+"-(Colour_3)",stack[2]).show();</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Benjamin Pavie</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#StainMatrix--">StainMatrix</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#compute-boolean-boolean-ij.ImagePlus-">compute</a></span>(boolean&nbsp;doIshow,
+       boolean&nbsp;hideLegend,
+       <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
+<div class="block">Compute the Deconvolution images and return a Stack array of three 8-bit
+ images.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#computeAndShow-boolean-boolean-ij.ImagePlus-">computeAndShow</a></span>(boolean&nbsp;doIshow,
+              boolean&nbsp;hideLegend,
+              <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
+<div class="block">Compute the Deconvolution images and display them</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#getMODx--">getMODx</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#getMODy--">getMODy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#getMODz--">getMODz</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#init-ij.gui.Roi:A-ij.process.ImageProcessor-java.lang.String-">init</a></span>(<a href="http://javadoc.imagej.net/Fiji/ij/gui/Roi.html?is-external=true" title="class or interface in ij.gui">Roi</a>[]&nbsp;rois,
+    <a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+    <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;stainName)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#init-java.lang.String-">init</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;line)</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#init-java.lang.String-double-double-double-double-double-double-double-double-double-">init</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;stainName,
+    double&nbsp;x0,
+    double&nbsp;y0,
+    double&nbsp;z0,
+    double&nbsp;x1,
+    double&nbsp;y1,
+    double&nbsp;z1,
+    double&nbsp;x2,
+    double&nbsp;y2,
+    double&nbsp;z2)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#setMODx-double:A-">setMODx</a></span>(double[]&nbsp;mODx)</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#setMODy-double:A-">setMODy</a></span>(double[]&nbsp;mODy)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/colourDeconvolution/StainMatrix.html#setMODz-double:A-">setMODz</a></span>(double[]&nbsp;mODz)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="StainMatrix--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>StainMatrix</h4>
+<pre>public&nbsp;StainMatrix()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="init-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;line)</pre>
+</li>
+</ul>
+<a name="init-java.lang.String-double-double-double-double-double-double-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;stainName,
+                 double&nbsp;x0,
+                 double&nbsp;y0,
+                 double&nbsp;z0,
+                 double&nbsp;x1,
+                 double&nbsp;y1,
+                 double&nbsp;z1,
+                 double&nbsp;x2,
+                 double&nbsp;y2,
+                 double&nbsp;z2)</pre>
+</li>
+</ul>
+<a name="getMODx--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMODx</h4>
+<pre>public&nbsp;double[]&nbsp;getMODx()</pre>
+</li>
+</ul>
+<a name="setMODx-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMODx</h4>
+<pre>public&nbsp;void&nbsp;setMODx(double[]&nbsp;mODx)</pre>
+</li>
+</ul>
+<a name="getMODy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMODy</h4>
+<pre>public&nbsp;double[]&nbsp;getMODy()</pre>
+</li>
+</ul>
+<a name="setMODy-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMODy</h4>
+<pre>public&nbsp;void&nbsp;setMODy(double[]&nbsp;mODy)</pre>
+</li>
+</ul>
+<a name="getMODz--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMODz</h4>
+<pre>public&nbsp;double[]&nbsp;getMODz()</pre>
+</li>
+</ul>
+<a name="setMODz-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMODz</h4>
+<pre>public&nbsp;void&nbsp;setMODz(double[]&nbsp;mODz)</pre>
+</li>
+</ul>
+<a name="computeAndShow-boolean-boolean-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeAndShow</h4>
+<pre>public&nbsp;void&nbsp;computeAndShow(boolean&nbsp;doIshow,
+                           boolean&nbsp;hideLegend,
+                           <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
+<div class="block">Compute the Deconvolution images and display them</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>doIshow:</code> - Show or not the matrix in a popup</dd>
+<dd><code>hideLegend:</code> - Hide or not the legend in a popup</dd>
+<dd><code>imp</code> - : The ImagePlus that will be deconvolved. RGB only.</dd>
+</dl>
+</li>
+</ul>
+<a name="compute-boolean-boolean-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compute</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>[]&nbsp;compute(boolean&nbsp;doIshow,
+                            boolean&nbsp;hideLegend,
+                            <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
+<div class="block">Compute the Deconvolution images and return a Stack array of three 8-bit
+ images. If the specimen is stained with a 2 colour scheme (such as H &amp;
+ E) the 3rd image represents the complimentary of the first two colours
+ (i.e. green).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>doIshow:</code> - Show or not the matrix in a popup</dd>
+<dd><code>hideLegend:</code> - Hide or not the legend in a popup</dd>
+<dd><code>imp</code> - : The ImagePlus that will be deconvolved. RGB only.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a Stack array of three 8-bit images</dd>
+</dl>
+</li>
+</ul>
+<a name="init-ij.gui.Roi:A-ij.process.ImageProcessor-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init(<a href="http://javadoc.imagej.net/Fiji/ij/gui/Roi.html?is-external=true" title="class or interface in ij.gui">Roi</a>[]&nbsp;rois,
+                 <a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+                 <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;stainName)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../sc/fiji/colourDeconvolution/Colour_Deconvolution.html" title="class in sc.fiji.colourDeconvolution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?sc/fiji/colourDeconvolution/StainMatrix.html" target="_top">Frames</a></li>
+<li><a href="StainMatrix.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

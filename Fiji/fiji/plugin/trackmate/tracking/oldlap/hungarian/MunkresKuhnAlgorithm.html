@@ -1,0 +1,812 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MunkresKuhnAlgorithm (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="MunkresKuhnAlgorithm (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/JonkerVolgenantAlgorithm.html" title="class in fiji.plugin.trackmate.tracking.oldlap.hungarian"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html" target="_top">Frames</a></li>
+<li><a href="MunkresKuhnAlgorithm.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.tracking.oldlap.hungarian</div>
+<h2 title="Class MunkresKuhnAlgorithm" class="title">Class MunkresKuhnAlgorithm</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.tracking.oldlap.hungarian.MunkresKuhnAlgorithm</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/AssignmentAlgorithm.html" title="interface in fiji.plugin.trackmate.tracking.oldlap.hungarian">AssignmentAlgorithm</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">MunkresKuhnAlgorithm</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/AssignmentAlgorithm.html" title="interface in fiji.plugin.trackmate.tracking.oldlap.hungarian">AssignmentAlgorithm</a></pre>
+<div class="block">This implements optimal matching between two sets given a weight matrix
+ (where the goal is to minimize the cumulative weight of the matches).
+ <p>
+ This implements the improved O(n^3) algorithm by Kuhn and Munkres, as
+ described here:
+
+ http://www.cse.ust.hk/~golin/COMP572/Notes/Matching.pdf
+ <p>
+ A few definitions: a labeling (AKA potential) of the vertices is a
+ real-valued function l such that weight(x, y) &lt;= l(x) + l(y). Those edges
+ whose weight is equal to the sum of the connected vertices' labelings are
+ called <u>tight</u>.
+ <p>
+ The equality graph of a labeling is the graph consisting of the tight edges
+ and the vertices they connect.
+ <p>
+ An alternating path is a path along edges that alternate between X and Y.
+ In the context of the Hungarian algorithm, all alternating paths begin and
+ end in X.
+ <p>
+ An alternating tree is a set of alternating paths all beginning in the same
+ root in X. In the context of this algorithm, all alternating trees visit
+ each node at most once, i.e. there is at most one incoming and one outgoing
+ edge for each vertex.
+ <p>
+ The alternating trees in the Hungarian algorithm have the property that all
+ edges from X to Y are <u>matches</u>, so that the current matching can be
+ extracted from the alternating tree by taking every other edge.
+
+ The basic idea is to evolve a labeling together with the matching. In each
+ iteration, either more vertices are matched, or the labeling is changed such
+ that its egality graph contains more edges useful for the matching (an edge
+ is not very useful if it connects two vertices which are already spanned by
+ the current alternating tree).
+ <p>
+ The details of this idea are described eloquently by András Frank in
+
+        http://www.cs.elte.hu/egres/tr/egres-04-14.pdf
+ <p>
+ Note that the term <i>exposed</i> simply means "unmatched", and the term
+ <i>weighted-covering</i> refers to the labeling, while <i>orienting
+ edges</i> denotes the building of the alternating tree:
+ <p>
+ "In a general step, Kuhn’s algorithm also has a weighted-covering π and
+ considers the subgraph Gπ of tight edges (on node set S ∪ T). Let M be a
+ matching in Gπ. Orient the elements of M from T to S while all other edges
+ of Gπ from S to T. Let RS ⊆ S and RT ⊆ T denote the set of nodes exposed by
+ M in S and in T, respectively. Let Z denote the set of nodes reachable in
+ the resulting digraph from RS by a directed path (that can be computed by a
+ breadth-first search, for example).
+ <p>
+  If RT ∩ Z is non-empty, then we have obtained a path P consisting of tight
+  edges that alternates in M. The symmetric difference of P and M is a
+  matching M of Gπ consisting of one more edge than M does. The procedure is
+  then iterated with this M. If RT ∩ Z is empty, then revise π as follows.
+  Let ∆ := min{π(u) + π(v) − c(uv): u ∈ Z ∩ S, v ∈ T − Z}. Decrease
+  (increase, respectively) the π-value of the elements of S ∩ Z (of T ∩ Z,
+  resp.) by ∆. The resulting π is also a weighted-covering. Construct the
+  subgraph of Gπ and iterate the procedure with π and with the unchanged M."
+ <p>
+ The first clever idea, therefore, is to find an alternating path in the
+ egality graph whose first (and likewise, whose last) edge is not a matching
+ but every other edge is. By inverting the meaning of those edges (matches
+ become non-matches, and vice versa), there will be one more match in the
+ end.
+ <p>
+ The second clever idea is that if no such alternating path can be found (in
+ the complete alternating tree using the current matching, starting from an
+ unmatched x as root), then the labeling can be adjusted easily to retain the
+ part of the egality graph which is covered by the tree, but adding one edge
+ to the egality graph such that the first idea catches.
+ <p>
+ Note that in the implementation, we follow the naming of the aforementioned
+ Matching.pdf, so our <i>S</i> is Frank's <i>S ∩ Z</i>, etc.
+ <p>
+ Also note that the secret to the O(n^3) instead of the original O(n^4) lies
+ in the use of the <i>slack</i> array, which is really just a cache for the
+ values of ∆.
+ <p>
+ Copyright 2011 (C) Johannes Schindelin
+ License: GPLv3</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Johannes Schindelin</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#labelingX">labelingX</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#labelingY">labelingY</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#M">M</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#matchingX">matchingX</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#matchingY">matchingY</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#N">N</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#NO_EDGE_VALUE">NO_EDGE_VALUE</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#previousX">previousX</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#queue">queue</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#queueEnd">queueEnd</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#queueStart">queueStart</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#S">S</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#slack">slack</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#slackX">slackX</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#T">T</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#weight">weight</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#x">x</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#MunkresKuhnAlgorithm--">MunkresKuhnAlgorithm</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#alternatingPath-int-">alternatingPath</a></span>(int&nbsp;y)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#augmentPath-int-">augmentPath</a></span>(int&nbsp;y)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#calculate--">calculate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#computeAssignments-double:A:A-">computeAssignments</a></span>(double[][]&nbsp;costMatrix)</code>
+<div class="block">Solve this assignment problem for the given cost matrix.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#equalityGraph--">equalityGraph</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#extendAlternatingTree-int-int-">extendAlternatingTree</a></span>(int&nbsp;y,
+                     int&nbsp;z)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#findUnmatchedX--">findUnmatchedX</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#findY--">findY</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#getTotalWeight--">getTotalWeight</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#initialize--">initialize</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#isTight-int-int-">isTight</a></span>(int&nbsp;x,
+       int&nbsp;y)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#startBreadthFirstSearch-int-">startBreadthFirstSearch</a></span>(int&nbsp;x)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#updateLabels--">updateLabels</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#verifyMatching--">verifyMatching</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#verifySlack--">verifySlack</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="NO_EDGE_VALUE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NO_EDGE_VALUE</h4>
+<pre>public final&nbsp;double NO_EDGE_VALUE</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../constant-values.html#fiji.plugin.trackmate.tracking.oldlap.hungarian.MunkresKuhnAlgorithm.NO_EDGE_VALUE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="M">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>M</h4>
+<pre>protected&nbsp;int M</pre>
+</li>
+</ul>
+<a name="N">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>N</h4>
+<pre>protected&nbsp;int N</pre>
+</li>
+</ul>
+<a name="weight">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>weight</h4>
+<pre>protected&nbsp;double[][] weight</pre>
+</li>
+</ul>
+<a name="matchingY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>matchingY</h4>
+<pre>protected&nbsp;int[] matchingY</pre>
+</li>
+</ul>
+<a name="matchingX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>matchingX</h4>
+<pre>protected&nbsp;int[] matchingX</pre>
+</li>
+</ul>
+<a name="labelingX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>labelingX</h4>
+<pre>protected&nbsp;double[] labelingX</pre>
+</li>
+</ul>
+<a name="labelingY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>labelingY</h4>
+<pre>protected&nbsp;double[] labelingY</pre>
+</li>
+</ul>
+<a name="slack">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>slack</h4>
+<pre>protected&nbsp;double[] slack</pre>
+</li>
+</ul>
+<a name="slackX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>slackX</h4>
+<pre>protected&nbsp;int[] slackX</pre>
+</li>
+</ul>
+<a name="S">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>S</h4>
+<pre>protected&nbsp;boolean[] S</pre>
+</li>
+</ul>
+<a name="T">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>T</h4>
+<pre>protected&nbsp;boolean[] T</pre>
+</li>
+</ul>
+<a name="previousX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>previousX</h4>
+<pre>protected&nbsp;int[] previousX</pre>
+</li>
+</ul>
+<a name="queue">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queue</h4>
+<pre>protected&nbsp;int[] queue</pre>
+</li>
+</ul>
+<a name="x">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>x</h4>
+<pre>protected&nbsp;int x</pre>
+</li>
+</ul>
+<a name="queueStart">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queueStart</h4>
+<pre>protected&nbsp;int queueStart</pre>
+</li>
+</ul>
+<a name="queueEnd">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>queueEnd</h4>
+<pre>protected&nbsp;int queueEnd</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="MunkresKuhnAlgorithm--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MunkresKuhnAlgorithm</h4>
+<pre>public&nbsp;MunkresKuhnAlgorithm()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="computeAssignments-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeAssignments</h4>
+<pre>public&nbsp;int[][]&nbsp;computeAssignments(double[][]&nbsp;costMatrix)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/AssignmentAlgorithm.html#computeAssignments-double:A:A-">AssignmentAlgorithm</a></code></span></div>
+<div class="block">Solve this assignment problem for the given cost matrix. 
+ <p>
+ The solutions are returned as a 2D array of int. Each solution is an int array
+ of 2 elements: 
+ <ol>
+        <li> the first int is the index of the source object (line index in the cost matrix)
+        <li> the second int is the index of the target object (column index in the cost matrix)
+ </ol></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/AssignmentAlgorithm.html#computeAssignments-double:A:A-">computeAssignments</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/AssignmentAlgorithm.html" title="interface in fiji.plugin.trackmate.tracking.oldlap.hungarian">AssignmentAlgorithm</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>costMatrix</code> - the cost matrix. It is modified heavily by implementation algorithms.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of solutions, as arrays of 2 ints.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTotalWeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTotalWeight</h4>
+<pre>public&nbsp;double&nbsp;getTotalWeight()</pre>
+</li>
+</ul>
+<a name="initialize--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initialize</h4>
+<pre>protected final&nbsp;void&nbsp;initialize()</pre>
+</li>
+</ul>
+<a name="calculate--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>calculate</h4>
+<pre>protected final&nbsp;void&nbsp;calculate()</pre>
+</li>
+</ul>
+<a name="findUnmatchedX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findUnmatchedX</h4>
+<pre>protected final&nbsp;int&nbsp;findUnmatchedX()</pre>
+</li>
+</ul>
+<a name="startBreadthFirstSearch-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startBreadthFirstSearch</h4>
+<pre>protected final&nbsp;void&nbsp;startBreadthFirstSearch(int&nbsp;x)</pre>
+</li>
+</ul>
+<a name="findY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findY</h4>
+<pre>protected final&nbsp;int&nbsp;findY()</pre>
+</li>
+</ul>
+<a name="isTight-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isTight</h4>
+<pre>protected final&nbsp;boolean&nbsp;isTight(int&nbsp;x,
+                                int&nbsp;y)</pre>
+</li>
+</ul>
+<a name="updateLabels--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateLabels</h4>
+<pre>protected final&nbsp;int&nbsp;updateLabels()</pre>
+</li>
+</ul>
+<a name="augmentPath-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>augmentPath</h4>
+<pre>protected final&nbsp;void&nbsp;augmentPath(int&nbsp;y)</pre>
+</li>
+</ul>
+<a name="extendAlternatingTree-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extendAlternatingTree</h4>
+<pre>protected final&nbsp;void&nbsp;extendAlternatingTree(int&nbsp;y,
+                                           int&nbsp;z)</pre>
+</li>
+</ul>
+<a name="verifySlack--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>verifySlack</h4>
+<pre>protected&nbsp;boolean&nbsp;verifySlack()</pre>
+</li>
+</ul>
+<a name="verifyMatching--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>verifyMatching</h4>
+<pre>protected&nbsp;boolean&nbsp;verifyMatching()</pre>
+</li>
+</ul>
+<a name="equalityGraph--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equalityGraph</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;equalityGraph()</pre>
+</li>
+</ul>
+<a name="alternatingPath-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>alternatingPath</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alternatingPath(int&nbsp;y)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/JonkerVolgenantAlgorithm.html" title="class in fiji.plugin.trackmate.tracking.oldlap.hungarian"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html" target="_top">Frames</a></li>
+<li><a href="MunkresKuhnAlgorithm.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

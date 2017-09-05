@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GeodesicActiveContour (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GeodesicActiveContour (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../levelsets/algorithm/FastMarchingBandElement.html" title="class in levelsets.algorithm"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../levelsets/algorithm/LevelSetFactory.html" title="class in levelsets.algorithm"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?levelsets/algorithm/GeodesicActiveContour.html" target="_top">Frames</a></li>
+<li><a href="GeodesicActiveContour.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">levelsets.algorithm</div>
+<h2 title="Class GeodesicActiveContour" class="title">Class GeodesicActiveContour</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../levelsets/algorithm/SparseFieldLevelSet.html" title="class in levelsets.algorithm">levelsets.algorithm.SparseFieldLevelSet</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">levelsets.algorithm.LevelSetImplementation</a></li>
+<li>
+<ul class="inheritance">
+<li>levelsets.algorithm.GeodesicActiveContour</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../levelsets/algorithm/StagedAlgorithm.html" title="interface in levelsets.algorithm">StagedAlgorithm</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">GeodesicActiveContour</span>
+extends <a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">LevelSetImplementation</a></pre>
+<div class="block">Implementation of the Geodesic active contour algorithm as described by 
+ Caselles et.al. (International Journal of Computer Vision 22:61)
+ and implemented in the in the Geodesic Active Contour class of ITK.
+ This class provides the getDeltaPhi function to the SparseFieldLevelSet:
+ deltaPhi = - DELTA_T * (advection * -gradient(g) * ADVECTION_FORCE + 
+                                                propagation * g * PROPAGATION_WEIGHT + 
+                                                curvature * g * CURVATURE_WEIGHT)
+ with:
+ g = 1 / (1 + (gradients[x][y][z]) * 1)
+ advection, curvature from the base functions (upwind scheme and mean curvature)
+ ADVECTION_FORCE, CURVATURE_EPSILON are weights.
+ 
+ Geodesic active contours can find Canny-type edges in the region of interest,
+ while also introducing a smoothing term
+ . 
+ This is a first effort that is not necessarily feature complete or the entirely correct. 
+ Use with caution.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#ALPHA_ADVECTION">ALPHA_ADVECTION</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#BETA_PROPAGATION">BETA_PROPAGATION</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#GAMMA_CURVATURE">GAMMA_CURVATURE</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#GAMMA_GREYSCALE">GAMMA_GREYSCALE</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[][][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#grad_gradients">grad_gradients</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[][][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#gradients">gradients</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#GREY_EPSILON">GREY_EPSILON</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#GREY_T">GREY_T</a></span></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.levelsets.algorithm.SparseFieldLevelSet">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;levelsets.algorithm.<a href="../../levelsets/algorithm/SparseFieldLevelSet.html" title="class in levelsets.algorithm">SparseFieldLevelSet</a></h3>
+<code><a href="../../levelsets/algorithm/SparseFieldLevelSet.html#CONVERGENCE_FACTOR">CONVERGENCE_FACTOR</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#CONVERGENCE_WEIGHT">CONVERGENCE_WEIGHT</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#DELTA_T">DELTA_T</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#img">img</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#init_state">init_state</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#INSIDE">INSIDE</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#INSIDE_FAR">INSIDE_FAR</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#needInit">needInit</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#OUTSIDE">OUTSIDE</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#OUTSIDE_FAR">OUTSIDE_FAR</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#phi">phi</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#seed_grey_zero">seed_grey_zero</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#seed_greyvalue">seed_greyvalue</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#source">source</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#STATE_ZERO">STATE_ZERO</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#zScale">zScale</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#GeodesicActiveContour-levelsets.ij.ImageContainer-levelsets.ij.ImageProgressContainer-levelsets.ij.StateContainer-double-double-double-double-double-">GeodesicActiveContour</a></span>(<a href="../../levelsets/ij/ImageContainer.html" title="class in levelsets.ij">ImageContainer</a>&nbsp;image,
+                     <a href="../../levelsets/ij/ImageProgressContainer.html" title="class in levelsets.ij">ImageProgressContainer</a>&nbsp;img_progress,
+                     <a href="../../levelsets/ij/StateContainer.html" title="class in levelsets.ij">StateContainer</a>&nbsp;init_state,
+                     double&nbsp;convergence,
+                     double&nbsp;advection,
+                     double&nbsp;prop,
+                     double&nbsp;curve,
+                     double&nbsp;grey)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected double[][][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#calculateGradients-double:A:A:A-">calculateGradients</a></span>(double[][][]&nbsp;grad_src)</code>
+<div class="block">Calculates grey value gradients of an input double array
+ Required for the grad_gradient calculation, taken from ImageContainer</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#getAdvectionTerm-int-int-int-">getAdvectionTerm</a></span>(int&nbsp;x,
+                int&nbsp;y,
+                int&nbsp;z)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#getCurvatureTerm-int-int-int-">getCurvatureTerm</a></span>(int&nbsp;x,
+                int&nbsp;y,
+                int&nbsp;z)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#getDeltaPhi-int-int-int-">getDeltaPhi</a></span>(int&nbsp;x,
+           int&nbsp;y,
+           int&nbsp;z)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#getPropagationTerm-int-int-int-">getPropagationTerm</a></span>(int&nbsp;x,
+                  int&nbsp;y,
+                  int&nbsp;z)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#init--">init</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../levelsets/algorithm/GeodesicActiveContour.html#updateDeltaT--">updateDeltaT</a></span>()</code>
+<div class="block">Updates the time step for numerical solution.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.levelsets.algorithm.LevelSetImplementation">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;levelsets.algorithm.<a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">LevelSetImplementation</a></h3>
+<code><a href="../../levelsets/algorithm/LevelSetImplementation.html#cleanup--">cleanup</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.levelsets.algorithm.SparseFieldLevelSet">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;levelsets.algorithm.<a href="../../levelsets/algorithm/SparseFieldLevelSet.html" title="class in levelsets.algorithm">SparseFieldLevelSet</a></h3>
+<code><a href="../../levelsets/algorithm/SparseFieldLevelSet.html#dumpStateMap-java.lang.String-">dumpStateMap</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#getStateContainer--">getStateContainer</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#getStateMap--">getStateMap</a>, <a href="../../levelsets/algorithm/SparseFieldLevelSet.html#step-int-">step</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="gradients">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gradients</h4>
+<pre>protected&nbsp;double[][][] gradients</pre>
+</li>
+</ul>
+<a name="grad_gradients">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>grad_gradients</h4>
+<pre>protected&nbsp;double[][][] grad_gradients</pre>
+</li>
+</ul>
+<a name="ALPHA_ADVECTION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALPHA_ADVECTION</h4>
+<pre>protected final&nbsp;double ALPHA_ADVECTION</pre>
+</li>
+</ul>
+<a name="BETA_PROPAGATION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BETA_PROPAGATION</h4>
+<pre>protected final&nbsp;double BETA_PROPAGATION</pre>
+</li>
+</ul>
+<a name="GAMMA_CURVATURE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GAMMA_CURVATURE</h4>
+<pre>protected final&nbsp;double GAMMA_CURVATURE</pre>
+</li>
+</ul>
+<a name="GAMMA_GREYSCALE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GAMMA_GREYSCALE</h4>
+<pre>protected final&nbsp;double GAMMA_GREYSCALE</pre>
+</li>
+</ul>
+<a name="GREY_EPSILON">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GREY_EPSILON</h4>
+<pre>protected final&nbsp;double GREY_EPSILON</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#levelsets.algorithm.GeodesicActiveContour.GREY_EPSILON">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GREY_T">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GREY_T</h4>
+<pre>protected final&nbsp;double GREY_T</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#levelsets.algorithm.GeodesicActiveContour.GREY_T">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GeodesicActiveContour-levelsets.ij.ImageContainer-levelsets.ij.ImageProgressContainer-levelsets.ij.StateContainer-double-double-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GeodesicActiveContour</h4>
+<pre>public&nbsp;GeodesicActiveContour(<a href="../../levelsets/ij/ImageContainer.html" title="class in levelsets.ij">ImageContainer</a>&nbsp;image,
+                             <a href="../../levelsets/ij/ImageProgressContainer.html" title="class in levelsets.ij">ImageProgressContainer</a>&nbsp;img_progress,
+                             <a href="../../levelsets/ij/StateContainer.html" title="class in levelsets.ij">StateContainer</a>&nbsp;init_state,
+                             double&nbsp;convergence,
+                             double&nbsp;advection,
+                             double&nbsp;prop,
+                             double&nbsp;curve,
+                             double&nbsp;grey)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="init--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>protected final&nbsp;void&nbsp;init()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../levelsets/algorithm/LevelSetImplementation.html#init--">init</a></code>&nbsp;in class&nbsp;<code><a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">LevelSetImplementation</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getDeltaPhi-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDeltaPhi</h4>
+<pre>protected final&nbsp;double&nbsp;getDeltaPhi(int&nbsp;x,
+                                   int&nbsp;y,
+                                   int&nbsp;z)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../levelsets/algorithm/LevelSetImplementation.html#getDeltaPhi-int-int-int-">getDeltaPhi</a></code>&nbsp;in class&nbsp;<code><a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">LevelSetImplementation</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="updateDeltaT--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateDeltaT</h4>
+<pre>protected final&nbsp;void&nbsp;updateDeltaT()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../levelsets/algorithm/LevelSetImplementation.html#updateDeltaT--">LevelSetImplementation</a></code></span></div>
+<div class="block">Updates the time step for numerical solution.
+ Abstract class forces the derived class to implement it.
+ If default settings are fine, just don't do anything</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../levelsets/algorithm/LevelSetImplementation.html#updateDeltaT--">updateDeltaT</a></code>&nbsp;in class&nbsp;<code><a href="../../levelsets/algorithm/LevelSetImplementation.html" title="class in levelsets.algorithm">LevelSetImplementation</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getAdvectionTerm-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAdvectionTerm</h4>
+<pre>protected final&nbsp;double&nbsp;getAdvectionTerm(int&nbsp;x,
+                                        int&nbsp;y,
+                                        int&nbsp;z)</pre>
+</li>
+</ul>
+<a name="getPropagationTerm-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPropagationTerm</h4>
+<pre>protected final&nbsp;double&nbsp;getPropagationTerm(int&nbsp;x,
+                                          int&nbsp;y,
+                                          int&nbsp;z)</pre>
+</li>
+</ul>
+<a name="getCurvatureTerm-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurvatureTerm</h4>
+<pre>protected final&nbsp;double&nbsp;getCurvatureTerm(int&nbsp;x,
+                                        int&nbsp;y,
+                                        int&nbsp;z)</pre>
+</li>
+</ul>
+<a name="calculateGradients-double:A:A:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>calculateGradients</h4>
+<pre>protected final&nbsp;double[][][]&nbsp;calculateGradients(double[][][]&nbsp;grad_src)</pre>
+<div class="block">Calculates grey value gradients of an input double array
+ Required for the grad_gradient calculation, taken from ImageContainer</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The result array</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+<li><a href="../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../levelsets/algorithm/FastMarchingBandElement.html" title="class in levelsets.algorithm"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../levelsets/algorithm/LevelSetFactory.html" title="class in levelsets.algorithm"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../index.html?levelsets/algorithm/GeodesicActiveContour.html" target="_top">Frames</a></li>
+<li><a href="GeodesicActiveContour.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

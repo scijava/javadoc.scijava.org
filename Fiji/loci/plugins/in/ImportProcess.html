@@ -1,0 +1,989 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ImportProcess (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ImportProcess (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../loci/plugins/in/ImporterPrompter.html" title="class in loci.plugins.in"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../loci/plugins/in/ImportStep.html" title="enum in loci.plugins.in"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?loci/plugins/in/ImportProcess.html" target="_top">Frames</a></li>
+<li><a href="ImportProcess.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">loci.plugins.in</div>
+<h2 title="Class ImportProcess" class="title">Class ImportProcess</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>loci.plugins.in.ImportProcess</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd>loci.common.StatusReporter</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">ImportProcess</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements loci.common.StatusReporter</pre>
+<div class="block">Manages the import preparation process.
+
+ After calling <a href="../../../loci/plugins/in/ImportProcess.html#execute--"><code>execute()</code></a>, the process will be ready to feed to
+ an <a href="../../../loci/plugins/in/ImagePlusReader.html" title="class in loci.plugins.in"><code>ImagePlusReader</code></a> to read in the actual <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>
+ objects.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected loci.common.Location</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#idLoc">idLoc</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#idName">idName</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/meta/IMetadata.html?is-external=true" title="class or interface in loci.formats.meta">IMetadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#meta">meta</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#ImportProcess--">ImportProcess</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#ImportProcess-loci.plugins.in.ImporterOptions-">ImportProcess</a></span>(<a href="../../../loci/plugins/in/ImporterOptions.html" title="class in loci.plugins.in">ImporterOptions</a>&nbsp;options)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#addStatusListener-loci.common.StatusListener-">addStatusListener</a></span>(loci.common.StatusListener&nbsp;l)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#cancel--">cancel</a></span>()</code>
+<div class="block">Cancels the import process.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#execute--">execute</a></span>()</code>
+<div class="block">Performs the import preparation process,
+ notifying status listeners at each step.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/IFormatReader.html?is-external=true" title="class or interface in loci.formats">IFormatReader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getBaseReader--">getBaseReader</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCBegin-int-">getCBegin</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCCount-int-">getCCount</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCEnd-int-">getCEnd</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ChannelFiller.html?is-external=true" title="class or interface in loci.formats">ChannelFiller</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getChannelFiller--">getChannelFiller</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ChannelSeparator.html?is-external=true" title="class or interface in loci.formats">ChannelSeparator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getChannelSeparator--">getChannelSeparator</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>loci.common.Region</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCropRegion-int-">getCropRegion</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCStep-int-">getCStep</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getCurrentFile--">getCurrentFile</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/DimensionSwapper.html?is-external=true" title="class or interface in loci.formats">DimensionSwapper</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getDimensionSwapper--">getDimensionSwapper</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/FileStitcher.html?is-external=true" title="class or interface in loci.formats">FileStitcher</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getFileStitcher--">getFileStitcher</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>loci.common.Location</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getIdLocation--">getIdLocation</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getIdName--">getIdName</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ImageReader.html?is-external=true" title="class or interface in loci.formats">ImageReader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getImageReader--">getImageReader</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getMemoryUsage--">getMemoryUsage</a></span>()</code>
+<div class="block">Gets a projection of required memory in bytes.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/MinMaxCalculator.html?is-external=true" title="class or interface in loci.formats">MinMaxCalculator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getMinMaxCalculator--">getMinMaxCalculator</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/meta/IMetadata.html?is-external=true" title="class or interface in loci.formats.meta">IMetadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getOMEMetadata--">getOMEMetadata</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getOMEXML--">getOMEXML</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code><a href="../../../loci/plugins/in/ImporterOptions.html" title="class in loci.plugins.in">ImporterOptions</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getOptions--">getOptions</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code><a href="../../../loci/plugins/in/ImporterMetadata.html" title="class in loci.plugins.in">ImporterMetadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getOriginalMetadata--">getOriginalMetadata</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#METADATA"><code>ImportStep.METADATA</code></a>.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code><a href="../../../loci/plugins/util/ImageProcessorReader.html" title="class in loci.plugins.util">ImageProcessorReader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getReader--">getReader</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getSeriesCount--">getSeriesCount</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getSeriesLabel-int-">getSeriesLabel</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getStackOrder--">getStackOrder</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getTBegin-int-">getTBegin</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getTCount-int-">getTCount</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getTEnd-int-">getTEnd</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getTStep-int-">getTStep</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code><a href="../../../loci/plugins/util/VirtualReader.html" title="class in loci.plugins.util">VirtualReader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getVirtualReader--">getVirtualReader</a></span>()</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getZBegin-int-">getZBegin</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getZCount-int-">getZCount</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getZEnd-int-">getZEnd</a></span>(int&nbsp;s)</code>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#getZStep-int-">getZStep</a></span>(int&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#isWindowless--">isWindowless</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#notifyListeners-loci.common.StatusEvent-">notifyListeners</a></span>(loci.common.StatusEvent&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#removeStatusListener-loci.common.StatusListener-">removeStatusListener</a></span>(loci.common.StatusListener&nbsp;l)</code>&nbsp;</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#setSeriesList-java.lang.String-">setSeriesList</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;seriesList)</code>&nbsp;</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/plugins/in/ImportProcess.html#wasCanceled--">wasCanceled</a></span>()</code>
+<div class="block">Gets whether the import process was canceled.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="idName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>idName</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> idName</pre>
+</li>
+</ul>
+<a name="idLoc">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>idLoc</h4>
+<pre>protected&nbsp;loci.common.Location idLoc</pre>
+</li>
+</ul>
+<a name="meta">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>meta</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/meta/IMetadata.html?is-external=true" title="class or interface in loci.formats.meta">IMetadata</a> meta</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ImportProcess--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ImportProcess</h4>
+<pre>public&nbsp;ImportProcess()
+              throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="ImportProcess-loci.plugins.in.ImporterOptions-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ImportProcess</h4>
+<pre>public&nbsp;ImportProcess(<a href="../../../loci/plugins/in/ImporterOptions.html" title="class in loci.plugins.in">ImporterOptions</a>&nbsp;options)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="execute--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>execute</h4>
+<pre>public&nbsp;boolean&nbsp;execute()
+                throws <a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/FormatException.html?is-external=true" title="class or interface in loci.formats">FormatException</a>,
+                       <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Performs the import preparation process,
+ notifying status listeners at each step.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the preparation process completed successfully.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/FormatException.html?is-external=true" title="class or interface in loci.formats">FormatException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="cancel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cancel</h4>
+<pre>public&nbsp;void&nbsp;cancel()</pre>
+<div class="block">Cancels the import process.</div>
+</li>
+</ul>
+<a name="wasCanceled--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wasCanceled</h4>
+<pre>public&nbsp;boolean&nbsp;wasCanceled()</pre>
+<div class="block">Gets whether the import process was canceled.</div>
+</li>
+</ul>
+<a name="getOptions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOptions</h4>
+<pre>public&nbsp;<a href="../../../loci/plugins/in/ImporterOptions.html" title="class in loci.plugins.in">ImporterOptions</a>&nbsp;getOptions()</pre>
+</li>
+</ul>
+<a name="isWindowless--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isWindowless</h4>
+<pre>public&nbsp;boolean&nbsp;isWindowless()</pre>
+</li>
+</ul>
+<a name="setSeriesList-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSeriesList</h4>
+<pre>public&nbsp;void&nbsp;setSeriesList(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;seriesList)</pre>
+</li>
+</ul>
+<a name="getBaseReader--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBaseReader</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/IFormatReader.html?is-external=true" title="class or interface in loci.formats">IFormatReader</a>&nbsp;getBaseReader()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getImageReader--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImageReader</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ImageReader.html?is-external=true" title="class or interface in loci.formats">ImageReader</a>&nbsp;getImageReader()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getIdName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdName</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getIdName()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getIdLocation--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdLocation</h4>
+<pre>public&nbsp;loci.common.Location&nbsp;getIdLocation()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getOMEMetadata--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOMEMetadata</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/meta/IMetadata.html?is-external=true" title="class or interface in loci.formats.meta">IMetadata</a>&nbsp;getOMEMetadata()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getOMEXML--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOMEXML</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getOMEXML()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#READER"><code>ImportStep.READER</code></a>.</div>
+</li>
+</ul>
+<a name="getFileStitcher--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFileStitcher</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/FileStitcher.html?is-external=true" title="class or interface in loci.formats">FileStitcher</a>&nbsp;getFileStitcher()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getChannelFiller--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChannelFiller</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ChannelFiller.html?is-external=true" title="class or interface in loci.formats">ChannelFiller</a>&nbsp;getChannelFiller()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getChannelSeparator--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChannelSeparator</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ChannelSeparator.html?is-external=true" title="class or interface in loci.formats">ChannelSeparator</a>&nbsp;getChannelSeparator()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getDimensionSwapper--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDimensionSwapper</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/DimensionSwapper.html?is-external=true" title="class or interface in loci.formats">DimensionSwapper</a>&nbsp;getDimensionSwapper()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getMinMaxCalculator--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMinMaxCalculator</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/MinMaxCalculator.html?is-external=true" title="class or interface in loci.formats">MinMaxCalculator</a>&nbsp;getMinMaxCalculator()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getVirtualReader--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVirtualReader</h4>
+<pre>public&nbsp;<a href="../../../loci/plugins/util/VirtualReader.html" title="class in loci.plugins.util">VirtualReader</a>&nbsp;getVirtualReader()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getReader--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReader</h4>
+<pre>public&nbsp;<a href="../../../loci/plugins/util/ImageProcessorReader.html" title="class in loci.plugins.util">ImageProcessorReader</a>&nbsp;getReader()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getCurrentFile--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentFile</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCurrentFile()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getSeriesCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSeriesCount</h4>
+<pre>public&nbsp;int&nbsp;getSeriesCount()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getSeriesLabel-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSeriesLabel</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSeriesLabel(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getStackOrder--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStackOrder</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getStackOrder()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getCBegin-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCBegin</h4>
+<pre>public&nbsp;int&nbsp;getCBegin(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCEnd-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCEnd</h4>
+<pre>public&nbsp;int&nbsp;getCEnd(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getCStep-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCStep</h4>
+<pre>public&nbsp;int&nbsp;getCStep(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getZBegin-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getZBegin</h4>
+<pre>public&nbsp;int&nbsp;getZBegin(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getZEnd-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getZEnd</h4>
+<pre>public&nbsp;int&nbsp;getZEnd(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getZStep-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getZStep</h4>
+<pre>public&nbsp;int&nbsp;getZStep(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getTBegin-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTBegin</h4>
+<pre>public&nbsp;int&nbsp;getTBegin(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getTEnd-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTEnd</h4>
+<pre>public&nbsp;int&nbsp;getTEnd(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getTStep-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTStep</h4>
+<pre>public&nbsp;int&nbsp;getTStep(int&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCropRegion-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCropRegion</h4>
+<pre>public&nbsp;loci.common.Region&nbsp;getCropRegion(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#STACK"><code>ImportStep.STACK</code></a>.</div>
+</li>
+</ul>
+<a name="getCCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCCount</h4>
+<pre>public&nbsp;int&nbsp;getCCount(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</li>
+</ul>
+<a name="getZCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getZCount</h4>
+<pre>public&nbsp;int&nbsp;getZCount(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</li>
+</ul>
+<a name="getTCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTCount</h4>
+<pre>public&nbsp;int&nbsp;getTCount(int&nbsp;s)</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</li>
+</ul>
+<a name="getMemoryUsage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMemoryUsage</h4>
+<pre>public&nbsp;long&nbsp;getMemoryUsage()</pre>
+<div class="block">Gets a projection of required memory in bytes.
+ Valid only after <a href="../../../loci/plugins/in/ImportStep.html#SERIES"><code>ImportStep.SERIES</code></a>.</div>
+</li>
+</ul>
+<a name="getOriginalMetadata--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalMetadata</h4>
+<pre>public&nbsp;<a href="../../../loci/plugins/in/ImporterMetadata.html" title="class in loci.plugins.in">ImporterMetadata</a>&nbsp;getOriginalMetadata()</pre>
+<div class="block">Valid only after <a href="../../../loci/plugins/in/ImportStep.html#METADATA"><code>ImportStep.METADATA</code></a>.</div>
+</li>
+</ul>
+<a name="addStatusListener-loci.common.StatusListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addStatusListener</h4>
+<pre>public&nbsp;void&nbsp;addStatusListener(loci.common.StatusListener&nbsp;l)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>addStatusListener</code>&nbsp;in interface&nbsp;<code>loci.common.StatusReporter</code></dd>
+</dl>
+</li>
+</ul>
+<a name="removeStatusListener-loci.common.StatusListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeStatusListener</h4>
+<pre>public&nbsp;void&nbsp;removeStatusListener(loci.common.StatusListener&nbsp;l)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>removeStatusListener</code>&nbsp;in interface&nbsp;<code>loci.common.StatusReporter</code></dd>
+</dl>
+</li>
+</ul>
+<a name="notifyListeners-loci.common.StatusEvent-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>notifyListeners</h4>
+<pre>public&nbsp;void&nbsp;notifyListeners(loci.common.StatusEvent&nbsp;e)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>notifyListeners</code>&nbsp;in interface&nbsp;<code>loci.common.StatusReporter</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../loci/plugins/in/ImporterPrompter.html" title="class in loci.plugins.in"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../loci/plugins/in/ImportStep.html" title="enum in loci.plugins.in"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?loci/plugins/in/ImportProcess.html" target="_top">Frames</a></li>
+<li><a href="ImportProcess.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

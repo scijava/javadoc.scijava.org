@@ -1,0 +1,622 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BIJpca (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+<script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BIJpca (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../bijnum/BIJmi.html" title="class in bijnum"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../bijnum/BIJpowell.html" title="class in bijnum"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?bijnum/BIJpca.html" target="_top">Frames</a></li>
+<li><a href="BIJpca.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">bijnum</div>
+<h2 title="Class BIJpca" class="title">Class BIJpca</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>bijnum.BIJpca</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../bijnum/BIJgifa.html" title="class in bijnum">BIJgifa</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">BIJpca</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Principal component analysis (PCA) on 2-D sequences (ie. image sequences).
+ Image sequences are organized as matrix with each image as a column vector.
+ This is how you do it (Snapshot method by Sirovich et al.):
+ <pre>
+ ' is transpose
+ cov = a * a'
+ eiv = eigen(cov)
+ sort eiv system by eigenvalues, largest first.
+ diag = diagonal matrix of eigevnvalues
+ psi = a' * eigenvectors * diag
+ eigenimages = psi'
+ </pre>
+
+ (c) 2003 Michael Abramoff. All rights reserved.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#a">a</a></span></code>
+<div class="block">The matrix of images.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#an">an</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#eigenimages">eigenimages</a></span></code>
+<div class="block">The matrix of eigenimages, i.e.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#eigenvalues">eigenvalues</a></span></code>
+<div class="block">The eigenvalues of the transpose of the covariance matrix.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#eigenvectors">eigenvectors</a></span></code>
+<div class="block">The eigenvectors of the transpose of the covariance matrix.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#totalVariance">totalVariance</a></span></code>
+<div class="block">Total accumulative variance.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#BIJpca--">BIJpca</a></span>()</code>
+<div class="block">Set up PCA.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#BIJpca-float:A:A-float:A:A-">BIJpca</a></span>(float[][]&nbsp;eigenimages,
+      float[][]&nbsp;eigenvectors)</code>
+<div class="block">Set up PCA for already computed coordinates and eigenimages.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#compute-float:A:A-">compute</a></span>(float[][]&nbsp;a)</code>
+<div class="block">Compute the PCA.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#computeEigenimages--">computeEigenimages</a></span>()</code>
+<div class="block">Compute the spatial eigenimages, i.e.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#computeLinearCombination--">computeLinearCombination</a></span>()</code>
+<div class="block">Compute the linear combination of all eigenimages.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#computeLinearCombination-float:A-">computeLinearCombination</a></span>(float[]&nbsp;factor)</code>
+<div class="block">Compute a (compacted) linear combination of the imagevectors, using only with factor set to 1.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#computeProjection-float:A-">computeProjection</a></span>(float[]&nbsp;v)</code>
+<div class="block">Compute the projection of a vector v onto the set of eigenimages.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>float[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#getCoordinates--">getCoordinates</a></span>()</code>
+<div class="block">Get the eigenvector coordinate matrix an as a matrix.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#getCoordinatesImage--">getCoordinatesImage</a></span>()</code>
+<div class="block">Get the eigenvector coordinate matrix an as an image (a float []) of width x height = eigenvectors.length.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#getEigenImage-int-">getEigenImage</a></span>(int&nbsp;j)</code>
+<div class="block">Compute the normalized image for eigenimage j so that it can be displayed with the same
+ gray-scale as all others.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#getTotalVariance--">getTotalVariance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>float[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bijnum/BIJpca.html#varianceSpectrum--">varianceSpectrum</a></span>()</code>
+<div class="block">Compute the accumulated variance spectrum.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="eigenimages">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eigenimages</h4>
+<pre>public&nbsp;float[][] eigenimages</pre>
+<div class="block">The matrix of eigenimages, i.e. the eigenvectors of the covariance matrix.
+ Each eigenimage is one of the columnvectors.
+ In some literature, these are known as the psi(n), or
+ column vectors of spatial principal components.</div>
+</li>
+</ul>
+<a name="eigenvalues">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eigenvalues</h4>
+<pre>public&nbsp;float[] eigenvalues</pre>
+<div class="block">The eigenvalues of the transpose of the covariance matrix.</div>
+</li>
+</ul>
+<a name="eigenvectors">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eigenvectors</h4>
+<pre>public&nbsp;float[][] eigenvectors</pre>
+<div class="block">The eigenvectors of the transpose of the covariance matrix.</div>
+</li>
+</ul>
+<a name="an">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>an</h4>
+<pre>protected&nbsp;float[][] an</pre>
+</li>
+</ul>
+<a name="a">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>a</h4>
+<pre>public&nbsp;float[][] a</pre>
+<div class="block">The matrix of images.</div>
+</li>
+</ul>
+<a name="totalVariance">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>totalVariance</h4>
+<pre>public&nbsp;double totalVariance</pre>
+<div class="block">Total accumulative variance.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BIJpca--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BIJpca</h4>
+<pre>public&nbsp;BIJpca()</pre>
+<div class="block">Set up PCA.</div>
+</li>
+</ul>
+<a name="BIJpca-float:A:A-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BIJpca</h4>
+<pre>public&nbsp;BIJpca(float[][]&nbsp;eigenimages,
+              float[][]&nbsp;eigenvectors)</pre>
+<div class="block">Set up PCA for already computed coordinates and eigenimages.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="compute-float:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compute</h4>
+<pre>public&nbsp;float[][]&nbsp;compute(float[][]&nbsp;a)
+                  throws <a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Compute the PCA.
+ a is modified. a is a '3-D' array of images, organized as the columns
+ of a 2-D matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>a</code> - a matrix of float[][]. column size should be greater than row size.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>psi, the eigenimages in corrected format (sorted by eigenvalue).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="computeEigenimages--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeEigenimages</h4>
+<pre>protected&nbsp;float[][]&nbsp;computeEigenimages()</pre>
+<div class="block">Compute the spatial eigenimages, i.e. the eigenvectors that belong to a,
+ from the eigenvectors/eigenvalues from the eigensystem of a'.
+ Uses at, eigenvectors and eigenvalues as computed in compute().
+ In some literature, the eigenimages (eigenvectors) are know as the psi(n)(x).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the eigenimages (eigenvectors) as a float[][].</dd>
+</dl>
+</li>
+</ul>
+<a name="computeProjection-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeProjection</h4>
+<pre>public&nbsp;float[]&nbsp;computeProjection(float[]&nbsp;v)
+                          throws <a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Compute the projection of a vector v onto the set of eigenimages.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>v</code> - a float[] vector (an image).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="computeLinearCombination--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeLinearCombination</h4>
+<pre>public&nbsp;float[][]&nbsp;computeLinearCombination()</pre>
+<div class="block">Compute the linear combination of all eigenimages. Should be the same as original sequence.
+ f = SUM(an-i psi-i)</div>
+</li>
+</ul>
+<a name="getEigenImage-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEigenImage</h4>
+<pre>public&nbsp;float[]&nbsp;getEigenImage(int&nbsp;j)</pre>
+<div class="block">Compute the normalized image for eigenimage j so that it can be displayed with the same
+ gray-scale as all others.</div>
+</li>
+</ul>
+<a name="getCoordinates--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoordinates</h4>
+<pre>public&nbsp;float[][]&nbsp;getCoordinates()</pre>
+<div class="block">Get the eigenvector coordinate matrix an as a matrix.
+ The coordinates are not the same as the eigenvectors of a' because internally a different format is used
+ to save time for computations.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the coordinates matrix as a float[][]</dd>
+</dl>
+</li>
+</ul>
+<a name="getCoordinatesImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoordinatesImage</h4>
+<pre>public&nbsp;float[]&nbsp;getCoordinatesImage()</pre>
+<div class="block">Get the eigenvector coordinate matrix an as an image (a float []) of width x height = eigenvectors.length.
+ The coordinates are not the same as the eigenvectors of a' because internally a different format is used
+ to save time for computations.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the coordinates matrix as a float[][]</dd>
+</dl>
+</li>
+</ul>
+<a name="computeLinearCombination-float:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeLinearCombination</h4>
+<pre>public&nbsp;float[][]&nbsp;computeLinearCombination(float[]&nbsp;factor)</pre>
+<div class="block">Compute a (compacted) linear combination of the imagevectors, using only with factor set to 1.
+ f = SUM(factor-i an-i psi-i)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>factor</code> - the eigenvector coordinates (an) for the desired linear combination.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the linear combination as a vector.</dd>
+</dl>
+</li>
+</ul>
+<a name="varianceSpectrum--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>varianceSpectrum</h4>
+<pre>public&nbsp;float[]&nbsp;varianceSpectrum()</pre>
+<div class="block">Compute the accumulated variance spectrum.
+ The values are the additional variance that each component explains.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the variance spectrum as a float[].</dd>
+</dl>
+</li>
+</ul>
+<a name="getTotalVariance--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getTotalVariance</h4>
+<pre>public&nbsp;double&nbsp;getTotalVariance()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../bijnum/BIJmi.html" title="class in bijnum"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../bijnum/BIJpowell.html" title="class in bijnum"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?bijnum/BIJpca.html" target="_top">Frames</a></li>
+<li><a href="BIJpca.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

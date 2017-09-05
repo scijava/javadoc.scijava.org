@@ -1,0 +1,1834 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BSplineModel (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+<script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BSplineModel (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../bunwarpj/bUnwarpJ_.html" title="class in bunwarpj"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?bunwarpj/BSplineModel.html" target="_top">Frames</a></li>
+<li><a href="BSplineModel.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">bunwarpj</div>
+<h2 title="Class BSplineModel" class="title">Class BSplineModel</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>bunwarpj.BSplineModel</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">BSplineModel</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></pre>
+<div class="block">Class for representing the images and the deformations by cubic B-splines:
+ <p>
+ <ul>
+                <li>Both, images and deformations, are stored in multi-resolution pyramids.</li>
+                <li>The pyramids are not calculated in the constructors but in the method <code>startPyramids</code>.</li>
+                <li>For images, even if they are set to be scaled, the original image information is stored.</li>
+                <li>The information corresponding to the output window size is also stored at any time.</li>
+ </ul></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#MAX_OUTPUT_SIZE">MAX_OUTPUT_SIZE</a></span></code>
+<div class="block">maximum output window dimensions</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#prec_xIndex">prec_xIndex</a></span></code>
+<div class="block">precomputed x index</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#prec_yIndex">prec_yIndex</a></span></code>
+<div class="block">precomputed y index</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#xIndex">xIndex</a></span></code>
+<div class="block">x index</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#yIndex">yIndex</a></span></code>
+<div class="block">y index</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#BSplineModel-double:A:A-">BSplineModel</a></span>(double[][]&nbsp;c)</code>
+<div class="block">Initialize the B-spline model from a set of coefficients.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#BSplineModel-double:A:A-boolean-">BSplineModel</a></span>(double[][]&nbsp;img,
+            boolean&nbsp;isTarget)</code>
+<div class="block">The same as before, but take the image from an array.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#BSplineModel-double:A-int-int-int-">BSplineModel</a></span>(double[]&nbsp;c,
+            int&nbsp;Ydim,
+            int&nbsp;Xdim,
+            int&nbsp;offset)</code>
+<div class="block">Initialize the B-spline model from a set of coefficients.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#BSplineModel-ij.process.ImageProcessor-boolean-int-">BSplineModel</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+            boolean&nbsp;isTarget,
+            int&nbsp;maxImageSubsamplingFactor)</code>
+<div class="block">Create image model for image processor: image and coefficient pyramid.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#BSplineModel-int-int-int-">BSplineModel</a></span>(int&nbsp;width,
+            int&nbsp;height,
+            int&nbsp;maxImageSubsamplingFactor)</code>
+<div class="block">Create image model without image pixel information (for landmark only 
+ registration): empty image and full coefficient pyramid.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#clearPyramids--">clearPyramids</a></span>()</code>
+<div class="block">Clear the pyramid.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getCoefficients--">getCoefficients</a></span>()</code>
+<div class="block">Get b-spline coefficients.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getCurrentDepth--">getCurrentDepth</a></span>()</code>
+<div class="block">Get current depth.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getCurrentHeight--">getCurrentHeight</a></span>()</code>
+<div class="block">Get current height.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getCurrentImage--">getCurrentImage</a></span>()</code>
+<div class="block">Get current image.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getCurrentWidth--">getCurrentWidth</a></span>()</code>
+<div class="block">Get current width.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getFactorHeight--">getFactorHeight</a></span>()</code>
+<div class="block">Get factor height.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getFactorWidth--">getFactorWidth</a></span>()</code>
+<div class="block">Get fact or width.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getHeight--">getHeight</a></span>()</code>
+<div class="block">Get height.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getImage--">getImage</a></span>()</code>
+<div class="block">Get image (at the maximum resolution size determined by the scaling).</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getOriginalImage--">getOriginalImage</a></span>()</code>
+<div class="block">Get original image.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getOriginalImageHeight--">getOriginalImageHeight</a></span>()</code>
+<div class="block">Get original image height.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getOriginalImageWidth--">getOriginalImageWidth</a></span>()</code>
+<div class="block">Get original image width.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getPixelValFromPyramid-int-int-">getPixelValFromPyramid</a></span>(int&nbsp;x,
+                      int&nbsp;y)</code>
+<div class="block">Get the pixel value from the image pyramid.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getPyramidDepth--">getPyramidDepth</a></span>()</code>
+<div class="block">Get pyramid depth.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getSmallestHeight--">getSmallestHeight</a></span>()</code>
+<div class="block">Get smallest height.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getSmallestWidth--">getSmallestWidth</a></span>()</code>
+<div class="block">Get smallest width.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getSubImage--">getSubImage</a></span>()</code>
+<div class="block">Get subsampled output image.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getSubsamplingFactor--">getSubsamplingFactor</a></span>()</code>
+<div class="block">Get sub-sampling factor at highest resolution</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getThread--">getThread</a></span>()</code>
+<div class="block">Get thread.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightDx-int-int-">getWeightDx</a></span>(int&nbsp;l,
+           int&nbsp;m)</code>
+<div class="block">Get weight dx.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightDxDx-int-int-">getWeightDxDx</a></span>(int&nbsp;l,
+             int&nbsp;m)</code>
+<div class="block">Get weight dxdx.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightDxDy-int-int-">getWeightDxDy</a></span>(int&nbsp;l,
+             int&nbsp;m)</code>
+<div class="block">Get weight dxdy.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightDy-int-int-">getWeightDy</a></span>(int&nbsp;l,
+           int&nbsp;m)</code>
+<div class="block">Get weight dy.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightDyDy-int-int-">getWeightDyDy</a></span>(int&nbsp;l,
+             int&nbsp;m)</code>
+<div class="block">Get weight dydy.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWeightI-int-int-">getWeightI</a></span>(int&nbsp;l,
+          int&nbsp;m)</code>
+<div class="block">Get image coefficient weight.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#getWidth--">getWidth</a></span>()</code>
+<div class="block">Get width.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateD-double:A-">interpolateD</a></span>(double[]&nbsp;D)</code>
+<div class="block">Interpolate the X and Y derivatives of the image at a
+ given point.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateD2-double:A-">interpolateD2</a></span>(double[]&nbsp;D2)</code>
+<div class="block">Interpolate the XY, XX and YY derivatives of the image at a
+ given point.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateDx--">interpolateDx</a></span>()</code>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateDxDx--">interpolateDxDx</a></span>()</code>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateDxDy--">interpolateDxDy</a></span>()</code>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateDy--">interpolateDy</a></span>()</code>
+<div class="block">Interpolate the Y derivative of the image at a given point.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateDyDy--">interpolateDyDy</a></span>()</code>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#interpolateI--">interpolateI</a></span>()</code>
+<div class="block">Interpolate the image at a given point.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#isFinest--">isFinest</a></span>()</code>
+<div class="block">Check if the coefficients pyramid is empty.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#popFromPyramid--">popFromPyramid</a></span>()</code>
+<div class="block">Pop one element from the coefficients and image pyramids.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightDx-int-int-int-int-">precomputed_getWeightDx</a></span>(int&nbsp;l,
+                       int&nbsp;m,
+                       int&nbsp;u,
+                       int&nbsp;v)</code>
+<div class="block">Get precomputed weight dx.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightDxDx-int-int-int-int-">precomputed_getWeightDxDx</a></span>(int&nbsp;l,
+                         int&nbsp;m,
+                         int&nbsp;u,
+                         int&nbsp;v)</code>
+<div class="block">Get precomputed weight dxdx</div>
+</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightDxDy-int-int-int-int-">precomputed_getWeightDxDy</a></span>(int&nbsp;l,
+                         int&nbsp;m,
+                         int&nbsp;u,
+                         int&nbsp;v)</code>
+<div class="block">Get precomputed weight dxdy</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightDy-int-int-int-int-">precomputed_getWeightDy</a></span>(int&nbsp;l,
+                       int&nbsp;m,
+                       int&nbsp;u,
+                       int&nbsp;v)</code>
+<div class="block">Get precomputed weight dy</div>
+</td>
+</tr>
+<tr id="i41" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightDyDy-int-int-int-int-">precomputed_getWeightDyDy</a></span>(int&nbsp;l,
+                         int&nbsp;m,
+                         int&nbsp;u,
+                         int&nbsp;v)</code>
+<div class="block">Get precomputed weight dydy</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWeightI-int-int-int-int-">precomputed_getWeightI</a></span>(int&nbsp;l,
+                      int&nbsp;m,
+                      int&nbsp;u,
+                      int&nbsp;v)</code>
+<div class="block">Get precomputed weight of coefficient l,m</div>
+</td>
+</tr>
+<tr id="i43" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_getWidth--">precomputed_getWidth</a></span>()</code>
+<div class="block">Get width of precomputed vectors.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_interpolateD-double:A-int-int-">precomputed_interpolateD</a></span>(double[]&nbsp;D,
+                        int&nbsp;u,
+                        int&nbsp;v)</code>
+<div class="block">Interpolate the X and Y derivatives of the image at a
+ given point.</div>
+</td>
+</tr>
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_interpolateD2-double:A-int-int-">precomputed_interpolateD2</a></span>(double[]&nbsp;D2,
+                         int&nbsp;u,
+                         int&nbsp;v)</code>
+<div class="block">Interpolate the XY, XX and YY derivatives of the image at a
+ given point.</div>
+</td>
+</tr>
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_interpolateI-int-int-">precomputed_interpolateI</a></span>(int&nbsp;u,
+                        int&nbsp;v)</code>
+<div class="block">Interpolate the image (or deformation) at a given point using 
+ the precomputed weights.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#precomputed_prepareForInterpolation-int-int-int-">precomputed_prepareForInterpolation</a></span>(int&nbsp;Ydim,
+                                   int&nbsp;Xdim,
+                                   int&nbsp;intervals)</code>
+<div class="block">Prepare precomputations for a given image size.</div>
+</td>
+</tr>
+<tr id="i48" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#prepareForInterpolation-double-double-boolean-">prepareForInterpolation</a></span>(double&nbsp;x,
+                       double&nbsp;y,
+                       boolean&nbsp;fromCurrent)</code>
+<div class="block">If <code>fromCurrent</code> is true, the interpolation is prepared to be done
+ from the current image in the pyramid.</div>
+</td>
+</tr>
+<tr id="i49" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#prepareForInterpolationAndInterpolateI-double-double-boolean-boolean-">prepareForInterpolationAndInterpolateI</a></span>(double&nbsp;x,
+                                      double&nbsp;y,
+                                      boolean&nbsp;fromSub,
+                                      boolean&nbsp;fromCurrent)</code>
+<div class="block">Prepare for interpolation and interpolate
+ 
+ fromSub = true: The interpolation is done from the subsampled version
+ of the image
+ </div>
+</td>
+</tr>
+<tr id="i50" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#prepareForInterpolationAndInterpolateIAndD-double-double-double:A-boolean-boolean-">prepareForInterpolationAndInterpolateIAndD</a></span>(double&nbsp;x,
+                                          double&nbsp;y,
+                                          double[]&nbsp;D,
+                                          boolean&nbsp;fromSub,
+                                          boolean&nbsp;fromCurrent)</code>
+<div class="block">Prepare for interpolation and interpolate the image value and its
+ derivatives
+ 
+ fromSub = true: The interpolation is done from the subsampled version
+ of the image
+ </div>
+</td>
+</tr>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code>double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#reduceCoeffsBy2-double:A-int-int-">reduceCoeffsBy2</a></span>(double[]&nbsp;c,
+               int&nbsp;width,
+               int&nbsp;height)</code>
+<div class="block">Reduce coefficients by a factor of 2 (beta)</div>
+</td>
+</tr>
+<tr id="i52" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#run--">run</a></span>()</code>
+<div class="block">Start the image pre-computations.</div>
+</td>
+</tr>
+<tr id="i53" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#setCoefficients-double:A-int-int-int-">setCoefficients</a></span>(double[]&nbsp;c,
+               int&nbsp;Ydim,
+               int&nbsp;Xdim,
+               int&nbsp;offset)</code>
+<div class="block">Set spline coefficients.</div>
+</td>
+</tr>
+<tr id="i54" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#setPyramidDepth-int-">setPyramidDepth</a></span>(int&nbsp;pyramidDepth)</code>
+<div class="block">Sets the depth up to which the pyramids should be computed.</div>
+</td>
+</tr>
+<tr id="i55" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#setSubsamplingFactor-int-">setSubsamplingFactor</a></span>(int&nbsp;maxImageSubsamplingFactor)</code>
+<div class="block">Set maximum sub-sampling factor</div>
+</td>
+</tr>
+<tr id="i56" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bunwarpj/BSplineModel.html#startPyramids--">startPyramids</a></span>()</code>
+<div class="block">Start coefficient and image pyramids</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="MAX_OUTPUT_SIZE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MAX_OUTPUT_SIZE</h4>
+<pre>public static&nbsp;int MAX_OUTPUT_SIZE</pre>
+<div class="block">maximum output window dimensions</div>
+</li>
+</ul>
+<a name="xIndex">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>xIndex</h4>
+<pre>public&nbsp;int[] xIndex</pre>
+<div class="block">x index</div>
+</li>
+</ul>
+<a name="yIndex">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>yIndex</h4>
+<pre>public&nbsp;int[] yIndex</pre>
+<div class="block">y index</div>
+</li>
+</ul>
+<a name="prec_xIndex">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prec_xIndex</h4>
+<pre>public&nbsp;int[][] prec_xIndex</pre>
+<div class="block">precomputed x index</div>
+</li>
+</ul>
+<a name="prec_yIndex">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>prec_yIndex</h4>
+<pre>public&nbsp;int[][] prec_yIndex</pre>
+<div class="block">precomputed y index</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BSplineModel-ij.process.ImageProcessor-boolean-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineModel</h4>
+<pre>public&nbsp;BSplineModel(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/ImageProcessor.html?is-external=true" title="class or interface in ij.process">ImageProcessor</a>&nbsp;ip,
+                    boolean&nbsp;isTarget,
+                    int&nbsp;maxImageSubsamplingFactor)</pre>
+<div class="block">Create image model for image processor: image and coefficient pyramid.
+ When calling this constructor, the thread is not started, to do so, 
+ startPyramids needs to be called.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ip</code> - image pointer (ImageProcessor)</dd>
+<dd><code>isTarget</code> - enables the computation of the derivative or not</dd>
+<dd><code>maxImageSubsamplingFactor</code> - sub-sampling factor at highest resolution level</dd>
+</dl>
+</li>
+</ul>
+<a name="BSplineModel-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineModel</h4>
+<pre>public&nbsp;BSplineModel(int&nbsp;width,
+                    int&nbsp;height,
+                    int&nbsp;maxImageSubsamplingFactor)</pre>
+<div class="block">Create image model without image pixel information (for landmark only 
+ registration): empty image and full coefficient pyramid.
+ When calling this constructor, the thread is not started, to do so, 
+ startPyramids needs to be called.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - image width</dd>
+<dd><code>height</code> - image height</dd>
+<dd><code>maxImageSubsamplingFactor</code> - sub-sampling factor at highest resolution level</dd>
+</dl>
+</li>
+</ul>
+<a name="BSplineModel-double:A:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineModel</h4>
+<pre>public&nbsp;BSplineModel(double[][]&nbsp;img,
+                    boolean&nbsp;isTarget)</pre>
+<div class="block">The same as before, but take the image from an array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>img</code> - image in a double array</dd>
+<dd><code>isTarget</code> - enables the computation of the derivative or not</dd>
+</dl>
+</li>
+</ul>
+<a name="BSplineModel-double:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineModel</h4>
+<pre>public&nbsp;BSplineModel(double[][]&nbsp;c)</pre>
+<div class="block">Initialize the B-spline model from a set of coefficients.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c</code> - Set of B-spline coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="BSplineModel-double:A-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BSplineModel</h4>
+<pre>public&nbsp;BSplineModel(double[]&nbsp;c,
+                    int&nbsp;Ydim,
+                    int&nbsp;Xdim,
+                    int&nbsp;offset)</pre>
+<div class="block">Initialize the B-spline model from a set of coefficients.
+ The same as the previous function but now the coefficients
+ are in a single row.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c</code> - Set of B-spline coefficients</dd>
+<dd><code>Ydim</code> - Y-dimension of the set of coefficients</dd>
+<dd><code>Xdim</code> - X-dimension of the set of coefficients</dd>
+<dd><code>offset</code> - Offset of the beginning of the array with respect to the origin of c</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="startPyramids--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startPyramids</h4>
+<pre>public&nbsp;void&nbsp;startPyramids()</pre>
+<div class="block">Start coefficient and image pyramids</div>
+</li>
+</ul>
+<a name="clearPyramids--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearPyramids</h4>
+<pre>public&nbsp;void&nbsp;clearPyramids()</pre>
+<div class="block">Clear the pyramid.</div>
+</li>
+</ul>
+<a name="getCurrentHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentHeight</h4>
+<pre>public&nbsp;int&nbsp;getCurrentHeight()</pre>
+<div class="block">Get current height.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current height of the image/coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="getCurrentImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentImage</h4>
+<pre>public&nbsp;double[]&nbsp;getCurrentImage()</pre>
+<div class="block">Get current image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current image of the image/coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="getCurrentWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentWidth</h4>
+<pre>public&nbsp;int&nbsp;getCurrentWidth()</pre>
+<div class="block">Get current width.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current width of the image/coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="getFactorHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFactorHeight</h4>
+<pre>public&nbsp;double&nbsp;getFactorHeight()</pre>
+<div class="block">Get factor height.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the relationship between the current size of the image
+         and the original size</dd>
+</dl>
+</li>
+</ul>
+<a name="getFactorWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFactorWidth</h4>
+<pre>public&nbsp;double&nbsp;getFactorWidth()</pre>
+<div class="block">Get fact or width.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the relationship between the current size of the image
+         and the original size.</dd>
+</dl>
+</li>
+</ul>
+<a name="getCurrentDepth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentDepth</h4>
+<pre>public&nbsp;int&nbsp;getCurrentDepth()</pre>
+<div class="block">Get current depth.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current depth of the image/coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="getHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeight</h4>
+<pre>public&nbsp;int&nbsp;getHeight()</pre>
+<div class="block">Get height.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the full-size image height.</dd>
+</dl>
+</li>
+</ul>
+<a name="getImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;double[]&nbsp;getImage()</pre>
+<div class="block">Get image (at the maximum resolution size determined by the scaling).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the less scaled image.</dd>
+</dl>
+</li>
+</ul>
+<a name="getOriginalImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalImage</h4>
+<pre>public&nbsp;double[]&nbsp;getOriginalImage()</pre>
+<div class="block">Get original image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the original full-size image.</dd>
+</dl>
+</li>
+</ul>
+<a name="getOriginalImageWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalImageWidth</h4>
+<pre>public&nbsp;int&nbsp;getOriginalImageWidth()</pre>
+<div class="block">Get original image width.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the original full-size image width.</dd>
+</dl>
+</li>
+</ul>
+<a name="getOriginalImageHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOriginalImageHeight</h4>
+<pre>public&nbsp;int&nbsp;getOriginalImageHeight()</pre>
+<div class="block">Get original image height.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the original full-size image height.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSubImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubImage</h4>
+<pre>public&nbsp;double[]&nbsp;getSubImage()</pre>
+<div class="block">Get subsampled output image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the subsumpled (to show) output image.</dd>
+</dl>
+</li>
+</ul>
+<a name="getCoefficients--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCoefficients</h4>
+<pre>public&nbsp;double[]&nbsp;getCoefficients()</pre>
+<div class="block">Get b-spline coefficients.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the full-size B-spline coefficients</dd>
+</dl>
+</li>
+</ul>
+<a name="getPixelValFromPyramid-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPixelValFromPyramid</h4>
+<pre>public&nbsp;double&nbsp;getPixelValFromPyramid(int&nbsp;x,
+                                     int&nbsp;y)</pre>
+<div class="block">Get the pixel value from the image pyramid.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - x-coordinate of the pixel</dd>
+<dd><code>y</code> - y-coordinate of the pixel</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>pixel value</dd>
+</dl>
+</li>
+</ul>
+<a name="getPyramidDepth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPyramidDepth</h4>
+<pre>public&nbsp;int&nbsp;getPyramidDepth()</pre>
+<div class="block">Get pyramid depth.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the depth of the image pyramid. A depth 1 means
+         that one coarse resolution level is present in the stack.
+         The full-size level is not placed on the stack</dd>
+</dl>
+</li>
+</ul>
+<a name="getSmallestHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSmallestHeight</h4>
+<pre>public&nbsp;int&nbsp;getSmallestHeight()</pre>
+<div class="block">Get smallest height.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the height of the smallest image in the pyramid</dd>
+</dl>
+</li>
+</ul>
+<a name="getSmallestWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSmallestWidth</h4>
+<pre>public&nbsp;int&nbsp;getSmallestWidth()</pre>
+<div class="block">Get smallest width.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the width of the smallest image in the pyramid</dd>
+</dl>
+</li>
+</ul>
+<a name="getThread--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getThread</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</a>&nbsp;getThread()</pre>
+<div class="block">Get thread.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the thread associated</dd>
+</dl>
+</li>
+</ul>
+<a name="getWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWidth</h4>
+<pre>public&nbsp;int&nbsp;getWidth()</pre>
+<div class="block">Get width.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the full-size image width</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightDx-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightDx</h4>
+<pre>public&nbsp;double&nbsp;getWeightDx(int&nbsp;l,
+                          int&nbsp;m)</pre>
+<div class="block">Get weight dx.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (yWeight, dxWeight) in the
+         image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightDxDx-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightDxDx</h4>
+<pre>public&nbsp;double&nbsp;getWeightDxDx(int&nbsp;l,
+                            int&nbsp;m)</pre>
+<div class="block">Get weight dxdx.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (yWeight, d2xWeight) in the
+         image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightDxDy-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightDxDy</h4>
+<pre>public&nbsp;double&nbsp;getWeightDxDy(int&nbsp;l,
+                            int&nbsp;m)</pre>
+<div class="block">Get weight dxdy.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (dyWeight, dxWeight) in the
+ image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightDy-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightDy</h4>
+<pre>public&nbsp;double&nbsp;getWeightDy(int&nbsp;l,
+                          int&nbsp;m)</pre>
+<div class="block">Get weight dy.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (dyWeight, xWeight) in the
+         image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightDyDy-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightDyDy</h4>
+<pre>public&nbsp;double&nbsp;getWeightDyDy(int&nbsp;l,
+                            int&nbsp;m)</pre>
+<div class="block">Get weight dydy.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (d2yWeight, xWeight) in the
+         image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="getWeightI-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeightI</h4>
+<pre>public&nbsp;double&nbsp;getWeightI(int&nbsp;l,
+                         int&nbsp;m)</pre>
+<div class="block">Get image coefficient weight.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (yWeight, xWeight) in the
+         image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateD-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateD</h4>
+<pre>public&nbsp;void&nbsp;interpolateD(double[]&nbsp;D)</pre>
+<div class="block">Interpolate the X and Y derivatives of the image at a
+ given point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>D</code> - output, interpolation the X and Y derivatives of the image</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateD2-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateD2</h4>
+<pre>public&nbsp;void&nbsp;interpolateD2(double[]&nbsp;D2)</pre>
+<div class="block">Interpolate the XY, XX and YY derivatives of the image at a
+ given point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>D2</code> - output, interpolation of the XY, XX and YY derivatives of the image</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateDx--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateDx</h4>
+<pre>public&nbsp;double&nbsp;interpolateDx()</pre>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dx interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateDxDx--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateDxDx</h4>
+<pre>public&nbsp;double&nbsp;interpolateDxDx()</pre>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dxdx interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateDxDy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateDxDy</h4>
+<pre>public&nbsp;double&nbsp;interpolateDxDy()</pre>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dxdy interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateDy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateDy</h4>
+<pre>public&nbsp;double&nbsp;interpolateDy()</pre>
+<div class="block">Interpolate the Y derivative of the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dy interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateDyDy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateDyDy</h4>
+<pre>public&nbsp;double&nbsp;interpolateDyDy()</pre>
+<div class="block">Interpolate the X derivative of the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dydy interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="interpolateI--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interpolateI</h4>
+<pre>public&nbsp;double&nbsp;interpolateI()</pre>
+<div class="block">Interpolate the image at a given point.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="isFinest--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFinest</h4>
+<pre>public&nbsp;boolean&nbsp;isFinest()</pre>
+<div class="block">Check if the coefficients pyramid is empty.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true when the coefficients pyramid is empty
+         false if not</dd>
+</dl>
+</li>
+</ul>
+<a name="popFromPyramid--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>popFromPyramid</h4>
+<pre>public&nbsp;void&nbsp;popFromPyramid()</pre>
+<div class="block">Pop one element from the coefficients and image pyramids.</div>
+</li>
+</ul>
+<a name="prepareForInterpolation-double-double-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareForInterpolation</h4>
+<pre>public&nbsp;void&nbsp;prepareForInterpolation(double&nbsp;x,
+                                    double&nbsp;y,
+                                    boolean&nbsp;fromCurrent)</pre>
+<div class="block">If <code>fromCurrent</code> is true, the interpolation is prepared to be done
+ from the current image in the pyramid. Otherwise, the interpolation is
+ prepared to be done from the original image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - x- point coordinate</dd>
+<dd><code>y</code> - y- point coordinate</dd>
+<dd><code>fromCurrent</code> - flag to determine the image to do the interpolation from</dd>
+</dl>
+</li>
+</ul>
+<a name="prepareForInterpolationAndInterpolateI-double-double-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareForInterpolationAndInterpolateI</h4>
+<pre>public&nbsp;double&nbsp;prepareForInterpolationAndInterpolateI(double&nbsp;x,
+                                                     double&nbsp;y,
+                                                     boolean&nbsp;fromSub,
+                                                     boolean&nbsp;fromCurrent)</pre>
+<div class="block">Prepare for interpolation and interpolate
+ <ul>
+ <li>fromSub = true: The interpolation is done from the subsampled version
+ of the image</li>
+ </ul>
+ <p>
+ else:
+ </p>
+ <ul>
+ <li>fromCurrent=true: The interpolation is done from the current image in
+ the pyramid.</li>
+ <li>fromCurrent=false: The interpolation is done from the original image.
+ </li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - x- point coordinate</dd>
+<dd><code>y</code> - y- point coordinate</dd>
+<dd><code>fromSub</code> - flat to determine to do the interpolation from the
+          subsampled version of the image</dd>
+<dd><code>fromCurrent</code> - flag to determine the image to do the interpolation from
+          interpolated value</dd>
+</dl>
+</li>
+</ul>
+<a name="prepareForInterpolationAndInterpolateIAndD-double-double-double:A-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareForInterpolationAndInterpolateIAndD</h4>
+<pre>public&nbsp;double&nbsp;prepareForInterpolationAndInterpolateIAndD(double&nbsp;x,
+                                                         double&nbsp;y,
+                                                         double[]&nbsp;D,
+                                                         boolean&nbsp;fromSub,
+                                                         boolean&nbsp;fromCurrent)</pre>
+<div class="block">Prepare for interpolation and interpolate the image value and its
+ derivatives
+ <ul>
+ <li>fromSub = true: The interpolation is done from the subsampled version
+ of the image</li>
+ </ul>
+ <p>
+ else:
+ </p>
+ <ul>
+ <li>fromCurrent=true: The interpolation is done from the current image in
+ the pyramid.</li>
+ <li>fromCurrent=false: The interpolation is done from the original image.
+ </li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - x- point coordinate</dd>
+<dd><code>y</code> - y- point coordinate</dd>
+<dd><code>D</code> - output, interpolation the X and Y derivatives of the image</dd>
+<dd><code>fromSub</code> - flat to determine to do the interpolation from the
+          subsampled version of the image</dd>
+<dd><code>fromCurrent</code> - flag to determine the image to do the interpolation from
+          interpolated value</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWidth</h4>
+<pre>public&nbsp;int&nbsp;precomputed_getWidth()</pre>
+<div class="block">Get width of precomputed vectors.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the width of the precomputed vectors</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightDx-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightDx</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightDx(int&nbsp;l,
+                                      int&nbsp;m,
+                                      int&nbsp;u,
+                                      int&nbsp;v)</pre>
+<div class="block">Get precomputed weight dx.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (yIndex, xIndex) in the
+ image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightDxDx-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightDxDx</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightDxDx(int&nbsp;l,
+                                        int&nbsp;m,
+                                        int&nbsp;u,
+                                        int&nbsp;v)</pre>
+<div class="block">Get precomputed weight dxdx</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (prec_yWeight, prec_d2xWeight)
+ in the image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightDxDy-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightDxDy</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightDxDy(int&nbsp;l,
+                                        int&nbsp;m,
+                                        int&nbsp;u,
+                                        int&nbsp;v)</pre>
+<div class="block">Get precomputed weight dxdy</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (prec_dyWeight, prec_dxWeight)
+ in the image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightDy-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightDy</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightDy(int&nbsp;l,
+                                      int&nbsp;m,
+                                      int&nbsp;u,
+                                      int&nbsp;v)</pre>
+<div class="block">Get precomputed weight dy</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (prec_dyWeight, prec_xWeight) 
+ in the image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightDyDy-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightDyDy</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightDyDy(int&nbsp;l,
+                                        int&nbsp;m,
+                                        int&nbsp;u,
+                                        int&nbsp;v)</pre>
+<div class="block">Get precomputed weight dydy</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (prec_d2yWeight, prec_xWeight)
+ in the image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_getWeightI-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_getWeightI</h4>
+<pre>public&nbsp;double&nbsp;precomputed_getWeightI(int&nbsp;l,
+                                     int&nbsp;m,
+                                     int&nbsp;u,
+                                     int&nbsp;v)</pre>
+<div class="block">Get precomputed weight of coefficient l,m</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>l</code> - </dd>
+<dd><code>m</code> - </dd>
+<dd><code>u</code> - </dd>
+<dd><code>v</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the weight of the coefficient l,m (prec_yWeight, prec_xWeight) 
+ in the image interpolation</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_interpolateD-double:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_interpolateD</h4>
+<pre>public&nbsp;void&nbsp;precomputed_interpolateD(double[]&nbsp;D,
+                                     int&nbsp;u,
+                                     int&nbsp;v)</pre>
+<div class="block">Interpolate the X and Y derivatives of the image at a
+ given point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>D</code> - output, X and Y derivatives of the image</dd>
+<dd><code>u</code> - x- point coordinate</dd>
+<dd><code>v</code> - y- point coordinate</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_interpolateD2-double:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_interpolateD2</h4>
+<pre>public&nbsp;void&nbsp;precomputed_interpolateD2(double[]&nbsp;D2,
+                                      int&nbsp;u,
+                                      int&nbsp;v)</pre>
+<div class="block">Interpolate the XY, XX and YY derivatives of the image at a
+ given point.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>D2</code> - output, XY, XX and YY derivatives of the image</dd>
+<dd><code>u</code> - x- point coordinate</dd>
+<dd><code>v</code> - y- point coordinate</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_interpolateI-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_interpolateI</h4>
+<pre>public&nbsp;double&nbsp;precomputed_interpolateI(int&nbsp;u,
+                                       int&nbsp;v)</pre>
+<div class="block">Interpolate the image (or deformation) at a given point using 
+ the precomputed weights.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>u</code> - x- point coordinate</dd>
+<dd><code>v</code> - y- point coordinate</dd>
+</dl>
+</li>
+</ul>
+<a name="precomputed_prepareForInterpolation-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>precomputed_prepareForInterpolation</h4>
+<pre>public&nbsp;void&nbsp;precomputed_prepareForInterpolation(int&nbsp;Ydim,
+                                                int&nbsp;Xdim,
+                                                int&nbsp;intervals)</pre>
+<div class="block">Prepare precomputations for a given image size. It calls
+ prepareForInterpolation with ORIGINAL flag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>Ydim</code> - y- image dimension</dd>
+<dd><code>Xdim</code> - x- image dimension</dd>
+<dd><code>intervals</code> - intervals in the deformation</dd>
+</dl>
+</li>
+</ul>
+<a name="run--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run()</pre>
+<div class="block">Start the image pre-computations. The computation of the B-spline
+ coefficients of the full-size image is not interruptible; all other
+ methods are.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setCoefficients-double:A-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCoefficients</h4>
+<pre>public&nbsp;void&nbsp;setCoefficients(double[]&nbsp;c,
+                            int&nbsp;Ydim,
+                            int&nbsp;Xdim,
+                            int&nbsp;offset)</pre>
+<div class="block">Set spline coefficients. Copy coefficients to the model array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c</code> - Set of B-spline coefficients</dd>
+<dd><code>Ydim</code> - Y-dimension of the set of coefficients</dd>
+<dd><code>Xdim</code> - X-dimension of the set of coefficients</dd>
+<dd><code>offset</code> - Offset of the beginning of the array with respect to the origin of c</dd>
+</dl>
+</li>
+</ul>
+<a name="setPyramidDepth-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPyramidDepth</h4>
+<pre>public&nbsp;void&nbsp;setPyramidDepth(int&nbsp;pyramidDepth)</pre>
+<div class="block">Sets the depth up to which the pyramids should be computed.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pyramidDepth</code> - pyramid depth to be set</dd>
+</dl>
+</li>
+</ul>
+<a name="reduceCoeffsBy2-double:A-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reduceCoeffsBy2</h4>
+<pre>public&nbsp;double[]&nbsp;reduceCoeffsBy2(double[]&nbsp;c,
+                                int&nbsp;width,
+                                int&nbsp;height)</pre>
+<div class="block">Reduce coefficients by a factor of 2 (beta)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>c</code> - </dd>
+<dd><code>width</code> - </dd>
+<dd><code>height</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="setSubsamplingFactor-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSubsamplingFactor</h4>
+<pre>public&nbsp;void&nbsp;setSubsamplingFactor(int&nbsp;maxImageSubsamplingFactor)</pre>
+<div class="block">Set maximum sub-sampling factor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>maxImageSubsamplingFactor</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="getSubsamplingFactor--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getSubsamplingFactor</h4>
+<pre>public&nbsp;int&nbsp;getSubsamplingFactor()</pre>
+<div class="block">Get sub-sampling factor at highest resolution</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>maxImageSubsamplingFactor</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../bunwarpj/bUnwarpJ_.html" title="class in bunwarpj"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?bunwarpj/BSplineModel.html" target="_top">Frames</a></li>
+<li><a href="BSplineModel.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

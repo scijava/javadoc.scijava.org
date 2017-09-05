@@ -1,0 +1,810 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SubpixelLocalization (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SubpixelLocalization (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":9,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/scalespace/ScaleSpace.html" title="class in mpicbg.imglib.algorithm.scalespace"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" target="_top">Frames</a></li>
+<li><a href="SubpixelLocalization.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">mpicbg.imglib.algorithm.scalespace</div>
+<h2 title="Class SubpixelLocalization" class="title">Class SubpixelLocalization&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>mpicbg.imglib.algorithm.scalespace.SubpixelLocalization&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a>, <a href="../../../../mpicbg/imglib/algorithm/Benchmark.html" title="interface in mpicbg.imglib.algorithm">Benchmark</a>, <a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">SubpixelLocalization&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a>, <a href="../../../../mpicbg/imglib/algorithm/Benchmark.html" title="interface in mpicbg.imglib.algorithm">Benchmark</a>, <a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a></pre>
+<div class="block">TODO</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Stephan Preibisch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#SubpixelLocalization-mpicbg.imglib.image.Image-java.util.List-">SubpixelLocalization</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;laPlacian,
+                    <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;&nbsp;peaks)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#analyzePeak-mpicbg.imglib.algorithm.scalespace.DifferenceOfGaussianPeak-">analyzePeak</a></span>(<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;peak)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;<br><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#computeDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-">computeDerivativeVector</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor)</code>
+<div class="block">Computes the n-dimensional 1st derivative vector in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#computeDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">computeDerivativeVector</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor,
+                       <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;derivativeVector)</code>
+<div class="block">Computes the n-dimensional 1st derivative vector in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;<br><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#computeHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-">computeHessianMatrix</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor)</code>
+<div class="block">Computes the n-dimensional Hessian Matrix in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#computeHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">computeHessianMatrix</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor,
+                    <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;hessianMatrix)</code>
+<div class="block">Computes the n-dimensional Hessian Matrix in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static Jama.Matrix</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#computePseudoInverseMatrix-Jama.Matrix-double-">computePseudoInverseMatrix</a></span>(Jama.Matrix&nbsp;M,
+                          double&nbsp;threshold)</code>
+<div class="block">Computes the pseudo-inverse of a matrix using Singular Value Decomposition</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getAllowedToMoveInDim--">getAllowedToMoveInDim</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getAllowMaximaTolerance--">getAllowMaximaTolerance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getCanMoveOutside--">getCanMoveOutside</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">getDerivativeVector</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;cursor,
+                   <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;derivativeVector)</code>
+<div class="block">This method is called by the process method to allow to override how the derivative vector is computed</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getDoGPeaks--">getDoGPeaks</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getErrorMessage--">getErrorMessage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">getHessianMatrix</a></span>(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;cursor,
+                <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;hessianMatrix)</code>
+<div class="block">This method is called by the process method to allow to override how the hessian matrix is computed</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getLaPlaceImage--">getLaPlaceImage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>static &lt;S extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;S&gt;&gt;<br>Jama.Matrix</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getMatrix-mpicbg.imglib.image.Image-">getMatrix</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;S&gt;&nbsp;maxtrixImage)</code>
+<div class="block">Converts an <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> into a matrix</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getMaximaTolerance--">getMaximaTolerance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getMaxNumMoves--">getMaxNumMoves</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getNumThreads--">getNumThreads</a></span>()</code>
+<div class="block">The number of threads used by the algorithm</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#getProcessingTime--">getProcessingTime</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#handleFailure-mpicbg.imglib.algorithm.scalespace.DifferenceOfGaussianPeak-java.lang.String-">handleFailure</a></span>(<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;peak,
+             <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;error)</code>&nbsp;</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>protected Jama.Matrix</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#invertMatrix-mpicbg.imglib.image.Image-">invertMatrix</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;matrixImage)</code>
+<div class="block">This method is called by the process method to allow to override how the matrix is inverted</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setAllowedToMoveInDim-boolean:A-">setAllowedToMoveInDim</a></span>(boolean[]&nbsp;allowedToMoveInDim)</code>&nbsp;</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setAllowMaximaTolerance-boolean-">setAllowMaximaTolerance</a></span>(boolean&nbsp;allowMaximaTolerance)</code>&nbsp;</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setCanMoveOutside-boolean-">setCanMoveOutside</a></span>(boolean&nbsp;canMoveOutside)</code>&nbsp;</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setDoGPeaks-java.util.List-">setDoGPeaks</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;&nbsp;peaks)</code>&nbsp;</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setLaPlaceImage-mpicbg.imglib.image.Image-">setLaPlaceImage</a></span>(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;laPlacian)</code>&nbsp;</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setMaximaTolerance-float-">setMaximaTolerance</a></span>(float&nbsp;maximaTolerance)</code>&nbsp;</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setMaxNumMoves-int-">setMaxNumMoves</a></span>(int&nbsp;maxNumMoves)</code>&nbsp;</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setNumThreads--">setNumThreads</a></span>()</code>
+<div class="block">Sets the number of threads to the amount of processors available</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html#setNumThreads-int-">setNumThreads</a></span>(int&nbsp;numThreads)</code>
+<div class="block">Sets the number of threads</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SubpixelLocalization-mpicbg.imglib.image.Image-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SubpixelLocalization</h4>
+<pre>public&nbsp;SubpixelLocalization(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;laPlacian,
+                            <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;&nbsp;peaks)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setAllowMaximaTolerance-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowMaximaTolerance</h4>
+<pre>public&nbsp;void&nbsp;setAllowMaximaTolerance(boolean&nbsp;allowMaximaTolerance)</pre>
+</li>
+</ul>
+<a name="setCanMoveOutside-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCanMoveOutside</h4>
+<pre>public&nbsp;void&nbsp;setCanMoveOutside(boolean&nbsp;canMoveOutside)</pre>
+</li>
+</ul>
+<a name="setMaximaTolerance-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaximaTolerance</h4>
+<pre>public&nbsp;void&nbsp;setMaximaTolerance(float&nbsp;maximaTolerance)</pre>
+</li>
+</ul>
+<a name="setLaPlaceImage-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLaPlaceImage</h4>
+<pre>public&nbsp;void&nbsp;setLaPlaceImage(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;laPlacian)</pre>
+</li>
+</ul>
+<a name="setDoGPeaks-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDoGPeaks</h4>
+<pre>public&nbsp;void&nbsp;setDoGPeaks(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;&nbsp;peaks)</pre>
+</li>
+</ul>
+<a name="setMaxNumMoves-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxNumMoves</h4>
+<pre>public&nbsp;void&nbsp;setMaxNumMoves(int&nbsp;maxNumMoves)</pre>
+</li>
+</ul>
+<a name="setAllowedToMoveInDim-boolean:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowedToMoveInDim</h4>
+<pre>public&nbsp;void&nbsp;setAllowedToMoveInDim(boolean[]&nbsp;allowedToMoveInDim)</pre>
+</li>
+</ul>
+<a name="getAllowMaximaTolerance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowMaximaTolerance</h4>
+<pre>public&nbsp;boolean&nbsp;getAllowMaximaTolerance()</pre>
+</li>
+</ul>
+<a name="getCanMoveOutside--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCanMoveOutside</h4>
+<pre>public&nbsp;boolean&nbsp;getCanMoveOutside()</pre>
+</li>
+</ul>
+<a name="getMaximaTolerance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaximaTolerance</h4>
+<pre>public&nbsp;float&nbsp;getMaximaTolerance()</pre>
+</li>
+</ul>
+<a name="getLaPlaceImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLaPlaceImage</h4>
+<pre>public&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;getLaPlaceImage()</pre>
+</li>
+</ul>
+<a name="getDoGPeaks--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDoGPeaks</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&gt;&nbsp;getDoGPeaks()</pre>
+</li>
+</ul>
+<a name="getMaxNumMoves--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxNumMoves</h4>
+<pre>public&nbsp;int&nbsp;getMaxNumMoves()</pre>
+</li>
+</ul>
+<a name="getAllowedToMoveInDim--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowedToMoveInDim</h4>
+<pre>public&nbsp;boolean[]&nbsp;getAllowedToMoveInDim()</pre>
+</li>
+</ul>
+<a name="handleFailure-mpicbg.imglib.algorithm.scalespace.DifferenceOfGaussianPeak-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleFailure</h4>
+<pre>protected&nbsp;boolean&nbsp;handleFailure(<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;peak,
+                                <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;error)</pre>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#process--">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="analyzePeak-mpicbg.imglib.algorithm.scalespace.DifferenceOfGaussianPeak-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>analyzePeak</h4>
+<pre>public&nbsp;boolean&nbsp;analyzePeak(<a href="../../../../mpicbg/imglib/algorithm/scalespace/DifferenceOfGaussianPeak.html" title="class in mpicbg.imglib.algorithm.scalespace">DifferenceOfGaussianPeak</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;peak)</pre>
+</li>
+</ul>
+<a name="invertMatrix-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invertMatrix</h4>
+<pre>protected&nbsp;Jama.Matrix&nbsp;invertMatrix(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;matrixImage)</pre>
+<div class="block">This method is called by the process method to allow to override how the matrix is inverted</div>
+</li>
+</ul>
+<a name="getDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDerivativeVector</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;getDerivativeVector(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;cursor,
+                                                <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;derivativeVector)</pre>
+<div class="block">This method is called by the process method to allow to override how the derivative vector is computed</div>
+</li>
+</ul>
+<a name="getHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHessianMatrix</h4>
+<pre>protected&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;getHessianMatrix(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;<a href="../../../../mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" title="type parameter in SubpixelLocalization">T</a>&gt;&nbsp;cursor,
+                                             <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;hessianMatrix)</pre>
+<div class="block">This method is called by the process method to allow to override how the hessian matrix is computed</div>
+</li>
+</ul>
+<a name="getMatrix-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMatrix</h4>
+<pre>public static&nbsp;&lt;S extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;S&gt;&gt;&nbsp;Jama.Matrix&nbsp;getMatrix(<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;S&gt;&nbsp;maxtrixImage)</pre>
+<div class="block">Converts an <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> into a matrix</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>maxtrixImage</code> - - the input <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <code>Matrix</code> or null if the <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> is not one or two-dimensional</dd>
+</dl>
+</li>
+</ul>
+<a name="computePseudoInverseMatrix-Jama.Matrix-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computePseudoInverseMatrix</h4>
+<pre>public static final&nbsp;Jama.Matrix&nbsp;computePseudoInverseMatrix(Jama.Matrix&nbsp;M,
+                                                           double&nbsp;threshold)</pre>
+<div class="block">Computes the pseudo-inverse of a matrix using Singular Value Decomposition</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>M</code> - - the input <code>Matrix</code></dd>
+<dd><code>threshold</code> - - the threshold for inverting diagonal elements (suggested 0.001)</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the inverted <code>Matrix</code> or an approximation with lowest possible squared error</dd>
+</dl>
+</li>
+</ul>
+<a name="computeDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeDerivativeVector</h4>
+<pre>public static final&nbsp;&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;computeDerivativeVector(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor)</pre>
+<div class="block">Computes the n-dimensional 1st derivative vector in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cursor</code> - - the position for which to compute the Hessian Matrix</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Image<DoubleType> - the derivative, which is essentially a one-dimensional <a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real"><code>DoubleType</code></a> <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> of size [numDimensions]</dd>
+</dl>
+</li>
+</ul>
+<a name="computeDerivativeVector-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeDerivativeVector</h4>
+<pre>public static final&nbsp;&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;computeDerivativeVector(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor,
+                                                                         <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;derivativeVector)</pre>
+<div class="block">Computes the n-dimensional 1st derivative vector in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cursor</code> - - the position for which to compute the Hessian Matrix</dd>
+<dd><code>Image<DoubleType></code> - - the derivative, which is essentially a one-dimensional <a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real"><code>DoubleType</code></a> <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> of size [numDimensions]</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix</h4>
+<pre>public static final&nbsp;&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;computeHessianMatrix(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor)</pre>
+<div class="block">Computes the n-dimensional Hessian Matrix in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cursor</code> - - the position for which to compute the Hessian Matrix</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Image<DoubleType> - the hessian matrix, which is essentially a two-dimensional <a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real"><code>DoubleType</code></a> <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> of size [numDimensions][numDimensions]</dd>
+</dl>
+</li>
+</ul>
+<a name="computeHessianMatrix-mpicbg.imglib.cursor.LocalizableByDimCursor-mpicbg.imglib.image.Image-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeHessianMatrix</h4>
+<pre>public static final&nbsp;&lt;T extends <a href="../../../../mpicbg/imglib/type/numeric/RealType.html" title="interface in mpicbg.imglib.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;computeHessianMatrix(<a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor">LocalizableByDimCursor</a>&lt;T&gt;&nbsp;cursor,
+                                                                      <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image">Image</a>&lt;<a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real">DoubleType</a>&gt;&nbsp;hessianMatrix)</pre>
+<div class="block">Computes the n-dimensional Hessian Matrix in 3x3x3...x3 environment for a certain <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> location
+ defined by the position of the <a href="../../../../mpicbg/imglib/cursor/LocalizableByDimCursor.html" title="interface in mpicbg.imglib.cursor"><code>LocalizableByDimCursor</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cursor</code> - - the position for which to compute the Hessian Matrix</dd>
+<dd><code>Image<DoubleType></code> - - the hessian matrix, which is essentially a two-dimensional <a href="../../../../mpicbg/imglib/type/numeric/real/DoubleType.html" title="class in mpicbg.imglib.type.numeric.real"><code>DoubleType</code></a> <a href="../../../../mpicbg/imglib/image/Image.html" title="class in mpicbg.imglib.image"><code>Image</code></a> of size [numDimensions][numDimensions]</dd>
+</dl>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#checkInput--">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setNumThreads--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumThreads</h4>
+<pre>public&nbsp;void&nbsp;setNumThreads()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#setNumThreads--">MultiThreaded</a></code></span></div>
+<div class="block">Sets the number of threads to the amount of processors available</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#setNumThreads--">setNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setNumThreads-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumThreads</h4>
+<pre>public&nbsp;void&nbsp;setNumThreads(int&nbsp;numThreads)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#setNumThreads-int-">MultiThreaded</a></code></span></div>
+<div class="block">Sets the number of threads</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#setNumThreads-int-">setNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>numThreads</code> - - number of threads to use</dd>
+</dl>
+</li>
+</ul>
+<a name="getNumThreads--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumThreads</h4>
+<pre>public&nbsp;int&nbsp;getNumThreads()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#getNumThreads--">MultiThreaded</a></code></span></div>
+<div class="block">The number of threads used by the algorithm</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html#getNumThreads--">getNumThreads</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/MultiThreaded.html" title="interface in mpicbg.imglib.algorithm">MultiThreaded</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>- the number of threads</dd>
+</dl>
+</li>
+</ul>
+<a name="getErrorMessage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getErrorMessage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getErrorMessage()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html#getErrorMessage--">getErrorMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Algorithm.html" title="interface in mpicbg.imglib.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getProcessingTime--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getProcessingTime</h4>
+<pre>public&nbsp;long&nbsp;getProcessingTime()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../mpicbg/imglib/algorithm/Benchmark.html#getProcessingTime--">getProcessingTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../mpicbg/imglib/algorithm/Benchmark.html" title="interface in mpicbg.imglib.algorithm">Benchmark</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../mpicbg/imglib/algorithm/scalespace/ScaleSpace.html" title="class in mpicbg.imglib.algorithm.scalespace"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?mpicbg/imglib/algorithm/scalespace/SubpixelLocalization.html" target="_top">Frames</a></li>
+<li><a href="SubpixelLocalization.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

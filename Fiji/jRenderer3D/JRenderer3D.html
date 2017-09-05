@@ -1,0 +1,2349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JRenderer3D (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+<script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="JRenderer3D (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?jRenderer3D/JRenderer3D.html" target="_top">Frames</a></li>
+<li><a href="JRenderer3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">jRenderer3D</div>
+<h2 title="Class JRenderer3D" class="title">Class JRenderer3D</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>jRenderer3D.JRenderer3D</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">JRenderer3D</span>
+extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">The framework JRenderer3D provides the possibility to implement easily a 3D
+ display for ImageJ plugins.
+ <p>
+ The next section describes the basic scheme for rendering 3D scenes. After
+ initializing a new 3D scene, objects are added, drawing parameters and global
+ render parameters have to be set. At the end a rendering is performed that is
+ written to an image, which can be displayed with ImageJ.
+ </p>
+ <h3>Example:</h3>
+ 
+ <pre>
+ // Setup 3D rendering
+ JRenderer3D jRenderer3D;
+ jRenderer3D = new JRenderer3D(xCenter, yCenter, zCenter); // size of the
+                                                           // rendered image
+ 
+ // Set or add one or more 3D objects like points or spheres:
+ jRenderer3D.addPoint3D(250, 250, 20, 20, Color.WHITE);
+ 
+ // Or lines, texts, cubes:
+ jRenderer3D.add3DCube(0, 0, 0, xSize, ySize, zSize, 0xFF000000);
+ 
+ // Set one image for a surface plot
+ jRenderer3D.setSurfacePlot(imp);
+ 
+ // Or set a volume (a 3D-stack)
+ jRenderer3D.setVolume(imagePlus); // set the volume
+ 
+ // Set the drawing modes
+ jRenderer3D.setPoints3DDrawMode(JRenderer3D.POINTS_SPHERES);
+ jRenderer3D.setSurfacePlotLut(JRenderer3D.LUT_ORANGE); // select a LUT
+ jRenderer3D.setSurfacePlotLight(0.5); // set lighting
+ jRenderer3D.setSurfacePlotMode(JRenderer3D.SURFACEPLOT_MESH); // set plot
+                                                               // mode to mesh
+ 
+ // Set global parameters
+ jRenderer3D.setBackgroundColor(0xFF000050); // dark blue background
+ jRenderer3D.setZAspect(4); // set the z-aspect ratio to 4
+ jRenderer3D.setTransformScale(1.5); // scale factor
+ jRenderer3D.setTransformRotationXYZ(80, 0, 160); // rotation angles (in
+                                                  // degrees)
+ 
+ // Render the image
+ jRenderer3D.doRendering();
+ 
+ // Get the rendered new image
+ Image image = jRenderer3D.getImage();
+ 
+ // And display it:
+ ImagePlus impNew = new ImagePlus("Rendered Image", image);
+ impNew.show();
+ impNew.updateAndDraw();
+ </pre>
+ 
+ <h3>Possible 3D elements to draw</h3>
+ <ul>
+ <li><a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D"><code>Point3D</code></a></li>
+ <li><a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D"><code>Line3D</code></a></li>
+ <li><a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D"><code>Text3D</code></a></li>
+ </ul>
+ <h3>Surface</h3>
+ <p>
+ Surface plots can be generate from all image types. Selections, which can be
+ non-rectangular, are supported.
+ </p>
+ <p>
+ The luminance of an image is interpreted as height for the plot. Internally
+ the image is scaled to a 256x256 image using nearest neighbor sampling. Other
+ dimensions for this image can be set by the setSurfacePlotGridSize method.
+ </p>
+ <p>
+ The surface plot has several drawing modes which av be set by
+ setSurfacePlotMode:
+ </p>
+ <ul>
+ <li>Dots: All pixels are drawn as small dots.</li>
+ <li>Lines: All pixels are connected in the x-direction.</li>
+ <li>Mesh: All pixels are connected in the x- and y-direction.</li>
+ <li>Filled: All pixels are connected without leaving holes</li>
+ </ul>
+ <p>
+ Display Colors can be chosen from the original color, grayscale, different
+ LUTs and orange.
+ </p>
+ <p>
+ Noisy images can be smoothed using the applySurfaceSmoothingFilter method.
+ Setting lighting with the setSurfacePlotLight methode gives the impression
+ that the plot was illuminated and so improves the visibility of small
+ differences.
+ </p>
+ <h3>Volume</h3>
+ <p>
+ Stacks can be shown as volumes or slices. 8, 16 and 32 bit stacks are
+ supported. RGB-stacks are not supported for the moment.
+ </p>
+ <p>
+ The display mode of a volume may be set with the setVolumeDrawMode method by
+ using these constants:
+ <ul>
+ <li>VOLUME_SLICE_NEARESTNEIGHBOR: A slice through the volume. No
+ interpolation is performed.</li>
+ <li>VOLUME_SLICE_TRILINEAR: A slice through the volume using trilinear
+ interpolation.</li>
+ <li>VOLUME_DOTS: Voxels are shown according to their distance, no
+ interpolation is performed.</li>
+ <li>VOLUME_PROJECTION_TRILINEAR_BACK: A 3D volume is rendered. The opacity of
+ the voxels is controlled by the setVolumeThreshold method. Values below the
+ threshold are interpreted as transparent.</li>
+ </ul>
+ <p>
+ The setVolumeCutDistance method sets the distance of the slice. For volume
+ rendering only voxels further away than this distance are displayed. The
+ z-aspect ratio of a volume is read automatically, but it can also be set
+ using the setTransformZAspectRatio.
+ </p>
+ <p>
+ Different LUTs can be used for display by using the setVolumeLut method.
+ </p>
+ <p>
+ Before rendering a scene a geometrical transform is applied. Rotation angles
+ for the x, y, and z-coordinate achses may be set by the setTransformRotation*
+ methods. the global scale is set by the setTransformScale method. JRenderer3D
+ assumes the following coordinate system:
+ </p>
+ <p>
+ <img alt="JRenderer3D coordinate system" src="img/xyz.gif">
+ </p>
+ <p>
+ The z-axis is pointing towards the viewer. The orientation of the z-axis may
+ be changed with the method setTransformZOrientation. The entire scene is
+ centered to the center coordinates that are passed with the constructor of
+ JRenderer3D.
+ </p>
+ <p>
+ The 3D scene is rendered to an image buffer. The initial size of this buffer
+ is 512x512 pixels: This size can be changed with the setBufferSize method.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Version:</span></dt>
+<dd>1.0</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Kai Uwe Barthel</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_BLACK">LUT_BLACK</a></span></code>
+<div class="block">3D representations of objects are drawn in black.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_BLUE">LUT_BLUE</a></span></code>
+<div class="block">3D representations of objects are drawn in blue.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_FIRE">LUT_FIRE</a></span></code>
+<div class="block">3D representations of objects are drawn with fire colors.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_GRADIENT">LUT_GRADIENT</a></span></code>
+<div class="block">3D representations of objects are cored according to their gradient.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_GRADIENT2">LUT_GRADIENT2</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_GRAY">LUT_GRAY</a></span></code>
+<div class="block">3D representations of objects are drawn with grayscale colors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_ORANGE">LUT_ORANGE</a></span></code>
+<div class="block">3D representations of objects are drawn in orange.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_ORIGINAL">LUT_ORIGINAL</a></span></code>
+<div class="block">3D represenations of objects are drawn with their original colors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_SPECTRUM">LUT_SPECTRUM</a></span></code>
+<div class="block">3D representations of objects are drawn with spectrum colors.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#LUT_THERMAL">LUT_THERMAL</a></span></code>
+<div class="block">3D representations of objects are drawn with thermal colors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#POINT_CIRCLE">POINT_CIRCLE</a></span></code>
+<div class="block">Draws a point as a (2D) circle.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#POINT_DOT">POINT_DOT</a></span></code>
+<div class="block">Draws a point as a dot.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#POINT_SPHERE">POINT_SPHERE</a></span></code>
+<div class="block">Draws a point as a sphere (slowest).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_DOTS">SURFACEPLOT_DOTS</a></span></code>
+<div class="block">Draws a surface plot using only dots, illumination is active.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_DOTSNOLIGHT">SURFACEPLOT_DOTSNOLIGHT</a></span></code>
+<div class="block">Draws a surface plot using only dots, no illumination is used (fastest mode).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_FILLED">SURFACEPLOT_FILLED</a></span></code>
+<div class="block">Draws a filled surface plot .</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_ISOLINES">SURFACEPLOT_ISOLINES</a></span></code>
+<div class="block">Draws a filled surface plot (Slowest mode).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_LINES">SURFACEPLOT_LINES</a></span></code>
+<div class="block">Draws a surface plot using lines.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#SURFACEPLOT_MESH">SURFACEPLOT_MESH</a></span></code>
+<div class="block">Draws a surface plot using a mesh.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#VOLUME_DOTS">VOLUME_DOTS</a></span></code>
+<div class="block">Draws a volume using only dots (fastest mode).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#VOLUME_PROJECTION_TRILINEAR_FRONT">VOLUME_PROJECTION_TRILINEAR_FRONT</a></span></code>
+<div class="block">Draws a volume using trilinear interpolation projection from the front</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#VOLUME_SLICE_NEAREST_NEIGHBOR">VOLUME_SLICE_NEAREST_NEIGHBOR</a></span></code>
+<div class="block">Draws a volume using nearest neighbor interpolation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#VOLUME_SLICE_TRILINEAR">VOLUME_SLICE_TRILINEAR</a></span></code>
+<div class="block">Draws a volume using trilinear interpolation.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#JRenderer3D--">JRenderer3D</a></span>()</code>
+<div class="block">Creates a new JRenderer3D object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#JRenderer3D-double-double-double-">JRenderer3D</a></span>(double&nbsp;xCenter,
+           double&nbsp;yCenter,
+           double&nbsp;zCenter)</code>
+<div class="block">Creates a new JRenderer3D object.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#add3DCube-int-int-int-int-int-int-java.awt.Color-">add3DCube</a></span>(int&nbsp;xMin,
+         int&nbsp;yMin,
+         int&nbsp;zMin,
+         int&nbsp;xMax,
+         int&nbsp;yMax,
+         int&nbsp;zMax,
+         <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</code>
+<div class="block">Adds a cube (drawn with 12 lines) to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#add3DCube-int-int-int-int-int-int-int-">add3DCube</a></span>(int&nbsp;xMin,
+         int&nbsp;yMin,
+         int&nbsp;zMin,
+         int&nbsp;xMax,
+         int&nbsp;yMax,
+         int&nbsp;zMax,
+         int&nbsp;rgb)</code>
+<div class="block">Adds a cube (drawn with 12 lines) to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addLine3D-int-int-int-int-int-int-java.awt.Color-">addLine3D</a></span>(int&nbsp;xStart,
+         int&nbsp;yStart,
+         int&nbsp;zStart,
+         int&nbsp;xEnd,
+         int&nbsp;yEnd,
+         int&nbsp;zEnd,
+         <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</code>
+<div class="block">Adds a single 3D line to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addLine3D-jRenderer3D.Line3D-">addLine3D</a></span>(<a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D">Line3D</a>&nbsp;line3D)</code>
+<div class="block">Adds a single 3D line to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addLines3D-jRenderer3D.Line3D:A-">addLines3D</a></span>(<a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D">Line3D</a>[]&nbsp;lines3D)</code>
+<div class="block">Adds an array of lines to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addPoint3D-int-int-int-int-java.awt.Color-int-">addPoint3D</a></span>(int&nbsp;x,
+          int&nbsp;y,
+          int&nbsp;z,
+          int&nbsp;size,
+          <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color,
+          int&nbsp;drawMode)</code>
+<div class="block">Adds a point to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addPoint3D-int-int-int-int-int-int-">addPoint3D</a></span>(int&nbsp;x,
+          int&nbsp;y,
+          int&nbsp;z,
+          int&nbsp;size,
+          int&nbsp;rgb,
+          int&nbsp;drawMode)</code>
+<div class="block">Adds a point to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addPoint3D-jRenderer3D.Point3D-">addPoint3D</a></span>(<a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D">Point3D</a>&nbsp;point3D)</code>
+<div class="block">Adds a single <a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D"><code>Point3D</code></a> to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addPoints3D-jRenderer3D.Point3D:A-">addPoints3D</a></span>(<a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D">Point3D</a>[]&nbsp;points3D)</code>
+<div class="block">Adds an array with <a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D"><code>Point3D</code></a> to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addText3D-java.lang.String-int-int-int-java.awt.Color-int-">addText3D</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;text,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;z,
+         <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color,
+         int&nbsp;size)</code>
+<div class="block">Adds a text to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addText3D-java.lang.String-int-int-int-int-int-">addText3D</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;text,
+         int&nbsp;x,
+         int&nbsp;y,
+         int&nbsp;z,
+         int&nbsp;rgb,
+         int&nbsp;size)</code>
+<div class="block">Adds a text to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addText3D-jRenderer3D.Text3D-">addText3D</a></span>(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text3D)</code>
+<div class="block">Adds a single 3D text to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addText3D-jRenderer3D.Text3D:A-">addText3D</a></span>(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>[]&nbsp;text3D)</code>
+<div class="block">Adds an array of text to the 3D scene.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#addTextPair3D-jRenderer3D.Text3D-jRenderer3D.Text3D-">addTextPair3D</a></span>(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text1_3D,
+             <a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text2_3D)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#applyTransformRotationXYZ-double-double-double-">applyTransformRotationXYZ</a></span>(double&nbsp;changeX,
+                         double&nbsp;changeY,
+                         double&nbsp;changeZ)</code>
+<div class="block">Changes the rotation of x-, y-, and z-axis by the values of changeX and changeY.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#changeTransformRotationXYZ-double-double-double-">changeTransformRotationXYZ</a></span>(double&nbsp;changeX,
+                          double&nbsp;changeY,
+                          double&nbsp;changeZ)</code>
+<div class="block">Changes the rotation of x-, y-, and z-axis by the values of changeX and changeY.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#changeTransformRotationXZ-double-double-">changeTransformRotationXZ</a></span>(double&nbsp;changeX,
+                         double&nbsp;changeZ)</code>
+<div class="block">Changes the rotation of x- and z-axis by the values of changeX and changeY.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#clearCubes--">clearCubes</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#clearLines--">clearLines</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#clearText--">clearText</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#doRendering--">doRendering</a></span>()</code>
+<div class="block">This methods does the rendering and creates the 3D output.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getHeight--">getHeight</a></span>()</code>
+<div class="block">Returns the buffer height of the image.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getImage--">getImage</a></span>()</code>
+<div class="block">Returns actual rendered image.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getLegendTextColor--">getLegendTextColor</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getNumPoints3D--">getNumPoints3D</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getSurfacePlotMode--">getSurfacePlotMode</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getTransformRotationX--">getTransformRotationX</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getTransformRotationY--">getTransformRotationY</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getTransformRotationZ--">getTransformRotationZ</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getTransformScale--">getTransformScale</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getTransformZAspectRatio--">getTransformZAspectRatio</a></span>()</code>
+<div class="block">Gets the z-aspect ratio (the relative z-height of a voxel).</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#getWidth--">getWidth</a></span>()</code>
+<div class="block">Returns the buffer width of the image.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#removeLastLine3D--">removeLastLine3D</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#removeLastPoint3D--">removeLastPoint3D</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setAxes-boolean-">setAxes</a></span>(boolean&nbsp;axes)</code>&nbsp;</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setBackgroundColor-java.awt.Color-">setBackgroundColor</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</code>
+<div class="block">Sets the background color of the rendered 3D presentation</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setBackgroundColor-int-">setBackgroundColor</a></span>(int&nbsp;rgb)</code>
+<div class="block">Sets the background color of the rendered 3D presenation</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setBufferSize-int-int-">setBufferSize</a></span>(int&nbsp;width,
+             int&nbsp;height)</code>
+<div class="block">Sets the buffer size.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setLegend-boolean-">setLegend</a></span>(boolean&nbsp;legend)</code>&nbsp;</td>
+</tr>
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setLegendTextColor-java.awt.Color-">setLegendTextColor</a></span>(<a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;legendTextColor)</code>&nbsp;</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setLines-boolean-">setLines</a></span>(boolean&nbsp;lines)</code>&nbsp;</td>
+</tr>
+<tr id="i41" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setMaxZValue-double-">setMaxZValue</a></span>(double&nbsp;maxZ)</code>&nbsp;</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setMinZValue-double-">setMinZValue</a></span>(double&nbsp;minZ)</code>&nbsp;</td>
+</tr>
+<tr id="i43" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlot-ij.ImagePlus-">setSurfacePlot</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
+<div class="block">Creates the surface plot.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotGridSize-int-int-">setSurfacePlotGridSize</a></span>(int&nbsp;width,
+                      int&nbsp;height)</code>
+<div class="block">Sets the surface grid size (sampling rate).</div>
+</td>
+</tr>
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotLight-double-">setSurfacePlotLight</a></span>(double&nbsp;surfacePlot_light)</code>
+<div class="block">Sets the lightning for the surface plot illumination .</div>
+</td>
+</tr>
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotLut-int-">setSurfacePlotLut</a></span>(int&nbsp;surfacePlot_lutNr)</code>
+<div class="block">Sets the color lut for the surface plot.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotMask-ij.ImagePlus-">setSurfacePlotMask</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impMask)</code>&nbsp;</td>
+</tr>
+<tr id="i48" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotMinMax-int-int-">setSurfacePlotMinMax</a></span>(int&nbsp;surfacePlot_min,
+                    int&nbsp;surfacePlot_max)</code>&nbsp;</td>
+</tr>
+<tr id="i49" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotMode-int-">setSurfacePlotMode</a></span>(int&nbsp;surfacePlot_plotMode)</code>
+<div class="block">Sets the surface plot mode.</div>
+</td>
+</tr>
+<tr id="i50" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotTexture-ij.ImagePlus-">setSurfacePlotTexture</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impTexture)</code>&nbsp;</td>
+</tr>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfacePlotWithTexture-ij.ImagePlus-ij.ImagePlus-">setSurfacePlotWithTexture</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp,
+                         <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impTexture)</code>
+<div class="block">Creates the surface plot with texture.</div>
+</td>
+</tr>
+<tr id="i52" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setSurfaceSmoothingFactor-double-">setSurfaceSmoothingFactor</a></span>(double&nbsp;smoothRadius)</code>
+<div class="block">Aplies a smoothing to the surface plot data</div>
+</td>
+</tr>
+<tr id="i53" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setText-boolean-">setText</a></span>(boolean&nbsp;text)</code>&nbsp;</td>
+</tr>
+<tr id="i54" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformMaxDistance-double-">setTransformMaxDistance</a></span>(double&nbsp;maxDistance)</code>&nbsp;</td>
+</tr>
+<tr id="i55" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformPerspective-double-">setTransformPerspective</a></span>(double&nbsp;perspective)</code>&nbsp;</td>
+</tr>
+<tr id="i56" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformRotationX-double-">setTransformRotationX</a></span>(double&nbsp;ax)</code>
+<div class="block">Sets the rotation on the x-axis.</div>
+</td>
+</tr>
+<tr id="i57" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformRotationXYZ-double-double-double-">setTransformRotationXYZ</a></span>(double&nbsp;ax,
+                       double&nbsp;ay,
+                       double&nbsp;az)</code>
+<div class="block">Sets the rotation on  x-, y- and z-axis.</div>
+</td>
+</tr>
+<tr id="i58" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformRotationXZ-double-double-">setTransformRotationXZ</a></span>(double&nbsp;ax,
+                      double&nbsp;az)</code>
+<div class="block">Sets the rotation on both  x- and z-axis.</div>
+</td>
+</tr>
+<tr id="i59" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformRotationY-double-">setTransformRotationY</a></span>(double&nbsp;ay)</code>
+<div class="block">Sets the rotation on the y-axis.</div>
+</td>
+</tr>
+<tr id="i60" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformRotationZ-double-">setTransformRotationZ</a></span>(double&nbsp;az)</code>
+<div class="block">Sets the rotation on the z-axis.</div>
+</td>
+</tr>
+<tr id="i61" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformScale-double-">setTransformScale</a></span>(double&nbsp;scale)</code>
+<div class="block">Sets scale of the redered 3D scene.</div>
+</td>
+</tr>
+<tr id="i62" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformZAspectRatio-double-">setTransformZAspectRatio</a></span>(double&nbsp;zAspectRatio)</code>
+<div class="block">Sets the z-aspect ratio (the relative z-height of a voxel).</div>
+</td>
+</tr>
+<tr id="i63" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setTransformZOrientation-int-">setTransformZOrientation</a></span>(int&nbsp;zOrientation)</code>
+<div class="block">Chooses the coordinate system.</div>
+</td>
+</tr>
+<tr id="i64" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolume-ij.ImagePlus-">setVolume</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imagePlus)</code>
+<div class="block">Sets a volume stack.</div>
+</td>
+</tr>
+<tr id="i65" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolumeCutDistance-int-">setVolumeCutDistance</a></span>(int&nbsp;volume_cutDist)</code>
+<div class="block">Sets the view distance.</div>
+</td>
+</tr>
+<tr id="i66" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolumeDotsSubsampling-int-int-int-">setVolumeDotsSubsampling</a></span>(int&nbsp;volume_dotsDeltaX,
+                        int&nbsp;volume_dotsDeltaY,
+                        int&nbsp;volume_dotsDeltaZ)</code>
+<div class="block">Set subsampling factors (used by the drawing mode volume dots).</div>
+</td>
+</tr>
+<tr id="i67" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolumeDrawMode-int-">setVolumeDrawMode</a></span>(int&nbsp;volume_drawMode)</code>
+<div class="block">Sets the mode for drawing volumes.</div>
+</td>
+</tr>
+<tr id="i68" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolumeLut-int-">setVolumeLut</a></span>(int&nbsp;volume_lutNr)</code>&nbsp;</td>
+</tr>
+<tr id="i69" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#setVolumeThreshold-int-">setVolumeThreshold</a></span>(int&nbsp;threshold)</code>
+<div class="block">Sets the threshold.</div>
+</td>
+</tr>
+<tr id="i70" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#showRotation--">showRotation</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i71" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../jRenderer3D/JRenderer3D.html#surfacePlotSetInverse-boolean-">surfacePlotSetInverse</a></span>(boolean&nbsp;b)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="POINT_SPHERE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POINT_SPHERE</h4>
+<pre>public static final&nbsp;int POINT_SPHERE</pre>
+<div class="block">Draws a point as a sphere (slowest).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.POINT_SPHERE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="POINT_CIRCLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POINT_CIRCLE</h4>
+<pre>public static final&nbsp;int POINT_CIRCLE</pre>
+<div class="block">Draws a point as a (2D) circle.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.POINT_CIRCLE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="POINT_DOT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>POINT_DOT</h4>
+<pre>public static final&nbsp;int POINT_DOT</pre>
+<div class="block">Draws a point as a dot. Size information has no effect.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.POINT_DOT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_DOTSNOLIGHT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_DOTSNOLIGHT</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_DOTSNOLIGHT</pre>
+<div class="block">Draws a surface plot using only dots, no illumination is used (fastest mode).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_DOTSNOLIGHT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_DOTS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_DOTS</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_DOTS</pre>
+<div class="block">Draws a surface plot using only dots, illumination is active.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_DOTS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_LINES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_LINES</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_LINES</pre>
+<div class="block">Draws a surface plot using lines. Number of lines can be adjusted.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_LINES">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_MESH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_MESH</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_MESH</pre>
+<div class="block">Draws a surface plot using a mesh. Mesh size can be adapted.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_MESH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_FILLED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_FILLED</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_FILLED</pre>
+<div class="block">Draws a filled surface plot .</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_FILLED">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SURFACEPLOT_ISOLINES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SURFACEPLOT_ISOLINES</h4>
+<pre>public static final&nbsp;int SURFACEPLOT_ISOLINES</pre>
+<div class="block">Draws a filled surface plot (Slowest mode).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.SURFACEPLOT_ISOLINES">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VOLUME_DOTS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VOLUME_DOTS</h4>
+<pre>public static final&nbsp;int VOLUME_DOTS</pre>
+<div class="block">Draws a volume using only dots (fastest mode).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.VOLUME_DOTS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VOLUME_SLICE_NEAREST_NEIGHBOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VOLUME_SLICE_NEAREST_NEIGHBOR</h4>
+<pre>public static final&nbsp;int VOLUME_SLICE_NEAREST_NEIGHBOR</pre>
+<div class="block">Draws a volume using nearest neighbor interpolation.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.VOLUME_SLICE_NEAREST_NEIGHBOR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VOLUME_SLICE_TRILINEAR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VOLUME_SLICE_TRILINEAR</h4>
+<pre>public static final&nbsp;int VOLUME_SLICE_TRILINEAR</pre>
+<div class="block">Draws a volume using trilinear interpolation.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.VOLUME_SLICE_TRILINEAR">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VOLUME_PROJECTION_TRILINEAR_FRONT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VOLUME_PROJECTION_TRILINEAR_FRONT</h4>
+<pre>public static final&nbsp;int VOLUME_PROJECTION_TRILINEAR_FRONT</pre>
+<div class="block">Draws a volume using trilinear interpolation projection from the front</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.VOLUME_PROJECTION_TRILINEAR_FRONT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_ORIGINAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_ORIGINAL</h4>
+<pre>public static final&nbsp;int LUT_ORIGINAL</pre>
+<div class="block">3D represenations of objects are drawn with their original colors.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_ORIGINAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_GRAY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_GRAY</h4>
+<pre>public static final&nbsp;int LUT_GRAY</pre>
+<div class="block">3D representations of objects are drawn with grayscale colors.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_GRAY">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_SPECTRUM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_SPECTRUM</h4>
+<pre>public static final&nbsp;int LUT_SPECTRUM</pre>
+<div class="block">3D representations of objects are drawn with spectrum colors.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_SPECTRUM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_FIRE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_FIRE</h4>
+<pre>public static final&nbsp;int LUT_FIRE</pre>
+<div class="block">3D representations of objects are drawn with fire colors.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_FIRE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_THERMAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_THERMAL</h4>
+<pre>public static final&nbsp;int LUT_THERMAL</pre>
+<div class="block">3D representations of objects are drawn with thermal colors.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_THERMAL">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_ORANGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_ORANGE</h4>
+<pre>public static final&nbsp;int LUT_ORANGE</pre>
+<div class="block">3D representations of objects are drawn in orange.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_ORANGE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_BLUE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_BLUE</h4>
+<pre>public static final&nbsp;int LUT_BLUE</pre>
+<div class="block">3D representations of objects are drawn in blue.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_BLUE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_BLACK">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_BLACK</h4>
+<pre>public static final&nbsp;int LUT_BLACK</pre>
+<div class="block">3D representations of objects are drawn in black.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_BLACK">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_GRADIENT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LUT_GRADIENT</h4>
+<pre>public static final&nbsp;int LUT_GRADIENT</pre>
+<div class="block">3D representations of objects are cored according to their gradient.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_GRADIENT">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LUT_GRADIENT2">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LUT_GRADIENT2</h4>
+<pre>public static final&nbsp;int LUT_GRADIENT2</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../constant-values.html#jRenderer3D.JRenderer3D.LUT_GRADIENT2">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="JRenderer3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>JRenderer3D</h4>
+<pre>public&nbsp;JRenderer3D()</pre>
+<div class="block">Creates a new JRenderer3D object.
+ 
+ This has always to be the first step to generate a 3D scene.
+ 
+ The center is assumed at (0,0,0)</div>
+</li>
+</ul>
+<a name="JRenderer3D-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>JRenderer3D</h4>
+<pre>public&nbsp;JRenderer3D(double&nbsp;xCenter,
+                   double&nbsp;yCenter,
+                   double&nbsp;zCenter)</pre>
+<div class="block">Creates a new JRenderer3D object. <p> 
+
+ This has always to be the first step to generate a 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xCenter</code> - The x-coordinate of the rotation / plot center.</dd>
+<dd><code>yCenter</code> - The y-coordinate of the rotation / plot center.</dd>
+<dd><code>zCenter</code> - The z-coordinate of the rotation / plot center.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="showRotation--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>showRotation</h4>
+<pre>public&nbsp;void&nbsp;showRotation()</pre>
+</li>
+</ul>
+<a name="getLegendTextColor--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLegendTextColor</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;getLegendTextColor()</pre>
+</li>
+</ul>
+<a name="setLegendTextColor-java.awt.Color-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLegendTextColor</h4>
+<pre>public&nbsp;void&nbsp;setLegendTextColor(<a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;legendTextColor)</pre>
+</li>
+</ul>
+<a name="doRendering--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doRendering</h4>
+<pre>public&nbsp;void&nbsp;doRendering()</pre>
+<div class="block">This methods does the rendering and creates the 3D output. 
+ It has to be redone after all setting changes (scale, angle, surface modes, lightning modes, color modes etc.)
+ Draws all given input data (lines, text, points, cubes, surfaces).</div>
+</li>
+</ul>
+<a name="addPoints3D-jRenderer3D.Point3D:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPoints3D</h4>
+<pre>public&nbsp;void&nbsp;addPoints3D(<a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D">Point3D</a>[]&nbsp;points3D)</pre>
+<div class="block">Adds an array with <a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D"><code>Point3D</code></a> to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points3D</code> - array with points in a threedimensional coordinate system</dd>
+</dl>
+</li>
+</ul>
+<a name="addPoint3D-jRenderer3D.Point3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPoint3D</h4>
+<pre>public&nbsp;void&nbsp;addPoint3D(<a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D">Point3D</a>&nbsp;point3D)</pre>
+<div class="block">Adds a single <a href="../jRenderer3D/Point3D.html" title="class in jRenderer3D"><code>Point3D</code></a> to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point3D</code> - the 3D point to add</dd>
+</dl>
+</li>
+</ul>
+<a name="addPoint3D-int-int-int-int-java.awt.Color-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPoint3D</h4>
+<pre>public&nbsp;void&nbsp;addPoint3D(int&nbsp;x,
+                       int&nbsp;y,
+                       int&nbsp;z,
+                       int&nbsp;size,
+                       <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color,
+                       int&nbsp;drawMode)</pre>
+<div class="block">Adds a point to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - </dd>
+<dd><code>y</code> - </dd>
+<dd><code>z</code> - </dd>
+<dd><code>size</code> - </dd>
+<dd><code>color</code> - </dd>
+<dd><code>drawMode</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="addPoint3D-int-int-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPoint3D</h4>
+<pre>public&nbsp;void&nbsp;addPoint3D(int&nbsp;x,
+                       int&nbsp;y,
+                       int&nbsp;z,
+                       int&nbsp;size,
+                       int&nbsp;rgb,
+                       int&nbsp;drawMode)</pre>
+<div class="block">Adds a point to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - </dd>
+<dd><code>y</code> - </dd>
+<dd><code>z</code> - </dd>
+<dd><code>size</code> - </dd>
+<dd><code>rgb</code> - </dd>
+<dd><code>drawMode</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotMask-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotMask</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotMask(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impMask)</pre>
+</li>
+</ul>
+<a name="setSurfacePlot-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlot</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlot(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
+<div class="block">Creates the surface plot.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>imp</code> - The images to be drawn in 3D.</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotTexture-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotTexture</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotTexture(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impTexture)</pre>
+</li>
+</ul>
+<a name="setSurfacePlotWithTexture-ij.ImagePlus-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotWithTexture</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotWithTexture(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp,
+                                      <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;impTexture)</pre>
+<div class="block">Creates the surface plot with texture.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>imp</code> - The images to be drawn in 3D.</dd>
+<dd><code>impTexture</code> - The image which shall be used as texture</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotMode</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotMode(int&nbsp;surfacePlot_plotMode)</pre>
+<div class="block">Sets the surface plot mode.
+ <p>
+ Available options: 
+ <ul>
+ <li> <strong>PLOT_DOTSNOLIGHT</strong>: if used, no lightning options are applied (fastest)</li>
+ <li> <strong>PLOT_DOTS</strong>: draws dots</li>
+ <li> <strong>PLOT_LINES</strong>: draws lines</li>
+ <li> <strong>PLOT_MESH</strong>: draws a mesh</li>
+ <li> <strong>PLOT_FILLED</strong>: fills the 3d object completely (slowest)</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>surfacePlot_plotMode</code> - the surface plot mode</dd>
+</dl>
+</li>
+</ul>
+<a name="getSurfacePlotMode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSurfacePlotMode</h4>
+<pre>public&nbsp;int&nbsp;getSurfacePlotMode()</pre>
+</li>
+</ul>
+<a name="setVolumeDrawMode-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolumeDrawMode</h4>
+<pre>public&nbsp;void&nbsp;setVolumeDrawMode(int&nbsp;volume_drawMode)</pre>
+<div class="block">Sets the mode for drawing volumes.
+ <p>
+ <ul>
+ <li> <strong>VOLUME_DOTS</strong>: draws volumes with dots(fastest)</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>volume_drawMode</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="setVolumeLut-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolumeLut</h4>
+<pre>public&nbsp;void&nbsp;setVolumeLut(int&nbsp;volume_lutNr)</pre>
+</li>
+</ul>
+<a name="setVolumeDotsSubsampling-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolumeDotsSubsampling</h4>
+<pre>public&nbsp;void&nbsp;setVolumeDotsSubsampling(int&nbsp;volume_dotsDeltaX,
+                                     int&nbsp;volume_dotsDeltaY,
+                                     int&nbsp;volume_dotsDeltaZ)</pre>
+<div class="block">Set subsampling factors (used by the drawing mode volume dots). This allows
+ faster drawing in the VOLUME_DOTS mode. (default values are 1)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>volume_dotsDeltaX</code> - subsampling factor in x direction</dd>
+<dd><code>volume_dotsDeltaY</code> - subsampling factor in y direction</dd>
+<dd><code>volume_dotsDeltaZ</code> - subsampling factor in z direction</dd>
+</dl>
+</li>
+</ul>
+<a name="setVolumeCutDistance-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolumeCutDistance</h4>
+<pre>public&nbsp;void&nbsp;setVolumeCutDistance(int&nbsp;volume_cutDist)</pre>
+<div class="block">Sets the view distance.
+ Just the voxels behind the distance are drawn.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>volume_cutDist</code> - the cut distance</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotGridSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotGridSize</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotGridSize(int&nbsp;width,
+                                   int&nbsp;height)</pre>
+<div class="block">Sets the surface grid size (sampling rate).
+ Should be set to an integer fraction of the image of which the surface plot has to be generated.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - the width of surface grid</dd>
+<dd><code>height</code> - the height of surface grid</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformZOrientation-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformZOrientation</h4>
+<pre>public&nbsp;void&nbsp;setTransformZOrientation(int&nbsp;zOrientation)</pre>
+<div class="block">Chooses the coordinate system.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>zOrientation</code> - <br> -1: left hand coordinate system
+ <br>  1: right hand coordinate system</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformScale-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformScale</h4>
+<pre>public&nbsp;void&nbsp;setTransformScale(double&nbsp;scale)</pre>
+<div class="block">Sets scale of the redered 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - scales the scene</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformRotationX-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformRotationX</h4>
+<pre>public&nbsp;void&nbsp;setTransformRotationX(double&nbsp;ax)</pre>
+<div class="block">Sets the rotation on the x-axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ax</code> - angle in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformRotationY-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformRotationY</h4>
+<pre>public&nbsp;void&nbsp;setTransformRotationY(double&nbsp;ay)</pre>
+<div class="block">Sets the rotation on the y-axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ay</code> - angle in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformRotationZ-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformRotationZ</h4>
+<pre>public&nbsp;void&nbsp;setTransformRotationZ(double&nbsp;az)</pre>
+<div class="block">Sets the rotation on the z-axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>az</code> - angle in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformRotationXZ-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformRotationXZ</h4>
+<pre>public&nbsp;void&nbsp;setTransformRotationXZ(double&nbsp;ax,
+                                   double&nbsp;az)</pre>
+<div class="block">Sets the rotation on both  x- and z-axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ax</code> - angle of x-axis in degree</dd>
+<dd><code>az</code> - angle of z-axis in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformRotationXYZ-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformRotationXYZ</h4>
+<pre>public&nbsp;void&nbsp;setTransformRotationXYZ(double&nbsp;ax,
+                                    double&nbsp;ay,
+                                    double&nbsp;az)</pre>
+<div class="block">Sets the rotation on  x-, y- and z-axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ax</code> - rotation angle of x-axis in degree</dd>
+<dd><code>ay</code> - rotation angle of y-axis in degree</dd>
+<dd><code>az</code> - rotation angle of z-axis in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="changeTransformRotationXZ-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>changeTransformRotationXZ</h4>
+<pre>public&nbsp;void&nbsp;changeTransformRotationXZ(double&nbsp;changeX,
+                                      double&nbsp;changeZ)</pre>
+<div class="block">Changes the rotation of x- and z-axis by the values of changeX and changeY.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>changeX</code> - change of rotation angle of x-axis in degree</dd>
+<dd><code>changeZ</code> - change of rotation angle of z-axis in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="applyTransformRotationXYZ-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>applyTransformRotationXYZ</h4>
+<pre>public&nbsp;void&nbsp;applyTransformRotationXYZ(double&nbsp;changeX,
+                                      double&nbsp;changeY,
+                                      double&nbsp;changeZ)</pre>
+<div class="block">Changes the rotation of x-, y-, and z-axis by the values of changeX and changeY.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>changeX</code> - change of rotation angle of x-axis in degree</dd>
+<dd><code>changeY</code> - change of rotation angle of y-axis in degree</dd>
+<dd><code>changeZ</code> - change of rotation angle of z-axis in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="changeTransformRotationXYZ-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>changeTransformRotationXYZ</h4>
+<pre>public&nbsp;void&nbsp;changeTransformRotationXYZ(double&nbsp;changeX,
+                                       double&nbsp;changeY,
+                                       double&nbsp;changeZ)</pre>
+<div class="block">Changes the rotation of x-, y-, and z-axis by the values of changeX and changeY.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>changeX</code> - change of rotation angle of x-axis in degree</dd>
+<dd><code>changeY</code> - change of rotation angle of y-axis in degree</dd>
+<dd><code>changeZ</code> - change of rotation angle of z-axis in degree</dd>
+</dl>
+</li>
+</ul>
+<a name="setBackgroundColor-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBackgroundColor</h4>
+<pre>public&nbsp;void&nbsp;setBackgroundColor(int&nbsp;rgb)</pre>
+<div class="block">Sets the background color of the rendered 3D presenation</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rgb</code> - the background color (argb int)</dd>
+</dl>
+</li>
+</ul>
+<a name="setBackgroundColor-java.awt.Color-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBackgroundColor</h4>
+<pre>public&nbsp;void&nbsp;setBackgroundColor(<a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</pre>
+<div class="block">Sets the background color of the rendered 3D presentation</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>color</code> - Color</dd>
+</dl>
+</li>
+</ul>
+<a name="addLines3D-jRenderer3D.Line3D:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addLines3D</h4>
+<pre>public&nbsp;void&nbsp;addLines3D(<a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D">Line3D</a>[]&nbsp;lines3D)</pre>
+<div class="block">Adds an array of lines to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lines3D</code> - array of 3d lines</dd>
+</dl>
+</li>
+</ul>
+<a name="addLine3D-jRenderer3D.Line3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addLine3D</h4>
+<pre>public&nbsp;void&nbsp;addLine3D(<a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D">Line3D</a>&nbsp;line3D)</pre>
+<div class="block">Adds a single 3D line to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>line3D</code> - the 3D line to add</dd>
+</dl>
+</li>
+</ul>
+<a name="addLine3D-int-int-int-int-int-int-java.awt.Color-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addLine3D</h4>
+<pre>public&nbsp;void&nbsp;addLine3D(int&nbsp;xStart,
+                      int&nbsp;yStart,
+                      int&nbsp;zStart,
+                      int&nbsp;xEnd,
+                      int&nbsp;yEnd,
+                      int&nbsp;zEnd,
+                      <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</pre>
+<div class="block">Adds a single 3D line to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xStart</code> - </dd>
+<dd><code>yStart</code> - </dd>
+<dd><code>zStart</code> - </dd>
+<dd><code>xEnd</code> - </dd>
+<dd><code>yEnd</code> - </dd>
+<dd><code>zEnd</code> - </dd>
+<dd><code>color</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="clearLines--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearLines</h4>
+<pre>public&nbsp;void&nbsp;clearLines()</pre>
+</li>
+</ul>
+<a name="addText3D-jRenderer3D.Text3D:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addText3D</h4>
+<pre>public&nbsp;void&nbsp;addText3D(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>[]&nbsp;text3D)</pre>
+<div class="block">Adds an array of text to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text3D</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="addText3D-java.lang.String-int-int-int-java.awt.Color-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addText3D</h4>
+<pre>public&nbsp;void&nbsp;addText3D(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;text,
+                      int&nbsp;x,
+                      int&nbsp;y,
+                      int&nbsp;z,
+                      <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color,
+                      int&nbsp;size)</pre>
+<div class="block">Adds a text to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text</code> - </dd>
+<dd><code>x</code> - the x position of the text</dd>
+<dd><code>y</code> - the y position</dd>
+<dd><code>z</code> - the z position</dd>
+<dd><code>color</code> - the text color</dd>
+<dd><code>size</code> - the font size</dd>
+</dl>
+</li>
+</ul>
+<a name="addText3D-java.lang.String-int-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addText3D</h4>
+<pre>public&nbsp;void&nbsp;addText3D(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;text,
+                      int&nbsp;x,
+                      int&nbsp;y,
+                      int&nbsp;z,
+                      int&nbsp;rgb,
+                      int&nbsp;size)</pre>
+<div class="block">Adds a text to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text</code> - </dd>
+<dd><code>x</code> - the x position of the text</dd>
+<dd><code>y</code> - the y position</dd>
+<dd><code>z</code> - the z position</dd>
+<dd><code>rgb</code> - the text color</dd>
+<dd><code>size</code> - the font size</dd>
+</dl>
+</li>
+</ul>
+<a name="addText3D-jRenderer3D.Text3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addText3D</h4>
+<pre>public&nbsp;void&nbsp;addText3D(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text3D)</pre>
+<div class="block">Adds a single 3D text to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>text3D</code> - the 3D text to add</dd>
+</dl>
+</li>
+</ul>
+<a name="addTextPair3D-jRenderer3D.Text3D-jRenderer3D.Text3D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addTextPair3D</h4>
+<pre>public&nbsp;void&nbsp;addTextPair3D(<a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text1_3D,
+                          <a href="../jRenderer3D/Text3D.html" title="class in jRenderer3D">Text3D</a>&nbsp;text2_3D)</pre>
+</li>
+</ul>
+<a name="clearText--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearText</h4>
+<pre>public&nbsp;void&nbsp;clearText()</pre>
+</li>
+</ul>
+<a name="setBufferSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferSize</h4>
+<pre>public&nbsp;void&nbsp;setBufferSize(int&nbsp;width,
+                          int&nbsp;height)</pre>
+<div class="block">Sets the buffer size. (The size of the rendered 2D image)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>width</code> - The width to be set.</dd>
+<dd><code>height</code> - The height to be set.</dd>
+</dl>
+</li>
+</ul>
+<a name="add3DCube-int-int-int-int-int-int-java.awt.Color-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add3DCube</h4>
+<pre>public&nbsp;void&nbsp;add3DCube(int&nbsp;xMin,
+                      int&nbsp;yMin,
+                      int&nbsp;zMin,
+                      int&nbsp;xMax,
+                      int&nbsp;yMax,
+                      int&nbsp;zMax,
+                      <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</pre>
+<div class="block">Adds a cube (drawn with 12 lines) to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xMin</code> - minimum value x</dd>
+<dd><code>yMin</code> - minimum value y</dd>
+<dd><code>zMin</code> - minimum value z</dd>
+<dd><code>xMax</code> - maximum value x</dd>
+<dd><code>yMax</code> - maximum value y</dd>
+<dd><code>zMax</code> - maximum value z</dd>
+<dd><code>color</code> - Color of cube lines (argb)</dd>
+</dl>
+</li>
+</ul>
+<a name="add3DCube-int-int-int-int-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add3DCube</h4>
+<pre>public&nbsp;void&nbsp;add3DCube(int&nbsp;xMin,
+                      int&nbsp;yMin,
+                      int&nbsp;zMin,
+                      int&nbsp;xMax,
+                      int&nbsp;yMax,
+                      int&nbsp;zMax,
+                      int&nbsp;rgb)</pre>
+<div class="block">Adds a cube (drawn with 12 lines) to the 3D scene.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xMin</code> - minimum value x</dd>
+<dd><code>yMin</code> - minimum value y</dd>
+<dd><code>zMin</code> - minimum value z</dd>
+<dd><code>xMax</code> - maximum value x</dd>
+<dd><code>yMax</code> - maximum value y</dd>
+<dd><code>zMax</code> - maximum value z</dd>
+<dd><code>rgb</code> - Color of cube lines (argb)</dd>
+</dl>
+</li>
+</ul>
+<a name="clearCubes--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearCubes</h4>
+<pre>public&nbsp;void&nbsp;clearCubes()</pre>
+</li>
+</ul>
+<a name="setVolume-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolume</h4>
+<pre>public&nbsp;void&nbsp;setVolume(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imagePlus)</pre>
+<div class="block">Sets a volume stack.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>imagePlus</code> - the volume stack to be set</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotLut-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotLut</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotLut(int&nbsp;surfacePlot_lutNr)</pre>
+<div class="block">Sets the color lut for the surface plot.
+ <p>
+ <ul>
+ <li> <strong>ORIGINAL</strong></li>
+ <li> <strong>GRAY</strong></li>
+ <li> <strong>SPECTRUM</strong></li>
+ <li> <strong>FIRE</strong></li>
+ <li> <strong>THERMAL</strong></li>
+ <li> <strong>ORANGE</strong></li>
+ <li> <strong>BLUE</strong></li>
+ <li> <strong>BLACK</strong></li>
+</ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>surfacePlot_lutNr</code> - color of look-up-table</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotLight-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotLight</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotLight(double&nbsp;surfacePlot_light)</pre>
+<div class="block">Sets the lightning for the surface plot illumination .
+ <p>
+ <ul>
+ <li>0: no light</li>
+ <li>1: strong light</li>
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>surfacePlot_light</code> - intensity value between 0 and 1 (default is 0)</dd>
+</dl>
+</li>
+</ul>
+<a name="setSurfacePlotMinMax-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfacePlotMinMax</h4>
+<pre>public&nbsp;void&nbsp;setSurfacePlotMinMax(int&nbsp;surfacePlot_min,
+                                 int&nbsp;surfacePlot_max)</pre>
+</li>
+</ul>
+<a name="setSurfaceSmoothingFactor-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSurfaceSmoothingFactor</h4>
+<pre>public&nbsp;void&nbsp;setSurfaceSmoothingFactor(double&nbsp;smoothRadius)</pre>
+<div class="block">Aplies a smoothing to the surface plot data</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>smoothRadius</code> - the radius of the smoothing kernel</dd>
+</dl>
+</li>
+</ul>
+<a name="setVolumeThreshold-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVolumeThreshold</h4>
+<pre>public&nbsp;void&nbsp;setVolumeThreshold(int&nbsp;threshold)</pre>
+<div class="block">Sets the threshold.
+ 
+ All voxels below this threshold are displayed transparent.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>threshold</code> - Threshold to be set (0 .. 255).</dd>
+</dl>
+</li>
+</ul>
+<a name="setTransformZAspectRatio-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformZAspectRatio</h4>
+<pre>public&nbsp;void&nbsp;setTransformZAspectRatio(double&nbsp;zAspectRatio)</pre>
+<div class="block">Sets the z-aspect ratio (the relative z-height of a voxel).
+ When setting a volume, the z-aspect ratio is reset to ratio read from the stack.
+ If the z-aspect ratio needs to set this has to be done after calling the setVolume method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>zAspectRatio</code> - z-aspect ratio (the relative z-ratio of a voxel) to be set.</dd>
+</dl>
+</li>
+</ul>
+<a name="getWidth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWidth</h4>
+<pre>public&nbsp;int&nbsp;getWidth()</pre>
+<div class="block">Returns the buffer width of the image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>buffer width</dd>
+</dl>
+</li>
+</ul>
+<a name="getHeight--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeight</h4>
+<pre>public&nbsp;int&nbsp;getHeight()</pre>
+<div class="block">Returns the buffer height of the image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>buffer height</dd>
+</dl>
+</li>
+</ul>
+<a name="getImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/Image.html?is-external=true" title="class or interface in java.awt">Image</a>&nbsp;getImage()</pre>
+<div class="block">Returns actual rendered image.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>image</dd>
+</dl>
+</li>
+</ul>
+<a name="getTransformZAspectRatio--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransformZAspectRatio</h4>
+<pre>public&nbsp;double&nbsp;getTransformZAspectRatio()</pre>
+<div class="block">Gets the z-aspect ratio (the relative z-height of a voxel).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the z-aspect ratio</dd>
+</dl>
+</li>
+</ul>
+<a name="removeLastPoint3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeLastPoint3D</h4>
+<pre>public&nbsp;void&nbsp;removeLastPoint3D()</pre>
+</li>
+</ul>
+<a name="removeLastLine3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeLastLine3D</h4>
+<pre>public&nbsp;void&nbsp;removeLastLine3D()</pre>
+</li>
+</ul>
+<a name="getNumPoints3D--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumPoints3D</h4>
+<pre>public&nbsp;int&nbsp;getNumPoints3D()</pre>
+</li>
+</ul>
+<a name="setTransformPerspective-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformPerspective</h4>
+<pre>public&nbsp;void&nbsp;setTransformPerspective(double&nbsp;perspective)</pre>
+</li>
+</ul>
+<a name="setTransformMaxDistance-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTransformMaxDistance</h4>
+<pre>public&nbsp;void&nbsp;setTransformMaxDistance(double&nbsp;maxDistance)</pre>
+</li>
+</ul>
+<a name="setAxes-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAxes</h4>
+<pre>public&nbsp;void&nbsp;setAxes(boolean&nbsp;axes)</pre>
+</li>
+</ul>
+<a name="setLines-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLines</h4>
+<pre>public&nbsp;void&nbsp;setLines(boolean&nbsp;lines)</pre>
+</li>
+</ul>
+<a name="setText-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setText</h4>
+<pre>public&nbsp;void&nbsp;setText(boolean&nbsp;text)</pre>
+</li>
+</ul>
+<a name="setLegend-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLegend</h4>
+<pre>public&nbsp;void&nbsp;setLegend(boolean&nbsp;legend)</pre>
+</li>
+</ul>
+<a name="surfacePlotSetInverse-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>surfacePlotSetInverse</h4>
+<pre>public&nbsp;void&nbsp;surfacePlotSetInverse(boolean&nbsp;b)</pre>
+</li>
+</ul>
+<a name="getTransformScale--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransformScale</h4>
+<pre>public&nbsp;double&nbsp;getTransformScale()</pre>
+</li>
+</ul>
+<a name="setMinZValue-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMinZValue</h4>
+<pre>public&nbsp;void&nbsp;setMinZValue(double&nbsp;minZ)</pre>
+</li>
+</ul>
+<a name="setMaxZValue-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxZValue</h4>
+<pre>public&nbsp;void&nbsp;setMaxZValue(double&nbsp;maxZ)</pre>
+</li>
+</ul>
+<a name="getTransformRotationX--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransformRotationX</h4>
+<pre>public&nbsp;double&nbsp;getTransformRotationX()</pre>
+</li>
+</ul>
+<a name="getTransformRotationY--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTransformRotationY</h4>
+<pre>public&nbsp;double&nbsp;getTransformRotationY()</pre>
+</li>
+</ul>
+<a name="getTransformRotationZ--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getTransformRotationZ</h4>
+<pre>public&nbsp;double&nbsp;getTransformRotationZ()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../index-all.html">Index</a></li>
+<li><a href="../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../jRenderer3D/Line3D.html" title="class in jRenderer3D"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../index.html?jRenderer3D/JRenderer3D.html" target="_top">Frames</a></li>
+<li><a href="JRenderer3D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

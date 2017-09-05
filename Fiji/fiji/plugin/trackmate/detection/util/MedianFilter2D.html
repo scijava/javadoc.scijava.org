@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MedianFilter2D (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="MedianFilter2D (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../../fiji/plugin/trackmate/detection/util/SquareNeighborhood3x3.html" title="class in fiji.plugin.trackmate.detection.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?fiji/plugin/trackmate/detection/util/MedianFilter2D.html" target="_top">Frames</a></li>
+<li><a href="MedianFilter2D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imglib2.algorithm.BenchmarkAlgorithm">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.detection.util</div>
+<h2 title="Class MedianFilter2D" class="title">Class MedianFilter2D&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">net.imglib2.algorithm.BenchmarkAlgorithm</a></li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.detection.util.MedianFilter2D&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of the source image.</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true" title="class or interface in net.imglib2.algorithm">Benchmark</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;T&gt;&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">MedianFilter2D&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</span>
+extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">BenchmarkAlgorithm</a>
+implements <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;T&gt;&gt;</pre>
+<div class="block">A simple median filter that operates on 1D, 2D or 3D images.
+ <p>
+ For 3D images, the filtering is done only in 2D XY slices. Indeed, this
+ filter is made mainly to remove shot noise on cameras, for which the median
+ calculated on a simple 2D neighborhood is enough.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Jean-Yves Tinevez - 2015</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.algorithm.BenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">BenchmarkAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true#errorMessage" title="class or interface in net.imglib2.algorithm">errorMessage</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true#processingTime" title="class or interface in net.imglib2.algorithm">processingTime</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html#MedianFilter2D-net.imglib2.RandomAccessibleInterval-int-">MedianFilter2D</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt;&nbsp;source,
+              int&nbsp;radius)</code>
+<div class="block">Instantiate a new median filter that will operate on the specified
+ source.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html#getResult--">getResult</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.BenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">BenchmarkAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true#getErrorMessage--" title="class or interface in net.imglib2.algorithm">getErrorMessage</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/BenchmarkAlgorithm.html?is-external=true#getProcessingTime--" title="class or interface in net.imglib2.algorithm">getProcessingTime</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.Algorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#getErrorMessage--" title="class or interface in net.imglib2.algorithm">getErrorMessage</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="MedianFilter2D-net.imglib2.RandomAccessibleInterval-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MedianFilter2D</h4>
+<pre>public&nbsp;MedianFilter2D(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt;&nbsp;source,
+                      int&nbsp;radius)</pre>
+<div class="block">Instantiate a new median filter that will operate on the specified
+ source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source to operate on.</dd>
+<dd><code>radius</code> - determines the size of the neighborhood. In 2D or 3D, a radius
+            of 1 will generate a 3x3 neighborhood.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#checkInput--" title="class or interface in net.imglib2.algorithm">checkInput</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true#process--" title="class or interface in net.imglib2.algorithm">process</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getResult--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getResult</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt;&nbsp;getResult()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true#getResult--" title="class or interface in net.imglib2.algorithm">getResult</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../../fiji/plugin/trackmate/detection/util/MedianFilter2D.html" title="type parameter in MedianFilter2D">T</a>&gt;&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../../fiji/plugin/trackmate/detection/util/SquareNeighborhood3x3.html" title="class in fiji.plugin.trackmate.detection.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?fiji/plugin/trackmate/detection/util/MedianFilter2D.html" target="_top">Frames</a></li>
+<li><a href="MedianFilter2D.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imglib2.algorithm.BenchmarkAlgorithm">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

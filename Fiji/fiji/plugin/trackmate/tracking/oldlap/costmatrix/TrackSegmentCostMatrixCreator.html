@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TrackSegmentCostMatrixCreator (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="TrackSegmentCostMatrixCreator (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LinkingCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html" target="_top">Frames</a></li>
+<li><a href="TrackSegmentCostMatrixCreator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">fiji.plugin.trackmate.tracking.oldlap.costmatrix</div>
+<h2 title="Class TrackSegmentCostMatrixCreator" class="title">Class TrackSegmentCostMatrixCreator</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">net.imglib2.algorithm.MultiThreadedAlgorithm</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix">fiji.plugin.trackmate.tracking.oldlap.costmatrix.LAPTrackerCostMatrixCreator</a></li>
+<li>
+<ul class="inheritance">
+<li>fiji.plugin.trackmate.tracking.oldlap.costmatrix.TrackSegmentCostMatrixCreator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Algorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">Algorithm</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/Benchmark.html?is-external=true" title="class or interface in net.imglib2.algorithm">Benchmark</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreaded.html?is-external=true" title="class or interface in net.imglib2.algorithm">MultiThreaded</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/OutputAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">OutputAlgorithm</a>&lt;double[][]&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">TrackSegmentCostMatrixCreator</span>
+extends <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix">LAPTrackerCostMatrixCreator</a></pre>
+<div class="block"><p>Creates the cost matrix <b><u>roughly</u></b> described in Figure 1c in the paper:
+ 
+ <p>Jaqaman, K. et al. "Robust single-particle tracking in live-cell time-lapse sequences."
+ Nature Methods, 2008.
+ 
+ <p>This matrix is notably <u>different</u> than the one described in the paper. This is because
+ the cost matrix described in 1c in the paper <b>is not</b> the cost matrix they use in their
+ matlab implementation.
+ 
+ <p>The cost matrix used in the matlab implementation by the authors, and used here, is described
+ as follows:
+ 
+ <p> The overall matrix can be divided into <u>four quadrants</u>, outlined below. Each 
+ quadrant has dimensions <code>(number of track segments + number of M/S candidate points) x 
+ (number of track segments + number of M/S candidate points)</code>.
+ A merging or splitting (M/S) candidate point is defined as a Spot in a track segment 
+ with at least two spots.
+ 
+ <ul>
+ <li>
+ <p><b>Top left</b>: Contains scores for gap closing, merging, splitting, and "blank" region.
+ <br><br>
+ <p>This quadrant can also be further subdivided into four smaller sub-matrices:
+
+ <ul>
+ <li><i>Gap closing (top left)</i>: has dimensions <code>(number of track segments) x (number of track segments)</code>, 
+ and contains the scores for linking the ends of track segments to the starts of other track segments
+ as described in the paper.</li>
+ 
+ <li><i>Merging (top right)</i>: has (number of track segment) rows and (number of M/S candidate points)
+ columns. Contains scores for linking the end of a track segment into the
+ middle of another (a merge).</li>
+ 
+ <li><i>Splitting (bottom left)</i>: has (number of M/S candidate points) rows and (number of track
+ segments columns). Contains scores for linking the start of a track segment into the
+ middle of another (a split).</li>
+ 
+ <li><i>Empty (bottom right)</i>: has dimensions (number of middle points) x (number of middle points), and is blocked, 
+ so no solutions lie in this region.</li>
+ </ul>
+ <br>
+ 
+ </li>
+ <li>Top right: Terminating and splitting alternatives.
+ <br><br>
+ <p>This quadrant contains alternative scores, and the scores are arranged along the
+ diagonal (top left to bottom right). The score is a cutoff value, and is the same cutoff
+ value used in the bottom left and bottom right quadrants.
+ <br><br>
+ </li>
+ <li>Bottom left: Initiating and merging alternatives.
+ <br><br>
+ <p>This quadrant contains alternative scores, and the scores are arranged along the
+ diagonal (top left to bottom right). The score is a cutoff value, and is the same cutoff
+ value used in the top right and bottom right quadrants.
+ <br><br>
+ </li>
+ <li>Bottom right: Mathematically required to solve LAP problems.
+ <br><br>
+ <p>This quadrant requires special formatting to allow the LAP to be solved. Essentially,
+ the top left quadrant is transposed, and all non-blocked values are replaced with the cutoff
+ value used in the bottom left and top right quadrants.
+ <br><br>
+ </li>
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Nicholas Perry</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#mergingMiddlePoints">mergingMiddlePoints</a></span></code>
+<div class="block">The list of middle Spots which can participate in merge events.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#middlePoints">middlePoints</a></span></code>
+<div class="block">Holds the Spots in the middle of track segments (not at end or start).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#splittingMiddlePoints">splittingMiddlePoints</a></span></code>
+<div class="block">The list of middle Spots which can participate in splitting events.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#trackSegments">trackSegments</a></span></code>
+<div class="block">The track segments.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.fiji.plugin.trackmate.tracking.oldlap.costmatrix.LAPTrackerCostMatrixCreator">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;fiji.plugin.trackmate.tracking.oldlap.costmatrix.<a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix">LAPTrackerCostMatrixCreator</a></h3>
+<code><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#costs">costs</a>, <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#errorMessage">errorMessage</a>, <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#settings">settings</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">MultiThreadedBenchmarkAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html?is-external=true#processingTime" title="class or interface in net.imglib2.algorithm">processingTime</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.algorithm.MultiThreadedAlgorithm">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">MultiThreadedAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true#numThreads" title="class or interface in net.imglib2.algorithm">numThreads</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#TrackSegmentCostMatrixCreator-java.util.List-java.util.Map-">TrackSegmentCostMatrixCreator</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt;&nbsp;trackSegments,
+                             <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#checkInput--">checkInput</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#getMergingMiddlePoints--">getMergingMiddlePoints</a></span>()</code>
+<div class="block">Returns a list which holds references to all the merging middle points
+ within all the track segments.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#getSplittingMiddlePoints--">getSplittingMiddlePoints</a></span>()</code>
+<div class="block">Returns a list which holds references to all the splitting middle points
+ within all the track segments.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#getTrackSegmentMiddlePoints-java.util.List-">getTrackSegmentMiddlePoints</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt;&nbsp;trackSegments)</code>
+<div class="block">Create a List of candidate spots for splitting or merging events.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#process--">process</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html#setLogger-fiji.plugin.trackmate.Logger-">setLogger</a></span>(<a href="../../../../../../fiji/plugin/trackmate/Logger.html" title="class in fiji.plugin.trackmate">Logger</a>&nbsp;logger)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.fiji.plugin.trackmate.tracking.oldlap.costmatrix.LAPTrackerCostMatrixCreator">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;fiji.plugin.trackmate.tracking.oldlap.costmatrix.<a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix">LAPTrackerCostMatrixCreator</a></h3>
+<code><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#getAlternativeScores-int-double-">getAlternativeScores</a>, <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#getErrorMessage--">getErrorMessage</a>, <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#getLowerRight-Jama.Matrix-double-">getLowerRight</a>, <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LAPTrackerCostMatrixCreator.html#getResult--">getResult</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.MultiThreadedBenchmarkAlgorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">MultiThreadedBenchmarkAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedBenchmarkAlgorithm.html?is-external=true#getProcessingTime--" title="class or interface in net.imglib2.algorithm">getProcessingTime</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.MultiThreadedAlgorithm">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.algorithm.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true" title="class or interface in net.imglib2.algorithm">MultiThreadedAlgorithm</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true#getNumThreads--" title="class or interface in net.imglib2.algorithm">getNumThreads</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true#setNumThreads--" title="class or interface in net.imglib2.algorithm">setNumThreads</a>, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/algorithm/MultiThreadedAlgorithm.html?is-external=true#setNumThreads-int-" title="class or interface in net.imglib2.algorithm">setNumThreads</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="trackSegments">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trackSegments</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt; trackSegments</pre>
+<div class="block">The track segments.</div>
+</li>
+</ul>
+<a name="middlePoints">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>middlePoints</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt; middlePoints</pre>
+<div class="block">Holds the Spots in the middle of track segments (not at end or start).</div>
+</li>
+</ul>
+<a name="mergingMiddlePoints">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mergingMiddlePoints</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt; mergingMiddlePoints</pre>
+<div class="block">The list of middle Spots which can participate in merge events.</div>
+</li>
+</ul>
+<a name="splittingMiddlePoints">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>splittingMiddlePoints</h4>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt; splittingMiddlePoints</pre>
+<div class="block">The list of middle Spots which can participate in splitting events.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TrackSegmentCostMatrixCreator-java.util.List-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TrackSegmentCostMatrixCreator</h4>
+<pre>public&nbsp;TrackSegmentCostMatrixCreator(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt;&nbsp;trackSegments,
+                                     <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trackSegments</code> - A list of track segments (each track segment is 
+ an <code>ArrayList</code> of <code>Spots</code>.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setLogger-fiji.plugin.trackmate.Logger-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLogger</h4>
+<pre>public&nbsp;void&nbsp;setLogger(<a href="../../../../../../fiji/plugin/trackmate/Logger.html" title="class in fiji.plugin.trackmate">Logger</a>&nbsp;logger)</pre>
+</li>
+</ul>
+<a name="checkInput--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkInput</h4>
+<pre>public&nbsp;boolean&nbsp;checkInput()</pre>
+</li>
+</ul>
+<a name="getSplittingMiddlePoints--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSplittingMiddlePoints</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&nbsp;getSplittingMiddlePoints()</pre>
+<div class="block">Returns a list which holds references to all the splitting middle points
+ within all the track segments. Notably, these middle points are in the
+ same order here as they are referenced in the cost matrix (so, the first
+ column index in the merging section, index 0, corresponds to the Spot at
+ index 0 in this ArrayList.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the <code>List</code> of middle <code>Spots</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getMergingMiddlePoints--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMergingMiddlePoints</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&nbsp;getMergingMiddlePoints()</pre>
+<div class="block">Returns a list which holds references to all the merging middle points
+ within all the track segments. Notably, these middle points are in the
+ same order here as they are referenced in the cost matrix (so, the 
+ first column index in the merging section, index 0, corresponds to
+ the Spot at index 0 in this ArrayList.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The <code>List</code> of middle <code>Spots</code></dd>
+</dl>
+</li>
+</ul>
+<a name="process--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;boolean&nbsp;process()</pre>
+</li>
+</ul>
+<a name="getTrackSegmentMiddlePoints-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getTrackSegmentMiddlePoints</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&nbsp;getTrackSegmentMiddlePoints(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/SortedSet.html?is-external=true" title="class or interface in java.util">SortedSet</a>&lt;<a href="../../../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;&gt;&nbsp;trackSegments)</pre>
+<div class="block">Create a List of candidate spots for splitting or merging events. 
+ A desirable candidate is a spot belonging to a track with at least 2 spots.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trackSegments</code> - A List of track segments, where each segment is its own List of Spots.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A List containing references to all suitable candidate Spots in the track segments.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/costmatrix/LinkingCostMatrixCreator.html" title="class in fiji.plugin.trackmate.tracking.oldlap.costmatrix"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?fiji/plugin/trackmate/tracking/oldlap/costmatrix/TrackSegmentCostMatrixCreator.html" target="_top">Frames</a></li>
+<li><a href="TrackSegmentCostMatrixCreator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>
