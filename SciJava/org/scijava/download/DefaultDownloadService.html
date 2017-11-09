@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DefaultDataHandleService (SciJava Javadocs 1.0.0-SNAPSHOT API)</title>
+<title>DefaultDownloadService (SciJava Javadocs 1.0.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
@@ -11,12 +11,18 @@
 <script type="text/javascript"><!--
     try {
         if (location.href.indexOf('is-external=true') == -1) {
-            parent.document.title="DefaultDataHandleService (SciJava Javadocs 1.0.0-SNAPSHOT API)";
+            parent.document.title="DefaultDownloadService (SciJava Javadocs 1.0.0-SNAPSHOT API)";
         }
     }
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -41,12 +47,12 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../org/scijava/io/DefaultIOService.html" title="class in org.scijava.io"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../org/scijava/download/DiskLocationCache.html" title="class in org.scijava.download"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/scijava/io/DefaultDataHandleService.html" target="_top">Frames</a></li>
-<li><a href="DefaultDataHandleService.html" target="_top">No&nbsp;Frames</a></li>
+<li><a href="../../../index.html?org/scijava/download/DefaultDownloadService.html" target="_top">Frames</a></li>
+<li><a href="DefaultDownloadService.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
 <li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
@@ -69,13 +75,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractPTService">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -84,8 +90,8 @@
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">org.scijava.io</div>
-<h2 title="Class DefaultDataHandleService" class="title">Class DefaultDataHandleService</h2>
+<div class="subTitle">org.scijava.download</div>
+<h2 title="Class DefaultDownloadService" class="title">Class DefaultDownloadService</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -101,22 +107,7 @@
 <li><a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">org.scijava.service.AbstractService</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractPTService</a>&lt;PT&gt;</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../org/scijava/plugin/AbstractTypedService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractTypedService</a>&lt;DT,PT&gt;</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../org/scijava/plugin/AbstractWrapperService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractWrapperService</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>,<a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;&gt;</li>
-<li>
-<ul class="inheritance">
-<li>org.scijava.io.DefaultDataHandleService</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>org.scijava.download.DefaultDownloadService</li>
 </ul>
 </li>
 </ul>
@@ -131,14 +122,14 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io">DataHandleService</a>, <a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;&gt;, <a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../org/scijava/plugin/TypedService.html" title="interface in org.scijava.plugin">TypedService</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>,<a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;&gt;, <a href="../../../org/scijava/plugin/WrapperService.html" title="interface in org.scijava.plugin">WrapperService</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>,<a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;&gt;, <a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;, <a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../org/scijava/download/DownloadService.html" title="interface in org.scijava.download">DownloadService</a>, <a href="../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">DefaultDataHandleService</span>
-extends <a href="../../../org/scijava/plugin/AbstractWrapperService.html" title="class in org.scijava.plugin">AbstractWrapperService</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>,<a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;<a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;&gt;
-implements <a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io">DataHandleService</a></pre>
-<div class="block">Default implementation of <a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io"><code>DataHandleService</code></a>.</div>
+<pre>public class <span class="typeNameLabel">DefaultDownloadService</span>
+extends <a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">AbstractService</a>
+implements <a href="../../../org/scijava/download/DownloadService.html" title="interface in org.scijava.download">DownloadService</a></pre>
+<div class="block">Default implementation of <a href="../../../org/scijava/download/DownloadService.html" title="interface in org.scijava.download"><code>DownloadService</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Curtis Rueden</dd>
@@ -161,7 +152,7 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/io/DefaultDataHandleService.html#DefaultDataHandleService--">DefaultDataHandleService</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/download/DefaultDownloadService.html#DefaultDownloadService--">DefaultDownloadService</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -172,13 +163,30 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 <!--   -->
 </a>
 <h3>Method Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractPTService">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">AbstractPTService</a></h3>
-<code><a href="../../../org/scijava/plugin/AbstractPTService.html#pluginService--">pluginService</a></code></li>
-</ul>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../org/scijava/download/Download.html" title="interface in org.scijava.download">Download</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/download/DefaultDownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-">download</a></span>(<a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
+        <a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination)</code>
+<div class="block">Downloads data from the given source, storing it into the given
+ destination.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/scijava/download/Download.html" title="interface in org.scijava.download">Download</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/download/DefaultDownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-org.scijava.download.LocationCache-">download</a></span>(<a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
+        <a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination,
+        <a href="../../../org/scijava/download/LocationCache.html" title="interface in org.scijava.download">LocationCache</a>&nbsp;cache)</code>
+<div class="block">Downloads data from the given source, storing it into the given
+ destination.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.AbstractService">
 <!--   -->
@@ -208,39 +216,11 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 <code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.io.DataHandleService">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;org.scijava.io.<a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io">DataHandleService</a></h3>
-<code><a href="../../../org/scijava/io/DataHandleService.html#getPluginType--">getPluginType</a>, <a href="../../../org/scijava/io/DataHandleService.html#getType--">getType</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.WrapperService">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/WrapperService.html" title="interface in org.scijava.plugin">WrapperService</a></h3>
-<code><a href="../../../org/scijava/plugin/WrapperService.html#create-D-">create</a>, <a href="../../../org/scijava/plugin/WrapperService.html#initialize--">initialize</a>, <a href="../../../org/scijava/plugin/WrapperService.html#supports-DT-">supports</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.TypedService">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/TypedService.html" title="interface in org.scijava.plugin">TypedService</a></h3>
-<code><a href="../../../org/scijava/plugin/TypedService.html#find-DT-">find</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.PTService">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a></h3>
-<code><a href="../../../org/scijava/plugin/PTService.html#create-java.lang.Class-">create</a>, <a href="../../../org/scijava/plugin/PTService.html#getPlugins--">getPlugins</a>, <a href="../../../org/scijava/plugin/PTService.html#getPluginService--">getPluginService</a>, <a href="../../../org/scijava/plugin/PTService.html#pluginService--">pluginService</a></code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></h3>
-<code><a href="../../../org/scijava/service/Service.html#registerEventHandlers--">registerEventHandlers</a></code></li>
+<code><a href="../../../org/scijava/service/Service.html#initialize--">initialize</a>, <a href="../../../org/scijava/service/Service.html#registerEventHandlers--">registerEventHandlers</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
@@ -305,13 +285,65 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="DefaultDataHandleService--">
+<a name="DefaultDownloadService--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>DefaultDataHandleService</h4>
-<pre>public&nbsp;DefaultDataHandleService()</pre>
+<h4>DefaultDownloadService</h4>
+<pre>public&nbsp;DefaultDownloadService()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="download-org.scijava.io.location.Location-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>download</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/download/Download.html" title="interface in org.scijava.download">Download</a>&nbsp;download(<a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
+                         <a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/download/DownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-">DownloadService</a></code></span></div>
+<div class="block">Downloads data from the given source, storing it into the given
+ destination.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/download/DownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-">download</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/download/DownloadService.html" title="interface in org.scijava.download">DownloadService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - The location of the needed data.</dd>
+<dd><code>destination</code> - The location where the needed data should be stored.</dd>
+</dl>
+</li>
+</ul>
+<a name="download-org.scijava.io.location.Location-org.scijava.io.location.Location-org.scijava.download.LocationCache-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>download</h4>
+<pre>public&nbsp;<a href="../../../org/scijava/download/Download.html" title="interface in org.scijava.download">Download</a>&nbsp;download(<a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
+                         <a href="../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination,
+                         <a href="../../../org/scijava/download/LocationCache.html" title="interface in org.scijava.download">LocationCache</a>&nbsp;cache)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/download/DownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-org.scijava.download.LocationCache-">DownloadService</a></code></span></div>
+<div class="block">Downloads data from the given source, storing it into the given
+ destination.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/download/DownloadService.html#download-org.scijava.io.location.Location-org.scijava.io.location.Location-org.scijava.download.LocationCache-">download</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/download/DownloadService.html" title="interface in org.scijava.download">DownloadService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - The location of the needed data.</dd>
+<dd><code>destination</code> - The location where the needed data should be stored.</dd>
+<dd><code>cache</code> - The cache from which already-downloaded data should be pulled
+          preferentially, and to which newly-downloaded data should be
+          stored for next time.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -341,12 +373,12 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../org/scijava/io/DefaultIOService.html" title="class in org.scijava.io"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../org/scijava/download/DiskLocationCache.html" title="class in org.scijava.download"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/scijava/io/DefaultDataHandleService.html" target="_top">Frames</a></li>
-<li><a href="DefaultDataHandleService.html" target="_top">No&nbsp;Frames</a></li>
+<li><a href="../../../index.html?org/scijava/download/DefaultDownloadService.html" target="_top">Frames</a></li>
+<li><a href="DefaultDownloadService.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
 <li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
@@ -369,13 +401,13 @@ implements <a href="../../../org/scijava/io/DataHandleService.html" title="inter
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractPTService">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

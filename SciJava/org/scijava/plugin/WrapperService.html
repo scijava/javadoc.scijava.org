@@ -108,11 +108,11 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io">DataHandleService</a>, <a href="../../../org/scijava/widget/WidgetService.html" title="interface in org.scijava.widget">WidgetService</a></dd>
+<dd><a href="../../../org/scijava/io/handle/DataHandleService.html" title="interface in org.scijava.io.handle">DataHandleService</a>, <a href="../../../org/scijava/widget/WidgetService.html" title="interface in org.scijava.widget">WidgetService</a></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../org/scijava/plugin/AbstractWrapperService.html" title="class in org.scijava.plugin">AbstractWrapperService</a>, <a href="../../../org/scijava/io/DefaultDataHandleService.html" title="class in org.scijava.io">DefaultDataHandleService</a>, <a href="../../../org/scijava/widget/DefaultWidgetService.html" title="class in org.scijava.widget">DefaultWidgetService</a></dd>
+<dd><a href="../../../org/scijava/plugin/AbstractWrapperService.html" title="class in org.scijava.plugin">AbstractWrapperService</a>, <a href="../../../org/scijava/io/handle/DefaultDataHandleService.html" title="class in org.scijava.io.handle">DefaultDataHandleService</a>, <a href="../../../org/scijava/widget/DefaultWidgetService.html" title="class in org.scijava.widget">DefaultWidgetService</a></dd>
 </dl>
 <hr>
 <br>
@@ -317,9 +317,9 @@ extends <a href="../../../org/scijava/plugin/TypedService.html" title="interface
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/Typed.html#supports-T-">Typed</a></code></span></div>
 <div class="block">Gets whether this object is compatible with the given data object.
  <p>
- By default, this method will return <code>true</code> always, since the type is
- known to be compatible. But individual implementations may have other
- requirements beyond class assignability.
+ By default, this method will return <code>true</code> iff the data is assignable
+ to the associated type given by <a href="../../../org/scijava/Typed.html#getType--"><code>Typed.getType()</code></a>. But individual
+ implementations may have other requirements beyond class assignability.
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

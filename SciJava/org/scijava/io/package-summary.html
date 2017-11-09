@@ -81,36 +81,21 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io">DataHandle</a>&lt;L extends <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;</td>
+<td class="colFirst"><a href="../../../org/scijava/io/ByteBank.html" title="interface in org.scijava.io">ByteBank</a></td>
 <td class="colLast">
-<div class="block">A <em>data handle</em> is a plugin which provides access to bytes in a data
- stream (e.g., files or arrays), identified by a <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a>.</div>
+<div class="block">A <a href="../../../org/scijava/io/ByteBank.html" title="interface in org.scijava.io"><code>ByteBank</code></a> is a self-growing buffer over arbitrary bytes.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io">DataHandleService</a></td>
-<td class="colLast">
-<div class="block">Interface for low-level data I/O: reading and writing bytes using
- <a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><code>DataHandle</code></a>s.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;D&gt;</td>
 <td class="colLast">
 <div class="block">A plugin which extends an application's I/O capabilities.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../org/scijava/io/IOService.html" title="interface in org.scijava.io">IOService</a></td>
 <td class="colLast">
 <div class="block">Interface for high-level data I/O: opening and saving data.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a></td>
-<td class="colLast">
-<div class="block">A <em>location</em> is a data descriptor, such as a file on disk, a remote
- URL, or a database connection.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -131,81 +116,27 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/AbstractDataHandle.html" title="class in org.scijava.io">AbstractDataHandle</a>&lt;L extends <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;</td>
-<td class="colLast">
-<div class="block">Abstract base class for <a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><code>DataHandle</code></a> plugins.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../../org/scijava/io/AbstractIOPlugin.html" title="class in org.scijava.io">AbstractIOPlugin</a>&lt;D&gt;</td>
 <td class="colLast">
 <div class="block">Abstract base class for <a href="../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io"><code>IOPlugin</code></a>s.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/AbstractLocation.html" title="class in org.scijava.io">AbstractLocation</a></td>
-<td class="colLast">
-<div class="block">Abstract base class for <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a> implementations.</div>
-</td>
-</tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../org/scijava/io/BytesLocation.html" title="class in org.scijava.io">BytesLocation</a></td>
+<td class="colFirst"><a href="../../../org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io">ByteArrayByteBank</a></td>
 <td class="colLast">
-<div class="block"><a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a> backed by a <a href="http://javadoc.imagej.net/Java/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio"><code>ByteBuffer</code></a>.</div>
+<div class="block"><a href="../../../org/scijava/io/ByteBank.html" title="interface in org.scijava.io"><code>ByteBank</code></a> implementation backed by a <a href="../../../org/scijava/util/ByteArray.html" title="class in org.scijava.util"><code>ByteArray</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/DataHandleInputStream.html" title="class in org.scijava.io">DataHandleInputStream</a>&lt;L extends <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;</td>
-<td class="colLast">
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/io/InputStream.html?is-external=true" title="class or interface in java.io"><code>InputStream</code></a> backed by a <a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><code>DataHandle</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../org/scijava/io/DataHandleOutputStream.html" title="class in org.scijava.io">DataHandleOutputStream</a>&lt;L extends <a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io">Location</a>&gt;</td>
-<td class="colLast">
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/io/OutputStream.html?is-external=true" title="class or interface in java.io"><code>OutputStream</code></a> backed by a <a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><code>DataHandle</code></a>.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/DefaultDataHandleService.html" title="class in org.scijava.io">DefaultDataHandleService</a></td>
-<td class="colLast">
-<div class="block">Default implementation of <a href="../../../org/scijava/io/DataHandleService.html" title="interface in org.scijava.io"><code>DataHandleService</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../../org/scijava/io/DefaultIOService.html" title="class in org.scijava.io">DefaultIOService</a></td>
 <td class="colLast">
 <div class="block">Default implementation of <a href="../../../org/scijava/io/IOService.html" title="interface in org.scijava.io"><code>IOService</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../org/scijava/io/DefaultRecentFileService.html" title="class in org.scijava.io">DefaultRecentFileService</a></td>
 <td class="colLast">
 <div class="block">Default service for managing the Recently Used Files menu.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../org/scijava/io/FileHandle.html" title="class in org.scijava.io">FileHandle</a></td>
-<td class="colLast">
-<div class="block"><a href="../../../org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><code>DataHandle</code></a> for a <a href="../../../org/scijava/io/FileLocation.html" title="class in org.scijava.io"><code>FileLocation</code></a>.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/FileLocation.html" title="class in org.scijava.io">FileLocation</a></td>
-<td class="colLast">
-<div class="block"><a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a> backed by a <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a> on disk.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../org/scijava/io/URILocation.html" title="class in org.scijava.io">URILocation</a></td>
-<td class="colLast">
-<div class="block"><a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a> backed by a <a href="http://javadoc.imagej.net/Java/java/net/URI.html?is-external=true" title="class or interface in java.net"><code>URI</code></a> string.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../org/scijava/io/URLLocation.html" title="class in org.scijava.io">URLLocation</a></td>
-<td class="colLast">
-<div class="block"><a href="../../../org/scijava/io/Location.html" title="interface in org.scijava.io"><code>Location</code></a> backed by a <a href="http://javadoc.imagej.net/Java/java/net/URL.html?is-external=true" title="class or interface in java.net"><code>URL</code></a>.</div>
 </td>
 </tr>
 </tbody>

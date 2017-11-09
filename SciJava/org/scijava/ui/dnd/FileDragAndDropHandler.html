@@ -195,8 +195,7 @@ extends <a href="../../../../org/scijava/ui/dnd/AbstractDragAndDropHandler.html"
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/ui/dnd/FileDragAndDropHandler.html#supports-java.io.File-">supports</a></span>(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>
-<div class="block">Gets whether this handler supports dropping the given data object onto a
- compatible display.</div>
+<div class="block">Gets whether this object is compatible with the given data object.</div>
 </td>
 </tr>
 </table>
@@ -308,9 +307,21 @@ extends <a href="../../../../org/scijava/ui/dnd/AbstractDragAndDropHandler.html"
 <li class="blockList">
 <h4>supports</h4>
 <pre>public&nbsp;boolean&nbsp;supports(<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/ui/dnd/DragAndDropHandler.html#supports-D-">DragAndDropHandler</a></code></span></div>
-<div class="block">Gets whether this handler supports dropping the given data object onto a
- compatible display.</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/Typed.html#supports-T-">Typed</a></code></span></div>
+<div class="block">Gets whether this object is compatible with the given data object.
+ <p>
+ By default, this method will return <code>true</code> iff the data is assignable
+ to the associated type given by <a href="../../../../org/scijava/Typed.html#getType--"><code>Typed.getType()</code></a>. But individual
+ implementations may have other requirements beyond class assignability.
+ </p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/Typed.html#supports-T-">supports</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a>&lt;<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/ui/dnd/DragAndDropHandler.html#supports-D-">supports</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/ui/dnd/DragAndDropHandler.html" title="interface in org.scijava.ui.dnd">DragAndDropHandler</a>&lt;<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../org/scijava/plugin/AbstractTypedPlugin.html#supports-D-">supports</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/scijava/plugin/AbstractTypedPlugin.html" title="class in org.scijava.plugin">AbstractTypedPlugin</a>&lt;<a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&gt;</code></dd>
+</dl>
 </li>
 </ul>
 <a name="drop-java.io.File-org.scijava.display.Display-">

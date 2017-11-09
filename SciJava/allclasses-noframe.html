@@ -21,7 +21,7 @@
 <li><a href="org/scijava/AbstractContextual.html" title="class in org.scijava">AbstractContextual</a></li>
 <li><a href="org/scijava/convert/AbstractConverter.html" title="class in org.scijava.convert">AbstractConverter</a></li>
 <li><a href="org/scijava/convert/AbstractConvertService.html" title="class in org.scijava.convert">AbstractConvertService</a></li>
-<li><a href="org/scijava/io/AbstractDataHandle.html" title="class in org.scijava.io">AbstractDataHandle</a></li>
+<li><a href="org/scijava/io/handle/AbstractDataHandle.html" title="class in org.scijava.io.handle">AbstractDataHandle</a></li>
 <li><a href="org/scijava/display/AbstractDisplay.html" title="class in org.scijava.display">AbstractDisplay</a></li>
 <li><a href="org/scijava/ui/viewer/AbstractDisplayViewer.html" title="class in org.scijava.ui.viewer">AbstractDisplayViewer</a></li>
 <li><a href="org/scijava/ui/dnd/AbstractDragAndDropData.html" title="class in org.scijava.ui.dnd">AbstractDragAndDropData</a></li>
@@ -38,7 +38,7 @@
 <li><a href="org/scijava/widget/AbstractInputWidget.html" title="class in org.scijava.widget">AbstractInputWidget</a></li>
 <li><a href="org/scijava/io/AbstractIOPlugin.html" title="class in org.scijava.io">AbstractIOPlugin</a></li>
 <li><a href="org/scijava/config/logback/AbstractLevelsFilter.html" title="class in org.scijava.config.logback">AbstractLevelsFilter</a></li>
-<li><a href="org/scijava/io/AbstractLocation.html" title="class in org.scijava.io">AbstractLocation</a></li>
+<li><a href="org/scijava/io/location/AbstractLocation.html" title="class in org.scijava.io.location">AbstractLocation</a></li>
 <li><a href="org/scijava/log/AbstractLogService.html" title="class in org.scijava.log">AbstractLogService</a></li>
 <li><a href="org/scijava/menu/AbstractMenuCreator.html" title="class in org.scijava.menu">AbstractMenuCreator</a></li>
 <li><a href="org/scijava/module/AbstractModule.html" title="class in org.scijava.module">AbstractModule</a></li>
@@ -51,6 +51,7 @@
 <li><a href="org/scijava/module/process/AbstractPreprocessorPlugin.html" title="class in org.scijava.module.process">AbstractPreprocessorPlugin</a></li>
 <li><a href="org/scijava/util/AbstractPrimitiveArray.html" title="class in org.scijava.util">AbstractPrimitiveArray</a></li>
 <li><a href="org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">AbstractPTService</a></li>
+<li><a href="org/scijava/io/location/AbstractRemoteLocation.html" title="class in org.scijava.io.location">AbstractRemoteLocation</a></li>
 <li><a href="org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">AbstractRichPlugin</a></li>
 <li><a href="org/scijava/script/AbstractScriptContext.html" title="class in org.scijava.script">AbstractScriptContext</a></li>
 <li><a href="org/scijava/script/AbstractScriptEngine.html" title="class in org.scijava.script">AbstractScriptEngine</a></li>
@@ -159,8 +160,12 @@
 <li><a href="org/scijava/widget/Button.html" title="interface in org.scijava.widget"><span class="interfaceName">Button</span></a></li>
 <li><a href="org/scijava/widget/ButtonWidget.html" title="interface in org.scijava.widget"><span class="interfaceName">ButtonWidget</span></a></li>
 <li><a href="org/scijava/util/ByteArray.html" title="class in org.scijava.util">ByteArray</a></li>
+<li><a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io">ByteArrayByteBank</a></li>
+<li><a href="org/scijava/io/ByteBank.html" title="interface in org.scijava.io"><span class="interfaceName">ByteBank</span></a></li>
+<li><a href="org/scijava/io/nio/ByteBufferByteBank.html" title="class in org.scijava.io.nio">ByteBufferByteBank</a></li>
 <li><a href="org/scijava/util/Bytes.html" title="class in org.scijava.util">Bytes</a></li>
-<li><a href="org/scijava/io/BytesLocation.html" title="class in org.scijava.io">BytesLocation</a></li>
+<li><a href="org/scijava/io/handle/BytesHandle.html" title="class in org.scijava.io.handle">BytesHandle</a></li>
+<li><a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></li>
 <li><a href="org/scijava/cache/CacheService.html" title="interface in org.scijava.cache"><span class="interfaceName">CacheService</span></a></li>
 <li><a href="org/scijava/Cancelable.html" title="interface in org.scijava"><span class="interfaceName">Cancelable</span></a></li>
 <li><a href="org/scijava/convert/CastingConverter.html" title="class in org.scijava.convert">CastingConverter</a></li>
@@ -212,10 +217,12 @@
 <li><a href="org/scijava/convert/ConvertService.html" title="interface in org.scijava.convert"><span class="interfaceName">ConvertService</span></a></li>
 <li><a href="org/scijava/minimaven/Coordinate.html" title="class in org.scijava.minimaven">Coordinate</a></li>
 <li><a href="org/scijava/tool/CustomDrawnTool.html" title="interface in org.scijava.tool"><span class="interfaceName">CustomDrawnTool</span></a></li>
-<li><a href="org/scijava/io/DataHandle.html" title="interface in org.scijava.io"><span class="interfaceName">DataHandle</span></a></li>
-<li><a href="org/scijava/io/DataHandleInputStream.html" title="class in org.scijava.io">DataHandleInputStream</a></li>
-<li><a href="org/scijava/io/DataHandleOutputStream.html" title="class in org.scijava.io">DataHandleOutputStream</a></li>
-<li><a href="org/scijava/io/DataHandleService.html" title="interface in org.scijava.io"><span class="interfaceName">DataHandleService</span></a></li>
+<li><a href="org/scijava/io/handle/DataHandle.html" title="interface in org.scijava.io.handle"><span class="interfaceName">DataHandle</span></a></li>
+<li><a href="org/scijava/io/handle/DataHandle.ByteOrder.html" title="enum in org.scijava.io.handle">DataHandle.ByteOrder</a></li>
+<li><a href="org/scijava/io/handle/DataHandleInputStream.html" title="class in org.scijava.io.handle">DataHandleInputStream</a></li>
+<li><a href="org/scijava/io/handle/DataHandleOutputStream.html" title="class in org.scijava.io.handle">DataHandleOutputStream</a></li>
+<li><a href="org/scijava/io/handle/DataHandles.html" title="class in org.scijava.io.handle">DataHandles</a></li>
+<li><a href="org/scijava/io/handle/DataHandleService.html" title="interface in org.scijava.io.handle"><span class="interfaceName">DataHandleService</span></a></li>
 <li><a href="org/scijava/io/event/DataOpenedEvent.html" title="class in org.scijava.io.event">DataOpenedEvent</a></li>
 <li><a href="org/scijava/io/event/DataSavedEvent.html" title="class in org.scijava.io.event">DataSavedEvent</a></li>
 <li><a href="org/scijava/widget/DateWidget.html" title="interface in org.scijava.widget"><span class="interfaceName">DateWidget</span></a></li>
@@ -230,9 +237,10 @@
 <li><a href="org/scijava/console/DefaultConsoleService.html" title="class in org.scijava.console">DefaultConsoleService</a></li>
 <li><a href="org/scijava/convert/DefaultConverter.html" title="class in org.scijava.convert">DefaultConverter</a></li>
 <li><a href="org/scijava/convert/DefaultConvertService.html" title="class in org.scijava.convert">DefaultConvertService</a></li>
-<li><a href="org/scijava/io/DefaultDataHandleService.html" title="class in org.scijava.io">DefaultDataHandleService</a></li>
+<li><a href="org/scijava/io/handle/DefaultDataHandleService.html" title="class in org.scijava.io.handle">DefaultDataHandleService</a></li>
 <li><a href="org/scijava/display/DefaultDisplay.html" title="class in org.scijava.display">DefaultDisplay</a></li>
 <li><a href="org/scijava/display/DefaultDisplayService.html" title="class in org.scijava.display">DefaultDisplayService</a></li>
+<li><a href="org/scijava/download/DefaultDownloadService.html" title="class in org.scijava.download">DefaultDownloadService</a></li>
 <li><a href="org/scijava/ui/dnd/DefaultDragAndDropData.html" title="class in org.scijava.ui.dnd">DefaultDragAndDropData</a></li>
 <li><a href="org/scijava/ui/dnd/DefaultDragAndDropService.html" title="class in org.scijava.ui.dnd">DefaultDragAndDropService</a></li>
 <li><a href="org/scijava/parse/eval/DefaultEvaluator.html" title="class in org.scijava.parse.eval">DefaultEvaluator</a></li>
@@ -250,6 +258,7 @@
 <li><a href="org/scijava/module/DefaultMutableModule.html" title="class in org.scijava.module">DefaultMutableModule</a></li>
 <li><a href="org/scijava/module/DefaultMutableModuleInfo.html" title="class in org.scijava.module">DefaultMutableModuleInfo</a></li>
 <li><a href="org/scijava/module/DefaultMutableModuleItem.html" title="class in org.scijava.module">DefaultMutableModuleItem</a></li>
+<li><a href="org/scijava/io/nio/DefaultNIOService.html" title="class in org.scijava.io.nio">DefaultNIOService</a></li>
 <li><a href="org/scijava/object/DefaultObjectService.html" title="class in org.scijava.object">DefaultObjectService</a></li>
 <li><a href="org/scijava/options/DefaultOptionsService.html" title="class in org.scijava.options">DefaultOptionsService</a></li>
 <li><a href="org/scijava/parse/DefaultParseService.html" title="class in org.scijava.parse">DefaultParseService</a></li>
@@ -265,6 +274,8 @@
 <li><a href="org/scijava/script/process/DefaultScriptProcessorService.html" title="class in org.scijava.script.process">DefaultScriptProcessorService</a></li>
 <li><a href="org/scijava/script/DefaultScriptService.html" title="class in org.scijava.script">DefaultScriptService</a></li>
 <li><a href="org/scijava/app/DefaultStatusService.html" title="class in org.scijava.app">DefaultStatusService</a></li>
+<li><a href="org/scijava/task/DefaultTask.html" title="class in org.scijava.task">DefaultTask</a></li>
+<li><a href="org/scijava/task/DefaultTaskService.html" title="class in org.scijava.task">DefaultTaskService</a></li>
 <li><a href="org/scijava/display/DefaultTextDisplay.html" title="class in org.scijava.display">DefaultTextDisplay</a></li>
 <li><a href="org/scijava/text/DefaultTextService.html" title="class in org.scijava.text">DefaultTextService</a></li>
 <li><a href="org/scijava/thread/DefaultThreadService.html" title="class in org.scijava.thread">DefaultThreadService</a></li>
@@ -283,6 +294,7 @@
 <li><a href="org/scijava/ui/swing/commands/DialogPromptDemo.html" title="class in org.scijava.ui.swing.commands">DialogPromptDemo</a></li>
 <li><a href="org/scijava/util/DigestUtils.html" title="class in org.scijava.util">DigestUtils</a></li>
 <li><a href="org/scijava/annotations/DirectoryIndexer.html" title="class in org.scijava.annotations">DirectoryIndexer</a></li>
+<li><a href="org/scijava/download/DiskLocationCache.html" title="class in org.scijava.download">DiskLocationCache</a></li>
 <li><a href="org/scijava/display/Display.html" title="interface in org.scijava.display"><span class="interfaceName">Display</span></a></li>
 <li><a href="org/scijava/display/Displayable.html" title="interface in org.scijava.display"><span class="interfaceName">Displayable</span></a></li>
 <li><a href="org/scijava/display/event/DisplayActivatedEvent.html" title="class in org.scijava.display.event">DisplayActivatedEvent</a></li>
@@ -299,6 +311,8 @@
 <li><a href="org/scijava/Disposable.html" title="interface in org.scijava"><span class="interfaceName">Disposable</span></a></li>
 <li><a href="org/scijava/ui/swing/widget/DocumentSizeFilter.html" title="class in org.scijava.ui.swing.widget">DocumentSizeFilter</a></li>
 <li><a href="org/scijava/util/DoubleArray.html" title="class in org.scijava.util">DoubleArray</a></li>
+<li><a href="org/scijava/download/Download.html" title="interface in org.scijava.download"><span class="interfaceName">Download</span></a></li>
+<li><a href="org/scijava/download/DownloadService.html" title="interface in org.scijava.download"><span class="interfaceName">DownloadService</span></a></li>
 <li><a href="org/scijava/ui/dnd/DragAndDropData.html" title="interface in org.scijava.ui.dnd"><span class="interfaceName">DragAndDropData</span></a></li>
 <li><a href="org/scijava/ui/dnd/event/DragAndDropEvent.html" title="class in org.scijava.ui.dnd.event">DragAndDropEvent</a></li>
 <li><a href="org/scijava/ui/dnd/DragAndDropHandler.html" title="interface in org.scijava.ui.dnd"><span class="interfaceName">DragAndDropHandler</span></a></li>
@@ -307,6 +321,8 @@
 <li><a href="org/scijava/ui/dnd/event/DragExitEvent.html" title="class in org.scijava.ui.dnd.event">DragExitEvent</a></li>
 <li><a href="org/scijava/ui/dnd/event/DragOverEvent.html" title="class in org.scijava.ui.dnd.event">DragOverEvent</a></li>
 <li><a href="org/scijava/ui/dnd/event/DropEvent.html" title="class in org.scijava.ui.dnd.event">DropEvent</a></li>
+<li><a href="org/scijava/io/handle/DummyHandle.html" title="class in org.scijava.io.handle">DummyHandle</a></li>
+<li><a href="org/scijava/io/location/DummyLocation.html" title="class in org.scijava.io.location">DummyLocation</a></li>
 <li><a href="org/scijava/tool/DummyTool.html" title="class in org.scijava.tool">DummyTool</a></li>
 <li><a href="org/scijava/plugins/commands/debug/DumpStack.html" title="class in org.scijava.plugins.commands.debug">DumpStack</a></li>
 <li><a href="org/scijava/command/DynamicCommand.html" title="class in org.scijava.command">DynamicCommand</a></li>
@@ -322,8 +338,8 @@
 <li><a href="org/scijava/event/EventSubscriber.html" title="interface in org.scijava.event"><span class="interfaceName">EventSubscriber</span></a></li>
 <li><a href="org/scijava/parse/ExpressionParser.html" title="class in org.scijava.parse">ExpressionParser</a></li>
 <li><a href="org/scijava/ui/dnd/FileDragAndDropHandler.html" title="class in org.scijava.ui.dnd">FileDragAndDropHandler</a></li>
-<li><a href="org/scijava/io/FileHandle.html" title="class in org.scijava.io">FileHandle</a></li>
-<li><a href="org/scijava/io/FileLocation.html" title="class in org.scijava.io">FileLocation</a></li>
+<li><a href="org/scijava/io/handle/FileHandle.html" title="class in org.scijava.io.handle">FileHandle</a></li>
+<li><a href="org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a></li>
 <li><a href="org/scijava/ui/FilePreprocessor.html" title="class in org.scijava.ui">FilePreprocessor</a></li>
 <li><a href="org/scijava/util/FileUtils.html" title="class in org.scijava.util">FileUtils</a></li>
 <li><a href="org/scijava/widget/FileWidget.html" title="interface in org.scijava.widget"><span class="interfaceName">FileWidget</span></a></li>
@@ -404,7 +420,8 @@
 <li><a href="org/scijava/parse/Literals.html" title="class in org.scijava.parse">Literals</a></li>
 <li><a href="org/scijava/module/process/LoadInputsPreprocessor.html" title="class in org.scijava.module.process">LoadInputsPreprocessor</a></li>
 <li><a href="org/scijava/Locatable.html" title="interface in org.scijava"><span class="interfaceName">Locatable</span></a></li>
-<li><a href="org/scijava/io/Location.html" title="interface in org.scijava.io"><span class="interfaceName">Location</span></a></li>
+<li><a href="org/scijava/io/location/Location.html" title="interface in org.scijava.io.location"><span class="interfaceName">Location</span></a></li>
+<li><a href="org/scijava/download/LocationCache.html" title="interface in org.scijava.download"><span class="interfaceName">LocationCache</span></a></li>
 <li><a href="org/scijava/log/Logged.html" title="interface in org.scijava.log"><span class="interfaceName">Logged</span></a></li>
 <li><a href="org/scijava/log/LogService.html" title="interface in org.scijava.log"><span class="interfaceName">LogService</span></a></li>
 <li><a href="org/scijava/util/LongArray.html" title="class in org.scijava.util">LongArray</a></li>
@@ -485,6 +502,7 @@
 <li><a href="org/scijava/display/event/input/MsWheelEvent.html" title="class in org.scijava.display.event.input">MsWheelEvent</a></li>
 <li><a href="org/scijava/console/MultiOutputStream.html" title="class in org.scijava.console">MultiOutputStream</a></li>
 <li><a href="org/scijava/console/MultiPrintStream.html" title="class in org.scijava.console">MultiPrintStream</a></li>
+<li><a href="org/scijava/download/MultiWriteHandle.html" title="class in org.scijava.download">MultiWriteHandle</a></li>
 <li><a href="org/scijava/module/MutableModule.html" title="interface in org.scijava.module"><span class="interfaceName">MutableModule</span></a></li>
 <li><a href="org/scijava/module/MutableModuleInfo.html" title="interface in org.scijava.module"><span class="interfaceName">MutableModuleInfo</span></a></li>
 <li><a href="org/scijava/module/MutableModuleItem.html" title="interface in org.scijava.module"><span class="interfaceName">MutableModuleItem</span></a></li>
@@ -493,6 +511,7 @@
 <li><a href="org/scijava/nativelib/NativeLibraryUtil.html" title="class in org.scijava.nativelib">NativeLibraryUtil</a></li>
 <li><a href="org/scijava/nativelib/NativeLibraryUtil.Architecture.html" title="enum in org.scijava.nativelib">NativeLibraryUtil.Architecture</a></li>
 <li><a href="org/scijava/nativelib/NativeLoader.html" title="class in org.scijava.nativelib">NativeLoader</a></li>
+<li><a href="org/scijava/io/nio/NIOService.html" title="interface in org.scijava.io.nio"><span class="interfaceName">NIOService</span></a></li>
 <li><a href="org/scijava/NoSuchServiceException.html" title="class in org.scijava">NoSuchServiceException</a></li>
 <li><a href="org/scijava/NullContextException.html" title="class in org.scijava">NullContextException</a></li>
 <li><a href="org/scijava/convert/NullConverter.html" title="class in org.scijava.convert">NullConverter</a></li>
@@ -593,6 +612,7 @@
 <li><a href="org/scijava/io/RecentFileService.html" title="interface in org.scijava.io"><span class="interfaceName">RecentFileService</span></a></li>
 <li><a href="org/scijava/util/ReflectedUniverse.html" title="class in org.scijava.util">ReflectedUniverse</a></li>
 <li><a href="org/scijava/util/ReflectException.html" title="class in org.scijava.util">ReflectException</a></li>
+<li><a href="org/scijava/io/location/RemoteLocation.html" title="interface in org.scijava.io.location"><span class="interfaceName">RemoteLocation</span></a></li>
 <li><a href="org/scijava/plugins/scripting/renjin/RenjinScriptLanguage.html" title="class in org.scijava.plugins.scripting.renjin">RenjinScriptLanguage</a></li>
 <li><a href="org/scijava/plugins/scripting/renjin/RenjinUtils.html" title="class in org.scijava.plugins.scripting.renjin">RenjinUtils</a></li>
 <li><a href="org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin"><span class="interfaceName">RichPlugin</span></a></li>
@@ -701,6 +721,9 @@
 <li><a href="org/scijava/ui/SystemClipboard.html" title="interface in org.scijava.ui"><span class="interfaceName">SystemClipboard</span></a></li>
 <li><a href="org/scijava/plugins/commands/debug/SystemInformation.html" title="class in org.scijava.plugins.commands.debug">SystemInformation</a></li>
 <li><a href="org/scijava/console/SystemPropertyArgument.html" title="class in org.scijava.console">SystemPropertyArgument</a></li>
+<li><a href="org/scijava/task/Task.html" title="interface in org.scijava.task"><span class="interfaceName">Task</span></a></li>
+<li><a href="org/scijava/task/event/TaskEvent.html" title="class in org.scijava.task.event">TaskEvent</a></li>
+<li><a href="org/scijava/task/TaskService.html" title="interface in org.scijava.task"><span class="interfaceName">TaskService</span></a></li>
 <li><a href="org/scijava/test/TestUtils.html" title="class in org.scijava.test">TestUtils</a></li>
 <li><a href="org/scijava/display/TextDisplay.html" title="interface in org.scijava.display"><span class="interfaceName">TextDisplay</span></a></li>
 <li><a href="org/scijava/ui/viewer/text/TextDisplayPanel.html" title="interface in org.scijava.ui.viewer.text"><span class="interfaceName">TextDisplayPanel</span></a></li>
@@ -736,8 +759,8 @@
 <li><a href="org/scijava/command/UnimplementedCommand.html" title="class in org.scijava.command">UnimplementedCommand</a></li>
 <li><a href="org/scijava/util/UnitUtils.html" title="class in org.scijava.util">UnitUtils</a></li>
 <li><a href="org/scijava/parse/eval/Unresolved.html" title="class in org.scijava.parse.eval">Unresolved</a></li>
-<li><a href="org/scijava/io/URILocation.html" title="class in org.scijava.io">URILocation</a></li>
-<li><a href="org/scijava/io/URLLocation.html" title="class in org.scijava.io">URLLocation</a></li>
+<li><a href="org/scijava/io/location/URILocation.html" title="class in org.scijava.io.location">URILocation</a></li>
+<li><a href="org/scijava/io/location/URLLocation.html" title="class in org.scijava.io.location">URLLocation</a></li>
 <li><a href="org/scijava/ui/UserInterface.html" title="interface in org.scijava.ui"><span class="interfaceName">UserInterface</span></a></li>
 <li><a href="org/scijava/Validated.html" title="interface in org.scijava"><span class="interfaceName">Validated</span></a></li>
 <li><a href="org/scijava/module/process/ValidityPreprocessor.html" title="class in org.scijava.module.process">ValidityPreprocessor</a></li>

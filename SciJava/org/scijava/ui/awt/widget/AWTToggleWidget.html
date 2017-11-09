@@ -210,7 +210,7 @@ implements <a href="../../../../../org/scijava/widget/ToggleWidget.html" title="
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/ui/awt/widget/AWTToggleWidget.html#supports-org.scijava.widget.WidgetModel-">supports</a></span>(<a href="../../../../../org/scijava/widget/WidgetModel.html" title="interface in org.scijava.widget">WidgetModel</a>&nbsp;model)</code>
-<div class="block">Gets whether this widget would be appropriate for the given model.</div>
+<div class="block">Gets whether this object is compatible with the given data object.</div>
 </td>
 </tr>
 </table>
@@ -387,13 +387,20 @@ implements <a href="../../../../../org/scijava/widget/ToggleWidget.html" title="
 <li class="blockList">
 <h4>supports</h4>
 <pre>public&nbsp;boolean&nbsp;supports(<a href="../../../../../org/scijava/widget/WidgetModel.html" title="interface in org.scijava.widget">WidgetModel</a>&nbsp;model)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/scijava/widget/InputWidget.html#supports-org.scijava.widget.WidgetModel-">InputWidget</a></code></span></div>
-<div class="block">Gets whether this widget would be appropriate for the given model.</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/scijava/Typed.html#supports-T-">Typed</a></code></span></div>
+<div class="block">Gets whether this object is compatible with the given data object.
+ <p>
+ By default, this method will return <code>true</code> iff the data is assignable
+ to the associated type given by <a href="../../../../../org/scijava/Typed.html#getType--"><code>Typed.getType()</code></a>. But individual
+ implementations may have other requirements beyond class assignability.
+ </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/scijava/Typed.html#supports-T-">supports</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a>&lt;<a href="../../../../../org/scijava/widget/WidgetModel.html" title="interface in org.scijava.widget">WidgetModel</a>&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/scijava/widget/InputWidget.html#supports-org.scijava.widget.WidgetModel-">supports</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/scijava/widget/InputWidget.html" title="interface in org.scijava.widget">InputWidget</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>,<a href="http://javadoc.imagej.net/Java/java/awt/Panel.html?is-external=true" title="class or interface in java.awt">Panel</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../org/scijava/widget/AbstractInputWidget.html#supports-org.scijava.widget.WidgetModel-">supports</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/scijava/widget/AbstractInputWidget.html" title="class in org.scijava.widget">AbstractInputWidget</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>,<a href="http://javadoc.imagej.net/Java/java/awt/Panel.html?is-external=true" title="class or interface in java.awt">Panel</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
