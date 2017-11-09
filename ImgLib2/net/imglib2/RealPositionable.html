@@ -166,7 +166,7 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RealPositionable.html#move-net.imglib2.RealLocalizable-">move</a></span>(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;localizable)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RealPositionable.html#move-net.imglib2.RealLocalizable-">move</a></span>(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;distance)</code>
 <div class="block">Move the element relative to its current location using a
  <a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2"><code>RealLocalizable</code></a> as distance vector.</div>
 </td>
@@ -199,7 +199,7 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RealPositionable.html#setPosition-net.imglib2.RealLocalizable-">setPosition</a></span>(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;localizable)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RealPositionable.html#setPosition-net.imglib2.RealLocalizable-">setPosition</a></span>(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;position)</code>
 <div class="block">Place the element at the same location as a given <a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2"><code>RealLocalizable</code></a></div>
 </td>
 </tr>
@@ -270,12 +270,13 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 <ul class="blockList">
 <li class="blockList">
 <h4>move</h4>
-<pre>void&nbsp;move(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;localizable)</pre>
+<pre>void&nbsp;move(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;distance)</pre>
 <div class="block">Move the element relative to its current location using a
  <a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2"><code>RealLocalizable</code></a> as distance vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>localizable</code> - </dd>
+<dd><code>distance</code> - relative offset, <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a> must
+            be &ge; <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -290,7 +291,7 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
  distance vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>distance</code> - </dd>
+<dd><code>distance,</code> - length must be &ge; <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -305,7 +306,7 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
  distance vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>distance</code> - </dd>
+<dd><code>distance,</code> - length must be &ge; <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -315,11 +316,12 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 <ul class="blockList">
 <li class="blockList">
 <h4>setPosition</h4>
-<pre>void&nbsp;setPosition(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;localizable)</pre>
+<pre>void&nbsp;setPosition(<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;position)</pre>
 <div class="block">Place the element at the same location as a given <a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2"><code>RealLocalizable</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>localizable</code> - </dd>
+<dd><code>position</code> - absolute position, <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a>
+            must be &ge; <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -333,7 +335,8 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 <div class="block">Set the position of the element.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>position</code> - </dd>
+<dd><code>position</code> - absolute position, length must be &ge;
+            <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -347,7 +350,8 @@ extends <a href="../../net/imglib2/Positionable.html" title="interface in net.im
 <div class="block">Set the position of the element.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>position</code> - </dd>
+<dd><code>position</code> - absolute position, length must be &ge;
+            <a href="../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>EuclideanSpace.numDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
