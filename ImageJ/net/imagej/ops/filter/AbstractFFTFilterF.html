@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var methods = {"i0":10,"i1":6,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?net/imagej/ops/filter/AbstractFFTFilterF.html" target="_top">Frames</a></li>
@@ -110,7 +110,12 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunctionOp.html" title="class in net.imagej.ops.special.function">net.imagej.ops.special.function.AbstractBinaryFunctionOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;K&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;O&gt;&gt;</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractFilterF</a>&lt;I,O,K,C&gt;</li>
+<li>
+<ul class="inheritance">
 <li>net.imagej.ops.filter.AbstractFFTFilterF&lt;I,O,K,C&gt;</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,9 +148,9 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public abstract class <span class="typeNameLabel">AbstractFFTFilterF&lt;I extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;I&gt;,O extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;O&gt;,K extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;K&gt;,C extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ComplexType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ComplexType</a>&lt;C&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;C&gt;&gt;</span>
-extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunctionOp.html" title="class in net.imagej.ops.special.function">AbstractBinaryFunctionOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;K&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;O&gt;&gt;</pre>
+extends <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter">AbstractFilterF</a>&lt;I,O,K,C&gt;</pre>
 <div class="block">Abstract class for binary filter that performs operations using an image and
- kernel in the frequency domain.</div>
+ kernel in the frequency domain using the imglib2 FFTMethods library.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Brian Northan</dd>
@@ -201,10 +206,12 @@ extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunct
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#calculate-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">calculate</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
-         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel)</code>
-<div class="block">compute output by extending the input(s) and running the filter</div>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#computeFilter-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-long:A-">computeFilter</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
+             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel,
+             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&nbsp;output,
+             long[]&nbsp;paddedSize)</code>
+<div class="block">create FFT memory, create FFT filter and run it</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -220,43 +227,19 @@ extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunct
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#createOutput-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">createOutput</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
-            <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel)</code>
-<div class="block">Create the output using the outFactory and outType if they exist.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>protected long[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#getBorderSize--">getBorderSize</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#getOBFInput--">getOBFInput</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#getOBFKernel--">getOBFKernel</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#getOutType--">getOutType</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#initialize--">initialize</a></span>()</code>
 <div class="block">Initializes the object.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#setOBFInput-net.imglib2.outofbounds.OutOfBoundsFactory-">setOBFInput</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&gt;&nbsp;objInput)</code>&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html#setOBFKernel-net.imglib2.outofbounds.OutOfBoundsFactory-">setOBFKernel</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&gt;&nbsp;obfKernel)</code>&nbsp;</td>
-</tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.filter.AbstractFilterF">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imagej.ops.filter.<a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter">AbstractFilterF</a></h3>
+<code><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#calculate-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">calculate</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#createOutput-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">createOutput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getBorderSize--">getBorderSize</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getOBFInput--">getOBFInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getOBFKernel--">getOBFKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getOutType--">getOutType</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getPadKernelOp--">getPadKernelOp</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#getPadOp--">getPadOp</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#setOBFInput-net.imglib2.outofbounds.OutOfBoundsFactory-">setOBFInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#setOBFKernel-net.imglib2.outofbounds.OutOfBoundsFactory-">setOBFKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#setPadKernelOp-net.imagej.ops.special.function.BinaryFunctionOp-">setPadKernelOp</a>, <a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#setPadOp-net.imagej.ops.special.function.BinaryFunctionOp-">setPadOp</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.function.AbstractBinaryFunctionOp">
 <!--   -->
@@ -367,42 +350,35 @@ extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunct
 <pre>public&nbsp;void&nbsp;initialize()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imagej/ops/Initializable.html#initialize--">Initializable</a></code></span></div>
 <div class="block">Initializes the object.</div>
-</li>
-</ul>
-<a name="createOutput-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createOutput</h4>
-<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&nbsp;createOutput(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
-                                                <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel)</pre>
-<div class="block">Create the output using the outFactory and outType if they exist. If these
- are null use a default factory and type</div>
-</li>
-</ul>
-<a name="calculate-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>calculate</h4>
-<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&nbsp;calculate(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
-                                             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel)</pre>
-<div class="block">compute output by extending the input(s) and running the filter</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>input</code> - first argument to the function</dd>
-<dd><code>kernel</code> - second argument to the function</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>output result of the function</dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#initialize--">initialize</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter">AbstractFilterF</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ComplexType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ComplexType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="computeFilter-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeFilter</h4>
+<pre>public&nbsp;void&nbsp;computeFilter(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;input,
+                          <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&nbsp;kernel,
+                          <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&nbsp;output,
+                          long[]&nbsp;paddedSize)</pre>
+<div class="block">create FFT memory, create FFT filter and run it</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html#computeFilter-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-long:A-">computeFilter</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter">AbstractFilterF</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;,<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ComplexType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ComplexType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">C</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
 <a name="createFilterComputer-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.Interval-">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>createFilterComputer</h4>
 <pre>public abstract&nbsp;<a href="../../../../net/imagej/ops/special/computer/BinaryComputerOp.html" title="interface in net.imagej.ops.special.computer">BinaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&gt;&nbsp;createFilterComputer(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&nbsp;raiExtendedInput,
@@ -422,60 +398,6 @@ extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunct
 <dd><code>output</code> - </dd>
 <dd><code>imgConvolutionInterval</code> - </dd>
 </dl>
-</li>
-</ul>
-<a name="getBorderSize--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getBorderSize</h4>
-<pre>protected&nbsp;long[]&nbsp;getBorderSize()</pre>
-</li>
-</ul>
-<a name="getOBFInput--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getOBFInput</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&gt;&nbsp;getOBFInput()</pre>
-</li>
-</ul>
-<a name="setOBFInput-net.imglib2.outofbounds.OutOfBoundsFactory-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setOBFInput</h4>
-<pre>protected&nbsp;void&nbsp;setOBFInput(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">I</a>&gt;&gt;&nbsp;objInput)</pre>
-</li>
-</ul>
-<a name="getOBFKernel--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getOBFKernel</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&gt;&nbsp;getOBFKernel()</pre>
-</li>
-</ul>
-<a name="setOBFKernel-net.imglib2.outofbounds.OutOfBoundsFactory-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setOBFKernel</h4>
-<pre>protected&nbsp;void&nbsp;setOBFKernel(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/outofbounds/OutOfBoundsFactory.html?is-external=true" title="class or interface in net.imglib2.outofbounds">OutOfBoundsFactory</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">K</a>&gt;&gt;&nbsp;obfKernel)</pre>
-</li>
-</ul>
-<a name="getOutType--">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>getOutType</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterF.html" title="type parameter in AbstractFFTFilterF">O</a>&gt;&nbsp;getOutType()</pre>
 </li>
 </ul>
 </li>
@@ -506,7 +428,7 @@ extends <a href="../../../../net/imagej/ops/special/function/AbstractBinaryFunct
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/ops/filter/AbstractFilterF.html" title="class in net.imagej.ops.filter"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?net/imagej/ops/filter/AbstractFFTFilterF.html" target="_top">Frames</a></li>

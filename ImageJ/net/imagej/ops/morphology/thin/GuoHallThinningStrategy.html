@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GuoHallThinningStrategy (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GuoHallThinningStrategy (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imagej/ops/morphology/thin/AbstractThin.html" title="class in net.imagej.ops.morphology.thin"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imagej/ops/morphology/thin/HilditchThinningStrategy.html" title="class in net.imagej.ops.morphology.thin"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html" target="_top">Frames</a></li>
+<li><a href="GuoHallThinningStrategy.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imagej.ops.morphology.thin.Abstract3x3NeighbourhoodThinning">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.ops.morphology.thin</div>
+<h2 title="Class GuoHallThinningStrategy" class="title">Class GuoHallThinningStrategy</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html" title="class in net.imagej.ops.morphology.thin">net.imagej.ops.morphology.thin.Abstract3x3NeighbourhoodThinning</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.morphology.thin.GuoHallThinningStrategy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html" title="interface in net.imagej.ops.morphology.thin">ThinningStrategy</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SingletonPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SingletonPlugin</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">GuoHallThinningStrategy</span>
+extends <a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html" title="class in net.imagej.ops.morphology.thin">Abstract3x3NeighbourhoodThinning</a></pre>
+<div class="block">Represents the thinning algorithm proposed by Z. Guo and R. W. Hall.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Andreas Burger, University of Konstanz</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imagej.ops.morphology.thin.Abstract3x3NeighbourhoodThinning">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imagej.ops.morphology.thin.<a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html" title="class in net.imagej.ops.morphology.thin">Abstract3x3NeighbourhoodThinning</a></h3>
+<code><a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#m_background">m_background</a>, <a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#m_foreground">m_foreground</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html#GuoHallThinningStrategy--">GuoHallThinningStrategy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html#GuoHallThinningStrategy-boolean-">GuoHallThinningStrategy</a></span>(boolean&nbsp;foreground)</code>
+<div class="block">Create a new Guo-Hall thinning strategy.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html" title="interface in net.imagej.ops.morphology.thin">ThinningStrategy</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html#copy--">copy</a></span>()</code>
+<div class="block">Returns a seperate copy of this strategy.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html#getIterationsPerCycle--">getIterationsPerCycle</a></span>()</code>
+<div class="block">Returns the minimum number of iterations necessary for the algorithm to
+ run.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html#removePixel-long:A-net.imglib2.RandomAccessible-int-">removePixel</a></span>(long[]&nbsp;position,
+           <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BitType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BitType</a>&gt;&nbsp;accessible,
+           int&nbsp;iteration)</code>
+<div class="block">This method should determine whether to keep a foreground pixel or not.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.morphology.thin.Abstract3x3NeighbourhoodThinning">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imagej.ops.morphology.thin.<a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html" title="class in net.imagej.ops.morphology.thin">Abstract3x3NeighbourhoodThinning</a></h3>
+<code><a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#afterCycle--">afterCycle</a>, <a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#findPatternSwitches-boolean:A-">findPatternSwitches</a>, <a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#getNeighbourhood-net.imglib2.RandomAccess-">getNeighbourhood</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GuoHallThinningStrategy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GuoHallThinningStrategy</h4>
+<pre>public&nbsp;GuoHallThinningStrategy()</pre>
+</li>
+</ul>
+<a name="GuoHallThinningStrategy-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GuoHallThinningStrategy</h4>
+<pre>public&nbsp;GuoHallThinningStrategy(boolean&nbsp;foreground)</pre>
+<div class="block">Create a new Guo-Hall thinning strategy. The passed boolean will represent
+ the foreground-value of the image.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>foreground</code> - Value determining the boolean value of foreground pixels.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="removePixel-long:A-net.imglib2.RandomAccessible-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removePixel</h4>
+<pre>public&nbsp;boolean&nbsp;removePixel(long[]&nbsp;position,
+                           <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BitType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BitType</a>&gt;&nbsp;accessible,
+                           int&nbsp;iteration)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html#removePixel-long:A-net.imglib2.RandomAccessible-int-">ThinningStrategy</a></code></span></div>
+<div class="block">This method should determine whether to keep a foreground pixel or not.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - Long Array containing the current position in the image.</dd>
+<dd><code>accessible</code> - The image to thin.</dd>
+<dd><code>iteration</code> - The iteration number.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if pixel can be switched to background, false otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a name="getIterationsPerCycle--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIterationsPerCycle</h4>
+<pre>public&nbsp;int&nbsp;getIterationsPerCycle()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html#getIterationsPerCycle--">ThinningStrategy</a></code></span></div>
+<div class="block">Returns the minimum number of iterations necessary for the algorithm to
+ run. This delays termination of the thinning algorithm until the end of the
+ current cycle. If, for example, no changes occur during the second
+ iteration of a 4-iteration-cycle, iterations 3 and 4 still take place.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html#getIterationsPerCycle--">getIterationsPerCycle</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html" title="interface in net.imagej.ops.morphology.thin">ThinningStrategy</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html#getIterationsPerCycle--">getIterationsPerCycle</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../net/imagej/ops/morphology/thin/Abstract3x3NeighbourhoodThinning.html" title="class in net.imagej.ops.morphology.thin">Abstract3x3NeighbourhoodThinning</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The number of iterations per cycle.</dd>
+</dl>
+</li>
+</ul>
+<a name="copy--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public&nbsp;<a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html" title="interface in net.imagej.ops.morphology.thin">ThinningStrategy</a>&nbsp;copy()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imagej/ops/morphology/thin/ThinningStrategy.html#copy--">ThinningStrategy</a></code></span></div>
+<div class="block">Returns a seperate copy of this strategy.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new instance of this strategy with the same values.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imagej/ops/morphology/thin/AbstractThin.html" title="class in net.imagej.ops.morphology.thin"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imagej/ops/morphology/thin/HilditchThinningStrategy.html" title="class in net.imagej.ops.morphology.thin"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imagej/ops/morphology/thin/GuoHallThinningStrategy.html" target="_top">Frames</a></li>
+<li><a href="GuoHallThinningStrategy.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields.inherited.from.class.net.imagej.ops.morphology.thin.Abstract3x3NeighbourhoodThinning">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2017 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>
