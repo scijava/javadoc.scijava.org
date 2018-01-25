@@ -212,7 +212,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/brightness/SetupAssignments.html#removeSetup-bdv.tools.brightness.ConverterSetup-">removeSetup</a></span>(<a href="../../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;setup)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/tools/brightness/SetupAssignments.html#removeSetupFromGroup-bdv.tools.brightness.ConverterSetup-bdv.tools.brightness.MinMaxGroup-">removeSetupFromGroup</a></span>(<a href="../../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;setup,
                     <a href="../../../bdv/tools/brightness/MinMaxGroup.html" title="class in bdv.tools.brightness">MinMaxGroup</a>&nbsp;group)</code>
 <div class="block">Remove the specified setup from the specified group.</div>
@@ -315,13 +315,18 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>removeSetupFromGroup</h4>
-<pre>public&nbsp;void&nbsp;removeSetupFromGroup(<a href="../../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;setup,
-                                 <a href="../../../bdv/tools/brightness/MinMaxGroup.html" title="class in bdv.tools.brightness">MinMaxGroup</a>&nbsp;group)</pre>
-<div class="block">Remove the specified setup from the specified group. If this group is
- made empty by this, it is removed from the list of groups. A new group is
- created containing only the specified setup, and this new group is added
- to the list of group. The settings of the new group are initialized with
- the settings of the old group.</div>
+<pre>public&nbsp;boolean&nbsp;removeSetupFromGroup(<a href="../../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;setup,
+                                    <a href="../../../bdv/tools/brightness/MinMaxGroup.html" title="class in bdv.tools.brightness">MinMaxGroup</a>&nbsp;group)</pre>
+<div class="block">Remove the specified setup from the specified group. If this group would
+ be made empty by this, it is not removed from the group. Otherwise, after
+ being removed, a new group is created containing only the specified
+ setup, and this new group is added to the list of group. The settings of
+ the new group are initialized with the settings of the old group.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Whether or not removal was successful (so the corresponding
+         checkbox can be re-checked)</dd>
+</dl>
 </li>
 </ul>
 <a name="setUpdateListener-bdv.tools.brightness.SetupAssignments.UpdateListener-">
@@ -485,6 +490,6 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
 </body>
 </html>

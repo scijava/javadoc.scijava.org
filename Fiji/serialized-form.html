@@ -2514,12 +2514,24 @@
 <pre><a href="bdv/util/BoundedInterval.html" title="class in bdv.util">BoundedInterval</a>[] ranges</pre>
 </li>
 <li class="blockList">
+<h4>minSliderPanels</h4>
+<pre><a href="bdv/tools/brightness/SliderPanel.html" title="class in bdv.tools.brightness">SliderPanel</a>[] minSliderPanels</pre>
+</li>
+<li class="blockList">
+<h4>maxSliderPanels</h4>
+<pre><a href="bdv/tools/brightness/SliderPanel.html" title="class in bdv.tools.brightness">SliderPanel</a>[] maxSliderPanels</pre>
+</li>
+<li class="blockList">
 <h4>selection</h4>
 <pre><a href="bdv/util/ModifiableInterval.html" title="class in bdv.util">ModifiableInterval</a> selection</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>listeners</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">E</a>&gt; listeners</pre>
+</li>
+<li class="blockListLast">
+<h4>cols</h4>
+<pre>int cols</pre>
 </li>
 </ul>
 </li>
@@ -3055,6 +3067,10 @@
  <a href="bdv/viewer/state/ViewerState.html#getCurrentTimepoint--"><code>ViewerState.getCurrentTimepoint()</code></a>. This is done <em>before</em>
  calling <a href="bdv/viewer/ViewerPanel.html#requestRepaint--"><code>ViewerPanel.requestRepaint()</code></a> so listeners have the chance to
  interfere.</div>
+</li>
+<li class="blockList">
+<h4>interpolationModeListeners</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/util/concurrent/CopyOnWriteArrayList.html?is-external=true" title="class or interface in java.util.concurrent">CopyOnWriteArrayList</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/CopyOnWriteArrayList.html?is-external=true" title="class or interface in java.util.concurrent">E</a>&gt; interpolationModeListeners</pre>
 </li>
 <li class="blockList">
 <h4>currentAnimator</h4>
@@ -6654,84 +6670,48 @@
 <div class="block">ActionEvent fired when the user press the refresh button.</div>
 </li>
 <li class="blockList">
-<h4>jLabelCheckCalibration</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelCheckCalibration</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldPixelWidth</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldPixelWidth</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldZStart</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldZStart</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldYStart</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldYStart</pre>
+<h4>jLabelImageName</h4>
+<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelImageName</pre>
 </li>
 <li class="blockList">
 <h4>jTextFieldXStart</h4>
 <pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldXStart</pre>
 </li>
 <li class="blockList">
-<h4>jLabelCropSetting</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelCropSetting</pre>
+<h4>jTextFieldXEnd</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldXEnd</pre>
 </li>
 <li class="blockList">
-<h4>jButtonRefresh</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JButton.html?is-external=true" title="class or interface in javax.swing">JButton</a> jButtonRefresh</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldTEnd</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldTEnd</pre>
-</li>
-<li class="blockList">
-<h4>jLabelTo4</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelTo4</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldTStart</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldTStart</pre>
-</li>
-<li class="blockList">
-<h4>jLabelT</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelT</pre>
-</li>
-<li class="blockList">
-<h4>jTextFieldZEnd</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldZEnd</pre>
+<h4>jTextFieldYStart</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldYStart</pre>
 </li>
 <li class="blockList">
 <h4>jTextFieldYEnd</h4>
 <pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldYEnd</pre>
 </li>
 <li class="blockList">
-<h4>jTextFieldXEnd</h4>
-<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldXEnd</pre>
+<h4>jTextFieldZStart</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldZStart</pre>
 </li>
 <li class="blockList">
-<h4>jLabelTo3</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelTo3</pre>
+<h4>jTextFieldZEnd</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldZEnd</pre>
 </li>
 <li class="blockList">
-<h4>jLabelTo2</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelTo2</pre>
+<h4>jTextFieldTEnd</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldTEnd</pre>
 </li>
 <li class="blockList">
-<h4>jLabelTo1</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelTo1</pre>
+<h4>jTextFieldTStart</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldTStart</pre>
 </li>
 <li class="blockList">
-<h4>jLabelZ</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelZ</pre>
+<h4>jButtonRefresh</h4>
+<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JButton.html?is-external=true" title="class or interface in javax.swing">JButton</a> jButtonRefresh</pre>
 </li>
 <li class="blockList">
-<h4>jLabelY</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelY</pre>
-</li>
-<li class="blockList">
-<h4>jLabelX</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelX</pre>
+<h4>jLabelUnits4</h4>
+<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelUnits4</pre>
 </li>
 <li class="blockList">
 <h4>jLabelUnits3</h4>
@@ -6746,6 +6726,10 @@
 <pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelUnits1</pre>
 </li>
 <li class="blockList">
+<h4>jTextFieldPixelWidth</h4>
+<pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldPixelWidth</pre>
+</li>
+<li class="blockList">
 <h4>jTextFieldVoxelDepth</h4>
 <pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldVoxelDepth</pre>
 </li>
@@ -6754,32 +6738,8 @@
 <pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldPixelHeight</pre>
 </li>
 <li class="blockList">
-<h4>jLabelVoxelDepth</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelVoxelDepth</pre>
-</li>
-<li class="blockList">
-<h4>jLabelPixelHeight</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelPixelHeight</pre>
-</li>
-<li class="blockList">
-<h4>jLabelPixelWidth</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelPixelWidth</pre>
-</li>
-<li class="blockList">
-<h4>jLabelImageName</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelImageName</pre>
-</li>
-<li class="blockList">
 <h4>jTextFieldTimeInterval</h4>
 <pre><a href="fiji/plugin/trackmate/gui/panels/components/JNumericTextField.html" title="class in fiji.plugin.trackmate.gui.panels.components">JNumericTextField</a> jTextFieldTimeInterval</pre>
-</li>
-<li class="blockList">
-<h4>jLabelTimeInterval</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelTimeInterval</pre>
-</li>
-<li class="blockList">
-<h4>jLabelUnits4</h4>
-<pre><a href="http://javadoc.imagej.net/Java/javax/swing/JLabel.html?is-external=true" title="class or interface in javax.swing">JLabel</a> jLabelUnits4</pre>
 </li>
 <li class="blockList">
 <h4>imp</h4>
@@ -9906,10 +9866,6 @@
 <pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> errorMessage</pre>
 </li>
 <li class="blockList">
-<h4>firstPaint</h4>
-<pre>boolean firstPaint</pre>
-</li>
-<li class="blockList">
 <h4>labels</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">Hashtable</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">K</a>,<a href="http://javadoc.imagej.net/Java/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">V</a>&gt; labels</pre>
 </li>
@@ -9997,9 +9953,13 @@
 <h4>smartRecording</h4>
 <pre>boolean smartRecording</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>imagePanels</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; imagePanels</pre>
+</li>
+<li class="blockListLast">
+<h4>firstPaint</h4>
+<pre>boolean firstPaint</pre>
 </li>
 </ul>
 </li>
@@ -10106,8 +10066,8 @@
 <pre>boolean doUpdate</pre>
 </li>
 <li class="blockList">
-<h4>channel</h4>
-<pre>int channel</pre>
+<h4>rgbMode</h4>
+<pre>int rgbMode</pre>
 </li>
 <li class="blockList">
 <h4>blankLabel</h4>
@@ -10712,6 +10672,10 @@
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
+<h4>wasActivated</h4>
+<pre>boolean wasActivated</pre>
+</li>
+<li class="blockList">
 <h4>list</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/awt/Button.html?is-external=true" title="class or interface in java.awt">Button</a> list</pre>
 </li>
@@ -10750,10 +10714,6 @@
 <li class="blockList">
 <h4>plot</h4>
 <pre><a href="http://javadoc.imagej.net/Fiji/ij/gui/Plot.html?is-external=true" title="class or interface in ij.gui">Plot</a> plot</pre>
-</li>
-<li class="blockList">
-<h4>layoutDone</h4>
-<pre>boolean layoutDone</pre>
 </li>
 <li class="blockList">
 <h4>blankLabel</h4>
@@ -10838,10 +10798,6 @@
 <li class="blockList">
 <h4>lastPointTime</h4>
 <pre>long lastPointTime</pre>
-</li>
-<li class="blockList">
-<h4>scale</h4>
-<pre>double scale</pre>
 </li>
 <li class="blockListLast">
 <h4>counterInfo</h4>
@@ -11216,6 +11172,10 @@
 <pre>boolean ignoreClipRect</pre>
 </li>
 <li class="blockList">
+<h4>flattenScale</h4>
+<pre>double flattenScale</pre>
+</li>
+<li class="blockList">
 <h4>name</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> name</pre>
 </li>
@@ -11263,9 +11223,13 @@
 <h4>xcenter</h4>
 <pre>double xcenter</pre>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>ycenter</h4>
 <pre>double ycenter</pre>
+</li>
+<li class="blockListLast">
+<h4>listenersNotified</h4>
+<pre>boolean listenersNotified</pre>
 </li>
 </ul>
 </li>
@@ -14178,14 +14142,6 @@
 <pre>double sin</pre>
 </li>
 <li class="blockList">
-<h4>tx</h4>
-<pre>double tx</pre>
-</li>
-<li class="blockList">
-<h4>ty</h4>
-<pre>double ty</pre>
-</li>
-<li class="blockList">
 <h4>itx</h4>
 <pre>double itx</pre>
 </li>
@@ -16839,11 +16795,11 @@
 </li>
 <li class="blockList">
 <h4>textAnchor</h4>
-<pre>org.jfree.ui.TextAnchor textAnchor</pre>
+<pre>org.jfree.chart.ui.TextAnchor textAnchor</pre>
 </li>
 <li class="blockList">
 <h4>rotationAnchor</h4>
-<pre>org.jfree.ui.TextAnchor rotationAnchor</pre>
+<pre>org.jfree.chart.ui.TextAnchor rotationAnchor</pre>
 </li>
 <li class="blockListLast">
 <h4>rotationAngle</h4>
@@ -17001,7 +16957,7 @@
 </li>
 <li class="blockListLast">
 <h4>drawable</h4>
-<pre>org.jfree.ui.Drawable drawable</pre>
+<pre>org.jfree.chart.ui.Drawable drawable</pre>
 </li>
 </ul>
 </li>
@@ -17054,7 +17010,7 @@
 </li>
 <li class="blockListLast">
 <h4>anchor</h4>
-<pre>org.jfree.ui.RectangleAnchor anchor</pre>
+<pre>org.jfree.chart.ui.RectangleAnchor anchor</pre>
 </li>
 </ul>
 </li>
@@ -17318,11 +17274,11 @@
 </li>
 <li class="blockList">
 <h4>textAnchor</h4>
-<pre>org.jfree.ui.TextAnchor textAnchor</pre>
+<pre>org.jfree.chart.ui.TextAnchor textAnchor</pre>
 </li>
 <li class="blockList">
 <h4>rotationAnchor</h4>
-<pre>org.jfree.ui.TextAnchor rotationAnchor</pre>
+<pre>org.jfree.chart.ui.TextAnchor rotationAnchor</pre>
 </li>
 <li class="blockList">
 <h4>rotationAngle</h4>
@@ -17414,7 +17370,7 @@
 </li>
 <li class="blockListLast">
 <h4>anchor</h4>
-<pre>org.jfree.ui.RectangleAnchor anchor</pre>
+<pre>org.jfree.chart.ui.RectangleAnchor anchor</pre>
 </li>
 </ul>
 </li>
@@ -17464,23 +17420,23 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>seriesVisibleList</h4>
-<pre>org.jfree.util.BooleanList seriesVisibleList</pre>
+<pre>org.jfree.chart.util.BooleanList seriesVisibleList</pre>
 </li>
 <li class="blockList">
-<h4>baseSeriesVisible</h4>
-<pre>boolean baseSeriesVisible</pre>
+<h4>defaultSeriesVisible</h4>
+<pre>boolean defaultSeriesVisible</pre>
 </li>
 <li class="blockList">
 <h4>seriesVisibleInLegendList</h4>
-<pre>org.jfree.util.BooleanList seriesVisibleInLegendList</pre>
+<pre>org.jfree.chart.util.BooleanList seriesVisibleInLegendList</pre>
 </li>
 <li class="blockList">
-<h4>baseSeriesVisibleInLegend</h4>
-<pre>boolean baseSeriesVisibleInLegend</pre>
+<h4>defaultSeriesVisibleInLegend</h4>
+<pre>boolean defaultSeriesVisibleInLegend</pre>
 </li>
 <li class="blockList">
 <h4>paintList</h4>
-<pre>org.jfree.util.PaintList paintList</pre>
+<pre>org.jfree.chart.util.PaintList paintList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesPaint</h4>
@@ -17488,7 +17444,7 @@
 </li>
 <li class="blockList">
 <h4>fillPaintList</h4>
-<pre>org.jfree.util.PaintList fillPaintList</pre>
+<pre>org.jfree.chart.util.PaintList fillPaintList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesFillPaint</h4>
@@ -17496,7 +17452,7 @@
 </li>
 <li class="blockList">
 <h4>outlinePaintList</h4>
-<pre>org.jfree.util.PaintList outlinePaintList</pre>
+<pre>org.jfree.chart.util.PaintList outlinePaintList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesOutlinePaint</h4>
@@ -17504,7 +17460,7 @@
 </li>
 <li class="blockList">
 <h4>strokeList</h4>
-<pre>org.jfree.util.StrokeList strokeList</pre>
+<pre>org.jfree.chart.util.StrokeList strokeList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesStroke</h4>
@@ -17512,7 +17468,7 @@
 </li>
 <li class="blockList">
 <h4>outlineStrokeList</h4>
-<pre>org.jfree.util.StrokeList outlineStrokeList</pre>
+<pre>org.jfree.chart.util.StrokeList outlineStrokeList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesOutlineStroke</h4>
@@ -17520,7 +17476,7 @@
 </li>
 <li class="blockList">
 <h4>shapeList</h4>
-<pre>org.jfree.util.ShapeList shapeList</pre>
+<pre>org.jfree.chart.util.ShapeList shapeList</pre>
 </li>
 <li class="blockList">
 <h4>autoPopulateSeriesShape</h4>
@@ -17528,39 +17484,39 @@
 </li>
 <li class="blockList">
 <h4>itemLabelsVisibleList</h4>
-<pre>org.jfree.util.BooleanList itemLabelsVisibleList</pre>
+<pre>org.jfree.chart.util.BooleanList itemLabelsVisibleList</pre>
 </li>
 <li class="blockList">
-<h4>baseItemLabelsVisible</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> baseItemLabelsVisible</pre>
+<h4>defaultItemLabelsVisible</h4>
+<pre>boolean defaultItemLabelsVisible</pre>
 </li>
 <li class="blockList">
 <h4>itemLabelFontMap</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; itemLabelFontMap</pre>
 </li>
 <li class="blockList">
-<h4>baseItemLabelFont</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/awt/Font.html?is-external=true" title="class or interface in java.awt">Font</a> baseItemLabelFont</pre>
+<h4>defaultItemLabelFont</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/awt/Font.html?is-external=true" title="class or interface in java.awt">Font</a> defaultItemLabelFont</pre>
 </li>
 <li class="blockList">
 <h4>itemLabelPaintList</h4>
-<pre>org.jfree.util.PaintList itemLabelPaintList</pre>
+<pre>org.jfree.chart.util.PaintList itemLabelPaintList</pre>
 </li>
 <li class="blockList">
 <h4>positiveItemLabelPositionMap</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; positiveItemLabelPositionMap</pre>
 </li>
 <li class="blockList">
-<h4>basePositiveItemLabelPosition</h4>
-<pre>org.jfree.chart.labels.ItemLabelPosition basePositiveItemLabelPosition</pre>
+<h4>defaultPositiveItemLabelPosition</h4>
+<pre>org.jfree.chart.labels.ItemLabelPosition defaultPositiveItemLabelPosition</pre>
 </li>
 <li class="blockList">
 <h4>negativeItemLabelPositionMap</h4>
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; negativeItemLabelPositionMap</pre>
 </li>
 <li class="blockList">
-<h4>baseNegativeItemLabelPosition</h4>
-<pre>org.jfree.chart.labels.ItemLabelPosition baseNegativeItemLabelPosition</pre>
+<h4>defaultNegativeItemLabelPosition</h4>
+<pre>org.jfree.chart.labels.ItemLabelPosition defaultNegativeItemLabelPosition</pre>
 </li>
 <li class="blockList">
 <h4>itemLabelAnchorOffset</h4>
@@ -17568,15 +17524,15 @@
 </li>
 <li class="blockList">
 <h4>createEntitiesList</h4>
-<pre>org.jfree.util.BooleanList createEntitiesList</pre>
+<pre>org.jfree.chart.util.BooleanList createEntitiesList</pre>
 </li>
 <li class="blockList">
-<h4>baseCreateEntities</h4>
-<pre>boolean baseCreateEntities</pre>
+<h4>defaultCreateEntities</h4>
+<pre>boolean defaultCreateEntities</pre>
 </li>
 <li class="blockList">
 <h4>legendShapeList</h4>
-<pre>org.jfree.util.ShapeList legendShapeList</pre>
+<pre>org.jfree.chart.util.ShapeList legendShapeList</pre>
 </li>
 <li class="blockList">
 <h4>treatLegendShapeAsLine</h4>
@@ -17587,48 +17543,20 @@
 <pre><a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; legendTextFontMap</pre>
 </li>
 <li class="blockList">
-<h4>baseLegendTextFont</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/awt/Font.html?is-external=true" title="class or interface in java.awt">Font</a> baseLegendTextFont</pre>
+<h4>defaultLegendTextFont</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/awt/Font.html?is-external=true" title="class or interface in java.awt">Font</a> defaultLegendTextFont</pre>
 </li>
 <li class="blockList">
 <h4>legendTextPaint</h4>
-<pre>org.jfree.util.PaintList legendTextPaint</pre>
+<pre>org.jfree.chart.util.PaintList legendTextPaint</pre>
 </li>
 <li class="blockList">
 <h4>dataBoundsIncludesVisibleSeriesOnly</h4>
 <pre>boolean dataBoundsIncludesVisibleSeriesOnly</pre>
 </li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>defaultEntityRadius</h4>
 <pre>int defaultEntityRadius</pre>
-</li>
-<li class="blockList">
-<h4>seriesVisible</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> seriesVisible</pre>
-</li>
-<li class="blockList">
-<h4>seriesVisibleInLegend</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> seriesVisibleInLegend</pre>
-</li>
-<li class="blockList">
-<h4>itemLabelsVisible</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> itemLabelsVisible</pre>
-</li>
-<li class="blockList">
-<h4>itemLabelFont</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/awt/Font.html?is-external=true" title="class or interface in java.awt">Font</a> itemLabelFont</pre>
-</li>
-<li class="blockList">
-<h4>positiveItemLabelPosition</h4>
-<pre>org.jfree.chart.labels.ItemLabelPosition positiveItemLabelPosition</pre>
-</li>
-<li class="blockList">
-<h4>negativeItemLabelPosition</h4>
-<pre>org.jfree.chart.labels.ItemLabelPosition negativeItemLabelPosition</pre>
-</li>
-<li class="blockListLast">
-<h4>createEntities</h4>
-<pre><a href="http://javadoc.imagej.net/Java/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> createEntities</pre>
 </li>
 </ul>
 </li>
@@ -17707,7 +17635,7 @@
 </li>
 <li class="blockList">
 <h4>seriesFilled</h4>
-<pre>org.jfree.util.BooleanList seriesFilled</pre>
+<pre>org.jfree.chart.util.BooleanList seriesFilled</pre>
 </li>
 <li class="blockList">
 <h4>drawOutlineWhenFilled</h4>
@@ -17727,7 +17655,7 @@
 </li>
 <li class="blockList">
 <h4>toolTipGeneratorList</h4>
-<pre>org.jfree.util.ObjectList toolTipGeneratorList</pre>
+<pre>org.jfree.chart.util.ObjectList toolTipGeneratorList</pre>
 </li>
 <li class="blockList">
 <h4>baseToolTipGenerator</h4>
@@ -19521,6 +19449,43 @@
 </ul>
 </li>
 <li class="blockList">
+<h2 title="Package">Package&nbsp;sc.fiji.omevisual.gui</h2>
+<ul class="blockList">
+<li class="blockList"><a name="sc.fiji.omevisual.gui.MainAppFrame">
+<!--   -->
+</a>
+<h3>Class <a href="sc/fiji/omevisual/gui/MainAppFrame.html" title="class in sc.fiji.omevisual.gui">sc.fiji.omevisual.gui.MainAppFrame</a> extends <a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>log</h4>
+<pre><a href="http://javadoc.imagej.net/SciJava/org/scijava/log/LogService.html?is-external=true" title="class or interface in org.scijava.log">LogService</a> log</pre>
+</li>
+<li class="blockList">
+<h4>ij</h4>
+<pre><a href="http://javadoc.imagej.net/ImageJ/net/imagej/ImageJ.html?is-external=true" title="class or interface in net.imagej">ImageJ</a> ij</pre>
+</li>
+<li class="blockList">
+<h4>fxPanel</h4>
+<pre>javafx.embed.swing.JFXPanel fxPanel</pre>
+</li>
+<li class="blockList">
+<h4>image</h4>
+<pre><a href="http://javadoc.imagej.net/ImageJ/net/imagej/display/ImageDisplay.html?is-external=true" title="class or interface in net.imagej.display">ImageDisplay</a> image</pre>
+</li>
+<li class="blockListLast">
+<h4>md</h4>
+<pre><a href="http://javadoc.imagej.net/Bio-Formats/loci/formats/ome/OMEXMLMetadata.html?is-external=true" title="class or interface in loci.formats.ome">OMEXMLMetadata</a> md</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList">
 <h2 title="Package">Package&nbsp;sc.fiji.timelapse</h2>
 <ul class="blockList">
 <li class="blockList"><a name="sc.fiji.timelapse.DummyCanvas">
@@ -19934,7 +19899,7 @@
 <li class="blockList"><a name="spim.fiji.plugin.thinout.Histogram">
 <!--   -->
 </a>
-<h3>Class <a href="spim/fiji/plugin/thinout/Histogram.html" title="class in spim.fiji.plugin.thinout">spim.fiji.plugin.thinout.Histogram</a> extends org.jfree.ui.ApplicationFrame implements Serializable</h3>
+<h3>Class <a href="spim/fiji/plugin/thinout/Histogram.html" title="class in spim.fiji.plugin.thinout">spim.fiji.plugin.thinout.Histogram</a> extends org.jfree.chart.ui.ApplicationFrame implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -24701,6 +24666,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
 </body>
 </html>
