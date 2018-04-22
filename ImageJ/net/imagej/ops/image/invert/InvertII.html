@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../../net/imagej/ops/image/invert/InvertIIInteger.html" title="class in net.imagej.ops.image.invert"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imagej/ops/image/invert/InvertII.html" target="_top">Frames</a></li>
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imagej.ops.image.invert</div>
-<h2 title="Class InvertII" class="title">Class InvertII&lt;I extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;I&gt;,O extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</h2>
+<h2 title="Class InvertII" class="title">Class InvertII&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -104,10 +104,10 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../net/imagej/ops/special/AbstractUnaryOp.html" title="class in net.imagej.ops.special">net.imagej.ops.special.AbstractUnaryOp</a>&lt;I,O&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../../net/imagej/ops/special/computer/AbstractUnaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractUnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;</li>
+<li><a href="../../../../../net/imagej/ops/special/computer/AbstractUnaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractUnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;</li>
 <li>
 <ul class="inheritance">
-<li>net.imagej.ops.image.invert.InvertII&lt;I,O&gt;</li>
+<li>net.imagej.ops.image.invert.InvertII&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -122,16 +122,16 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../net/imagej/ops/Environmental.html" title="interface in net.imagej.ops">Environmental</a>, <a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a>, <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops">Op</a>, <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="interface in net.imagej.ops">Ops.Image.Invert</a>, <a href="../../../../../net/imagej/ops/special/computer/NullaryComputerOp.html" title="interface in net.imagej.ops.special.computer">NullaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/special/NullaryOp.html" title="interface in net.imagej.ops.special">NullaryOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/special/Output.html" title="interface in net.imagej.ops.special">Output</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/special/OutputMutable.html" title="interface in net.imagej.ops.special">OutputMutable</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a>, <a href="../../../../../net/imagej/ops/special/UnaryInput.html" title="interface in net.imagej.ops.special">UnaryInput</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;I&gt;&gt;, <a href="../../../../../net/imagej/ops/special/UnaryOp.html" title="interface in net.imagej.ops.special">UnaryOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;, <a href="../../../../../net/imagej/ops/Threadable.html" title="interface in net.imagej.ops">Threadable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/command/Command.html?is-external=true" title="class or interface in org.scijava.command">Command</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a></dd>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../net/imagej/ops/Environmental.html" title="interface in net.imagej.ops">Environmental</a>, <a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a>, <a href="../../../../../net/imagej/ops/Op.html" title="interface in net.imagej.ops">Op</a>, <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="interface in net.imagej.ops">Ops.Image.Invert</a>, <a href="../../../../../net/imagej/ops/special/computer/NullaryComputerOp.html" title="interface in net.imagej.ops.special.computer">NullaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/NullaryOp.html" title="interface in net.imagej.ops.special">NullaryOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/Output.html" title="interface in net.imagej.ops.special">Output</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/OutputMutable.html" title="interface in net.imagej.ops.special">OutputMutable</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a>, <a href="../../../../../net/imagej/ops/special/UnaryInput.html" title="interface in net.imagej.ops.special">UnaryInput</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/special/UnaryOp.html" title="interface in net.imagej.ops.special">UnaryOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;, <a href="../../../../../net/imagej/ops/Threadable.html" title="interface in net.imagej.ops">Threadable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/command/Command.html?is-external=true" title="class or interface in org.scijava.command">Command</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">InvertII&lt;I extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;I&gt;,O extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
-extends <a href="../../../../../net/imagej/ops/special/computer/AbstractUnaryComputerOp.html" title="class in net.imagej.ops.special.computer">AbstractUnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;I&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;O&gt;&gt;
+<pre>public class <span class="typeNameLabel">InvertII&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="../../../../../net/imagej/ops/special/computer/AbstractUnaryComputerOp.html" title="class in net.imagej.ops.special.computer">AbstractUnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;T&gt;&gt;
 implements <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="interface in net.imagej.ops">Ops.Image.Invert</a></pre>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Martin Horn (University of Konstanz)</dd>
+<dd>Martin Horn (University of Konstanz), Gabe Selzer</dd>
 </dl>
 </li>
 </ul>
@@ -193,23 +193,21 @@ implements <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/image/invert/InvertII.html#compute-net.imglib2.IterableInterval-net.imglib2.IterableInterval-">compute</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">I</a>&gt;&nbsp;input,
-       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">O</a>&gt;&nbsp;output)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/image/invert/InvertII.html#compute-net.imglib2.IterableInterval-net.imglib2.IterableInterval-">compute</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&nbsp;input,
+       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&nbsp;output)</code>
 <div class="block">Computes the output given some input.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/image/invert/InvertII.html#initialize--">initialize</a></span>()</code>
-<div class="block">Initializes the object.</div>
-</td>
+<td class="colFirst"><code>static &lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>T</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imagej/ops/image/invert/InvertII.html#minValue-T-">minValue</a></span>(T&nbsp;type)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -275,6 +273,13 @@ implements <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="
 <h3>Methods inherited from interface&nbsp;net.imagej.ops.special.<a href="../../../../../net/imagej/ops/special/SpecialOp.html" title="interface in net.imagej.ops.special">SpecialOp</a></h3>
 <code><a href="../../../../../net/imagej/ops/special/SpecialOp.html#candidates-net.imagej.ops.OpEnvironment-java.lang.String-java.lang.Class-int-net.imagej.ops.special.SpecialOp.Flavor-">candidates</a>, <a href="../../../../../net/imagej/ops/special/SpecialOp.html#filterArity-java.util.List-int-">filterArity</a>, <a href="../../../../../net/imagej/ops/special/SpecialOp.html#op-net.imagej.ops.OpEnvironment-java.lang.Class-java.lang.Class-java.lang.Class-java.lang.Object...-">op</a></code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Initializable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.<a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></h3>
+<code><a href="../../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -306,39 +311,35 @@ implements <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="initialize--">
+<a name="compute-net.imglib2.IterableInterval-net.imglib2.IterableInterval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>initialize</h4>
-<pre>public&nbsp;void&nbsp;initialize()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imagej/ops/Initializable.html#initialize--">Initializable</a></code></span></div>
-<div class="block">Initializes the object.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="compute-net.imglib2.IterableInterval-net.imglib2.IterableInterval-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
 <h4>compute</h4>
-<pre>public&nbsp;void&nbsp;compute(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">I</a>&gt;&nbsp;input,
-                    <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">O</a>&gt;&nbsp;output)</pre>
+<pre>public&nbsp;void&nbsp;compute(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&nbsp;input,
+                    <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&nbsp;output)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html#compute-I-O-">UnaryComputerOp</a></code></span></div>
 <div class="block">Computes the output given some input.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html#compute-I-O-">compute</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">I</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">I</a>&gt;&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">O</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">O</a>&gt;&gt;&gt;</code></dd>
+<dd><code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html#compute-I-O-">compute</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imagej/ops/special/computer/UnaryComputerOp.html" title="interface in net.imagej.ops.special.computer">UnaryComputerOp</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/IterableInterval.html?is-external=true" title="class or interface in net.imglib2">IterableInterval</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imagej/ops/image/invert/InvertII.html" title="type parameter in InvertII">T</a>&gt;&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>input</code> - Argument to the computation, which <em>must be non-null</em></dd>
 <dd><code>output</code> - Object where the computation's result will be stored, which
  <em>must be non-null and a different object than <code>input</code></em></dd>
 </dl>
+</li>
+</ul>
+<a name="minValue-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="minValue-T-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>minValue</h4>
+<pre>public static&nbsp;&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;T&nbsp;minValue(T&nbsp;type)</pre>
 </li>
 </ul>
 </li>
@@ -369,7 +370,7 @@ implements <a href="../../../../../net/imagej/ops/Ops.Image.Invert.html" title="
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../../net/imagej/ops/image/invert/InvertIIInteger.html" title="class in net.imagej.ops.image.invert"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imagej/ops/image/invert/InvertII.html" target="_top">Frames</a></li>
