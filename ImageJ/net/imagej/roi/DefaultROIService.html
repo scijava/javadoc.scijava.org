@@ -1,0 +1,630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DefaultROIService (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultROIService (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/roi/AbstractRRAToRealMaskConverter.html" title="class in net.imagej.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/roi/DefaultROITree.html" title="class in net.imagej.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/roi/DefaultROIService.html" target="_top">Frames</a></li>
+<li><a href="DefaultROIService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.roi</div>
+<h2 title="Class DefaultROIService" class="title">Class DefaultROIService</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">org.scijava.service.AbstractService</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.roi.DefaultROIService</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="../../../net/imagej/ImageJService.html" title="interface in net.imagej">ImageJService</a>, <a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Initializable.html?is-external=true" title="class or interface in org.scijava">Initializable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">DefaultROIService</span>
+extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">AbstractService</a>
+implements <a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></pre>
+<div class="block">Default implementation of <a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi"><code>ROIService</code></a>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Alison Walter</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imagej.roi.ROIService">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imagej.roi.<a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></h3>
+<code><a href="../../../net/imagej/roi/ROIService.html#ROI_PROPERTY">ROI_PROPERTY</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#DefaultROIService--">DefaultROIService</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi">Mask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toMask-java.lang.Object-">toMask</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>Mask</code></div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi">MaskInterval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toMaskInterval-java.lang.Object-">toMaskInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>MaskInterval</code></div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi">MaskPredicate</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toMaskPredicate-java.lang.Object-">toMaskPredicate</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRandomAccessibleInterval-java.lang.Object-">toRandomAccessibleInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessibleInterval&lt;BoolType&gt;</code>; otherwise, an exception is
+ thrown.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRandomAcessible-java.lang.Object-">toRandomAcessible</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessible&lt;BoolType&gt;</code>; otherwise, an exception is thrown.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi">RealMask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRealMask-java.lang.Object-">toRealMask</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>RealMask</code></div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi">RealMaskRealInterval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRealMaskRealInterval-java.lang.Object-">toRealMaskRealInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RealMaskRealInterval</code></div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRealRandomAccessible-java.lang.Object-">toRealRandomAccessible</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessible</code></a>.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessibleRealInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/DefaultROIService.html#toRealRandomAccessibleRealInterval-java.lang.Object-">toRealRandomAccessibleRealInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessibleRealInterval</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.AbstractService">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.service.<a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true" title="class or interface in org.scijava.service">AbstractService</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#getContext--" title="class or interface in org.scijava.service">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava.service">setContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/AbstractService.html?is-external=true#toString--" title="class or interface in org.scijava.service">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getPriority--" title="class or interface in org.scijava.plugin">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setPriority-double-" title="class or interface in org.scijava.plugin">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.roi.ROIService">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.roi.<a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></h3>
+<code><a href="../../../net/imagej/roi/ROIService.html#add-java.lang.Object-java.lang.Object-">add</a>, <a href="../../../net/imagej/roi/ROIService.html#clear-net.imagej.Dataset-">clear</a>, <a href="../../../net/imagej/roi/ROIService.html#closedBox-double:A-double:A-">closedBox</a>, <a href="../../../net/imagej/roi/ROIService.html#closedEllipsoid-double:A-double:A-">closedEllipsoid</a>, <a href="../../../net/imagej/roi/ROIService.html#closedPolygon2D-double:A-double:A-">closedPolygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#closedPolygon2D-java.util.List-">closedPolygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#closedSphere-double:A-double-">closedSphere</a>, <a href="../../../net/imagej/roi/ROIService.html#closedSuperEllipsoid-double:A-double:A-double-">closedSuperEllipsoid</a>, <a href="../../../net/imagej/roi/ROIService.html#getROIs-net.imagej.Dataset-">getROIs</a>, <a href="../../../net/imagej/roi/ROIService.html#hasROIs-java.lang.Object-">hasROIs</a>, <a href="../../../net/imagej/roi/ROIService.html#kDTreeRealPointCollection-java.util.Collection-">kDTreeRealPointCollection</a>, <a href="../../../net/imagej/roi/ROIService.html#kDTreeRealPointCollection-net.imglib2.KDTree-">kDTreeRealPointCollection</a>, <a href="../../../net/imagej/roi/ROIService.html#line-double:A-double:A-boolean-">line</a>, <a href="../../../net/imagej/roi/ROIService.html#line-net.imglib2.RealLocalizable-net.imglib2.RealLocalizable-">line</a>, <a href="../../../net/imagej/roi/ROIService.html#openBox-double:A-double:A-">openBox</a>, <a href="../../../net/imagej/roi/ROIService.html#openEllipsoid-double:A-double:A-">openEllipsoid</a>, <a href="../../../net/imagej/roi/ROIService.html#openPolygon2D-double:A-double:A-">openPolygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#openPolygon2D-java.util.List-">openPolygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#openSphere-double:A-double-">openSphere</a>, <a href="../../../net/imagej/roi/ROIService.html#openSuperEllipsoid-double:A-double:A-double-">openSuperEllipsoid</a>, <a href="../../../net/imagej/roi/ROIService.html#pointMask-double:A-">pointMask</a>, <a href="../../../net/imagej/roi/ROIService.html#pointMask-net.imglib2.RealLocalizable-">pointMask</a>, <a href="../../../net/imagej/roi/ROIService.html#polygon2D-double:A-double:A-">polygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#polygon2D-java.util.List-">polygon2D</a>, <a href="../../../net/imagej/roi/ROIService.html#polyline-java.util.List-">polyline</a>, <a href="../../../net/imagej/roi/ROIService.html#realPointCollection-java.util.Collection-">realPointCollection</a>, <a href="../../../net/imagej/roi/ROIService.html#realPointCollection-java.util.HashMap-">realPointCollection</a>, <a href="../../../net/imagej/roi/ROIService.html#realPointSampleListRealPointCollection-java.util.Collection-">realPointSampleListRealPointCollection</a>, <a href="../../../net/imagej/roi/ROIService.html#realPointSampleListRealPointCollection-net.imglib2.RealPointSampleList-">realPointSampleListRealPointCollection</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#initialize--" title="class or interface in org.scijava.service">initialize</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#registerEventHandlers--" title="class or interface in org.scijava.service">registerEventHandlers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#getIdentifier--" title="class or interface in org.scijava.plugin">getIdentifier</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#log--" title="class or interface in org.scijava.plugin">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#compareTo-org.scijava.Prioritized-" title="class or interface in org.scijava">compareTo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#getPriority--" title="class or interface in org.scijava">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#setPriority-double-" title="class or interface in org.scijava">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true#getLocation--" title="class or interface in org.scijava">getLocation</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true#getVersion--" title="class or interface in org.scijava">getVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Disposable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true#dispose--" title="class or interface in org.scijava">dispose</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DefaultROIService--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DefaultROIService</h4>
+<pre>public&nbsp;DefaultROIService()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="toMask-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMask</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi">Mask</a>&nbsp;toMask(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toMask-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>Mask</code></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toMask-java.lang.Object-">toMask</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>Mask</code></a> representation of the given object, if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toMaskInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMaskInterval</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi">MaskInterval</a>&nbsp;toMaskInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toMaskInterval-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>MaskInterval</code></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toMaskInterval-java.lang.Object-">toMaskInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RandomAccessibleInterval, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskInterval</code></a> representation of the given object, if
+         possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealMask-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealMask</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi">RealMask</a>&nbsp;toRealMask(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRealMask-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>RealMask</code></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRealMask-java.lang.Object-">toRealMask</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RealRandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealMask</code></a> representation of the given object, if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealMaskRealInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealMaskRealInterval</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi">RealMaskRealInterval</a>&nbsp;toRealMaskRealInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRealMaskRealInterval-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RealMaskRealInterval</code></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRealMaskRealInterval-java.lang.Object-">toRealMaskRealInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RealRandomAccessibleRealInterval, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealMaskRealInterval</code></a> representation of the given object,
+         if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toMaskPredicate-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMaskPredicate</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi">MaskPredicate</a>&lt;?&gt;&nbsp;toMaskPredicate(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toMaskPredicate-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toMaskPredicate-java.lang.Object-">toMaskPredicate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, (Real)RandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a> representation of the given Object, if
+         possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRandomAcessible-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRandomAcessible</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRandomAcessible(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRandomAcessible-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessible&lt;BoolType&gt;</code>; otherwise, an exception is thrown.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRandomAcessible-java.lang.Object-">toRandomAcessible</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an Imglib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RandomAccessible representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRandomAccessibleInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRandomAccessibleInterval</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRandomAccessibleInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRandomAccessibleInterval-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessibleInterval&lt;BoolType&gt;</code>; otherwise, an exception is
+ thrown.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRandomAccessibleInterval-java.lang.Object-">toRandomAccessibleInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RandomAccessibleInterval representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealRandomAccessible-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealRandomAccessible</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRealRandomAccessible(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessible-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessible</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessible-java.lang.Object-">toRealRandomAccessible</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RealRandomAccessible representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealRandomAccessibleRealInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toRealRandomAccessibleRealInterval</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessibleRealInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRealRandomAccessibleRealInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessibleRealInterval-java.lang.Object-">ROIService</a></code></span></div>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessibleRealInterval</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessibleRealInterval-java.lang.Object-">toRealRandomAccessibleRealInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imagej/roi/ROIService.html" title="interface in net.imagej.roi">ROIService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RealRandomAccessibleRealInterval representation of the given
+         Object</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/roi/AbstractRRAToRealMaskConverter.html" title="class in net.imagej.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/roi/DefaultROITree.html" title="class in net.imagej.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/roi/DefaultROIService.html" target="_top">Frames</a></li>
+<li><a href="DefaultROIService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2018 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>

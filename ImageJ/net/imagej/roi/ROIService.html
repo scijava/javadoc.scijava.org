@@ -1,0 +1,1258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ROIService (ImageJ Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ROIService (ImageJ Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":18,"i7":18,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18,"i14":18,"i15":18,"i16":18,"i17":18,"i18":18,"i19":18,"i20":18,"i21":18,"i22":18,"i23":18,"i24":18,"i25":18,"i26":18,"i27":18,"i28":18,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/roi/RealMaskToRRAConverter.html" title="class in net.imagej.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/roi/ROIService.html" target="_top">Frames</a></li>
+<li><a href="ROIService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imagej.roi</div>
+<h2 title="Interface ROIService" class="title">Interface ROIService</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="../../../net/imagej/ImageJService.html" title="interface in net.imagej">ImageJService</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Initializable.html?is-external=true" title="class or interface in org.scijava">Initializable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../net/imagej/roi/DefaultROIService.html" title="class in net.imagej.roi">DefaultROIService</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">ROIService</span>
+extends <a href="../../../net/imagej/ImageJService.html" title="interface in net.imagej">ImageJService</a></pre>
+<div class="block"><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service"><code>Service</code></a> for working with Regions of Interest (ROI).</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Alison Walter</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#ROI_PROPERTY">ROI_PROPERTY</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#add-java.lang.Object-java.lang.Object-">add</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;roi,
+   <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;img)</code>
+<div class="block">Attaches the given ROI to the given image</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#clear-net.imagej.Dataset-">clear</a></span>(<a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;img)</code>
+<div class="block">Clears all <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>s associated with the given <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a></div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableBox</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedBox-double:A-double:A-">closedBox</a></span>(double[]&nbsp;min,
+         double[]&nbsp;max)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableEllipsoid</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedEllipsoid-double:A-double:A-">closedEllipsoid</a></span>(double[]&nbsp;center,
+               double[]&nbsp;semiAxisLengths)</code>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a> boundary behavior.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedPolygon2D-double:A-double:A-">closedPolygon2D</a></span>(double[]&nbsp;x,
+               double[]&nbsp;y)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedPolygon2D-java.util.List-">closedPolygon2D</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSphere</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedSphere-double:A-double-">closedSphere</a></span>(double[]&nbsp;center,
+            double&nbsp;radius)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSphere</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSuperEllipsoid</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#closedSuperEllipsoid-double:A-double:A-double-">closedSuperEllipsoid</a></span>(double[]&nbsp;center,
+                    double[]&nbsp;semiAxisLengths,
+                    double&nbsp;exponent)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSuperEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a> boundary behavior.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>default <a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi">ROITree</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#getROIs-net.imagej.Dataset-">getROIs</a></span>(<a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;img)</code>
+<div class="block">Returns the <a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi"><code>ROITree</code></a> of the given <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a></div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>default boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#hasROIs-java.lang.Object-">hasROIs</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Check if the given <code>Object</code> is or has ROIs</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.RealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#kDTreeRealPointCollection-java.util.Collection-">kDTreeRealPointCollection</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</code>
+<div class="block">Creates a read-only <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given
+ points.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.RealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#kDTreeRealPointCollection-net.imglib2.KDTree-">kDTreeRealPointCollection</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/KDTree.html?is-external=true" title="class or interface in net.imglib2">KDTree</a>&lt;L&gt;&nbsp;tree)</code>
+<div class="block">Creates a read-only <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given
+ points.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableLine</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#line-double:A-double:A-boolean-">line</a></span>(double[]&nbsp;pointOne,
+    double[]&nbsp;pointTwo,
+    boolean&nbsp;copy)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableLine</code></a> with the given endpoints.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableLine</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#line-net.imglib2.RealLocalizable-net.imglib2.RealLocalizable-">line</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;pointOne,
+    <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;pointTwo)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableLine</code></a> with the given endpoints.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableBox</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openBox-double:A-double:A-">openBox</a></span>(double[]&nbsp;min,
+       double[]&nbsp;max)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a> boundary
+ behavior.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableEllipsoid</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openEllipsoid-double:A-double:A-">openEllipsoid</a></span>(double[]&nbsp;center,
+             double[]&nbsp;semiAxisLengths)</code>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openPolygon2D-double:A-double:A-">openPolygon2D</a></span>(double[]&nbsp;x,
+             double[]&nbsp;y)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openPolygon2D-java.util.List-">openPolygon2D</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSphere</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openSphere-double:A-double-">openSphere</a></span>(double[]&nbsp;center,
+          double&nbsp;radius)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSphere</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSuperEllipsoid</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#openSuperEllipsoid-double:A-double:A-double-">openSuperEllipsoid</a></span>(double[]&nbsp;center,
+                  double[]&nbsp;semiAxisLengths,
+                  double&nbsp;exponent)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSuperEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a> boundary behavior.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePointMask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#pointMask-double:A-">pointMask</a></span>(double[]&nbsp;point)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePointMask</code></a> at the given location.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePointMask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#pointMask-net.imglib2.RealLocalizable-">pointMask</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;point)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePointMask</code></a> at the given location.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#polygon2D-double:A-double:A-">polygon2D</a></span>(double[]&nbsp;x,
+         double[]&nbsp;y)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#UNSPECIFIED" title="class or interface in net.imglib2.roi"><code>unspecified</code></a> boundary behavior.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#polygon2D-java.util.List-">polygon2D</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#UNSPECIFIED" title="class or interface in net.imglib2.roi"><code>unspecified</code></a> boundary behavior.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>default <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolyline.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolyline</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#polyline-java.util.List-">polyline</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolyline.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolyline</code></a> containing the given vertices, in the
+ given order.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#realPointCollection-java.util.Collection-">realPointCollection</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#realPointCollection-java.util.HashMap-">realPointCollection</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;gnu.trove.list.array.TDoubleArrayList,L&gt;&nbsp;points)</code>
+<div class="block">Creates a mutable <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given
+ points.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#realPointSampleListRealPointCollection-java.util.Collection-">realPointSampleListRealPointCollection</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>default &lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;<br><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#realPointSampleListRealPointCollection-net.imglib2.RealPointSampleList-">realPointSampleListRealPointCollection</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealPointSampleList.html?is-external=true" title="class or interface in net.imglib2">RealPointSampleList</a>&lt;L&gt;&nbsp;points)</code>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi">Mask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toMask-java.lang.Object-">toMask</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>Mask</code></div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi">MaskInterval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toMaskInterval-java.lang.Object-">toMaskInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>MaskInterval</code></div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi">MaskPredicate</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toMaskPredicate-java.lang.Object-">toMaskPredicate</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRandomAccessibleInterval-java.lang.Object-">toRandomAccessibleInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessibleInterval&lt;BoolType&gt;</code>; otherwise, an exception is
+ thrown.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRandomAcessible-java.lang.Object-">toRandomAcessible</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessible&lt;BoolType&gt;</code>; otherwise, an exception is thrown.</div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi">RealMask</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRealMask-java.lang.Object-">toRealMask</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>RealMask</code></div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi">RealMaskRealInterval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRealMaskRealInterval-java.lang.Object-">toRealMaskRealInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RealMaskRealInterval</code></div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessible-java.lang.Object-">toRealRandomAccessible</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessible</code></a>.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessibleRealInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/roi/ROIService.html#toRealRandomAccessibleRealInterval-java.lang.Object-">toRealRandomAccessibleRealInterval</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessibleRealInterval</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true" title="class or interface in org.scijava.service">Service</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#initialize--" title="class or interface in org.scijava.service">initialize</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/service/Service.html?is-external=true#registerEventHandlers--" title="class or interface in org.scijava.service">registerEventHandlers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#getIdentifier--" title="class or interface in org.scijava.plugin">getIdentifier</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true#log--" title="class or interface in org.scijava.plugin">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#compareTo-org.scijava.Prioritized-" title="class or interface in org.scijava">compareTo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#getPriority--" title="class or interface in org.scijava">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true#setPriority-double-" title="class or interface in org.scijava">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true#getLocation--" title="class or interface in org.scijava">getLocation</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true#getVersion--" title="class or interface in org.scijava">getVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Disposable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true#dispose--" title="class or interface in org.scijava">dispose</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ROI_PROPERTY">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ROI_PROPERTY</h4>
+<pre>static final&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ROI_PROPERTY</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#net.imagej.roi.ROIService.ROI_PROPERTY">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getROIs-net.imagej.Dataset-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getROIs</h4>
+<pre>default&nbsp;<a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi">ROITree</a>&nbsp;getROIs(<a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;img)</pre>
+<div class="block">Returns the <a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi"><code>ROITree</code></a> of the given <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>img</code> - <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a> whose associated ROIs will be returned</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi"><code>ROITree</code></a> whose children are the associated ROIs as
+         <code>TreeNode</code>s</dd>
+</dl>
+</li>
+</ul>
+<a name="add-java.lang.Object-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add</h4>
+<pre>default&nbsp;void&nbsp;add(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;roi,
+                 <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;img)</pre>
+<div class="block">Attaches the given ROI to the given image</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>roi</code> - ROI (most likely <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>) to be attached</dd>
+<dd><code>img</code> - image to attach ROI to</dd>
+</dl>
+</li>
+</ul>
+<a name="hasROIs-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasROIs</h4>
+<pre>default&nbsp;boolean&nbsp;hasROIs(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Check if the given <code>Object</code> is or has ROIs</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - <code>Object</code> to check</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if it has or is a ROI, false otherwise</dd>
+</dl>
+</li>
+</ul>
+<a name="clear-net.imagej.Dataset-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>default&nbsp;void&nbsp;clear(<a href="../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;img)</pre>
+<div class="block">Clears all <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>s associated with the given <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>img</code> - <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a> whose rois will be cleared</dd>
+</dl>
+</li>
+</ul>
+<a name="toMask-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMask</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi">Mask</a>&nbsp;toMask(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>Mask</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/Mask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>Mask</code></a> representation of the given object, if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toMaskInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMaskInterval</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi">MaskInterval</a>&nbsp;toMaskInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>MaskInterval</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RandomAccessibleInterval, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskInterval.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskInterval</code></a> representation of the given object, if
+         possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealMask-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealMask</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi">RealMask</a>&nbsp;toRealMask(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a <code>RealMask</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RealRandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealMask</code></a> representation of the given object, if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealMaskRealInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealMaskRealInterval</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi">RealMaskRealInterval</a>&nbsp;toRealMaskRealInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RealMaskRealInterval</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, RealRandomAccessibleRealInterval, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/RealMaskRealInterval.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealMaskRealInterval</code></a> representation of the given object,
+         if possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toMaskPredicate-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toMaskPredicate</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi">MaskPredicate</a>&lt;?&gt;&nbsp;toMaskPredicate(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. This object should be something like
+          an ImageJ 1.x Roi, (Real)RandomAccessible, etc.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/MaskPredicate.html?is-external=true" title="class or interface in net.imglib2.roi"><code>MaskPredicate</code></a> representation of the given Object, if
+         possible</dd>
+</dl>
+</li>
+</ul>
+<a name="toRandomAcessible-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRandomAcessible</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRandomAcessible(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessible&lt;BoolType&gt;</code>; otherwise, an exception is thrown.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an Imglib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RandomAccessible representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRandomAccessibleInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRandomAccessibleInterval</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRandomAccessibleInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <code>RandomAccessibleInterval&lt;BoolType&gt;</code>; otherwise, an exception is
+ thrown.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RandomAccessibleInterval representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealRandomAccessible-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealRandomAccessible</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRealRandomAccessible(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessible</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RealRandomAccessible representation of the given Object</dd>
+</dl>
+</li>
+</ul>
+<a name="toRealRandomAccessibleRealInterval-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toRealRandomAccessibleRealInterval</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessibleRealInterval</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/logic/BoolType.html?is-external=true" title="class or interface in net.imglib2.type.logic">BoolType</a>&gt;&nbsp;toRealRandomAccessibleRealInterval(<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Attempts to convert the given <code>Object</code> to a
+ <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealRandomAccessibleRealInterval.html?is-external=true" title="class or interface in net.imglib2"><code>RealRandomAccessibleRealInterval</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>o</code> - the Object to be converted. In general, this should be an ImageJ
+          1.x Roi or an ImgLib2 MaskPredicate.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a RealRandomAccessibleRealInterval representation of the given
+         Object</dd>
+</dl>
+</li>
+</ul>
+<a name="closedBox-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedBox</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableBox</a>&nbsp;closedBox(double[]&nbsp;min,
+                                                        double[]&nbsp;max)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>min</code> - the minimum position of the Box in each dimension</dd>
+<dd><code>max</code> - the maximum position of the Box in each dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with the given min/max</dd>
+</dl>
+</li>
+</ul>
+<a name="openBox-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openBox</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableBox</a>&nbsp;openBox(double[]&nbsp;min,
+                                                      double[]&nbsp;max)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a> boundary
+ behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>min</code> - the minimum position of the Box in each dimension</dd>
+<dd><code>max</code> - the maximum position of the Box in each dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableBox.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableBox</code></a> with the given min/max</dd>
+</dl>
+</li>
+</ul>
+<a name="closedEllipsoid-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedEllipsoid</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableEllipsoid</a>&nbsp;closedEllipsoid(double[]&nbsp;center,
+                                                                    double[]&nbsp;semiAxisLengths)</pre>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a> boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - the position of the ellipsoid's center</dd>
+<dd><code>semiAxisLengths</code> - the extension of the ellipsoid in each dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an ellipsoid positioned at the given center with corresponding semi
+         axis lengths</dd>
+</dl>
+</li>
+</ul>
+<a name="openEllipsoid-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openEllipsoid</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableEllipsoid</a>&nbsp;openEllipsoid(double[]&nbsp;center,
+                                                                  double[]&nbsp;semiAxisLengths)</pre>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - the position of the ellipsoid's center</dd>
+<dd><code>semiAxisLengths</code> - the extension of the ellipsoid in each dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an ellipsoid positioned at the given center with corresponding semi
+         axis lengths</dd>
+</dl>
+</li>
+</ul>
+<a name="line-net.imglib2.RealLocalizable-net.imglib2.RealLocalizable-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>line</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableLine</a>&nbsp;line(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;pointOne,
+                                                    <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;pointTwo)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableLine</code></a> with the given endpoints.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pointOne</code> - position of the first endpoint of the line</dd>
+<dd><code>pointTwo</code> - position of the second endpoint of the line</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a line with the given endpoints</dd>
+</dl>
+</li>
+</ul>
+<a name="line-double:A-double:A-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>line</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableLine</a>&nbsp;line(double[]&nbsp;pointOne,
+                                                    double[]&nbsp;pointTwo,
+                                                    boolean&nbsp;copy)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableLine.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableLine</code></a> with the given endpoints.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pointOne</code> - position of the first endpoint of the line</dd>
+<dd><code>pointTwo</code> - position of the second endpoint of the line</dd>
+<dd><code>copy</code> - if true create copies are created and stored of the two arrays,
+          if false arrays are just stored</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a line with the given endpoints</dd>
+</dl>
+</li>
+</ul>
+<a name="pointMask-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pointMask</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePointMask</a>&nbsp;pointMask(double[]&nbsp;point)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePointMask</code></a> at the given location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - location of the point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a point at the given location</dd>
+</dl>
+</li>
+</ul>
+<a name="pointMask-net.imglib2.RealLocalizable-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pointMask</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePointMask</a>&nbsp;pointMask(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&nbsp;point)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePointMask.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePointMask</code></a> at the given location.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>point</code> - location of the point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a point at the given location</dd>
+</dl>
+</li>
+</ul>
+<a name="polygon2D-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>polygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;polygon2D(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#UNSPECIFIED" title="class or interface in net.imglib2.roi"><code>unspecified</code></a> boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertices</code> - a list containing the location of each vertex in 2D space</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="polygon2D-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>polygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;polygon2D(double[]&nbsp;x,
+                                                              double[]&nbsp;y)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#UNSPECIFIED" title="class or interface in net.imglib2.roi"><code>unspecified</code></a> boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the x-coordinates of the vertices</dd>
+<dd><code>y</code> - the y-coordinates of the vertices</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="closedPolygon2D-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedPolygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;closedPolygon2D(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertices</code> - a list containing the location of each vertex in 2D space</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="closedPolygon2D-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedPolygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;closedPolygon2D(double[]&nbsp;x,
+                                                                    double[]&nbsp;y)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the x-coordinates of the vertices</dd>
+<dd><code>y</code> - the y-coordinates of the vertices</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="openPolygon2D-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openPolygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;openPolygon2D(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertices</code> - a list containing the location of each vertex in 2D space</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="openPolygon2D-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openPolygon2D</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolygon2D</a>&nbsp;openPolygon2D(double[]&nbsp;x,
+                                                                  double[]&nbsp;y)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolygon2D.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolygon2D</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the x-coordinates of the vertices</dd>
+<dd><code>y</code> - the y-coordinates of the vertices</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 2D polygon with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="polyline-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>polyline</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolyline.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritablePolyline</a>&nbsp;polyline(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;vertices)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritablePolyline.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritablePolyline</code></a> containing the given vertices, in the
+ given order.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vertices</code> - contains the vertices of the polyline in order from start
+          to end</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a polyline with the given vertices</dd>
+</dl>
+</li>
+</ul>
+<a name="realPointCollection-java.util.HashMap-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;&nbsp;realPointCollection(<a href="http://javadoc.imagej.net/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;gnu.trove.list.array.TDoubleArrayList,L&gt;&nbsp;points)</pre>
+<div class="block">Creates a mutable <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given
+ points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points</code> - contains the locations of the points in this collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="realPointCollection-java.util.Collection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;&nbsp;realPointCollection(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points</code> - contains the locations of the points in this collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="kDTreeRealPointCollection-net.imglib2.KDTree-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>kDTreeRealPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.RealPointCollection</a>&lt;L&gt;&nbsp;kDTreeRealPointCollection(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/KDTree.html?is-external=true" title="class or interface in net.imglib2">KDTree</a>&lt;L&gt;&nbsp;tree)</pre>
+<div class="block">Creates a read-only <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given
+ points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tree</code> - a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/KDTree.html?is-external=true" title="class or interface in net.imglib2"><code>KDTree</code></a> containing the location of each point in the
+          collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="kDTreeRealPointCollection-java.util.Collection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>kDTreeRealPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.RealPointCollection</a>&lt;L&gt;&nbsp;kDTreeRealPointCollection(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</pre>
+<div class="block">Creates a read-only <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given
+ points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points</code> - contains the location of each point in the collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.RealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>RealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="realPointSampleListRealPointCollection-net.imglib2.RealPointSampleList-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realPointSampleListRealPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;&nbsp;realPointSampleListRealPointCollection(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealPointSampleList.html?is-external=true" title="class or interface in net.imglib2">RealPointSampleList</a>&lt;L&gt;&nbsp;points)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points</code> - contains the locations of the points in the collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="realPointSampleListRealPointCollection-java.util.Collection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realPointSampleListRealPointCollection</h4>
+<pre>default&nbsp;&lt;L extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealLocalizable.html?is-external=true" title="class or interface in net.imglib2">RealLocalizable</a>&gt;&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableRealPointCollection</a>&lt;L&gt;&nbsp;realPointSampleListRealPointCollection(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;L&gt;&nbsp;points)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>points</code> - contains the locations of the points in the collection</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableRealPointCollection.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableRealPointCollection</code></a> containing the given points</dd>
+</dl>
+</li>
+</ul>
+<a name="closedSphere-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedSphere</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSphere</a>&nbsp;closedSphere(double[]&nbsp;center,
+                                                              double&nbsp;radius)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSphere</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - location of the center of the sphere</dd>
+<dd><code>radius</code> - radius of the sphere</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a sphere with the given radius positioned at the given center</dd>
+</dl>
+</li>
+</ul>
+<a name="openSphere-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openSphere</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSphere</a>&nbsp;openSphere(double[]&nbsp;center,
+                                                            double&nbsp;radius)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSphere.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSphere</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a>
+ boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - location of the center of the sphere</dd>
+<dd><code>radius</code> - radius of the sphere</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a sphere with the given radius positioned at the given center</dd>
+</dl>
+</li>
+</ul>
+<a name="closedSuperEllipsoid-double:A-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closedSuperEllipsoid</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSuperEllipsoid</a>&nbsp;closedSuperEllipsoid(double[]&nbsp;center,
+                                                                              double[]&nbsp;semiAxisLengths,
+                                                                              double&nbsp;exponent)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSuperEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#CLOSED" title="class or interface in net.imglib2.roi"><code>closed</code></a> boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - location of the center of the super-ellipsoid</dd>
+<dd><code>semiAxisLengths</code> - extension of the super-ellipsoid in each dimensions</dd>
+<dd><code>exponent</code> - exponent of the super-ellipsoid</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a super-ellipsoid with the given semi-axis lengths and exponent
+         positioned at the given center</dd>
+</dl>
+</li>
+</ul>
+<a name="openSuperEllipsoid-double:A-double:A-double-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>openSuperEllipsoid</h4>
+<pre>default&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi">net.imglib2.roi.geom.real.WritableSuperEllipsoid</a>&nbsp;openSuperEllipsoid(double[]&nbsp;center,
+                                                                            double[]&nbsp;semiAxisLengths,
+                                                                            double&nbsp;exponent)</pre>
+<div class="block">Creates a <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/geom.real.WritableSuperEllipsoid.html?is-external=true" title="class or interface in net.imglib2.roi"><code>WritableSuperEllipsoid</code></a> with <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/roi/BoundaryType.html?is-external=true#OPEN" title="class or interface in net.imglib2.roi"><code>open</code></a> boundary behavior.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>center</code> - location of the center of the super-ellipsoid</dd>
+<dd><code>semiAxisLengths</code> - extension of the super-ellipsoid in each dimensions</dd>
+<dd><code>exponent</code> - exponent of the super-ellipsoid</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a super-ellipsoid with the given semi-axis lengths and exponent
+         positioned at the given center</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imagej/roi/RealMaskToRRAConverter.html" title="class in net.imagej.roi"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imagej/roi/ROITree.html" title="interface in net.imagej.roi"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imagej/roi/ROIService.html" target="_top">Frames</a></li>
+<li><a href="ROIService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2014&#x2013;2018 <a href="http://imagej.net/">ImageJ</a>. All rights reserved.</small></p>
+</body>
+</html>
