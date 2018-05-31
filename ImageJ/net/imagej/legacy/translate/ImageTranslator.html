@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -41,7 +47,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreatorUtils.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../net/imagej/legacy/translate/LegacyUtils.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -68,14 +74,14 @@
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -85,29 +91,37 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imagej.legacy.translate</div>
-<h2 title="Interface ImageTranslator" class="title">Interface ImageTranslator</h2>
+<h2 title="Class ImageTranslator" class="title">Class ImageTranslator</h2>
 </div>
 <div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.legacy.translate.ImageTranslator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>All Superinterfaces:</dt>
-<dd><a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" title="interface in net.imagej.legacy.translate">DisplayCreator</a>, <a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate">ImagePlusCreator</a></dd>
-</dl>
-<dl>
-<dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../net/imagej/legacy/translate/DefaultImageTranslator.html" title="class in net.imagej.legacy.translate">DefaultImageTranslator</a></dd>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ImageTranslator</span>
-extends <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" title="interface in net.imagej.legacy.translate">DisplayCreator</a>, <a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate">ImagePlusCreator</a></pre>
-<div class="block">The interface for translating between legacy and modern ImageJ image
- structures.</div>
+<pre>public class <span class="typeNameLabel">ImageTranslator</span>
+extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></pre>
+<div class="block">Combines <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" title="class in net.imagej.legacy.translate"><code>DisplayCreator</code></a> and <a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="class in net.imagej.legacy.translate"><code>ImagePlusCreator</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Curtis Rueden, Barry DeZonia</dd>
+<dd>Barry DeZonia, Curtis Rueden</dd>
 </dl>
 </li>
 </ul>
@@ -115,25 +129,149 @@ extends <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" ti
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/ImageTranslator.html#ImageTranslator-net.imagej.legacy.LegacyService-">ImageTranslator</a></span>(<a href="../../../../net/imagej/legacy/LegacyService.html" title="class in net.imagej.legacy">LegacyService</a>&nbsp;legacyService)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/ImageTranslator.html#createDisplay-ij.ImagePlus-">createDisplay</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
+<div class="block">Creates a <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> from an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/ImageTranslator.html#createLegacyImage-net.imagej.Dataset-">createLegacyImage</a></span>(<a href="../../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/ImageTranslator.html#createLegacyImage-net.imagej.Dataset-net.imagej.display.ImageDisplay-">createLegacyImage</a></span>(<a href="../../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+                 <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/ImageTranslator.html#createLegacyImage-net.imagej.display.ImageDisplay-">createLegacyImage</a></span>(<a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</code>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a> from a <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imagej.legacy.translate.DisplayCreator">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;net.imagej.legacy.translate.<a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" title="interface in net.imagej.legacy.translate">DisplayCreator</a></h3>
-<code><a href="../../../../net/imagej/legacy/translate/DisplayCreator.html#createDisplay-ij.ImagePlus-">createDisplay</a>, <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html#createDisplay-ij.ImagePlus-net.imagej.axis.AxisType:A-">createDisplay</a></code></li>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imagej.legacy.translate.ImagePlusCreator">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;net.imagej.legacy.translate.<a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate">ImagePlusCreator</a></h3>
-<code><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html#createLegacyImage-net.imagej.Dataset-">createLegacyImage</a>, <a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html#createLegacyImage-net.imagej.Dataset-net.imagej.display.ImageDisplay-">createLegacyImage</a>, <a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html#createLegacyImage-net.imagej.display.ImageDisplay-">createLegacyImage</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ImageTranslator-net.imagej.legacy.LegacyService-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ImageTranslator</h4>
+<pre>public&nbsp;ImageTranslator(<a href="../../../../net/imagej/legacy/LegacyService.html" title="class in net.imagej.legacy">LegacyService</a>&nbsp;legacyService)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="createDisplay-ij.ImagePlus-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDisplay</h4>
+<pre>public&nbsp;<a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;createDisplay(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
+<div class="block">Creates a <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> from an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>. Shares planes of
+ data when possible.</div>
+</li>
+</ul>
+<a name="createLegacyImage-net.imagej.display.ImageDisplay-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createLegacyImage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;createLegacyImage(<a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</pre>
+<div class="block">Creates an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a> from a <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>. Shares planes of
+ data when possible.</div>
+</li>
+</ul>
+<a name="createLegacyImage-net.imagej.Dataset-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createLegacyImage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;createLegacyImage(<a href="../../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds)</pre>
+</li>
+</ul>
+<a name="createLegacyImage-net.imagej.Dataset-net.imagej.display.ImageDisplay-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>createLegacyImage</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;createLegacyImage(<a href="../../../../net/imagej/Dataset.html" title="interface in net.imagej">Dataset</a>&nbsp;ds,
+                                   <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display)</pre>
+</li>
 </ul>
 </li>
 </ul>
@@ -162,7 +300,7 @@ extends <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" ti
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreatorUtils.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../net/imagej/legacy/translate/LegacyUtils.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -189,14 +327,14 @@ extends <a href="../../../../net/imagej/legacy/translate/DisplayCreator.html" ti
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

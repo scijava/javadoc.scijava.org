@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../net/imagej/legacy/translate/GrayPixelHarmonizer.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/DisplayHarmonizer.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?net/imagej/legacy/translate/Harmonizer.html" target="_top">Frames</a></li>
@@ -143,7 +143,7 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextua
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/Harmonizer.html#Harmonizer-org.scijava.Context-net.imagej.legacy.translate.ImageTranslator-">Harmonizer</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context,
-          <a href="../../../../net/imagej/legacy/translate/ImageTranslator.html" title="interface in net.imagej.legacy.translate">ImageTranslator</a>&nbsp;trans)</code>&nbsp;</td>
+          <a href="../../../../net/imagej/legacy/translate/ImageTranslator.html" title="class in net.imagej.legacy.translate">ImageTranslator</a>&nbsp;trans)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -168,19 +168,13 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextua
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/Harmonizer.html#resetTypeTracking--">resetTypeTracking</a></span>()</code>
-<div class="block">Forgets the types of all <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>es.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/Harmonizer.html#updateDisplay-net.imagej.display.ImageDisplay-ij.ImagePlus-">updateDisplay</a></span>(<a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
              <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
 <div class="block">Changes the data within a <a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a> to match data in an
  <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/translate/Harmonizer.html#updateLegacyImage-net.imagej.display.ImageDisplay-ij.ImagePlus-">updateLegacyImage</a></span>(<a href="../../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display">ImageDisplay</a>&nbsp;display,
                  <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</code>
@@ -231,7 +225,7 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextua
 <li class="blockList">
 <h4>Harmonizer</h4>
 <pre>public&nbsp;Harmonizer(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context,
-                  <a href="../../../../net/imagej/legacy/translate/ImageTranslator.html" title="interface in net.imagej.legacy.translate">ImageTranslator</a>&nbsp;trans)</pre>
+                  <a href="../../../../net/imagej/legacy/translate/ImageTranslator.html" title="class in net.imagej.legacy.translate">ImageTranslator</a>&nbsp;trans)</pre>
 </li>
 </ul>
 </li>
@@ -271,23 +265,12 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextua
 <a name="registerType-ij.ImagePlus-">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>registerType</h4>
 <pre>public&nbsp;void&nbsp;registerType(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
 <div class="block">Remembers the type of an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>. This type can be checked after
  a call to a plugin to see if the ImagePlus underwent a type change.</div>
-</li>
-</ul>
-<a name="resetTypeTracking--">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>resetTypeTracking</h4>
-<pre>public&nbsp;void&nbsp;resetTypeTracking()</pre>
-<div class="block">Forgets the types of all <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>es. Called before a plugin is run
- to reset the tracking of types.</div>
 </li>
 </ul>
 </li>
@@ -317,8 +300,8 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextua
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../net/imagej/legacy/translate/GrayPixelHarmonizer.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/DisplayHarmonizer.html" title="interface in net.imagej.legacy.translate"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imagej/legacy/translate/ImagePlusCreator.html" title="class in net.imagej.legacy.translate"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?net/imagej/legacy/translate/Harmonizer.html" target="_top">Frames</a></li>

@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -74,13 +74,13 @@ var activeTableTab = "activeTableTab";
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -91,29 +91,48 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imagej.legacy.display</div>
-<h2 title="Interface ImagePlusDisplayViewer" class="title">Interface ImagePlusDisplayViewer</h2>
+<h2 title="Class ImagePlusDisplayViewer" class="title">Class ImagePlusDisplayViewer</h2>
 </div>
 <div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">org.scijava.ui.viewer.AbstractDisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.legacy.display.ImagePlusDisplayViewer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>All Superinterfaces:</dt>
-<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="../../../../net/imagej/legacy/display/LegacyDisplayViewer.html" title="interface in net.imagej.legacy.display">LegacyDisplayViewer</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
-</dl>
-<dl>
-<dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../net/imagej/legacy/display/AbstractImagePlusDisplayViewer.html" title="class in net.imagej.legacy.display">AbstractImagePlusDisplayViewer</a>, <a href="../../../../net/imagej/legacy/display/DefaultImagePlusDisplayViewer.html" title="class in net.imagej.legacy.display">DefaultImagePlusDisplayViewer</a></dd>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;, <a href="http://javadoc.imagej.net/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">ImagePlusDisplayViewer</span>
-extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;, <a href="../../../../net/imagej/legacy/display/LegacyDisplayViewer.html" title="interface in net.imagej.legacy.display">LegacyDisplayViewer</a></pre>
-<div class="block">Marker interface for <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer"><code>DisplayViewer</code></a> implementations that will be
- displaying <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>es.</div>
+<pre>public class <span class="typeNameLabel">ImagePlusDisplayViewer</span>
+extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">AbstractDisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</pre>
+<div class="block"><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer"><code>DisplayViewer</code></a> implementation for <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij"><code>ImagePlus</code></a>. Compatible with
+ the <a href="../../../../net/imagej/legacy/ui/LegacyUI.html" title="class in net.imagej.legacy.ui"><code>LegacyUI</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Mark Hiner</dd>
+<dd>Mark Hiner, Curtis Rueden</dd>
 </dl>
 </li>
 </ul>
@@ -121,6 +140,23 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/Display
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#ImagePlusDisplayViewer--">ImagePlusDisplayViewer</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -128,22 +164,68 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/Display
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../net/imagej/legacy/display/ImagePlusDisplay.html" title="interface in net.imagej.legacy.display">ImagePlusDisplay</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#getDisplay--">getDisplay</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#canView-org.scijava.display.Display-">canView</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#isCompatible-org.scijava.ui.UserInterface-">isCompatible</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/UserInterface.html?is-external=true" title="class or interface in org.scijava.ui">UserInterface</a>&nbsp;ui)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#updateTitle--">updateTitle</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">view</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayWindow.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayWindow</a>&nbsp;w,
+    <a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/legacy/display/ImagePlusDisplayViewer.html#view-org.scijava.ui.UserInterface-org.scijava.display.Display-">view</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/UserInterface.html?is-external=true" title="class or interface in org.scijava.ui">UserInterface</a>&nbsp;ui,
+    <a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</code>&nbsp;</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.ui.viewer.AbstractDisplayViewer">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.ui.viewer.<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">AbstractDisplayViewer</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#getDisplay--" title="class or interface in org.scijava.ui.viewer">getDisplay</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#getPanel--" title="class or interface in org.scijava.ui.viewer">getPanel</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#getWindow--" title="class or interface in org.scijava.ui.viewer">getWindow</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#onEvent-org.scijava.display.event.DisplayCreatedEvent-" title="class or interface in org.scijava.ui.viewer">onEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#onEvent-org.scijava.display.event.DisplayUpdatedEvent-" title="class or interface in org.scijava.ui.viewer">onEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#setPanel-org.scijava.ui.viewer.DisplayPanel-" title="class or interface in org.scijava.ui.viewer">setPanel</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getInfo--" title="class or interface in org.scijava.plugin">getInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#getPriority--" title="class or interface in org.scijava.plugin">getPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setInfo-org.scijava.plugin.PluginInfo-" title="class or interface in org.scijava.plugin">setInfo</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#setPriority-double-" title="class or interface in org.scijava.plugin">setPriority</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/plugin/AbstractRichPlugin.html?is-external=true#toString--" title="class or interface in org.scijava.plugin">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/AbstractContextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.ui.viewer.DisplayViewer">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.scijava.ui.viewer.<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a></h3>
-<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#canView-org.scijava.display.Display-" title="class or interface in org.scijava.ui.viewer">canView</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#dispose--" title="class or interface in org.scijava.ui.viewer">dispose</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#getPanel--" title="class or interface in org.scijava.ui.viewer">getPanel</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#getWindow--" title="class or interface in org.scijava.ui.viewer">getWindow</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#isCompatible-org.scijava.ui.UserInterface-" title="class or interface in org.scijava.ui.viewer">isCompatible</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayActivatedEvent-org.scijava.display.event.DisplayActivatedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayActivatedEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayDeletedEvent-org.scijava.display.event.DisplayDeletedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayDeletedEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayUpdatedEvent-org.scijava.display.event.DisplayUpdatedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayUpdatedEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#setPanel-org.scijava.ui.viewer.DisplayPanel-" title="class or interface in org.scijava.ui.viewer">setPanel</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-" title="class or interface in org.scijava.ui.viewer">view</a></code></li>
+<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#dispose--" title="class or interface in org.scijava.ui.viewer">dispose</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayActivatedEvent-org.scijava.display.event.DisplayActivatedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayActivatedEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayDeletedEvent-org.scijava.display.event.DisplayDeletedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayDeletedEvent</a>, <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#onDisplayUpdatedEvent-org.scijava.display.event.DisplayUpdatedEvent-" title="class or interface in org.scijava.ui.viewer">onDisplayUpdatedEvent</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
@@ -195,22 +277,83 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/Display
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ImagePlusDisplayViewer--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ImagePlusDisplayViewer</h4>
+<pre>public&nbsp;ImagePlusDisplayViewer()</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getDisplay--">
+<a name="updateTitle--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateTitle</h4>
+<pre>protected&nbsp;void&nbsp;updateTitle()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#updateTitle--" title="class or interface in org.scijava.ui.viewer">updateTitle</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">AbstractDisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="isCompatible-org.scijava.ui.UserInterface-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCompatible</h4>
+<pre>public&nbsp;boolean&nbsp;isCompatible(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/UserInterface.html?is-external=true" title="class or interface in org.scijava.ui">UserInterface</a>&nbsp;ui)</pre>
+</li>
+</ul>
+<a name="canView-org.scijava.display.Display-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canView</h4>
+<pre>public&nbsp;boolean&nbsp;canView(<a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</pre>
+</li>
+</ul>
+<a name="view-org.scijava.ui.UserInterface-org.scijava.display.Display-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>view</h4>
+<pre>public&nbsp;void&nbsp;view(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/UserInterface.html?is-external=true" title="class or interface in org.scijava.ui">UserInterface</a>&nbsp;ui,
+                 <a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</pre>
+</li>
+</ul>
+<a name="view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getDisplay</h4>
-<pre><a href="../../../../net/imagej/legacy/display/ImagePlusDisplay.html" title="interface in net.imagej.legacy.display">ImagePlusDisplay</a>&nbsp;getDisplay()</pre>
+<h4>view</h4>
+<pre>public&nbsp;void&nbsp;view(<a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayWindow.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayWindow</a>&nbsp;w,
+                 <a href="http://javadoc.imagej.net/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#getDisplay--" title="class or interface in org.scijava.ui.viewer">getDisplay</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</code></dd>
+<dd><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-" title="class or interface in org.scijava.ui.viewer">view</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/DisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">DisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-" title="class or interface in org.scijava.ui.viewer">view</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/AbstractDisplayViewer.html?is-external=true" title="class or interface in org.scijava.ui.viewer">AbstractDisplayViewer</a>&lt;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -268,13 +411,13 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/ui/viewer/Display
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
