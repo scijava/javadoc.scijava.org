@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":18,"i2":6,"i3":6,"i4":6,"i5":6,"i6":18,"i7":18,"i8":18,"i9":6,"i10":6};
+var methods = {"i0":6,"i1":18,"i2":6,"i3":6,"i4":6,"i5":6,"i6":18,"i7":18,"i8":18,"i9":6,"i10":6,"i11":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -214,6 +214,13 @@ extends <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interfac
 <div class="block">Begins viewing the given display.</div>
 </td>
 </tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/ui/viewer/DisplayViewer.html#view-org.scijava.ui.UserInterface-org.scijava.display.Display-">view</a></span>(<a href="../../../../org/scijava/ui/UserInterface.html" title="interface in org.scijava.ui">UserInterface</a>&nbsp;ui,
+    <a href="../../../../org/scijava/display/Display.html" title="interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</code>
+<div class="block">Begins viewing the given display.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
@@ -290,6 +297,29 @@ extends <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interfac
 <pre>boolean&nbsp;canView(<a href="../../../../org/scijava/display/Display.html" title="interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</pre>
 <div class="block">Returns true if an instance of this display viewer can view the given
  display.</div>
+</li>
+</ul>
+<a name="view-org.scijava.ui.UserInterface-org.scijava.display.Display-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>view</h4>
+<pre>default&nbsp;void&nbsp;view(<a href="../../../../org/scijava/ui/UserInterface.html" title="interface in org.scijava.ui">UserInterface</a>&nbsp;ui,
+                  <a href="../../../../org/scijava/display/Display.html" title="interface in org.scijava.display">Display</a>&lt;?&gt;&nbsp;d)</pre>
+<div class="block">Begins viewing the given display.
+ <p>
+ The default behavior of this method is to ask the given
+ <a href="../../../../org/scijava/ui/UserInterface.html" title="interface in org.scijava.ui"><code>UserInterface</code></a> to create a <a href="../../../../org/scijava/ui/viewer/DisplayWindow.html" title="interface in org.scijava.ui.viewer"><code>DisplayWindow</code></a> via
+ <a href="../../../../org/scijava/ui/UserInterface.html#createDisplayWindow-org.scijava.display.Display-"><code>UserInterface.createDisplayWindow(Display)</code></a> and then pass it to
+ <a href="../../../../org/scijava/ui/viewer/DisplayViewer.html#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-"><code>view(DisplayWindow, Display)</code></a>. Viewers needing to customize details
+ of the <a href="../../../../org/scijava/ui/viewer/DisplayWindow.html" title="interface in org.scijava.ui.viewer"><code>DisplayWindow</code></a> creation can do so via this method.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ui</code> - The user interface with which the viewer will be associated.</dd>
+<dd><code>d</code> - the model for the display to show.</dd>
+</dl>
 </li>
 </ul>
 <a name="view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">
@@ -468,6 +498,6 @@ extends <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interfac
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
 </body>
 </html>

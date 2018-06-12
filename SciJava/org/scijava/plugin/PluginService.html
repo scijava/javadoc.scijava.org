@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -137,7 +137,7 @@ extends <a href="../../../org/scijava/service/SciJavaService.html" title="interf
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -252,6 +252,13 @@ extends <a href="../../../org/scijava/service/SciJavaService.html" title="interf
 <td class="colFirst"><code>&lt;T extends <a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a>&lt;?&gt;&gt;<br>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/plugin/PluginService.html#removePlugins-java.util.Collection-">removePlugins</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;T&gt;&nbsp;plugins)</code>
 <div class="block">Manually unregisters plugins with the plugin service.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>default &lt;PT extends <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/plugin/PluginService.html#sort-java.util.List-java.lang.Class-">sort</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;PT&gt;&nbsp;instances,
+    <a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;PT&gt;&nbsp;type)</code>
+<div class="block">Sorts the given list of plugin instances by priority.</div>
 </td>
 </tr>
 </table>
@@ -623,7 +630,7 @@ extends <a href="../../../org/scijava/service/SciJavaService.html" title="interf
 <a name="createInstance-org.scijava.plugin.PluginInfo-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>createInstance</h4>
 <pre>&lt;PT extends <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>&gt;&nbsp;PT&nbsp;createInstance(<a href="../../../org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a>&lt;PT&gt;&nbsp;info)</pre>
@@ -643,6 +650,22 @@ extends <a href="../../../org/scijava/service/SciJavaService.html" title="interf
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>PT</code> - The <em>type</em> of plugin to instantiate; e.g.,
           <code>Service.class</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="sort-java.util.List-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sort</h4>
+<pre>default&nbsp;&lt;PT extends <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>&gt;&nbsp;void&nbsp;sort(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;PT&gt;&nbsp;instances,
+                                             <a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;PT&gt;&nbsp;type)</pre>
+<div class="block">Sorts the given list of plugin instances by priority.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>instances</code> - List of plugin instances to sort.</dd>
+<dd><code>type</code> - The type of plugin these instances represent.</dd>
 </dl>
 </li>
 </ul>
@@ -714,6 +737,6 @@ extends <a href="../../../org/scijava/service/SciJavaService.html" title="interf
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
 </body>
 </html>

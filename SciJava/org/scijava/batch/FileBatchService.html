@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FileBatchService (SciJava Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="FileBatchService (SciJava Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/batch/FileScriptBatchProcessor.html" title="class in org.scijava.batch"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/batch/FileBatchService.html" target="_top">Frames</a></li>
+<li><a href="FileBatchService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.scijava.batch</div>
+<h2 title="Class FileBatchService" class="title">Class FileBatchService</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/AbstractContextual.html" title="class in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">org.scijava.service.AbstractService</a></li>
+<li>
+<ul class="inheritance">
+<li>org.scijava.batch.FileBatchService</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch">BatchService</a>, <a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public final class <span class="typeNameLabel">FileBatchService</span>
+extends <a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">AbstractService</a>
+implements <a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch">BatchService</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/scijava/batch/FileBatchService.html#FileBatchService--">FileBatchService</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/batch/FileBatchService.html#run-org.scijava.module.ModuleInfo-">run</a></span>(<a href="../../../org/scijava/module/ModuleInfo.html" title="interface in org.scijava.module">ModuleInfo</a>&nbsp;moduleInfo)</code>
+<div class="block">Run the module described by <a href="../../../org/scijava/module/ModuleInfo.html" title="interface in org.scijava.module"><code>ModuleInfo</code></a> in batch.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/scijava/batch/FileBatchService.html#supports-java.lang.Class-">supports</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;type)</code>
+<div class="block">Returns true if <code>type</code> is a <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.AbstractService">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.service.<a href="../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">AbstractService</a></h3>
+<code><a href="../../../org/scijava/service/AbstractService.html#getContext--">getContext</a>, <a href="../../../org/scijava/service/AbstractService.html#setContext-org.scijava.Context-">setContext</a>, <a href="../../../org/scijava/service/AbstractService.html#toString--">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">AbstractRichPlugin</a></h3>
+<code><a href="../../../org/scijava/plugin/AbstractRichPlugin.html#getInfo--">getInfo</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#getPriority--">getPriority</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#setInfo-org.scijava.plugin.PluginInfo-">setInfo</a>, <a href="../../../org/scijava/plugin/AbstractRichPlugin.html#setPriority-double-">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.scijava.<a href="../../../org/scijava/AbstractContextual.html" title="class in org.scijava">AbstractContextual</a></h3>
+<code><a href="../../../org/scijava/AbstractContextual.html#context--">context</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.batch.BatchService">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.batch.<a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch">BatchService</a></h3>
+<code><a href="../../../org/scijava/batch/BatchService.html#batchableInputs-org.scijava.module.ModuleInfo-">batchableInputs</a>, <a href="../../../org/scijava/batch/BatchService.html#supports-org.scijava.module.ModuleInfo-">supports</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.service.Service">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.service.<a href="../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></h3>
+<code><a href="../../../org/scijava/service/Service.html#initialize--">initialize</a>, <a href="../../../org/scijava/service/Service.html#registerEventHandlers--">registerEventHandlers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a></h3>
+<code><a href="../../../org/scijava/plugin/RichPlugin.html#getIdentifier--">getIdentifier</a>, <a href="../../../org/scijava/plugin/RichPlugin.html#log--">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a></h3>
+<code><a href="../../../org/scijava/Contextual.html#context--">context</a>, <a href="../../../org/scijava/Contextual.html#getContext--">getContext</a>, <a href="../../../org/scijava/Contextual.html#setContext-org.scijava.Context-">setContext</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Prioritized">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a></h3>
+<code><a href="../../../org/scijava/Prioritized.html#compareTo-org.scijava.Prioritized-">compareTo</a>, <a href="../../../org/scijava/Prioritized.html#getPriority--">getPriority</a>, <a href="../../../org/scijava/Prioritized.html#setPriority-double-">setPriority</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.HasPluginInfo">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a></h3>
+<code><a href="../../../org/scijava/plugin/HasPluginInfo.html#getInfo--">getInfo</a>, <a href="../../../org/scijava/plugin/HasPluginInfo.html#setInfo-org.scijava.plugin.PluginInfo-">setInfo</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Locatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a></h3>
+<code><a href="../../../org/scijava/Locatable.html#getLocation--">getLocation</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></h3>
+<code><a href="../../../org/scijava/Versioned.html#getVersion--">getVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Disposable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></h3>
+<code><a href="../../../org/scijava/Disposable.html#dispose--">dispose</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="FileBatchService--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>FileBatchService</h4>
+<pre>public&nbsp;FileBatchService()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="supports-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>supports</h4>
+<pre>public&nbsp;boolean&nbsp;supports(<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;type)</pre>
+<div class="block">Returns true if <code>type</code> is a <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/batch/BatchService.html#supports-java.lang.Class-">supports</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch">BatchService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="run-org.scijava.module.ModuleInfo-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run(<a href="../../../org/scijava/module/ModuleInfo.html" title="interface in org.scijava.module">ModuleInfo</a>&nbsp;moduleInfo)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/scijava/batch/BatchService.html#run-org.scijava.module.ModuleInfo-">BatchService</a></code></span></div>
+<div class="block">Run the module described by <a href="../../../org/scijava/module/ModuleInfo.html" title="interface in org.scijava.module"><code>ModuleInfo</code></a> in batch.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../org/scijava/batch/BatchService.html#run-org.scijava.module.ModuleInfo-">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch">BatchService</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/scijava/batch/BatchService.html" title="interface in org.scijava.batch"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/scijava/batch/FileScriptBatchProcessor.html" title="class in org.scijava.batch"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/scijava/batch/FileBatchService.html" target="_top">Frames</a></li>
+<li><a href="FileBatchService.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>

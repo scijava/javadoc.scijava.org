@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../org/scijava/io/location/DummyLocation.html" title="class in org.scijava.io.location"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/scijava/io/location/FileLocationResolver.html" title="class in org.scijava.io.location"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/scijava/io/location/FileLocation.html" target="_top">Frames</a></li>
@@ -112,16 +112,17 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></dd>
+<dd><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a>, <a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">FileLocation</span>
-extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" title="class in org.scijava.io.location">AbstractLocation</a></pre>
+extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" title="class in org.scijava.io.location">AbstractLocation</a>
+implements <a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></pre>
 <div class="block"><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location"><code>Location</code></a> backed by a <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a> on disk.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Curtis Rueden</dd>
+<dd>Curtis Rueden, Gabriel Einsdorf</dd>
 </dl>
 </li>
 </ul>
@@ -165,22 +166,56 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#child-java.lang.String-">child</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Obtains a location with the given name, for whom this location is the
+ parent.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#children--">children</a></span>()</code>
+<div class="block">Obtains a collection of locations for whom this location is the parent.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#getFile--">getFile</a></span>()</code>
 <div class="block">Gets the associated <a href="http://javadoc.imagej.net/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a>.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#getName--">getName</a></span>()</code>
 <div class="block">Gets a (typically short) name expressing this location.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#getURI--">getURI</a></span>()</code>
 <div class="block">Gets the location expressed as a <a href="http://javadoc.imagej.net/Java/java/net/URI.html?is-external=true" title="class or interface in java.net"><code>URI</code></a>, or null if the location
  cannot be expressed as such.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#isDirectory--">isDirectory</a></span>()</code>
+<div class="block">Tests whether this location is a <b>directory</b>, meaning that it can have
+ children.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#parent--">parent</a></span>()</code>
+<div class="block">Obtains a location pointing to the parent directory of this one.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/io/location/FileLocation.html#sibling-java.lang.String-">sibling</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>
+<div class="block">Obtains a location relative to this one, which will be configured
+ like the current location, but point to a the file specified by the
+ <code>path</code> parameter.</div>
 </td>
 </tr>
 </table>
@@ -197,6 +232,13 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.io.location.Location">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.io.location.<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></h3>
+<code><a href="../../../../org/scijava/io/location/Location.html#defaultName--">defaultName</a></code></li>
 </ul>
 </li>
 </ul>
@@ -267,12 +309,16 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/Location.html#getURI--">Location</a></code></span></div>
 <div class="block">Gets the location expressed as a <a href="http://javadoc.imagej.net/Java/java/net/URI.html?is-external=true" title="class or interface in java.net"><code>URI</code></a>, or null if the location
  cannot be expressed as such.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/Location.html#getURI--">getURI</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="getName--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
@@ -283,8 +329,116 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
  implementation, but as an example, a file-based location could return the
  name of the associated file without its full path.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/Location.html#getName--">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The name, or an empty string if no name is available.</dd>
+</dl>
+</li>
+</ul>
+<a name="parent--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parent</h4>
+<pre>public&nbsp;<a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a>&nbsp;parent()
+                    throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#parent--">BrowsableLocation</a></code></span></div>
+<div class="block">Obtains a location pointing to the parent directory of this one.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#parent--">parent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the parent location of this one, or <code>null</code> if this
+         location has no parent.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if something goes wrong obtaining the parent.</dd>
+</dl>
+</li>
+</ul>
+<a name="children--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>children</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a>&gt;&nbsp;children()
+                                throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#children--">BrowsableLocation</a></code></span></div>
+<div class="block">Obtains a collection of locations for whom this location is the parent.
+ Note that this will only succeed if calls to <a href="../../../../org/scijava/io/location/BrowsableLocation.html#isDirectory--"><code>BrowsableLocation.isDirectory()</code></a> on this
+ location return <code>true</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#children--">children</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A set containing the children of this location, or
+         <a href="http://javadoc.imagej.net/Java/java/util/Collections.html?is-external=true#EMPTY_SET" title="class or interface in java.util"><code>Collections.EMPTY_SET</code></a> if this location has no children.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if something goes wrong obtaining the children.</dd>
+</dl>
+</li>
+</ul>
+<a name="sibling-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sibling</h4>
+<pre>public&nbsp;<a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a>&nbsp;sibling(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#sibling-java.lang.String-">BrowsableLocation</a></code></span></div>
+<div class="block">Obtains a location relative to this one, which will be configured
+ like the current location, but point to a the file specified by the
+ <code>path</code> parameter.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#sibling-java.lang.String-">sibling</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - the relative path of the desired location.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A location that points to the specified file location.</dd>
+</dl>
+</li>
+</ul>
+<a name="child-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>child</h4>
+<pre>public&nbsp;<a href="../../../../org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a>&nbsp;child(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#child-java.lang.String-">BrowsableLocation</a></code></span></div>
+<div class="block">Obtains a location with the given name, for whom this location is the
+ parent. Note that this will only succeed if calls to <a href="../../../../org/scijava/io/location/BrowsableLocation.html#isDirectory--"><code>BrowsableLocation.isDirectory()</code></a>
+ on this location return <code>true</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#child-java.lang.String-">child</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - the name of the child</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a location pointing to the child</dd>
+</dl>
+</li>
+</ul>
+<a name="isDirectory--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isDirectory</h4>
+<pre>public&nbsp;boolean&nbsp;isDirectory()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#isDirectory--">BrowsableLocation</a></code></span></div>
+<div class="block">Tests whether this location is a <b>directory</b>, meaning that it can have
+ children. It is recommended to use this method before calling
+ <a href="../../../../org/scijava/io/location/BrowsableLocation.html#child-java.lang.String-"><code>BrowsableLocation.child(String)</code></a> or <a href="../../../../org/scijava/io/location/BrowsableLocation.html#children--"><code>BrowsableLocation.children()</code></a>, to ensure those calls
+ succeed.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/location/BrowsableLocation.html#isDirectory--">isDirectory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/location/BrowsableLocation.html" title="interface in org.scijava.io.location">BrowsableLocation</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True iff the location represents a directory.</dd>
 </dl>
 </li>
 </ul>
@@ -316,7 +470,7 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../org/scijava/io/location/DummyLocation.html" title="class in org.scijava.io.location"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/scijava/io/location/FileLocationResolver.html" title="class in org.scijava.io.location"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/scijava/io/location/FileLocation.html" target="_top">Frames</a></li>
@@ -356,6 +510,6 @@ extends <a href="../../../../org/scijava/io/location/AbstractLocation.html" titl
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
 </body>
 </html>

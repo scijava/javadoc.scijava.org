@@ -42,7 +42,7 @@
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../../../org/scijava/script/process/ParameterScriptProcessor.html" title="class in org.scijava.script.process"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/scijava/script/process/DirectiveScriptProcessor.html" title="class in org.scijava.script.process"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/scijava/script/process/DefaultScriptProcessorService.html" target="_top">Frames</a></li>
@@ -69,7 +69,7 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractSingletonService">Method</a></li>
+<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractPTService">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
@@ -101,15 +101,10 @@
 <li><a href="../../../../org/scijava/service/AbstractService.html" title="class in org.scijava.service">org.scijava.service.AbstractService</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractPTService</a>&lt;PT&gt;</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/plugin/AbstractSingletonService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractSingletonService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;</li>
+<li><a href="../../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractPTService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;</li>
 <li>
 <ul class="inheritance">
 <li>org.scijava.script.process.DefaultScriptProcessorService</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -126,12 +121,12 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;, <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../../org/scijava/plugin/SingletonService.html" title="interface in org.scijava.plugin">SingletonService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;, <a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../../org/scijava/script/process/ScriptProcessorService.html" title="interface in org.scijava.script.process">ScriptProcessorService</a>, <a href="../../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
+<dd><a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="../../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../../org/scijava/Initializable.html" title="interface in org.scijava">Initializable</a>, <a href="../../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../../org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;, <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../../org/scijava/script/process/ScriptProcessorService.html" title="interface in org.scijava.script.process">ScriptProcessorService</a>, <a href="../../../../org/scijava/service/SciJavaService.html" title="interface in org.scijava.service">SciJavaService</a>, <a href="../../../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>, <a href="../../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">DefaultScriptProcessorService</span>
-extends <a href="../../../../org/scijava/plugin/AbstractSingletonService.html" title="class in org.scijava.plugin">AbstractSingletonService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;
+extends <a href="../../../../org/scijava/plugin/AbstractPTService.html" title="class in org.scijava.plugin">AbstractPTService</a>&lt;<a href="../../../../org/scijava/script/process/ScriptProcessor.html" title="interface in org.scijava.script.process">ScriptProcessor</a>&gt;
 implements <a href="../../../../org/scijava/script/process/ScriptProcessorService.html" title="interface in org.scijava.script.process">ScriptProcessorService</a></pre>
 <div class="block">Default implementation of <a href="../../../../org/scijava/script/process/ScriptProcessorService.html" title="interface in org.scijava.script.process"><code>ScriptProcessorService</code></a>.</div>
 <dl>
@@ -167,13 +162,6 @@ implements <a href="../../../../org/scijava/script/process/ScriptProcessorServic
 <!--   -->
 </a>
 <h3>Method Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractSingletonService">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../../org/scijava/plugin/AbstractSingletonService.html" title="class in org.scijava.plugin">AbstractSingletonService</a></h3>
-<code><a href="../../../../org/scijava/plugin/AbstractSingletonService.html#getInstance-java.lang.Class-">getInstance</a>, <a href="../../../../org/scijava/plugin/AbstractSingletonService.html#getInstances--">getInstances</a>, <a href="../../../../org/scijava/plugin/AbstractSingletonService.html#objectService--">objectService</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractPTService">
 <!--   -->
@@ -279,13 +267,6 @@ implements <a href="../../../../org/scijava/script/process/ScriptProcessorServic
 <h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></h3>
 <code><a href="../../../../org/scijava/Disposable.html#dispose--">dispose</a></code></li>
 </ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.SingletonService">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;org.scijava.plugin.<a href="../../../../org/scijava/plugin/SingletonService.html" title="interface in org.scijava.plugin">SingletonService</a></h3>
-<code><a href="../../../../org/scijava/plugin/SingletonService.html#create-java.lang.Class-">create</a>, <a href="../../../../org/scijava/plugin/SingletonService.html#filterInstances-java.util.List-">filterInstances</a>, <a href="../../../../org/scijava/plugin/SingletonService.html#initialize--">initialize</a></code></li>
-</ul>
 </li>
 </ul>
 </li>
@@ -337,7 +318,7 @@ implements <a href="../../../../org/scijava/script/process/ScriptProcessorServic
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li><a href="../../../../org/scijava/script/process/ParameterScriptProcessor.html" title="class in org.scijava.script.process"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/scijava/script/process/DirectiveScriptProcessor.html" title="class in org.scijava.script.process"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/scijava/script/process/DefaultScriptProcessorService.html" target="_top">Frames</a></li>
@@ -364,7 +345,7 @@ implements <a href="../../../../org/scijava/script/process/ScriptProcessorServic
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractSingletonService">Method</a></li>
+<li><a href="#methods.inherited.from.class.org.scijava.plugin.AbstractPTService">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
@@ -377,6 +358,6 @@ implements <a href="../../../../org/scijava/script/process/ScriptProcessorServic
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://www.scijava.org/">SciJava</a>. All rights reserved.</small></p>
 </body>
 </html>
