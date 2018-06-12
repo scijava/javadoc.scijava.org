@@ -297,6 +297,13 @@ implements <a href="../../../net/imglib2/realtransform/AffineGet.html" title="in
 <code><a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#applyInverse-double:A-double:A-">applyInverse</a>, <a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#applyInverse-float:A-float:A-">applyInverse</a>, <a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#applyInverse-net.imglib2.RealPositionable-net.imglib2.RealLocalizable-">applyInverse</a>, <a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#copy--">copy</a></code></li>
 </ul>
 <ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.realtransform.RealTransform">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.realtransform.<a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></h3>
+<code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.realtransform.AffineSet">
 <!--   -->
 </a>
@@ -479,8 +486,10 @@ implements <a href="../../../net/imglib2/realtransform/AffineGet.html" title="in
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-double:A-double:A-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -499,8 +508,10 @@ implements <a href="../../../net/imglib2/realtransform/AffineGet.html" title="in
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-float:A-float:A-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -519,8 +530,11 @@ implements <a href="../../../net/imglib2/realtransform/AffineGet.html" title="in
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-net.imglib2.RealLocalizable-net.imglib2.RealPositionable-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, <a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>numDimensions()</code></a> must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates,
+            <a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>numDimensions()</code></a> must
+            be <code>&gt;=</code> <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -640,6 +654,6 @@ implements <a href="../../../net/imglib2/realtransform/AffineGet.html" title="in
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":50,"i2":6,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -115,12 +115,12 @@ var activeTableTab = "activeTableTab";
 extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></pre>
 <div class="block">Invertible transformation from R<sup><em>n</em></sup> to R<sup><em>m</em>
  </sup>.
- 
+
  <p>
  Applying the transformation to a <em>n</em>-dimensional <em>source</em>
  vector yields a <em>m</em>-dimensional <em>target</em> vector.
  </p>
- 
+
  <p>
  You can also
  <a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#applyInverse-net.imglib2.RealPositionable-net.imglib2.RealLocalizable-"><code>apply the inverse transformation</code></a> to a <em>m</em>-dimensional <em>target</em>
@@ -131,6 +131,10 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
  <em>m</em>-dimensional respectively. The <a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html" title="interface in net.imglib2.realtransform"><code>InvertibleRealTransform</code></a> is
  expected to leave all dimensions beyond <em>n</em>-1 in the source vector and
  <em>m</em>-1 in the target vector unchanged.
+ </p>
+ <p>
+ Implementations must support an in-place applyInverse (i.e., passing the same
+ object as both <em>source</em> and <em>target</em>).
  </p></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -149,7 +153,7 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -162,10 +166,12 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html#applyInverse-float:A-float:A-">applyInverse</a></span>(float[]&nbsp;source,
             float[]&nbsp;target)</code>
-<div class="block">Apply the inverse transform to a target vector to obtain a source vector.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use double precision instead</span></div>
+</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -194,7 +200,7 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.realtransform.<a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></h3>
-<code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-double:A-double:A-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#apply-float:A-float:A-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#apply-net.imglib2.RealLocalizable-net.imglib2.RealPositionable-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--">numSourceDimensions</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--">numTargetDimensions</a></code></li>
+<code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-double:A-double:A-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#apply-float:A-float:A-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#apply-net.imglib2.RealLocalizable-net.imglib2.RealPositionable-">apply</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--">numSourceDimensions</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--">numTargetDimensions</a></code></li>
 </ul>
 </li>
 </ul>
@@ -232,8 +238,10 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 <ul class="blockList">
 <li class="blockList">
 <h4>applyInverse</h4>
-<pre>void&nbsp;applyInverse(float[]&nbsp;source,
-                  float[]&nbsp;target)</pre>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+default&nbsp;void&nbsp;applyInverse(float[]&nbsp;source,
+                                      float[]&nbsp;target)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use double precision instead</span></div>
 <div class="block">Apply the inverse transform to a target vector to obtain a source vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -282,7 +290,7 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 <pre><a href="../../../net/imglib2/realtransform/InvertibleRealTransform.html" title="interface in net.imglib2.realtransform">InvertibleRealTransform</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html#copy--">RealTransform</a></code></span></div>
 <div class="block">Create a deep copy of this <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a>.
- 
+
  <p>
  Deep copying is required to make sure that stateful <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransforms</code></a> can be duplicated for concurrent code.
  </p></div>
@@ -362,6 +370,6 @@ extends <a href="../../../net/imglib2/realtransform/RealTransform.html" title="i
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

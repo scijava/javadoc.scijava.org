@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -111,7 +111,7 @@ var activeTableTab = "activeTableTab";
 extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch, Philipp Hanslovsky</dd>
+<dd>Tobias Pietzsch, Philipp Hanslovsky, Tim-Oliver Buchholz, Matthias Arzt</dd>
 </dl>
 </li>
 </ul>
@@ -150,28 +150,57 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;<br>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientCentralDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientCentralDifference</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
-                         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
-                         int&nbsp;dimension)</code>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientBackwardDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientBackwardDifference</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                          <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
+                          int&nbsp;dimension)</code>
+<div class="block">Compute the backward difference of source in a particular dimension:
+ <code>d_f( x ) = ( f( x ) - f( x - e ) )</code>
+ where <code>e</code> is the unit vector along that dimension</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;<br>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientCentralDifference2-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientCentralDifference2</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
-                          <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
-                          int&nbsp;dimension)</code>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientCentralDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientCentralDifference</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
+                         int&nbsp;dimension)</code>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientCentralDifference2-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientCentralDifference2</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                          <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
+                          int&nbsp;dimension)</code>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;<br>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientCentralDifferenceParallel-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-int-java.util.concurrent.ExecutorService-">gradientCentralDifferenceParallel</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
                                  <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
                                  int&nbsp;dimension,
                                  int&nbsp;nTasks,
                                  <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;es)</code>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/gradient/PartialDerivative.html#gradientForwardDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">gradientForwardDifference</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
+                         int&nbsp;dimension)</code>
+<div class="block">Compute the forward difference of source in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x ) )</code>
+ where <code>e</code> is the unit vector along that dimension</div>
 </td>
 </tr>
 </table>
@@ -222,7 +251,10 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;gradientCentralDifference2(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
                                                                          <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
                                                                          int&nbsp;dimension)</pre>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - source image, has to provide valid data in the interval of the
@@ -245,7 +277,10 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
                                                                                 <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;es)
                                                                          throws <a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
                                                                                 <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - source image, has to provide valid data in the interval of the
@@ -264,18 +299,63 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <a name="gradientCentralDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>gradientCentralDifference</h4>
 <pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;gradientCentralDifference(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
-                                                                        <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;gradient,
+                                                                        <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
                                                                         int&nbsp;dimension)</pre>
-<div class="block">Compute the partial derivative of source in a particular dimension.</div>
+<div class="block">Compute the partial derivative (central difference approximation) of source
+ in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x - e ) ) / 2</code>,
+ where <code>e</code> is the unit vector along that dimension.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - source image, has to provide valid data in the interval of the
             gradient image plus a one pixel border in dimension.</dd>
-<dd><code>gradient</code> - output image</dd>
+<dd><code>result</code> - output image</dd>
+<dd><code>dimension</code> - along which dimension the partial derivatives are computed</dd>
+</dl>
+</li>
+</ul>
+<a name="gradientBackwardDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gradientBackwardDifference</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;gradientBackwardDifference(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                                                         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
+                                                                         int&nbsp;dimension)</pre>
+<div class="block">Compute the backward difference of source in a particular dimension:
+ <code>d_f( x ) = ( f( x ) - f( x - e ) )</code>
+ where <code>e</code> is the unit vector along that dimension</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - source image, has to provide valid data in the interval of
+            the gradient image plus a one pixel border in dimension.</dd>
+<dd><code>result</code> - output image</dd>
+<dd><code>dimension</code> - along which dimension the partial derivatives are computed</dd>
+</dl>
+</li>
+</ul>
+<a name="gradientForwardDifference-net.imglib2.RandomAccessible-net.imglib2.RandomAccessibleInterval-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>gradientForwardDifference</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/NumericType.html" title="interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;gradientForwardDifference(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                                                        <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;result,
+                                                                        int&nbsp;dimension)</pre>
+<div class="block">Compute the forward difference of source in a particular dimension:
+ <code>d_f( x ) = ( f( x + e ) - f( x ) )</code>
+ where <code>e</code> is the unit vector along that dimension</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - source image, has to provide valid data in the interval of
+            the gradient image plus a one pixel border in dimension.</dd>
+<dd><code>result</code> - output image</dd>
 <dd><code>dimension</code> - along which dimension the partial derivatives are computed</dd>
 </dl>
 </li>
@@ -348,6 +428,6 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

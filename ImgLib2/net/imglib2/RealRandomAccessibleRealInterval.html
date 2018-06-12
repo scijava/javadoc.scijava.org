@@ -101,7 +101,7 @@
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a>, <a href="../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a>, <a href="../../net/imglib2/roi/AngleRegionOfInterest.html" title="class in net.imglib2.roi">AngleRegionOfInterest</a>, <a href="../../net/imglib2/roi/BinaryMaskRegionOfInterest.html" title="class in net.imglib2.roi">BinaryMaskRegionOfInterest</a>, <a href="../../net/imglib2/roi/CompositeRegionOfInterest.html" title="class in net.imglib2.roi">CompositeRegionOfInterest</a>, <a href="../../net/imglib2/converter/read/ConvertedRealRandomAccessibleRealInterval.html" title="class in net.imglib2.converter.read">ConvertedRealRandomAccessibleRealInterval</a>, <a href="../../net/imglib2/roi/EllipseRegionOfInterest.html" title="class in net.imglib2.roi">EllipseRegionOfInterest</a>, <a href="../../net/imglib2/roi/GeneralPathRegionOfInterest.html" title="class in net.imglib2.roi">GeneralPathRegionOfInterest</a>, <a href="../../net/imglib2/roi/LineRegionOfInterest.html" title="class in net.imglib2.roi">LineRegionOfInterest</a>, <a href="../../net/imglib2/roi/geometric/Polygon.html" title="class in net.imglib2.roi.geometric">Polygon</a>, <a href="../../net/imglib2/roi/PolygonRegionOfInterest.html" title="class in net.imglib2.roi">PolygonRegionOfInterest</a>, <a href="../../net/imglib2/roi/RectangleRegionOfInterest.html" title="class in net.imglib2.roi">RectangleRegionOfInterest</a></dd>
+<dd><a href="../../net/imglib2/roi/AbstractIterableRegionOfInterest.html" title="class in net.imglib2.roi">AbstractIterableRegionOfInterest</a>, <a href="../../net/imglib2/roi/AbstractRegionOfInterest.html" title="class in net.imglib2.roi">AbstractRegionOfInterest</a>, <a href="../../net/imglib2/roi/AngleRegionOfInterest.html" title="class in net.imglib2.roi">AngleRegionOfInterest</a>, <a href="../../net/imglib2/roi/BinaryMaskRegionOfInterest.html" title="class in net.imglib2.roi">BinaryMaskRegionOfInterest</a>, <a href="../../net/imglib2/roi/CompositeRegionOfInterest.html" title="class in net.imglib2.roi">CompositeRegionOfInterest</a>, <a href="../../net/imglib2/converter/read/ConvertedRealRandomAccessibleRealInterval.html" title="class in net.imglib2.converter.read">ConvertedRealRandomAccessibleRealInterval</a>, <a href="../../net/imglib2/roi/EllipseRegionOfInterest.html" title="class in net.imglib2.roi">EllipseRegionOfInterest</a>, <a href="../../net/imglib2/roi/GeneralPathRegionOfInterest.html" title="class in net.imglib2.roi">GeneralPathRegionOfInterest</a>, <a href="../../net/imglib2/roi/LineRegionOfInterest.html" title="class in net.imglib2.roi">LineRegionOfInterest</a>, <a href="../../net/imglib2/roi/PolygonRegionOfInterest.html" title="class in net.imglib2.roi">PolygonRegionOfInterest</a>, <a href="../../net/imglib2/roi/mask/real/RealMaskRealIntervalAsRealRandomAccessibleRealInterval.html" title="class in net.imglib2.roi.mask.real">RealMaskRealIntervalAsRealRandomAccessibleRealInterval</a>, <a href="../../net/imglib2/roi/RectangleRegionOfInterest.html" title="class in net.imglib2.roi">RectangleRegionOfInterest</a></dd>
 </dl>
 <hr>
 <br>
@@ -114,6 +114,19 @@ extends <a href="../../net/imglib2/RealRandomAccessible.html" title="interface i
  <p>
  A function over an n-dimensional real interval that can create a random
  access <a href="../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a>.
+ </p>
+ <p>
+ By convention, a RealRandomAccessibleRealInterval represents a function that
+ is <em>defined at all coordinates of the interval</em>.
+ </p>
+ <p>
+ There is no guarantee regarding whether the function is defined outside the
+ bounds of its interval. If the function is known to be defined for
+ out-of-bounds values in a particular interval, the
+ <a href="../../net/imglib2/RealRandomAccessible.html#realRandomAccess-net.imglib2.RealInterval-"><code>RealRandomAccessible.realRandomAccess(RealInterval)</code></a> method should be used to access those
+ values&mdash;whereas the <a href="../../net/imglib2/RealRandomAccessible.html#realRandomAccess--"><code>RealRandomAccessible.realRandomAccess()</code></a> (no arguments) method
+ <em>is not intended to access out-of-bounds values</em>. See
+ <a href="../../net/imglib2/RandomAccessible.html#randomAccess--"><code>RandomAccessible.randomAccess()</code></a> for related discussion.
  </p></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -220,6 +233,6 @@ extends <a href="../../net/imglib2/RealRandomAccessible.html" title="interface i
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":41,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -113,7 +113,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
  local neighborhood.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch</dd>
+<dd>Tobias Pietzsch, Philipp Hanslovsky</dd>
 </dl>
 </li>
 </ul>
@@ -135,7 +135,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static interface&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="type parameter in LocalExtrema.LocalNeighborhoodCheck">P</a>,<a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="type parameter in LocalExtrema.LocalNeighborhoodCheck">T</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="type parameter in LocalExtrema.LocalNeighborhoodCheck">T</a>&gt;&gt;</span></code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;<a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="type parameter in LocalExtrema.LocalNeighborhoodCheck">P</a>,<a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="type parameter in LocalExtrema.LocalNeighborhoodCheck">T</a>&gt;</span></code>
 <div class="block">A local extremum check.</div>
 </td>
 </tr>
@@ -180,17 +180,112 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>static &lt;P,T extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;<br><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;P&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-java.util.concurrent.ExecutorService-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;img,
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                int&nbsp;numTasks)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-int-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                int&nbsp;numTasks,
+                int&nbsp;splitDim)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-java.util.concurrent.ExecutorService-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
                 <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
                 <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape)</code>
 <div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                int&nbsp;numTasks)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static &lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-int-">findLocalExtrema</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                int&nbsp;numTasks,
+                int&nbsp;splitDim)</code>
+<div class="block">Find pixels that are extrema in their local neighborhood.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#getBiggestDimension-net.imglib2.Interval-">getBiggestDimension</a></span>(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#getRequiredBorderSize-net.imglib2.algorithm.neighborhood.Shape-int-">getRequiredBorderSize</a></span>(<a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                     int&nbsp;nDim)</code>
+<div class="block">Get the required border size based on the bounding box of the
+ neighborhood specified by <code>shape</code>.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../net/imglib2/view/IntervalView.html" title="class in net.imglib2.view">IntervalView</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#shrink-net.imglib2.RandomAccessibleInterval-long:A-">shrink</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+      long[]&nbsp;margin)</code>
+<div class="block">Shrink a <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> symmetrically, i.e.</div>
 </td>
 </tr>
 </table>
@@ -235,24 +330,386 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <a name="findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-java.util.concurrent.ExecutorService-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>findLocalExtrema</h4>
-<pre>public static&nbsp;&lt;P,T extends <a href="http://javadoc.imagej.net/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;img,
-                                                                        <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
-                                                                        <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                                              <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                                              <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Find pixels that are extrema in their local neighborhood. The specific
- test for being an extremum can is specified as an implementation of the
+ test for being an extremum can be specified as an implementation of the
  <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
- 
- TODO: Make neighborhood shape configurable. This will require that Shape
- can give a bounding box.</div>
+
+ The task is parallelized along the last dimension of <code>source</code>.
+
+ The number of tasks for parallelization is determined as:
+ <code>Math.max( Math.min( maxSizeDim, numThreads * 20 ), 1 )</code>
+
+ where <code>maxSizeDim</code> is the longest dimension of
+ <code>img</code> after adjusting for the bounding box of a
+ <a href="../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood"><code>RectangleShape</code></a> with span 1, and numThreads is
+ <code>Runtime.getRuntime().availableProcessors()</code>
+
+ <a href="../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood"><code>RectangleShape</code></a> is used as local neighborhood.
+
+ Note: Pixels within 1 point of the <code>source</code> border will be
+ ignored as local extrema candidates because the complete neighborhood
+ would not be included in <code>source</code>. To include those pixel,
+ expand <code>source</code> accordingly. The returned coordinate list is
+ valid for the original <code>source</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>img</code> - </dd>
-<dd><code>localNeighborhoodCheck</code> - </dd>
-<dd><code>service</code> - </dd>
+<dd><code>source</code> - Find local extrema within this
+            <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum.</dd>
+<dd><code>service</code> - <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> handles parallel tasks</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util"><code>ArrayList</code></a> of extrema</dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                                             int&nbsp;numTasks)
+                                      throws <a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ The task is parallelized along the longest dimension of
+ <code>source</code> after adjusting for size based on <code>shape</code>.
+
+ Note: Pixels within a margin of <code>source</code> border as determined
+ by <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#getRequiredBorderSize-net.imglib2.algorithm.neighborhood.Shape-int-"><code>getRequiredBorderSize(Shape, int)</code></a> will be ignored as local
+ extrema candidates because the complete neighborhood would not be
+ included in <code>source</code>. To include those pixel, expand
+ <code>source</code> accordingly. The returned coordinate list is valid
+ for the original <code>source</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this
+            <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood.</dd>
+<dd><code>service</code> - <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> handles parallel tasks</dd>
+<dd><code>numTasks</code> - Number of tasks for parallel execution</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                                             int&nbsp;numTasks,
+                                             int&nbsp;splitDim)
+                                      throws <a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ Note: Pixels within a margin of <code>source</code> border as determined
+ by <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#getRequiredBorderSize-net.imglib2.algorithm.neighborhood.Shape-int-"><code>getRequiredBorderSize(Shape, int)</code></a> will be ignored as local
+ extrema candidates because the complete neighborhood would not be
+ included in <code>source</code>. To include those pixel, expand
+ <code>source</code> accordingly. The returned coordinate list is valid
+ for the original <code>source</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this
+            <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood.</dd>
+<dd><code>service</code> - <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> handles parallel tasks</dd>
+<dd><code>numTasks</code> - Number of tasks for parallel execution</dd>
+<dd><code>splitDim</code> - Dimension along which input should be split for parallization</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                                             int&nbsp;numTasks)
+                                      throws <a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ The task is parallelized along the longest dimension of
+ <code>interval</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema of the function defined by this
+            <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a></dd>
+<dd><code>interval</code> - Domain in which to look for local extrema. It is the callers
+            responsibility to ensure that <code>source</code> is defined
+            in all neighborhoods of <code>interval</code>.</dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood.</dd>
+<dd><code>service</code> - <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> handles parallel tasks</dd>
+<dd><code>numTasks</code> - Number of tasks for parallel execution</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-java.util.concurrent.ExecutorService-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service,
+                                             int&nbsp;numTasks,
+                                             int&nbsp;splitDim)
+                                      throws <a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
+                                             <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema of the function defined by this
+            <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a></dd>
+<dd><code>interval</code> - Domain in which to look for local extrema. It is the callers
+            responsibility to ensure that <code>source</code> is defined
+            in all neighborhoods of {code interval}.</dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood.</dd>
+<dd><code>service</code> - <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> handles parallel tasks</dd>
+<dd><code>numTasks</code> - Number of tasks for parallel execution</dd>
+<dd><code>splitDim</code> - Dimension along which input should be split for parallization</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
+<dd><code><a href="http://javadoc.imagej.net/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck)</pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ <a href="../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood"><code>RectangleShape</code></a> is used as local neighborhood.
+
+ Note: Pixels within 1 point of the <code>source</code> border will be
+ ignored as local extrema candidates because the complete neighborhood
+ would not be included in <code>source</code>. To include those pixel,
+ expand <code>source</code> accordingly. The returned coordinate list is
+ valid for the original <code>source</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this
+            <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape)</pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ Note: Pixels within a margin of <code>source</code> border as determined
+ by <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html#getRequiredBorderSize-net.imglib2.algorithm.neighborhood.Shape-int-"><code>getRequiredBorderSize(Shape, int)</code></a> will be ignored as local
+ extrema candidates because the complete neighborhood would not be
+ included in <code>source</code>. To include those pixel, expand
+ <code>source</code> accordingly. The returned coordinate list is valid
+ for the original <code>source</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this
+            <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a></dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck)</pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.
+
+ The local neighborhood is defined as <a href="../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood"><code>RectangleShape</code></a> with span 1.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a></dd>
+<dd><code>interval</code> - Specifies the domain within which to look for extrema</dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+</dl>
+</li>
+</ul>
+<a name="findLocalExtrema-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.algorithm.localextrema.LocalExtrema.LocalNeighborhoodCheck-net.imglib2.algorithm.neighborhood.Shape-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findLocalExtrema</h4>
+<pre>public static&nbsp;&lt;P,T&gt;&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;P&gt;&nbsp;findLocalExtrema(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;source,
+                                             <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                                             <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema">LocalExtrema.LocalNeighborhoodCheck</a>&lt;P,T&gt;&nbsp;localNeighborhoodCheck,
+                                             <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape)</pre>
+<div class="block">Find pixels that are extrema in their local neighborhood. The specific
+ test for being an extremum can be specified as an implementation of the
+ <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> interface.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - Find local extrema within this <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a></dd>
+<dd><code>interval</code> - Specifies the domain within which to look for extrema</dd>
+<dd><code>localNeighborhoodCheck</code> - Check if current pixel qualifies as local maximum. It is the
+            callers responsibility to pass a
+            <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.LocalNeighborhoodCheck.html" title="interface in net.imglib2.algorithm.localextrema"><code>LocalExtrema.LocalNeighborhoodCheck</code></a> that avoids the center pixel if
+            <code>shape</code> does not skip the center pixel.</dd>
+<dd><code>shape</code> - Defines the local neighborhood</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of extrema</dd>
+</dl>
+</li>
+</ul>
+<a name="getRequiredBorderSize-net.imglib2.algorithm.neighborhood.Shape-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequiredBorderSize</h4>
+<pre>public static&nbsp;long[]&nbsp;getRequiredBorderSize(<a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape,
+                                           int&nbsp;nDim)</pre>
+<div class="block">Get the required border size based on the bounding box of the
+ neighborhood specified by <code>shape</code>. This is useful for
+ determining by how much a <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> should be
+ expanded to include min and max positions in the local extrema search.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>shape</code> - Defines the local neighborhood</dd>
+<dd><code>nDim</code> - Number of dimensions.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The required border size for the local neighborhood specified by
+         <code>shape</code></dd>
+</dl>
+</li>
+</ul>
+<a name="shrink-net.imglib2.RandomAccessibleInterval-long:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shrink</h4>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../net/imglib2/view/IntervalView.html" title="class in net.imglib2.view">IntervalView</a>&lt;T&gt;&nbsp;shrink(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;source,
+                                         long[]&nbsp;margin)</pre>
+<div class="block">Shrink a <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> symmetrically, i.e. the margin
+ is applied both to min and max.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - </dd>
+<dd><code>margin</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
+</li>
+</ul>
+<a name="getBiggestDimension-net.imglib2.Interval-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getBiggestDimension</h4>
+<pre>public static&nbsp;int&nbsp;getBiggestDimension(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>interval</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The biggest dimension of interval.</dd>
 </dl>
 </li>
 </ul>
@@ -324,6 +781,6 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

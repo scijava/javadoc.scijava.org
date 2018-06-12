@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,11 +115,11 @@ var activeTableTab = "activeTableTab";
 extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>, <a href="../../../net/imglib2/concatenate/Concatenable.html" title="interface in net.imglib2.concatenate">Concatenable</a>&lt;<a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>&gt;, <a href="../../../net/imglib2/concatenate/PreConcatenable.html" title="interface in net.imglib2.concatenate">PreConcatenable</a>&lt;<a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>&gt;</pre>
 <div class="block">An <em>n</em> transform that applies a scaling first and then shifts coordinates.
- This transform is faster than using an <a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform"><code>AffineTransform</code></a> with 
+ This transform is faster than using an <a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform"><code>AffineTransform</code></a> with
  entries on the diagonal only.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Philipp Hanslovsky</dd>
+<dd>Philipp Hanslovsky, Stephan Saalfeld</dd>
 </dl>
 </li>
 </ul>
@@ -279,24 +279,30 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 </td>
 </tr>
 <tr id="i19" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html#isIdentity--">isIdentity</a></span>()</code>
+<div class="block">Check if the <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a> is identity.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html#numDimensions--">numDimensions</a></span>()</code>
 <div class="block">Gets the space's number of dimensions.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html#numSourceDimensions--">numSourceDimensions</a></span>()</code>
 <div class="block">Returns <em>n</em>, the minimal number of dimension of the source vector.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html#numTargetDimensions--">numTargetDimensions</a></span>()</code>
 <div class="block">Returns <em>m</em>, the minimal dimension of the target vector.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html" title="class in net.imglib2.realtransform">ScaleAndTranslation</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html#preConcatenate-net.imglib2.realtransform.ScaleAndTranslationGet-">preConcatenate</a></span>(<a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>&nbsp;a)</code>
 <div class="block">Pre-concatenate this object with <em>a</em>.</div>
@@ -334,8 +340,8 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
                            double[]&nbsp;translations)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>scales</code> - Array containing scales, will be cloned.</dd>
-<dd><code>translations</code> - Array containing translations, will be cloned.</dd>
+<dd><code>scales</code> - Array containing scales</dd>
+<dd><code>translations</code> - Array containing translations</dd>
 </dl>
 </li>
 </ul>
@@ -396,8 +402,10 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-double:A-double:A-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -416,8 +424,10 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-float:A-float:A-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates, length must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -436,8 +446,11 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#apply-net.imglib2.RealLocalizable-net.imglib2.RealPositionable-">apply</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - source coordinates.</dd>
-<dd><code>target</code> - set this to the target coordinates.</dd>
+<dd><code>source</code> - source coordinates, <a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>numDimensions()</code></a> must be <code>&gt;=</code>
+            <a href="../../../net/imglib2/realtransform/RealTransform.html#numSourceDimensions--"><code>RealTransform.numSourceDimensions()</code></a></dd>
+<dd><code>target</code> - set this to the target coordinates,
+            <a href="../../../net/imglib2/EuclideanSpace.html#numDimensions--"><code>numDimensions()</code></a> must
+            be <code>&gt;=</code> <a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--"><code>RealTransform.numTargetDimensions()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -538,7 +551,7 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <pre>public&nbsp;<a href="../../../net/imglib2/realtransform/ScaleAndTranslation.html" title="class in net.imglib2.realtransform">ScaleAndTranslation</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html#copy--">RealTransform</a></code></span></div>
 <div class="block">Create a deep copy of this <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a>.
- 
+
  <p>
  Deep copying is required to make sure that stateful <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransforms</code></a> can be duplicated for concurrent code.
  </p></div>
@@ -565,6 +578,7 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html#getScale-int-">getScale</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>element of the scale</dd>
 </dl>
 </li>
 </ul>
@@ -581,6 +595,7 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html#getScaleCopy--">getScaleCopy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>copy of the scale vector</dd>
 </dl>
 </li>
 </ul>
@@ -660,6 +675,7 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html#getTranslation-int-">getTranslation</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>element of the translation</dd>
 </dl>
 </li>
 </ul>
@@ -676,6 +692,7 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html#getTranslationCopy--">getTranslationCopy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>copy of the translation vector</dd>
 </dl>
 </li>
 </ul>
@@ -735,13 +752,30 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <a name="getConcatenableClass--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getConcatenableClass</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>&gt;&nbsp;getConcatenableClass()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/concatenate/Concatenable.html#getConcatenableClass--">getConcatenableClass</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/concatenate/Concatenable.html" title="interface in net.imglib2.concatenate">Concatenable</a>&lt;<a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.html" title="interface in net.imglib2.realtransform">ScaleAndTranslationGet</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="isIdentity--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isIdentity</h4>
+<pre>public&nbsp;boolean&nbsp;isIdentity()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">RealTransform</a></code></span></div>
+<div class="block">Check if the <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a> is identity.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if identity</dd>
 </dl>
 </li>
 </ul>
@@ -813,6 +847,6 @@ implements <a href="../../../net/imglib2/realtransform/ScaleAndTranslationGet.ht
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

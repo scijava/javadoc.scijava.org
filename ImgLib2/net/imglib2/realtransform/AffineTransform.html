@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -257,30 +257,36 @@ implements <a href="../../../net/imglib2/concatenate/Concatenable.html" title="i
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#invertT--">invertT</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#isIdentity--">isIdentity</a></span>()</code>
+<div class="block">Check if the <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a> is identity.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform">AffineTransform</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#preConcatenate-net.imglib2.realtransform.AffineGet-">preConcatenate</a></span>(<a href="../../../net/imglib2/realtransform/AffineGet.html" title="interface in net.imglib2.realtransform">AffineGet</a>&nbsp;affine)</code>
 <div class="block">Pre-concatenate this object with <em>a</em>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#set-net.imglib2.realtransform.AffineGet-">set</a></span>(<a href="../../../net/imglib2/realtransform/AffineGet.html" title="interface in net.imglib2.realtransform">AffineGet</a>&nbsp;affine)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#set-double...-">set</a></span>(double...&nbsp;values)</code>
 <div class="block">Set the <em>n</em>&times;(<em>n</em>+1) affine transformation matrix with
  row packed double values.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#set-double:A:A-">set</a></span>(double[][]&nbsp;affine)</code>
 <div class="block">Set the <em>n</em>&times;(<em>n</em>+1) affine transformation matrix with
  double values from a [row][column] addressed array.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AffineTransform.html#set-double-int-int-">set</a></span>(double&nbsp;value,
    int&nbsp;row,
@@ -603,13 +609,13 @@ implements <a href="../../../net/imglib2/concatenate/Concatenable.html" title="i
 <a name="copy--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
 <pre>public&nbsp;<a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform">AffineTransform</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html#copy--">RealTransform</a></code></span></div>
 <div class="block">Create a deep copy of this <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a>.
- 
+
  <p>
  Deep copying is required to make sure that stateful <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransforms</code></a> can be duplicated for concurrent code.
  </p></div>
@@ -620,6 +626,23 @@ implements <a href="../../../net/imglib2/concatenate/Concatenable.html" title="i
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#copy--">copy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>deep copy</dd>
+</dl>
+</li>
+</ul>
+<a name="isIdentity--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isIdentity</h4>
+<pre>public&nbsp;boolean&nbsp;isIdentity()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">RealTransform</a></code></span></div>
+<div class="block">Check if the <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransform</code></a> is identity.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if identity</dd>
 </dl>
 </li>
 </ul>
@@ -691,6 +714,6 @@ implements <a href="../../../net/imglib2/concatenate/Concatenable.html" title="i
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>

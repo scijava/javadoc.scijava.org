@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":42,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -127,7 +127,7 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <div class="block">Factory that creates an appropriate <a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus"><code>ImagePlusImg</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Funke, Preibisch, Saalfeld, Schindelin, Jan Funke, Stephan Preibisch, Stephan Saalfeld, Johannes Schindelin</dd>
+<dd>Jan Funke, Stephan Preibisch, Stephan Saalfeld, Johannes Schindelin, Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -147,7 +147,12 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#ImagePlusImgFactory--">ImagePlusImgFactory</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#ImagePlusImgFactory--">ImagePlusImgFactory</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#ImagePlusImgFactory-T-">ImagePlusImgFactory</a></span>(<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -159,62 +164,37 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-net.imglib2.Dimensions-T-">create</a></span>(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dim,
-      <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</code>
-<div class="block">The <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> can decide how to create the <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-net.imglib2.Dimensions-">create</a></span>(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions)</code>
+<div class="block">Create an <code>Img&lt;T&gt;</code> with the specified <code>dimensions</code>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-long:A-T-">create</a></span>(long[]&nbsp;dim,
-      <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</code>
-<div class="block">This class will ask the <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> to create a suitable <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> for
- the <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> and the dimensionality.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-int:A-">create</a></span>(int[]&nbsp;dimensions)</code>
+<div class="block">Create an <code>Img&lt;T&gt;</code> with the specified <code>dimensions</code>.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/ByteArray.html" title="class in net.imglib2.img.basictypeaccess.array">ByteArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createByteInstance-long:A-net.imglib2.util.Fraction-">createByteInstance</a></span>(long[]&nbsp;dimensions,
-                  <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-long...-">create</a></span>(long...&nbsp;dimensions)</code>
+<div class="block">Create a <a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img"><code>NativeImg</code></a> with the specified <code>dimensions</code>.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/CharArray.html" title="class in net.imglib2.img.basictypeaccess.array">CharArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createCharInstance-long:A-net.imglib2.util.Fraction-">createCharInstance</a></span>(long[]&nbsp;dimensions,
-                  <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#create-long:A-T-">create</a></span>(long[]&nbsp;dimensions,
+      <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/DoubleArray.html" title="class in net.imglib2.img.basictypeaccess.array">DoubleArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createDoubleInstance-long:A-net.imglib2.util.Fraction-">createDoubleInstance</a></span>(long[]&nbsp;dimensions,
-                    <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/FloatArray.html" title="class in net.imglib2.img.basictypeaccess.array">FloatArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createFloatInstance-long:A-net.imglib2.util.Fraction-">createFloatInstance</a></span>(long[]&nbsp;dimensions,
-                   <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/IntArray.html" title="class in net.imglib2.img.basictypeaccess.array">IntArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createIntInstance-long:A-net.imglib2.util.Fraction-">createIntInstance</a></span>(long[]&nbsp;dimensions,
-                 <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/LongArray.html" title="class in net.imglib2.img.basictypeaccess.array">LongArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createLongInstance-long:A-net.imglib2.util.Fraction-">createLongInstance</a></span>(long[]&nbsp;dimensions,
-                  <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/ShortArray.html" title="class in net.imglib2.img.basictypeaccess.array">ShortArray</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#createShortInstance-long:A-net.imglib2.util.Fraction-">createShortInstance</a></span>(long[]&nbsp;dimensions,
-                   <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
 <td class="colFirst"><code>&lt;S&gt;&nbsp;<a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;S&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html#imgFactory-S-">imgFactory</a></span>(S&nbsp;type)</code>
 <div class="block">Creates the same <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for a different generic parameter if
@@ -227,7 +207,7 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.imglib2.img.<a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a></h3>
-<code><a href="../../../../net/imglib2/img/ImgFactory.html#create-int:A-T-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-net.imglib2.Dimensions-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-int:A-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-long...-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#imgFactory-java.util.function.Supplier-">imgFactory</a></code></li>
+<code><a href="../../../../net/imglib2/img/ImgFactory.html#cache-T-">cache</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-net.imglib2.Dimensions-T-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-int:A-T-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-net.imglib2.Dimensions-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-int:A-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#create-java.util.function.Supplier-long...-">create</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#imgFactory-java.util.function.Supplier-">imgFactory</a>, <a href="../../../../net/imglib2/img/ImgFactory.html#type--">type</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -250,13 +230,26 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
+<a name="ImagePlusImgFactory-net.imglib2.type.NativeType-">
+<!--   -->
+</a><a name="ImagePlusImgFactory-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ImagePlusImgFactory</h4>
+<pre>public&nbsp;ImagePlusImgFactory(<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</pre>
+</li>
+</ul>
 <a name="ImagePlusImgFactory--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ImagePlusImgFactory</h4>
-<pre>public&nbsp;ImagePlusImgFactory()</pre>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;ImagePlusImgFactory()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -267,147 +260,63 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="create-long:A-net.imglib2.type.NativeType-">
-<!--   -->
-</a><a name="create-long:A-T-">
+<a name="create-long...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>create</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(long[]&nbsp;dim,
-                                <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../net/imglib2/img/NativeImgFactory.html#create-long:A-T-">NativeImgFactory</a></code></span></div>
-<div class="block">This class will ask the <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> to create a suitable <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> for
- the <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> and the dimensionality.
- 
- <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> will then call one of the abstract methods defined below to
- create the <a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img"><code>NativeImg</code></a></div>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(long...&nbsp;dimensions)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../net/imglib2/img/NativeImgFactory.html#create-long...-">NativeImgFactory</a></code></span></div>
+<div class="block">Create a <a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img"><code>NativeImg</code></a> with the specified <code>dimensions</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#create-long:A-T-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#create-long...-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dimensions</code> - the dimensions of the image.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> - the instantiated Container</dd>
+<dd>new <a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img"><code>NativeImg</code></a> with the specified <code>dimensions</code>.</dd>
 </dl>
 </li>
 </ul>
-<a name="create-net.imglib2.Dimensions-net.imglib2.type.NativeType-">
-<!--   -->
-</a><a name="create-net.imglib2.Dimensions-T-">
+<a name="create-net.imglib2.Dimensions-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>create</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dim,
-                                <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../net/imglib2/img/ImgFactory.html#create-net.imglib2.Dimensions-T-">ImgFactory</a></code></span></div>
-<div class="block">The <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> can decide how to create the <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>. A
- <a href="../../../../net/imglib2/img/NativeImgFactory.html" title="class in net.imglib2.img"><code>NativeImgFactory</code></a> will ask the <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type"><code>Type</code></a> to create a suitable
- <a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img"><code>NativeImg</code></a>.</div>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../net/imglib2/img/NativeImgFactory.html#create-net.imglib2.Dimensions-">NativeImgFactory</a></code></span></div>
+<div class="block">Create an <code>Img&lt;T&gt;</code> with the specified <code>dimensions</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/ImgFactory.html#create-net.imglib2.Dimensions-T-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#create-net.imglib2.Dimensions-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a></dd>
+<dd>new image with the specified <code>dimensions</code>.</dd>
 </dl>
 </li>
 </ul>
-<a name="createByteInstance-long:A-net.imglib2.util.Fraction-">
+<a name="create-int:A-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createByteInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/ByteArray.html" title="class in net.imglib2.img.basictypeaccess.array">ByteArray</a>&gt;&nbsp;createByteInstance(long[]&nbsp;dimensions,
-                                                 <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
+<h4>create</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(int[]&nbsp;dimensions)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../net/imglib2/img/NativeImgFactory.html#create-int:A-">NativeImgFactory</a></code></span></div>
+<div class="block">Create an <code>Img&lt;T&gt;</code> with the specified <code>dimensions</code>.
+
+ <p>
+ Note: This is not a vararg function because the underlying <code>int[]</code>
+ based methods already copies the <code>int[]</code> dimensions into a
+ disposable <code>long[]</code> anyways. This would be an unnecessary copy for
+ <code>int...</code> varargs.
+ </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createByteInstance-long:A-net.imglib2.util.Fraction-">createByteInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createCharInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createCharInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/CharArray.html" title="class in net.imglib2.img.basictypeaccess.array">CharArray</a>&gt;&nbsp;createCharInstance(long[]&nbsp;dimensions,
-                                                 <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createCharInstance-long:A-net.imglib2.util.Fraction-">createCharInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createDoubleInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createDoubleInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/DoubleArray.html" title="class in net.imglib2.img.basictypeaccess.array">DoubleArray</a>&gt;&nbsp;createDoubleInstance(long[]&nbsp;dimensions,
-                                                     <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createDoubleInstance-long:A-net.imglib2.util.Fraction-">createDoubleInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createFloatInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createFloatInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/FloatArray.html" title="class in net.imglib2.img.basictypeaccess.array">FloatArray</a>&gt;&nbsp;createFloatInstance(long[]&nbsp;dimensions,
-                                                   <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createFloatInstance-long:A-net.imglib2.util.Fraction-">createFloatInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createIntInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createIntInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/IntArray.html" title="class in net.imglib2.img.basictypeaccess.array">IntArray</a>&gt;&nbsp;createIntInstance(long[]&nbsp;dimensions,
-                                               <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createIntInstance-long:A-net.imglib2.util.Fraction-">createIntInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createLongInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createLongInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/LongArray.html" title="class in net.imglib2.img.basictypeaccess.array">LongArray</a>&gt;&nbsp;createLongInstance(long[]&nbsp;dimensions,
-                                                 <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createLongInstance-long:A-net.imglib2.util.Fraction-">createLongInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="createShortInstance-long:A-net.imglib2.util.Fraction-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createShortInstance</h4>
-<pre>public&nbsp;<a href="../../../../net/imglib2/img/NativeImg.html" title="interface in net.imglib2.img">NativeImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,<a href="../../../../net/imglib2/img/basictypeaccess/array/ShortArray.html" title="class in net.imglib2.img.basictypeaccess.array">ShortArray</a>&gt;&nbsp;createShortInstance(long[]&nbsp;dimensions,
-                                                   <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#createShortInstance-long:A-net.imglib2.util.Fraction-">createShortInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#create-int:A-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>new image with the specified <code>dimensions</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -416,7 +325,7 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 </a><a name="imgFactory-S-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>imgFactory</h4>
 <pre>public&nbsp;&lt;S&gt;&nbsp;<a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;S&gt;&nbsp;imgFactory(S&nbsp;type)
@@ -439,6 +348,24 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <dd><a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> of type S</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../net/imglib2/exception/IncompatibleTypeException.html" title="class in net.imglib2.exception">IncompatibleTypeException</a></code> - if type S is not compatible</dd>
+</dl>
+</li>
+</ul>
+<a name="create-long:A-net.imglib2.type.NativeType-">
+<!--   -->
+</a><a name="create-long:A-T-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>create</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImg.html" title="class in net.imglib2.img.imageplus">ImagePlusImg</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>,?&gt;&nbsp;create(long[]&nbsp;dimensions,
+                                            <a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&nbsp;type)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html#create-long:A-T-">create</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title="class in net.imglib2.img.planar">PlanarImgFactory</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a> extends <a href="../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../net/imglib2/img/imageplus/ImagePlusImgFactory.html" title="type parameter in ImagePlusImgFactory">T</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -510,6 +437,6 @@ extends <a href="../../../../net/imglib2/img/planar/PlanarImgFactory.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
 </body>
 </html>
