@@ -231,11 +231,6 @@
 </a>
 <h3>Class <a href="io/scif/common/IniTable.html" title="class in io.scif.common">io.scif.common.IniTable</a> extends <a href="http://javadoc.imagej.net/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; implements Serializable</h3>
 </li>
-<li class="blockList"><a name="io.scif.common.ReflectException">
-<!--   -->
-</a>
-<h3>Class <a href="io/scif/common/ReflectException.html" title="class in io.scif.common">io.scif.common.ReflectException</a> extends <a href="http://javadoc.imagej.net/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a> implements Serializable</h3>
-</li>
 </ul>
 </li>
 <li class="blockList">
@@ -1432,6 +1427,105 @@
 </li>
 </ul>
 </li>
+<li class="blockList"><a name="io.scif.formats.StratecPQCTFormat.Metadata">
+<!--   -->
+</a>
+<h3>Class <a href="io/scif/formats/StratecPQCTFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.StratecPQCTFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>height</h4>
+<pre>short height</pre>
+<div class="block">Height in pixels</div>
+</li>
+<li class="blockList">
+<h4>width</h4>
+<pre>short width</pre>
+<div class="block">Width in pixels</div>
+</li>
+<li class="blockList">
+<h4>slices</h4>
+<pre>short slices</pre>
+<div class="block">Number of slices
+ <p>
+ NB in theory the format supports 3D files, but they are are exceedingly
+ rare. However slice number is still often used in metadata. People take
+ individual images of the same object, and mark down slice info as if they
+ were in the same stack.
+ </p></div>
+</li>
+<li class="blockList">
+<h4>sliceStart</h4>
+<pre>double sliceStart</pre>
+<div class="block">Position of the first slice (mm)</div>
+</li>
+<li class="blockList">
+<h4>sliceDistance</h4>
+<pre>double sliceDistance</pre>
+<div class="block">Distance between slices (mm)</div>
+</li>
+<li class="blockList">
+<h4>patientName</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> patientName</pre>
+<div class="block">Patient name (surname, forename)</div>
+</li>
+<li class="blockList">
+<h4>patientNumber</h4>
+<pre>int patientNumber</pre>
+</li>
+<li class="blockList">
+<h4>patientAge</h4>
+<pre>int patientAge</pre>
+</li>
+<li class="blockList">
+<h4>patientMeasurementNumber</h4>
+<pre>short patientMeasurementNumber</pre>
+</li>
+<li class="blockList">
+<h4>patientBirthDate</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a> patientBirthDate</pre>
+</li>
+<li class="blockList">
+<h4>patientId</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> patientId</pre>
+</li>
+<li class="blockList">
+<h4>measurementDate</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a> measurementDate</pre>
+</li>
+<li class="blockList">
+<h4>measurementInfo</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> measurementInfo</pre>
+</li>
+<li class="blockList">
+<h4>resolution</h4>
+<pre>double resolution</pre>
+<div class="block">Image resolution in mm. Same for X and Y axes</div>
+</li>
+<li class="blockList">
+<h4>topEdge</h4>
+<pre>short topEdge</pre>
+</li>
+<li class="blockList">
+<h4>leftEdge</h4>
+<pre>short leftEdge</pre>
+</li>
+<li class="blockList">
+<h4>deviceName</h4>
+<pre><a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> deviceName</pre>
+<div class="block">Name of device used in imaging</div>
+</li>
+<li class="blockListLast">
+<h4>objectSize</h4>
+<pre>double objectSize</pre>
+<div class="block">Size of the sample in mm</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="blockList"><a name="io.scif.formats.TextFormat.Metadata">
 <!--   -->
 </a>
@@ -1563,7 +1657,7 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>r</h4>
-<pre><a href="io/scif/common/ReflectedUniverse.html" title="class in io.scif.common">ReflectedUniverse</a> r</pre>
+<pre><a href="http://javadoc.imagej.net/SciJava/org/scijava/util/ReflectedUniverse.html?is-external=true" title="class or interface in org.scijava.util">ReflectedUniverse</a> r</pre>
 <div class="block">Reflection tool for JAI calls.</div>
 </li>
 <li class="blockListLast">
@@ -2061,35 +2155,6 @@
 </ul>
 </li>
 <li class="blockList">
-<h2 title="Package">Package&nbsp;io.scif.img.cell</h2>
-<ul class="blockList">
-<li class="blockList"><a name="io.scif.img.cell.SCIFIOCell">
-<!--   -->
-</a>
-<h3>Class <a href="io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">io.scif.img.cell.SCIFIOCell</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;<a href="io/scif/img/cell/SCIFIOCell.html" title="type parameter in SCIFIOCell">A</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/basictypeaccess/array/ArrayDataAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.array">ArrayDataAccess</a>&lt;<a href="io/scif/img/cell/SCIFIOCell.html" title="type parameter in SCIFIOCell">A</a>&gt;&gt; implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>660070520155729477L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>hashes</h4>
-<pre>int[] hashes</pre>
-</li>
-<li class="blockListLast">
-<h4>elementSize</h4>
-<pre>long[] elementSize</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList">
 <h2 title="Package">Package&nbsp;io.scif.io</h2>
 <ul class="blockList">
 <li class="blockList"><a name="io.scif.io.HandleException">
@@ -2414,6 +2479,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

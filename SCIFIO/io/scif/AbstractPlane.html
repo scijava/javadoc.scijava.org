@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var methods = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -157,10 +157,9 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <td class="colOne"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#AbstractPlane-org.scijava.Context-">AbstractPlane</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#AbstractPlane-org.scijava.Context-io.scif.ImageMetadata-long:A-long:A-">AbstractPlane</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#AbstractPlane-org.scijava.Context-io.scif.ImageMetadata-net.imglib2.Interval-">AbstractPlane</a></span>(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context,
              <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-             long[]&nbsp;planeOffsets,
-             long[]&nbsp;planeBounds)</code>&nbsp;</td>
+             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -179,72 +178,70 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected abstract <a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#blankPlane-long:A-long:A-">blankPlane</a></span>(long[]&nbsp;planeOffsets,
-          long[]&nbsp;planeBounds)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#blankPlane-net.imglib2.Interval-">blankPlane</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getBounds--">getBounds</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getColorTable--">getColorTable</a></span>()</code>
 <div class="block">Gets this plane's ColorTable.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getData--">getData</a></span>()</code>
 <div class="block">Gets this plane's type-specific pixel data.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getImageMetadata--">getImageMetadata</a></span>()</code>
 <div class="block">Gets the <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> associated with this plane.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>long[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getLengths--">getLengths</a></span>()</code>&nbsp;</td>
-</tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>long[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#getOffsets--">getOffsets</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.DataPlane-">populate</a></span>(<a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&gt;&nbsp;plane)</code>
 <div class="block">Populate this plane by copying the provided plane.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.ImageMetadata-long:A-long:A-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-        long[]&nbsp;planeOffsets,
-        long[]&nbsp;planeBounds)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.ImageMetadata-net.imglib2.Interval-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+        <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Populates this planes offsets, dimensions and Metadata.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.ImageMetadata-T-long:A-long:A-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.ImageMetadata-T-net.imglib2.Interval-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
         <a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;data,
-        long[]&nbsp;planeOffsets,
-        long[]&nbsp;planeBounds)</code>
-<div class="block">As <a href="../../io/scif/DataPlane.html#populate-T-long:A-long:A-"><code>DataPlane.populate(Object, long[], long[])</code></a>, but also sets the
- ImageMetadata of the source from which this Plane was read.</div>
+        <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
+<div class="block">As <a href="../../io/scif/DataPlane.html#populate-T-net.imglib2.Interval-"><code>DataPlane.populate(Object, Interval)</code></a>, but also sets the ImageMetadata of
+ the source from which this Plane was read.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-io.scif.Plane-">populate</a></span>(<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;p)</code>
 <div class="block">Populates this plane by copying the fields of the provided plane</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-T-long:A-long:A-">populate</a></span>(<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;data,
-        long[]&nbsp;planeOffsets,
-        long[]&nbsp;planeBounds)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#populate-T-net.imglib2.Interval-">populate</a></span>(<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;data,
+        <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Populate this plane using the specified lengths and offsets, with the
  provided data representation of the pixels in that region.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#setBounds-net.imglib2.Interval-">setBounds</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
+<div class="block">Sets this plane's bounds relative to the underlying image.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -263,18 +260,6 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#setImageMetadata-io.scif.ImageMetadata-">setImageMetadata</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta)</code>
 <div class="block">Sets the ImageMetadata representation of the underlying image.</div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#setLengths-long:A-">setLengths</a></span>(long[]&nbsp;planeBounds)</code>
-<div class="block">Sets this plane's axis lengths</div>
-</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractPlane.html#setOffsets-long:A-">setOffsets</a></span>(long[]&nbsp;planeOffsets)</code>
-<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
 </td>
 </tr>
 </table>
@@ -297,7 +282,7 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></h3>
-<code><a href="../../io/scif/Plane.html#getBytes--">getBytes</a></code></li>
+<code><a href="../../io/scif/Plane.html#getBytes--">getBytes</a>, <a href="../../io/scif/Plane.html#getLengths--">getLengths</a>, <a href="../../io/scif/Plane.html#getMax--">getMax</a>, <a href="../../io/scif/Plane.html#getMin--">getMin</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.Contextual">
@@ -329,7 +314,7 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <pre>public&nbsp;AbstractPlane(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context)</pre>
 </li>
 </ul>
-<a name="AbstractPlane-org.scijava.Context-io.scif.ImageMetadata-long:A-long:A-">
+<a name="AbstractPlane-org.scijava.Context-io.scif.ImageMetadata-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -337,8 +322,7 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <h4>AbstractPlane</h4>
 <pre>public&nbsp;AbstractPlane(<a href="http://javadoc.imagej.net/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context,
                      <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-                     long[]&nbsp;planeOffsets,
-                     long[]&nbsp;planeBounds)</pre>
+                     <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
 </li>
 </ul>
 </li>
@@ -443,36 +427,6 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 </dl>
 </li>
 </ul>
-<a name="getOffsets--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getOffsets</h4>
-<pre>public&nbsp;long[]&nbsp;getOffsets()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Plane.html#getOffsets--">getOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The offsets of this Plane relative to the origin image</dd>
-</dl>
-</li>
-</ul>
-<a name="getLengths--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getLengths</h4>
-<pre>public&nbsp;long[]&nbsp;getLengths()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Plane.html#getLengths--">getLengths</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The lengths of each axis of this plane</dd>
-</dl>
-</li>
-</ul>
 <a name="populate-io.scif.Plane-">
 <!--   -->
 </a>
@@ -511,58 +465,54 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 </dl>
 </li>
 </ul>
-<a name="populate-io.scif.ImageMetadata-long:A-long:A-">
+<a name="populate-io.scif.ImageMetadata-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>populate</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a>&nbsp;populate(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-                  long[]&nbsp;planeOffsets,
-                  long[]&nbsp;planeBounds)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-long:A-long:A-">Plane</a></code></span></div>
+                  <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-net.imglib2.Interval-">Plane</a></code></span></div>
 <div class="block">Populates this planes offsets, dimensions and Metadata.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-long:A-long:A-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
+<dd><code><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-net.imglib2.Interval-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>meta</code> - - ImageMetadata to associate with this Plane</dd>
-<dd><code>planeOffsets</code> - minimal offsets of the planar axes</dd>
-<dd><code>planeBounds</code> - maximum values of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A reference to this Plane</dd>
 </dl>
 </li>
 </ul>
-<a name="populate-java.lang.Object-long:A-long:A-">
+<a name="populate-java.lang.Object-net.imglib2.Interval-">
 <!--   -->
-</a><a name="populate-T-long:A-long:A-">
+</a><a name="populate-T-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>populate</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a>&nbsp;populate(<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;data,
-                  long[]&nbsp;planeOffsets,
-                  long[]&nbsp;planeBounds)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/DataPlane.html#populate-T-long:A-long:A-">DataPlane</a></code></span></div>
+                  <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/DataPlane.html#populate-T-net.imglib2.Interval-">DataPlane</a></code></span></div>
 <div class="block">Populate this plane using the specified lengths and offsets, with the
  provided data representation of the pixels in that region.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/DataPlane.html#populate-T-long:A-long:A-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&gt;</code></dd>
+<dd><code><a href="../../io/scif/DataPlane.html#populate-T-net.imglib2.Interval-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>data</code> - Pixel information for the region of this plane.</dd>
-<dd><code>planeOffsets</code> - minimal offsets of the planar axes</dd>
-<dd><code>planeBounds</code> - maximum values of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A reference to this plane</dd>
 </dl>
 </li>
 </ul>
-<a name="populate-io.scif.ImageMetadata-java.lang.Object-long:A-long:A-">
+<a name="populate-io.scif.ImageMetadata-java.lang.Object-net.imglib2.Interval-">
 <!--   -->
-</a><a name="populate-io.scif.ImageMetadata-T-long:A-long:A-">
+</a><a name="populate-io.scif.ImageMetadata-T-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -570,19 +520,17 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <h4>populate</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">P</a>&nbsp;populate(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
                   <a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;data,
-                  long[]&nbsp;planeOffsets,
-                  long[]&nbsp;planeBounds)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/DataPlane.html#populate-io.scif.ImageMetadata-T-long:A-long:A-">DataPlane</a></code></span></div>
-<div class="block">As <a href="../../io/scif/DataPlane.html#populate-T-long:A-long:A-"><code>DataPlane.populate(Object, long[], long[])</code></a>, but also sets the
- ImageMetadata of the source from which this Plane was read.</div>
+                  <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/DataPlane.html#populate-io.scif.ImageMetadata-T-net.imglib2.Interval-">DataPlane</a></code></span></div>
+<div class="block">As <a href="../../io/scif/DataPlane.html#populate-T-net.imglib2.Interval-"><code>DataPlane.populate(Object, Interval)</code></a>, but also sets the ImageMetadata of
+ the source from which this Plane was read.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/DataPlane.html#populate-io.scif.ImageMetadata-T-long:A-long:A-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&gt;</code></dd>
+<dd><code><a href="../../io/scif/DataPlane.html#populate-io.scif.ImageMetadata-T-net.imglib2.Interval-">populate</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>meta</code> - ImageMetadata of the source associated with this Plane</dd>
 <dd><code>data</code> - Pixel information for the region of this plane.</dd>
-<dd><code>planeOffsets</code> - minimal offsets of the planar axes</dd>
-<dd><code>planeBounds</code> - maximum values of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A reference to this plane</dd>
 </dl>
@@ -605,47 +553,46 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 </dl>
 </li>
 </ul>
-<a name="setOffsets-long:A-">
+<a name="getBounds--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setOffsets</h4>
-<pre>public&nbsp;void&nbsp;setOffsets(long[]&nbsp;planeOffsets)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Plane.html#setOffsets-long:A-">Plane</a></code></span></div>
-<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
+<h4>getBounds</h4>
+<pre>public&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;getBounds()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Plane.html#setOffsets-long:A-">setOffsets</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
+<dd><code><a href="../../io/scif/Plane.html#getBounds--">getBounds</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The bounds of this plane relative to the origin image</dd>
 </dl>
 </li>
 </ul>
-<a name="setLengths-long:A-">
+<a name="setBounds-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setLengths</h4>
-<pre>public&nbsp;void&nbsp;setLengths(long[]&nbsp;planeBounds)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Plane.html#setLengths-long:A-">Plane</a></code></span></div>
-<div class="block">Sets this plane's axis lengths</div>
+<h4>setBounds</h4>
+<pre>public&nbsp;void&nbsp;setBounds(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Plane.html#setBounds-net.imglib2.Interval-">Plane</a></code></span></div>
+<div class="block">Sets this plane's bounds relative to the underlying image.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Plane.html#setLengths-long:A-">setLengths</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
+<dd><code><a href="../../io/scif/Plane.html#setBounds-net.imglib2.Interval-">setBounds</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="blankPlane-long:A-long:A-">
+<a name="blankPlane-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>blankPlane</h4>
-<pre>protected abstract&nbsp;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;blankPlane(long[]&nbsp;planeOffsets,
-                                long[]&nbsp;planeBounds)</pre>
+<pre>protected abstract&nbsp;<a href="../../io/scif/AbstractPlane.html" title="type parameter in AbstractPlane">T</a>&nbsp;blankPlane(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an empty data conforming to the given planeOffsets and planeBounds</dd>
+<dd>an empty data conforming to the given planar bounds.</dd>
 </dl>
 </li>
 </ul>
@@ -717,6 +664,6 @@ implements <a href="../../io/scif/DataPlane.html" title="interface in io.scif">D
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

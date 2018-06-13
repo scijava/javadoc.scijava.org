@@ -197,11 +197,10 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#checkParams-int-long-byte:A-long:A-long:A-">checkParams</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#checkParams-int-long-byte:A-net.imglib2.Interval-">checkParams</a></span>(int&nbsp;imageIndex,
            long&nbsp;planeIndex,
            byte[]&nbsp;buf,
-           long[]&nbsp;planeMin,
-           long[]&nbsp;planeMax)</code>
+           <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Ensure that the arguments that are being passed to saveBytes(...) are
  valid.</div>
 </td>
@@ -262,10 +261,9 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#initialize-int-long-long:A-long:A-">initialize</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#initialize-int-long-net.imglib2.Interval-">initialize</a></span>(int&nbsp;imageIndex,
           long&nbsp;planeIndex,
-          long[]&nbsp;planeMin,
-          long[]&nbsp;planeMax)</code>
+          <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Ensures this writer is prepared to write the given plane of the given
  image.</div>
 </td>
@@ -303,11 +301,10 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#savePlane-int-long-io.scif.Plane-long:A-long:A-">savePlane</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#savePlane-int-long-io.scif.Plane-net.imglib2.Interval-">savePlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
          <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax)</code>
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Saves the specified tile (sub-region) of the provided plane to the
  specified image and plane index of this <code>Writer's</code> destination image.</div>
 </td>
@@ -425,11 +422,10 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#writePlane-int-long-io.scif.Plane-long:A-long:A-">writePlane</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractWriter.html#writePlane-int-long-io.scif.Plane-net.imglib2.Interval-">writePlane</a></span>(int&nbsp;imageIndex,
           long&nbsp;planeIndex,
           <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-          long[]&nbsp;planeMin,
-          long[]&nbsp;planeMax)</code>
+          <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Helper method invoked by <a href="../../io/scif/AbstractWriter.html#savePlane-int-long-io.scif.Plane-"><code>savePlane(int, long, io.scif.Plane)</code></a> to perform actual format-
  specific output.</div>
 </td>
@@ -568,7 +564,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="checkParams-int-long-byte:A-long:A-long:A-">
+<a name="checkParams-int-long-byte:A-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -577,8 +573,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <pre>protected&nbsp;void&nbsp;checkParams(int&nbsp;imageIndex,
                            long&nbsp;planeIndex,
                            byte[]&nbsp;buf,
-                           long[]&nbsp;planeMin,
-                           long[]&nbsp;planeMax)
+                           <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
                     throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
 <div class="block">Ensure that the arguments that are being passed to saveBytes(...) are
  valid.</div>
@@ -588,7 +583,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="initialize-int-long-long:A-long:A-">
+<a name="initialize-int-long-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -596,8 +591,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <h4>initialize</h4>
 <pre>protected&nbsp;void&nbsp;initialize(int&nbsp;imageIndex,
                           long&nbsp;planeIndex,
-                          long[]&nbsp;planeMin,
-                          long[]&nbsp;planeMax)
+                          <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
                    throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                           <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Ensures this writer is prepared to write the given plane of the given
@@ -623,7 +617,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="writePlane-int-long-io.scif.Plane-long:A-long:A-">
+<a name="writePlane-int-long-io.scif.Plane-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -632,8 +626,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <pre>protected abstract&nbsp;void&nbsp;writePlane(int&nbsp;imageIndex,
                                    long&nbsp;planeIndex,
                                    <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-                                   long[]&nbsp;planeMin,
-                                   long[]&nbsp;planeMax)
+                                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
                             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                                    <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Helper method invoked by <a href="../../io/scif/AbstractWriter.html#savePlane-int-long-io.scif.Plane-"><code>savePlane(int, long, io.scif.Plane)</code></a> to perform actual format-
@@ -672,7 +665,7 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="savePlane-int-long-io.scif.Plane-long:A-long:A-">
+<a name="savePlane-int-long-io.scif.Plane-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -681,22 +674,20 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <pre>public&nbsp;void&nbsp;savePlane(int&nbsp;imageIndex,
                       long&nbsp;planeIndex,
                       <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-                      long[]&nbsp;planeMin,
-                      long[]&nbsp;planeMax)
+                      <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
                throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                       <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Writer.html#savePlane-int-long-io.scif.Plane-long:A-long:A-">Writer</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Writer.html#savePlane-int-long-io.scif.Plane-net.imglib2.Interval-">Writer</a></code></span></div>
 <div class="block">Saves the specified tile (sub-region) of the provided plane to the
  specified image and plane index of this <code>Writer's</code> destination image.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Writer.html#savePlane-int-long-io.scif.Plane-long:A-long:A-">savePlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></dd>
+<dd><code><a href="../../io/scif/Writer.html#savePlane-int-long-io.scif.Plane-net.imglib2.Interval-">savePlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>imageIndex</code> - the image index within the dataset.</dd>
 <dd><code>planeIndex</code> - the plane index within the image.</dd>
 <dd><code>plane</code> - the pixels save</dd>
-<dd><code>planeMin</code> - minimal bounds of the planar axes</dd>
-<dd><code>planeMax</code> - maximum bounds of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if one of the parameters is invalid.</dd>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if there was a problem writing to the file.</dd>
@@ -1384,6 +1375,6 @@ implements <a href="../../io/scif/TypedWriter.html" title="interface in io.scif"
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

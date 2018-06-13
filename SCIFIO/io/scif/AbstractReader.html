@@ -298,23 +298,20 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-long:A-long:A-">openPlane</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax)</code>
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Creates a <a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a> representation of a desired sub-region from
  the pixels at the specified indices.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-"><code>Reader.openPlane(int, long, long[], long[])</code></a> with configuration
- options.</div>
+<div class="block">As <a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Interval)</code></a> with configuration options.</div>
 </td>
 </tr>
 <tr id="i18" class="altColor">
@@ -329,6 +326,17 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-P-net.imglib2.Interval-">openPlane</a></span>(int&nbsp;imageIndex,
+         long&nbsp;planeIndex,
+         <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
+<div class="block">Generic-parameterized <code>openPlane</code> method, using
+ <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
+ <a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Plane, Interval)</code></a>.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
          <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane)</code>
@@ -336,30 +344,28 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
  complete planes.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
-<td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-">openPlane</a></span>(int&nbsp;imageIndex,
-         long&nbsp;planeIndex,
-         <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax)</code>
-<div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
- sub-regions of planes.</div>
-</td>
-</tr>
 <tr id="i21" class="rowColor">
-<td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
+<td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
          <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
-         <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
  sub-regions of planes.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
+<td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
+         long&nbsp;planeIndex,
+         <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
+         <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
+ sub-regions of planes.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
@@ -367,18 +373,6 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
          <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
 <div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
  complete planes.</div>
-</td>
-</tr>
-<tr id="i23" class="rowColor">
-<td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#openPlane-int-long-P-long:A-long:A-">openPlane</a></span>(int&nbsp;imageIndex,
-         long&nbsp;planeIndex,
-         <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax)</code>
-<div class="block">Generic-parameterized <code>openPlane</code> method, using
- <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-"><code>Reader.openPlane(int, long, Plane, long[], long[])</code></a>.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
@@ -398,23 +392,21 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </tr>
 <tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-P-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-P-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
          int&nbsp;imageIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          int&nbsp;scanlinePad,
          <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane)</code>
 <div class="block">Generic-parameterized <code>readPlane</code> method, using
  <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[], int, Plane)</code></a></div>
+ <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval, int, Plane)</code></a></div>
 </td>
 </tr>
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
          int&nbsp;imageIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          int&nbsp;scanlinePad,
          <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane)</code>
 <div class="block">Reads a raw plane from disk.</div>
@@ -422,22 +414,20 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-P-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-P-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
          int&nbsp;imageIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane)</code>
 <div class="block">Generic-parameterized <code>readPlane</code> method, using
  <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[], Plane)</code></a></div>
+ <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval, Plane)</code></a></div>
 </td>
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">readPlane</a></span>(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
          int&nbsp;imageIndex,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane)</code>
 <div class="block">Reads a raw plane from disk.</div>
 </td>
@@ -556,14 +546,14 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a></h3>
-<code><a href="../../io/scif/TypedReader.html#createPlane-long:A-long:A-">createPlane</a>, <a href="../../io/scif/TypedReader.html#openPlane-int-long-P-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../io/scif/TypedReader.html#openThumbPlane-int-long-">openThumbPlane</a></code></li>
+<code><a href="../../io/scif/TypedReader.html#createPlane-net.imglib2.Interval-">createPlane</a>, <a href="../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.Reader">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.<a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></h3>
-<code><a href="../../io/scif/Reader.html#createPlane-io.scif.ImageMetadata-long:A-long:A-">createPlane</a></code></li>
+<code><a href="../../io/scif/Reader.html#createPlane-io.scif.ImageMetadata-net.imglib2.Interval-">createPlane</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.HasFormat">
@@ -700,7 +690,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-long:A-long:A-">
+<a name="openPlane-int-long-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -708,23 +698,21 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>openPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;openPlane(int&nbsp;imageIndex,
                    long&nbsp;planeIndex,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax)
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                    <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-">Reader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-">Reader</a></code></span></div>
 <div class="block">Creates a <a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a> representation of a desired sub-region from
  the pixels at the specified indices.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-long:A-long:A-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
+<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>imageIndex</code> - the image index within the dataset.</dd>
 <dd><code>planeIndex</code> - the plane index within the image.</dd>
-<dd><code>planeMin</code> - minimal bounds of the planar axes</dd>
-<dd><code>planeMax</code> - maximum bounds of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The desired sub-region at the specified indices.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -758,7 +746,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-io.scif.Plane-long:A-long:A-">
+<a name="openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -767,21 +755,20 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;openPlane(int&nbsp;imageIndex,
                    long&nbsp;planeIndex,
                    <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax)
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                    <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-">Reader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">Reader</a></code></span></div>
 <div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
  sub-regions of planes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-"><code>Reader.openPlane(int, long, long[], long[])</code></a></dd>
+<dd><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Interval)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -815,7 +802,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-">
+<a name="openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -823,24 +810,21 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>openPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;openPlane(int&nbsp;imageIndex,
                    long&nbsp;planeIndex,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax,
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                    <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                    <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
-<div class="block">As <a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-"><code>Reader.openPlane(int, long, long[], long[])</code></a> with configuration
- options.</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
+<div class="block">As <a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Interval)</code></a> with configuration options.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
+<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>imageIndex</code> - the image index within the dataset.</dd>
 <dd><code>planeIndex</code> - the plane index within the image.</dd>
-<dd><code>planeMin</code> - minimal bounds of the planar axes</dd>
-<dd><code>planeMax</code> - maximum bounds of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dd><code>config</code> - Configuration information to use for this read.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The desired sub-region at the specified indices.</dd>
@@ -876,7 +860,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-io.scif.Plane-long:A-long:A-io.scif.config.SCIFIOConfig-">
+<a name="openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -885,22 +869,21 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <pre>public&nbsp;<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;openPlane(int&nbsp;imageIndex,
                        long&nbsp;planeIndex,
                        <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane,
-                       long[]&nbsp;planeMin,
-                       long[]&nbsp;planeMax,
+                       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                        <a href="../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                 throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                        <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
 <div class="block">Allows a single <code>Plane</code> object to be reused by reference when opening
  sub-regions of planes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../io/scif/Reader.html#openPlane-int-long-long:A-long:A-io.scif.config.SCIFIOConfig-"><code>Reader.openPlane(int, long, long[], long[], SCIFIOConfig)</code></a></dd>
+<dd><a href="../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-"><code>Reader.openPlane(int, long, Interval, SCIFIOConfig)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1205,7 +1188,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-">
+<a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1213,11 +1196,10 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>readPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;readPlane(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
                        int&nbsp;imageIndex,
-                       long[]&nbsp;planeMin,
-                       long[]&nbsp;planeMax,
+                       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                        <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane)
                 throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-">Reader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">Reader</a></code></span></div>
 <div class="block">Reads a raw plane from disk.
  <p>
  NB Presumes that the source stream <code>s</code> is set to the correct offset,
@@ -1225,13 +1207,13 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-">
+<a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1239,12 +1221,11 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>readPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;readPlane(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
                        int&nbsp;imageIndex,
-                       long[]&nbsp;planeMin,
-                       long[]&nbsp;planeMax,
+                       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                        int&nbsp;scanlinePad,
                        <a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;plane)
                 throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-">Reader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">Reader</a></code></span></div>
 <div class="block">Reads a raw plane from disk.
  <p>
  NB Presumes that the source stream <code>s</code> is set to the correct offset,
@@ -1252,7 +1233,7 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dd><code><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
@@ -1365,9 +1346,9 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-io.scif.DataPlane-long:A-long:A-">
+<a name="openPlane-int-long-io.scif.DataPlane-net.imglib2.Interval-">
 <!--   -->
-</a><a name="openPlane-int-long-P-long:A-long:A-">
+</a><a name="openPlane-int-long-P-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1376,22 +1357,21 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;openPlane(int&nbsp;imageIndex,
                    long&nbsp;planeIndex,
                    <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax)
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)
             throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                    <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#openPlane-int-long-P-long:A-long:A-">TypedReader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-">TypedReader</a></code></span></div>
 <div class="block">Generic-parameterized <code>openPlane</code> method, using
  <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-"><code>Reader.openPlane(int, long, Plane, long[], long[])</code></a>.</div>
+ <a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Plane, Interval)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-P-long:A-long:A-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
+<dd><code><a href="../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-long:A-long:A-"><code>Reader.openPlane(int, long, Plane, long[], long[])</code></a></dd>
+<dd><a href="../../io/scif/Reader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Plane, Interval)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1419,9 +1399,9 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 </dl>
 </li>
 </ul>
-<a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.DataPlane-">
+<a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.DataPlane-">
 <!--   -->
-</a><a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-P-">
+</a><a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-P-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1429,32 +1409,31 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>readPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;readPlane(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
                    int&nbsp;imageIndex,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax,
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                    <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane)
             throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-P-">TypedReader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-P-">TypedReader</a></code></span></div>
 <div class="block">Generic-parameterized <code>readPlane</code> method, using
  <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[], Plane)</code></a>
+ <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval, Plane)</code></a>
  <p>
  NB Presumes that the source stream <code>s</code> is set to the correct offset,
  i.e. start of the plane
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-P-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
+<dd><code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-P-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[],
+<dd><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval,
       Plane)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.DataPlane-">
+<a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.DataPlane-">
 <!--   -->
-</a><a name="readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-P-">
+</a><a name="readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-P-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1462,27 +1441,26 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <h4>readPlane</h4>
 <pre>public&nbsp;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;readPlane(<a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;s,
                    int&nbsp;imageIndex,
-                   long[]&nbsp;planeMin,
-                   long[]&nbsp;planeMax,
+                   <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                    int&nbsp;scanlinePad,
                    <a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a>&nbsp;plane)
             throws <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-P-">TypedReader</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-P-">TypedReader</a></code></span></div>
 <div class="block">Generic-parameterized <code>readPlane</code> method, using
  <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif"><code>TypedMetadata</code></a> to avoid type erasure conflicts with
- <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[], int, Plane)</code></a>
+ <a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval, int, Plane)</code></a>
  <p>
  NB Presumes that the source stream <code>s</code> is set to the correct offset,
  i.e. start of the plane
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-P-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
+<dd><code><a href="../../io/scif/TypedReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-P-">readPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">M</a> extends <a href="../../io/scif/TypedMetadata.html" title="interface in io.scif">TypedMetadata</a>,<a href="../../io/scif/AbstractReader.html" title="type parameter in AbstractReader">P</a> extends <a href="../../io/scif/DataPlane.html" title="interface in io.scif">DataPlane</a>&lt;?&gt;&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-long:A-long:A-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, long[], long[],
-      int, Plane)</code></a></dd>
+<dd><a href="../../io/scif/Reader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-"><code>Reader.readPlane(RandomAccessInputStream, int, Interval, int,
+      Plane)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1590,6 +1568,6 @@ implements <a href="../../io/scif/TypedReader.html" title="interface in io.scif"
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

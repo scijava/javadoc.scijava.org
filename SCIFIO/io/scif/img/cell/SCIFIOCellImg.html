@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../io/scif/img/cell/SCIFIOCellCleaningProvider.SCIFIOCellCleaner.html" title="class in io.scif.img.cell"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../io/scif/img/cell/SCIFIOCellImgCleaningProvider.html" title="class in io.scif.img.cell"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?io/scif/img/cell/SCIFIOCellImg.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.classes.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.net.imglib2.img.cell.LazyCellImg">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#fields.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">io.scif.img.cell</div>
-<h2 title="Class SCIFIOCellImg" class="title">Class SCIFIOCellImg&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;,A extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/basictypeaccess/array/ArrayDataAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.array">ArrayDataAccess</a>&lt;A&gt;&gt;</h2>
+<h2 title="Class SCIFIOCellImg" class="title">Class SCIFIOCellImg&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;,A&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -104,10 +104,20 @@ var activeTableTab = "activeTableTab";
 <li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/AbstractNativeImg.html?is-external=true" title="class or interface in net.imglib2.img">net.imglib2.img.AbstractNativeImg</a>&lt;T,A&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/AbstractCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">net.imglib2.img.cell.AbstractCellImg</a>&lt;T,A,<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;A&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;A&gt;&gt;&gt;</li>
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/AbstractCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">net.imglib2.img.cell.AbstractCellImg</a>&lt;T,A,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;A&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;&gt;</li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">net.imglib2.img.cell.LazyCellImg</a>&lt;T,A&gt;</li>
+<li>
+<ul class="inheritance">
+<li><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.img.CachedCellImg.html?is-external=true" title="class or interface in net.imglib2">net.imglib2.cache.img.CachedCellImg</a>&lt;T,A&gt;</li>
 <li>
 <ul class="inheritance">
 <li>io.scif.img.cell.SCIFIOCellImg&lt;T,A&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -126,13 +136,13 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">SCIFIOCellImg&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;,A extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/basictypeaccess/array/ArrayDataAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.array">ArrayDataAccess</a>&lt;A&gt;&gt;</span>
-extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/AbstractCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">AbstractCellImg</a>&lt;T,A,<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;A&gt;,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;A&gt;&gt;&gt;
+<pre>public class <span class="typeNameLabel">SCIFIOCellImg&lt;T extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;,A&gt;</span>
+extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.img.CachedCellImg.html?is-external=true" title="class or interface in net.imglib2">net.imglib2.cache.img.CachedCellImg</a>&lt;T,A&gt;
 implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.html?is-external=true" title="class or interface in org.scijava">Disposable</a></pre>
-<div class="block"><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/AbstractCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell"><code>AbstractCellImg</code></a> implementation for working with <a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell"><code>SCIFIOCell</code></a>s.</div>
+<div class="block"><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.img.CachedCellImg.html?is-external=true" title="class or interface in net.imglib2"><code>CachedCellImg</code></a> implementation backed by a SCIFIO <a href="../../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Mark Hiner</dd>
+<dd>Mark Hiner, Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -146,6 +156,13 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <!--   -->
 </a>
 <h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.net.imglib2.img.cell.LazyCellImg">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;net.imglib2.img.cell.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg</a></h3>
+<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.Get.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.Get</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.Get.html?is-external=true" title="class or interface in net.imglib2.img.cell">T</a>&gt;, <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">T</a>&gt;</code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="nested.classes.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">
 <!--   -->
@@ -196,10 +213,11 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/img/cell/SCIFIOCellImg.html#SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.img.cell.LazyCellImg.LazyCells-net.imglib2.util.Fraction-">SCIFIOCellImg</a></span>(<a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell">SCIFIOCellImgFactory</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&nbsp;factory,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/img/cell/SCIFIOCellImg.html#SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">SCIFIOCellImg</a></span>(<a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell">SCIFIOCellImgFactory</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&nbsp;factory,
              <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/CellGrid.html?is-external=true" title="class or interface in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
-             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cells,
-             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
+             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
+             <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.Cache.html?is-external=true" title="class or interface in net.imglib2">net.imglib2.cache.Cache</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cache,
+             <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -244,6 +262,13 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/img/cell/SCIFIOCellImg.html#setLoader-io.scif.img.cell.loaders.SCIFIOArrayLoader-">setLoader</a></span>(<a href="../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.html" title="interface in io.scif.img.cell.loaders">SCIFIOArrayLoader</a>&lt;?&gt;&nbsp;loader)</code>&nbsp;</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.img.CachedCellImg">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.cache.img.<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.img.CachedCellImg.html?is-external=true" title="class or interface in net.imglib2">CachedCellImg</a></h3>
+<code>getAccessType, getCache</code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">
 <!--   -->
@@ -335,7 +360,9 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.img.cell.LazyCellImg.LazyCells-net.imglib2.util.Fraction-">
+<a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-java.lang.Object-">
+<!--   -->
+</a><a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -343,8 +370,9 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <h4>SCIFIOCellImg</h4>
 <pre>public&nbsp;SCIFIOCellImg(<a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell">SCIFIOCellImgFactory</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&nbsp;factory,
                      <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/CellGrid.html?is-external=true" title="class or interface in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
-                     <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.LazyCells.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg.LazyCells</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCell.html" title="class in io.scif.img.cell">SCIFIOCell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cells,
-                     <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
+                     <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
+                     <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/cache.Cache.html?is-external=true" title="class or interface in net.imglib2">net.imglib2.cache.Cache</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cache,
+                     <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType)</pre>
 </li>
 </ul>
 </li>
@@ -386,6 +414,8 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true#factory--" title="class or interface in net.imglib2.img">factory</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true#factory--" title="class or interface in net.imglib2.img.cell">factory</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;,<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -417,6 +447,8 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true#copy--" title="class or interface in net.imglib2.img">copy</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img">Img</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true#copy--" title="class or interface in net.imglib2.img.cell">copy</a></code>&nbsp;in class&nbsp;<code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/img/cell/LazyCellImg.html?is-external=true" title="class or interface in net.imglib2.img.cell">LazyCellImg</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;,<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -460,8 +492,8 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../io/scif/img/cell/SCIFIOCellCleaningProvider.SCIFIOCellCleaner.html" title="class in io.scif.img.cell"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../io/scif/img/cell/SCIFIOCellImgCleaningProvider.html" title="class in io.scif.img.cell"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?io/scif/img/cell/SCIFIOCellImg.html" target="_top">Frames</a></li>
@@ -485,7 +517,7 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.classes.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.net.imglib2.img.cell.LazyCellImg">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#fields.inherited.from.class.net.imglib2.img.cell.AbstractCellImg">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -501,6 +533,6 @@ implements <a href="http://javadoc.imagej.net/SciJava/org/scijava/Disposable.htm
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

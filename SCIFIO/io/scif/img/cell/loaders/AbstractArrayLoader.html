@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":6,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":6,"i1":10,"i2":10,"i3":10,"i4":10,"i5":6,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -178,29 +178,33 @@ implements <a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.ht
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#loadArray-int:A-long:A-">loadArray</a></span>(int[]&nbsp;dimensions,
-         long[]&nbsp;min)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#loadArray-net.imglib2.Interval-">loadArray</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#loadArray-net.imglib2.Interval-A-">loadArray</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
+         <a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&nbsp;data)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#loadTable-int-int-">loadTable</a></span>(int&nbsp;imageIndex,
          int&nbsp;planeIndex)</code>
 <div class="block">Returns the <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display"><code>ColorTable</code></a> for a given set of indices.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>abstract <a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#outputClass--">outputClass</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#reader--">reader</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#setIndex-int-">setIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../io/scif/img/ImgUtilityService.html" title="interface in io.scif.img">ImgUtilityService</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html#utils--">utils</a></span>()</code>&nbsp;</td>
 </tr>
@@ -294,23 +298,33 @@ implements <a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.ht
 </dl>
 </li>
 </ul>
-<a name="loadArray-int:A-long:A-">
+<a name="loadArray-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>loadArray</h4>
-<pre>public&nbsp;<a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&nbsp;loadArray(int[]&nbsp;dimensions,
-                   long[]&nbsp;min)</pre>
+<pre>public&nbsp;<a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&nbsp;loadArray(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.html#loadArray-int:A-long:A-">loadArray</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.html" title="interface in io.scif.img.cell.loaders">SCIFIOArrayLoader</a>&lt;<a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&gt;</code></dd>
+<dd><code><a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.html#loadArray-net.imglib2.Interval-">loadArray</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.html" title="interface in io.scif.img.cell.loaders">SCIFIOArrayLoader</a>&lt;<a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dimensions</code> - Plane extents</dd>
-<dd><code>min</code> - Plane offsets</dd>
+<dd><code>bounds</code> - bounds of the plane.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>An opened plane using the given offsets and extents.</dd>
+<dd>An opened plane using the given bounds.</dd>
 </dl>
+</li>
+</ul>
+<a name="loadArray-net.imglib2.Interval-java.lang.Object-">
+<!--   -->
+</a><a name="loadArray-net.imglib2.Interval-A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadArray</h4>
+<pre>public&nbsp;void&nbsp;loadArray(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
+                      <a href="../../../../../io/scif/img/cell/loaders/AbstractArrayLoader.html" title="type parameter in AbstractArrayLoader">A</a>&nbsp;data)</pre>
 </li>
 </ul>
 <a name="reader--">
@@ -450,6 +464,6 @@ implements <a href="../../../../../io/scif/img/cell/loaders/SCIFIOArrayLoader.ht
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>

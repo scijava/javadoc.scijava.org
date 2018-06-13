@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":18,"i5":18,"i6":18,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -141,73 +141,74 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?i
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getBounds--">getBounds</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getBytes--">getBytes</a></span>()</code>
 <div class="block">Gets this plane's standardized pixel data.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getColorTable--">getColorTable</a></span>()</code>
 <div class="block">Gets this plane's ColorTable.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getImageMetadata--">getImageMetadata</a></span>()</code>
 <div class="block">Gets the <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> associated with this plane.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>long[]</code></td>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>default long[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getLengths--">getLengths</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>long[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getOffsets--">getOffsets</a></span>()</code>&nbsp;</td>
-</tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>default long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getMax--">getMax</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>default long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#getMin--">getMin</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-long:A-long:A-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-        long[]&nbsp;planeOffsets,
-        long[]&nbsp;planeBounds)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#populate-io.scif.ImageMetadata-net.imglib2.Interval-">populate</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
+        <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
 <div class="block">Populates this planes offsets, dimensions and Metadata.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#populate-io.scif.Plane-">populate</a></span>(<a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;p)</code>
 <div class="block">Populates this plane by copying the fields of the provided plane</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setBounds-net.imglib2.Interval-">setBounds</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</code>
+<div class="block">Sets this plane's bounds relative to the underlying image.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setColorTable-net.imglib2.display.ColorTable-">setColorTable</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/ColorTable.html?is-external=true" title="class or interface in net.imglib2.display">ColorTable</a>&nbsp;lut)</code>
 <div class="block">Sets the ColorTable for this plane.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setImageMetadata-io.scif.ImageMetadata-">setImageMetadata</a></span>(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta)</code>
 <div class="block">Sets the ImageMetadata representation of the underlying image.</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setLengths-long:A-">setLengths</a></span>(long[]&nbsp;lengths)</code>
-<div class="block">Sets this plane's axis lengths</div>
-</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/Plane.html#setOffsets-long:A-">setOffsets</a></span>(long[]&nbsp;offsets)</code>
-<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
 </td>
 </tr>
 </table>
@@ -295,16 +296,29 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?i
 </dl>
 </li>
 </ul>
-<a name="getOffsets--">
+<a name="getMin--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getOffsets</h4>
-<pre>long[]&nbsp;getOffsets()</pre>
+<h4>getMin</h4>
+<pre>default&nbsp;long[]&nbsp;getMin()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The offsets of this Plane relative to the origin image</dd>
+<dd>The minimums of this plane relative to the origin image</dd>
+</dl>
+</li>
+</ul>
+<a name="getMax--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMax</h4>
+<pre>default&nbsp;long[]&nbsp;getMax()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The maximums of this plane relative to the origin image</dd>
 </dl>
 </li>
 </ul>
@@ -314,28 +328,39 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?i
 <ul class="blockList">
 <li class="blockList">
 <h4>getLengths</h4>
-<pre>long[]&nbsp;getLengths()</pre>
+<pre>default&nbsp;long[]&nbsp;getLengths()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The lengths of each axis of this plane</dd>
 </dl>
 </li>
 </ul>
-<a name="populate-io.scif.ImageMetadata-long:A-long:A-">
+<a name="getBounds--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBounds</h4>
+<pre><a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;getBounds()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The bounds of this plane relative to the origin image</dd>
+</dl>
+</li>
+</ul>
+<a name="populate-io.scif.ImageMetadata-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>populate</h4>
 <pre><a href="../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;populate(<a href="../../io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a>&nbsp;meta,
-               long[]&nbsp;planeOffsets,
-               long[]&nbsp;planeBounds)</pre>
+               <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
 <div class="block">Populates this planes offsets, dimensions and Metadata.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>meta</code> - - ImageMetadata to associate with this Plane</dd>
-<dd><code>planeOffsets</code> - minimal offsets of the planar axes</dd>
-<dd><code>planeBounds</code> - maximum values of the planar axes</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A reference to this Plane</dd>
 </dl>
@@ -371,24 +396,14 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?i
 </dl>
 </li>
 </ul>
-<a name="setOffsets-long:A-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setOffsets</h4>
-<pre>void&nbsp;setOffsets(long[]&nbsp;offsets)</pre>
-<div class="block">Sets this plane's offset from 0 relative to the underlying image.</div>
-</li>
-</ul>
-<a name="setLengths-long:A-">
+<a name="setBounds-net.imglib2.Interval-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setLengths</h4>
-<pre>void&nbsp;setLengths(long[]&nbsp;lengths)</pre>
-<div class="block">Sets this plane's axis lengths</div>
+<h4>setBounds</h4>
+<pre>void&nbsp;setBounds(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds)</pre>
+<div class="block">Sets this plane's bounds relative to the underlying image.</div>
 </li>
 </ul>
 </li>
@@ -459,6 +474,6 @@ extends <a href="http://javadoc.imagej.net/SciJava/org/scijava/Contextual.html?i
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2017 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://scif.io/">SCIFIO</a>. All rights reserved.</small></p>
 </body>
 </html>
