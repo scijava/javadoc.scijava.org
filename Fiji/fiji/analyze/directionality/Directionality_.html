@@ -133,10 +133,10 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
  periodic nature of the histogram. The 'Direction (º)' column reports the
  center of the gaussian. The 'Dispersion (º)' column reports the standard
  deviation of the gaussian. The 'Amount' column is the sum of the histogram
- from the center of the peak to <b>two</b> standard deviation away, divided by 
- the total sum of the histogram. The
- real histogram values are used for the summation, not the gaussian fit. The
- 'Goodness' column reports the goodness of the fit; 1 is good, 0 is bad.
+ from the center of the peak to <b>two</b> standard deviation away, divided by
+ the total sum of the histogram. The real histogram values are used for the
+ summation, not the gaussian fit. The 'Goodness' column reports the goodness
+ of the fit; 1 is good, 0 is bad.
  <p>
  A study made on artificial images reveal that the 'Amount' value as
  calculated here underestimates the real proportion of structures with the
@@ -148,67 +148,70 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
  
  <h3>Fourier components analysis</h3>
  
- This method is based on Fourier spectrum analysis. For a square
- image, structures with a preferred orientation generate a periodic pattern at
- +90º orientation in the Fourier transform of the image, compared to the
- direction of the objects in the input image. 
+ This method is based on Fourier spectrum analysis. For a square image,
+ structures with a preferred orientation generate a periodic pattern at +90º
+ orientation in the Fourier transform of the image, compared to the direction
+ of the objects in the input image.
  <p>
- This plugin chops the image into
- square pieces, and computes their Fourier power spectra. The later are
- analyzed in polar coordinates, and the power is measured for each angle using
- the spatial filters proposed in [1].
+ This plugin chops the image into square pieces, and computes their Fourier
+ power spectra. The later are analyzed in polar coordinates, and the power is
+ measured for each angle using the spatial filters proposed in [1].
  
  <h3>Local gradient orientation</h3>
  
- This method is a local analysis. The gradient of the image is calculated using a 5x5
- Sobel filter, and is used to derive the local gradient orientation. This orientation 
- is then used to build the histogram, by putting the square of the gradient norm 
- in the adequate bin. The square of the norm was retained, so as to have an histogram 
- with the same dimension that for the Fourier analysis.
+ This method is a local analysis. The gradient of the image is calculated
+ using a 5x5 Sobel filter, and is used to derive the local gradient
+ orientation. This orientation is then used to build the histogram, by putting
+ the square of the gradient norm in the adequate bin. The square of the norm
+ was retained, so as to have an histogram with the same dimension that for the
+ Fourier analysis.
  
  
  <h2>Orientation map</h2>
  
- Since version 2.0, the plugin offers the possibility to generate an orientation map,
- where the image is colored according to its local directionality, or location orientation.
- This has a well an easily defined meaning in the case of the local gradient orientation 
- method, but things are a bit more complicated in the case of the Fourier component, which
- is a global method. 
+ Since version 2.0, the plugin offers the possibility to generate an
+ orientation map, where the image is colored according to its local
+ directionality, or location orientation. This has a well an easily defined
+ meaning in the case of the local gradient orientation method, but things are
+ a bit more complicated in the case of the Fourier component, which is a
+ global method.
  <p>
- In the later case, the image is filtered using the Fourier filters described above, and 
- transformed back using inverse Fourier transform. For each pixel, the direction retained
- is the one that has the strongest intensity when filtered in this orientation.
- <p> 
+ In the later case, the image is filtered using the Fourier filters described
+ above, and transformed back using inverse Fourier transform. For each pixel,
+ the direction retained is the one that has the strongest intensity when
+ filtered in this orientation.
+ <p>
  To generate the orientation map image, a HSB image is made by taking
  <ul>
-        <li> the local orientation as hue
-        <li> the original image gray value as brightness
-        <li> for saturation:
-        <ul>
-                <li> the power spectrum value for the Fourier component method
-                <li> the gradient magnitude square for the Local gradient orientation method
+ <li>the local orientation as hue
+ <li>the original image gray value as brightness
+ <li>for saturation:
+ <ul>
+ <li>the power spectrum value for the Fourier component method
+ <li>the gradient magnitude square for the Local gradient orientation method
  </ul>
  </ul>
  
  
  <h2>Code structure</h2>
  
- This plugin is written as a classical ImageJ plugin. It implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-external=true" title="class or interface in ij.plugin"><code>PlugIn</code></a>. 
+ This plugin is written as a classical ImageJ plugin. It implements
+ <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-external=true" title="class or interface in ij.plugin"><code>PlugIn</code></a>.
  <p>
  String arguments can be passed to it, using the <a href="../../../fiji/analyze/directionality/Directionality_.html#run-java.lang.String-"><code>run(String)</code></a> method.
  For instance:
  
-  <pre>
-  ImagePlus imp = IJ.openImage("./TwoLines.tif");
-  imp.show();
-  Directionality_ da = new Directionality_();
-  da.run("nbins=60, start=-90, method=gradient");
-  </pre>
+ <pre>
+ ImagePlus imp = IJ.openImage( "./TwoLines.tif" );
+ imp.show();
+ Directionality_ da = new Directionality_();
+ da.run( "nbins=60, start=-90, method=gradient" );
+ </pre>
  
- It is also possible to run the plugin non-interactively from another class, or even in
- a script. For instance in Python:
+ It is also possible to run the plugin non-interactively from another class,
+ or even in a script. For instance in Python:
  
-        <pre>
+ <pre>
         import fiji.analyze.directionality.Directionality_
  
         # Instantiate plugin
@@ -244,25 +247,28 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 
         # Generate a color wheel
         fiji.analyze.directionality.Directionality_.generateColorWheel().show()
-</pre>
+ </pre>
  
  <h2>Version history</h2>
  
  <ul>
- <li> v2.0 - 2010-06-08: After a lot of mistakes and problems, each method now propose to 
- generate an orientation map, which colors the image according to the local directionality.
- <li> v1.3 - 2010-03-17: Heavy refactoring, made it implement Plugin interface, so has to 
- be conveniently called from a script.
- <li> v1.2 - 2010-03-10: Added a new analysis method based on local gradient orientation.
- <li> v1.1 - 2010-03-05: Added an option to export the histogram as a table, and option 
- to circular-shifts the histogram.
- <li> v1.0 - 2010-03-01: First working commit with the Fourier method.
+ <li>v2.0 - 2010-06-08: After a lot of mistakes and problems, each method now
+ propose to generate an orientation map, which colors the image according to
+ the local directionality.
+ <li>v1.3 - 2010-03-17: Heavy refactoring, made it implement Plugin interface,
+ so has to be conveniently called from a script.
+ <li>v1.2 - 2010-03-10: Added a new analysis method based on local gradient
+ orientation.
+ <li>v1.1 - 2010-03-05: Added an option to export the histogram as a table,
+ and option to circular-shifts the histogram.
+ <li>v1.0 - 2010-03-01: First working commit with the Fourier method.
  </ul>
  
- <h2>References</h2>
- [1] Liu. Scale space approach to directional analysis of images. Appl. Opt. (1991) vol. 30 (11) pp. 1369-1373 
+ <h2>References</h2> [1] Liu. Scale space approach to directional analysis of
+ images. Appl. Opt. (1991) vol. 30 (11) pp. 1369-1373
  <p>
- A discussion with A. Leroy and another one with J. Schindelin are greatly acknowledged. 
+ A discussion with A. Leroy and another one with J. Schindelin are greatly
+ acknowledged.
  <p></div>
 <dl>
 <dt><span class="simpleTagLabel">Version:</span></dt>
@@ -344,7 +350,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#histograms">histograms</a></span></code>
-<div class="block">The directionality histogram, one array per processor (3 in the case of a ColorProcessor).</div>
+<div class="block">The directionality histogram, one array per processor (3 in the case of a
+ ColorProcessor).</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -450,14 +457,15 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--">computeHistograms</a></span>()</code>
-<div class="block">This method runs the analysis on all slices, and store resulting histograms in the 
- <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> fields.</div>
+<div class="block">This method runs the analysis on all slices, and store resulting
+ histograms in the histogram fields.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/Fiji/org/jfree/chart/renderer/LookupPaintScale.html?is-external=true" title="class or interface in org.jfree.chart.renderer">LookupPaintScale</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#createLUT-int-">createLUT</a></span>(int&nbsp;ncol)</code>
-<div class="block">Generate a bluish to greenish to redish LUT for the display of histograms.</div>
+<div class="block">Generate a bluish to greenish to redish LUT for the display of
+ histograms.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -469,22 +477,23 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#displayLog-ij.process.FloatProcessor-">displayLog</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;ip)</code>
-<div class="block">This utility method returns a FloatProcessor with the log10 of each pixel in the
- <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process"><code>FloatProcessor</code></a> given in argument.</div>
+<div class="block">This utility method returns a FloatProcessor with the log10 of each pixel
+ in the <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process"><code>FloatProcessor</code></a> given in argument.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure">ResultsTable</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#displayResultsTable--">displayResultsTable</a></span>()</code>
-<div class="block">This method generates a <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure"><code>ResultsTable</code></a> containing the histogram data for display 
- in ImageJ.</div>
+<div class="block">This method generates a <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure"><code>ResultsTable</code></a> containing the histogram
+ data for display in ImageJ.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#fitHistograms--">fitHistograms</a></span>()</code>
-<div class="block">This method tries to fit a gaussian to the highest peak of each directionality histogram, 
- and store fit results in the <a href="../../../fiji/analyze/directionality/Directionality_.html#params_from_fit"><code>params_from_fit</code></a> field.</div>
+<div class="block">This method tries to fit a gaussian to the highest peak of each
+ directionality histogram, and store fit results in the
+ <code>params_from_fit</code> field.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -519,8 +528,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#getBlackmanProcessor-int-int-">getBlackmanProcessor</a></span>(int&nbsp;nx,
                     int&nbsp;ny)</code>
-<div class="block">Generate a 2D Blackman window used in this plugin before computing FFT, so as to avoid the cross
- artifact at x=0 and y=0.</div>
+<div class="block">Generate a 2D Blackman window used in this plugin before computing FFT,
+ so as to avoid the cross artifact at x=0 and y=0.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -544,8 +553,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--">getHistograms</a></span>()</code>
-<div class="block">Return the directionality histograms as an ArrayList of double[], one array
- per slice.</div>
+<div class="block">Return the directionality histograms as an ArrayList of double[], one
+ array per slice.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
@@ -563,7 +572,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#getOrientationMap--">getOrientationMap</a></span>()</code>
-<div class="block">Return the orientation map as an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij"><code>ImageStack</code></a>, one slice per slice in the source image.</div>
+<div class="block">Return the orientation map as an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij"><code>ImageStack</code></a>, one slice per slice
+ in the source image.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
@@ -574,28 +584,31 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#makeRMatrix-int-int-">makeRMatrix</a></span>(int&nbsp;nx,
            int&nbsp;ny)</code>
-<div class="block">Generate a 2D matrix of the radius polar coordinates, centered in the middle of the image.</div>
+<div class="block">Generate a 2D matrix of the radius polar coordinates, centered in the
+ middle of the image.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#makeThetaMatrix-int-int-">makeThetaMatrix</a></span>(int&nbsp;nx,
                int&nbsp;ny)</code>
-<div class="block">Generate a 2D matrix of the angle polar coordinates, centered in the middle of the image.</div>
+<div class="block">Generate a 2D matrix of the angle polar coordinates, centered in the
+ middle of the image.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>protected static <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#parseArgumentString-java.lang.String-java.lang.String-">parseArgumentString</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;argument_string,
                    <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command_str)</code>
-<div class="block">Utility method to analyze the content of the argument string passed by ImageJ to 
- this plugin using the <code>setup(String, ImagePlus)</code> method.</div>
+<div class="block">Utility method to analyze the content of the argument string passed by
+ ImageJ to this plugin using the <code>setup(String, ImagePlus)</code> method.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../fiji/analyze/directionality/Directionality_.html#plotResults--">plotResults</a></span>()</code>
-<div class="block">This method is called to draw the histograms resulting from image analysis.</div>
+<div class="block">This method is called to draw the histograms resulting from image
+ analysis.</div>
 </td>
 </tr>
 <tr id="i25" class="rowColor">
@@ -817,7 +830,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>bins</h4>
 <pre>protected&nbsp;double[] bins</pre>
-<div class="block">The bin centers, in radians. Internally, they always range from -pi/2 to pi/2.</div>
+<div class="block">The bin centers, in radians. Internally, they always range from -pi/2 to
+ pi/2.</div>
 </li>
 </ul>
 <a name="histograms">
@@ -827,7 +841,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>histograms</h4>
 <pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt; histograms</pre>
-<div class="block">The directionality histogram, one array per processor (3 in the case of a ColorProcessor).</div>
+<div class="block">The directionality histogram, one array per processor (3 in the case of a
+ ColorProcessor).</div>
 </li>
 </ul>
 <a name="params_from_fit">
@@ -892,23 +907,24 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>run</h4>
 <pre>public&nbsp;void&nbsp;run(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</pre>
-<div class="block">Called when this plugin is launched from ImageJ. 
- This method
+<div class="block">Called when this plugin is launched from ImageJ. This method
  <ol>
-        <li> grabs the current ImagePlus
-        <li> displays the user dialog and sets setting fields accordingly
-        <li> calls the <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> method, which computes the histograms
-        <li> calls the <a href="../../../fiji/analyze/directionality/Directionality_.html#fitHistograms--"><code>fitHistograms()</code></a> method, which fits the histograms
-        <li> display the results
+ <li>grabs the current ImagePlus
+ <li>displays the user dialog and sets setting fields accordingly
+ <li>calls the <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> method, which computes the
+ histograms
+ <li>calls the <a href="../../../fiji/analyze/directionality/Directionality_.html#fitHistograms--"><code>fitHistograms()</code></a> method, which fits the histograms
+ <li>display the results
  </ol>
  <p>
- If the method is called with String arguments, fields are set according to it, and
- no dialog are displayed (macro recordable).</div>
+ If the method is called with String arguments, fields are set according
+ to it, and no dialog are displayed (macro recordable).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-external=true#run-java.lang.String-" title="class or interface in ij.plugin">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-external=true" title="class or interface in ij.plugin">PlugIn</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>arg</code> - the string argument, for instance "nbins=90, start=-90, method=gradient"</dd>
+<dd><code>arg</code> - the string argument, for instance "nbins=90, start=-90,
+            method=gradient"</dd>
 </dl>
 </li>
 </ul>
@@ -919,8 +935,9 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>computeHistograms</h4>
 <pre>public&nbsp;void&nbsp;computeHistograms()</pre>
-<div class="block">This method runs the analysis on all slices, and store resulting histograms in the 
- <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> fields. Calling this method resets the aforementioned field.</div>
+<div class="block">This method runs the analysis on all slices, and store resulting
+ histograms in the histogram fields. Calling this method resets the
+ aforementioned field.</div>
 </li>
 </ul>
 <a name="displayResultsTable--">
@@ -930,11 +947,13 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>displayResultsTable</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure">ResultsTable</a>&nbsp;displayResultsTable()</pre>
-<div class="block">This method generates a <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure"><code>ResultsTable</code></a> containing the histogram data for display 
- in ImageJ. It can be used to export the data to a CSV file.</div>
+<div class="block">This method generates a <a href="http://javadoc.imagej.net/ImageJ1/ij/measure/ResultsTable.html?is-external=true" title="class or interface in ij.measure"><code>ResultsTable</code></a> containing the histogram
+ data for display in ImageJ. It can be used to export the data to a CSV
+ file.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the result table, which show() method must be called to become visible.</dd>
+<dd>the result table, which show() method must be called to become
+         visible.</dd>
 </dl>
 </li>
 </ul>
@@ -945,18 +964,19 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getFitAnalysis</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt;&nbsp;getFitAnalysis()</pre>
-<div class="block">Return the result of analyzing the gaussian fit of the peak.
- Results are returned in the shape of an ArrayList of double[], one element
- per slice. The content of the double arrays is as follow:
+<div class="block">Return the result of analyzing the gaussian fit of the peak. Results are
+ returned in the shape of an ArrayList of double[], one element per slice.
+ The content of the double arrays is as follow:
  <ol start=0>
-        <li> gaussian peak center
-        <li> gaussian standard deviation
-        <li> amount, that is: the sum of the histogram data from the gaussian center until  times
- its standard deviation away
-        <li> the goodness of fit 
+ <li>gaussian peak center
+ <li>gaussian standard deviation
+ <li>amount, that is: the sum of the histogram data from the gaussian
+ center until SIGMA_NUMBER times its standard deviation away
+ <li>the goodness of fit
  </ol>
- The periodic nature of the data is taken into account. For the amount value, the actual values
- of the histogram are summed, not the values from the fit.</div>
+ The periodic nature of the data is taken into account. For the amount
+ value, the actual values of the histogram are summed, not the values from
+ the fit.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the fit analysis</dd>
@@ -970,13 +990,15 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>plotResults</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing">JFrame</a>&nbsp;plotResults()</pre>
-<div class="block">This method is called to draw the histograms resulting from image analysis. It reads the result
- in the <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> list field, and use the JFreeChart library to draw a nice 
- plot window. If the <code>fitResults()</code> method was called before, the fits are also drawn.</div>
+<div class="block">This method is called to draw the histograms resulting from image
+ analysis. It reads the result in the histogram list field, and use the
+ JFreeChart library to draw a nice plot window. If the
+ <code>fitResults()</code> method was called before, the fits are also drawn.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a <a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing"><code>JFrame</code></a> containing the histogram plots, which setVisible(boolean) method must
- be called in order to be displayed</dd>
+<dd>a <a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing"><code>JFrame</code></a> containing the histogram plots, which
+         setVisible(boolean) method must be called in order to be
+         displayed</dd>
 </dl>
 </li>
 </ul>
@@ -987,9 +1009,10 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>fitHistograms</h4>
 <pre>public&nbsp;void&nbsp;fitHistograms()</pre>
-<div class="block">This method tries to fit a gaussian to the highest peak of each directionality histogram, 
- and store fit results in the <a href="../../../fiji/analyze/directionality/Directionality_.html#params_from_fit"><code>params_from_fit</code></a> field. The goodness of fit will be
- stored in <a href="../../../fiji/analyze/directionality/Directionality_.html#goodness_of_fit"><code>goodness_of_fit</code></a>.</div>
+<div class="block">This method tries to fit a gaussian to the highest peak of each
+ directionality histogram, and store fit results in the
+ <code>params_from_fit</code> field. The goodness of fit will be stored in
+ <code>goodness_of_fit</code>.</div>
 </li>
 </ul>
 <a name="displayFitAnalysis--">
@@ -1002,8 +1025,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <div class="block">This method displays the fit analysis results in a <a href="http://javadoc.imagej.net/Java/javax/swing/JTable.html?is-external=true" title="class or interface in javax.swing"><code>JTable</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a <a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing"><code>JFrame</code></a> containing the table; its setVisible(boolean) method must
- be called in order to be displayed</dd>
+<dd>a <a href="http://javadoc.imagej.net/Java/javax/swing/JFrame.html?is-external=true" title="class or interface in javax.swing"><code>JFrame</code></a> containing the table; its setVisible(boolean)
+         method must be called in order to be displayed</dd>
 </dl>
 </li>
 </ul>
@@ -1014,7 +1037,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>setImagePlus</h4>
 <pre>public&nbsp;void&nbsp;setImagePlus(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp)</pre>
-<div class="block">Set the image for analysis. Calling this method resets the field <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> to null.</div>
+<div class="block">Set the image for analysis. Calling this method resets the field
+ <code>histograms</code> to null.</div>
 </li>
 </ul>
 <a name="getImagePlus--">
@@ -1034,21 +1058,24 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getFitParameters</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt;&nbsp;getFitParameters()</pre>
-<div class="block">Return the parameters of the gaussian fit of the main peak in histogram. Results
- are arranged in an ArrayList of double[], one array per slice analyzed.
- If the fit was not done prior to this method call, it is called. If the 
- method <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> was not called, null is returned.
+<div class="block">Return the parameters of the gaussian fit of the main peak in histogram.
+ Results are arranged in an ArrayList of double[], one array per slice
+ analyzed. If the fit was not done prior to this method call, it is
+ called. If the method <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> was not called, null
+ is returned.
  <p>
- The double array is organized as follow, for the fitting model y = a + (b-a)*exp(-(x-c)*(x-c)/(2*d*d))
+ The double array is organized as follow, for the fitting model y = a +
+ (b-a)*exp(-(x-c)*(x-c)/(2*d*d))
  <ol start=0>
-        <li> a
-        <li> b
-  <li> x
-  <li> d
+ <li>a
+ <li>b
+ <li>x
+ <li>d
  </ol>
 
  <p>
- See <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>
+ See <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>,
+ <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>
  </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1063,11 +1090,13 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getGoodnessOfFit</h4>
 <pre>public&nbsp;double[]&nbsp;getGoodnessOfFit()</pre>
-<div class="block">Return the goodness of fit for the gaussian fit; 1 is good, 0 is bad. One value per slice.
- If the fit was not done prior to this method call, it is called. If the 
- method <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> was not called, null is returned.
+<div class="block">Return the goodness of fit for the gaussian fit; 1 is good, 0 is bad. One
+ value per slice. If the fit was not done prior to this method call, it is
+ called. If the method <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> was not called, null
+ is returned.
  <p>
- See <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>
+ See <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>,
+ <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>
  </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1082,15 +1111,16 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getHistograms</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;double[]&gt;&nbsp;getHistograms()</pre>
-<div class="block">Return the directionality histograms as an ArrayList of double[], one array
- per slice.
+<div class="block">Return the directionality histograms as an ArrayList of double[], one
+ array per slice.
  <p>
- See <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>
+ See <a href="../../../fiji/analyze/directionality/Directionality_.html#getBins--"><code>getBins()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>,
+ <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>
  </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the directionality histograms; is null if the method <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> 
- was not called before.</dd>
+<dd>the directionality histograms; is null if the method
+         <a href="../../../fiji/analyze/directionality/Directionality_.html#computeHistograms--"><code>computeHistograms()</code></a> was not called before.</dd>
 </dl>
 </li>
 </ul>
@@ -1101,9 +1131,11 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getBins</h4>
 <pre>public&nbsp;double[]&nbsp;getBins()</pre>
-<div class="block">Return the center of the bins for the directionality histograms. They are in degrees.
+<div class="block">Return the center of the bins for the directionality histograms. They are
+ in degrees.
  <p>
- See <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>
+ See <a href="../../../fiji/analyze/directionality/Directionality_.html#getHistograms--"><code>getHistograms()</code></a>, <a href="../../../fiji/analyze/directionality/Directionality_.html#getFitParameters--"><code>getFitParameters()</code></a>,
+ <a href="../../../fiji/analyze/directionality/Directionality_.html#getGoodnessOfFit--"><code>getGoodnessOfFit()</code></a>
  </p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1118,7 +1150,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>setBinNumber</h4>
 <pre>public&nbsp;void&nbsp;setBinNumber(int&nbsp;nbins)</pre>
-<div class="block">Set the desired number of bins. This resets the <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> field to null.</div>
+<div class="block">Set the desired number of bins. This resets the <code>histograms</code>
+ field to null.</div>
 </li>
 </ul>
 <a name="getBinNumber--">
@@ -1129,9 +1162,6 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>getBinNumber</h4>
 <pre>public&nbsp;int&nbsp;getBinNumber()</pre>
 <div class="block">Return the current number of bins for this instance.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
 </li>
 </ul>
 <a name="setBinStart-double-">
@@ -1141,7 +1171,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>setBinStart</h4>
 <pre>public&nbsp;void&nbsp;setBinStart(double&nbsp;bin_start)</pre>
-<div class="block">Set the desired start for the angle bins, in degrees. This resets the <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> field to null.</div>
+<div class="block">Set the desired start for the angle bins, in degrees. This resets the
+ <code>histograms</code> field to null.</div>
 </li>
 </ul>
 <a name="getBinStart--">
@@ -1161,7 +1192,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>setMethod</h4>
 <pre>public&nbsp;void&nbsp;setMethod(<a href="../../../fiji/analyze/directionality/Directionality_.AnalysisMethod.html" title="enum in fiji.analyze.directionality">Directionality_.AnalysisMethod</a>&nbsp;method)</pre>
-<div class="block">Set the desired method for analysis. This resets the <a href="../../../fiji/analyze/directionality/Directionality_.html#histograms"><code>histograms</code></a> field to null.
+<div class="block">Set the desired method for analysis. This resets the
+ <code>histograms</code> field to null.
  <p>
  See <a href="../../../fiji/analyze/directionality/Directionality_.AnalysisMethod.html" title="enum in fiji.analyze.directionality"><code>Directionality_.AnalysisMethod</code></a>
  </p></div>
@@ -1175,9 +1207,6 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>getMethod</h4>
 <pre>public&nbsp;<a href="../../../fiji/analyze/directionality/Directionality_.AnalysisMethod.html" title="enum in fiji.analyze.directionality">Directionality_.AnalysisMethod</a>&nbsp;getMethod()</pre>
 <div class="block">Return the analysis method used by this instance.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-</dl>
 </li>
 </ul>
 <a name="setDebugFlag-boolean-">
@@ -1207,8 +1236,9 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>getOrientationMap</h4>
 <pre>public&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij">ImageStack</a>&nbsp;getOrientationMap()</pre>
-<div class="block">Return the orientation map as an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij"><code>ImageStack</code></a>, one slice per slice in the source image.
- Return null if the orientation map flag was not set, or if computation was not done.</div>
+<div class="block">Return the orientation map as an <a href="http://javadoc.imagej.net/ImageJ1/ij/ImageStack.html?is-external=true" title="class or interface in ij"><code>ImageStack</code></a>, one slice per slice
+ in the source image. Return null if the orientation map flag was not set,
+ or if computation was not done.</div>
 </li>
 </ul>
 <a name="generateColorWheel--">
@@ -1253,16 +1283,16 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>parseArgumentString</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parseArgumentString(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;argument_string,
                                                   <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command_str)</pre>
-<div class="block">Utility method to analyze the content of the argument string passed by ImageJ to 
- this plugin using the <code>setup(String, ImagePlus)</code> method. Not as clever as it
- could be.</div>
+<div class="block">Utility method to analyze the content of the argument string passed by
+ ImageJ to this plugin using the <code>setup(String, ImagePlus)</code> method.
+ Not as clever as it could be.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>argument_string</code> - the argument string to parse</dd>
 <dd><code>command_str</code> - the command to search for</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a string containing the value after the command string, null if the command string 
- was not found</dd>
+<dd>a string containing the value after the command string, null if
+         the command string was not found</dd>
 </dl>
 </li>
 </ul>
@@ -1273,8 +1303,9 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>displayLog</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;displayLog(<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;ip)</pre>
-<div class="block">This utility method returns a FloatProcessor with the log10 of each pixel in the
- <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process"><code>FloatProcessor</code></a> given in argument. Usefull to display power spectrum.</div>
+<div class="block">This utility method returns a FloatProcessor with the log10 of each pixel
+ in the <a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process"><code>FloatProcessor</code></a> given in argument. Usefull to display power
+ spectrum.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ip</code> - the source FloatProcessor</dd>
@@ -1307,8 +1338,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>getBlackmanProcessor</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;getBlackmanProcessor(int&nbsp;nx,
                                                            int&nbsp;ny)</pre>
-<div class="block">Generate a 2D Blackman window used in this plugin before computing FFT, so as to avoid the cross
- artifact at x=0 and y=0.</div>
+<div class="block">Generate a 2D Blackman window used in this plugin before computing FFT,
+ so as to avoid the cross artifact at x=0 and y=0.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>nx</code> - the width in pixel of the desired window</dd>
@@ -1328,14 +1359,15 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>makeRMatrix</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;makeRMatrix(int&nbsp;nx,
                                                   int&nbsp;ny)</pre>
-<div class="block">Generate a 2D matrix of the radius polar coordinates, centered in the middle of the image.</div>
+<div class="block">Generate a 2D matrix of the radius polar coordinates, centered in the
+ middle of the image.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>nx</code> - the width in pixel of the desired matrix</dd>
 <dd><code>ny</code> - the height in pixel of the desired matrix</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the coordinate matrix, as a FloatProcessor, where values range from 0 to 
- sqrt(nx^2+ny^2)/2</dd>
+<dd>the coordinate matrix, as a FloatProcessor, where values range
+         from 0 to sqrt(nx^2+ny^2)/2</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../fiji/analyze/directionality/Directionality_.html#makeThetaMatrix-int-int-"><code>makeThetaMatrix(int, int)</code></a></dd>
 </dl>
@@ -1349,14 +1381,15 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <h4>makeThetaMatrix</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/process/FloatProcessor.html?is-external=true" title="class or interface in ij.process">FloatProcessor</a>&nbsp;makeThetaMatrix(int&nbsp;nx,
                                                       int&nbsp;ny)</pre>
-<div class="block">Generate a 2D matrix of the angle polar coordinates, centered in the middle of the image.</div>
+<div class="block">Generate a 2D matrix of the angle polar coordinates, centered in the
+ middle of the image.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>nx</code> - the width in pixel of the desired matrix</dd>
 <dd><code>ny</code> - the height in pixel of the desired matrix</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the coordinate matrix, as a FloatProcessor, where angles are in radians, and range 
- from -pi to pi</dd>
+<dd>the coordinate matrix, as a FloatProcessor, where angles are in
+         radians, and range from -pi to pi</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../fiji/analyze/directionality/Directionality_.html#makeRMatrix-int-int-"><code>makeRMatrix(int, int)</code></a></dd>
 </dl>
@@ -1369,7 +1402,8 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <li class="blockList">
 <h4>createLUT</h4>
 <pre>protected static final&nbsp;<a href="http://javadoc.imagej.net/Fiji/org/jfree/chart/renderer/LookupPaintScale.html?is-external=true" title="class or interface in org.jfree.chart.renderer">LookupPaintScale</a>&nbsp;createLUT(int&nbsp;ncol)</pre>
-<div class="block">Generate a bluish to greenish to redish LUT for the display of histograms.</div>
+<div class="block">Generate a bluish to greenish to redish LUT for the display of
+ histograms.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ncol</code> - the number of colors in the LUT</dd>

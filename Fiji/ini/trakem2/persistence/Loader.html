@@ -1220,7 +1220,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </tr>
 <tr id="i147" class="rowColor">
 <td class="colFirst"><code><a href="../../../ini/trakem2/utils/Bureaucrat.html" title="class in ini.trakem2.utils">Bureaucrat</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../ini/trakem2/persistence/Loader.html#makePrescaledTiles-ini.trakem2.display.Layer:A-java.lang.Class-java.awt.Rectangle-double-int-int-java.lang.String-boolean-ini.trakem2.utils.Saver-int-">makePrescaledTiles</a></span>(<a href="../../../ini/trakem2/display/Layer.html" title="class in ini.trakem2.display">Layer</a>[]&nbsp;layers,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../ini/trakem2/persistence/Loader.html#makePrescaledTiles-ini.trakem2.display.Layer:A-java.lang.Class-java.awt.Rectangle-double-int-int-java.lang.String-boolean-ini.trakem2.utils.Saver-int-int-boolean-">makePrescaledTiles</a></span>(<a href="../../../ini/trakem2/display/Layer.html" title="class in ini.trakem2.display">Layer</a>[]&nbsp;layers,
                   <a href="http://javadoc.imagej.net/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;clazz,
                   <a href="http://javadoc.imagej.net/Java/java/awt/Rectangle.html?is-external=true" title="class or interface in java.awt">Rectangle</a>&nbsp;srcRect,
                   double&nbsp;max_scale_,
@@ -1229,8 +1229,10 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
                   <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;target_dir,
                   boolean&nbsp;from_original_images,
                   <a href="../../../ini/trakem2/utils/Saver.html" title="class in ini.trakem2.utils">Saver</a>&nbsp;saver,
-                  int&nbsp;tileSide)</code>
-<div class="block">Generate 256x256 tiles, as many as necessary, to cover the given srcRect, starting at max_scale.</div>
+                  int&nbsp;tileSide,
+                  int&nbsp;directory_structure_type,
+                  boolean&nbsp;skip_empty_tiles)</code>
+<div class="block">Generate e.g.</div>
 </td>
 </tr>
 <tr id="i148" class="altColor">
@@ -2958,6 +2960,20 @@ public&nbsp;boolean&nbsp;removeAlphaMask(<a href="../../../ini/trakem2/display/P
                              boolean&nbsp;quality,
                              <a href="http://javadoc.imagej.net/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;background,
                              <a href="../../../ini/trakem2/display/Displayable.html" title="class in ini.trakem2.display">Displayable</a>&nbsp;active)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>layer</code> - The layer from which to collect visible Displayable instances that intersect the srcRect.</dd>
+<dd><code>srcRect_</code> - Rectangle in World coordinates representing the field of view to paint into the image, and defines the width and height of the image together with the scale.</dd>
+<dd><code>scale</code> - Value between 0 and 1.</dd>
+<dd><code>c_alphas</code> - Which color channels to include when painting Patch instances that hold an RGB image.</dd>
+<dd><code>type</code> - Either ImagePlus.GRAY8 or ImagePlus.COLOR_RGB</dd>
+<dd><code>clazz</code> - Include only Displayable instances of this class; use Displayable.class for all.</dd>
+<dd><code>al_displ</code> - List of Displayable instances to include. Use null to include all visible intersected by srcRect.</dd>
+<dd><code>quality</code> - Whether to attempt to create a larger image and then scale it down with area averaging for best quality.</dd>
+<dd><code>background</code> - The color of the areas of the image where no Displayable paints.</dd>
+<dd><code>active</code> - Whether to paint a particular Displayable instance in an active state (as if it was selected in the UI).</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a name="makeFlatImage-int-ini.trakem2.display.Layer-java.awt.Rectangle-double-java.util.ArrayList-java.awt.Color-">
@@ -3005,7 +3021,7 @@ public&nbsp;boolean&nbsp;removeAlphaMask(<a href="../../../ini/trakem2/display/P
                                      boolean&nbsp;from_original_images)</pre>
 </li>
 </ul>
-<a name="makePrescaledTiles-ini.trakem2.display.Layer:A-java.lang.Class-java.awt.Rectangle-double-int-int-java.lang.String-boolean-ini.trakem2.utils.Saver-int-">
+<a name="makePrescaledTiles-ini.trakem2.display.Layer:A-java.lang.Class-java.awt.Rectangle-double-int-int-java.lang.String-boolean-ini.trakem2.utils.Saver-int-int-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -3020,8 +3036,10 @@ public&nbsp;boolean&nbsp;removeAlphaMask(<a href="../../../ini/trakem2/display/P
                                      <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;target_dir,
                                      boolean&nbsp;from_original_images,
                                      <a href="../../../ini/trakem2/utils/Saver.html" title="class in ini.trakem2.utils">Saver</a>&nbsp;saver,
-                                     int&nbsp;tileSide)</pre>
-<div class="block">Generate 256x256 tiles, as many as necessary, to cover the given srcRect, starting at max_scale. Designed to be slow but memory-capable.
+                                     int&nbsp;tileSide,
+                                     int&nbsp;directory_structure_type,
+                                     boolean&nbsp;skip_empty_tiles)</pre>
+<div class="block">Generate e.g. 256x256 tiles, as many as necessary, to cover the given srcRect, starting at max_scale. Designed to be slow but memory-capable.
 
  filename = z + "/" + row + "_" + column + "_" + s + ".jpg";
 

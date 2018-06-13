@@ -186,7 +186,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#checkSettings-java.util.Map-">checkSettings</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#checkSettings-java.util.Map-">checkSettings</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings)</code>
 <div class="block">Check that the given settings map is suitable for target detector.</div>
 </td>
 </tr>
@@ -206,7 +206,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../fiji/plugin/trackmate/gui/ConfigurationPanel.html" title="class in fiji.plugin.trackmate.gui">ConfigurationPanel</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#getDetectorConfigurationPanel-fiji.plugin.trackmate.Settings-fiji.plugin.trackmate.Model-">getDetectorConfigurationPanel</a></span>(<a href="../../../../fiji/plugin/trackmate/Settings.html" title="class in fiji.plugin.trackmate">Settings</a>&nbsp;settings,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#getDetectorConfigurationPanel-fiji.plugin.trackmate.Settings-fiji.plugin.trackmate.Model-">getDetectorConfigurationPanel</a></span>(<a href="../../../../fiji/plugin/trackmate/Settings.html" title="class in fiji.plugin.trackmate">Settings</a>&nbsp;lSettings,
                              <a href="../../../../fiji/plugin/trackmate/Model.html" title="class in fiji.plugin.trackmate">Model</a>&nbsp;model)</code>
 <div class="block">Returns a new GUI panel able to configure the settings suitable for this
  specific detector factory.</div>
@@ -245,7 +245,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#marshall-java.util.Map-org.jdom2.Element-">marshall</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#marshall-java.util.Map-org.jdom2.Element-">marshall</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings,
         org.jdom2.Element&nbsp;element)</code>
 <div class="block">Marshalls a settings map to a JDom element, ready for saving to XML.</div>
 </td>
@@ -265,7 +265,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html#unmarshall-org.jdom2.Element-java.util.Map-">unmarshall</a></span>(org.jdom2.Element&nbsp;element,
-          <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</code>
+          <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings)</code>
 <div class="block">Un-marshalls a JDom element to update a settings map.</div>
 </td>
 </tr>
@@ -482,14 +482,14 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <ul class="blockList">
 <li class="blockList">
 <h4>checkSettings</h4>
-<pre>public&nbsp;boolean&nbsp;checkSettings(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</pre>
+<pre>public&nbsp;boolean&nbsp;checkSettings(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#checkSettings-java.util.Map-">SpotDetectorFactory</a></code></span></div>
 <div class="block">Check that the given settings map is suitable for target detector.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#checkSettings-java.util.Map-">checkSettings</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html" title="interface in fiji.plugin.trackmate.detection">SpotDetectorFactory</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>settings</code> - the map to test.</dd>
+<dd><code>lSettings</code> - the map to test.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the settings map is valid.</dd>
 </dl>
@@ -501,7 +501,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <ul class="blockList">
 <li class="blockList">
 <h4>marshall</h4>
-<pre>public&nbsp;boolean&nbsp;marshall(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings,
+<pre>public&nbsp;boolean&nbsp;marshall(<a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings,
                         org.jdom2.Element&nbsp;element)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#marshall-java.util.Map-org.jdom2.Element-">SpotDetectorFactory</a></code></span></div>
 <div class="block">Marshalls a settings map to a JDom element, ready for saving to XML. The
@@ -527,7 +527,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <li class="blockList">
 <h4>unmarshall</h4>
 <pre>public&nbsp;boolean&nbsp;unmarshall(org.jdom2.Element&nbsp;element,
-                          <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;settings)</pre>
+                          <a href="http://javadoc.imagej.net/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;lSettings)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#unmarshall-org.jdom2.Element-java.util.Map-">SpotDetectorFactory</a></code></span></div>
 <div class="block">Un-marshalls a JDom element to update a settings map.</div>
 <dl>
@@ -535,7 +535,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <dd><code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#unmarshall-org.jdom2.Element-java.util.Map-">unmarshall</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html" title="interface in fiji.plugin.trackmate.detection">SpotDetectorFactory</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>element</code> - the JDom element to read from.</dd>
-<dd><code>settings</code> - the map to update. Is cleared prior to updating, so that it
+<dd><code>lSettings</code> - the map to update. Is cleared prior to updating, so that it
             contains only the parameters specific to the target detector
             factory.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -550,7 +550,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <ul class="blockList">
 <li class="blockList">
 <h4>getDetectorConfigurationPanel</h4>
-<pre>public&nbsp;<a href="../../../../fiji/plugin/trackmate/gui/ConfigurationPanel.html" title="class in fiji.plugin.trackmate.gui">ConfigurationPanel</a>&nbsp;getDetectorConfigurationPanel(<a href="../../../../fiji/plugin/trackmate/Settings.html" title="class in fiji.plugin.trackmate">Settings</a>&nbsp;settings,
+<pre>public&nbsp;<a href="../../../../fiji/plugin/trackmate/gui/ConfigurationPanel.html" title="class in fiji.plugin.trackmate.gui">ConfigurationPanel</a>&nbsp;getDetectorConfigurationPanel(<a href="../../../../fiji/plugin/trackmate/Settings.html" title="class in fiji.plugin.trackmate">Settings</a>&nbsp;lSettings,
                                                         <a href="../../../../fiji/plugin/trackmate/Model.html" title="class in fiji.plugin.trackmate">Model</a>&nbsp;model)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#getDetectorConfigurationPanel-fiji.plugin.trackmate.Settings-fiji.plugin.trackmate.Model-">SpotDetectorFactory</a></code></span></div>
 <div class="block">Returns a new GUI panel able to configure the settings suitable for this
@@ -559,7 +559,7 @@ implements <a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFact
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html#getDetectorConfigurationPanel-fiji.plugin.trackmate.Settings-fiji.plugin.trackmate.Model-">getDetectorConfigurationPanel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../fiji/plugin/trackmate/detection/SpotDetectorFactory.html" title="interface in fiji.plugin.trackmate.detection">SpotDetectorFactory</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a> extends <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt; &amp; <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../../fiji/plugin/trackmate/detection/ManualDetectorFactory.html" title="type parameter in ManualDetectorFactory">T</a>&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>settings</code> - the current settings, used to get info to display on the GUI
+<dd><code>lSettings</code> - the current settings, used to get info to display on the GUI
             panel.</dd>
 <dd><code>model</code> - the current model, used to get info to display on the GUI
             panel.</dd>

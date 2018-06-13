@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":10,"i16":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":10,"i17":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -460,6 +460,12 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 </td>
 </tr>
 <tr id="i12" class="altColor">
+<td class="colFirst"><code>static <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#readImage-java.lang.String-">readImage</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>
+<div class="block">Read image files</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#register-ij.ImagePlus-ij.ImagePlus-ij.ImagePlus-ij.ImagePlus-int-java.lang.String:A-java.lang.String-java.lang.String-java.util.concurrent.ExecutorService-register_virtual_stack.Register_Virtual_Stack_MT.Param-mpicbg.trakem2.transform.CoordinateTransform-java.awt.Rectangle-java.util.List-int-">register</a></span>(<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp1,
         <a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;imp2,
@@ -479,14 +485,14 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
  following the features and registration models.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#regularize-mpicbg.trakem2.transform.CoordinateTransform-int-">regularize</a></span>(<a href="../mpicbg/trakem2/transform/CoordinateTransform.html" title="interface in mpicbg.trakem2.transform">CoordinateTransform</a>&nbsp;t,
           int&nbsp;index)</code>
 <div class="block">Regularize coordinate transform</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#relax-java.util.List:A-mpicbg.trakem2.transform.CoordinateTransform:A-register_virtual_stack.Register_Virtual_Stack_MT.Param-">relax</a></span>(<a href="http://javadoc.imagej.net/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;mpicbg.models.PointMatch&gt;[]&nbsp;inliers,
      <a href="../mpicbg/trakem2/transform/CoordinateTransform.html" title="interface in mpicbg.trakem2.transform">CoordinateTransform</a>[]&nbsp;transform,
@@ -494,13 +500,13 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <div class="block">Relax inliers</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#run-java.lang.String-">run</a></span>(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg)</code>
 <div class="block">Plug-in run method</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../register_virtual_stack/Register_Virtual_Stack_MT.html#showRegularizationDialog-register_virtual_stack.Register_Virtual_Stack_MT.Param-">showRegularizationDialog</a></span>(<a href="../register_virtual_stack/Register_Virtual_Stack_MT.Param.html" title="class in register_virtual_stack">Register_Virtual_Stack_MT.Param</a>&nbsp;p)</code>
 <div class="block">Shows regularization dialog when "Shrinkage constrain" is checked.</div>
@@ -1017,6 +1023,22 @@ implements <a href="http://javadoc.imagej.net/ImageJ1/ij/plugin/PlugIn.html?is-e
 <dd><code>target_dir</code> - Directory to store registered slices into.</dd>
 <dd><code>save_dir</code> - Directory to store transform files into.</dd>
 <dd><code>p</code> - registration parameters.</dd>
+</dl>
+</li>
+</ul>
+<a name="readImage-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readImage</h4>
+<pre>public static&nbsp;<a href="http://javadoc.imagej.net/ImageJ1/ij/ImagePlus.html?is-external=true" title="class or interface in ij">ImagePlus</a>&nbsp;readImage(<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<div class="block">Read image files</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - full path to image</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>read image or null if error</dd>
 </dl>
 </li>
 </ul>

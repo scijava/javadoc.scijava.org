@@ -123,7 +123,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
  http://www.cse.ust.hk/~golin/COMP572/Notes/Matching.pdf
  <p>
  A few definitions: a labeling (AKA potential) of the vertices is a
- real-valued function l such that weight(x, y) &lt;= l(x) + l(y). Those edges
+ real-valued function l such that weight(x, lY) &lt;= l(x) + l(lY). Those edges
  whose weight is equal to the sum of the connected vertices' labelings are
  called <u>tight</u>.
  <p>
@@ -319,11 +319,11 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#alternatingPath-int-">alternatingPath</a></span>(int&nbsp;y)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#alternatingPath-int-">alternatingPath</a></span>(int&nbsp;lY)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#augmentPath-int-">augmentPath</a></span>(int&nbsp;y)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#augmentPath-int-">augmentPath</a></span>(int&nbsp;lY)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
@@ -341,7 +341,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#extendAlternatingTree-int-int-">extendAlternatingTree</a></span>(int&nbsp;y,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#extendAlternatingTree-int-int-">extendAlternatingTree</a></span>(int&nbsp;lY,
                      int&nbsp;z)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
@@ -362,12 +362,12 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#isTight-int-int-">isTight</a></span>(int&nbsp;x,
-       int&nbsp;y)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#isTight-int-int-">isTight</a></span>(int&nbsp;lX,
+       int&nbsp;lY)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#startBreadthFirstSearch-int-">startBreadthFirstSearch</a></span>(int&nbsp;x)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hungarian/MunkresKuhnAlgorithm.html#startBreadthFirstSearch-int-">startBreadthFirstSearch</a></span>(int&nbsp;lX)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>protected int</code></td>
@@ -653,7 +653,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 <ul class="blockList">
 <li class="blockList">
 <h4>startBreadthFirstSearch</h4>
-<pre>protected final&nbsp;void&nbsp;startBreadthFirstSearch(int&nbsp;x)</pre>
+<pre>protected final&nbsp;void&nbsp;startBreadthFirstSearch(int&nbsp;lX)</pre>
 </li>
 </ul>
 <a name="findY--">
@@ -671,8 +671,8 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 <ul class="blockList">
 <li class="blockList">
 <h4>isTight</h4>
-<pre>protected final&nbsp;boolean&nbsp;isTight(int&nbsp;x,
-                                int&nbsp;y)</pre>
+<pre>protected final&nbsp;boolean&nbsp;isTight(int&nbsp;lX,
+                                int&nbsp;lY)</pre>
 </li>
 </ul>
 <a name="updateLabels--">
@@ -690,7 +690,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 <ul class="blockList">
 <li class="blockList">
 <h4>augmentPath</h4>
-<pre>protected final&nbsp;void&nbsp;augmentPath(int&nbsp;y)</pre>
+<pre>protected final&nbsp;void&nbsp;augmentPath(int&nbsp;lY)</pre>
 </li>
 </ul>
 <a name="extendAlternatingTree-int-int-">
@@ -699,7 +699,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 <ul class="blockList">
 <li class="blockList">
 <h4>extendAlternatingTree</h4>
-<pre>protected final&nbsp;void&nbsp;extendAlternatingTree(int&nbsp;y,
+<pre>protected final&nbsp;void&nbsp;extendAlternatingTree(int&nbsp;lY,
                                            int&nbsp;z)</pre>
 </li>
 </ul>
@@ -736,7 +736,7 @@ implements <a href="../../../../../../fiji/plugin/trackmate/tracking/oldlap/hung
 <ul class="blockListLast">
 <li class="blockList">
 <h4>alternatingPath</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alternatingPath(int&nbsp;y)</pre>
+<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alternatingPath(int&nbsp;lY)</pre>
 </li>
 </ul>
 </li>
