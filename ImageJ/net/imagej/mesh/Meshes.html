@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -154,12 +154,19 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Meshes.html#boundingBox-net.imagej.mesh.Mesh-">boundingBox</a></span>(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;mesh)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Meshes.html#calculateNormals-net.imagej.mesh.Mesh-net.imagej.mesh.Mesh-">calculateNormals</a></span>(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;src,
+                <a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;dest)</code>
+<div class="block">Calculates the normals for a mesh.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/RealPoint.html?is-external=true" title="class or interface in net.imglib2">RealPoint</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Meshes.html#center-net.imagej.mesh.Mesh-">center</a></span>(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;m)</code>
 <div class="block">Finds the center of a mesh using vertices.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Meshes.html#copy-net.imagej.mesh.Mesh-net.imagej.mesh.Mesh-">copy</a></span>(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;src,
     <a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;dest)</code>
@@ -231,7 +238,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <a name="copy-net.imagej.mesh.Mesh-net.imagej.mesh.Mesh-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
 <pre>public static&nbsp;void&nbsp;copy(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;src,
@@ -241,6 +248,22 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>src</code> - Source mesh, from which data will be copied.</dd>
 <dd><code>dest</code> - Destination mesh, into which source will be copied.</dd>
+</dl>
+</li>
+</ul>
+<a name="calculateNormals-net.imagej.mesh.Mesh-net.imagej.mesh.Mesh-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>calculateNormals</h4>
+<pre>public static&nbsp;void&nbsp;calculateNormals(<a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;src,
+                                    <a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh">Mesh</a>&nbsp;dest)</pre>
+<div class="block">Calculates the normals for a mesh. Creates a new mesh with the calculated normals. Assumes CCW winding order.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>src</code> - Source mesh, used for vertex and triangle info</dd>
+<dd><code>dest</code> - Destination mesh, will be populated with src's info plus the calculated normals</dd>
 </dl>
 </li>
 </ul>
