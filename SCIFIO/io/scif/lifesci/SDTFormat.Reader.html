@@ -201,11 +201,10 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/lifesci/SDTFormat.Reader.html#openPlane-int-long-io.scif.ByteArrayPlane-long:A-long:A-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/lifesci/SDTFormat.Reader.html#openPlane-int-long-io.scif.ByteArrayPlane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
          <a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;plane,
-         long[]&nbsp;planeMin,
-         long[]&nbsp;planeMax,
+         <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
          <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
 </tr>
 </table>
@@ -271,13 +270,6 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.io.scif.TypedReader">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;io.scif.<a href="../../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a></h3>
-<code><a href="../../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.HasFormat">
@@ -389,7 +381,7 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 </dl>
 </li>
 </ul>
-<a name="openPlane-int-long-io.scif.ByteArrayPlane-long:A-long:A-io.scif.config.SCIFIOConfig-">
+<a name="openPlane-int-long-io.scif.ByteArrayPlane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -398,8 +390,7 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <pre>public&nbsp;<a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;openPlane(int&nbsp;imageIndex,
                                 long&nbsp;planeIndex,
                                 <a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;plane,
-                                long[]&nbsp;planeMin,
-                                long[]&nbsp;planeMax,
+                                <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;bounds,
                                 <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                          throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                                 <a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -407,6 +398,8 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="http://javadoc.imagej.net/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-"><code>TypedReader.openPlane(int, long, DataPlane, Interval)</code></a></dd>
 </dl>
 </li>
 </ul>
