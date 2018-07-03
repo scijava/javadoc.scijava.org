@@ -95,7 +95,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>bdv.viewer.render.MultiResolutionRenderer</li>
@@ -108,20 +108,20 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">MultiResolutionRenderer</span>
-extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
-<div class="block">A <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/Renderer.html?is-external=true" title="class or interface in net.imglib2.ui"><code>Renderer</code></a> that uses a coarse-to-fine rendering scheme. First, a
- small <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> at a fraction of the canvas resolution is
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A <code>Renderer</code> that uses a coarse-to-fine rendering scheme. First, a
+ small <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> at a fraction of the canvas resolution is
  rendered. Then, increasingly larger images are rendered, until the full
  canvas resolution is reached.
  <p>
- When drawing the low-resolution <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to the screen, they
+ When drawing the low-resolution <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to the screen, they
  will be scaled up by Java2D to the full canvas size, which is relatively
  fast. Rendering the small, low-resolution images is usually very fast, such
  that the display is very interactive while the user changes the viewing
  transformation for example. When the transformation remains fixed for a
  longer period, higher-resolution details are filled in successively.
  <p>
- The renderer allocates a <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> for each of a predefined set
+ The renderer allocates a <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> for each of a predefined set
  of <em>screen scales</em> (a screen scale of 1 means that 1 pixel in the
  screen image is displayed as 1 pixel on the canvas, a screen scale of 0.5
  means 1 pixel in the screen image is displayed as 2 pixel on the canvas,
@@ -145,17 +145,17 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
  The renderer uses multiple threads (if desired) and double-buffering (if
  desired).
  <p>
- Double buffering means that three <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> are
+ Double buffering means that three <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> are
  created for every screen scale. After rendering the first one of them and
- setting it to the <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui"><code>RenderTarget</code></a>, next time, rendering goes to the
- second one, then to the third. The <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui"><code>RenderTarget</code></a> will always have a
+ setting it to the <code>RenderTarget</code>, next time, rendering goes to the
+ second one, then to the third. The <code>RenderTarget</code> will always have a
  complete image, which is not rendered to while it is potentially drawn to the
- screen. When setting an image to the <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui"><code>RenderTarget</code></a>, the
- <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui"><code>RenderTarget</code></a> will release one of the previously set images to be
+ screen. When setting an image to the <code>RenderTarget</code>, the
+ <code>RenderTarget</code> will release one of the previously set images to be
  rendered again. Thus, rendering will not interfere with painting the
- <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to the canvas.
+ <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to the canvas.
  <p>
- The renderer supports rendering of <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2"><code>Volatile</code></a> sources. In each
+ The renderer supports rendering of <code>Volatile</code> sources. In each
  rendering pass, all currently valid data for the best fitting mipmap level
  and all coarser levels is rendered to a <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#renderImages"><code>temporary image</code></a>
  for each visible source. Then the temporary images are combined to the final
@@ -186,21 +186,21 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ARGBType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ARGBType</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;net.imglib2.type.numeric.ARGBType&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#accumulateProjectorFactory">accumulateProjectorFactory</a></span></code>
 <div class="block">TODO</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[][]</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[][]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#bufferedImages">bufferedImages</a></span></code>
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a>s wrapping the data in the <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screenImages</code></a>.</div>
+<div class="block"><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a>s wrapping the data in the <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screenImages</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#bufferedImageToRenderId">bufferedImageToRenderId</a></span></code>
-<div class="block">Maps from <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to double-buffer index.</div>
+<div class="block">Maps from <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to double-buffer index.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -210,7 +210,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colFirst"><code>protected net.imglib2.realtransform.AffineTransform3D</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#currentProjectorTransform">currentProjectorTransform</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -222,7 +222,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../bdv/viewer/render/TransformAwareRenderTarget.html" title="interface in bdv.viewer.render">TransformAwareRenderTarget</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#display">display</a></span></code>
-<div class="block">Receiver for the <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> that we render.</div>
+<div class="block">Receiver for the <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> that we render.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -254,7 +254,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/PainterThread.html?is-external=true" title="class or interface in net.imglib2.ui">PainterThread</a></code></td>
+<td class="colFirst"><code>protected net.imglib2.ui.PainterThread</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#painterThread">painterThread</a></span></code>
 <div class="block">Thread that triggers repainting of the display.</div>
 </td>
@@ -277,21 +277,21 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">ArrayDeque</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">ArrayDeque</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#renderIdQueue">renderIdQueue</a></span></code>
 <div class="block">Double-buffer index of next <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>image</code></a> to render.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/screenimage/awt/ARGBScreenImage.html?is-external=true" title="class or interface in net.imglib2.display.screenimage.awt">ARGBScreenImage</a>[][]</code></td>
+<td class="colFirst"><code>protected net.imglib2.display.screenimage.awt.ARGBScreenImage[][]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#renderImages">renderImages</a></span></code>
 <div class="block">Used to render an individual source.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#renderingExecutorService">renderingExecutorService</a></span></code>
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> used for rendering.</div>
+<div class="block"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> used for rendering.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -314,7 +314,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/screenimage/awt/ARGBScreenImage.html?is-external=true" title="class or interface in net.imglib2.display.screenimage.awt">ARGBScreenImage</a>[][]</code></td>
+<td class="colFirst"><code>protected net.imglib2.display.screenimage.awt.ARGBScreenImage[][]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages">screenImages</a></span></code>
 <div class="block">Used to render the image for display.</div>
 </td>
@@ -327,7 +327,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>[]</code></td>
+<td class="colFirst"><code>protected net.imglib2.realtransform.AffineTransform3D[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenScaleTransforms">screenScaleTransforms</a></span></code>
 <div class="block">The scale transformation from viewer to <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screen
  image</code></a>.</div>
@@ -362,15 +362,15 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#MultiResolutionRenderer-net.imglib2.ui.RenderTarget-net.imglib2.ui.PainterThread-double:A-long-boolean-int-java.util.concurrent.ExecutorService-boolean-bdv.viewer.render.AccumulateProjectorFactory-bdv.cache.CacheControl-">MultiResolutionRenderer</a></span>(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui">RenderTarget</a>&nbsp;display,
-                       <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/PainterThread.html?is-external=true" title="class or interface in net.imglib2.ui">PainterThread</a>&nbsp;painterThread,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#MultiResolutionRenderer-net.imglib2.ui.RenderTarget-net.imglib2.ui.PainterThread-double:A-long-boolean-int-java.util.concurrent.ExecutorService-boolean-bdv.viewer.render.AccumulateProjectorFactory-bdv.cache.CacheControl-">MultiResolutionRenderer</a></span>(net.imglib2.ui.RenderTarget&nbsp;display,
+                       net.imglib2.ui.PainterThread&nbsp;painterThread,
                        double[]&nbsp;screenScales,
                        long&nbsp;targetRenderNanos,
                        boolean&nbsp;doubleBuffered,
                        int&nbsp;numRenderingThreads,
-                       <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;renderingExecutorService,
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;renderingExecutorService,
                        boolean&nbsp;useVolatileIfAvailable,
-                       <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ARGBType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ARGBType</a>&gt;&nbsp;accumulateProjectorFactory,
+                       <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;net.imglib2.type.numeric.ARGBType&gt;&nbsp;accumulateProjectorFactory,
                        <a href="../../../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a>&nbsp;cacheControl)</code>&nbsp;</td>
 </tr>
 </table>
@@ -434,8 +434,8 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -458,7 +458,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <li class="blockList">
 <h4>display</h4>
 <pre>protected final&nbsp;<a href="../../../bdv/viewer/render/TransformAwareRenderTarget.html" title="interface in bdv.viewer.render">TransformAwareRenderTarget</a> display</pre>
-<div class="block">Receiver for the <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> that we render.</div>
+<div class="block">Receiver for the <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImages</code></a> that we render.</div>
 </li>
 </ul>
 <a name="painterThread">
@@ -467,7 +467,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>painterThread</h4>
-<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/PainterThread.html?is-external=true" title="class or interface in net.imglib2.ui">PainterThread</a> painterThread</pre>
+<pre>protected final&nbsp;net.imglib2.ui.PainterThread painterThread</pre>
 <div class="block">Thread that triggers repainting of the display.
  Requests for repainting are send there.</div>
 </li>
@@ -509,7 +509,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>renderIdQueue</h4>
-<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">ArrayDeque</a>&lt;<a href="http://javadoc.imagej.net/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; renderIdQueue</pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html?is-external=true" title="class or interface in java.util">ArrayDeque</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; renderIdQueue</pre>
 <div class="block">Double-buffer index of next <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>image</code></a> to render.</div>
 </li>
 </ul>
@@ -519,8 +519,8 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>bufferedImageToRenderId</h4>
-<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>,<a href="http://javadoc.imagej.net/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; bufferedImageToRenderId</pre>
-<div class="block">Maps from <a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to double-buffer index.
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; bufferedImageToRenderId</pre>
+<div class="block">Maps from <a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a> to double-buffer index.
  Needed for double-buffering.</div>
 </li>
 </ul>
@@ -530,7 +530,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>renderImages</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/screenimage/awt/ARGBScreenImage.html?is-external=true" title="class or interface in net.imglib2.display.screenimage.awt">ARGBScreenImage</a>[][] renderImages</pre>
+<pre>protected&nbsp;net.imglib2.display.screenimage.awt.ARGBScreenImage[][] renderImages</pre>
 <div class="block">Used to render an individual source. One image per screen resolution and
  visible source. First index is screen scale, second index is index in
  list of visible sources.</div>
@@ -553,7 +553,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>screenImages</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/display/screenimage/awt/ARGBScreenImage.html?is-external=true" title="class or interface in net.imglib2.display.screenimage.awt">ARGBScreenImage</a>[][] screenImages</pre>
+<pre>protected&nbsp;net.imglib2.display.screenimage.awt.ARGBScreenImage[][] screenImages</pre>
 <div class="block">Used to render the image for display. Three images per screen resolution
  if double buffering is enabled. First index is screen scale, second index
  is double-buffer.</div>
@@ -565,8 +565,8 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>bufferedImages</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[][] bufferedImages</pre>
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a>s wrapping the data in the <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screenImages</code></a>.
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a>[][] bufferedImages</pre>
+<div class="block"><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image"><code>BufferedImage</code></a>s wrapping the data in the <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screenImages</code></a>.
  First index is screen scale, second index is double-buffer.</div>
 </li>
 </ul>
@@ -591,7 +591,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>screenScaleTransforms</h4>
-<pre>protected&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>[] screenScaleTransforms</pre>
+<pre>protected&nbsp;net.imglib2.realtransform.AffineTransform3D[] screenScaleTransforms</pre>
 <div class="block">The scale transformation from viewer to <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenImages"><code>screen
  image</code></a>. Each transformations corresponds to a <a href="../../../bdv/viewer/render/MultiResolutionRenderer.html#screenScales"><code>screen
  scale</code></a>.</div>
@@ -665,8 +665,8 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>renderingExecutorService</h4>
-<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a> renderingExecutorService</pre>
-<div class="block"><a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> used for rendering.</div>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a> renderingExecutorService</pre>
+<div class="block"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a> used for rendering.</div>
 </li>
 </ul>
 <a name="accumulateProjectorFactory">
@@ -675,7 +675,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockList">
 <li class="blockList">
 <h4>accumulateProjectorFactory</h4>
-<pre>protected final&nbsp;<a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ARGBType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ARGBType</a>&gt; accumulateProjectorFactory</pre>
+<pre>protected final&nbsp;<a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;net.imglib2.type.numeric.ARGBType&gt; accumulateProjectorFactory</pre>
 <div class="block">TODO</div>
 </li>
 </ul>
@@ -745,7 +745,7 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>currentProjectorTransform</h4>
-<pre>protected final&nbsp;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> currentProjectorTransform</pre>
+<pre>protected final&nbsp;net.imglib2.realtransform.AffineTransform3D currentProjectorTransform</pre>
 </li>
 </ul>
 </li>
@@ -762,15 +762,15 @@ extends <a href="http://javadoc.imagej.net/Java/java/lang/Object.html?is-externa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MultiResolutionRenderer</h4>
-<pre>public&nbsp;MultiResolutionRenderer(<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/RenderTarget.html?is-external=true" title="class or interface in net.imglib2.ui">RenderTarget</a>&nbsp;display,
-                               <a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/ui/PainterThread.html?is-external=true" title="class or interface in net.imglib2.ui">PainterThread</a>&nbsp;painterThread,
+<pre>public&nbsp;MultiResolutionRenderer(net.imglib2.ui.RenderTarget&nbsp;display,
+                               net.imglib2.ui.PainterThread&nbsp;painterThread,
                                double[]&nbsp;screenScales,
                                long&nbsp;targetRenderNanos,
                                boolean&nbsp;doubleBuffered,
                                int&nbsp;numRenderingThreads,
-                               <a href="http://javadoc.imagej.net/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;renderingExecutorService,
+                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;renderingExecutorService,
                                boolean&nbsp;useVolatileIfAvailable,
-                               <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;<a href="http://javadoc.imagej.net/ImgLib2/net/imglib2/type/numeric/ARGBType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">ARGBType</a>&gt;&nbsp;accumulateProjectorFactory,
+                               <a href="../../../bdv/viewer/render/AccumulateProjectorFactory.html" title="interface in bdv.viewer.render">AccumulateProjectorFactory</a>&lt;net.imglib2.type.numeric.ARGBType&gt;&nbsp;accumulateProjectorFactory,
                                <a href="../../../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a>&nbsp;cacheControl)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
