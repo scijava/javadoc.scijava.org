@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RotateAboutAxis (BoneJ Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="RotateAboutAxis (BoneJ Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/bonej/ops/CentroidLinAlg3d.html" title="class in org.bonej.ops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/bonej/ops/SolveQuadricEq.html" title="class in org.bonej.ops"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/bonej/ops/RotateAboutAxis.html" target="_top">Frames</a></li>
+<li><a href="RotateAboutAxis.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.bonej.ops</div>
+<h2 title="Class RotateAboutAxis" class="title">Class RotateAboutAxis</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.AbstractOp</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.special.AbstractUnaryOp&lt;I1,O&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.special.AbstractBinaryOp&lt;I1,I2,O&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.special.hybrid.AbstractBinaryHybridC&lt;I1,I2,O&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.special.hybrid.AbstractBinaryHybridCF&lt;I1,I2,O&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imagej.ops.special.hybrid.AbstractBinaryHybridCFI1&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.bonej.ops.RotateAboutAxis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, net.imagej.ops.Environmental, net.imagej.ops.Initializable, net.imagej.ops.Op, net.imagej.ops.special.BinaryInput&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d&gt;, net.imagej.ops.special.BinaryOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.BinaryOutputFactory&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.computer.BinaryComputerOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.computer.NullaryComputerOp&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.computer.UnaryComputerOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.function.BinaryFunctionOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.function.NullaryFunctionOp&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.function.UnaryFunctionOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.BinaryHybridCF&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.BinaryHybridCFI1&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.BinaryHybridCI1&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.NullaryHybridCF&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.UnaryHybridCF&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.UnaryHybridCFI&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.hybrid.UnaryHybridCI&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.inplace.BinaryInplace1Op&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.inplace.UnaryInplaceOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.NullaryOp&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.NullaryOutputFactory&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.Output&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.OutputMutable&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.SpecialOp, net.imagej.ops.special.UnaryInput&lt;org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.UnaryOp&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.special.UnaryOutputFactory&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.Tuple3d&gt;, net.imagej.ops.Threadable, org.scijava.command.Command, org.scijava.plugin.SciJavaPlugin</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">RotateAboutAxis</span>
+extends net.imagej.ops.special.hybrid.AbstractBinaryHybridCFI1&lt;org.scijava.vecmath.Tuple3d,org.scijava.vecmath.AxisAngle4d,org.scijava.vecmath.Tuple3d&gt;</pre>
+<div class="block">Rotates a tuple i.e. a vector or a point around an axis.
+ <p>
+ The rotations are done by quaternions so there's no risk of gimbal lock as
+ with rotation matrices.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Richard Domander</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>AxisAngle4d</code></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.net.imagej.ops.special.SpecialOp">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;net.imagej.ops.special.SpecialOp</h3>
+<code>net.imagej.ops.special.SpecialOp.Flavor</code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../org/bonej/ops/RotateAboutAxis.html#RotateAboutAxis--">RotateAboutAxis</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/bonej/ops/RotateAboutAxis.html#compute-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-org.scijava.vecmath.Tuple3d-">compute</a></span>(org.scijava.vecmath.Tuple3d&nbsp;input,
+       org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle,
+       org.scijava.vecmath.Tuple3d&nbsp;output)</code>
+<div class="block">Rotates the input tuple around the axis-angle and stores the result in the
+ output.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>org.scijava.vecmath.Vector3d</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/bonej/ops/RotateAboutAxis.html#createOutput-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-">createOutput</a></span>(org.scijava.vecmath.Tuple3d&nbsp;input,
+            org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle)</code>
+<div class="block">Initialises the output vector by calling the copy constructor with the
+ input.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/bonej/ops/RotateAboutAxis.html#mutate1-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-">mutate1</a></span>(org.scijava.vecmath.Tuple3d&nbsp;v,
+       org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle)</code>
+<div class="block">Rotates the tuple and stores the result in the given object.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static org.scijava.vecmath.AxisAngle4d</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../org/bonej/ops/RotateAboutAxis.html#randomAxisAngle--">randomAxisAngle</a></span>()</code>
+<div class="block">Creates <code>AxisAngle4d</code> from random isotropically distributed
+ quaternions.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.AbstractBinaryHybridC">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imagej.ops.special.hybrid.AbstractBinaryHybridC</h3>
+<code>in1, in2, out, setInput1, setInput2, setOutput</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.AbstractOp">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imagej.ops.AbstractOp</h3>
+<code>ops, setEnvironment</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.BinaryHybridCFI1">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.hybrid.BinaryHybridCFI1</h3>
+<code>getIndependentInstance, mutate, run, run</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.BinaryHybridCF">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.hybrid.BinaryHybridCF</h3>
+<code>calculate, calculate, createOutput</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.BinaryComputerOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.computer.BinaryComputerOp</h3>
+<code>compute</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.inplace.BinaryInplace1Op">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.inplace.BinaryInplace1Op</h3>
+<code>in, in1</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.BinaryOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.BinaryOp</h3>
+<code>getArity</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.BinaryInput">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.BinaryInput</h3>
+<code>in2, setInput, setInput1, setInput2</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.UnaryHybridCFI">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.hybrid.UnaryHybridCFI</h3>
+<code>run, run</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.UnaryHybridCF">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.hybrid.UnaryHybridCF</h3>
+<code>calculate, createOutput</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.UnaryComputerOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.computer.UnaryComputerOp</h3>
+<code>compute</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.OutputMutable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.OutputMutable</h3>
+<code>setOutput</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.SpecialOp">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.SpecialOp</h3>
+<code>candidates, filterArity, op</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Environmental">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.Environmental</h3>
+<code>ops, setEnvironment</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Initializable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.Initializable</h3>
+<code>initialize</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.Output">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imagej.ops.special.Output</h3>
+<code>out</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RotateAboutAxis--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RotateAboutAxis</h4>
+<pre>public&nbsp;RotateAboutAxis()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="compute-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-org.scijava.vecmath.Tuple3d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compute</h4>
+<pre>public&nbsp;void&nbsp;compute(org.scijava.vecmath.Tuple3d&nbsp;input,
+                    org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle,
+                    org.scijava.vecmath.Tuple3d&nbsp;output)</pre>
+<div class="block">Rotates the input tuple around the axis-angle and stores the result in the
+ output.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - input tuple.</dd>
+<dd><code>axisAngle</code> - the rotation axis and angle.</dd>
+<dd><code>output</code> - the input tuple rotated.</dd>
+</dl>
+</li>
+</ul>
+<a name="createOutput-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createOutput</h4>
+<pre>public&nbsp;org.scijava.vecmath.Vector3d&nbsp;createOutput(org.scijava.vecmath.Tuple3d&nbsp;input,
+                                                 org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle)</pre>
+<div class="block">Initialises the output vector by calling the copy constructor with the
+ input.</div>
+</li>
+</ul>
+<a name="mutate1-org.scijava.vecmath.Tuple3d-org.scijava.vecmath.AxisAngle4d-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mutate1</h4>
+<pre>public&nbsp;void&nbsp;mutate1(org.scijava.vecmath.Tuple3d&nbsp;v,
+                    org.scijava.vecmath.AxisAngle4d&nbsp;axisAngle)</pre>
+<div class="block">Rotates the tuple and stores the result in the given object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>v</code> - the input and output tuple.</dd>
+<dd><code>axisAngle</code> - the rotation axis and angle.</dd>
+</dl>
+</li>
+</ul>
+<a name="randomAxisAngle--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>randomAxisAngle</h4>
+<pre>public static&nbsp;org.scijava.vecmath.AxisAngle4d&nbsp;randomAxisAngle()</pre>
+<div class="block">Creates <code>AxisAngle4d</code> from random isotropically distributed
+ quaternions.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an axis-angle which can be used as a parameter for the op.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/bonej/ops/CentroidLinAlg3d.html" title="class in org.bonej.ops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/bonej/ops/SolveQuadricEq.html" title="class in org.bonej.ops"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/bonej/ops/RotateAboutAxis.html" target="_top">Frames</a></li>
+<li><a href="RotateAboutAxis.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2018 <a href="https://imagej.net/BoneJ/">BoneJ</a>. All rights reserved.</small></p>
+</body>
+</html>
