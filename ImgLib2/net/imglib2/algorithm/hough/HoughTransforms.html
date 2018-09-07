@@ -1,0 +1,703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HoughTransforms (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="HoughTransforms (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/hough/HoughTransforms.html" target="_top">Frames</a></li>
+<li><a href="HoughTransforms.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.hough</div>
+<h2 title="Class HoughTransforms" class="title">Class HoughTransforms&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.hough.HoughTransforms&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the data type of the input image.</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">HoughTransforms&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;</span>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">This class provides static methods used to detect imperfect shapes in
+ two-dimensional images through the use of the Hough Transform.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Larry Lindsey, Yili Zhao, Gabe Selzer</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#DEFAULT_THETA">DEFAULT_THETA</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#HoughTransforms--">HoughTransforms</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getIntercept-long-long-">getIntercept</a></span>(long&nbsp;rho,
+            long&nbsp;theta)</code>
+<div class="block">Method used to convert the {rho, theta} output of the
+ <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-"><code>voteLines(net.imglib2.RandomAccessibleInterval&lt;T&gt;, net.imglib2.RandomAccessibleInterval&lt;U&gt;)</code></a> algorithm into a more useful
+ y-intercept value.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getSlope-long-">getSlope</a></span>(long&nbsp;theta)</code>
+<div class="block">Method used to convert the {rho, theta} output of the
+ <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-"><code>voteLines(net.imglib2.RandomAccessibleInterval&lt;T&gt;, net.imglib2.RandomAccessibleInterval&lt;U&gt;)</code></a> algorithm into a more useful slope
+ value.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getVotespaceSize-net.imglib2.Dimensions-">getVotespaceSize</a></span>(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions)</code>
+<div class="block">Returns the size of the vote space output image given an input
+ <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getVotespaceSize-net.imglib2.Dimensions-int-">getVotespaceSize</a></span>(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions,
+                int&nbsp;nTheta)</code>
+<div class="block">Returns the size of the vote space output image given an input
+ <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static long[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getVotespaceSize-int-int-">getVotespaceSize</a></span>(int&nbsp;nRho,
+                int&nbsp;nTheta)</code>
+<div class="block">Returns the size of the voteSpace output image given desired <code>nRho</code>
+ and <code>nTheta</code> values.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;T&gt;&gt;<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/Point.html" title="class in net.imglib2">Point</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#pickLinePeaks-net.imglib2.RandomAccessibleInterval-long-">pickLinePeaks</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;voteSpace,
+             long&nbsp;threshold)</code>
+<div class="block">Pick vote space peaks with a <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html" title="class in net.imglib2.algorithm.localextrema"><code>LocalExtrema</code></a>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/Point.html" title="class in net.imglib2">Point</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#pickLinePeaks-net.imglib2.RandomAccessibleInterval-T-">pickLinePeaks</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;voteSpace,
+             T&nbsp;minPeak)</code>
+<div class="block">Pick vote space peaks with a <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html" title="class in net.imglib2.algorithm.localextrema"><code>LocalExtrema</code></a>.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">voteLines</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace)</code>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-">voteLines</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+         int&nbsp;nTheta)</code>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-">voteLines</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+         int&nbsp;nTheta,
+         int&nbsp;nRho)</code>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static &lt;T,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-java.util.function.Predicate-">voteLines</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+         int&nbsp;nTheta,
+         int&nbsp;nRho,
+         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;T&gt;&nbsp;filter)</code>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-T-">voteLines</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+         int&nbsp;nTheta,
+         int&nbsp;nRho,
+         T&nbsp;threshold)</code>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_THETA">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DEFAULT_THETA</h4>
+<pre>public static final&nbsp;int DEFAULT_THETA</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#net.imglib2.algorithm.hough.HoughTransforms.DEFAULT_THETA">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="HoughTransforms--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>HoughTransforms</h4>
+<pre>public&nbsp;HoughTransforms()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getVotespaceSize-net.imglib2.Dimensions-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVotespaceSize</h4>
+<pre>public static&nbsp;long[]&nbsp;getVotespaceSize(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions)</pre>
+<div class="block">Returns the size of the vote space output image given an input
+ <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dimensions</code> - - the <a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2"><code>Dimensions</code></a> over which the Hough Line Transform
+            will be run</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>long[]</code> - the dimensions of the vote space image</dd>
+</dl>
+</li>
+</ul>
+<a name="getVotespaceSize-net.imglib2.Dimensions-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVotespaceSize</h4>
+<pre>public static&nbsp;long[]&nbsp;getVotespaceSize(<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>&nbsp;dimensions,
+                                      int&nbsp;nTheta)</pre>
+<div class="block">Returns the size of the vote space output image given an input
+ <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dimensions</code> - - the <a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2"><code>Dimensions</code></a> over which the Hough Line Transform
+            will be run</dd>
+<dd><code>nTheta</code> - - the number of theta bins.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>long[]</code> - the dimensions of the vote space image</dd>
+</dl>
+</li>
+</ul>
+<a name="getVotespaceSize-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVotespaceSize</h4>
+<pre>public static&nbsp;long[]&nbsp;getVotespaceSize(int&nbsp;nRho,
+                                      int&nbsp;nTheta)</pre>
+<div class="block">Returns the size of the voteSpace output image given desired <code>nRho</code>
+ and <code>nTheta</code> values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>nRho</code> - - the number of bins for rho resolution</dd>
+<dd><code>nTheta</code> - - the number of bins for theta resolution</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>long[]</code> - the dimensions of the vote space image.</dd>
+</dl>
+</li>
+</ul>
+<a name="pickLinePeaks-net.imglib2.RandomAccessibleInterval-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pickLinePeaks</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;T&gt;&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/Point.html" title="class in net.imglib2">Point</a>&gt;&nbsp;pickLinePeaks(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;voteSpace,
+                                                                   long&nbsp;threshold)</pre>
+<div class="block">Pick vote space peaks with a <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html" title="class in net.imglib2.algorithm.localextrema"><code>LocalExtrema</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>voteSpace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> containing the output
+            of a Hough Transform vote</dd>
+<dd><code>threshold</code> - - the <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric"><code>IntegerType</code></a> at and below which maxima will be
+            ignored</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>List&lt;Point&gt;</code> - a list of all of the local maxima of the
+         <code>voteSpace</code></dd>
+</dl>
+</li>
+</ul>
+<a name="pickLinePeaks-net.imglib2.RandomAccessibleInterval-java.lang.Comparable-">
+<!--   -->
+</a><a name="pickLinePeaks-net.imglib2.RandomAccessibleInterval-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pickLinePeaks</h4>
+<pre>public static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../net/imglib2/Point.html" title="class in net.imglib2">Point</a>&gt;&nbsp;pickLinePeaks(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;voteSpace,
+                                                                  T&nbsp;minPeak)</pre>
+<div class="block">Pick vote space peaks with a <a href="../../../../net/imglib2/algorithm/localextrema/LocalExtrema.html" title="class in net.imglib2.algorithm.localextrema"><code>LocalExtrema</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>voteSpace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> containing the output
+            of a Hough Transform vote</dd>
+<dd><code>minPeak</code> - - the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang"><code>Comparable</code></a> at and below which maxima will be
+            ignored</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>List&lt;Point&gt;</code> - a list of all of the local maxima of the
+         <code>voteSpace</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voteLines</h4>
+<pre>public static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;&nbsp;void&nbsp;voteLines(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+                                                                                <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace)</pre>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to run the Hough Line
+            Transform over</dd>
+<dd><code>votespace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> in which the results
+            are stored</dd>
+</dl>
+</li>
+</ul>
+<a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voteLines</h4>
+<pre>public static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;&nbsp;void&nbsp;voteLines(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+                                                                                <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+                                                                                int&nbsp;nTheta)</pre>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to run the Hough Line
+            Transform over</dd>
+<dd><code>votespace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> in which the results
+            are stored</dd>
+<dd><code>nTheta</code> - - the number of bins for theta resolution</dd>
+</dl>
+</li>
+</ul>
+<a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voteLines</h4>
+<pre>public static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;&nbsp;void&nbsp;voteLines(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+                                                                                <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+                                                                                int&nbsp;nTheta,
+                                                                                int&nbsp;nRho)</pre>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to run the Hough Line
+            Transform over</dd>
+<dd><code>votespace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> in which the results
+            are stored</dd>
+<dd><code>nTheta</code> - - the number of bins for theta resolution</dd>
+<dd><code>nRho</code> - - the number of bins for rho resolution</dd>
+</dl>
+</li>
+</ul>
+<a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-java.lang.Comparable-">
+<!--   -->
+</a><a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voteLines</h4>
+<pre>public static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;&nbsp;void&nbsp;voteLines(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+                                                                                <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+                                                                                int&nbsp;nTheta,
+                                                                                int&nbsp;nRho,
+                                                                                T&nbsp;threshold)</pre>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to run the Hough Line
+            Transform over</dd>
+<dd><code>votespace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> in which the results
+            are stored</dd>
+<dd><code>nTheta</code> - - the number of bins for theta resolution</dd>
+<dd><code>nRho</code> - - the number of bins for rho resolution</dd>
+<dd><code>threshold</code> - - the minimum value allowed by the populator. Any input less
+            than this value will be disregarded by the populator.</dd>
+</dl>
+</li>
+</ul>
+<a name="voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-int-int-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voteLines</h4>
+<pre>public static&nbsp;&lt;T,U extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;U&gt;&gt;&nbsp;void&nbsp;voteLines(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;input,
+                                                          <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;U&gt;&nbsp;votespace,
+                                                          int&nbsp;nTheta,
+                                                          int&nbsp;nRho,
+                                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;T&gt;&nbsp;filter)</pre>
+<div class="block">Runs a Hough Line Tranform on an image and populates the vote space
+ parameter with the results.
+ <p>
+ Vote space here has two dimensions: <code>rho</code> and <code>theta</code>.
+ <code>theta</code> is measured in radians <code>[-pi/2 pi/2)</code>, <code>rho</code> is
+ measured in <code>[-rhoMax, rhoMax)</code>.
+ </p>
+ <p>
+ Lines are modeled as
+ </p>
+
+ <pre>
+ l(t) = | x | = rho * |  cos(theta) | + t * | sin(theta) |
+        | y |         | -sin(theta) |       | cos(theta) |
+ </pre>
+ <p>
+ In other words, <code>rho</code> represents the signed minimum distance from
+ the image origin to the line, and <code>theta</code> indicates the angle
+ between the row-axis and the minimum offset vector.
+ </p>
+ <p>
+ For a given point, then, votes are placed along the curve
+ </p>
+
+ <pre>
+ rho = y * sin( theta ) + x * cos( theta )
+ </pre>
+ <p>
+ It is important to note that the interval of the first dimension of the
+ vote space image is NOT <code>[-maxRho, maxRho)</code> but instead
+ <code>[0, maxRho * 2)</code>; the same applies to the second dimension of the
+ vote space as well. Thus if <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#pickLinePeaks-net.imglib2.RandomAccessibleInterval-long-"><code>pickLinePeaks(net.imglib2.RandomAccessibleInterval&lt;T&gt;, long)</code></a> is not
+ used to retrieve the maxima from the vote space, the vote space will have
+ to be translated by <code>-maxRho</code> in dimension 0 to get the correct
+ <code>rho</code> and <code>theta</code> values from the vote space.
+ </p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to run the Hough Line
+            Transform over</dd>
+<dd><code>votespace</code> - - the <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> in which the results
+            are stored</dd>
+<dd><code>nTheta</code> - - the number of bins for theta resolution</dd>
+<dd><code>nRho</code> - - the number of bins for rho resolution</dd>
+<dd><code>filter</code> - - a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function"><code>Predicate</code></a> judging whether or not the a value is
+            above the minimum value allowed by the populator. Any input
+            less than or equal to this value will be disregarded by the
+            populator.</dd>
+</dl>
+</li>
+</ul>
+<a name="getIntercept-long-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIntercept</h4>
+<pre>public static&nbsp;double&nbsp;getIntercept(long&nbsp;rho,
+                                  long&nbsp;theta)</pre>
+<div class="block">Method used to convert the {rho, theta} output of the
+ <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-"><code>voteLines(net.imglib2.RandomAccessibleInterval&lt;T&gt;, net.imglib2.RandomAccessibleInterval&lt;U&gt;)</code></a> algorithm into a more useful
+ y-intercept value. Used with <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getSlope-long-"><code>getSlope(long)</code></a> to create
+ line equations.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rho</code> - - the <code>rho</code> of the line</dd>
+<dd><code>theta</code> - - the <code>theta</code> of the line</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>double</code> - the y-intercept of the line</dd>
+</dl>
+</li>
+</ul>
+<a name="getSlope-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getSlope</h4>
+<pre>public static&nbsp;double&nbsp;getSlope(long&nbsp;theta)</pre>
+<div class="block">Method used to convert the {rho, theta} output of the
+ <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#voteLines-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-"><code>voteLines(net.imglib2.RandomAccessibleInterval&lt;T&gt;, net.imglib2.RandomAccessibleInterval&lt;U&gt;)</code></a> algorithm into a more useful slope
+ value. Used with <a href="../../../../net/imglib2/algorithm/hough/HoughTransforms.html#getIntercept-long-long-"><code>getIntercept(long, long)</code></a> to create line
+ equations.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>theta</code> - - the <code>theta</code> of the line</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>double</code> - the y-intercept of the line</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li>Next&nbsp;Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/hough/HoughTransforms.html" target="_top">Frames</a></li>
+<li><a href="HoughTransforms.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2018 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

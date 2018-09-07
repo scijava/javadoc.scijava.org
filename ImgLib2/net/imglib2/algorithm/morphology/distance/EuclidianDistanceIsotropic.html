@@ -162,8 +162,8 @@ implements <a href="../../../../../net/imglib2/algorithm/morphology/distance/Dis
         double&nbsp;xShift,
         double&nbsp;yShift,
         int&nbsp;dim)</code>
-<div class="block">Evaluate function with family parameters xShift and yShift at position x
- in dimension dim.</div>
+<div class="block">Evaluate function with family parameters <code>xShift</code> and
+ <code>yShift</code> at position <code>x</code> in dimension dim.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -206,6 +206,11 @@ implements <a href="../../../../../net/imglib2/algorithm/morphology/distance/Dis
 <li class="blockList">
 <h4>EuclidianDistanceIsotropic</h4>
 <pre>public&nbsp;EuclidianDistanceIsotropic(double&nbsp;weight)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>weight</code> - multiply squared difference between <code>x</code> and
+            <code>xShift</code> with <code>weight</code></dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -227,11 +232,18 @@ implements <a href="../../../../../net/imglib2/algorithm/morphology/distance/Dis
                        double&nbsp;yShift,
                        int&nbsp;dim)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html#evaluate-double-double-double-int-">Distance</a></code></span></div>
-<div class="block">Evaluate function with family parameters xShift and yShift at position x
- in dimension dim.</div>
+<div class="block">Evaluate function with family parameters <code>xShift</code> and
+ <code>yShift</code> at position <code>x</code> in dimension dim.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html#evaluate-double-double-double-int-">evaluate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html" title="interface in net.imglib2.algorithm.morphology.distance">Distance</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - position on x-axis at which function is evaluated</dd>
+<dd><code>xShift</code> - shift along the x-axis</dd>
+<dd><code>yShift</code> - shift along y-axis</dd>
+<dd><code>dim</code> - dimension in which to evaluate</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Function value at position <code>x</code></dd>
 </dl>
 </li>
 </ul>
@@ -248,11 +260,20 @@ implements <a href="../../../../../net/imglib2/algorithm/morphology/distance/Dis
                         int&nbsp;dim)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html#intersect-double-double-double-double-int-">Distance</a></code></span></div>
 <div class="block">Determine the intersection point in dimension dim of two members of the
- function family. The members are parameterized by xShift1, yShift1,
- xShift2, yShift2, with xShift1 &lt; xShift2.</div>
+ function family. The members are parameterized by <code>xShift1</code>,
+ <code>yShift1</code>, <code>xShift2</code>, <code>yShift2</code>, with <code>xShift1 &gt;
+ xShift2</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html#intersect-double-double-double-double-int-">intersect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/morphology/distance/Distance.html" title="interface in net.imglib2.algorithm.morphology.distance">Distance</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>xShift1</code> - shift along the x-axis</dd>
+<dd><code>yShift1</code> - shift along the y-axis</dd>
+<dd><code>xShift2</code> - shift along the x-axis</dd>
+<dd><code>yShift2</code> - shift along the y-axis</dd>
+<dd><code>dim</code> - dimension in which to evaluate</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>intersection point along axis defined by <code>dim</code></dd>
 </dl>
 </li>
 </ul>
