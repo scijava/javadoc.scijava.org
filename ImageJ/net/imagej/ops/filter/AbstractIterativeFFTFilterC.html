@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,10 +107,10 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../net/imagej/ops/special/AbstractBinaryOp.html" title="class in net.imagej.ops.special">net.imagej.ops.special.AbstractBinaryOp</a>&lt;I1,I2,O&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../net/imagej/ops/special/computer/AbstractBinaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractBinaryComputerOp</a>&lt;I,K,O&gt;</li>
+<li><a href="../../../../net/imagej/ops/special/computer/AbstractBinaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractBinaryComputerOp</a>&lt;net.imglib2.RandomAccessibleInterval&lt;I&gt;,net.imglib2.RandomAccessibleInterval&lt;K&gt;,net.imglib2.RandomAccessibleInterval&lt;O&gt;&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractFFTFilterC</a>&lt;net.imglib2.RandomAccessibleInterval&lt;I&gt;,net.imglib2.RandomAccessibleInterval&lt;O&gt;,net.imglib2.RandomAccessibleInterval&lt;K&gt;,net.imglib2.RandomAccessibleInterval&lt;C&gt;&gt;</li>
+<li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractFFTFilterC</a>&lt;I,O,K,C&gt;</li>
 <li>
 <ul class="inheritance">
 <li>net.imagej.ops.filter.AbstractIterativeFFTFilterC&lt;I,O,K,C&gt;</li>
@@ -148,7 +148,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public abstract class <span class="typeNameLabel">AbstractIterativeFFTFilterC&lt;I extends net.imglib2.type.numeric.RealType&lt;I&gt;,O extends net.imglib2.type.numeric.RealType&lt;O&gt;,K extends net.imglib2.type.numeric.RealType&lt;K&gt;,C extends net.imglib2.type.numeric.ComplexType&lt;C&gt;&gt;</span>
-extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractFFTFilterC</a>&lt;net.imglib2.RandomAccessibleInterval&lt;I&gt;,net.imglib2.RandomAccessibleInterval&lt;O&gt;,net.imglib2.RandomAccessibleInterval&lt;K&gt;,net.imglib2.RandomAccessibleInterval&lt;C&gt;&gt;</pre>
+extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractFFTFilterC</a>&lt;I,O,K,C&gt;</pre>
 <div class="block">Abstract class for iterative FFT filters that perform on RAI.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -228,10 +228,6 @@ extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" titl
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getAccelerator--">getAccelerator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>net.imglib2.Interval</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getImgConvolutionInterval--">getImgConvolutionInterval</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getMaxIterations--">getMaxIterations</a></span>()</code>&nbsp;</td>
 </tr>
@@ -241,7 +237,7 @@ extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" titl
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.imagej.ops.filter.<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractFFTFilterC</a></h3>
-<code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTInput--">getFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTKernel--">getFFTKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformInputFFT--">getPerformInputFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformKernelFFT--">getPerformKernelFFT</a></code></li>
+<code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getCreateOp--">getCreateOp</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTInput--">getFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTKernel--">getFFTKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformInputFFT--">getPerformInputFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformKernelFFT--">getPerformKernelFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#initialize--">initialize</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#setFFTInput-net.imglib2.RandomAccessibleInterval-">setFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#setFFTKernel-net.imglib2.RandomAccessibleInterval-">setFFTKernel</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.AbstractBinaryComputerOp">
@@ -313,13 +309,6 @@ extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" titl
 <h3>Methods inherited from interface&nbsp;net.imagej.ops.<a href="../../../../net/imagej/ops/Environmental.html" title="interface in net.imagej.ops">Environmental</a></h3>
 <code><a href="../../../../net/imagej/ops/Environmental.html#ops--">ops</a>, <a href="../../../../net/imagej/ops/Environmental.html#setEnvironment-net.imagej.ops.OpEnvironment-">setEnvironment</a></code></li>
 </ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.Initializable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;net.imagej.ops.<a href="../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></h3>
-<code><a href="../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code></li>
-</ul>
 </li>
 </ul>
 </li>
@@ -368,15 +357,6 @@ extends <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" titl
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getImgConvolutionInterval--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getImgConvolutionInterval</h4>
-<pre>public&nbsp;net.imglib2.Interval&nbsp;getImgConvolutionInterval()</pre>
-</li>
-</ul>
 <a name="getAccelerator--">
 <!--   -->
 </a>

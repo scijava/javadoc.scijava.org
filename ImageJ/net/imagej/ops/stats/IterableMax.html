@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -220,14 +220,13 @@ implements <a href="../../../../net/imagej/ops/Ops.Stats.Max.html" title="interf
 <div class="block">Computes the output given some input.</div>
 </td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/stats/IterableMax.html#createOutput-java.lang.Iterable-">createOutput</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&nbsp;input)</code>
+<div class="block">Create an output object given some input.</div>
+</td>
+</tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.stats.AbstractStatsOp">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;net.imagej.ops.stats.<a href="../../../../net/imagej/ops/stats/AbstractStatsOp.html" title="class in net.imagej.ops.stats">AbstractStatsOp</a></h3>
-<code><a href="../../../../net/imagej/ops/stats/AbstractStatsOp.html#createOutput-I-">createOutput</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.hybrid.AbstractUnaryHybridC">
 <!--   -->
@@ -362,7 +361,7 @@ implements <a href="../../../../net/imagej/ops/Ops.Stats.Max.html" title="interf
 </a><a name="compute-java.lang.Iterable-T-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>compute</h4>
 <pre>public&nbsp;void&nbsp;compute(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&nbsp;input,
@@ -376,6 +375,27 @@ implements <a href="../../../../net/imagej/ops/Ops.Stats.Max.html" title="interf
 <dd><code>input</code> - Argument to the computation, which <em>must be non-null</em></dd>
 <dd><code>output</code> - Object where the computation's result will be stored, which
  <em>must be non-null and a different object than <code>input</code></em></dd>
+</dl>
+</li>
+</ul>
+<a name="createOutput-java.lang.Iterable-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>createOutput</h4>
+<pre>public&nbsp;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&nbsp;createOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&nbsp;input)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imagej/ops/special/UnaryOutputFactory.html#createOutput-I-">UnaryOutputFactory</a></code></span></div>
+<div class="block">Create an output object given some input.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/special/UnaryOutputFactory.html#createOutput-I-">createOutput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imagej/ops/special/UnaryOutputFactory.html" title="interface in net.imagej.ops.special">UnaryOutputFactory</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&gt;,<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/stats/AbstractStatsOp.html#createOutput-I-">createOutput</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imagej/ops/stats/AbstractStatsOp.html" title="class in net.imagej.ops.stats">AbstractStatsOp</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&gt;,<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/stats/IterableMax.html" title="type parameter in IterableMax">T</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>input</code> - which determines how to create the output</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>output, depending on the input</dd>
 </dl>
 </li>
 </ul>

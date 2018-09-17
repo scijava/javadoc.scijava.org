@@ -107,10 +107,10 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../net/imagej/ops/special/AbstractBinaryOp.html" title="class in net.imagej.ops.special">net.imagej.ops.special.AbstractBinaryOp</a>&lt;I1,I2,O&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../net/imagej/ops/special/computer/AbstractBinaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractBinaryComputerOp</a>&lt;I,K,O&gt;</li>
+<li><a href="../../../../net/imagej/ops/special/computer/AbstractBinaryComputerOp.html" title="class in net.imagej.ops.special.computer">net.imagej.ops.special.computer.AbstractBinaryComputerOp</a>&lt;net.imglib2.RandomAccessibleInterval&lt;I&gt;,net.imglib2.RandomAccessibleInterval&lt;K&gt;,net.imglib2.RandomAccessibleInterval&lt;O&gt;&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractFFTFilterC</a>&lt;net.imglib2.RandomAccessibleInterval&lt;I&gt;,net.imglib2.RandomAccessibleInterval&lt;O&gt;,net.imglib2.RandomAccessibleInterval&lt;K&gt;,net.imglib2.RandomAccessibleInterval&lt;C&gt;&gt;</li>
+<li><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractFFTFilterC</a>&lt;I,O,K,C&gt;</li>
 <li>
 <ul class="inheritance">
 <li><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html" title="class in net.imagej.ops.filter">net.imagej.ops.filter.AbstractIterativeFFTFilterC</a>&lt;I,O,K,C&gt;</li>
@@ -152,8 +152,8 @@ var activeTableTab = "activeTableTab";
 extends <a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractIterativeFFTFilterC</a>&lt;I,O,K,C&gt;
 implements <a href="../../../../net/imagej/ops/Ops.Deconvolve.RichardsonLucy.html" title="interface in net.imagej.ops">Ops.Deconvolve.RichardsonLucy</a></pre>
 <div class="block">Richardson Lucy algorithm for (@link RandomAccessibleInterval) (Lucy, L. B.
- (1974).
- "An iterative technique for the rectification of observed distributions".)</div>
+ (1974). "An iterative technique for the rectification of observed
+ distributions".)</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Brian Northan</dd>
@@ -250,14 +250,14 @@ implements <a href="../../../../net/imagej/ops/Ops.Deconvolve.RichardsonLucy.htm
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.imagej.ops.filter.<a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractIterativeFFTFilterC</a></h3>
-<code><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getAccelerator--">getAccelerator</a>, <a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getImgConvolutionInterval--">getImgConvolutionInterval</a>, <a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getMaxIterations--">getMaxIterations</a></code></li>
+<code><a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getAccelerator--">getAccelerator</a>, <a href="../../../../net/imagej/ops/filter/AbstractIterativeFFTFilterC.html#getMaxIterations--">getMaxIterations</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.filter.AbstractFFTFilterC">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.imagej.ops.filter.<a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractFFTFilterC</a></h3>
-<code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTInput--">getFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTKernel--">getFFTKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformInputFFT--">getPerformInputFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformKernelFFT--">getPerformKernelFFT</a></code></li>
+<code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getCreateOp--">getCreateOp</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTInput--">getFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getFFTKernel--">getFFTKernel</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformInputFFT--">getPerformInputFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#getPerformKernelFFT--">getPerformKernelFFT</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#setFFTInput-net.imglib2.RandomAccessibleInterval-">setFFTInput</a>, <a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#setFFTKernel-net.imglib2.RandomAccessibleInterval-">setFFTKernel</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imagej.ops.special.computer.AbstractBinaryComputerOp">
@@ -379,6 +379,8 @@ implements <a href="../../../../net/imagej/ops/Ops.Deconvolve.RichardsonLucy.htm
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../net/imagej/ops/Initializable.html#initialize--">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imagej/ops/Initializable.html" title="interface in net.imagej.ops">Initializable</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html#initialize--">initialize</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imagej/ops/filter/AbstractFFTFilterC.html" title="class in net.imagej.ops.filter">AbstractFFTFilterC</a>&lt;<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">I</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">I</a>&gt;,<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">O</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">O</a>&gt;,<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">K</a> extends net.imglib2.type.numeric.RealType&lt;<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">K</a>&gt;,<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">C</a> extends net.imglib2.type.numeric.ComplexType&lt;<a href="../../../../net/imagej/ops/deconvolve/RichardsonLucyC.html" title="type parameter in RichardsonLucyC">C</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
