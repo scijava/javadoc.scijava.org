@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":50};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],16:["t5","Default Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></dd>
+<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a>, <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html" title="interface in net.imglib2.roi.geom.real">WritablePolyshape</a></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -108,11 +108,11 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">WritablePolygon2D</span>
-extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a></pre>
+extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a>, <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html" title="interface in net.imglib2.roi.geom.real">WritablePolyshape</a></pre>
 <div class="block">A modifiable <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real"><code>Polygon2D</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Alison Walter</dd>
+<dd>Alison Walter, Curtis Rueden</dd>
 </dl>
 </li>
 </ul>
@@ -127,28 +127,18 @@ extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title=
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/WritablePolygon2D.html#addVertex-int-double:A-">addVertex</a></span>(int&nbsp;index,
          double[]&nbsp;vertex)</code>
-<div class="block">Adds a vertex at the given index.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/WritablePolygon2D.html#removeVertex-int-">removeVertex</a></span>(int&nbsp;index)</code>
-<div class="block">Removes the vertex at the given index.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../net/imglib2/roi/util/RealLocalizableRealPositionable.html" title="interface in net.imglib2.roi.util">RealLocalizableRealPositionable</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/WritablePolygon2D.html#vertex-int-">vertex</a></span>(int&nbsp;pos)</code>
-<div class="block">Return the vertex at the specified position</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#addVertex-int-net.imglib2.RealLocalizable-"><code>WritablePolyshape.addVertex(int, RealLocalizable)</code></a> instead.</span></div>
+</div>
 </td>
 </tr>
 </table>
@@ -157,7 +147,21 @@ extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title=
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.roi.geom.real.<a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a></h3>
-<code><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#numVertices--">numVertices</a></code></li>
+<code><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.geom.real.WritablePolyshape">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.roi.geom.real.<a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html" title="interface in net.imglib2.roi.geom.real">WritablePolyshape</a></h3>
+<code><a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#addVertex-int-net.imglib2.RealLocalizable-">addVertex</a>, <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#addVertices-int-java.util.Collection-">addVertices</a>, <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#removeVertex-int-">removeVertex</a>, <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#vertex-int-">vertex</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.geom.real.Polyshape">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.roi.geom.real.<a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a></h3>
+<code><a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#numVertices--">numVertices</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#vertices--">vertices</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.RealMaskRealInterval">
@@ -188,13 +192,6 @@ extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title=
 <code><a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true#isEqual-java.lang.Object-" title="class or interface in java.util.function">isEqual</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true#test-T-" title="class or interface in java.util.function">test</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
-<code><a href="../../../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealInterval">
 <!--   -->
 </a>
@@ -215,40 +212,16 @@ extends <a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title=
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="vertex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>vertex</h4>
-<pre><a href="../../../../../net/imglib2/roi/util/RealLocalizableRealPositionable.html" title="interface in net.imglib2.roi.util">RealLocalizableRealPositionable</a>&nbsp;vertex(int&nbsp;pos)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#vertex-int-">Polygon2D</a></code></span></div>
-<div class="block">Return the vertex at the specified position</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#vertex-int-">vertex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real">Polygon2D</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="addVertex-int-double:A-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>addVertex</h4>
-<pre>void&nbsp;addVertex(int&nbsp;index,
-               double[]&nbsp;vertex)</pre>
-<div class="block">Adds a vertex at the given index.</div>
-</li>
-</ul>
-<a name="removeVertex-int-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>removeVertex</h4>
-<pre>void&nbsp;removeVertex(int&nbsp;index)</pre>
-<div class="block">Removes the vertex at the given index.</div>
+<h4>addVertex</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+default&nbsp;void&nbsp;addVertex(int&nbsp;index,
+                                   double[]&nbsp;vertex)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../../net/imglib2/roi/geom/real/WritablePolyshape.html#addVertex-int-net.imglib2.RealLocalizable-"><code>WritablePolyshape.addVertex(int, RealLocalizable)</code></a> instead.</span></div>
 </li>
 </ul>
 </li>

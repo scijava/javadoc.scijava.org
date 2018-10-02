@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":6,"i2":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
+var methods = {"i0":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/roi/geom/real/RealPointCollection.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/roi/geom/real/Polyline.html" target="_top">Frames</a></li>
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></dd>
+<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Polyline</span>
-extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></pre>
+extends <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a></pre>
 <div class="block">A <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi"><code>RealMaskRealInterval</code></a> which defines a polyline in n-d space.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -131,7 +131,7 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -142,19 +142,14 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 <div class="block">Returns the boundary behavior of this Mask.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/Polyline.html#numVertices--">numVertices</a></span>()</code>
-<div class="block">Returns the number of vertices which define this polyline.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/Polyline.html#vertex-int-">vertex</a></span>(int&nbsp;pos)</code>
-<div class="block">Returns the vertex at the specified position.</div>
-</td>
-</tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.geom.real.Polyshape">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.roi.geom.real.<a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a></h3>
+<code><a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#numVertices--">numVertices</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#vertex-int-">vertex</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#vertices--">vertices</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.RealMaskRealInterval">
 <!--   -->
@@ -211,26 +206,6 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="vertex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>vertex</h4>
-<pre><a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;vertex(int&nbsp;pos)</pre>
-<div class="block">Returns the vertex at the specified position.</div>
-</li>
-</ul>
-<a name="numVertices--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>numVertices</h4>
-<pre>int&nbsp;numVertices()</pre>
-<div class="block">Returns the number of vertices which define this polyline.</div>
-</li>
-</ul>
 <a name="boundaryType--">
 <!--   -->
 </a>
@@ -274,7 +249,7 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/roi/geom/real/RealPointCollection.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/roi/geom/real/Polyline.html" target="_top">Frames</a></li>

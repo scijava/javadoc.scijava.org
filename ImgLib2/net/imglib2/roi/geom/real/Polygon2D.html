@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></dd>
+<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/roi/MaskPredicate.html" title="interface in net.imglib2.roi">MaskPredicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/roi/RealMask.html" title="interface in net.imglib2.roi">RealMask</a>, <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Polygon2D</span>
-extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi">RealMaskRealInterval</a></pre>
+extends <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a></pre>
 <div class="block">A <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title="interface in net.imglib2.roi"><code>RealMaskRealInterval</code></a> which defines a real space 2D polygon.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -131,24 +131,25 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#numVertices--">numVertices</a></span>()</code>
-<div class="block">Get the number of vertices</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#vertex-int-">vertex</a></span>(int&nbsp;pos)</code>
-<div class="block">Return the vertex at the specified position</div>
+<td class="colFirst"><code>default int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/roi/geom/real/Polygon2D.html#numDimensions--">numDimensions</a></span>()</code>
+<div class="block">Gets the space's number of dimensions.</div>
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.geom.real.Polyshape">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.roi.geom.real.<a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html" title="interface in net.imglib2.roi.geom.real">Polyshape</a></h3>
+<code><a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#numVertices--">numVertices</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#vertex-int-">vertex</a>, <a href="../../../../../net/imglib2/roi/geom/real/Polyshape.html#vertices--">vertices</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.roi.RealMaskRealInterval">
 <!--   -->
@@ -178,13 +179,6 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 <code><a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true#isEqual-java.lang.Object-" title="class or interface in java.util.function">isEqual</a>, <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true#test-T-" title="class or interface in java.util.function">test</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
-<code><a href="../../../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealInterval">
 <!--   -->
 </a>
@@ -205,24 +199,19 @@ extends <a href="../../../../../net/imglib2/roi/RealMaskRealInterval.html" title
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="vertex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>vertex</h4>
-<pre><a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>&nbsp;vertex(int&nbsp;pos)</pre>
-<div class="block">Return the vertex at the specified position</div>
-</li>
-</ul>
-<a name="numVertices--">
+<a name="numDimensions--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>numVertices</h4>
-<pre>int&nbsp;numVertices()</pre>
-<div class="block">Get the number of vertices</div>
+<h4>numDimensions</h4>
+<pre>default&nbsp;int&nbsp;numDimensions()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/EuclideanSpace.html#numDimensions--">EuclideanSpace</a></code></span></div>
+<div class="block">Gets the space's number of dimensions.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>
