@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42,"i1":42,"i2":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -125,11 +125,15 @@ var activeTableTab = "activeTableTab";
 <dd><a href="https://javadoc.scijava.org/Java/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="https://javadoc.scijava.org/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>&gt;, <a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;, <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;, <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;, <a href="../../../net/imagej/table/TableDisplay.html" title="interface in net.imagej.table">TableDisplay</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Identifiable.html?is-external=true" title="class or interface in org.scijava">Identifiable</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Locatable.html?is-external=true" title="class or interface in org.scijava">Locatable</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/log/Logged.html?is-external=true" title="class or interface in org.scijava.log">Logged</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Named.html?is-external=true" title="class or interface in org.scijava">Named</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/plugin/HasPluginInfo.html?is-external=true" title="class or interface in org.scijava.plugin">HasPluginInfo</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/plugin/RichPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">RichPlugin</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Prioritized.html?is-external=true" title="class or interface in org.scijava">Prioritized</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Versioned.html?is-external=true" title="class or interface in org.scijava">Versioned</a></dd>
 </dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">use <a href="https://javadoc.scijava.org/SciJava/org/scijava/table.DefaultTableDisplay.html?is-external=true" title="class or interface in org.scijava"><code>DefaultTableDisplay</code></a></span></div>
+</div>
 <br>
-<pre>public class <span class="typeNameLabel">DefaultTableDisplay</span>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public class <span class="typeNameLabel">DefaultTableDisplay</span>
 extends <a href="https://javadoc.scijava.org/SciJava/org/scijava/display/AbstractDisplay.html?is-external=true" title="class or interface in org.scijava.display">AbstractDisplay</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;
 implements <a href="../../../net/imagej/table/TableDisplay.html" title="interface in net.imagej.table">TableDisplay</a></pre>
-<div class="block">Default display for <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table"><code>Table</code></a>s, including <a href="../../../net/imagej/table/ResultsTable.html" title="interface in net.imagej.table"><code>ResultsTable</code></a>s.</div>
+<div class="block">Default display for (deprecated) <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table"><code>Table</code></a>s, excluding <a href="../../../net/imagej/table/ResultsTable.html" title="interface in net.imagej.table"><code>ResultsTable</code></a>s.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Curtis Rueden</dd>
@@ -167,7 +171,9 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#DefaultTableDisplay--">DefaultTableDisplay</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#DefaultTableDisplay--">DefaultTableDisplay</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -179,22 +185,28 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#canDisplay-java.lang.Class-">canDisplay</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#canDisplay-java.lang.Class-">canDisplay</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#display-java.lang.Object-">display</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#display-java.lang.Object-">display</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#isDisplaying-java.lang.Object-">isDisplaying</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/table/DefaultTableDisplay.html#isDisplaying-java.lang.Object-">isDisplaying</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -323,6 +335,7 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 <li class="blockList">
 <h4>DefaultTableDisplay</h4>
 <pre>public&nbsp;DefaultTableDisplay()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -340,6 +353,7 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 <li class="blockList">
 <h4>canDisplay</h4>
 <pre>public&nbsp;boolean&nbsp;canDisplay(<a href="https://javadoc.scijava.org/Java/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;c)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true#canDisplay-java.lang.Class-" title="class or interface in org.scijava.display">canDisplay</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;</code></dd>
@@ -355,6 +369,7 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 <li class="blockList">
 <h4>display</h4>
 <pre>public&nbsp;void&nbsp;display(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true#display-java.lang.Object-" title="class or interface in org.scijava.display">display</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;</code></dd>
@@ -370,6 +385,7 @@ implements <a href="../../../net/imagej/table/TableDisplay.html" title="interfac
 <li class="blockList">
 <h4>isDisplaying</h4>
 <pre>public&nbsp;boolean&nbsp;isDisplaying(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true#isDisplaying-java.lang.Object-" title="class or interface in org.scijava.display">isDisplaying</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/display/Display.html?is-external=true" title="class or interface in org.scijava.display">Display</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;</code></dd>
