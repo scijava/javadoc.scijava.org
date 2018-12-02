@@ -155,7 +155,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/OMERO/omero/gateway/model/TableData.html?is-external=true" title="class or interface in omero.gateway.model">TableData</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#convertOMEROTable-net.imagej.table.Table-">convertOMEROTable</a></span>(<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&nbsp;imageJTable)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#convertOMEROTable--">convertOMEROTable</a></span>(&lt;any&gt;&nbsp;imageJTable)</code>
 <div class="block">Converts the given ImageJ table to an OMERO table, but does not save the
  table to the server.</div>
 </td>
@@ -191,15 +191,15 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;</code></td>
+<td class="colFirst"><code>&lt;any&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#downloadTable-net.imagej.omero.OMEROLocation-long-">downloadTable</a></span>(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
              long&nbsp;tableID)</code>
 <div class="block">Downloads the table with the given ID from OMERO, storing the result into a
- new ImageJ <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table"><code>Table</code></a>.</div>
+ new ImageJ <code>Table</code>.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;</code></td>
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#downloadTables-net.imagej.omero.OMEROLocation-long-">downloadTables</a></span>(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
               long&nbsp;imageID)</code>
 <div class="block">Downloads all tables associated with the given image ID in OMERO.</div>
@@ -324,7 +324,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
            <a href="https://javadoc.scijava.org/SciJava/org/scijava/util/TreeNode.html?is-external=true" title="class or interface in org.scijava.util">TreeNode</a>&lt;?&gt;&nbsp;rois,
            boolean&nbsp;updateROIs,
            boolean&nbsp;uploadTables,
-           <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;&nbsp;tables,
+           <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;&nbsp;tables,
            <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tableNames,
            long&nbsp;omeroDatasetID)</code>
 <div class="block">Uploads the given image to OMERO, and optionally uploads the given ROIs and
@@ -339,7 +339,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
                       boolean&nbsp;updateROIs,
                       boolean&nbsp;uploadTables,
                       <a href="https://javadoc.scijava.org/SciJava/org/scijava/util/TreeNode.html?is-external=true" title="class or interface in org.scijava.util">TreeNode</a>&lt;?&gt;&nbsp;rois,
-                      <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;&nbsp;tables,
+                      <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;&nbsp;tables,
                       <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tableNames)</code>
 <div class="block">Uploads the attachments to the OMERO server, and attaches them to the image
  associated with the given id.</div>
@@ -356,9 +356,9 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#uploadTable-net.imagej.omero.OMEROLocation-java.lang.String-net.imagej.table.Table-long-">uploadTable</a></span>(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/omero/OMEROService.html#uploadTable-net.imagej.omero.OMEROLocation-java.lang.String--long-">uploadTable</a></span>(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
            <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-           <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&nbsp;imageJTable,
+           &lt;any&gt;&nbsp;imageJTable,
            long&nbsp;imageID)</code>
 <div class="block">Uploads an ImageJ table to OMERO, returning the new table ID on the OMERO
  server.</div>
@@ -489,12 +489,12 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <div class="block">Converts an ImageJ parameter value to an OMERO parameter value.
  <p>
  If the given object is an image type (i.e., <a href="../../../net/imagej/Dataset.html" title="interface in net.imagej"><code>Dataset</code></a>,
- <a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display"><code>DatasetView</code></a> or <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>) then the <a href="../../../net/imagej/omero/OMEROService.html#uploadImage-net.imagej.omero.OMEROLocation-net.imagej.Dataset-boolean-org.scijava.util.TreeNode-boolean-boolean-java.util.List-java.lang.String:A-long-"><code>uploadImage(net.imagej.omero.OMEROLocation, net.imagej.Dataset, boolean, org.scijava.util.TreeNode&lt;?&gt;, boolean, boolean, java.util.List&lt;net.imagej.table.Table&lt;?, ?&gt;&gt;, java.lang.String[], long)</code></a>
+ <a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display"><code>DatasetView</code></a> or <a href="../../../net/imagej/display/ImageDisplay.html" title="interface in net.imagej.display"><code>ImageDisplay</code></a>) then the <a href="../../../net/imagej/omero/OMEROService.html#uploadImage-net.imagej.omero.OMEROLocation-net.imagej.Dataset-boolean-org.scijava.util.TreeNode-boolean-boolean-java.util.List-java.lang.String:A-long-"><code>uploadImage(net.imagej.omero.OMEROLocation, net.imagej.Dataset, boolean, org.scijava.util.TreeNode&lt;?&gt;, boolean, boolean, java.util.List&lt;&lt;any&gt;&gt;, java.lang.String[], long)</code></a>
  method will be used transparently to convert the object into an OMERO image
  ID.
  </p>
  <p>
- In the case of <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table"><code>Table</code></a>s, it will be converted to a <a href="https://javadoc.scijava.org/OMERO/omero/gateway/model/TableData.html?is-external=true" title="class or interface in omero.gateway.model"><code>TableData</code></a>.
+ In the case of <code>Table</code>s, it will be converted to a <a href="https://javadoc.scijava.org/OMERO/omero/gateway/model/TableData.html?is-external=true" title="class or interface in omero.gateway.model"><code>TableData</code></a>.
  </p></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -558,7 +558,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
                  <a href="https://javadoc.scijava.org/SciJava/org/scijava/util/TreeNode.html?is-external=true" title="class or interface in org.scijava.util">TreeNode</a>&lt;?&gt;&nbsp;rois,
                  boolean&nbsp;updateROIs,
                  boolean&nbsp;uploadTables,
-                 <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;&nbsp;tables,
+                 <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;&nbsp;tables,
                  <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tableNames,
                  long&nbsp;omeroDatasetID)
           throws <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
@@ -594,7 +594,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
                             boolean&nbsp;updateROIs,
                             boolean&nbsp;uploadTables,
                             <a href="https://javadoc.scijava.org/SciJava/org/scijava/util/TreeNode.html?is-external=true" title="class or interface in org.scijava.util">TreeNode</a>&lt;?&gt;&nbsp;rois,
-                            <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;&nbsp;tables,
+                            <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;&nbsp;tables,
                             <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tableNames)
                      throws <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
                             <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSOutOfServiceException.html?is-external=true" title="class or interface in omero.gateway.exception">DSOutOfServiceException</a>,
@@ -654,7 +654,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 </dl>
 </li>
 </ul>
-<a name="uploadTable-net.imagej.omero.OMEROLocation-java.lang.String-net.imagej.table.Table-long-">
+<a name="uploadTable-net.imagej.omero.OMEROLocation-java.lang.String--long-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -662,7 +662,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <h4>uploadTable</h4>
 <pre>long&nbsp;uploadTable(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
                  <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                 <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&nbsp;imageJTable,
+                 &lt;any&gt;&nbsp;imageJTable,
                  long&nbsp;imageID)
           throws <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
                  Glacier2.PermissionDeniedException,
@@ -684,13 +684,13 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 </dl>
 </li>
 </ul>
-<a name="convertOMEROTable-net.imagej.table.Table-">
+<a name="convertOMEROTable--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOMEROTable</h4>
-<pre><a href="https://javadoc.scijava.org/OMERO/omero/gateway/model/TableData.html?is-external=true" title="class or interface in omero.gateway.model">TableData</a>&nbsp;convertOMEROTable(<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&nbsp;imageJTable)</pre>
+<pre><a href="https://javadoc.scijava.org/OMERO/omero/gateway/model/TableData.html?is-external=true" title="class or interface in omero.gateway.model">TableData</a>&nbsp;convertOMEROTable(&lt;any&gt;&nbsp;imageJTable)</pre>
 <div class="block">Converts the given ImageJ table to an OMERO table, but does not save the
  table to the server.</div>
 </li>
@@ -701,16 +701,16 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <ul class="blockList">
 <li class="blockList">
 <h4>downloadTable</h4>
-<pre><a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&nbsp;downloadTable(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
-                         long&nbsp;tableID)
-                  throws <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
-                         Glacier2.PermissionDeniedException,
-                         Glacier2.CannotCreateSessionException,
-                         <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
-                         <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSOutOfServiceException.html?is-external=true" title="class or interface in omero.gateway.exception">DSOutOfServiceException</a>,
-                         <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSAccessException.html?is-external=true" title="class or interface in omero.gateway.exception">DSAccessException</a></pre>
+<pre>&lt;any&gt;&nbsp;downloadTable(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
+                    long&nbsp;tableID)
+             throws <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
+                    Glacier2.PermissionDeniedException,
+                    Glacier2.CannotCreateSessionException,
+                    <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
+                    <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSOutOfServiceException.html?is-external=true" title="class or interface in omero.gateway.exception">DSOutOfServiceException</a>,
+                    <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSAccessException.html?is-external=true" title="class or interface in omero.gateway.exception">DSAccessException</a></pre>
 <div class="block">Downloads the table with the given ID from OMERO, storing the result into a
- new ImageJ <a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table"><code>Table</code></a>.</div>
+ new ImageJ <code>Table</code>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a></code></dd>
@@ -728,14 +728,14 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <ul class="blockList">
 <li class="blockList">
 <h4>downloadTables</h4>
-<pre><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../net/imagej/table/Table.html" title="interface in net.imagej.table">Table</a>&lt;?,?&gt;&gt;&nbsp;downloadTables(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
-                                long&nbsp;imageID)
-                         throws <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
-                                <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSOutOfServiceException.html?is-external=true" title="class or interface in omero.gateway.exception">DSOutOfServiceException</a>,
-                                <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSAccessException.html?is-external=true" title="class or interface in omero.gateway.exception">DSAccessException</a>,
-                                <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
-                                Glacier2.PermissionDeniedException,
-                                Glacier2.CannotCreateSessionException</pre>
+<pre><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;&lt;any&gt;&gt;&nbsp;downloadTables(<a href="../../../net/imagej/omero/OMEROLocation.html" title="class in net.imagej.omero">OMEROLocation</a>&nbsp;credentials,
+                           long&nbsp;imageID)
+                    throws <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a>,
+                           <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSOutOfServiceException.html?is-external=true" title="class or interface in omero.gateway.exception">DSOutOfServiceException</a>,
+                           <a href="https://javadoc.scijava.org/OMERO/omero/gateway/exception/DSAccessException.html?is-external=true" title="class or interface in omero.gateway.exception">DSAccessException</a>,
+                           <a href="https://javadoc.scijava.org/OMERO/omero/ServerError.html?is-external=true" title="class or interface in omero">ServerError</a>,
+                           Glacier2.PermissionDeniedException,
+                           Glacier2.CannotCreateSessionException</pre>
 <div class="block">Downloads all tables associated with the given image ID in OMERO.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
