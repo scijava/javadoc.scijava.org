@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -95,10 +95,15 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html" title="class in net.imglib2.realtransform.inverse">net.imglib2.realtransform.inverse.AbstractDifferentiableRealTransform</a></li>
 <li>
 <ul class="inheritance">
 <li>net.imglib2.realtransform.ThinplateSplineTransform</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -107,19 +112,19 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></dd>
+<dd><a href="../../../net/imglib2/realtransform/inverse/DifferentiableRealTransform.html" title="interface in net.imglib2.realtransform.inverse">DifferentiableRealTransform</a>, <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">ThinplateSplineTransform</span>
-extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+extends <a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html" title="class in net.imglib2.realtransform.inverse">AbstractDifferentiableRealTransform</a>
 implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></pre>
 <div class="block">An <em>n</em>-dimensional thin plate spline transform backed by John
  Bogovic's <a href="https://github.com/saalfeldlab/jitk-tps">jitk-tps</a>
  library.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld</dd>
+<dd>Stephan Saalfeld, John Bogovic</dd>
 </dl>
 </li>
 </ul>
@@ -143,7 +148,7 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
                         double[][]&nbsp;q)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ThinplateSplineTransform.html#ThinplateSplineTransform-jitk.spline.ThinPlateR2LogRSplineKernelTransform-">ThinplateSplineTransform</a></span>(<a href="https://javadoc.scijava.org/Fiji/jitk/spline/ThinPlateR2LogRSplineKernelTransform.html?is-external=true" title="class or interface in jitk.spline">ThinPlateR2LogRSplineKernelTransform</a>&nbsp;tps)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ThinplateSplineTransform.html#ThinplateSplineTransform-jitk.spline.ThinPlateR2LogRSplineKernelTransform-">ThinplateSplineTransform</a></span>(jitk.spline.ThinPlateR2LogRSplineKernelTransform&nbsp;tps)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -183,12 +188,18 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform">AffineTransform</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ThinplateSplineTransform.html#jacobian-double:A-">jacobian</a></span>(double[]&nbsp;x)</code>
+<div class="block">Returns the jacobian matrix of this transform at the point x.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ThinplateSplineTransform.html#numSourceDimensions--">numSourceDimensions</a></span>()</code>
 <div class="block">Returns <em>n</em>, the minimal number of dimension of the source vector.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/ThinplateSplineTransform.html#numTargetDimensions--">numTargetDimensions</a></span>()</code>
 <div class="block">Returns <em>m</em>, the minimal dimension of the target vector.</div>
@@ -196,11 +207,18 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.realtransform.inverse.AbstractDifferentiableRealTransform">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.realtransform.inverse.<a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html" title="class in net.imglib2.realtransform.inverse">AbstractDifferentiableRealTransform</a></h3>
+<code><a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html#directionToward-net.imglib2.realtransform.AffineTransform-double:A-double:A-double:A-">directionToward</a>, <a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html#directionToward-double:A-double:A-double:A-">directionToward</a>, <a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html#matrixTranspose-net.imglib2.realtransform.AffineTransform-">matrixTranspose</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.realtransform.RealTransform">
@@ -229,7 +247,7 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>ThinplateSplineTransform</h4>
-<pre>public&nbsp;ThinplateSplineTransform(<a href="https://javadoc.scijava.org/Fiji/jitk/spline/ThinPlateR2LogRSplineKernelTransform.html?is-external=true" title="class or interface in jitk.spline">ThinPlateR2LogRSplineKernelTransform</a>&nbsp;tps)</pre>
+<pre>public&nbsp;ThinplateSplineTransform(jitk.spline.ThinPlateR2LogRSplineKernelTransform&nbsp;tps)</pre>
 </li>
 </ul>
 <a name="ThinplateSplineTransform-double:A:A-double:A:A-">
@@ -336,7 +354,7 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 <a name="numTargetDimensions--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>numTargetDimensions</h4>
 <pre>public&nbsp;int&nbsp;numTargetDimensions()</pre>
@@ -347,6 +365,27 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--">numTargetDimensions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the dimension of the target vector.</dd>
+</dl>
+</li>
+</ul>
+<a name="jacobian-double:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>jacobian</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/realtransform/AffineTransform.html" title="class in net.imglib2.realtransform">AffineTransform</a>&nbsp;jacobian(double[]&nbsp;x)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html#jacobian-double:A-">AbstractDifferentiableRealTransform</a></code></span></div>
+<div class="block">Returns the jacobian matrix of this transform at the point x.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/realtransform/inverse/DifferentiableRealTransform.html#jacobian-double:A-">jacobian</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/inverse/DifferentiableRealTransform.html" title="interface in net.imglib2.realtransform.inverse">DifferentiableRealTransform</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html#jacobian-double:A-">jacobian</a></code>&nbsp;in class&nbsp;<code><a href="../../../net/imglib2/realtransform/inverse/AbstractDifferentiableRealTransform.html" title="class in net.imglib2.realtransform.inverse">AbstractDifferentiableRealTransform</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the point</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the jacobian</dd>
 </dl>
 </li>
 </ul>
