@@ -95,13 +95,13 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">org.scijava.AbstractContextual</a></li>
+<li>org.scijava.AbstractContextual</li>
 <li>
 <ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true" title="class or interface in org.scijava.command">org.scijava.command.ContextCommand</a></li>
+<li>org.scijava.command.ContextCommand</li>
 <li>
 <ul class="inheritance">
 <li>sholl.math.NormalizedProfileStats</li>
@@ -117,13 +117,16 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="https://javadoc.scijava.org/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Cancelable.html?is-external=true" title="class or interface in org.scijava">Cancelable</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/command/Command.html?is-external=true" title="class or interface in org.scijava.command">Command</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/plugin/SciJavaPlugin.html?is-external=true" title="class or interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../sholl/math/ShollStats.html" title="interface in sholl.math">ShollStats</a></dd>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, org.scijava.Cancelable, org.scijava.command.Command, org.scijava.Contextual, org.scijava.plugin.SciJavaPlugin, <a href="../../sholl/math/ShollStats.html" title="interface in sholl.math">ShollStats</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">NormalizedProfileStats</span>
-extends <a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true" title="class or interface in org.scijava.command">ContextCommand</a>
+extends org.scijava.command.ContextCommand
 implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.math">ShollStats</a></pre>
+<div class="block">Calculates Sholl Metrics from normalized profiles, including Sholl decay and
+ methods for determination of 'optimal' normalization. Relies heavily on the
+ <code>org.apache.commons.math3</code> package.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Tiago Ferreira</dd>
@@ -225,10 +228,10 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#debug-java.lang.Object-">debug</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;msg)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#debug-java.lang.Object-">debug</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;msg)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>double</code></td>
+<td class="colFirst"><code>protected double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getAdjustedRSquaredOfFit-int-">getAdjustedRSquaredOfFit</a></span>(int&nbsp;p)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -246,13 +249,15 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getIntercept--">getIntercept</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getIntercept--">getIntercept</a></span>()</code>
+<div class="block">Returns the intercept of the estimated regression line,</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getKStestOfFit--">getKStestOfFit</a></span>()</code>
-<div class="block">Returns the Kolmogorov-Smirnov (K-S) test of the polynomial fit as a
- measurement of goodness of fit.</div>
+<div class="block">Returns the two-sample Kolmogorov-Smirnov (K-S) test between the polynomial
+ fit and sampled intersections as a measurement of goodness of fit.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -260,12 +265,12 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getMethod--">getMethod</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getMethodDescription--">getMethodDescription</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getMethodFlag-java.lang.String-">getMethodFlag</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getMethodFlag-java.lang.String-">getMethodFlag</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -276,12 +281,12 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getNormalizer--">getNormalizer</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getNormalizerDescription--">getNormalizerDescription</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getNormalizerFlag-java.lang.String-">getNormalizerFlag</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getNormalizerFlag-java.lang.String-">getNormalizerFlag</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../sholl/gui/ShollPlot.html" title="class in sholl.gui">ShollPlot</a></code></td>
@@ -293,10 +298,13 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getR--">getR</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getR--">getR</a></span>()</code>
+<div class="block">Returns <a href="http://mathworld.wolfram.com/CorrelationCoefficient.html">
+ Pearson's product moment correlation coefficient</a>, usually denoted r.</div>
+</td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Apache-Commons-Math/org/apache/commons/math3/stat/regression/SimpleRegression.html?is-external=true" title="class or interface in org.apache.commons.math3.stat.regression">SimpleRegression</a></code></td>
+<td class="colFirst"><code>org.apache.commons.math3.stat.regression.SimpleRegression</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#getRegression--">getRegression</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i18" class="altColor">
@@ -351,7 +359,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#setContext-org.scijava.Context-">setContext</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../sholl/math/NormalizedProfileStats.html#setContext-org.scijava.Context-">setContext</a></span>(org.scijava.Context&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -381,22 +389,22 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.command.ContextCommand">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;org.scijava.command.<a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true" title="class or interface in org.scijava.command">ContextCommand</a></h3>
-<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true#cancel-java.lang.String-" title="class or interface in org.scijava.command">cancel</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true#getCancelReason--" title="class or interface in org.scijava.command">getCancelReason</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/command/ContextCommand.html?is-external=true#isCanceled--" title="class or interface in org.scijava.command">isCanceled</a></code></li>
+<h3>Methods inherited from class&nbsp;org.scijava.command.ContextCommand</h3>
+<code>cancel, getCancelReason, isCanceled</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;org.scijava.<a href="https://javadoc.scijava.org/SciJava/org/scijava/AbstractContextual.html?is-external=true" title="class or interface in org.scijava">AbstractContextual</a></h3>
-<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/AbstractContextual.html?is-external=true#context--" title="class or interface in org.scijava">context</a>, <a href="https://javadoc.scijava.org/SciJava/org/scijava/AbstractContextual.html?is-external=true#getContext--" title="class or interface in org.scijava">getContext</a></code></li>
+<h3>Methods inherited from class&nbsp;org.scijava.AbstractContextual</h3>
+<code>context, getContext</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.sholl.math.ShollStats">
@@ -547,7 +555,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getNormalizerDescription</h4>
-<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getNormalizerDescription()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getNormalizerDescription()</pre>
 </li>
 </ul>
 <a name="getMethod--">
@@ -565,7 +573,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getMethodDescription</h4>
-<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMethodDescription()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMethodDescription()</pre>
 </li>
 </ul>
 <a name="resetRegression--">
@@ -583,7 +591,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getRegression</h4>
-<pre>public&nbsp;<a href="https://javadoc.scijava.org/Apache-Commons-Math/org/apache/commons/math3/stat/regression/SimpleRegression.html?is-external=true" title="class or interface in org.apache.commons.math3.stat.regression">SimpleRegression</a>&nbsp;getRegression()</pre>
+<pre>public&nbsp;org.apache.commons.math3.stat.regression.SimpleRegression&nbsp;getRegression()</pre>
 </li>
 </ul>
 <a name="restrictRegToPercentile-double-double-">
@@ -622,6 +630,12 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <li class="blockList">
 <h4>getR</h4>
 <pre>public&nbsp;double&nbsp;getR()</pre>
+<div class="block">Returns <a href="http://mathworld.wolfram.com/CorrelationCoefficient.html">
+ Pearson's product moment correlation coefficient</a>, usually denoted r.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Pearson's r</dd>
+</dl>
 </li>
 </ul>
 <a name="getIntercept--">
@@ -631,6 +645,11 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <li class="blockList">
 <h4>getIntercept</h4>
 <pre>public&nbsp;double&nbsp;getIntercept()</pre>
+<div class="block">Returns the intercept of the estimated regression line,</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the intercept of the regression line</dd>
+</dl>
 </li>
 </ul>
 <a name="getSlope--">
@@ -748,7 +767,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getNormalizerFlag</h4>
-<pre>public static&nbsp;int&nbsp;getNormalizerFlag(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
+<pre>public static&nbsp;int&nbsp;getNormalizerFlag(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
 </li>
 </ul>
 <a name="getMethodFlag-java.lang.String-">
@@ -757,7 +776,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getMethodFlag</h4>
-<pre>public static&nbsp;int&nbsp;getMethodFlag(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
+<pre>public static&nbsp;int&nbsp;getMethodFlag(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;string)</pre>
 </li>
 </ul>
 <a name="getKStestOfFit--">
@@ -767,16 +786,17 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <li class="blockList">
 <h4>getKStestOfFit</h4>
 <pre>public&nbsp;double&nbsp;getKStestOfFit()</pre>
-<div class="block">Returns the Kolmogorov-Smirnov (K-S) test of the polynomial fit as a
- measurement of goodness of fit.</div>
+<div class="block">Returns the two-sample Kolmogorov-Smirnov (K-S) test between the polynomial
+ fit and sampled intersections as a measurement of goodness of fit.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the test statistic (p-value) used to evaluate the null hypothesis
-         that sampled data and polynomial fitted represent samples from
-         the same underlying distribution</dd>
+         that sampled data and polynomial fit represent samples drawn from the
+         same probability distribution</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if curve fitting has not been performed</dd>
-<dd><code><a href="https://javadoc.scijava.org/Apache-Commons-Math/org/apache/commons/math3/exception/InsufficientDataException.html?is-external=true" title="class or interface in org.apache.commons.math3.exception">InsufficientDataException</a></code> - if sampled data contains fewer than two data points</dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if curve fitting has not been performed</dd>
+<dd><code>org.apache.commons.math3.exception.InsufficientDataException</code> - if sampled data contains fewer than two
+                                   data points</dd>
 </dl>
 </li>
 </ul>
@@ -795,7 +815,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>getAdjustedRSquaredOfFit</h4>
-<pre>public&nbsp;double&nbsp;getAdjustedRSquaredOfFit(int&nbsp;p)</pre>
+<pre>protected&nbsp;double&nbsp;getAdjustedRSquaredOfFit(int&nbsp;p)</pre>
 </li>
 </ul>
 <a name="getIndex-double:A-double-">
@@ -823,7 +843,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>debug</h4>
-<pre>protected&nbsp;void&nbsp;debug(<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;msg)</pre>
+<pre>protected&nbsp;void&nbsp;debug(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;msg)</pre>
 </li>
 </ul>
 <a name="setLogger-sholl.Logger-">
@@ -860,10 +880,10 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <ul class="blockList">
 <li class="blockList">
 <h4>setContext</h4>
-<pre>public&nbsp;void&nbsp;setContext(<a href="https://javadoc.scijava.org/SciJava/org/scijava/Context.html?is-external=true" title="class or interface in org.scijava">Context</a>&nbsp;context)</pre>
+<pre>public&nbsp;void&nbsp;setContext(org.scijava.Context&nbsp;context)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://javadoc.scijava.org/SciJava/org/scijava/Contextual.html?is-external=true#setContext-org.scijava.Context-" title="class or interface in org.scijava">setContext</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/SciJava/org/scijava/Contextual.html?is-external=true" title="class or interface in org.scijava">Contextual</a></code></dd>
+<dd><code>setContext</code>&nbsp;in interface&nbsp;<code>org.scijava.Contextual</code></dd>
 </dl>
 </li>
 </ul>
@@ -902,7 +922,7 @@ implements <a href="../../sholl/math/ShollStats.html" title="interface in sholl.
 <pre>public&nbsp;void&nbsp;run()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true#run--" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
 </dl>
 </li>
 </ul>
