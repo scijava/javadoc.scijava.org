@@ -382,9 +382,9 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;display(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;?,?&gt;&nbsp;map)</pre>
 <div class="block">Converts the given map data to a form renderable by scientific notebooks.
  <p>
- The map is considered to define a single-column table, with each key of the
- map defining the header for a particular row, and its corresponding value
- providing the cell of data. See <code>Tables#wrap(Map, String)</code>.
+ The map is treated as a single-column table, with each key of the map
+ defining the row header for a particular row, and the corresponding value
+ containing the cell of data. See <code>Tables.wrap(Map, String)</code>.
  </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -407,7 +407,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
  <p>
  The map is treated as a single-column table, with each key of the map
  defining the row header for a particular row, and the corresponding value
- containing the cell of data. See <code>Tables#wrap(Map, String)</code>.
+ containing the cell of data. See <code>Tables.wrap(Map, String)</code>.
  </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -452,7 +452,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an object that the notebook knows how to draw onscreen.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Tables#wrap</code></dd>
+<dd><code>Tables.wrap(java.util.Map&lt;?, T&gt;, java.lang.String)</code></dd>
 </dl>
 </li>
 </ul>
@@ -474,7 +474,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an object that the notebook knows how to draw onscreen.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>Tables#wrap</code></dd>
+<dd><code>Tables.wrap(java.util.Map&lt;?, T&gt;, java.lang.String)</code></dd>
 </dl>
 </li>
 </ul>
@@ -497,10 +497,10 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
  each item of the list defining its own structure.</li>
  <li>List of maps - If the first element is a map, that map's keys define
  the columns, with map values containing the cell data. See
- <code>Tables#wrap(List, List)</code>.</li>
+ <code>Tables.wrap(List, List)</code>.</li>
  <li>List of other - Otherwise, the list is considered to define a
  single-column table, with each element of the list containing one row/cell
- of data. See <code>Tables#wrap(List, String, List)</code>.</li>
+ of data. See <code>Tables.wrap(List, String, List)</code>.</li>
  </ol></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
