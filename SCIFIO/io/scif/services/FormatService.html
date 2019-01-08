@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">FormatService</span>
-extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.scif">SCIFIOService</a>, org.scijava.Versioned</pre>
+extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.scif">SCIFIOService</a></pre>
 <div class="block">A collection of methods for finding <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> instances given a
  child class, discovering available formats, and managing the list of
  available formats.</div>
@@ -192,7 +192,8 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/Format.html" title="interface in io.scif">Format</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/FormatService.html#getFormat-java.lang.String-">getFormat</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">Returns the first Format known to be compatible with the source provided.</div>
+<div class="block">Returns the first <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> known to be compatible with the source
+ provided.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -552,7 +553,8 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
  associated <code>Format</code> can read image sources of the provided type.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if no compatible format was found, or if something
+           goes wrong creating the <a href="../../../io/scif/Writer.html" title="interface in io.scif"><code>Writer</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -618,16 +620,17 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <h4>getFormat</h4>
 <pre><a href="../../../io/scif/Format.html" title="interface in io.scif">Format</a>&nbsp;getFormat(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
           throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
-<div class="block">Returns the first Format known to be compatible with the source provided.
- Formats are checked in ascending order of their priority. The source is
- read if necessary to determine compatibility.</div>
+<div class="block">Returns the first <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> known to be compatible with the source
+ provided. Formats are checked in ascending order of their priority. The
+ source is read if necessary to determine compatibility.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the source</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A Format reference compatible with the provided source.</dd>
+<dd>A <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> compatible with the provided source</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if no compatible format was found, or if something
+           goes wrong checking the source</dd>
 </dl>
 </li>
 </ul>
@@ -647,9 +650,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dd><code>id</code> - the source</dd>
 <dd><code>config</code> - Configuration for this method execution.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A Format reference compatible with the provided source.</dd>
+<dd>A <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> compatible with the provided source</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if no compatible format was found, or if something
+           goes wrong checking the source</dd>
 </dl>
 </li>
 </ul>
@@ -668,9 +672,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the source</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>An List of Format references compatible with the provided source.</dd>
+<dd>A list of <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a>s compatible with the provided source,
+         which will be an empty list if no compatible formats are found.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if something goes wrong checking the source.</dd>
 </dl>
 </li>
 </ul>
@@ -693,9 +698,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dd><code>greedy</code> - if true, the search will terminate after finding the first
           compatible format</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A List of Format references compatible with the provided source.</dd>
+<dd>A list of <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a>s compatible with the provided source,
+         which will be an empty list if no compatible formats are found.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if something goes wrong checking the source.</dd>
 </dl>
 </li>
 </ul>
@@ -713,9 +719,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - the source</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A Format reference compatible with the provided source.</dd>
+<dd>A <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> compatible with the provided source</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if no compatible format was found, or if something
+           goes wrong checking the source</dd>
 </dl>
 </li>
 </ul>
@@ -735,9 +742,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dd><code>source</code> - the source</dd>
 <dd><code>config</code> - Configuration for this method execution.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A Format reference compatible with the provided source.</dd>
+<dd>A <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> compatible with the provided source</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if no compatible format was found, or if something
+           goes wrong checking the source</dd>
 </dl>
 </li>
 </ul>
@@ -755,9 +763,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - the source</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>An List of Format references compatible with the provided source.</dd>
+<dd>A list of <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a>s compatible with the provided source,
+         which will be an empty list if no compatible formats are found.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if something goes wrong checking the source.</dd>
 </dl>
 </li>
 </ul>
@@ -780,9 +789,10 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <dd><code>greedy</code> - if true, the search will terminate after finding the first
           compatible format</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A List of Format references compatible with the provided source.</dd>
+<dd>A list of <a href="../../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a>s compatible with the provided source,
+         which will be an empty list if no compatible formats are found.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - if something goes wrong checking the source.</dd>
 </dl>
 </li>
 </ul>
