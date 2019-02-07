@@ -98,7 +98,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</li>
+<li>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</li>
 <li>
 <ul class="inheritance">
 <li>fiji.plugin.trackmate.graph.TimeDirectedNeighborIndex</li>
@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">TimeDirectedNeighborIndex</span>
-extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</pre>
+extends org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</pre>
 </li>
 </ul>
 </div>
@@ -199,10 +199,10 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.jgrapht.alg.NeighborIndex">
+<li class="blockList"><a name="methods.inherited.from.class.org.jgrapht.alg.util.NeighborCache">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;org.jgrapht.alg.NeighborIndex</h3>
+<h3>Methods inherited from class&nbsp;org.jgrapht.alg.util.NeighborCache</h3>
 <code>neighborListOf, neighborsOf</code></li>
 </ul>
 <ul class="blockList">
@@ -211,6 +211,13 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.jgrapht.event.GraphListener">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.jgrapht.event.GraphListener</h3>
+<code>edgeWeightUpdated</code></li>
 </ul>
 </li>
 </ul>
@@ -255,6 +262,8 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
  the graph changes as long as the index has been added as a listener to
  the graph.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>predecessorsOf</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>v</code> - the vertex whose predecessors are desired</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -295,6 +304,8 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
  the graph changes as long as the index has been added as a listener to
  the graph.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>successorsOf</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>v</code> - the vertex whose successors are desired</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -334,7 +345,7 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>edgeAdded</code>&nbsp;in interface&nbsp;<code>org.jgrapht.event.GraphListener&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>edgeAdded</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
+<dd><code>edgeAdded</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>GraphListener.edgeAdded(GraphEdgeChangeEvent)</code></dd>
 </dl>
@@ -351,7 +362,7 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>edgeRemoved</code>&nbsp;in interface&nbsp;<code>org.jgrapht.event.GraphListener&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>edgeRemoved</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
+<dd><code>edgeRemoved</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>GraphListener.edgeRemoved(GraphEdgeChangeEvent)</code></dd>
 </dl>
@@ -368,7 +379,7 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>vertexAdded</code>&nbsp;in interface&nbsp;<code>org.jgrapht.event.VertexSetListener&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>vertexAdded</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
+<dd><code>vertexAdded</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>VertexSetListener.vertexAdded(GraphVertexChangeEvent)</code></dd>
 </dl>
@@ -385,7 +396,7 @@ extends org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackm
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>vertexRemoved</code>&nbsp;in interface&nbsp;<code>org.jgrapht.event.VertexSetListener&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>&gt;</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>vertexRemoved</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.NeighborIndex&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
+<dd><code>vertexRemoved</code>&nbsp;in class&nbsp;<code>org.jgrapht.alg.util.NeighborCache&lt;<a href="../../../../fiji/plugin/trackmate/Spot.html" title="class in fiji.plugin.trackmate">Spot</a>,org.jgrapht.graph.DefaultWeightedEdge&gt;</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>VertexSetListener.vertexRemoved(GraphVertexChangeEvent)</code></dd>
 </dl>
