@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":6,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":6,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":6,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":6,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -123,7 +123,9 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">AbstractVirtualStack</span>
 extends ij.VirtualStack</pre>
-<div class="block">Abstract class to simplify the implementation of an <code>VirtualStack</code>.</div>
+<div class="block">Abstract class to simplify the implementation of an <code>VirtualStack</code>.
+ <p>
+ This class is intended to be used in <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>ImageJVirtualStack</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/PlanarImgToVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>PlanarImgToVirtualStack</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Matthias Arzt</dd>
@@ -257,7 +259,9 @@ extends ij.VirtualStack</pre>
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code>protected abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixelsZeroBasedIndex-int-">getPixelsZeroBasedIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixelsZeroBasedIndex-int-">getPixelsZeroBasedIndex</a></span>(int&nbsp;index)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixels-int-"><code>getPixels(int)</code></a>.</div>
+</td>
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>ij.process.ImageProcessor</code></td>
@@ -284,6 +288,12 @@ extends ij.VirtualStack</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getSliceLabels--">getSliceLabels</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i26" class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getSliceZeroBasedIndex-int-">getSliceZeroBasedIndex</a></span>(int&nbsp;index)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-"><code>getVoxels(int, int, int, int, int, int, float[])</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>setVoxels(int, int, int, int, int, int, float[])</code></a>.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>float[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-">getVoxels</a></span>(int&nbsp;x0,
          int&nbsp;y0,
@@ -293,7 +303,7 @@ extends ij.VirtualStack</pre>
          int&nbsp;d,
          float[]&nbsp;voxels)</code>&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>float[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-int-">getVoxels</a></span>(int&nbsp;x0,
          int&nbsp;y0,
@@ -304,70 +314,78 @@ extends ij.VirtualStack</pre>
          float[]&nbsp;voxels,
          int&nbsp;channel)</code>&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getWidth--">getWidth</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isHSB--">isHSB</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isLab--">isLab</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isRGB--">isRGB</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isVirtual--">isVirtual</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isWritable--">isWritable</a></span>()</code>
+<div class="block">If this method return's false the methods <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>setPixels(java.lang.Object, int)</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>setVoxels(int, int, int, int, int, int, float[])</code></a> will have no effect.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#saveChanges-int-">saveChanges</a></span>(int&nbsp;n)</code>
 <div class="block">Currently not implemented</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setBitDepth-int-">setBitDepth</a></span>(int&nbsp;bitDepth)</code>&nbsp;</td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setColorModel-java.awt.image.ColorModel-">setColorModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/ColorModel.html?is-external=true" title="class or interface in java.awt.image">ColorModel</a>&nbsp;cm)</code>&nbsp;</td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setMinAndMax-double-double-">setMinAndMax</a></span>(double&nbsp;min,
             double&nbsp;max)</code>&nbsp;</td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-">setPixels</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels,
          int&nbsp;n)</code>&nbsp;</td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixelsZeroBasedIndex-int-java.lang.Object-">setPixelsZeroBasedIndex</a></span>(int&nbsp;index,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</code>&nbsp;</td>
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>setPixels(java.lang.Object, int)</code></a>.</div>
+</td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setProcessor-ij.process.ImageProcessor-int-">setProcessor</a></span>(ij.process.ImageProcessor&nbsp;ip,
             int&nbsp;n)</code>&nbsp;</td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setRoi-java.awt.Rectangle-">setRoi</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/awt/Rectangle.html?is-external=true" title="class or interface in java.awt">Rectangle</a>&nbsp;roi)</code>&nbsp;</td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setSliceLabel-java.lang.String-int-">setSliceLabel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
              int&nbsp;n)</code>&nbsp;</td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-">setVoxels</a></span>(int&nbsp;x0,
          int&nbsp;y0,
@@ -377,7 +395,7 @@ extends ij.VirtualStack</pre>
          int&nbsp;d,
          float[]&nbsp;voxels)</code>&nbsp;</td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-int-">setVoxels</a></span>(int&nbsp;x0,
          int&nbsp;y0,
@@ -388,25 +406,25 @@ extends ij.VirtualStack</pre>
          float[]&nbsp;voxels,
          int&nbsp;channel)</code>&nbsp;</td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#size--">size</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>ij.ImageStack</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#sortDicom-java.lang.String:A-java.lang.String:A-int-">sortDicom</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;strings,
          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;info,
          int&nbsp;maxDigits)</code>&nbsp;</td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#trim--">trim</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#update-ij.process.ImageProcessor-">update</a></span>(ij.process.ImageProcessor&nbsp;ip)</code>&nbsp;</td>
 </tr>
@@ -503,6 +521,16 @@ extends ij.VirtualStack</pre>
 </dl>
 </li>
 </ul>
+<a name="isWritable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isWritable</h4>
+<pre>protected&nbsp;boolean&nbsp;isWritable()</pre>
+<div class="block">If this method return's false the methods <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>setPixels(java.lang.Object, int)</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>setVoxels(int, int, int, int, int, int, float[])</code></a> will have no effect.</div>
+</li>
+</ul>
 <a name="getPixelsZeroBasedIndex-int-">
 <!--   -->
 </a>
@@ -510,6 +538,16 @@ extends ij.VirtualStack</pre>
 <li class="blockList">
 <h4>getPixelsZeroBasedIndex</h4>
 <pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixelsZeroBasedIndex(int&nbsp;index)</pre>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixels-int-"><code>getPixels(int)</code></a>.
+ <p>
+ Returns an array that contains the pixels of the specified XY-plane.
+ The type of the array must be byte[], short[], int[] or float[] and must match the type indicated by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>getBitDepth()</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>ImageStack.getBitDepth()</code></dd>
+</dl>
 </li>
 </ul>
 <a name="setPixelsZeroBasedIndex-int-java.lang.Object-">
@@ -520,6 +558,33 @@ extends ij.VirtualStack</pre>
 <h4>setPixelsZeroBasedIndex</h4>
 <pre>protected abstract&nbsp;void&nbsp;setPixelsZeroBasedIndex(int&nbsp;index,
                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</pre>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>setPixels(java.lang.Object, int)</code></a>.
+ <p>
+ Set all pixels in the specified XY-plane.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
+<dd><code>pixels</code> - Array that contains the pixel data. Array length must equal <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getWidth--"><code>getWidth()</code></a> times <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getHeight--"><code>getHeight()</code></a>.
+               Type of the array must be byte[], short[], int[] or float[] and match the type indicated by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>getBitDepth()</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSliceZeroBasedIndex-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSliceZeroBasedIndex</h4>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;?&gt;&nbsp;getSliceZeroBasedIndex(int&nbsp;index)</pre>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-"><code>getVoxels(int, int, int, int, int, int, float[])</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>setVoxels(int, int, int, int, int, int, float[])</code></a>.
+ <p>
+ Returns a two dimensional <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> that provides read and write access to the specified XY-plane.
+ The pixel type must be match <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>getBitDepth()</code></a>. <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric"><code>RealType</code></a> for 8, 16 and 32 bit images, and <a href="../../../../../net/imglib2/type/numeric/ARGBType.html" title="class in net.imglib2.type.numeric"><code>ARGBType</code></a>
+ fot 32-bit images.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
+</dl>
 </li>
 </ul>
 <a name="getProcessor-int-">

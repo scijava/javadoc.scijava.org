@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.img.display.imagej</div>
-<h2 title="Class ImageJVirtualStack" class="title">Class ImageJVirtualStack&lt;S,T extends <a href="../../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</h2>
+<h2 title="Class ImageJVirtualStack" class="title">Class ImageJVirtualStack&lt;T extends <a href="../../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">net.imglib2.img.display.imagej.AbstractVirtualStack</a></li>
 <li>
 <ul class="inheritance">
-<li>net.imglib2.img.display.imagej.ImageJVirtualStack&lt;S,T&gt;</li>
+<li>net.imglib2.img.display.imagej.ImageJVirtualStack&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -126,9 +126,23 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">ImageJVirtualStack&lt;S,T extends <a href="../../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</span>
+<pre>public class <span class="typeNameLabel">ImageJVirtualStack&lt;T extends <a href="../../../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">AbstractVirtualStack</a></pre>
-<div class="block">TODO</div>
+<div class="block"><code>VirtualStack</code> that wraps around a <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> of
+ type <a href="../../../../../net/imglib2/type/numeric/integer/UnsignedByteType.html" title="class in net.imglib2.type.numeric.integer"><code>UnsignedByteType</code></a>, <a href="../../../../../net/imglib2/type/numeric/integer/UnsignedShortType.html" title="class in net.imglib2.type.numeric.integer"><code>UnsignedShortType</code></a>, <a href="../../../../../net/imglib2/type/numeric/real/FloatType.html" title="class in net.imglib2.type.numeric.real"><code>FloatType</code></a>
+ or <a href="../../../../../net/imglib2/type/numeric/ARGBType.html" title="class in net.imglib2.type.numeric"><code>ARGBType</code></a>.
+ <p>
+ By default <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>ImageJVirtualStack</code></a> is not writable. A call to
+ <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>AbstractVirtualStack.setPixels(java.lang.Object, int)</code></a> or <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.setVoxels(int, int, int, int, int, int, float[])</code></a> has no effect. Buf if
+ <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#setWritable-boolean-"><code>setWritable(boolean)</code></a> is set to true, the pixels set by this methods
+ are copied to the <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.
+ <p>
+ A call to <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixels-int-"><code>AbstractVirtualStack.getPixels(int)</code></a> will return a copy of pixels of the specified image
+ plane. Writing to the returned array has no effect.
+ The <code>ImageProcessor</code> returned by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getProcessor-int-"><code>AbstractVirtualStack.getProcessor(int)</code></a>
+ wraps around a copy of the pixels of the image plane too. So methods like
+ <code>ImageProcessor.set(int, int, int)</code> will not change the content of
+ wrapped <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -168,18 +182,23 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-net.imglib2.converter.Converter-T-int-">ImageJVirtualStack</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>&gt;&nbsp;source,
-                  <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-net.imglib2.converter.Converter-T-int-">ImageJVirtualStack</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&nbsp;source,
+                  <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super S,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
                   <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&nbsp;type,
                   int&nbsp;bitDepth)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-net.imglib2.converter.Converter-T-int-java.util.concurrent.ExecutorService-">ImageJVirtualStack</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>&gt;&nbsp;source,
-                  <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-net.imglib2.converter.Converter-T-int-java.util.concurrent.ExecutorService-">ImageJVirtualStack</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&nbsp;source,
+                  <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super S,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
                   <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&nbsp;type,
                   int&nbsp;bitDepth,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-int-">ImageJVirtualStack</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;source,
+                  int&nbsp;bitDepth)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -198,21 +217,37 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#getPixelsZeroBasedIndex-int-">getPixelsZeroBasedIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#getPixelsZeroBasedIndex-int-">getPixelsZeroBasedIndex</a></span>(int&nbsp;index)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixels-int-"><code>AbstractVirtualStack.getPixels(int)</code></a>.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#isWritable--">isWritable</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#getSliceZeroBasedIndex-int-">getSliceZeroBasedIndex</a></span>(int&nbsp;index)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.getVoxels(int, int, int, int, int, int, float[])</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.setVoxels(int, int, int, int, int, int, float[])</code></a>.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#setPixelsZeroBasedIndex-int-java.lang.Object-">setPixelsZeroBasedIndex</a></span>(int&nbsp;index,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</code>&nbsp;</td>
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#isWritable--">isWritable</a></span>()</code>
+<div class="block">True if the image is writable.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#setExecutorService-java.util.concurrent.ExecutorService-">setExecutorService</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#setPixelsZeroBasedIndex-int-java.lang.Object-">setPixelsZeroBasedIndex</a></span>(int&nbsp;index,
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</code>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>AbstractVirtualStack.setPixels(java.lang.Object, int)</code></a>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html#setWritable-boolean-">setWritable</a></span>(boolean&nbsp;writable)</code>
-<div class="block">Sets whether or not this virtual stack is writable.</div>
+<div class="block">Set if the <code>ImageStack</code> is writable.</div>
 </td>
 </tr>
 </table>
@@ -264,7 +299,7 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <ul class="blockListLast">
 <li class="blockList">
 <h4>service</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a> service</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a> service</pre>
 </li>
 </ul>
 </li>
@@ -283,8 +318,8 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <ul class="blockList">
 <li class="blockList">
 <h4>ImageJVirtualStack</h4>
-<pre>protected&nbsp;ImageJVirtualStack(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>&gt;&nbsp;source,
-                             <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
+<pre>protected&nbsp;ImageJVirtualStack(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&nbsp;source,
+                             <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super S,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
                              <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&nbsp;type,
                              int&nbsp;bitDepth)</pre>
 </li>
@@ -294,14 +329,24 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 </a><a name="ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-net.imglib2.converter.Converter-T-int-java.util.concurrent.ExecutorService-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>ImageJVirtualStack</h4>
-<pre>protected&nbsp;ImageJVirtualStack(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>&gt;&nbsp;source,
-                             <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">S</a>,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
+<pre>protected&nbsp;ImageJVirtualStack(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&nbsp;source,
+                             <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;? super S,<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;converter,
                              <a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&nbsp;type,
                              int&nbsp;bitDepth,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
+</li>
+</ul>
+<a name="ImageJVirtualStack-net.imglib2.RandomAccessibleInterval-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ImageJVirtualStack</h4>
+<pre>protected&nbsp;ImageJVirtualStack(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;source,
+                             int&nbsp;bitDepth)</pre>
 </li>
 </ul>
 </li>
@@ -312,6 +357,15 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="setExecutorService-java.util.concurrent.ExecutorService-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setExecutorService</h4>
+<pre>public&nbsp;void&nbsp;setExecutorService(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
+</li>
+</ul>
 <a name="setWritable-boolean-">
 <!--   -->
 </a>
@@ -319,9 +373,15 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <li class="blockList">
 <h4>setWritable</h4>
 <pre>public&nbsp;void&nbsp;setWritable(boolean&nbsp;writable)</pre>
-<div class="block">Sets whether or not this virtual stack is writable. The classic ImageJ
- VirtualStack was read-only; but if this stack is backed by a CellCache it
- may now be writable.</div>
+<div class="block">Set if the <code>ImageStack</code> is writable.
+ <p>
+ No call to any method of this class will change the wrapped <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>,
+ if this <code>ImageStack</code> is not writable.
+ <p>
+ If writable, the pixels written to the image by the methods <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>AbstractVirtualStack.setPixels(Object, int)</code></a>
+ or <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.setVoxels(int, int, int, int, int, int, float[])</code></a> will be copied to the wrapped <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>.
+ Please note: The <code>ImageProcessor</code> cannot be used to persistently change the image
+ content.</div>
 </li>
 </ul>
 <a name="isWritable--">
@@ -331,9 +391,10 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <li class="blockList">
 <h4>isWritable</h4>
 <pre>public&nbsp;boolean&nbsp;isWritable()</pre>
+<div class="block">True if the image is writable.</div>
 <dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if this VirtualStack will attempt to persist changes</dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#isWritable--">isWritable</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">AbstractVirtualStack</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -344,23 +405,61 @@ extends <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualSt
 <li class="blockList">
 <h4>getPixelsZeroBasedIndex</h4>
 <pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getPixelsZeroBasedIndex(int&nbsp;index)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixelsZeroBasedIndex-int-">AbstractVirtualStack</a></code></span></div>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixels-int-"><code>AbstractVirtualStack.getPixels(int)</code></a>.
+ <p>
+ Returns an array that contains the pixels of the specified XY-plane.
+ The type of the array must be byte[], short[], int[] or float[] and must match the type indicated by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>AbstractVirtualStack.getBitDepth()</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getPixelsZeroBasedIndex-int-">getPixelsZeroBasedIndex</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">AbstractVirtualStack</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><code>ImageStack.getBitDepth()</code></dd>
 </dl>
 </li>
 </ul>
 <a name="setPixelsZeroBasedIndex-int-java.lang.Object-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setPixelsZeroBasedIndex</h4>
 <pre>protected&nbsp;void&nbsp;setPixelsZeroBasedIndex(int&nbsp;index,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;pixels)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixelsZeroBasedIndex-int-java.lang.Object-">AbstractVirtualStack</a></code></span></div>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixels-java.lang.Object-int-"><code>AbstractVirtualStack.setPixels(java.lang.Object, int)</code></a>.
+ <p>
+ Set all pixels in the specified XY-plane.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setPixelsZeroBasedIndex-int-java.lang.Object-">setPixelsZeroBasedIndex</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">AbstractVirtualStack</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
+<dd><code>pixels</code> - Array that contains the pixel data. Array length must equal <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getWidth--"><code>AbstractVirtualStack.getWidth()</code></a> times <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getHeight--"><code>AbstractVirtualStack.getHeight()</code></a>.
+               Type of the array must be byte[], short[], int[] or float[] and match the type indicated by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>AbstractVirtualStack.getBitDepth()</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSliceZeroBasedIndex-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getSliceZeroBasedIndex</h4>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/img/display/imagej/ImageJVirtualStack.html" title="type parameter in ImageJVirtualStack">T</a>&gt;&nbsp;getSliceZeroBasedIndex(int&nbsp;index)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getSliceZeroBasedIndex-int-">AbstractVirtualStack</a></code></span></div>
+<div class="block">This method is used internally by <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej"><code>AbstractVirtualStack</code></a> to implement <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.getVoxels(int, int, int, int, int, int, float[])</code></a> and <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#setVoxels-int-int-int-int-int-int-float:A-"><code>AbstractVirtualStack.setVoxels(int, int, int, int, int, int, float[])</code></a>.
+ <p>
+ Returns a two dimensional <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> that provides read and write access to the specified XY-plane.
+ The pixel type must be match <a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getBitDepth--"><code>AbstractVirtualStack.getBitDepth()</code></a>. <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric"><code>RealType</code></a> for 8, 16 and 32 bit images, and <a href="../../../../../net/imglib2/type/numeric/ARGBType.html" title="class in net.imglib2.type.numeric"><code>ARGBType</code></a>
+ fot 32-bit images.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html#getSliceZeroBasedIndex-int-">getSliceZeroBasedIndex</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../net/imglib2/img/display/imagej/AbstractVirtualStack.html" title="class in net.imglib2.img.display.imagej">AbstractVirtualStack</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Zero based index of the plane. (Warning <code>VirtualStack.getPixels(int)</code> uses one base indices).</dd>
 </dl>
 </li>
 </ul>
