@@ -70,8 +70,8 @@
 <div class="header">
 <h1 title="Package" class="title">Package&nbsp;io.scif.filters</h1>
 <div class="docSummary">
-<div class="block">Provides wrapping classes for modifying the performance of one or more of
- a {link io.scif.Format}'s components.</div>
+<div class="block">Provides wrapping classes for modifying the performance of one or more of a
+ {link io.scif.Format}'s components.</div>
 </div>
 <p>See:&nbsp;<a href="#package.description">Description</a></p>
 </div>
@@ -167,31 +167,35 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="../../../io/scif/filters/FileStitcherMetadata.html" title="class in io.scif.filters">FileStitcherMetadata</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../io/scif/filters/MasterFilterHelper.html" title="class in io.scif.filters">MasterFilterHelper</a>&lt;T extends org.scijava.Contextual&gt;</td>
 <td class="colLast">
 <div class="block">Helper class for <a href="../../../io/scif/filters/MasterFilter.html" title="interface in io.scif.filters"><code>MasterFilter</code></a> implementations.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../io/scif/filters/MinMaxFilter.html" title="class in io.scif.filters">MinMaxFilter</a></td>
 <td class="colLast">
 <div class="block">Logic to compute minimum and maximum values for each plane.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters">PlaneSeparator</a></td>
 <td class="colLast">
 <div class="block">Logic to automatically separate the channels in a file.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../io/scif/filters/PlaneSeparatorMetadata.html" title="class in io.scif.filters">PlaneSeparatorMetadata</a></td>
 <td class="colLast">
 <div class="block"><a href="../../../io/scif/filters/MetadataWrapper.html" title="interface in io.scif.filters"><code>MetadataWrapper</code></a> implementation specifically for use
  with the <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a></td>
 <td class="colLast">
 <div class="block"><a href="../../../io/scif/filters/MasterFilter.html" title="interface in io.scif.filters"><code>MasterFilter</code></a> for wrapping <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>
@@ -206,43 +210,37 @@
 <!--   -->
 </a>
 <h2 title="Package io.scif.filters Description">Package io.scif.filters Description</h2>
-<div class="block">Provides wrapping classes for modifying the performance of one or more of
- a {link io.scif.Format}'s components.
- 
+<div class="block">Provides wrapping classes for modifying the performance of one or more of a
+ {link io.scif.Format}'s components.
  <h3>Changes since Bio-Formats</h3>
  <ul>
-  <li>
-  Implemented SCIFIO <a href="../../../io/scif/filters/Filter.html" title="interface in io.scif.filters"><code>Filter</code></a>s. Filters are designed
-  to wrap arbitrary classes. An implementation is currently provided for
-  Readers: <a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters"><code>ReaderFilter</code></a>.
-  <p>
-  Filters are analogous to the ReaderWrappers of Bio-Formats, but function
-  a bit differently. In Bio-Formats, you would create a stack of ReaderWrappers
-  based on what functionality you wanted to add to a given Reader instance.
-  </p>
-  <p>
-  In SCIFIO, the Filters are discoverable plugins (via the scijava-common
-  Context). When you create a ReaderFilter (e.g. via
-  <a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-"><code>InitializeService.initializeReader(java.lang.String)</code></a>) you get
-  the whole stack of discovered plugins. Each can be individually configured
-  to be enabled by default. This allows dynamic extensibility, as new
-  Filters can be added to the classpath and automatically discovered
-  and enabled.
-  </p>
-  <p>
-  The ReaderFilter is then passed around and functions like a normal Reader.
-  But as plugins are enabled and disabled within the Filter, it automatically
-  maintains the stack (based on each Filter's priority), obviating the need
-  for user knowledge of a construction order.
-  </p>
-  </li>
+ <li>Implemented SCIFIO <a href="../../../io/scif/filters/Filter.html" title="interface in io.scif.filters"><code>Filter</code></a>s. Filters are designed
+ to wrap arbitrary classes. An implementation is currently provided for
+ Readers: <a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters"><code>ReaderFilter</code></a>.
+ <p>
+ Filters are analogous to the ReaderWrappers of Bio-Formats, but function a
+ bit differently. In Bio-Formats, you would create a stack of ReaderWrappers
+ based on what functionality you wanted to add to a given Reader instance.
+ </p>
+ <p>
+ In SCIFIO, the Filters are discoverable plugins (via the scijava-common
+ Context). When you create a ReaderFilter (e.g. via
+ <a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-"><code>InitializeService.initializeReader(org.scijava.io.location.Location)</code></a>) you get the
+ whole stack of discovered plugins. Each can be individually configured to be
+ enabled by default. This allows dynamic extensibility, as new Filters can be
+ added to the classpath and automatically discovered and enabled.
+ </p>
+ <p>
+ The ReaderFilter is then passed around and functions like a normal Reader.
+ But as plugins are enabled and disabled within the Filter, it automatically
+ maintains the stack (based on each Filter's priority), obviating the need for
+ user knowledge of a construction order.
+ </p>
+ </li>
  </ul>
- 
  <h3>Future plans</h3>
  <ul>
-  <li>
-  Implement Filters for the remaining component types.
-  </li>
+ <li>Implement Filters for the remaining component types.</li>
  </ul></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>

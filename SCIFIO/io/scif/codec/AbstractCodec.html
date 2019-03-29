@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":6,"i6":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -172,7 +172,7 @@ implements <a href="../../../io/scif/codec/Codec.html" title="interface in io.sc
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -211,13 +211,6 @@ implements <a href="../../../io/scif/codec/Codec.html" title="interface in io.sc
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>abstract byte[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/codec/AbstractCodec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">decompress</a></span>(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
-          <a href="../../../io/scif/codec/CodecOptions.html" title="class in io.scif.codec">CodecOptions</a>&nbsp;options)</code>
-<div class="block">Decompresses data from the given RandomAccessInputStream.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/codec/AbstractCodec.html#test--">test</a></span>()</code>
 <div class="block">Main testing method default implementation.</div>
@@ -257,7 +250,7 @@ implements <a href="../../../io/scif/codec/Codec.html" title="interface in io.sc
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.codec.<a href="../../../io/scif/codec/Codec.html" title="interface in io.scif.codec">Codec</a></h3>
-<code><a href="../../../io/scif/codec/Codec.html#compress-byte:A-io.scif.codec.CodecOptions-">compress</a></code></li>
+<code><a href="../../../io/scif/codec/Codec.html#compress-byte:A-io.scif.codec.CodecOptions-">compress</a>, <a href="../../../io/scif/codec/Codec.html#decompress-org.scijava.io.handle.DataHandle-io.scif.codec.CodecOptions-">decompress</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.SCIFIOPlugin">
@@ -443,33 +436,6 @@ implements <a href="../../../io/scif/codec/Codec.html" title="interface in io.sc
 <dd>the decompressed data.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - If data is not valid.</dd>
-</dl>
-</li>
-</ul>
-<a name="decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>decompress</h4>
-<pre>public abstract&nbsp;byte[]&nbsp;decompress(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
-                                  <a href="../../../io/scif/codec/CodecOptions.html" title="class in io.scif.codec">CodecOptions</a>&nbsp;options)
-                           throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
-                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/codec/Codec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">Codec</a></code></span></div>
-<div class="block">Decompresses data from the given RandomAccessInputStream.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/codec/Codec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">decompress</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/codec/Codec.html" title="interface in io.scif.codec">Codec</a></code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>in</code> - The stream from which to read compressed data.</dd>
-<dd><code>options</code> - Options to be used during decompression.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The decompressed data.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code> - If data is not valid compressed data for this
-           decompressor.</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>

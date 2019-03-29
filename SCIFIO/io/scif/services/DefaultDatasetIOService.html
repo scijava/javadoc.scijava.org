@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,66 +171,100 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#canOpen-java.lang.String-">canOpen</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#canOpen-org.scijava.io.location.Location-">canOpen</a></span>(org.scijava.io.location.Location&nbsp;source)</code>
 <div class="block">Determines whether the given source can be opened as a <code>Dataset</code>
- using the <a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-"><code>DatasetIOService.open(String)</code></a> method.</div>
+ using the <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a> method.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#canSave-java.lang.String-">canSave</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</code>
-<div class="block">Determines whether the given destination can be used to save a
- <code>Dataset</code> using the <a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-java.lang.String-"><code>DatasetIOService.save(Dataset, String)</code></a> method.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#canOpen-java.lang.String-">canOpen</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
+<div class="block">Determines whether the given source can be opened as a <code>Dataset</code>
+ using the <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a> method.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>net.imagej.Dataset</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-java.lang.String-">open</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
-<div class="block">Loads a dataset from a source (such as a file on disk).</div>
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#canSave-org.scijava.io.location.Location-">canSave</a></span>(org.scijava.io.location.Location&nbsp;destination)</code>
+<div class="block">Determines whether the given destination can be used to save a
+ <code>Dataset</code> using the <a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-"><code>DatasetIOService.save(Dataset, Location)</code></a> method.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>net.imagej.Dataset</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-java.lang.String-io.scif.config.SCIFIOConfig-">open</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-"><code>DatasetIOService.open(String)</code></a>, with the given
- <code>io.scif.config.SCIFIOConfig</code>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-org.scijava.io.location.Location-">open</a></span>(org.scijava.io.location.Location&nbsp;source)</code>
+<div class="block">Loads a dataset from a source (such as a file on disk).</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-java.lang.String-">openAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
-<div class="block">Load all the datasets from a given source (such as a file on disk).</div>
+<td class="colFirst"><code>net.imagej.Dataset</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">open</a></span>(org.scijava.io.location.Location&nbsp;source,
+    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a>, with the given
+ <code>io.scif.config.SCIFIOConfig</code>.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-java.lang.String-io.scif.config.SCIFIOConfig-">openAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-"><code>DatasetIOService.openAll(String)</code></a>,
- with a given <code>io.scif.config.SCIFIOConfig</code>.</div>
-</td>
+<td class="colFirst"><code>net.imagej.Dataset</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-java.lang.String-">open</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#revert-net.imagej.Dataset-">revert</a></span>(net.imagej.Dataset&nbsp;dataset)</code>
-<div class="block">Reverts the given dataset to its original source.</div>
+<td class="colFirst"><code>net.imagej.Dataset</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#open-java.lang.String-io.scif.config.SCIFIOConfig-">open</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Loads a dataset from a source (such as a file on disk).</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-org.scijava.io.location.Location-">openAll</a></span>(org.scijava.io.location.Location&nbsp;source)</code>
+<div class="block">Load all the datasets from a given source.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">openAll</a></span>(org.scijava.io.location.Location&nbsp;source,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-"><code>DatasetIOService.openAll(Location)</code></a>, with a given
+ <code>io.scif.config.SCIFIOConfig</code>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-java.lang.String-">openAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#openAll-java.lang.String-io.scif.config.SCIFIOConfig-">openAll</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-">save</a></span>(net.imagej.Dataset&nbsp;dataset,
+    org.scijava.io.location.Location&nbsp;destination)</code>
+<div class="block">Saves a dataset to a destination (such as a file on disk).</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">save</a></span>(net.imagej.Dataset&nbsp;dataset,
+    org.scijava.io.location.Location&nbsp;destination,
+    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Saves a dataset to a destination (such as a file on disk).</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#save-net.imagej.Dataset-java.lang.String-">save</a></span>(net.imagej.Dataset&nbsp;dataset,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</code>
 <div class="block">Saves a dataset to a destination (such as a file on disk).</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/DefaultDatasetIOService.html#save-net.imagej.Dataset-java.lang.String-io.scif.config.SCIFIOConfig-">save</a></span>(net.imagej.Dataset&nbsp;dataset,
     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
-    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">Saves a dataset to a destination (such as a file on disk).</div>
-</td>
+    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -348,6 +382,22 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="canOpen-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canOpen</h4>
+<pre>public&nbsp;boolean&nbsp;canOpen(org.scijava.io.location.Location&nbsp;source)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#canOpen-org.scijava.io.location.Location-">DatasetIOService</a></code></span></div>
+<div class="block">Determines whether the given source can be opened as a <code>Dataset</code>
+ using the <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a> method.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#canOpen-org.scijava.io.location.Location-">canOpen</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="canOpen-java.lang.String-">
 <!--   -->
 </a>
@@ -357,26 +407,44 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 <pre>public&nbsp;boolean&nbsp;canOpen(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#canOpen-java.lang.String-">DatasetIOService</a></code></span></div>
 <div class="block">Determines whether the given source can be opened as a <code>Dataset</code>
- using the <a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-"><code>DatasetIOService.open(String)</code></a> method.</div>
+ using the <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a> method.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/scif/services/DatasetIOService.html#canOpen-java.lang.String-">canOpen</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="canSave-java.lang.String-">
+<a name="canSave-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>canSave</h4>
-<pre>public&nbsp;boolean&nbsp;canSave(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#canSave-java.lang.String-">DatasetIOService</a></code></span></div>
+<pre>public&nbsp;boolean&nbsp;canSave(org.scijava.io.location.Location&nbsp;destination)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#canSave-org.scijava.io.location.Location-">DatasetIOService</a></code></span></div>
 <div class="block">Determines whether the given destination can be used to save a
- <code>Dataset</code> using the <a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-java.lang.String-"><code>DatasetIOService.save(Dataset, String)</code></a> method.</div>
+ <code>Dataset</code> using the <a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-"><code>DatasetIOService.save(Dataset, Location)</code></a> method.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/services/DatasetIOService.html#canSave-java.lang.String-">canSave</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#canSave-org.scijava.io.location.Location-">canSave</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="open-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>open</h4>
+<pre>public&nbsp;net.imagej.Dataset&nbsp;open(org.scijava.io.location.Location&nbsp;source)
+                        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-">DatasetIOService</a></code></span></div>
+<div class="block">Loads a dataset from a source (such as a file on disk).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-">open</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -388,11 +456,31 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 <h4>open</h4>
 <pre>public&nbsp;net.imagej.Dataset&nbsp;open(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-">DatasetIOService</a></code></span></div>
-<div class="block">Loads a dataset from a source (such as a file on disk).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-">open</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="open-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>open</h4>
+<pre>public&nbsp;net.imagej.Dataset&nbsp;open(org.scijava.io.location.Location&nbsp;source,
+                               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
+<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-"><code>DatasetIOService.open(Location)</code></a>, with the given
+ <code>io.scif.config.SCIFIOConfig</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#open-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">open</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
@@ -408,11 +496,33 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
                                <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
-<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-"><code>DatasetIOService.open(String)</code></a>, with the given
- <code>io.scif.config.SCIFIOConfig</code>.</div>
+<div class="block">Loads a dataset from a source (such as a file on disk).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/scif/services/DatasetIOService.html#open-java.lang.String-io.scif.config.SCIFIOConfig-">open</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openAll-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openAll</h4>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;&nbsp;openAll(org.scijava.io.location.Location&nbsp;source)
+                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-">DatasetIOService</a></code></span></div>
+<div class="block">Load all the datasets from a given source. (Useful for files containing
+ image series)</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-">openAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source location of the images</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a list of all datasets contained by the image file.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
@@ -426,18 +536,13 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 <h4>openAll</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;&nbsp;openAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-">DatasetIOService</a></code></span></div>
-<div class="block">Load all the datasets from a given source (such as a file on disk).
- (Useful for files containing image series)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-">openAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - path on the disk</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a list of all datasets contained by the image file.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-"><code>DatasetIOService.openAll(Location)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -450,12 +555,31 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;&nbsp;openAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
                                         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                  throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
-<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-"><code>DatasetIOService.openAll(String)</code></a>,
- with a given <code>io.scif.config.SCIFIOConfig</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/scif/services/DatasetIOService.html#openAll-java.lang.String-io.scif.config.SCIFIOConfig-">openAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-"><code>DatasetIOService.openAll(Location)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="openAll-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openAll</h4>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;net.imagej.Dataset&gt;&nbsp;openAll(org.scijava.io.location.Location&nbsp;source,
+                                        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
+<div class="block">As <a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-"><code>DatasetIOService.openAll(Location)</code></a>, with a given
+ <code>io.scif.config.SCIFIOConfig</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#openAll-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">openAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - path on the disk</dd>
 <dd><code>config</code> - SCIFIOConfig file</dd>
@@ -489,6 +613,29 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
 </dl>
 </li>
 </ul>
+<a name="save-net.imagej.Dataset-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>save</h4>
+<pre>public&nbsp;<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;save(net.imagej.Dataset&nbsp;dataset,
+                     org.scijava.io.location.Location&nbsp;destination)
+              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-">DatasetIOService</a></code></span></div>
+<div class="block">Saves a dataset to a destination (such as a file on disk).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-">save</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dataset</code> - The dataset to save.</dd>
+<dd><code>destination</code> - Where the dataset should be saved (e.g., a file path on
+          disk).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="save-net.imagej.Dataset-java.lang.String-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
@@ -499,35 +646,33 @@ implements <a href="../../../io/scif/services/DatasetIOService.html" title="inte
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
                      <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-java.lang.String-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="save-net.imagej.Dataset-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>save</h4>
+<pre>public&nbsp;<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;save(net.imagej.Dataset&nbsp;dataset,
+                     org.scijava.io.location.Location&nbsp;destination,
+                     <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+              throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">DatasetIOService</a></code></span></div>
 <div class="block">Saves a dataset to a destination (such as a file on disk).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-java.lang.String-io.scif.config.SCIFIOConfig-">save</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
+<dd><code><a href="../../../io/scif/services/DatasetIOService.html#save-net.imagej.Dataset-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">save</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dataset</code> - The dataset to save.</dd>
 <dd><code>destination</code> - Where the dataset should be saved (e.g., a file path on
           disk).</dd>
 <dd><code>config</code> - The <code>io.scif.config.SCIFIOConfig</code> describing how the
           data should be saved.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="revert-net.imagej.Dataset-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>revert</h4>
-<pre>public&nbsp;void&nbsp;revert(net.imagej.Dataset&nbsp;dataset)
-            throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html#revert-net.imagej.Dataset-">DatasetIOService</a></code></span></div>
-<div class="block">Reverts the given dataset to its original source.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/services/DatasetIOService.html#revert-net.imagej.Dataset-">revert</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/services/DatasetIOService.html" title="interface in io.scif.services">DatasetIOService</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>

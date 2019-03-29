@@ -140,7 +140,7 @@
 <td class="colFirst"><a href="../../io/scif/HasSource.html" title="interface in io.scif">HasSource</a></td>
 <td class="colLast">
 <div class="block">Interface for components that can be attached to open image sources that
- should be closed to avoid resource leaks (e.g.</div>
+ should be closed to avoid resource leaks</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -418,12 +418,6 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../io/scif/FileInfo.html" title="class in io.scif">FileInfo</a></td>
-<td class="colLast">
-<div class="block">Encompasses basic metadata about a file.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="../../io/scif/FilePattern.html" title="class in io.scif">FilePattern</a></td>
 <td class="colLast">
 <div class="block">FilePattern is a collection of methods for handling file patterns, a way of
@@ -431,10 +425,16 @@
  data series.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../io/scif/FilePatternBlock.html" title="class in io.scif">FilePatternBlock</a></td>
 <td class="colLast">
 <div class="block">FilePatternBlock represents a single block in a <a href="../../io/scif/FilePattern.html" title="class in io.scif"><code>FilePattern</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../io/scif/LocationInfo.html" title="class in io.scif">LocationInfo</a></td>
+<td class="colLast">
+<div class="block">Encompasses basic metadata about a Loation.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -535,301 +535,256 @@
  answers to commonly asked questions.
  </p>
  <p>
- Support for a given image format in SCIFIO is established by implementing
- the <a href="../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> interface. Each Format consists of six types of
+ Support for a given image format in SCIFIO is established by implementing the
+ <a href="../../io/scif/Format.html" title="interface in io.scif"><code>Format</code></a> interface. Each Format consists of six types of
  components:
  </p>
  <ul>
-  <li>
-  <a href="../../io/scif/Checker.html" title="interface in io.scif"><code>Checker</code></a> - determines if the <code>Format</code> can read/write a
-  given image.
-  </li>
-  <li>
-  <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> - data structure for all metadata that can be found in
-  images of the associated <code>Format</code>.
-  </li>
-  <li>
-  <a href="../../io/scif/Parser.html" title="interface in io.scif"><code>Parser</code></a> - builds <code>Metadata</code> objects, without reading
-  pixel information from the image.
-  </li>
-  <li>
-  <a href="../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> - uses corresponding <code>Metadata</code> to produce a
-  standard pixel representation, e.g. encapsulated in a <a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a>.
-  </li>
-  <li>
-  <a href="../../io/scif/Writer.html" title="interface in io.scif"><code>Writer</code></a> - uses corresponding <code>Metadata</code> to save pixel
-  data to an output source of this format's type, e.g. writing to a file on
-  disk.
-  </li>
-  <li>
-  <a href="../../io/scif/Translator.html" title="interface in io.scif"><code>Translator</code></a> - converts between two types of Metadata.
-  <code>Translator</code> converts in a single direction. To avoid an NxN
-  translation problem, typically <code>Translators</code> are only defined to
-  and from format-agnostic <code>Metadata</code> representations. Furthermore,
-  only writable Formats require translators to their Metadata type.
-  </li>
+ <li><a href="../../io/scif/Checker.html" title="interface in io.scif"><code>Checker</code></a> - determines if the <code>Format</code> can read/write
+ a given image.</li>
+ <li><a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> - data structure for all metadata that can be
+ found in images of the associated <code>Format</code>.</li>
+ <li><a href="../../io/scif/Parser.html" title="interface in io.scif"><code>Parser</code></a> - builds <code>Metadata</code> objects, without reading
+ pixel information from the image.</li>
+ <li><a href="../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> - uses corresponding <code>Metadata</code> to produce a
+ standard pixel representation, e.g. encapsulated in a <a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a>.
+ </li>
+ <li><a href="../../io/scif/Writer.html" title="interface in io.scif"><code>Writer</code></a> - uses corresponding <code>Metadata</code> to save
+ pixel data to an output source of this format's type, e.g. writing to a file
+ on disk.</li>
+ <li><a href="../../io/scif/Translator.html" title="interface in io.scif"><code>Translator</code></a> - converts between two types of Metadata.
+ <code>Translator</code> converts in a single direction. To avoid an NxN
+ translation problem, typically <code>Translators</code> are only defined to and
+ from format-agnostic <code>Metadata</code> representations. Furthermore, only
+ writable Formats require translators to their Metadata type.</li>
  </ul>
  <p>
- The intended workflow in SCIFIO takes an image source through the following steps:
+ The intended workflow in SCIFIO takes an image source through the following
+ steps:
  </p>
  <ol>
-  <li>
-  Use each discovered Format's Checker to determine if that Format is compatible with
-  the image source.
-  </li>
-  <li>
-  If a match is found, use a Parser to extract the format-specific Metadata from the
-  image source. Format-specific information is also used at this point to populate
-  the associated ImageMetadata information.
-  </li>
-  <li>
-  Now that we have a Metadata object, it can be attached to a Reader and used to open
-  image Planes.
-  </li>
-  <li>
-  If we want to save these planes to a different Format, we need to use Translators
-  to convert our parsed Metadata to the destination Metadata. This could be done by
-  translating  to and from an intermediary - e.g. an open exchange format, like OME-XML.
-  Or, it could be done by simply translating from the source's ImageMetadata to
-  the destination.
-  </li>
-  <li>
-  The translated Metadata is then attached to an appropriate Writer, and Planes opened
-  by the Reader are passed, as desired, to the Writer for saving to an output source.
-  </li>
+ <li>Use each discovered Format's Checker to determine if that Format is
+ compatible with the image source.</li>
+ <li>If a match is found, use a Parser to extract the format-specific Metadata
+ from the image source. Format-specific information is also used at this point
+ to populate the associated ImageMetadata information.</li>
+ <li>Now that we have a Metadata object, it can be attached to a Reader and
+ used to open image Planes.</li>
+ <li>If we want to save these planes to a different Format, we need to use
+ Translators to convert our parsed Metadata to the destination Metadata. This
+ could be done by translating to and from an intermediary - e.g. an open
+ exchange format, like OME-XML. Or, it could be done by simply translating
+ from the source's ImageMetadata to the destination.</li>
+ <li>The translated Metadata is then attached to an appropriate Writer, and
+ Planes opened by the Reader are passed, as desired, to the Writer for saving
+ to an output source.</li>
  </ol>
  <p>
- The <a href="../../io/scif/SCIFIO.html" title="class in io.scif"><code>SCIFIO</code></a> class wraps <code>Context</code>
- instances and provides convenient access to many services.
+ The <a href="../../io/scif/SCIFIO.html" title="class in io.scif"><code>SCIFIO</code></a> class wraps <code>Context</code> instances
+ and provides convenient access to many services.
  </p>
  <p>
- This package also contains an <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a>
- interface and default implementation. ImageMetadata is use as a
- format-agnostic representation of common image attributes. SCIFIO follows the OME
- syntax of what is an "image" - in that top-level is really a dataset, which
- are arbitrary lists of one or more images. Images are the pixel containers,
- and metadata can exist at both the image and dataset level.
+ This package also contains an <a href="../../io/scif/ImageMetadata.html" title="interface in io.scif"><code>ImageMetadata</code></a> interface and
+ default implementation. ImageMetadata is use as a format-agnostic
+ representation of common image attributes. SCIFIO follows the OME syntax of
+ what is an "image" - in that top-level is really a dataset, which are
+ arbitrary lists of one or more images. Images are the pixel containers, and
+ metadata can exist at both the image and dataset level.
  </p>
- 
  <h3>Changes since Bio-Formats</h3>
  <ul>
-  <li>
-  Converting to <code>Format</code> representations from the Bio-Formats
-  <code>Reader</code>. Both encapsulate the functions to read and write images of a
-  given format, but in SCIFIO the <code>Format</code> consists of multiple
-  single-purpose components to address each part of image IO atomically.
-  <p>
-  The intent of breaking this functionality down to components is two-fold:
-  first, to ease the process of creating new formats by external developers,
-  by designing each component to operate without consideration for how the
-  others work. This modularity then facilitates extensibility. For example,
-  SCIFIO comes with a simple <code>ImageMetadata</code> class that encapsulates a
-  baseline of image attributes. To replace this generation with OME-XML could
-  be as simple as adding a new <code>OMEXML-Translator</code> class to the
-  classpath.
-  </p>
-  <p>
-  Note that components are all aware of their <code>Format</code>, and thus
-  capable of accessing related components, via the <a href="../../io/scif/HasFormat.html" title="interface in io.scif"><code>HasFormat</code></a>
-  interface.
-  </p>
-  </li>
-  <li>
-  Leveraging the scijava-common Context. In Bio-Formats, readers held
-  state (e.g. the current image index). In SCIFIO, as much as possible,
-  state is removed from all components and stored in one central location
-  (the context). This makes SCIFIO much more friendly for using in a
-  multi-threaded environment, allowing broader incorporation in external
-  software.
-  <p>
-  Note that all potentially context-sensitive components can access the
-  context in which they were created, via the <code>Contextual</code> interface.
-  </p>
-  <p>
-  Note also that the scijava-common Context provides a standard notion of
-  services. Thus the <a href="../../io/scif/services/package-summary.html"><code>io.scif.services</code></a> package has been heavily
-  reworked.
-  </p>
-  </li>
-  <li>
-  Dataset and Image terminology. In Bio-Formats, a file was a collection of
-  <code>series</code> each containing multiple <code>images</code>. In SCIFIO, we adopt
-  the OME terminology that you open a <code>dataset</code> that contains one or
-  more <code>images</code>. Each <code>image</code> has a number of <code>planes</code>.
-  <table summary="Bio-Formats vs. SCIFIO terminology comparison">
-    <tr>
-      <th>Bio-Formats</th>
-      <th>SCIFIO</th>
-    </tr>
-    <tr>
-      <td>File</td>
-      <td>Dataset</td>
-    </tr>
-    <tr>
-      <td>Series</td>
-      <td>Image</td>
-    </tr>
-    <tr>
-      <td>Image</td>
-      <td>Plane</td>
-    </tr>
-  </table>
-  </li>
-  <li>
-  Addition of generic parameterization. Because of the prevalence of related
-  components in individual classes, SCIFIO makes extensive use of generics
-  to capture these relationships.
-  <p>
-  Most of these parameters disappear at the concrete implementation level,
-  but are present in the interfaces and abstract layers (which is
-  representative of the desire for SCIFIO to generically define the image IO
-  process - with the specifications of Bio-Formats being just one possible
-  implementation).
-  </p>
-  </li>
-  <li>
-  <p>
-  Serialization. The <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> class implements
-  <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io"><code>Serializable</code></a>. The idea behind metadata serialization is that
-  parsing the metadata is one of the most expensive processes of image IO.
-  If metadata can be saved for future sessions, then repeated analysis of
-  the associated dataset can be, potentially quite significantly, sped up.
-  </p>
-  </li>
-  <li>
-  Dimensionality changes. Bio-Formats was hard-coded to be 5D (some
-  permutation of XYZCT). To be fully extensible SCIFIO should be N-D.
-  The current SCIFIO implementation uses ImgLib2 <code>Axes</code>
-  to get away from the strict 5D representation.
-  <p>
-  However, many methods in SCIFIO (especially utility methods) are still
-  effectively 5D, as they were strictly ported from Bio-Formats code. Thus
-  this is still an area for refinement. Especially given that the parallel
-  axis length and type arrays are somewhat confusing, when they could be
-  replaced by a single object.
-  </p>
-  </li>
-  <li>
-  <a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a>s. In Bio-Formats, readers always returned byte[],
-  or maybe Objects which were assumed to be BufferedImages. This left very
-  few hooks for manipulation of the resultant data. In SCIFIO we define
-  this relationship via the Plane hierarchy, which ties together the concept
-  of an image plane + ColorTable, and facilitates future extensibility, e.g.
-  via new Plane types.
-  <p>
-  Currently SCIFIO provides implementations for ByteArray and BufferedImage
-  planes, to mirror the behavior of Bio-Formats.
-  </p>
-  </li>
+ <li>Converting to <code>Format</code> representations from the Bio-Formats
+ <code>Reader</code>. Both encapsulate the functions to read and write images of a
+ given format, but in SCIFIO the <code>Format</code> consists of multiple
+ single-purpose components to address each part of image IO atomically.
+ <p>
+ The intent of breaking this functionality down to components is two-fold:
+ first, to ease the process of creating new formats by external developers, by
+ designing each component to operate without consideration for how the others
+ work. This modularity then facilitates extensibility. For example, SCIFIO
+ comes with a simple <code>ImageMetadata</code> class that encapsulates a baseline
+ of image attributes. To replace this generation with OME-XML could be as
+ simple as adding a new <code>OMEXML-Translator</code> class to the classpath.
+ </p>
+ <p>
+ Note that components are all aware of their <code>Format</code>, and thus capable
+ of accessing related components, via the <a href="../../io/scif/HasFormat.html" title="interface in io.scif"><code>HasFormat</code></a> interface.
+ </p>
+ </li>
+ <li>Leveraging the scijava-common Context. In Bio-Formats, readers held state
+ (e.g. the current image index). In SCIFIO, as much as possible, state is
+ removed from all components and stored in one central location (the context).
+ This makes SCIFIO much more friendly for using in a multi-threaded
+ environment, allowing broader incorporation in external software.
+ <p>
+ Note that all potentially context-sensitive components can access the context
+ in which they were created, via the <code>Contextual</code> interface.
+ </p>
+ <p>
+ Note also that the scijava-common Context provides a standard notion of
+ services. Thus the <a href="../../io/scif/services/package-summary.html"><code>io.scif.services</code></a> package has been heavily
+ reworked.
+ </p>
+ </li>
+ <li>Dataset and Image terminology. In Bio-Formats, a file was a collection of
+ <code>series</code> each containing multiple <code>images</code>. In SCIFIO, we adopt
+ the OME terminology that you open a <code>dataset</code> that contains one or more
+ <code>images</code>. Each <code>image</code> has a number of <code>planes</code>.
+ <table summary="Bio-Formats vs. SCIFIO terminology comparison">
+ <tr>
+ <th>Bio-Formats</th>
+ <th>SCIFIO</th>
+ </tr>
+ <tr>
+ <td>File</td>
+ <td>Dataset</td>
+ </tr>
+ <tr>
+ <td>Series</td>
+ <td>Image</td>
+ </tr>
+ <tr>
+ <td>Image</td>
+ <td>Plane</td>
+ </tr>
+ </table>
+ </li>
+ <li>Addition of generic parameterization. Because of the prevalence of
+ related components in individual classes, SCIFIO makes extensive use of
+ generics to capture these relationships.
+ <p>
+ Most of these parameters disappear at the concrete implementation level, but
+ are present in the interfaces and abstract layers (which is representative of
+ the desire for SCIFIO to generically define the image IO process - with the
+ specifications of Bio-Formats being just one possible implementation).
+ </p>
+ </li>
+ <li>
+ <p>
+ Serialization. The <a href="../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> class implements
+ <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io"><code>Serializable</code></a>. The idea behind metadata serialization is that
+ parsing the metadata is one of the most expensive processes of image IO. If
+ metadata can be saved for future sessions, then repeated analysis of the
+ associated dataset can be, potentially quite significantly, sped up.
+ </p>
+ </li>
+ <li>Dimensionality changes. Bio-Formats was hard-coded to be 5D (some
+ permutation of XYZCT). To be fully extensible SCIFIO should be N-D. The
+ current SCIFIO implementation uses ImgLib2 <code>Axes</code> to
+ get away from the strict 5D representation.
+ <p>
+ However, many methods in SCIFIO (especially utility methods) are still
+ effectively 5D, as they were strictly ported from Bio-Formats code. Thus this
+ is still an area for refinement. Especially given that the parallel axis
+ length and type arrays are somewhat confusing, when they could be replaced by
+ a single object.
+ </p>
+ </li>
+ <li><a href="../../io/scif/Plane.html" title="interface in io.scif"><code>Plane</code></a>s. In Bio-Formats, readers always returned byte[],
+ or maybe Objects which were assumed to be BufferedImages. This left very few
+ hooks for manipulation of the resultant data. In SCIFIO we define this
+ relationship via the Plane hierarchy, which ties together the concept of an
+ image plane + ColorTable, and facilitates future extensibility, e.g. via new
+ Plane types.
+ <p>
+ Currently SCIFIO provides implementations for ByteArray and BufferedImage
+ planes, to mirror the behavior of Bio-Formats.
+ </p>
+ </li>
  </ul>
- 
- <h3>Future plans</h3>
- NB: items with an asterisk (*) are of unknown merit and may or may not
- be implemented, pending discussion.
+ <h3>Future plans</h3> NB: items with an asterisk (*) are of unknown merit and
+ may or may not be implemented, pending discussion.
  <ul>
-  <li>
-  Translate more formats! The goal is to translate all the open source formats
-  that were supported by Bio-Formats by the end of May.
-  </li>
-  <li>
-  Add default components. Currently implementing a new <code>Format</code>
-  mandates the implementation of all components. However, some formats will
-  not use all components (e.g. proprietary formats that won't have a
-  <code>Writer</code>) or do not need to go beyond the abstract implementations
-  (for many <code>Checkers</code>).
-  <p>
-  To solve this and to make it easier for new developers to pick and choose
-  what they implement, there should be a true "Default" implementation for
-  each component. This could potentially just be the current abstract layer.
-  The end goal is simply that one could simply create a <code>Format</code>
-  class and it would compile. At that point components could be added as
-  needed.
-  </p>
-  </li>
-  <li>
-  <p>
-  Add sub-resolution API to <code>ImageMetadata</code>. This feature was added after the
-  split of SCIFIO off Bio-Formats and has not been reconciled yet. It will
-  likely involve turning <code>ImageMetadata</code> into a list as well, and possibly
-  adding a third index to many methods (imageIndex within the dataset,
-  planeIndex within the image, sub-resolution index within the plane).
-  </p>
-  </li>
-  <li>
-  <p>
-  Cancel early in <a href="../../io/scif/Parser.html#parse-java.lang.String-"><code>Parser.parse(java.lang.String)</code></a>. There should be an <code>active</code>
-  flag that can be set on a <code>Parser</code> instance, with regular polls
-  set up through runtime of the <code>parse</code> method. If the flag ever
-  returns false, the current parsing operation is aborted.
-  </p>
-  </li>
-  <li>
-  Create a <code>HasSource</code> style interface. <code>Metadata</code> objects should
-  have some sort of mapping back to their <a href="../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io"><code>RandomAccessInputStream</code></a>
-  object(s).
-  <p>
-  Default implementation could be a 2D array, as a list of companion files
-  for each image in the dataset.
-  </p>
-  <p>
-  Ultimately this interface will be used to generate the information required
-  for the <code>getUsedSource</code> equivalent methods from Bio-Formats.
-  </p>
-  </li>
-  <li>
-  *Use a bit mask for recovering used sources. Related to the
-  <code>HasSource</code> interface, when the sources are queried there should be
-  some standard way to do so, without using an assortment of overridden
-  methods.
-  <p>
-  A bit mask is a simple, logical way to do so, where the bits
-  correspond to various optional flags. For example, the <code>noPixels</code>
-  flag that currently is used in Bio-Formats.
-  </p>
-  <p>
-  Note that bit masks may not be the ideal implementation of this
-  functionality. It may be better to have some sort of object that wraps
-  an arbitrary number of flags with a similar effect. The goal is just to
-  create a standard that will allow for extensibility without breaking API.
-  </li>
-  <li>
-  Create <code>OriginalMetadata</code> class. Currently both
-  <code>Metadata</code> and <code>ImageMetadata</code> maintain
-  <code>HashTables</code> for general metadata storage. This should be
-  standardized into a new class that works more intelligently in the SCIFIO
-  framework.
-  <p>
-  The foundation of this <code>OriginalMetadata</code> class will be in annotating
-  using the <a href="../../io/scif/Field.html" title="annotation in io.scif"><code>Field</code></a> annotation and labeling with the index
-  for each metadata field. This annotation allows original names to be
-  preserved easily and in a standard way.
-  </p>
-  <p>
-  By making the <code>OriginalMetadata</code> class implement the <code>Metadata</code>
-  interface, we can add translators and set up methods to automatically
-  translate from common metadata forms to <code>OriginalMetadata</code>.
-  </p>
-  </li>
-  <li>
-  *Refine filtering logic. Filtering should only be a factor during the
-  parsing process. In Bio-Formats there was a filterMetadata flag, but in
-  SCIFIO this is replaced by the act of translating or not. Right now that's
-  not very clear, but may be aided by implementing the
-  <code>OriginalMetadata</code> class.
-  <p>
-  For backwards compatibility we need to ensure that <code>setId</code> in
-  Bio-Formats generates both original and OME-XML metadata.
-  </p>
-  </li>
-  <li>
-  *Generic state cache in the context. Many Bio-Formats classes cached items
-  such as the last plane read. This behavior may still be useful. To keep
-  SCIFIO component instances free of state, it would make sense to allow the context
-  to cache information in a generic way. Then different instances of a given
-  class created under the same context would behave similarly, and
-  potentially allow for speed improvements over a completely stateless
-  environment.
-  </li>
+ <li>Translate more formats! The goal is to translate all the open source
+ formats that were supported by Bio-Formats by the end of May.</li>
+ <li>Add default components. Currently implementing a new <code>Format</code>
+ mandates the implementation of all components. However, some formats will not
+ use all components (e.g. proprietary formats that won't have a
+ <code>Writer</code>) or do not need to go beyond the abstract implementations (for
+ many <code>Checkers</code>).
+ <p>
+ To solve this and to make it easier for new developers to pick and choose
+ what they implement, there should be a true "Default" implementation for each
+ component. This could potentially just be the current abstract layer. The end
+ goal is simply that one could simply create a <code>Format</code> class and it
+ would compile. At that point components could be added as needed.
+ </p>
+ </li>
+ <li>
+ <p>
+ Add sub-resolution API to <code>ImageMetadata</code>. This feature was added after
+ the split of SCIFIO off Bio-Formats and has not been reconciled yet. It will
+ likely involve turning <code>ImageMetadata</code> into a list as well, and
+ possibly adding a third index to many methods (imageIndex within the dataset,
+ planeIndex within the image, sub-resolution index within the plane).
+ </p>
+ </li>
+ <li>
+ <p>
+ Cancel early in <a href="../../io/scif/Parser.html#parse-org.scijava.io.location.Location-"><code>Parser.parse(org.scijava.io.location.Location)</code></a>. There should be an
+ <code>active</code> flag that can be set on a <code>Parser</code> instance, with
+ regular polls set up through runtime of the <code>parse</code> method. If the flag
+ ever returns false, the current parsing operation is aborted.
+ </p>
+ </li>
+ <li>Create a <code>HasSource</code> style interface. <code>Metadata</code> objects
+ should have some sort of mapping back to their source.
+ <p>
+ Default implementation could be a 2D array, as a list of companion files for
+ each image in the dataset.
+ </p>
+ <p>
+ Ultimately this interface will be used to generate the information required
+ for the <code>getUsedSource</code> equivalent methods from Bio-Formats.
+ </p>
+ </li>
+ <li>*Use a bit mask for recovering used sources. Related to the
+ <code>HasSource</code> interface, when the sources are queried there should be
+ some standard way to do so, without using an assortment of overridden
+ methods.
+ <p>
+ A bit mask is a simple, logical way to do so, where the bits correspond to
+ various optional flags. For example, the <code>noPixels</code> flag that currently
+ is used in Bio-Formats.
+ </p>
+ <p>
+ Note that bit masks may not be the ideal implementation of this
+ functionality. It may be better to have some sort of object that wraps an
+ arbitrary number of flags with a similar effect. The goal is just to create a
+ standard that will allow for extensibility without breaking API.</li>
+ <li>Create <code>OriginalMetadata</code> class. Currently both <code>Metadata</code>
+ and <code>ImageMetadata</code> maintain <code>HashTables</code> for general metadata
+ storage. This should be standardized into a new class that works more
+ intelligently in the SCIFIO framework.
+ <p>
+ The foundation of this <code>OriginalMetadata</code> class will be in annotating
+ using the <a href="../../io/scif/Field.html" title="annotation in io.scif"><code>Field</code></a> annotation and labeling with the index for
+ each metadata field. This annotation allows original names to be preserved
+ easily and in a standard way.
+ </p>
+ <p>
+ By making the <code>OriginalMetadata</code> class implement the <code>Metadata</code>
+ interface, we can add translators and set up methods to automatically
+ translate from common metadata forms to <code>OriginalMetadata</code>.
+ </p>
+ </li>
+ <li>*Refine filtering logic. Filtering should only be a factor during the
+ parsing process. In Bio-Formats there was a filterMetadata flag, but in
+ SCIFIO this is replaced by the act of translating or not. Right now that's
+ not very clear, but may be aided by implementing the <code>OriginalMetadata</code>
+ class.
+ <p>
+ For backwards compatibility we need to ensure that <code>setId</code> in
+ Bio-Formats generates both original and OME-XML metadata.
+ </p>
+ </li>
+ <li>*Generic state cache in the context. Many Bio-Formats classes cached
+ items such as the last plane read. This behavior may still be useful. To keep
+ SCIFIO component instances free of state, it would make sense to allow the
+ context to cache information in a generic way. Then different instances of a
+ given class created under the same context would behave similarly, and
+ potentially allow for speed improvements over a completely stateless
+ environment.</li>
  </ul></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>

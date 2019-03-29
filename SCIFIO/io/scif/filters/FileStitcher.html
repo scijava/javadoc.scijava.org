@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../io/scif/filters/DimensionSwapperMetadata.html" title="class in io.scif.filters"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../io/scif/filters/Filter.html" title="interface in io.scif.filters"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/filters/FileStitcherMetadata.html" title="class in io.scif.filters"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?io/scif/filters/FileStitcher.html" target="_top">Frames</a></li>
@@ -195,14 +195,14 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/FilePattern.html" title="class in io.scif">FilePattern</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#findPattern-java.lang.String-">findPattern</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#findPattern-org.scijava.io.location.BrowsableLocation-">findPattern</a></span>(org.scijava.io.location.BrowsableLocation&nbsp;id)</code>
 <div class="block">Constructs a new FilePattern around the pattern extracted from the given
  id.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#findPatterns-java.lang.String-">findPatterns</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#findPatterns-org.scijava.io.location.BrowsableLocation-">findPatterns</a></span>(org.scijava.io.location.BrowsableLocation&nbsp;id)</code>
 <div class="block">Finds the file pattern for the given ID, based on the state of the file
  stitcher.</div>
 </td>
@@ -214,9 +214,9 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#getMetadata-int-">getMetadata</a></span>(int&nbsp;imageIndex)</code>
-<div class="block">Gets the metadata for the given image index.</div>
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#getPlaneCount-int-">getPlaneCount</a></span>(int&nbsp;imageIndex)</code>
+<div class="block">Determines the number of planes in the current file.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -224,30 +224,27 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#getPriority--">getPriority</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#getReader-int-">getReader</a></span>(int&nbsp;imageIndex)</code>
-<div class="block">Gets the reader appropriate for use with the given image.</div>
-</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#getUnderlyingReaders--">getUnderlyingReaders</a></span>()</code>
-<div class="block">Retrieves all underlying readers.</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#isCompatible-java.lang.Class-">isCompatible</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code>
 <div class="block">FileStitcher is only compatible with ByteArray formats.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#isUsingPatternIds--">isUsingPatternIds</a></span>()</code>
 <div class="block">Gets whether the reader is using file patterns for IDs.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
+         long&nbsp;planeIndex,
+         net.imglib2.Interval&nbsp;bounds,
+         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">As <a href="../../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Interval)</code></a> with configuration options.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
          long&nbsp;planeIndex,
@@ -258,19 +255,33 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
  sub-regions of planes.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setCanChangePattern-boolean-">setCanChangePattern</a></span>(boolean&nbsp;doChange)</code>&nbsp;</td>
 </tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setSource-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">setSource</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;source,
+         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">As <a href="../../../io/scif/Reader.html#setSource-org.scijava.io.handle.DataHandle-"><code>Reader.setSource(DataHandle)</code></a> with configuration options.</div>
+</td>
+</tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setSourceHelper-java.lang.String-io.scif.config.SCIFIOConfig-">setSourceHelper</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">Allows code to be executed regardless of which <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.lang.String-"><code>AbstractReaderFilter.setSource(java.lang.String)</code></a> signature
- is called.</div>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setSource-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">setSource</a></span>(org.scijava.io.location.Location&nbsp;source,
+         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">As <a href="../../../io/scif/Reader.html#setSource-org.scijava.io.location.Location-"><code>Reader.setSource(Location)</code></a> with configuration options.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setSourceHelper-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">setSourceHelper</a></span>(org.scijava.io.location.Location&nbsp;source,
+               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Allows code to be executed regardless of which <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.location.Location-"><code>AbstractReaderFilter.setSource(org.scijava.io.location.Location)</code></a> signature
+ is called.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/FileStitcher.html#setUsingPatternIds-boolean-">setUsingPatternIds</a></span>(boolean&nbsp;patternIds)</code>
 <div class="block">Sets whether the reader is using file patterns for IDs.</div>
@@ -282,7 +293,7 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.filters.<a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></h3>
-<code><a href="../../../io/scif/filters/AbstractReaderFilter.html#castToTypedPlane-io.scif.Plane-">castToTypedPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#close--">close</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#close-boolean-">close</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#createPlane-io.scif.ImageMetadata-net.imglib2.Interval-">createPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#createPlane-net.imglib2.Interval-">createPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#fileGroupOption-java.lang.String-">fileGroupOption</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getContext--">getContext</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getCurrentFile--">getCurrentFile</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getDomains--">getDomains</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getFormat--">getFormat</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getFormatName--">getFormatName</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getMetadata--">getMetadata</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getOptimalTileHeight-int-">getOptimalTileHeight</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getOptimalTileWidth-int-">getOptimalTileWidth</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getParentMeta--">getParentMeta</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getPlaneCount-int-">getPlaneCount</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getStream--">getStream</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#hasCompanionFiles--">hasCompanionFiles</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#isNormalized--">isNormalized</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#isSingleFile-java.lang.String-">isSingleFile</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#metaCheck--">metaCheck</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlaneHelper--">openPlaneHelper</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#planarBounds-int-">planarBounds</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlaneHelper--">readPlaneHelper</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setContext-org.scijava.Context-">setContext</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setMetadata-io.scif.Metadata-">setMetadata</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setNormalized-boolean-">setNormalized</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setParent-java.lang.Object-">setParent</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.io.File-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.io.File-io.scif.config.SCIFIOConfig-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-io.scif.io.RandomAccessInputStream-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-io.scif.io.RandomAccessInputStream-io.scif.config.SCIFIOConfig-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.lang.String-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.lang.String-io.scif.config.SCIFIOConfig-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#target--">target</a></code></li>
+<code><a href="../../../io/scif/filters/AbstractReaderFilter.html#castToTypedPlane-io.scif.Plane-">castToTypedPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#close--">close</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#close-boolean-">close</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#createPlane-io.scif.ImageMetadata-net.imglib2.Interval-">createPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#createPlane-net.imglib2.Interval-">createPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#fileGroupOption-org.scijava.io.location.Location-">fileGroupOption</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getContext--">getContext</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getCurrentLocation--">getCurrentLocation</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getDomains--">getDomains</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getFormat--">getFormat</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getFormatName--">getFormatName</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getHandle--">getHandle</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getMetadata--">getMetadata</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getOptimalTileHeight-int-">getOptimalTileHeight</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getOptimalTileWidth-int-">getOptimalTileWidth</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#getParentMeta--">getParentMeta</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#hasCompanionFiles--">hasCompanionFiles</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#isNormalized--">isNormalized</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#isSingleFile-org.scijava.io.location.Location-">isSingleFile</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#metaCheck--">metaCheck</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.Plane-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlaneHelper--">openPlaneHelper</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#planarBounds-int-">planarBounds</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlane-org.scijava.io.handle.DataHandle-int-net.imglib2.Interval-int-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlane-org.scijava.io.handle.DataHandle-int-net.imglib2.Interval-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#readPlaneHelper--">readPlaneHelper</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setContext-org.scijava.Context-">setContext</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setMetadata-io.scif.Metadata-">setMetadata</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setNormalized-boolean-">setNormalized</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setParent-java.lang.Object-">setParent</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.handle.DataHandle-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.location.Location-">setSource</a>, <a href="../../../io/scif/filters/AbstractReaderFilter.html#target--">target</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.filters.AbstractFilter">
@@ -446,40 +457,6 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <pre>public&nbsp;boolean&nbsp;canChangePattern()</pre>
 </li>
 </ul>
-<a name="getReader-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getReader</h4>
-<pre>public&nbsp;<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;getReader(int&nbsp;imageIndex)
-                 throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Gets the reader appropriate for use with the given image.</div>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="getMetadata-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMetadata</h4>
-<pre>public&nbsp;<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;getMetadata(int&nbsp;imageIndex)
-                     throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
-                            <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Gets the metadata for the given image index.</div>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
-</dl>
-</li>
-</ul>
 <a name="getFilePattern--">
 <!--   -->
 </a>
@@ -490,42 +467,100 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <div class="block">Gets the file pattern object used to build the list of files.</div>
 </li>
 </ul>
-<a name="findPattern-java.lang.String-">
+<a name="findPattern-org.scijava.io.location.BrowsableLocation-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>findPattern</h4>
-<pre>public&nbsp;<a href="../../../io/scif/FilePattern.html" title="class in io.scif">FilePattern</a>&nbsp;findPattern(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../../io/scif/FilePattern.html" title="class in io.scif">FilePattern</a>&nbsp;findPattern(org.scijava.io.location.BrowsableLocation&nbsp;id)
+                        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Constructs a new FilePattern around the pattern extracted from the given
  id.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
 </li>
 </ul>
-<a name="findPatterns-java.lang.String-">
+<a name="findPatterns-org.scijava.io.location.BrowsableLocation-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>findPatterns</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;findPatterns(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;findPatterns(org.scijava.io.location.BrowsableLocation&nbsp;id)
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Finds the file pattern for the given ID, based on the state of the file
  stitcher. Takes both ID map entries and the patternIds flag into account.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
 </li>
 </ul>
-<a name="setSourceHelper-java.lang.String-io.scif.config.SCIFIOConfig-">
+<a name="setSource-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSource</h4>
+<pre>public&nbsp;void&nbsp;setSource(org.scijava.io.location.Location&nbsp;source,
+                      <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Reader.html#setSource-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
+<div class="block">As <a href="../../../io/scif/Reader.html#setSource-org.scijava.io.location.Location-"><code>Reader.setSource(Location)</code></a> with configuration options.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/Reader.html#setSource-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">setSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">setSource</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the Location</dd>
+<dd><code>config</code> - Configuration information to use for this read.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setSource-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSource</h4>
+<pre>public&nbsp;void&nbsp;setSource(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;source,
+                      <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Reader.html#setSource-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
+<div class="block">As <a href="../../../io/scif/Reader.html#setSource-org.scijava.io.handle.DataHandle-"><code>Reader.setSource(DataHandle)</code></a> with configuration options.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/Reader.html#setSource-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">setSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">setSource</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - - The handle to read from</dd>
+<dd><code>config</code> - Configuration information to use for this read.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setSourceHelper-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setSourceHelper</h4>
-<pre>protected&nbsp;void&nbsp;setSourceHelper(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+<pre>protected&nbsp;void&nbsp;setSourceHelper(org.scijava.io.location.Location&nbsp;source,
                                <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSourceHelper-java.lang.String-io.scif.config.SCIFIOConfig-">AbstractReaderFilter</a></code></span></div>
-<div class="block">Allows code to be executed regardless of which <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-java.lang.String-"><code>AbstractReaderFilter.setSource(java.lang.String)</code></a> signature
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSourceHelper-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">AbstractReaderFilter</a></code></span></div>
+<div class="block">Allows code to be executed regardless of which <a href="../../../io/scif/filters/AbstractReaderFilter.html#setSource-org.scijava.io.location.Location-"><code>AbstractReaderFilter.setSource(org.scijava.io.location.Location)</code></a> signature
  is called.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSourceHelper-java.lang.String-io.scif.config.SCIFIOConfig-">setSourceHelper</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
+<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#setSourceHelper-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">setSourceHelper</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - - Lowest common denominator of arguments in the
           <code>setSource</code> series.</dd>
@@ -549,6 +584,55 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <dd><code>c</code> - - Class to check compatibility</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if this filter can call setParent on instances of c</dd>
+</dl>
+</li>
+</ul>
+<a name="getPlaneCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPlaneCount</h4>
+<pre>public&nbsp;long&nbsp;getPlaneCount(int&nbsp;imageIndex)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Reader.html#getPlaneCount-int-">Reader</a></code></span></div>
+<div class="block">Determines the number of planes in the current file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/Reader.html#getPlaneCount-int-">getPlaneCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#getPlaneCount-int-">getPlaneCount</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openPlane</h4>
+<pre>public&nbsp;<a href="../../../io/scif/Plane.html" title="interface in io.scif">Plane</a>&nbsp;openPlane(int&nbsp;imageIndex,
+                       long&nbsp;planeIndex,
+                       net.imglib2.Interval&nbsp;bounds,
+                       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">Reader</a></code></span></div>
+<div class="block">As <a href="../../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-"><code>Reader.openPlane(int, long, Interval)</code></a> with configuration options.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>imageIndex</code> - the image index within the dataset.</dd>
+<dd><code>planeIndex</code> - the plane index within the image.</dd>
+<dd><code>bounds</code> - bounds of the planar axes.</dd>
+<dd><code>config</code> - Configuration information to use for this read.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The desired sub-region at the specified indices.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -578,24 +662,6 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../io/scif/Reader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-"><code>Reader.openPlane(int, long, Interval, SCIFIOConfig)</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="getUnderlyingReaders--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getUnderlyingReaders</h4>
-<pre>public&nbsp;<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>[]&nbsp;getUnderlyingReaders()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Reader.html#getUnderlyingReaders--">Reader</a></code></span></div>
-<div class="block">Retrieves all underlying readers. Returns null if there are no underlying
- readers.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/Reader.html#getUnderlyingReaders--">getUnderlyingReaders</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../io/scif/filters/AbstractReaderFilter.html#getUnderlyingReaders--">getUnderlyingReaders</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/filters/AbstractReaderFilter.html" title="class in io.scif.filters">AbstractReaderFilter</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -661,7 +727,7 @@ extends <a href="../../../io/scif/filters/AbstractReaderFilter.html" title="clas
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../io/scif/filters/DimensionSwapperMetadata.html" title="class in io.scif.filters"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../io/scif/filters/Filter.html" title="interface in io.scif.filters"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/filters/FileStitcherMetadata.html" title="class in io.scif.filters"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?io/scif/filters/FileStitcher.html" target="_top">Frames</a></li>

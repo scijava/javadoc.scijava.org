@@ -121,7 +121,7 @@ extends org.scijava.AbstractContextual</pre>
 <div class="block">Writes TIFF data to an output location.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Curtis Rueden, Eric Kjellman, Melissa Linkert, Chris Allan</dd>
+<dd>Curtis Rueden, Eric Kjellman, Melissa Linkert, Chris Allan, Gabriel Einsdorf</dd>
 </dl>
 </li>
 </ul>
@@ -141,21 +141,24 @@ extends org.scijava.AbstractContextual</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-org.scijava.Context-io.scif.io.RandomAccessOutputStream-java.lang.String-">TiffSaver</a></span>(org.scijava.Context&nbsp;ctx,
-         <a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;out,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-org.scijava.Context-org.scijava.io.handle.DataHandle-">TiffSaver</a></span>(org.scijava.Context&nbsp;ctx,
+         org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;out)</code>
 <div class="block">Constructs a new TIFF saver from the given output source.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-org.scijava.Context-org.scijava.io.location.Location-">TiffSaver</a></span>(org.scijava.Context&nbsp;ctx,
+         org.scijava.io.location.Location&nbsp;loc)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-org.scijava.Context-java.lang.String-">TiffSaver</a></span>(org.scijava.Context&nbsp;ctx,
          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</code>
 <div class="block">Constructs a new TIFF saver from the given filename.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-io.scif.io.RandomAccessOutputStream-io.scif.io.ByteArrayHandle-">TiffSaver</a></span>(<a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;out,
-         <a href="../../../../io/scif/io/ByteArrayHandle.html" title="class in io.scif.io">ByteArrayHandle</a>&nbsp;bytes)</code>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#TiffSaver-org.scijava.io.handle.DataHandle-org.scijava.io.location.BytesLocation-">TiffSaver</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;out,
+         org.scijava.io.location.BytesLocation&nbsp;bytes)</code>
 <div class="block">Constructs a new TIFF saver from the given output source.</div>
 </td>
 </tr>
@@ -175,7 +178,7 @@ extends org.scijava.AbstractContextual</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a></code></td>
+<td class="colFirst"><code>org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#getStream--">getStream</a></span>()</code>
 <div class="block">Gets the stream from which TIFF data is being saved.</div>
 </td>
@@ -194,14 +197,14 @@ extends org.scijava.AbstractContextual</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteComment-io.scif.io.RandomAccessInputStream-java.lang.Object-">overwriteComment</a></span>(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteComment-org.scijava.io.handle.DataHandle-java.lang.Object-">overwriteComment</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;in,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
 <div class="block">Convenience method for overwriting a file's first ImageDescription.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteIFDValue-io.scif.io.RandomAccessInputStream-int-int-java.lang.Object-">overwriteIFDValue</a></span>(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;raf,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteIFDValue-org.scijava.io.handle.DataHandle-int-int-java.lang.Object-">overwriteIFDValue</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;raf,
                  int&nbsp;ifd,
                  int&nbsp;tag,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
@@ -210,7 +213,7 @@ extends org.scijava.AbstractContextual</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteLastIFDOffset-io.scif.io.RandomAccessInputStream-">overwriteLastIFDOffset</a></span>(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;raf)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#overwriteLastIFDOffset-org.scijava.io.handle.DataHandle-">overwriteLastIFDOffset</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;handle)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -249,7 +252,7 @@ extends org.scijava.AbstractContextual</pre>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#writeIFDValue-io.scif.io.RandomAccessOutputStream-long-int-java.lang.Object-">writeIFDValue</a></span>(<a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;extraOut,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/scif/formats/tiff/TiffSaver.html#writeIFDValue-org.scijava.io.handle.DataHandle-long-int-java.lang.Object-">writeIFDValue</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;extraOut,
              long&nbsp;offset,
              int&nbsp;tag,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
@@ -353,32 +356,47 @@ extends org.scijava.AbstractContextual</pre>
 </dl>
 </li>
 </ul>
-<a name="TiffSaver-org.scijava.Context-io.scif.io.RandomAccessOutputStream-java.lang.String-">
+<a name="TiffSaver-org.scijava.Context-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>TiffSaver</h4>
 <pre>public&nbsp;TiffSaver(org.scijava.Context&nbsp;ctx,
-                 <a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;out,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename)</pre>
+                 org.scijava.io.location.Location&nbsp;loc)
+          throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ctx</code> - </dd>
+<dd><code>loc</code> - </dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="TiffSaver-org.scijava.Context-org.scijava.io.handle.DataHandle-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TiffSaver</h4>
+<pre>public&nbsp;TiffSaver(org.scijava.Context&nbsp;ctx,
+                 org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;out)</pre>
 <div class="block">Constructs a new TIFF saver from the given output source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>out</code> - Output stream to save TIFF data to.</dd>
-<dd><code>filename</code> - Filename of the output stream that we may use to create
-          extra input or output streams as required.</dd>
 </dl>
 </li>
 </ul>
-<a name="TiffSaver-io.scif.io.RandomAccessOutputStream-io.scif.io.ByteArrayHandle-">
+<a name="TiffSaver-org.scijava.io.handle.DataHandle-org.scijava.io.location.BytesLocation-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TiffSaver</h4>
-<pre>public&nbsp;TiffSaver(<a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;out,
-                 <a href="../../../../io/scif/io/ByteArrayHandle.html" title="class in io.scif.io">ByteArrayHandle</a>&nbsp;bytes)</pre>
+<pre>public&nbsp;TiffSaver(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;out,
+                 org.scijava.io.location.BytesLocation&nbsp;bytes)</pre>
 <div class="block">Constructs a new TIFF saver from the given output source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -414,7 +432,7 @@ extends org.scijava.AbstractContextual</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStream</h4>
-<pre>public&nbsp;<a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;getStream()</pre>
+<pre>public&nbsp;org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;getStream()</pre>
 <div class="block">Gets the stream from which TIFF data is being saved.</div>
 </li>
 </ul>
@@ -553,8 +571,8 @@ extends org.scijava.AbstractContextual</pre>
 <dd><code>y</code> - The Y-coordinate of the top-left corner.</dd>
 <dd><code>w</code> - The width of the rectangle.</dd>
 <dd><code>h</code> - The height of the rectangle.</dd>
-<dd><code>last</code> - Pass <code>true</code> if it is the last image,
-          <code>false</code> otherwise.</dd>
+<dd><code>last</code> - Pass <code>true</code> if it is the last image, <code>false</code>
+          otherwise.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
@@ -604,13 +622,13 @@ extends org.scijava.AbstractContextual</pre>
 </dl>
 </li>
 </ul>
-<a name="writeIFDValue-io.scif.io.RandomAccessOutputStream-long-int-java.lang.Object-">
+<a name="writeIFDValue-org.scijava.io.handle.DataHandle-long-int-java.lang.Object-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>writeIFDValue</h4>
-<pre>public&nbsp;void&nbsp;writeIFDValue(<a href="../../../../io/scif/io/RandomAccessOutputStream.html" title="class in io.scif.io">RandomAccessOutputStream</a>&nbsp;extraOut,
+<pre>public&nbsp;void&nbsp;writeIFDValue(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;extraOut,
                           long&nbsp;offset,
                           int&nbsp;tag,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
@@ -629,13 +647,13 @@ extends org.scijava.AbstractContextual</pre>
 </dl>
 </li>
 </ul>
-<a name="overwriteLastIFDOffset-io.scif.io.RandomAccessInputStream-">
+<a name="overwriteLastIFDOffset-org.scijava.io.handle.DataHandle-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>overwriteLastIFDOffset</h4>
-<pre>public&nbsp;void&nbsp;overwriteLastIFDOffset(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;raf)
+<pre>public&nbsp;void&nbsp;overwriteLastIFDOffset(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;handle)
                             throws <a href="../../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
@@ -645,13 +663,13 @@ extends org.scijava.AbstractContextual</pre>
 </dl>
 </li>
 </ul>
-<a name="overwriteIFDValue-io.scif.io.RandomAccessInputStream-int-int-java.lang.Object-">
+<a name="overwriteIFDValue-org.scijava.io.handle.DataHandle-int-int-java.lang.Object-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>overwriteIFDValue</h4>
-<pre>public&nbsp;void&nbsp;overwriteIFDValue(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;raf,
+<pre>public&nbsp;void&nbsp;overwriteIFDValue(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;raf,
                               int&nbsp;ifd,
                               int&nbsp;tag,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
@@ -670,13 +688,13 @@ extends org.scijava.AbstractContextual</pre>
 </dl>
 </li>
 </ul>
-<a name="overwriteComment-io.scif.io.RandomAccessInputStream-java.lang.Object-">
+<a name="overwriteComment-org.scijava.io.handle.DataHandle-java.lang.Object-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>overwriteComment</h4>
-<pre>public&nbsp;void&nbsp;overwriteComment(<a href="../../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
+<pre>public&nbsp;void&nbsp;overwriteComment(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;in,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)
                       throws <a href="../../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>

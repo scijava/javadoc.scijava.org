@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -141,7 +141,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../io/scif/filters/ChannelFillerMetadata.html" title="class in io.scif.filters">ChannelFillerMetadata</a>, <a href="../../../io/scif/filters/DimensionSwapperMetadata.html" title="class in io.scif.filters">DimensionSwapperMetadata</a>, <a href="../../../io/scif/filters/PlaneSeparatorMetadata.html" title="class in io.scif.filters">PlaneSeparatorMetadata</a></dd>
+<dd><a href="../../../io/scif/filters/ChannelFillerMetadata.html" title="class in io.scif.filters">ChannelFillerMetadata</a>, <a href="../../../io/scif/filters/DimensionSwapperMetadata.html" title="class in io.scif.filters">DimensionSwapperMetadata</a>, <a href="../../../io/scif/filters/FileStitcherMetadata.html" title="class in io.scif.filters">FileStitcherMetadata</a>, <a href="../../../io/scif/filters/PlaneSeparatorMetadata.html" title="class in io.scif.filters">PlaneSeparatorMetadata</a></dd>
 </dl>
 <hr>
 <br>
@@ -247,20 +247,26 @@ implements <a href="../../../io/scif/filters/MetadataWrapper.html" title="interf
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#setSource-io.scif.io.RandomAccessInputStream-">setSource</a></span>(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;source)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#setSource-org.scijava.io.handle.DataHandle-">setSource</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;source)</code>
 <div class="block">Sets the input source attached to this Metadata object.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#setSourceLocation-org.scijava.io.location.Location-">setSourceLocation</a></span>(org.scijava.io.location.Location&nbsp;loc)</code>
+<div class="block">Sets the input source location.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#setTable-io.scif.MetaTable-boolean-">setTable</a></span>(<a href="../../../io/scif/MetaTable.html" title="interface in io.scif">MetaTable</a>&nbsp;table,
         boolean&nbsp;passUp)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#unwrap--">unwrap</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/filters/AbstractMetadataWrapper.html#wrap-io.scif.Metadata-">wrap</a></span>(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;meta)</code>
 <div class="block">Sets the <code>Metadata</code> this wrapper will delegate to.</div>
@@ -272,7 +278,7 @@ implements <a href="../../../io/scif/filters/MetadataWrapper.html" title="interf
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a></h3>
-<code><a href="../../../io/scif/AbstractMetadata.html#createImageMetadata-int-">createImageMetadata</a>, <a href="../../../io/scif/AbstractMetadata.html#get-int-">get</a>, <a href="../../../io/scif/AbstractMetadata.html#getAll--">getAll</a>, <a href="../../../io/scif/AbstractMetadata.html#getDatasetName--">getDatasetName</a>, <a href="../../../io/scif/AbstractMetadata.html#getDatasetSize--">getDatasetSize</a>, <a href="../../../io/scif/AbstractMetadata.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/AbstractMetadata.html#getSource--">getSource</a>, <a href="../../../io/scif/AbstractMetadata.html#isFiltered--">isFiltered</a>, <a href="../../../io/scif/AbstractMetadata.html#setDatasetName-java.lang.String-">setDatasetName</a>, <a href="../../../io/scif/AbstractMetadata.html#setFiltered-boolean-">setFiltered</a>, <a href="../../../io/scif/AbstractMetadata.html#setTable-io.scif.MetaTable-">setTable</a></code></li>
+<code><a href="../../../io/scif/AbstractMetadata.html#createImageMetadata-int-">createImageMetadata</a>, <a href="../../../io/scif/AbstractMetadata.html#get-int-">get</a>, <a href="../../../io/scif/AbstractMetadata.html#getAll--">getAll</a>, <a href="../../../io/scif/AbstractMetadata.html#getDatasetName--">getDatasetName</a>, <a href="../../../io/scif/AbstractMetadata.html#getDatasetSize--">getDatasetSize</a>, <a href="../../../io/scif/AbstractMetadata.html#getDestinationLocation--">getDestinationLocation</a>, <a href="../../../io/scif/AbstractMetadata.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/AbstractMetadata.html#getSource--">getSource</a>, <a href="../../../io/scif/AbstractMetadata.html#getSourceLocation--">getSourceLocation</a>, <a href="../../../io/scif/AbstractMetadata.html#isFiltered--">isFiltered</a>, <a href="../../../io/scif/AbstractMetadata.html#setDatasetName-java.lang.String-">setDatasetName</a>, <a href="../../../io/scif/AbstractMetadata.html#setDestinationLocation-org.scijava.io.location.Location-">setDestinationLocation</a>, <a href="../../../io/scif/AbstractMetadata.html#setFiltered-boolean-">setFiltered</a>, <a href="../../../io/scif/AbstractMetadata.html#setTable-io.scif.MetaTable-">setTable</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractHasSource">
@@ -280,6 +286,13 @@ implements <a href="../../../io/scif/filters/MetadataWrapper.html" title="interf
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractHasSource.html" title="class in io.scif">AbstractHasSource</a></h3>
 <code><a href="../../../io/scif/AbstractHasSource.html#close--">close</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractHasFormat">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractHasFormat.html" title="class in io.scif">AbstractHasFormat</a></h3>
+<code><a href="../../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.handle.DataHandle-">asBrowsableLocation</a>, <a href="../../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-">asBrowsableLocation</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractSCIFIOPlugin">
@@ -321,7 +334,7 @@ implements <a href="../../../io/scif/filters/MetadataWrapper.html" title="interf
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></h3>
-<code><a href="../../../io/scif/Metadata.html#createImageMetadata-int-">createImageMetadata</a>, <a href="../../../io/scif/Metadata.html#get-int-">get</a>, <a href="../../../io/scif/Metadata.html#getAll--">getAll</a>, <a href="../../../io/scif/Metadata.html#getDatasetName--">getDatasetName</a>, <a href="../../../io/scif/Metadata.html#getDatasetSize--">getDatasetSize</a>, <a href="../../../io/scif/Metadata.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/Metadata.html#getSource--">getSource</a>, <a href="../../../io/scif/Metadata.html#isFiltered--">isFiltered</a>, <a href="../../../io/scif/Metadata.html#setDatasetName-java.lang.String-">setDatasetName</a>, <a href="../../../io/scif/Metadata.html#setFiltered-boolean-">setFiltered</a></code></li>
+<code><a href="../../../io/scif/Metadata.html#createImageMetadata-int-">createImageMetadata</a>, <a href="../../../io/scif/Metadata.html#get-int-">get</a>, <a href="../../../io/scif/Metadata.html#getAll--">getAll</a>, <a href="../../../io/scif/Metadata.html#getDatasetName--">getDatasetName</a>, <a href="../../../io/scif/Metadata.html#getDatasetSize--">getDatasetSize</a>, <a href="../../../io/scif/Metadata.html#getDestinationLocation--">getDestinationLocation</a>, <a href="../../../io/scif/Metadata.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/Metadata.html#getSource--">getSource</a>, <a href="../../../io/scif/Metadata.html#getSourceLocation--">getSourceLocation</a>, <a href="../../../io/scif/Metadata.html#isFiltered--">isFiltered</a>, <a href="../../../io/scif/Metadata.html#setDatasetName-java.lang.String-">setDatasetName</a>, <a href="../../../io/scif/Metadata.html#setDestinationLocation-org.scijava.io.location.Location-">setDestinationLocation</a>, <a href="../../../io/scif/Metadata.html#setFiltered-boolean-">setFiltered</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.SCIFIOPlugin">
@@ -514,23 +527,44 @@ implements <a href="../../../io/scif/filters/MetadataWrapper.html" title="interf
 </dl>
 </li>
 </ul>
-<a name="setSource-io.scif.io.RandomAccessInputStream-">
+<a name="setSource-org.scijava.io.handle.DataHandle-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setSource</h4>
-<pre>public&nbsp;void&nbsp;setSource(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;source)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Metadata.html#setSource-io.scif.io.RandomAccessInputStream-">Metadata</a></code></span></div>
+<pre>public&nbsp;void&nbsp;setSource(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;source)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Metadata.html#setSource-org.scijava.io.handle.DataHandle-">Metadata</a></code></span></div>
 <div class="block">Sets the input source attached to this Metadata object. Note that calling
  this method does not affect the structure of this Metadata object.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/Metadata.html#setSource-io.scif.io.RandomAccessInputStream-">setSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></dd>
+<dd><code><a href="../../../io/scif/Metadata.html#setSource-org.scijava.io.handle.DataHandle-">setSource</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../io/scif/AbstractMetadata.html#setSource-io.scif.io.RandomAccessInputStream-">setSource</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a></code></dd>
+<dd><code><a href="../../../io/scif/AbstractMetadata.html#setSource-org.scijava.io.handle.DataHandle-">setSource</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - - Input source for this Metadata</dd>
+</dl>
+</li>
+</ul>
+<a name="setSourceLocation-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSourceLocation</h4>
+<pre>public&nbsp;void&nbsp;setSourceLocation(org.scijava.io.location.Location&nbsp;loc)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/scif/Metadata.html#setSourceLocation-org.scijava.io.location.Location-">Metadata</a></code></span></div>
+<div class="block">Sets the input source location. This is an alternative to
+ <a href="../../../io/scif/Metadata.html#setSource-org.scijava.io.handle.DataHandle-"><code>Metadata.setSource(DataHandle)</code></a> for Formats that operate on Locations
+ without a corresponding <code>DataHandle</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/Metadata.html#setSourceLocation-org.scijava.io.location.Location-">setSourceLocation</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../io/scif/AbstractMetadata.html#setSourceLocation-org.scijava.io.location.Location-">setSourceLocation</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loc</code> - the source location</dd>
 </dl>
 </li>
 </ul>

@@ -187,7 +187,7 @@ implements <a href="../../io/scif/Groupable.html" title="interface in io.scif">G
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractGroupable.html#fileGroupOption-java.lang.String-">fileGroupOption</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractGroupable.html#fileGroupOption-org.scijava.io.location.Location-">fileGroupOption</a></span>(org.scijava.io.location.Location&nbsp;id)</code>
 <div class="block">Returns an int indicating that we cannot, must, or might group the files in
  a given dataset.</div>
 </td>
@@ -200,7 +200,7 @@ implements <a href="../../io/scif/Groupable.html" title="interface in io.scif">G
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractGroupable.html#isSingleFile-java.lang.String-">isSingleFile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractGroupable.html#isSingleFile-org.scijava.io.location.Location-">isSingleFile</a></span>(org.scijava.io.location.Location&nbsp;id)</code>
 <div class="block">Returns true if this is a single-file format.</div>
 </td>
 </tr>
@@ -217,7 +217,7 @@ implements <a href="../../io/scif/Groupable.html" title="interface in io.scif">G
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.<a href="../../io/scif/AbstractHasFormat.html" title="class in io.scif">AbstractHasFormat</a></h3>
-<code><a href="../../io/scif/AbstractHasFormat.html#getFormat--">getFormat</a>, <a href="../../io/scif/AbstractHasFormat.html#getFormatName--">getFormatName</a></code></li>
+<code><a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.handle.DataHandle-">asBrowsableLocation</a>, <a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-">asBrowsableLocation</a>, <a href="../../io/scif/AbstractHasFormat.html#getFormat--">getFormat</a>, <a href="../../io/scif/AbstractHasFormat.html#getFormatName--">getFormatName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractSCIFIOPlugin">
@@ -327,41 +327,41 @@ implements <a href="../../io/scif/Groupable.html" title="interface in io.scif">G
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="fileGroupOption-java.lang.String-">
+<a name="fileGroupOption-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>fileGroupOption</h4>
-<pre>public&nbsp;int&nbsp;fileGroupOption(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+<pre>public&nbsp;int&nbsp;fileGroupOption(org.scijava.io.location.Location&nbsp;id)
                     throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                            <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Groupable.html#fileGroupOption-java.lang.String-">Groupable</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Groupable.html#fileGroupOption-org.scijava.io.location.Location-">Groupable</a></code></span></div>
 <div class="block">Returns an int indicating that we cannot, must, or might group the files in
  a given dataset.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Groupable.html#fileGroupOption-java.lang.String-">fileGroupOption</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a></code></dd>
+<dd><code><a href="../../io/scif/Groupable.html#fileGroupOption-org.scijava.io.location.Location-">fileGroupOption</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="isSingleFile-java.lang.String-">
+<a name="isSingleFile-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>isSingleFile</h4>
-<pre>public&nbsp;boolean&nbsp;isSingleFile(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+<pre>public&nbsp;boolean&nbsp;isSingleFile(org.scijava.io.location.Location&nbsp;id)
                      throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Groupable.html#isSingleFile-java.lang.String-">Groupable</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../io/scif/Groupable.html#isSingleFile-org.scijava.io.location.Location-">Groupable</a></code></span></div>
 <div class="block">Returns true if this is a single-file format.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../io/scif/Groupable.html#isSingleFile-java.lang.String-">isSingleFile</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a></code></dd>
+<dd><code><a href="../../io/scif/Groupable.html#isSingleFile-org.scijava.io.location.Location-">isSingleFile</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -177,12 +177,26 @@ implements <a href="../../io/scif/HasFormat.html" title="interface in io.scif">H
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>protected org.scijava.io.location.BrowsableLocation</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.handle.DataHandle-">asBrowsableLocation</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;handle)</code>
+<div class="block">Convenience overload of <a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-"><code>asBrowsableLocation(Location)</code></a> that
+ operates on a handle.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected org.scijava.io.location.BrowsableLocation</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-">asBrowsableLocation</a></span>(org.scijava.io.location.Location&nbsp;loc)</code>
+<div class="block">Safely casts a <code>Location</code> to a <code>BrowsableLocation</code>, throwing a
+ <a href="../../io/scif/FormatException.html" title="class in io.scif"><code>FormatException</code></a> if the cast is not possible.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../io/scif/Format.html" title="interface in io.scif">Format</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractHasFormat.html#getFormat--">getFormat</a></span>()</code>
 <div class="block">Provides a link back to the format associated with this component.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../io/scif/AbstractHasFormat.html#getFormatName--">getFormatName</a></span>()</code>
 <div class="block">Helper method for accessing <a href="../../io/scif/Format.html#getFormatName--"><code>Format.getFormatName()</code></a>.</div>
@@ -310,7 +324,7 @@ implements <a href="../../io/scif/HasFormat.html" title="interface in io.scif">H
 <a name="getFormatName--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getFormatName</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getFormatName()</pre>
@@ -324,6 +338,42 @@ implements <a href="../../io/scif/HasFormat.html" title="interface in io.scif">H
 <dd><code><a href="../../io/scif/HasFormat.html#getFormatName--">getFormatName</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/scif/HasFormat.html" title="interface in io.scif">HasFormat</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the name of the associated Format</dd>
+</dl>
+</li>
+</ul>
+<a name="asBrowsableLocation-org.scijava.io.location.Location-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>asBrowsableLocation</h4>
+<pre>protected&nbsp;org.scijava.io.location.BrowsableLocation&nbsp;asBrowsableLocation(org.scijava.io.location.Location&nbsp;loc)
+                                                                 throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Safely casts a <code>Location</code> to a <code>BrowsableLocation</code>, throwing a
+ <a href="../../io/scif/FormatException.html" title="class in io.scif"><code>FormatException</code></a> if the cast is not possible.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loc</code> - the location to cast to <code>BrowsableLocation</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="asBrowsableLocation-org.scijava.io.handle.DataHandle-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>asBrowsableLocation</h4>
+<pre>protected&nbsp;org.scijava.io.location.BrowsableLocation&nbsp;asBrowsableLocation(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;handle)
+                                                                 throws <a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block">Convenience overload of <a href="../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-"><code>asBrowsableLocation(Location)</code></a> that
+ operates on a handle.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>handle</code> - </dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 </dl>
 </li>
 </ul>

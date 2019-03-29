@@ -112,7 +112,7 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <div class="block">A collection of methods for initializing the IO components of SCIFIO (Readers
  and Writers). All parsing and Metadata setup is done automatically.
  <p>
- NB: The <a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-"><code>initializeReader(java.lang.String)</code></a> line of methods return a
+ NB: The <a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-"><code>initializeReader(org.scijava.io.location.Location)</code></a> line of methods return a
  <a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters"><code>ReaderFilter</code></a> instead of a basic Reader. This is a
  convenience to allow filters to be enabled if desired.
  </p></div>
@@ -144,13 +144,13 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-">initializeReader</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeReader(String, SCIFIOConfig)</code></a>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-">initializeReader</a></span>(org.scijava.io.location.Location&nbsp;id)</code>
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeReader(Location, SCIFIOConfig)</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-io.scif.config.SCIFIOConfig-">initializeReader</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">initializeReader</a></span>(org.scijava.io.location.Location&nbsp;id,
                 <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
 <div class="block">Convenience method for creating a <code>Reader</code> component that is ready to
  open planes of the provided image source.</div>
@@ -158,46 +158,48 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-java.lang.String-">initializeWriter</a></span>(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</code>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeWriter(String, String, SCIFIOConfig)</code></a>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-">initializeWriter</a></span>(org.scijava.io.location.Location&nbsp;source,
+                org.scijava.io.location.Location&nbsp;destination)</code>
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeWriter(Location, Location, SCIFIOConfig)</code></a>.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-java.lang.String-io.scif.config.SCIFIOConfig-">initializeWriter</a></span>(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">initializeWriter</a></span>(org.scijava.io.location.Location&nbsp;source,
+                org.scijava.io.location.Location&nbsp;destination,
                 <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-java.lang.String-"><code>initializeWriter(Metadata, String)</code></a> with configuration options.</div>
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-"><code>initializeWriter(Location, Location)</code></a> with configuration
+ options.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-">initializeWriter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</code>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeWriter(String, String, SCIFIOConfig)</code></a>.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-">initializeWriter</a></span>(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
+                org.scijava.io.location.Location&nbsp;destination)</code>
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeWriter(Location, Location, SCIFIOConfig)</code></a>.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-">initializeWriter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">initializeWriter</a></span>(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
+                org.scijava.io.location.Location&nbsp;destination,
                 <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-"><code>initializeWriter(String, String)</code></a> with configuration options.</div>
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-"><code>initializeWriter(Metadata, Location)</code></a> with configuration
+ options.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#parseMetadata-java.lang.String-">parseMetadata</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#parseMetadata-org.scijava.io.location.Location-">parseMetadata</a></span>(org.scijava.io.location.Location&nbsp;id)</code>
 <div class="block">Convenience method to parse <a href="../../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> without reading the underlying
  pixels.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#parseMetadata-java.lang.String-io.scif.config.SCIFIOConfig-">parseMetadata</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/services/InitializeService.html#parseMetadata-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">parseMetadata</a></span>(org.scijava.io.location.Location&nbsp;id,
              <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#parseMetadata-java.lang.String-"><code>parseMetadata(String)</code></a> with a flag to open the underlying
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#parseMetadata-org.scijava.io.location.Location-"><code>parseMetadata(Location)</code></a> with a flag to open the underlying
  dataset when parsing, if desired.</div>
 </td>
 </tr>
@@ -272,16 +274,16 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="initializeReader-java.lang.String-">
+<a name="initializeReader-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeReader</h4>
-<pre><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a>&nbsp;initializeReader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+<pre><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a>&nbsp;initializeReader(org.scijava.io.location.Location&nbsp;id)
                        throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeReader-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeReader(String, SCIFIOConfig)</code></a>. Will not open the
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeReader-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeReader(Location, SCIFIOConfig)</code></a>. Will not open the
  image source while parsing metadata.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -294,13 +296,13 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="initializeReader-java.lang.String-io.scif.config.SCIFIOConfig-">
+<a name="initializeReader-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeReader</h4>
-<pre><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a>&nbsp;initializeReader(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<pre><a href="../../../io/scif/filters/ReaderFilter.html" title="class in io.scif.filters">ReaderFilter</a>&nbsp;initializeReader(org.scijava.io.location.Location&nbsp;id,
                               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                        throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -319,18 +321,18 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="initializeWriter-java.lang.String-java.lang.String-">
+<a name="initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeWriter</h4>
-<pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)
+<pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(org.scijava.io.location.Location&nbsp;source,
+                        org.scijava.io.location.Location&nbsp;destination)
                  throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeWriter(String, String, SCIFIOConfig)</code></a>. Will not open
- the image source while parsing metadata.</div>
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeWriter(Location, Location, SCIFIOConfig)</code></a>. Will not
+ open the image source while parsing metadata.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - Name of the image source to use for parsing metadata.</dd>
@@ -343,18 +345,19 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-">
+<a name="initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeWriter</h4>
-<pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
+<pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(org.scijava.io.location.Location&nbsp;source,
+                        org.scijava.io.location.Location&nbsp;destination,
                         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                  throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-"><code>initializeWriter(String, String)</code></a> with configuration options.</div>
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-"><code>initializeWriter(Location, Location)</code></a> with configuration
+ options.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - Name of the image source to use for parsing metadata.</dd>
@@ -368,18 +371,18 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="initializeWriter-io.scif.Metadata-java.lang.String-">
+<a name="initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeWriter</h4>
 <pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)
+                        org.scijava.io.location.Location&nbsp;destination)
                  throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-java.lang.String-java.lang.String-io.scif.config.SCIFIOConfig-"><code>initializeWriter(String, String, SCIFIOConfig)</code></a>. Will not open
- the image source while parsing metadata.</div>
+<div class="block">See <a href="../../../io/scif/services/InitializeService.html#initializeWriter-org.scijava.io.location.Location-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-"><code>initializeWriter(Location, Location, SCIFIOConfig)</code></a>. Will not
+ open the image source while parsing metadata.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sourceMeta</code> - Name of the image source to use for parsing metadata.</dd>
@@ -392,18 +395,19 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="initializeWriter-io.scif.Metadata-java.lang.String-io.scif.config.SCIFIOConfig-">
+<a name="initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeWriter</h4>
 <pre><a href="../../../io/scif/Writer.html" title="interface in io.scif">Writer</a>&nbsp;initializeWriter(<a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;sourceMeta,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
+                        org.scijava.io.location.Location&nbsp;destination,
                         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                  throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-java.lang.String-"><code>initializeWriter(Metadata, String)</code></a> with configuration options.</div>
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#initializeWriter-io.scif.Metadata-org.scijava.io.location.Location-"><code>initializeWriter(Metadata, Location)</code></a> with configuration
+ options.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sourceMeta</code> - Name of the image source to use for parsing metadata.</dd>
@@ -417,13 +421,13 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="parseMetadata-java.lang.String-">
+<a name="parseMetadata-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>parseMetadata</h4>
-<pre><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;parseMetadata(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+<pre><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;parseMetadata(org.scijava.io.location.Location&nbsp;id)
                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                        <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
 <div class="block">Convenience method to parse <a href="../../../io/scif/Metadata.html" title="interface in io.scif"><code>Metadata</code></a> without reading the underlying
@@ -441,17 +445,17 @@ extends <a href="../../../io/scif/SCIFIOService.html" title="interface in io.sci
 </dl>
 </li>
 </ul>
-<a name="parseMetadata-java.lang.String-io.scif.config.SCIFIOConfig-">
+<a name="parseMetadata-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>parseMetadata</h4>
-<pre><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;parseMetadata(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<pre><a href="../../../io/scif/Metadata.html" title="interface in io.scif">Metadata</a>&nbsp;parseMetadata(org.scijava.io.location.Location&nbsp;id,
                        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                 throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">As <a href="../../../io/scif/services/InitializeService.html#parseMetadata-java.lang.String-"><code>parseMetadata(String)</code></a> with a flag to open the underlying
+<div class="block">As <a href="../../../io/scif/services/InitializeService.html#parseMetadata-org.scijava.io.location.Location-"><code>parseMetadata(Location)</code></a> with a flag to open the underlying
  dataset when parsing, if desired.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

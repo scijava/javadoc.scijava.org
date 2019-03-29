@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TextFormat.Reader (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<title>TestImgFormat.Parser (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
@@ -11,13 +11,13 @@
 <script type="text/javascript"><!--
     try {
         if (location.href.indexOf('is-external=true') == -1) {
-            parent.document.title="TextFormat.Reader (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+            parent.document.title="TestImgFormat.Parser (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
         }
     }
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
+var methods = {"i0":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,12 +47,12 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../io/scif/formats/TextFormat.Parser.html" title="class in io.scif.formats"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../io/scif/formats/TIFFFormat.html" title="class in io.scif.formats"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/formats/TestImgFormat.Reader.html" title="class in io.scif.formats"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?io/scif/formats/TextFormat.Reader.html" target="_top">Frames</a></li>
-<li><a href="TextFormat.Reader.html" target="_top">No&nbsp;Frames</a></li>
+<li><a href="../../../index.html?io/scif/formats/TestImgFormat.Parser.html" target="_top">Frames</a></li>
+<li><a href="TestImgFormat.Parser.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
 <li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">io.scif.formats</div>
-<h2 title="Class TextFormat.Reader" class="title">Class TextFormat.Reader</h2>
+<h2 title="Class TestImgFormat.Parser" class="title">Class TestImgFormat.Parser</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -116,15 +116,10 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../io/scif/AbstractGroupable.html" title="class in io.scif">io.scif.AbstractGroupable</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../io/scif/AbstractReader.html" title="class in io.scif">io.scif.AbstractReader</a>&lt;M,<a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&gt;</li>
+<li><a href="../../../io/scif/AbstractParser.html" title="class in io.scif">io.scif.AbstractParser</a>&lt;<a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif">io.scif.ByteArrayReader</a>&lt;<a href="../../../io/scif/formats/TextFormat.Metadata.html" title="class in io.scif.formats">TextFormat.Metadata</a>&gt;</li>
-<li>
-<ul class="inheritance">
-<li>io.scif.formats.TextFormat.Reader</li>
-</ul>
-</li>
+<li>io.scif.formats.TestImgFormat.Parser</li>
 </ul>
 </li>
 </ul>
@@ -147,16 +142,18 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a>, <a href="../../../io/scif/HasFormat.html" title="interface in io.scif">HasFormat</a>, <a href="../../../io/scif/HasSource.html" title="interface in io.scif">HasSource</a>, <a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>, <a href="../../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a>, <a href="../../../io/scif/TypedReader.html" title="interface in io.scif">TypedReader</a>&lt;<a href="../../../io/scif/formats/TextFormat.Metadata.html" title="class in io.scif.formats">TextFormat.Metadata</a>,<a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;org.scijava.Prioritized&gt;, org.scijava.Contextual, org.scijava.Identifiable, org.scijava.Locatable, org.scijava.log.Logged, org.scijava.plugin.HasPluginInfo, org.scijava.plugin.RichPlugin, org.scijava.plugin.SciJavaPlugin, org.scijava.Prioritized, org.scijava.Versioned</dd>
+<dd><a href="../../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a>, <a href="../../../io/scif/HasFormat.html" title="interface in io.scif">HasFormat</a>, <a href="../../../io/scif/HasSource.html" title="interface in io.scif">HasSource</a>, <a href="../../../io/scif/Parser.html" title="interface in io.scif">Parser</a>, <a href="../../../io/scif/SCIFIOPlugin.html" title="interface in io.scif">SCIFIOPlugin</a>, <a href="../../../io/scif/TypedParser.html" title="interface in io.scif">TypedParser</a>&lt;<a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;org.scijava.Prioritized&gt;, org.scijava.Contextual, org.scijava.Identifiable, org.scijava.Locatable, org.scijava.log.Logged, org.scijava.plugin.HasPluginInfo, org.scijava.plugin.RichPlugin, org.scijava.plugin.SciJavaPlugin, org.scijava.Prioritized, org.scijava.Versioned</dd>
 </dl>
 <dl>
 <dt>Enclosing class:</dt>
-<dd><a href="../../../io/scif/formats/TextFormat.html" title="class in io.scif.formats">TextFormat</a></dd>
+<dd><a href="../../../io/scif/formats/TestImgFormat.html" title="class in io.scif.formats">TestImgFormat</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">TextFormat.Reader</span>
-extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif">ByteArrayReader</a>&lt;<a href="../../../io/scif/formats/TextFormat.Metadata.html" title="class in io.scif.formats">TextFormat.Metadata</a>&gt;</pre>
+<pre>public static class <span class="typeNameLabel">TestImgFormat.Parser</span>
+extends <a href="../../../io/scif/AbstractParser.html" title="class in io.scif">AbstractParser</a>&lt;<a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&gt;</pre>
+<div class="block">Parser for Fake file format. The file suffix is sufficient for detection -
+ as the name is the only aspect of a Fake file that is guaranteed to exist.</div>
 </li>
 </ul>
 </div>
@@ -175,7 +172,7 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../io/scif/formats/TextFormat.Reader.html#Reader--">Reader</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../io/scif/formats/TestImgFormat.Parser.html#Parser--">Parser</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -193,41 +190,27 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/formats/TextFormat.Reader.html#createDomainArray--">createDomainArray</a></span>()</code>
-<div class="block">Helper method to lazily create the domain array for this reader instance,
- to avoid constantly re-creating the array.</div>
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/formats/TestImgFormat.Parser.html#typedParse-org.scijava.io.handle.DataHandle-io.scif.formats.TestImgFormat.Metadata-io.scif.config.SCIFIOConfig-">typedParse</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;stream,
+          <a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&nbsp;meta,
+          <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">A helper method, called by <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-M-"><code>AbstractParser.parse(DataHandle, TypedMetadata)</code></a>.</div>
 </td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/formats/TextFormat.Reader.html#openPlane-int-long-io.scif.ByteArrayPlane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a></span>(int&nbsp;imageIndex,
-         long&nbsp;planeIndex,
-         <a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;plane,
-         net.imglib2.Interval&nbsp;bounds,
-         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.io.scif.ByteArrayReader">
+<li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractParser">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif">ByteArrayReader</a></h3>
-<code><a href="../../../io/scif/ByteArrayReader.html#createPlane-io.scif.ImageMetadata-net.imglib2.Interval-">createPlane</a>, <a href="../../../io/scif/ByteArrayReader.html#createPlane-net.imglib2.Interval-">createPlane</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractReader">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractReader.html" title="class in io.scif">AbstractReader</a></h3>
-<code><a href="../../../io/scif/AbstractReader.html#castToTypedPlane-io.scif.Plane-">castToTypedPlane</a>, <a href="../../../io/scif/AbstractReader.html#close-boolean-">close</a>, <a href="../../../io/scif/AbstractReader.html#getCurrentFile--">getCurrentFile</a>, <a href="../../../io/scif/AbstractReader.html#getDomains--">getDomains</a>, <a href="../../../io/scif/AbstractReader.html#getImageCount--">getImageCount</a>, <a href="../../../io/scif/AbstractReader.html#getMetadata--">getMetadata</a>, <a href="../../../io/scif/AbstractReader.html#getOptimalTileHeight-int-">getOptimalTileHeight</a>, <a href="../../../io/scif/AbstractReader.html#getOptimalTileWidth-int-">getOptimalTileWidth</a>, <a href="../../../io/scif/AbstractReader.html#getPlaneClass--">getPlaneClass</a>, <a href="../../../io/scif/AbstractReader.html#getPlaneCount-int-">getPlaneCount</a>, <a href="../../../io/scif/AbstractReader.html#getStream--">getStream</a>, <a href="../../../io/scif/AbstractReader.html#getUnderlyingReaders--">getUnderlyingReaders</a>, <a href="../../../io/scif/AbstractReader.html#hasCompanionFiles--">hasCompanionFiles</a>, <a href="../../../io/scif/AbstractReader.html#isNormalized--">isNormalized</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-P-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-P-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.Plane-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-P-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#openPlane-int-long-io.scif.config.SCIFIOConfig-">openPlane</a>, <a href="../../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-P-">readPlane</a>, <a href="../../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-int-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-P-">readPlane</a>, <a href="../../../io/scif/AbstractReader.html#readPlane-io.scif.io.RandomAccessInputStream-int-net.imglib2.Interval-io.scif.Plane-">readPlane</a>, <a href="../../../io/scif/AbstractReader.html#setMetadata-M-">setMetadata</a>, <a href="../../../io/scif/AbstractReader.html#setMetadata-io.scif.Metadata-">setMetadata</a>, <a href="../../../io/scif/AbstractReader.html#setNormalized-boolean-">setNormalized</a>, <a href="../../../io/scif/AbstractReader.html#setSource-java.io.File-">setSource</a>, <a href="../../../io/scif/AbstractReader.html#setSource-java.io.File-io.scif.config.SCIFIOConfig-">setSource</a>, <a href="../../../io/scif/AbstractReader.html#setSource-io.scif.io.RandomAccessInputStream-">setSource</a>, <a href="../../../io/scif/AbstractReader.html#setSource-io.scif.io.RandomAccessInputStream-io.scif.config.SCIFIOConfig-">setSource</a>, <a href="../../../io/scif/AbstractReader.html#setSource-java.lang.String-">setSource</a>, <a href="../../../io/scif/AbstractReader.html#setSource-java.lang.String-io.scif.config.SCIFIOConfig-">setSource</a></code></li>
+<h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractParser.html" title="class in io.scif">AbstractParser</a></h3>
+<code><a href="../../../io/scif/AbstractParser.html#close-boolean-">close</a>, <a href="../../../io/scif/AbstractParser.html#getAdvancedImageUsedLocations-int-boolean-">getAdvancedImageUsedLocations</a>, <a href="../../../io/scif/AbstractParser.html#getAdvancedUsedLocations-boolean-">getAdvancedUsedLocations</a>, <a href="../../../io/scif/AbstractParser.html#getImageUsedFiles-int-">getImageUsedFiles</a>, <a href="../../../io/scif/AbstractParser.html#getImageUsedFiles-int-boolean-">getImageUsedFiles</a>, <a href="../../../io/scif/AbstractParser.html#getMetadata--">getMetadata</a>, <a href="../../../io/scif/AbstractParser.html#getSource--">getSource</a>, <a href="../../../io/scif/AbstractParser.html#getSourceLocation--">getSourceLocation</a>, <a href="../../../io/scif/AbstractParser.html#getSupportedMetadataLevels--">getSupportedMetadataLevels</a>, <a href="../../../io/scif/AbstractParser.html#getUsedFiles--">getUsedFiles</a>, <a href="../../../io/scif/AbstractParser.html#getUsedLocations-boolean-">getUsedLocations</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-M-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-io.scif.Metadata-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-io.scif.Metadata-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-M-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.location.Location-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.location.Location-io.scif.Metadata-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.location.Location-io.scif.Metadata-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.location.Location-M-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">parse</a>, <a href="../../../io/scif/AbstractParser.html#setMetaData-io.scif.Metadata-">setMetaData</a>, <a href="../../../io/scif/AbstractParser.html#updateSource-org.scijava.io.location.Location-">updateSource</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractGroupable">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractGroupable.html" title="class in io.scif">AbstractGroupable</a></h3>
-<code><a href="../../../io/scif/AbstractGroupable.html#fileGroupOption-java.lang.String-">fileGroupOption</a>, <a href="../../../io/scif/AbstractGroupable.html#isSingleFile-java.lang.String-">isSingleFile</a></code></li>
+<code><a href="../../../io/scif/AbstractGroupable.html#fileGroupOption-org.scijava.io.location.Location-">fileGroupOption</a>, <a href="../../../io/scif/AbstractGroupable.html#hasCompanionFiles--">hasCompanionFiles</a>, <a href="../../../io/scif/AbstractGroupable.html#isSingleFile-org.scijava.io.location.Location-">isSingleFile</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractHasSource">
@@ -241,7 +224,7 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;io.scif.<a href="../../../io/scif/AbstractHasFormat.html" title="class in io.scif">AbstractHasFormat</a></h3>
-<code><a href="../../../io/scif/AbstractHasFormat.html#getFormat--">getFormat</a>, <a href="../../../io/scif/AbstractHasFormat.html#getFormatName--">getFormatName</a></code></li>
+<code><a href="../../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.handle.DataHandle-">asBrowsableLocation</a>, <a href="../../../io/scif/AbstractHasFormat.html#asBrowsableLocation-org.scijava.io.location.Location-">asBrowsableLocation</a>, <a href="../../../io/scif/AbstractHasFormat.html#getFormat--">getFormat</a>, <a href="../../../io/scif/AbstractHasFormat.html#getFormatName--">getFormatName</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.io.scif.AbstractSCIFIOPlugin">
@@ -332,7 +315,7 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;io.scif.<a href="../../../io/scif/Groupable.html" title="interface in io.scif">Groupable</a></h3>
-<code><a href="../../../io/scif/Groupable.html#fileGroupOption-java.lang.String-">fileGroupOption</a>, <a href="../../../io/scif/Groupable.html#isSingleFile-java.lang.String-">isSingleFile</a></code></li>
+<code><a href="../../../io/scif/Groupable.html#fileGroupOption-org.scijava.io.location.Location-">fileGroupOption</a>, <a href="../../../io/scif/Groupable.html#hasCompanionFiles--">hasCompanionFiles</a>, <a href="../../../io/scif/Groupable.html#isSingleFile-org.scijava.io.location.Location-">isSingleFile</a></code></li>
 </ul>
 </li>
 </ul>
@@ -348,13 +331,13 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="Reader--">
+<a name="Parser--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>Reader</h4>
-<pre>public&nbsp;Reader()</pre>
+<h4>Parser</h4>
+<pre>public&nbsp;Parser()</pre>
 </li>
 </ul>
 </li>
@@ -365,41 +348,34 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="createDomainArray--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createDomainArray</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;createDomainArray()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../io/scif/AbstractReader.html#createDomainArray--">AbstractReader</a></code></span></div>
-<div class="block">Helper method to lazily create the domain array for this reader instance,
- to avoid constantly re-creating the array.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/AbstractReader.html#createDomainArray--">createDomainArray</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/AbstractReader.html" title="class in io.scif">AbstractReader</a>&lt;<a href="../../../io/scif/formats/TextFormat.Metadata.html" title="class in io.scif.formats">TextFormat.Metadata</a>,<a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="openPlane-int-long-io.scif.ByteArrayPlane-net.imglib2.Interval-io.scif.config.SCIFIOConfig-">
+<a name="typedParse-org.scijava.io.handle.DataHandle-io.scif.formats.TestImgFormat.Metadata-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>openPlane</h4>
-<pre>public&nbsp;<a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;openPlane(int&nbsp;imageIndex,
-                                long&nbsp;planeIndex,
-                                <a href="../../../io/scif/ByteArrayPlane.html" title="class in io.scif">ByteArrayPlane</a>&nbsp;plane,
-                                net.imglib2.Interval&nbsp;bounds,
-                                <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
-                         throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
-                                <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<h4>typedParse</h4>
+<pre>protected&nbsp;void&nbsp;typedParse(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;stream,
+                          <a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&nbsp;meta,
+                          <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                   throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                          <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../io/scif/AbstractParser.html#typedParse-org.scijava.io.handle.DataHandle-M-io.scif.config.SCIFIOConfig-">AbstractParser</a></code></span></div>
+<div class="block">A helper method, called by <a href="../../../io/scif/AbstractParser.html#parse-org.scijava.io.handle.DataHandle-M-"><code>AbstractParser.parse(DataHandle, TypedMetadata)</code></a>.
+ Allows for boilerplate code to come after parsing, specifically calls to
+ <a href="../../../io/scif/Metadata.html#populateImageMetadata--"><code>Metadata.populateImageMetadata()</code></a>.
+ <p>
+ This method should be implemented to populate any format-specific Metadata.
+ </p>
+ <p>
+ NB: if a Format requires type-specific parsing to occur before the Abstract
+ layer, Override <code>#parse(String, TypedMetadata)</code> instead.
+ </p></div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../io/scif/AbstractParser.html#typedParse-org.scijava.io.handle.DataHandle-M-io.scif.config.SCIFIOConfig-">typedParse</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/AbstractParser.html" title="class in io.scif">AbstractParser</a>&lt;<a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">TestImgFormat.Metadata</a>&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../io/scif/TypedReader.html#openPlane-int-long-P-net.imglib2.Interval-"><code>TypedReader.openPlane(int, long, DataPlane, Interval)</code></a></dd>
+<dd><code><a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -430,12 +406,12 @@ extends <a href="../../../io/scif/ByteArrayReader.html" title="class in io.scif"
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../io/scif/formats/TextFormat.Parser.html" title="class in io.scif.formats"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../io/scif/formats/TIFFFormat.html" title="class in io.scif.formats"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../io/scif/formats/TestImgFormat.Reader.html" title="class in io.scif.formats"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?io/scif/formats/TextFormat.Reader.html" target="_top">Frames</a></li>
-<li><a href="TextFormat.Reader.html" target="_top">No&nbsp;Frames</a></li>
+<li><a href="../../../index.html?io/scif/formats/TestImgFormat.Parser.html" target="_top">Frames</a></li>
+<li><a href="TestImgFormat.Parser.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
 <li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>

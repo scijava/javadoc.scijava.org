@@ -135,9 +135,8 @@ var activeTableTab = "activeTableTab";
 extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.scif.codec">AbstractCodec</a></pre>
 <div class="block">This is an optimized LZW codec for use with TIFF files. Most of the code is
  inlined, and specifics of TIFF usage of LZW (known size of decompressor
- output; possible lengths of LZW codes; specified values for
- <code>CLEAR</code> and <code>END_OF_INFORMATION</code> codes) are taken in
- account.
+ output; possible lengths of LZW codes; specified values for <code>CLEAR</code> and
+ <code>END_OF_INFORMATION</code> codes) are taken in account.
  <p>
  Estimating the worst-case size of compressor output:
  </p>
@@ -152,7 +151,8 @@ extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.s
  <ul>
  <li>9 bits for CLEAR code;</li>
  <li>9*253 + 10*512 + 11*1024 + 12*2048 = 43237 bits for character codes.</li>
- </ul></li>
+ </ul>
+ </li>
  <li>Let n=3837, m=(number of bytes in the last incomplete portion), N=(number
  of bytes in compressed complete portion with CLEAR code), M=(number of bytes
  in compressed last incomplete portion). We have inequalities:
@@ -161,7 +161,8 @@ extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.s
  <li><code>M &lt;= 1.41 * m</code></li>
  <li>The last incomplete portion should also include <code>CLEAR</code> and
  <code>END_OF_INFORMATION</code> codes; they occupy less than 3 bytes.
- </ul></li>
+ </ul>
+ </li>
  </ul>
  <p>
  Thus, we can claim than the number of bytes in compressed output never
@@ -215,7 +216,7 @@ extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.s
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/codec/LZWCodec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">decompress</a></span>(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/codec/LZWCodec.html#decompress-org.scijava.io.handle.DataHandle-io.scif.codec.CodecOptions-">decompress</a></span>(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;in,
           <a href="../../../io/scif/codec/CodecOptions.html" title="class in io.scif.codec">CodecOptions</a>&nbsp;options)</code>
 <div class="block">The CodecOptions parameter should have the following fields set:
  <a href="../../../io/scif/codec/CodecOptions.html#maxBytes"><code>maxBytes</code></a></div>
@@ -353,23 +354,19 @@ extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.s
 </dl>
 </li>
 </ul>
-<a name="decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">
+<a name="decompress-org.scijava.io.handle.DataHandle-io.scif.codec.CodecOptions-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>decompress</h4>
-<pre>public&nbsp;byte[]&nbsp;decompress(<a href="../../../io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a>&nbsp;in,
+<pre>public&nbsp;byte[]&nbsp;decompress(org.scijava.io.handle.DataHandle&lt;org.scijava.io.location.Location&gt;&nbsp;in,
                          <a href="../../../io/scif/codec/CodecOptions.html" title="class in io.scif.codec">CodecOptions</a>&nbsp;options)
                   throws <a href="../../../io/scif/FormatException.html" title="class in io.scif">FormatException</a>,
                          <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">The CodecOptions parameter should have the following fields set:
  <a href="../../../io/scif/codec/CodecOptions.html#maxBytes"><code>maxBytes</code></a></div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/codec/Codec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">decompress</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/scif/codec/Codec.html" title="interface in io.scif.codec">Codec</a></code></dd>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/scif/codec/AbstractCodec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-">decompress</a></code>&nbsp;in class&nbsp;<code><a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.scif.codec">AbstractCodec</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>in</code> - The stream from which to read compressed data.</dd>
 <dd><code>options</code> - Options to be used during decompression.</dd>
@@ -380,7 +377,7 @@ extends <a href="../../../io/scif/codec/AbstractCodec.html" title="class in io.s
            decompressor.</dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../io/scif/codec/Codec.html#decompress-io.scif.io.RandomAccessInputStream-io.scif.codec.CodecOptions-"><code>Codec.decompress(RandomAccessInputStream, CodecOptions)</code></a></dd>
+<dd><a href="../../../io/scif/codec/Codec.html#decompress-org.scijava.io.handle.DataHandle-io.scif.codec.CodecOptions-"><code>Codec.decompress(DataHandle, CodecOptions)</code></a></dd>
 </dl>
 </li>
 </ul>

@@ -84,16 +84,8 @@
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
-<h4>source</h4>
-<pre><a href="io/scif/io/RandomAccessInputStream.html" title="class in io.scif.io">RandomAccessInputStream</a> source</pre>
-</li>
-<li class="blockList">
 <h4>filtered</h4>
 <pre>boolean filtered</pre>
-</li>
-<li class="blockList">
-<h4>imageMeta</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; imageMeta</pre>
 </li>
 <li class="blockList">
 <h4>datasetName</h4>
@@ -249,6 +241,10 @@
 <pre>boolean openDataset</pre>
 </li>
 <li class="blockList">
+<h4>bufferedReading</h4>
+<pre>boolean bufferedReading</pre>
+</li>
+<li class="blockList">
 <h4>level</h4>
 <pre><a href="io/scif/MetadataLevel.html" title="enum in io.scif">MetadataLevel</a> level</pre>
 </li>
@@ -393,6 +389,22 @@
 </li>
 </ul>
 </li>
+<li class="blockList"><a name="io.scif.filters.FileStitcherMetadata">
+<!--   -->
+</a>
+<h3>Class <a href="io/scif/filters/FileStitcherMetadata.html" title="class in io.scif.filters">io.scif.filters.FileStitcherMetadata</a> extends <a href="io/scif/filters/AbstractMetadataWrapper.html" title="class in io.scif.filters">AbstractMetadataWrapper</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>imgMeta</h4>
+<pre><a href="io/scif/ImageMetadata.html" title="interface in io.scif">ImageMetadata</a> imgMeta</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="blockList"><a name="io.scif.filters.PlaneSeparatorMetadata">
 <!--   -->
 </a>
@@ -423,14 +435,6 @@
 <li class="blockList">
 <h3>Serialized Fields</h3>
 <ul class="blockList">
-<li class="blockList">
-<h4>idat</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; idat</pre>
-</li>
-<li class="blockList">
-<h4>fctl</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; fctl</pre>
-</li>
 <li class="blockList">
 <h4>actl</h4>
 <pre><a href="io/scif/formats/APNGFormat.ACTLChunk.html" title="class in io.scif.formats">APNGFormat.ACTLChunk</a> actl</pre>
@@ -473,11 +477,11 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>offsets</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; offsets</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; offsets</pre>
 </li>
 <li class="blockList">
 <h4>lengths</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; lengths</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; lengths</pre>
 </li>
 <li class="blockList">
 <h4>bmpBitsPerPixel</h4>
@@ -563,14 +567,6 @@
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
-<h4>lut</h4>
-<pre>byte[][] lut</pre>
-</li>
-<li class="blockList">
-<h4>shortLut</h4>
-<pre>short[][] shortLut</pre>
-</li>
-<li class="blockList">
 <h4>lut8</h4>
 <pre>net.imglib2.display.ColorTable8 lut8</pre>
 </li>
@@ -619,10 +615,6 @@
 <pre>double rescaleIntercept</pre>
 </li>
 <li class="blockList">
-<h4>fileList</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">Hashtable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">V</a>&gt; fileList</pre>
-</li>
-<li class="blockList">
 <h4>inverted</h4>
 <pre>boolean inverted</pre>
 </li>
@@ -662,13 +654,9 @@
 <h4>originalInstance</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> originalInstance</pre>
 </li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>originalSeries</h4>
 <pre>int originalSeries</pre>
-</li>
-<li class="blockListLast">
-<h4>companionFiles</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; companionFiles</pre>
 </li>
 </ul>
 </li>
@@ -704,98 +692,6 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="io.scif.formats.FakeFormat.Metadata">
-<!--   -->
-</a>
-<h3>Class <a href="io/scif/formats/FakeFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.FakeFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>axes</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] axes</pre>
-</li>
-<li class="blockList">
-<h4>lengths</h4>
-<pre>long[] lengths</pre>
-</li>
-<li class="blockList">
-<h4>scales</h4>
-<pre>double[] scales</pre>
-</li>
-<li class="blockList">
-<h4>units</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] units</pre>
-</li>
-<li class="blockList">
-<h4>planarDims</h4>
-<pre>int planarDims</pre>
-</li>
-<li class="blockList">
-<h4>interleavedDims</h4>
-<pre>int interleavedDims</pre>
-</li>
-<li class="blockList">
-<h4>thumbSizeX</h4>
-<pre>int thumbSizeX</pre>
-</li>
-<li class="blockList">
-<h4>thumbSizeY</h4>
-<pre>int thumbSizeY</pre>
-</li>
-<li class="blockList">
-<h4>pixelType</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> pixelType</pre>
-</li>
-<li class="blockList">
-<h4>indexed</h4>
-<pre>boolean indexed</pre>
-</li>
-<li class="blockList">
-<h4>falseColor</h4>
-<pre>boolean falseColor</pre>
-</li>
-<li class="blockList">
-<h4>little</h4>
-<pre>boolean little</pre>
-</li>
-<li class="blockList">
-<h4>metadataComplete</h4>
-<pre>boolean metadataComplete</pre>
-</li>
-<li class="blockList">
-<h4>thumbnail</h4>
-<pre>boolean thumbnail</pre>
-</li>
-<li class="blockList">
-<h4>orderCertain</h4>
-<pre>boolean orderCertain</pre>
-</li>
-<li class="blockList">
-<h4>lutLength</h4>
-<pre>int lutLength</pre>
-</li>
-<li class="blockList">
-<h4>scaleFactor</h4>
-<pre>int scaleFactor</pre>
-</li>
-<li class="blockList">
-<h4>images</h4>
-<pre>int images</pre>
-</li>
-<li class="blockList">
-<h4>luts</h4>
-<pre>net.imglib2.display.ColorTable[][] luts</pre>
-</li>
-<li class="blockListLast">
-<h4>valueToIndex</h4>
-<pre>int[][] valueToIndex</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="blockList"><a name="io.scif.formats.FITSFormat.Metadata">
 <!--   -->
 </a>
@@ -825,16 +721,6 @@
 <pre>net.imglib2.display.ColorTable8 cachedTable</pre>
 </li>
 <li class="blockList">
-<h4>gct</h4>
-<pre>int[] gct</pre>
-<div class="block">Global color table.</div>
-</li>
-<li class="blockList">
-<h4>act</h4>
-<pre>int[] act</pre>
-<div class="block">Active color table.</div>
-</li>
-<li class="blockList">
 <h4>interlace</h4>
 <pre>boolean interlace</pre>
 <div class="block">Interlace flag.</div>
@@ -860,11 +746,6 @@
 <div class="block">Current image rectangle.</div>
 </li>
 <li class="blockList">
-<h4>dBlock</h4>
-<pre>byte[] dBlock</pre>
-<div class="block">Current data block.</div>
-</li>
-<li class="blockList">
 <h4>blockSize</h4>
 <pre>int blockSize</pre>
 <div class="block">Block size.</div>
@@ -882,34 +763,10 @@
 <pre>boolean transparency</pre>
 <div class="block">Use transparent color.</div>
 </li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>transIndex</h4>
 <pre>int transIndex</pre>
 <div class="block">Transparent color index.</div>
-</li>
-<li class="blockList">
-<h4>prefix</h4>
-<pre>short[] prefix</pre>
-</li>
-<li class="blockList">
-<h4>suffix</h4>
-<pre>byte[] suffix</pre>
-</li>
-<li class="blockList">
-<h4>pixelStack</h4>
-<pre>byte[] pixelStack</pre>
-</li>
-<li class="blockList">
-<h4>pixels</h4>
-<pre>byte[] pixels</pre>
-</li>
-<li class="blockList">
-<h4>images</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; images</pre>
-</li>
-<li class="blockListLast">
-<h4>colorTables</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; colorTables</pre>
 </li>
 </ul>
 </li>
@@ -954,10 +811,18 @@
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> idsId</pre>
 <div class="block">IDS file name</div>
 </li>
-<li class="blockListLast">
+<li class="blockList">
 <h4>keyValPairs</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">Hashtable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">V</a>&gt; keyValPairs</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">K</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">V</a>&gt; keyValPairs</pre>
 <div class="block">ICS Metadata</div>
+</li>
+<li class="blockList">
+<h4>icsLocation</h4>
+<pre>org.scijava.io.location.Location icsLocation</pre>
+</li>
+<li class="blockListLast">
+<h4>idsLocation</h4>
+<pre>org.scijava.io.location.Location idsLocation</pre>
 </li>
 </ul>
 </li>
@@ -967,17 +832,6 @@
 <!--   -->
 </a>
 <h3>Class <a href="io/scif/formats/ImageIOFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.ImageIOFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockListLast">
-<h4>img</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html?is-external=true" title="class or interface in java.awt.image">BufferedImage</a> img</pre>
-</li>
-</ul>
-</li>
-</ul>
 </li>
 <li class="blockList"><a name="io.scif.formats.JPEG2000Format.Metadata">
 <!--   -->
@@ -995,27 +849,10 @@
 <h4>lastIndex</h4>
 <pre><a href="io/scif/formats/JPEG2000Format.Index.html" title="class in io.scif.formats">JPEG2000Format.Index</a> lastIndex</pre>
 </li>
-<li class="blockList">
-<h4>lastIndexBytes</h4>
-<pre>byte[] lastIndexBytes</pre>
-</li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>resolutionLevels</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> resolutionLevels</pre>
 <div class="block">The number of JPEG 2000 resolution levels the file has.</div>
-</li>
-<li class="blockList">
-<h4>lut</h4>
-<pre>int[][] lut</pre>
-<div class="block">The color lookup table associated with this file.</div>
-</li>
-<li class="blockList">
-<h4>byteLut</h4>
-<pre>byte[][] byteLut</pre>
-</li>
-<li class="blockListLast">
-<h4>shortLut</h4>
-<pre>short[][] shortLut</pre>
 </li>
 </ul>
 </li>
@@ -1025,17 +862,6 @@
 <!--   -->
 </a>
 <h3>Class <a href="io/scif/formats/JPEGFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.JPEGFormat.Metadata</a> extends <a href="io/scif/formats/ImageIOFormat.Metadata.html" title="class in io.scif.formats">ImageIOFormat.Metadata</a> implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockListLast">
-<h4>locationService</h4>
-<pre><a href="io/scif/services/LocationService.html" title="interface in io.scif.services">LocationService</a> locationService</pre>
-</li>
-</ul>
-</li>
-</ul>
 </li>
 <li class="blockList"><a name="io.scif.formats.JPEGTileFormat.Metadata">
 <!--   -->
@@ -1083,7 +909,7 @@
 <ul class="blockList">
 <li class="blockListLast">
 <h4>positions</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; positions</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; positions</pre>
 </li>
 </ul>
 </li>
@@ -1177,8 +1003,8 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>dataFile</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> dataFile</pre>
-<div class="block">Name of data file, if the current extension is 'nhdr'.</div>
+<pre>org.scijava.io.location.Location dataFile</pre>
+<div class="block">Location of data file, if the current extension is 'nhdr'.</div>
 </li>
 <li class="blockList">
 <h4>encoding</h4>
@@ -1526,54 +1352,93 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="io.scif.formats.TextFormat.Metadata">
+<li class="blockList"><a name="io.scif.formats.TestImgFormat.Metadata">
 <!--   -->
 </a>
-<h3>Class <a href="io/scif/formats/TextFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.TextFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
+<h3>Class <a href="io/scif/formats/TestImgFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.TestImgFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
 <ul class="blockList">
 <li class="blockList">
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
-<h4>data</h4>
-<pre>float[][] data</pre>
-<div class="block">Because we have no way of indexing into the text file efficiently in
- general, we cheat and store the entire file's data in a giant array.</div>
+<h4>axes</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] axes</pre>
 </li>
 <li class="blockList">
-<h4>row</h4>
-<pre>int row</pre>
-<div class="block">Current row number.</div>
+<h4>lengths</h4>
+<pre>long[] lengths</pre>
 </li>
 <li class="blockList">
-<h4>rowLength</h4>
-<pre>int rowLength</pre>
-<div class="block">Number of tokens per row.</div>
+<h4>scales</h4>
+<pre>double[] scales</pre>
 </li>
 <li class="blockList">
-<h4>xIndex</h4>
-<pre>int xIndex</pre>
-<div class="block">Column index for X coordinate.</div>
+<h4>units</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] units</pre>
 </li>
 <li class="blockList">
-<h4>yIndex</h4>
-<pre>int yIndex</pre>
-<div class="block">Column index for Y coordinate.</div>
+<h4>planarDims</h4>
+<pre>int planarDims</pre>
 </li>
 <li class="blockList">
-<h4>channels</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] channels</pre>
-<div class="block">List of channel labels.</div>
+<h4>interleavedDims</h4>
+<pre>int interleavedDims</pre>
 </li>
 <li class="blockList">
-<h4>sizeX</h4>
-<pre>int sizeX</pre>
-<div class="block">Image width.</div>
+<h4>thumbSizeX</h4>
+<pre>int thumbSizeX</pre>
+</li>
+<li class="blockList">
+<h4>thumbSizeY</h4>
+<pre>int thumbSizeY</pre>
+</li>
+<li class="blockList">
+<h4>pixelType</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> pixelType</pre>
+</li>
+<li class="blockList">
+<h4>indexed</h4>
+<pre>boolean indexed</pre>
+</li>
+<li class="blockList">
+<h4>falseColor</h4>
+<pre>boolean falseColor</pre>
+</li>
+<li class="blockList">
+<h4>little</h4>
+<pre>boolean little</pre>
+</li>
+<li class="blockList">
+<h4>metadataComplete</h4>
+<pre>boolean metadataComplete</pre>
+</li>
+<li class="blockList">
+<h4>thumbnail</h4>
+<pre>boolean thumbnail</pre>
+</li>
+<li class="blockList">
+<h4>orderCertain</h4>
+<pre>boolean orderCertain</pre>
+</li>
+<li class="blockList">
+<h4>lutLength</h4>
+<pre>int lutLength</pre>
+</li>
+<li class="blockList">
+<h4>scaleFactor</h4>
+<pre>int scaleFactor</pre>
+</li>
+<li class="blockList">
+<h4>images</h4>
+<pre>int images</pre>
+</li>
+<li class="blockList">
+<h4>luts</h4>
+<pre>net.imglib2.display.ColorTable[][] luts</pre>
 </li>
 <li class="blockListLast">
-<h4>sizeY</h4>
-<pre>int sizeY</pre>
-<div class="block">Image height.</div>
+<h4>valueToIndex</h4>
+<pre>int[][] valueToIndex</pre>
 </li>
 </ul>
 </li>
@@ -1613,7 +1478,7 @@
 </li>
 <li class="blockList">
 <h4>companionFile</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> companionFile</pre>
+<pre>org.scijava.io.location.Location companionFile</pre>
 </li>
 <li class="blockList">
 <h4>description</h4>
@@ -1663,30 +1528,6 @@
 <li class="blockListLast">
 <h4>numPages</h4>
 <pre>int numPages</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="io.scif.formats.ZipFormat.Metadata">
-<!--   -->
-</a>
-<h3>Class <a href="io/scif/formats/ZipFormat.Metadata.html" title="class in io.scif.formats">io.scif.formats.ZipFormat.Metadata</a> extends <a href="io/scif/AbstractMetadata.html" title="class in io.scif">AbstractMetadata</a> implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>locationService</h4>
-<pre><a href="io/scif/services/LocationService.html" title="interface in io.scif.services">LocationService</a> locationService</pre>
-</li>
-<li class="blockList">
-<h4>metadata</h4>
-<pre><a href="io/scif/Metadata.html" title="interface in io.scif">Metadata</a> metadata</pre>
-</li>
-<li class="blockListLast">
-<h4>mappedFiles</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; mappedFiles</pre>
 </li>
 </ul>
 </li>
@@ -1753,7 +1594,7 @@
 </li>
 <li class="blockList">
 <h4>offsets</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; offsets</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; offsets</pre>
 <div class="block">Offsets to each plane's pixel data.</div>
 </li>
 <li class="blockList">
@@ -1793,7 +1634,7 @@
 </li>
 <li class="blockList">
 <h4>chunkSizes</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; chunkSizes</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">E</a>&gt; chunkSizes</pre>
 <div class="block">Number of bytes in each plane.</div>
 </li>
 <li class="blockList">
@@ -1827,25 +1668,10 @@
 <pre>int rowBytes</pre>
 <div class="block">Number of bytes in a row of pixel data (variable).</div>
 </li>
-<li class="blockList">
-<h4>strips</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; strips</pre>
-<div class="block">Vector of <code>byte[]</code> and/or <code>int[]</code> representing individual
- rows.</div>
-</li>
-<li class="blockList">
+<li class="blockListLast">
 <h4>versionOne</h4>
 <pre>boolean versionOne</pre>
 <div class="block">Whether or not the file is PICT v1.</div>
-</li>
-<li class="blockList">
-<h4>lookup</h4>
-<pre>byte[][] lookup</pre>
-<div class="block">Color lookup table for palette color images.</div>
-</li>
-<li class="blockListLast">
-<h4>jpegOffsets</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">E</a>&gt; jpegOffsets</pre>
 </li>
 </ul>
 </li>
@@ -2151,16 +1977,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="blockList">
-<h2 title="Package">Package&nbsp;io.scif.io</h2>
-<ul class="blockList">
-<li class="blockList"><a name="io.scif.io.HandleException">
-<!--   -->
-</a>
-<h3>Class <a href="io/scif/io/HandleException.html" title="class in io.scif.io">io.scif.io.HandleException</a> extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a> implements Serializable</h3>
 </li>
 </ul>
 </li>
