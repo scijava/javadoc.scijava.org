@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":18,"i7":6,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18,"i14":6,"i15":18,"i16":18,"i17":6};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":18,"i7":6,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18,"i14":6,"i15":18,"i16":18,"i17":6,"i18":18,"i19":18,"i20":18,"i21":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -284,6 +284,41 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/notebook/NotebookService.html#mosaic-int:A-net.imglib2.RandomAccessibleInterval...-">mosaic</a></span>(int[]&nbsp;gridLayout,
       net.imglib2.RandomAccessibleInterval&lt;T&gt;...&nbsp;images)</code>
 <div class="block">Organizes the given list of images into an N-dimensional mosaic.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>default <a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/notebook/NotebookService.html#view-net.imglib2.RandomAccessibleInterval-">view</a></span>(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source)</code>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a>.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>default <a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/notebook/NotebookService.html#view-net.imglib2.RandomAccessibleInterval-double:A-double:A-">view</a></span>(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source,
+    double[]&nbsp;min,
+    double[]&nbsp;max)</code>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the given
+ minimum and maximum arrays.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>default <a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/notebook/NotebookService.html#view-net.imglib2.RandomAccessibleInterval-double-double-">view</a></span>(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source,
+    double&nbsp;min,
+    double&nbsp;max)</code>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the given
+ minimum and maximum values.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>&lt;T extends net.imglib2.type.numeric.RealType&lt;T&gt;&gt;<br><a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/notebook/NotebookService.html#viewRealType-net.imglib2.RandomAccessibleInterval-">viewRealType</a></span>(net.imglib2.RandomAccessibleInterval&lt;T&gt;&nbsp;source)</code>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> of <code>RealType</code>
+ into a <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the
+ given minimum and maximum arrays.</div>
 </td>
 </tr>
 </table>
@@ -744,7 +779,7 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <a name="methods-java.lang.Class-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>methods</h4>
 <pre><a href="../../../net/imagej/notebook/NotebookTable.html" title="class in net.imagej.notebook">NotebookTable</a>&nbsp;methods(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;type,
@@ -756,6 +791,85 @@ extends <a href="../../../net/imagej/ImageJService.html" title="interface in net
 <dd><code>prefix</code> - The starting characters to use for limiting method names.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a table of the class's public methods.</dd>
+</dl>
+</li>
+</ul>
+<a name="view-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>view</h4>
+<pre>default&nbsp;<a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a>&nbsp;view(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source)</pre>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - - the input data</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a DefaultDatasetView containing the data</dd>
+</dl>
+</li>
+</ul>
+<a name="view-net.imglib2.RandomAccessibleInterval-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>view</h4>
+<pre>default&nbsp;<a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a>&nbsp;view(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source,
+                         double&nbsp;min,
+                         double&nbsp;max)</pre>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the given
+ minimum and maximum values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - - the input data</dd>
+<dd><code>min</code> - - the minimum for the channel ranges</dd>
+<dd><code>max</code> - - the maximum for the channel ranges</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a DefaultDatasetView containing the data</dd>
+</dl>
+</li>
+</ul>
+<a name="view-net.imglib2.RandomAccessibleInterval-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>view</h4>
+<pre>default&nbsp;<a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a>&nbsp;view(net.imglib2.RandomAccessibleInterval&lt;?&gt;&nbsp;source,
+                         double[]&nbsp;min,
+                         double[]&nbsp;max)</pre>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> into a
+ <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the given
+ minimum and maximum arrays.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - - the input data</dd>
+<dd><code>min</code> - - the minimum for the channel ranges</dd>
+<dd><code>max</code> - - the maximum for the channel ranges</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a DefaultDatasetView containing the data</dd>
+</dl>
+</li>
+</ul>
+<a name="viewRealType-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>viewRealType</h4>
+<pre>&lt;T extends net.imglib2.type.numeric.RealType&lt;T&gt;&gt;&nbsp;<a href="../../../net/imagej/display/DatasetView.html" title="interface in net.imagej.display">DatasetView</a>&nbsp;viewRealType(net.imglib2.RandomAccessibleInterval&lt;T&gt;&nbsp;source)</pre>
+<div class="block">Conveniently wraps a <code>RandomAccessibleInterval</code> of <code>RealType</code>
+ into a <a href="../../../net/imagej/display/DefaultDatasetView.html" title="class in net.imagej.display"><code>DefaultDatasetView</code></a> and presets the channel ranges to the
+ given minimum and maximum arrays.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - - the input data</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a DefaultDatasetView containing the data</dd>
 </dl>
 </li>
 </ul>
