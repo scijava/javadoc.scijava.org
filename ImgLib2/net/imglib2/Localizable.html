@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":18,"i5":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -134,31 +134,43 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#getIntPosition-int-">getIntPosition</a></span>(int&nbsp;d)</code>
+<td class="colFirst"><code>default double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#getDoublePosition-int-">getDoublePosition</a></span>(int&nbsp;d)</code>
 <div class="block">Return the current position in a given dimension.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>default float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#getFloatPosition-int-">getFloatPosition</a></span>(int&nbsp;d)</code>
+<div class="block">Return the current position in a given dimension.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#getIntPosition-int-">getIntPosition</a></span>(int&nbsp;d)</code>
+<div class="block">Return the current position in a given dimension.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#getLongPosition-int-">getLongPosition</a></span>(int&nbsp;d)</code>
 <div class="block">Return the current position in a given dimension.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#localize-int:A-">localize</a></span>(int[]&nbsp;position)</code>
 <div class="block">Write the current position into the passed array.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/Localizable.html#localize-long:A-">localize</a></span>(long[]&nbsp;position)</code>
 <div class="block">Write the current position into the passed array.</div>
 </td>
@@ -169,7 +181,7 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></h3>
-<code><a href="../../net/imglib2/RealLocalizable.html#getDoublePosition-int-">getDoublePosition</a>, <a href="../../net/imglib2/RealLocalizable.html#getFloatPosition-int-">getFloatPosition</a>, <a href="../../net/imglib2/RealLocalizable.html#localize-double:A-">localize</a>, <a href="../../net/imglib2/RealLocalizable.html#localize-float:A-">localize</a></code></li>
+<code><a href="../../net/imglib2/RealLocalizable.html#localize-double:A-">localize</a>, <a href="../../net/imglib2/RealLocalizable.html#localize-float:A-">localize</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
@@ -198,7 +210,7 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 <ul class="blockList">
 <li class="blockList">
 <h4>localize</h4>
-<pre>void&nbsp;localize(int[]&nbsp;position)</pre>
+<pre>default&nbsp;void&nbsp;localize(int[]&nbsp;position)</pre>
 <div class="block">Write the current position into the passed array.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -212,7 +224,7 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 <ul class="blockList">
 <li class="blockList">
 <h4>localize</h4>
-<pre>void&nbsp;localize(long[]&nbsp;position)</pre>
+<pre>default&nbsp;void&nbsp;localize(long[]&nbsp;position)</pre>
 <div class="block">Write the current position into the passed array.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -226,7 +238,7 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 <ul class="blockList">
 <li class="blockList">
 <h4>getIntPosition</h4>
-<pre>int&nbsp;getIntPosition(int&nbsp;d)</pre>
+<pre>default&nbsp;int&nbsp;getIntPosition(int&nbsp;d)</pre>
 <div class="block">Return the current position in a given dimension.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -239,12 +251,50 @@ extends <a href="../../net/imglib2/RealLocalizable.html" title="interface in net
 <a name="getLongPosition-int-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getLongPosition</h4>
 <pre>long&nbsp;getLongPosition(int&nbsp;d)</pre>
 <div class="block">Return the current position in a given dimension.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>d</code> - dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dimension of current position</dd>
+</dl>
+</li>
+</ul>
+<a name="getFloatPosition-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFloatPosition</h4>
+<pre>default&nbsp;float&nbsp;getFloatPosition(int&nbsp;d)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../net/imglib2/RealLocalizable.html#getFloatPosition-int-">RealLocalizable</a></code></span></div>
+<div class="block">Return the current position in a given dimension.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../net/imglib2/RealLocalizable.html#getFloatPosition-int-">getFloatPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>d</code> - dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>dimension of current position</dd>
+</dl>
+</li>
+</ul>
+<a name="getDoublePosition-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getDoublePosition</h4>
+<pre>default&nbsp;double&nbsp;getDoublePosition(int&nbsp;d)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../net/imglib2/RealLocalizable.html#getDoublePosition-int-">RealLocalizable</a></code></span></div>
+<div class="block">Return the current position in a given dimension.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../net/imglib2/RealLocalizable.html#getDoublePosition-int-">getDoublePosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>d</code> - dimension</dd>
 <dt><span class="returnLabel">Returns:</span></dt>

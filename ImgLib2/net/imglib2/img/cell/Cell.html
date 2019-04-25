@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,13 +107,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>, <a href="../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>, <a href="../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Cell&lt;A&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
+implements <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A cell of an <a href="../../../../net/imglib2/img/cell/AbstractCellImg.html" title="class in net.imglib2.img.cell"><code>AbstractCellImg</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -194,7 +194,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>int</code></td>
+<td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#dimension-int-">dimension</a></span>(int&nbsp;d)</code>
 <div class="block">Get the number of pixels in a given dimension <em>d</em>.</div>
 </td>
@@ -202,7 +202,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#dimensions-int:A-">dimensions</a></span>(int[]&nbsp;dim)</code>
-<div class="block">Write the number of pixels in each dimension into long[].</div>
+<div class="block">Write the number of pixels in each dimension into int[].</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -230,15 +230,23 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#min-int-">min</a></span>(int&nbsp;d)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#max-int-">max</a></span>(int&nbsp;d)</code>
+<div class="block">Get the maximum in dimension d.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#min-long:A-">min</a></span>(long[]&nbsp;minimum)</code>
-<div class="block">Write the minimum of each dimension into long[].</div>
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#min-int-">min</a></span>(int&nbsp;d)</code>
+<div class="block">Get the minimum in dimension d.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#numDimensions--">numDimensions</a></span>()</code>
+<div class="block">Gets the space's number of dimensions.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/img/cell/Cell.html#size--">size</a></span>()</code>&nbsp;</td>
 </tr>
@@ -249,6 +257,27 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Interval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></h3>
+<code><a href="../../../../net/imglib2/Interval.html#max-long:A-">max</a>, <a href="../../../../net/imglib2/Interval.html#max-net.imglib2.Positionable-">max</a>, <a href="../../../../net/imglib2/Interval.html#min-long:A-">min</a>, <a href="../../../../net/imglib2/Interval.html#min-net.imglib2.Positionable-">min</a>, <a href="../../../../net/imglib2/Interval.html#realMax-int-">realMax</a>, <a href="../../../../net/imglib2/Interval.html#realMin-int-">realMin</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealInterval">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a></h3>
+<code><a href="../../../../net/imglib2/RealInterval.html#realMax-double:A-">realMax</a>, <a href="../../../../net/imglib2/RealInterval.html#realMax-net.imglib2.RealPositionable-">realMax</a>, <a href="../../../../net/imglib2/RealInterval.html#realMin-double:A-">realMin</a>, <a href="../../../../net/imglib2/RealInterval.html#realMin-net.imglib2.RealPositionable-">realMin</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Dimensions">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a></h3>
+<code><a href="../../../../net/imglib2/Dimensions.html#dimensions-long:A-">dimensions</a></code></li>
 </ul>
 </li>
 </ul>
@@ -398,6 +427,21 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </dl>
 </li>
 </ul>
+<a name="numDimensions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numDimensions</h4>
+<pre>public&nbsp;int&nbsp;numDimensions()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/EuclideanSpace.html#numDimensions--">EuclideanSpace</a></code></span></div>
+<div class="block">Gets the space's number of dimensions.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="min-int-">
 <!--   -->
 </a>
@@ -405,25 +449,32 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <li class="blockList">
 <h4>min</h4>
 <pre>public&nbsp;long&nbsp;min(int&nbsp;d)</pre>
+<div class="block">Get the minimum in dimension d.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/Interval.html#min-int-">min</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>d</code> - dimension</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>minimum</dd>
+<dd>minimum in dimension d.</dd>
 </dl>
 </li>
 </ul>
-<a name="min-long:A-">
+<a name="max-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>min</h4>
-<pre>public&nbsp;void&nbsp;min(long[]&nbsp;minimum)</pre>
-<div class="block">Write the minimum of each dimension into long[].</div>
+<h4>max</h4>
+<pre>public&nbsp;long&nbsp;max(int&nbsp;d)</pre>
+<div class="block">Get the maximum in dimension d.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/Interval.html#max-int-">max</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>minimum</code> - </dd>
+<dd><code>d</code> - dimension</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>maximum in dimension d.</dd>
 </dl>
 </li>
 </ul>
@@ -433,9 +484,13 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>dimension</h4>
-<pre>public&nbsp;int&nbsp;dimension(int&nbsp;d)</pre>
+<pre>public&nbsp;long&nbsp;dimension(int&nbsp;d)</pre>
 <div class="block">Get the number of pixels in a given dimension <em>d</em>.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/Dimensions.html#dimension-int-">dimension</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/Interval.html#dimension-int-">dimension</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>d</code> - </dd>
 </dl>
@@ -448,7 +503,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <li class="blockList">
 <h4>dimensions</h4>
 <pre>public&nbsp;void&nbsp;dimensions(int[]&nbsp;dim)</pre>
-<div class="block">Write the number of pixels in each dimension into long[].</div>
+<div class="block">Write the number of pixels in each dimension into int[].</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>dim</code> - </dd>
