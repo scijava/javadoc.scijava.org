@@ -1,0 +1,649 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CurveCollection (LOCI Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="CurveCollection (LOCI Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":10,"i12":10,"i13":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../loci/slim/fit/BurnInRenderer.html" title="class in loci.slim.fit"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../loci/slim/fit/CurveEvent.html" title="class in loci.slim.fit"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?loci/slim/fit/CurveCollection.html" target="_top">Frames</a></li>
+<li><a href="CurveCollection.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">loci.slim.fit</div>
+<h2 title="Class CurveCollection" class="title">Class CurveCollection</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>loci.slim.fit.CurveCollection</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../loci/slim/fit/CurveReporter.html" title="interface in loci.slim.fit">CurveReporter</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">CurveCollection</span>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../loci/slim/fit/CurveReporter.html" title="interface in loci.slim.fit">CurveReporter</a></pre>
+<div class="block">Data structure for managing a collection of curves. The main purpose of this
+ structure is to create subsampled curve sets at a resolution for each order
+ of magnitude&mdash;e.g., for a 256 x 256 image, the collection constructs
+ 128 x 128, 64 x 64, 32 x 32, 16 x 16, 8 x 8, 4 x 4, 2 x 2 and 1 x 1
+ subsampled images&mdash;by summing neighboring curves.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Curtis Rueden</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#curveListeners">curveListeners</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#curves">curves</a></span></code>
+<div class="block">Curve fit data, dimensioned [maxDepth][numRows][numCols].</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#depth">depth</a></span></code>
+<div class="block">Total number of samplings, counting full-resolution image.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#numCols">numCols</a></span></code>
+<div class="block">Full image resolution.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#numRows">numRows</a></span></code>
+<div class="block">Full image resolution.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#CurveCollection-loci.slim.fit.ICurveFitter:A:A-">CurveCollection</a></span>(<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]&nbsp;curveFitters)</code>
+<div class="block">Creates an object to manage the given collection of curves.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#CurveCollection-int:A:A:A-java.lang.Class-int-int-int-">CurveCollection</a></span>(int[][][]&nbsp;data,
+               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;curveFitterClass,
+               int&nbsp;binRadius,
+               int&nbsp;firstIndex,
+               int&nbsp;lastIndex)</code>
+<div class="block">Creates an object to manage a collection of curves for the given data.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#addCurveListener-loci.slim.fit.CurveListener-">addCurveListener</a></span>(<a href="../../../loci/slim/fit/CurveListener.html" title="interface in loci.slim.fit">CurveListener</a>&nbsp;l)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#computeCurves--">computeCurves</a></span>()</code>
+<div class="block">Computes subsamplings.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#fireCurveEvent-loci.slim.fit.CurveEvent-">fireCurveEvent</a></span>(<a href="../../../loci/slim/fit/CurveEvent.html" title="class in loci.slim.fit">CurveEvent</a>&nbsp;e)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getCurves--">getCurves</a></span>()</code>
+<div class="block">Gets the collection of curves at full resolution.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getCurves-int-">getCurves</a></span>(int&nbsp;depth)</code>
+<div class="block">Gets the collection of curves subsampled at the given depth.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getFixed--">getFixed</a></span>()</code>
+<div class="block">Gets which parameters should be fixed, versus allowed to converge.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getNumCols--">getNumCols</a></span>()</code>
+<div class="block">Gets the full X resolution.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getNumRows--">getNumRows</a></span>()</code>
+<div class="block">Gets the full Y resolution.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#getSubsamplingDepth--">getSubsamplingDepth</a></span>()</code>
+<div class="block">Gets the maximum subsampling depth of the curve collection.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#makeCurveFitters-int:A:A:A-java.lang.Class-int-int-int-">makeCurveFitters</a></span>(int[][][]&nbsp;data,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;curveFitterClass,
+                int&nbsp;binRadius,
+                int&nbsp;firstIndex,
+                int&nbsp;lastIndex)</code>
+<div class="block">Creates a list of curve fitters using the given data as a source.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>static <a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#newCurveFitter-java.lang.Class-">newCurveFitter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#removeCurveListener-loci.slim.fit.CurveListener-">removeCurveListener</a></span>(<a href="../../../loci/slim/fit/CurveListener.html" title="interface in loci.slim.fit">CurveListener</a>&nbsp;l)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#setComponentCount-int-">setComponentCount</a></span>(int&nbsp;numExp)</code>
+<div class="block">Sets how many exponentials are expected to be fitted.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../loci/slim/fit/CurveCollection.html#setFixed-boolean:A:A-">setFixed</a></span>(boolean[][]&nbsp;fixed)</code>
+<div class="block">Sets which parameters should be fixed, versus allowed to converge.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="numRows">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numRows</h4>
+<pre>protected&nbsp;int numRows</pre>
+<div class="block">Full image resolution.</div>
+</li>
+</ul>
+<a name="numCols">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numCols</h4>
+<pre>protected&nbsp;int numCols</pre>
+<div class="block">Full image resolution.</div>
+</li>
+</ul>
+<a name="depth">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>depth</h4>
+<pre>protected&nbsp;int depth</pre>
+<div class="block">Total number of samplings, counting full-resolution image.</div>
+</li>
+</ul>
+<a name="curves">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>curves</h4>
+<pre>protected&nbsp;<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][][] curves</pre>
+<div class="block">Curve fit data, dimensioned [maxDepth][numRows][numCols].</div>
+</li>
+</ul>
+<a name="curveListeners">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>curveListeners</h4>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</a> curveListeners</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CurveCollection-int:A:A:A-java.lang.Class-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CurveCollection</h4>
+<pre>public&nbsp;CurveCollection(int[][][]&nbsp;data,
+                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;curveFitterClass,
+                       int&nbsp;binRadius,
+                       int&nbsp;firstIndex,
+                       int&nbsp;lastIndex)</pre>
+<div class="block">Creates an object to manage a collection of curves for the given data.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - Data array dimensioned [numRows][numCols][timeBins].</dd>
+<dd><code>curveFitterClass</code> - Class representing the type of curve fitters to
+   use (e.g., loci.slim.fit.GACurveFitter or loci.slim.fit.LMCurveFitter).</dd>
+<dd><code>binRadius</code> - Radius of neighboring pixels to bin,
+   to improve signal-to-noise ratio.</dd>
+</dl>
+</li>
+</ul>
+<a name="CurveCollection-loci.slim.fit.ICurveFitter:A:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CurveCollection</h4>
+<pre>public&nbsp;CurveCollection(<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]&nbsp;curveFitters)</pre>
+<div class="block">Creates an object to manage the given collection of curves.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>curveFitters</code> - Array of curve fitters dimensioned [numRows][numCols].</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="computeCurves--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeCurves</h4>
+<pre>public&nbsp;void&nbsp;computeCurves()</pre>
+<div class="block">Computes subsamplings.</div>
+</li>
+</ul>
+<a name="getNumRows--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumRows</h4>
+<pre>public&nbsp;int&nbsp;getNumRows()</pre>
+<div class="block">Gets the full Y resolution.</div>
+</li>
+</ul>
+<a name="getNumCols--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNumCols</h4>
+<pre>public&nbsp;int&nbsp;getNumCols()</pre>
+<div class="block">Gets the full X resolution.</div>
+</li>
+</ul>
+<a name="getCurves--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurves</h4>
+<pre>public&nbsp;<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]&nbsp;getCurves()</pre>
+<div class="block">Gets the collection of curves at full resolution.</div>
+</li>
+</ul>
+<a name="getCurves-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurves</h4>
+<pre>public&nbsp;<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]&nbsp;getCurves(int&nbsp;depth)</pre>
+<div class="block">Gets the collection of curves subsampled at the given depth.
+ For example, for a 256 x 256 image, getCurves(2) returns a 64 x 64
+ subsampling.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the subsampling depth is greater than <a href="../../../loci/slim/fit/CurveCollection.html#getSubsamplingDepth--"><code>getSubsamplingDepth()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getSubsamplingDepth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubsamplingDepth</h4>
+<pre>public&nbsp;int&nbsp;getSubsamplingDepth()</pre>
+<div class="block">Gets the maximum subsampling depth of the curve collection. For example,
+ for a 250 x 200 image, the depth is 8 because there exist samplings at
+ 250 x 200, 125 x 100, 62 x 50, 31 x 25, 15 x 12, 7 x 6, 3 x 3 and 1 x 1.</div>
+</li>
+</ul>
+<a name="setComponentCount-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setComponentCount</h4>
+<pre>public&nbsp;void&nbsp;setComponentCount(int&nbsp;numExp)</pre>
+<div class="block">Sets how many exponentials are expected to be fitted.
+ Currently, more than 2 is not supported.</div>
+</li>
+</ul>
+<a name="setFixed-boolean:A:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFixed</h4>
+<pre>public&nbsp;void&nbsp;setFixed(boolean[][]&nbsp;fixed)</pre>
+<div class="block">Sets which parameters should be fixed, versus allowed to converge.</div>
+</li>
+</ul>
+<a name="getFixed--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFixed</h4>
+<pre>public&nbsp;boolean[][]&nbsp;getFixed()</pre>
+<div class="block">Gets which parameters should be fixed, versus allowed to converge.</div>
+</li>
+</ul>
+<a name="addCurveListener-loci.slim.fit.CurveListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCurveListener</h4>
+<pre>public&nbsp;void&nbsp;addCurveListener(<a href="../../../loci/slim/fit/CurveListener.html" title="interface in loci.slim.fit">CurveListener</a>&nbsp;l)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../loci/slim/fit/CurveReporter.html#addCurveListener-loci.slim.fit.CurveListener-">addCurveListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../loci/slim/fit/CurveReporter.html" title="interface in loci.slim.fit">CurveReporter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="removeCurveListener-loci.slim.fit.CurveListener-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeCurveListener</h4>
+<pre>public&nbsp;void&nbsp;removeCurveListener(<a href="../../../loci/slim/fit/CurveListener.html" title="interface in loci.slim.fit">CurveListener</a>&nbsp;l)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../loci/slim/fit/CurveReporter.html#removeCurveListener-loci.slim.fit.CurveListener-">removeCurveListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../loci/slim/fit/CurveReporter.html" title="interface in loci.slim.fit">CurveReporter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fireCurveEvent-loci.slim.fit.CurveEvent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fireCurveEvent</h4>
+<pre>public&nbsp;void&nbsp;fireCurveEvent(<a href="../../../loci/slim/fit/CurveEvent.html" title="class in loci.slim.fit">CurveEvent</a>&nbsp;e)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../loci/slim/fit/CurveReporter.html#fireCurveEvent-loci.slim.fit.CurveEvent-">fireCurveEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../loci/slim/fit/CurveReporter.html" title="interface in loci.slim.fit">CurveReporter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="makeCurveFitters-int:A:A:A-java.lang.Class-int-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeCurveFitters</h4>
+<pre>public static&nbsp;<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>[][]&nbsp;makeCurveFitters(int[][][]&nbsp;data,
+                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;curveFitterClass,
+                                                int&nbsp;binRadius,
+                                                int&nbsp;firstIndex,
+                                                int&nbsp;lastIndex)</pre>
+<div class="block">Creates a list of curve fitters using the given data as a source.</div>
+</li>
+</ul>
+<a name="newCurveFitter-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>newCurveFitter</h4>
+<pre>public static&nbsp;<a href="../../../loci/slim/fit/ICurveFitter.html" title="interface in loci.slim.fit">ICurveFitter</a>&nbsp;newCurveFitter(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&nbsp;c)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../loci/slim/fit/BurnInRenderer.html" title="class in loci.slim.fit"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../loci/slim/fit/CurveEvent.html" title="class in loci.slim.fit"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?loci/slim/fit/CurveCollection.html" target="_top">Frames</a></li>
+<li><a href="CurveCollection.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2019 <a href="https://scijava.org/">SciJava</a>. All rights reserved.</small></p>
+</body>
+</html>
