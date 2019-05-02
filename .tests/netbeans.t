@@ -1,6 +1,6 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/NetBeans/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/NetBeans/ | head -n1
   HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:

@@ -1,8 +1,8 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/Micro-Manager-Core/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Micro-Manager-Core/ | head -n1
   HTTP/1.1 200 OK
-  $ curl -Is https://javadoc.scijava.org/Micro-Manager-Studio/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Micro-Manager-Studio/ | head -n1
   HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:

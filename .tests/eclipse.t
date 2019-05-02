@@ -1,7 +1,7 @@
 Check primary URLs:
 
   $ curl -Is https://javadoc.scijava.org/Eclipse/ | head -n1
-  HTTP/1.1 302 Found
+  HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:
 

@@ -1,8 +1,8 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/Apache-Commons-Lang/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Apache-Commons-Lang/ | head -n1
   HTTP/1.1 200 OK
-  $ curl -Is https://javadoc.scijava.org/Apache-Commons-Math/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Apache-Commons-Math/ | head -n1
   HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:
