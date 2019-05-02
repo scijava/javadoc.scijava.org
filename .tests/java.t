@@ -1,15 +1,15 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/Java6/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Java6/ | head -n1
   HTTP/1.1 200 OK
-  $ curl -Is https://javadoc.scijava.org/Java7/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Java7/ | head -n1
   HTTP/1.1 200 OK
-  $ curl -Is https://javadoc.scijava.org/Java8/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Java8/ | head -n1
   HTTP/1.1 200 OK
 
 Check secondary aliases:
 
-  $ curl -Is https://javadoc.scijava.org/Java/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/Java/ | head -n1
   HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:

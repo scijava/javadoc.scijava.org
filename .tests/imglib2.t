@@ -1,6 +1,6 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/ImgLib2/index.html | head -n1
+  $ curl -Is https://javadoc.scijava.org/ImgLib2/ | head -n1
   HTTP/1.1 200 OK
 
 Check that trailing slashes are added appropriately:
