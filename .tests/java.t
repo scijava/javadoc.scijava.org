@@ -6,6 +6,14 @@ Check primary URLs:
   HTTP/1.1 200 OK
   $ curl -Is https://javadoc.scijava.org/Java8/ | head -n1
   HTTP/1.1 200 OK
+  $ curl -Is https://javadoc.scijava.org/Java9/ | head -n1
+  HTTP/1.1 200 OK
+  $ curl -Is https://javadoc.scijava.org/Java10/ | head -n1
+  HTTP/1.1 200 OK
+  $ curl -Is https://javadoc.scijava.org/Java11/ | head -n1
+  HTTP/1.1 200 OK
+  $ curl -Is https://javadoc.scijava.org/Java12/ | head -n1
+  HTTP/1.1 200 OK
 
 Check secondary aliases:
 
@@ -23,4 +31,16 @@ Check that trailing slashes are added appropriately:
   $ curl -Is https://javadoc.scijava.org/Java8 | grep '^\(HTTP/\|Location:\)'
   HTTP/1.1 301 Moved Permanently
   Location: https://javadoc.scijava.org/Java8/
+  $ curl -Is https://javadoc.scijava.org/Java9 | grep '^\(HTTP/\|Location:\)'
+  HTTP/1.1 301 Moved Permanently
+  Location: https://javadoc.scijava.org/Java9/
+  $ curl -Is https://javadoc.scijava.org/Java10 | grep '^\(HTTP/\|Location:\)'
+  HTTP/1.1 301 Moved Permanently
+  Location: https://javadoc.scijava.org/Java10/
+  $ curl -Is https://javadoc.scijava.org/Java11 | grep '^\(HTTP/\|Location:\)'
+  HTTP/1.1 301 Moved Permanently
+  Location: https://javadoc.scijava.org/Java11/
+  $ curl -Is https://javadoc.scijava.org/Java12 | grep '^\(HTTP/\|Location:\)'
+  HTTP/1.1 301 Moved Permanently
+  Location: https://javadoc.scijava.org/Java12/
 
