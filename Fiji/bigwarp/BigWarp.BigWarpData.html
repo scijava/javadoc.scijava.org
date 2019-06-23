@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -42,7 +48,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../bigwarp/BigWarp.html" title="class in bigwarp"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../bigwarp/BigWarp.BigWarpViewerOptions.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../bigwarp/BigWarp.DummyBehaviourTransformEventHandler.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?bigwarp/BigWarp.BigWarpData.html" target="_top">Frames</a></li>
@@ -69,13 +75,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -85,14 +91,14 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">bigwarp</div>
-<h2 title="Class BigWarp.BigWarpData" class="title">Class BigWarp.BigWarpData</h2>
+<h2 title="Class BigWarp.BigWarpData" class="title">Class BigWarp.BigWarpData&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>bigwarp.BigWarp.BigWarpData</li>
+<li>bigwarp.BigWarp.BigWarpData&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -101,12 +107,12 @@
 <li class="blockList">
 <dl>
 <dt>Enclosing class:</dt>
-<dd><a href="../bigwarp/BigWarp.html" title="class in bigwarp">BigWarp</a></dd>
+<dd><a href="../bigwarp/BigWarp.html" title="class in bigwarp">BigWarp</a>&lt;<a href="../bigwarp/BigWarp.html" title="type parameter in BigWarp">T</a>&gt;</dd>
 </dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">BigWarp.BigWarpData</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<pre>public static class <span class="typeNameLabel">BigWarp.BigWarpData&lt;T&gt;</span>
+extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 </li>
 </ul>
 </div>
@@ -126,24 +132,32 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#cache">cache</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#converterSetups">converterSetups</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#movingSourceIndexList">movingSourceIndexList</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#movingSourceIndices">movingSourceIndices</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#seqP">seqP</a></span></code>&nbsp;</td>
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../bigwarp/loader/ImagePlusLoader.SetupSettings.html" title="class in bigwarp.loader">ImagePlusLoader.SetupSettings</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#setupSettings">setupSettings</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#seqQ">seqQ</a></span></code>&nbsp;</td>
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;<a href="../bigwarp/BigWarp.BigWarpData.html" title="type parameter in BigWarp.BigWarpData">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#sources">sources</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#sources">sources</a></span></code>&nbsp;</td>
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#targetSourceIndexList">targetSourceIndexList</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int[]</code></td>
@@ -164,10 +178,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#BigWarpData-java.util.ArrayList-mpicbg.spim.data.generic.sequence.AbstractSequenceDescription-mpicbg.spim.data.generic.sequence.AbstractSequenceDescription-java.util.ArrayList-int:A-int:A-">BigWarpData</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&gt;&nbsp;sources,
-           <a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;&nbsp;seqP,
-           <a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;&nbsp;seqQ,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;&nbsp;converterSetups,
+<td class="colOne"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#BigWarpData-java.util.List-java.util.List-bdv.cache.CacheControl-int:A-int:A-">BigWarpData</a></span>(<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;<a href="../bigwarp/BigWarp.BigWarpData.html" title="type parameter in BigWarp.BigWarpData">T</a>&gt;&gt;&nbsp;sources,
+           <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;&nbsp;converterSetups,
+           <a href="../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a>&nbsp;cache,
            int[]&nbsp;movingSourceIndices,
            int[]&nbsp;targetSourceIndices)</code>&nbsp;</td>
 </tr>
@@ -180,12 +193,28 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#transferChannelSettings-bdv.tools.brightness.SetupAssignments-bdv.viewer.VisibilityAndGrouping-">transferChannelSettings</a></span>(<a href="../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a>&nbsp;setupAssignments,
+                       <a href="../bdv/viewer/VisibilityAndGrouping.html" title="class in bdv.viewer">VisibilityAndGrouping</a>&nbsp;visibility)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarp.BigWarpData.html#wrapUp--">wrapUp</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -207,25 +236,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>sources</h4>
-<pre>public final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&gt; sources</pre>
-</li>
-</ul>
-<a name="seqP">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>seqP</h4>
-<pre>public final&nbsp;<a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt; seqP</pre>
-</li>
-</ul>
-<a name="seqQ">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>seqQ</h4>
-<pre>public final&nbsp;<a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt; seqQ</pre>
+<pre>public final&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;<a href="../bigwarp/BigWarp.BigWarpData.html" title="type parameter in BigWarp.BigWarpData">T</a>&gt;&gt; sources</pre>
 </li>
 </ul>
 <a name="converterSetups">
@@ -234,7 +245,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>converterSetups</h4>
-<pre>public final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt; converterSetups</pre>
+<pre>public final&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt; converterSetups</pre>
+</li>
+</ul>
+<a name="cache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cache</h4>
+<pre>public final&nbsp;<a href="../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a> cache</pre>
 </li>
 </ul>
 <a name="movingSourceIndices">
@@ -243,16 +263,43 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>movingSourceIndices</h4>
-<pre>public final&nbsp;int[] movingSourceIndices</pre>
+<pre>public&nbsp;int[] movingSourceIndices</pre>
 </li>
 </ul>
 <a name="targetSourceIndices">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>targetSourceIndices</h4>
-<pre>public final&nbsp;int[] targetSourceIndices</pre>
+<pre>public&nbsp;int[] targetSourceIndices</pre>
+</li>
+</ul>
+<a name="movingSourceIndexList">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>movingSourceIndexList</h4>
+<pre>public final&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; movingSourceIndexList</pre>
+</li>
+</ul>
+<a name="targetSourceIndexList">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>targetSourceIndexList</h4>
+<pre>public final&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt; targetSourceIndexList</pre>
+</li>
+</ul>
+<a name="setupSettings">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setupSettings</h4>
+<pre>public final&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../bigwarp/loader/ImagePlusLoader.SetupSettings.html" title="class in bigwarp.loader">ImagePlusLoader.SetupSettings</a>&gt; setupSettings</pre>
 </li>
 </ul>
 </li>
@@ -263,18 +310,44 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="BigWarpData-java.util.ArrayList-mpicbg.spim.data.generic.sequence.AbstractSequenceDescription-mpicbg.spim.data.generic.sequence.AbstractSequenceDescription-java.util.ArrayList-int:A-int:A-">
+<a name="BigWarpData-java.util.List-java.util.List-bdv.cache.CacheControl-int:A-int:A-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>BigWarpData</h4>
-<pre>public&nbsp;BigWarpData(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&gt;&nbsp;sources,
-                   <a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;&nbsp;seqP,
-                   <a href="../mpicbg/spim/data/generic/sequence/AbstractSequenceDescription.html" title="class in mpicbg.spim.data.generic.sequence">AbstractSequenceDescription</a>&lt;?,?,?&gt;&nbsp;seqQ,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;&nbsp;converterSetups,
+<pre>public&nbsp;BigWarpData(<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;<a href="../bigwarp/BigWarp.BigWarpData.html" title="type parameter in BigWarp.BigWarpData">T</a>&gt;&gt;&nbsp;sources,
+                   <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&gt;&nbsp;converterSetups,
+                   <a href="../bdv/cache/CacheControl.html" title="interface in bdv.cache">CacheControl</a>&nbsp;cache,
                    int[]&nbsp;movingSourceIndices,
                    int[]&nbsp;targetSourceIndices)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="wrapUp--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wrapUp</h4>
+<pre>public&nbsp;void&nbsp;wrapUp()</pre>
+</li>
+</ul>
+<a name="transferChannelSettings-bdv.tools.brightness.SetupAssignments-bdv.viewer.VisibilityAndGrouping-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>transferChannelSettings</h4>
+<pre>public&nbsp;void&nbsp;transferChannelSettings(<a href="../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a>&nbsp;setupAssignments,
+                                    <a href="../bdv/viewer/VisibilityAndGrouping.html" title="class in bdv.viewer">VisibilityAndGrouping</a>&nbsp;visibility)</pre>
 </li>
 </ul>
 </li>
@@ -305,7 +378,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="subNav">
 <ul class="navList">
 <li><a href="../bigwarp/BigWarp.html" title="class in bigwarp"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../bigwarp/BigWarp.BigWarpViewerOptions.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../bigwarp/BigWarp.DummyBehaviourTransformEventHandler.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?bigwarp/BigWarp.BigWarpData.html" target="_top">Frames</a></li>
@@ -332,13 +405,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">
