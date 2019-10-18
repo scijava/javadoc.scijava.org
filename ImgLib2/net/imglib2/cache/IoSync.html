@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IoSync (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="IoSync (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/cache/IoSync.Writer.html" title="class in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/cache/IoSync.html" target="_top">Frames</a></li>
+<li><a href="IoSync.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.cache</div>
+<h2 title="Class IoSync" class="title">Class IoSync&lt;K,V&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.cache.IoSync&lt;K,V&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>K</code> - key type</dd>
+<dd><code>V</code> - value type</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;K,V&gt;, <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;K,V&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">IoSync&lt;K,V&gt;</span>
+extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;K,V&gt;, <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;K,V&gt;</pre>
+<div class="block">Handle concurrent loading and saving of cache entries. It can be used
+ directly as a <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a> and <a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache"><code>CacheLoader</code></a>. The
+ <a href="../../../net/imglib2/cache/IoSync.html#onRemoval-K-V-"><code>onRemoval(Object, Object)</code></a> method enqueues values for writing and
+ returns immediately. Actual writing is done asynchronously on separate
+ threads, calling the connected <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>.
+ <p>
+ <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> takes care of directly returning values that reloaded are
+ while they are written. It ensures that the final state of a value that is
+ enqueued for removal several times is the state that is written (eventually).
+ </p>
+ <p>
+ A crucial assumption is that only one thread calls get <a href="../../../net/imglib2/cache/IoSync.html#get-K-"><code>get(Object)</code></a>
+ <a href="../../../net/imglib2/cache/IoSync.html#onRemoval-K-V-"><code>onRemoval(Object, Object)</code></a> with the same key simultaneously. The
+ current <a href="../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="class in net.imglib2.cache.ref"><code>SoftRefLoaderRemoverCache</code></a> implementation guarantees that. The
+ same is guaranteed to the connected <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a> and
+ <a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache"><code>CacheLoader</code></a>.
+ </p>
+ <p>
+ TODO: If we want to avoid ever having corrupt data on disk, then get() should
+ block while existing value is written, i.e., synchronize both Writer and
+ get() on entry. Otherwise the value currently being written is returned and
+ potentially modified. If we don't care about corrupt disk data, only
+ consistency of data in memory, then this is not a problem.
+ </p></div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.Writer.html" title="class in net.imglib2.cache">IoSync.Writer</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.html#IoSync-net.imglib2.cache.CacheLoader-net.imglib2.cache.CacheRemover-int-int-">IoSync</a></span>(<a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;&nbsp;loader,
+      <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;&nbsp;saver,
+      int&nbsp;numThreads,
+      int&nbsp;maxQueueSize)</code>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.html#IoSync-T-">IoSync</a></span>(T&nbsp;io)</code>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.html#IoSync-T-int-int-">IoSync</a></span>(T&nbsp;io,
+      int&nbsp;numThreads,
+      int&nbsp;maxQueueSize)</code>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.html#get-K-">get</a></span>(<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>&nbsp;key)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/IoSync.html#onRemoval-K-V-">onRemoval</a></span>(<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>&nbsp;key,
+         <a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="IoSync-net.imglib2.cache.CacheLoader-">
+<!--   -->
+</a><a name="IoSync-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>IoSync</h4>
+<pre>public&nbsp;IoSync(T&nbsp;io)</pre>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>. Uses 1 writer thread and a bounded write queue
+ of size 10.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>io</code> - used to asynchronously write removed values, and to load
+            values that are <em>not</em> currently enqueued for writing.</dd>
+</dl>
+</li>
+</ul>
+<a name="IoSync-net.imglib2.cache.CacheLoader-int-int-">
+<!--   -->
+</a><a name="IoSync-T-int-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>IoSync</h4>
+<pre>public&nbsp;IoSync(T&nbsp;io,
+              int&nbsp;numThreads,
+              int&nbsp;maxQueueSize)</pre>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>. The specified number of <a href="../../../net/imglib2/cache/IoSync.Writer.html" title="class in net.imglib2.cache"><code>IoSync.Writer</code></a> threads
+ is started to handle writing values through <code>saver</code>. New writer
+ threads can be always started later, for example by
+ <code>new Thread(iosync.new Writer()).start()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>io</code> - used to asynchronously write removed values, and to load
+            values that are <em>not</em> currently enqueued for writing.</dd>
+<dd><code>numThreads</code> - how many writer threads to start (may be 0).</dd>
+<dd><code>maxQueueSize</code> - the maximum size of the write queue. When the queue is full,
+            <a href="../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-"><code>CacheRemover.onRemoval(Object, Object)</code></a> will block
+            until earlier values have been written.</dd>
+</dl>
+</li>
+</ul>
+<a name="IoSync-net.imglib2.cache.CacheLoader-net.imglib2.cache.CacheRemover-int-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>IoSync</h4>
+<pre>public&nbsp;IoSync(<a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;&nbsp;loader,
+              <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;&nbsp;saver,
+              int&nbsp;numThreads,
+              int&nbsp;maxQueueSize)</pre>
+<div class="block">Create a new <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> that asynchronously forwards to the specified
+ <a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>. The specified number of <a href="../../../net/imglib2/cache/IoSync.Writer.html" title="class in net.imglib2.cache"><code>IoSync.Writer</code></a> threads
+ is started to handle writing values through <code>saver</code>. New writer
+ threads can be always started later, for example by
+ <code>new Thread(iosync.new Writer()).start()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loader</code> - used to load values that are <em>not</em> currently enqueued
+            for writing.</dd>
+<dd><code>saver</code> - used to asynchronously write removed values.</dd>
+<dd><code>numThreads</code> - how many writer threads to start (may be 0).</dd>
+<dd><code>maxQueueSize</code> - the maximum size of the write queue. When the queue is full,
+            <a href="../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-"><code>CacheRemover.onRemoval(Object, Object)</code></a> will block
+            until earlier values have been written.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="onRemoval-java.lang.Object-java.lang.Object-">
+<!--   -->
+</a><a name="onRemoval-K-V-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onRemoval</h4>
+<pre>public&nbsp;void&nbsp;onRemoval(<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>&nbsp;key,
+                      <a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&nbsp;value)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-">onRemoval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="get-java.lang.Object-">
+<!--   -->
+</a><a name="get-K-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>get</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&nbsp;get(<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>&nbsp;key)
+      throws <a href="https://javadoc.scijava.org/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/cache/CacheLoader.html#get-K-">get</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">K</a>,<a href="../../../net/imglib2/cache/IoSync.html" title="type parameter in IoSync">V</a>&gt;</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/cache/IoSync.Writer.html" title="class in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?net/imglib2/cache/IoSync.html" target="_top">Frames</a></li>
+<li><a href="IoSync.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2019 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

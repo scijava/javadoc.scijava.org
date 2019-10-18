@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../net/imglib2/loops/ClassCopyProvider.html" title="class in net.imglib2.loops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/loops/IntervalChunks.html" title="class in net.imglib2.loops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../net/imglib2/loops/LoopBuilder.FiveConsumer.html" title="interface in net.imglib2.loops"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -95,7 +95,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>net.imglib2.loops.LoopBuilder&lt;T&gt;</li>
@@ -108,25 +108,25 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LoopBuilder&lt;T&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block"><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> provides an easy way to write fast loops on
  <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>s. For example, this is a loop that
  calculates the sum of two images:
-
+ <p>
  <pre>
  <code>
  RandomAccessibleInterval&lt;DoubleType&gt; imageA = ...
  RandomAccessibleInterval&lt;DoubleType&gt; imageB = ...
  RandomAccessibleInterval&lt;DoubleType&gt; sum = ...
 
- LoopBuilder.setImages(imageA, imageB, sum).run(
+ LoopBuilder.setImages(imageA, imageB, sum).forEachPixel(
      (a, b, s) -&gt; {
           s.setReal(a.getRealDouble() + b.getRealDouble());
      }
  );
  </code>
  </pre>
-
+ <p>
  The <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>s <code>imageA</code>, <code>imageB</code> and
  <code>sum</code> must have equal dimensions, but the bounds of there
  <a href="../../../net/imglib2/util/Intervals.html" title="class in net.imglib2.util"><code>Intervals</code></a> can differ.</div>
@@ -184,32 +184,52 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#flatIterationOrder--">flatIterationOrder</a></span>()</code>
+<div class="block"><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> might use any iteration order to execute
+ the loop.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#flatIterationOrder-boolean-">flatIterationOrder</a></span>(boolean&nbsp;value)</code>
+<div class="block">If false, <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> might use any iteration order
+ to execute the loop.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#forEachPixel-T-">forEachPixel</a></span>(<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&nbsp;action)</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>static &lt;A&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;A&gt;&gt;</code></td>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#multiThreaded--">multiThreaded</a></span>()</code>
+<div class="block">By default <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> runs the loop without multi-threading.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;A&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://javadoc.scijava.org/Java/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;A&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>static &lt;A,B&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;A,B&gt;&gt;</code></td>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static &lt;A,B&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://javadoc.scijava.org/Java/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;A,B&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b)</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static &lt;A,B,C&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.TriConsumer.html" title="interface in net.imglib2.loops">LoopBuilder.TriConsumer</a>&lt;A,B,C&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;C&gt;&nbsp;c)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static &lt;A,B,C,D&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.FourConsumer.html" title="interface in net.imglib2.loops">LoopBuilder.FourConsumer</a>&lt;A,B,C,D&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;C&gt;&nbsp;c,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;D&gt;&nbsp;d)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static &lt;A,B,C,D,E&gt;<br><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.FiveConsumer.html" title="interface in net.imglib2.loops">LoopBuilder.FiveConsumer</a>&lt;A,B,C,D,E&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
@@ -217,7 +237,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;D&gt;&nbsp;d,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;E&gt;&nbsp;e)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static &lt;A,B,C,D,E,F&gt;<br><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.SixConsumer.html" title="interface in net.imglib2.loops">LoopBuilder.SixConsumer</a>&lt;A,B,C,D,E,F&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/loops/LoopBuilder.html#setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">setImages</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
          <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
@@ -231,8 +251,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +274,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setImages</h4>
-<pre>public static&nbsp;&lt;A&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;A&gt;&gt;&nbsp;setImages(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a)</pre>
+<pre>public static&nbsp;&lt;A&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://javadoc.scijava.org/Java/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;A&gt;&gt;&nbsp;setImages(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
@@ -263,8 +287,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setImages</h4>
-<pre>public static&nbsp;&lt;A,B&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;A,B&gt;&gt;&nbsp;setImages(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
+<pre>public static&nbsp;&lt;A,B&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="https://javadoc.scijava.org/Java/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;A,B&gt;&gt;&nbsp;setImages(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
                                                            <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
@@ -276,6 +304,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public static&nbsp;&lt;A,B,C&gt;&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.TriConsumer.html" title="interface in net.imglib2.loops">LoopBuilder.TriConsumer</a>&lt;A,B,C&gt;&gt;&nbsp;setImages(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;A&gt;&nbsp;a,
                                                                             <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
                                                                             <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;C&gt;&nbsp;c)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
@@ -288,6 +320,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                                                                  <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;b,
                                                                                  <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;C&gt;&nbsp;c,
                                                                                  <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;D&gt;&nbsp;d)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
@@ -301,6 +337,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                                                                      <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;C&gt;&nbsp;c,
                                                                                      <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;D&gt;&nbsp;d,
                                                                                      <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;E&gt;&nbsp;e)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="setImages-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-">
@@ -315,6 +355,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                                                                         <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;D&gt;&nbsp;d,
                                                                                         <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;E&gt;&nbsp;e,
                                                                                         <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;F&gt;&nbsp;f)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="forEachPixel-java.lang.Object-">
@@ -322,10 +366,63 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </a><a name="forEachPixel-T-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>forEachPixel</h4>
 <pre>public&nbsp;void&nbsp;forEachPixel(<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&nbsp;action)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="multiThreaded--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>multiThreaded</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;&nbsp;multiThreaded()</pre>
+<div class="block">By default <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> runs the loop without multi-threading.
+ Calling this method causes LoopBuilder to use multi-threading to speed up the operation.
+ <p>
+ WARNING: You need to make sure that your operation is thread safe.</div>
+</li>
+</ul>
+<a name="flatIterationOrder--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flatIterationOrder</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;&nbsp;flatIterationOrder()</pre>
+<div class="block"><a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> might use any iteration order to execute
+ the loop. Calling this method will cause <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a>
+ to use flat iteration order, when executing the loop.
+ <p>
+ WARNING: Don't use multi-threading if you want to have flat
+ iteration order.</div>
+</li>
+</ul>
+<a name="flatIterationOrder-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>flatIterationOrder</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops">LoopBuilder</a>&lt;<a href="../../../net/imglib2/loops/LoopBuilder.html" title="type parameter in LoopBuilder">T</a>&gt;&nbsp;flatIterationOrder(boolean&nbsp;value)</pre>
+<div class="block">If false, <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> might use any iteration order
+ to execute the loop.
+ <p>
+ If true, <a href="../../../net/imglib2/loops/LoopBuilder.html" title="class in net.imglib2.loops"><code>LoopBuilder</code></a> will use
+ flat iteration order, and multi threading is disabled.
+ <p>
+ WARNING: Don't use multi-threading if you want to have flat
+ iteration order.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/FlatIterationOrder.html" title="class in net.imglib2"><code>FlatIterationOrder</code></a></dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -355,7 +452,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../net/imglib2/loops/ClassCopyProvider.html" title="class in net.imglib2.loops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/loops/IntervalChunks.html" title="class in net.imglib2.loops"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../net/imglib2/loops/LoopBuilder.FiveConsumer.html" title="interface in net.imglib2.loops"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

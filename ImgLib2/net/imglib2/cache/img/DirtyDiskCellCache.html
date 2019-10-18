@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DirtyDiskCellCache (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DirtyDiskCellCache (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/cache/img/CellLoader.html" title="interface in net.imglib2.cache.img"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="class in net.imglib2.cache.img"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/cache/img/DirtyDiskCellCache.html" target="_top">Frames</a></li>
+<li><a href="DirtyDiskCellCache.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.cache.img</div>
+<h2 title="Class DirtyDiskCellCache" class="title">Class DirtyDiskCellCache&lt;A extends <a href="../../../../net/imglib2/Dirty.html" title="interface in net.imglib2">Dirty</a>&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="class in net.imglib2.cache.img">net.imglib2.cache.img.DiskCellCache</a>&lt;A&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.cache.img.DirtyDiskCellCache&lt;A&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>A</code> - access type</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;, <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">DirtyDiskCellCache&lt;A extends <a href="../../../../net/imglib2/Dirty.html" title="interface in net.imglib2">Dirty</a>&gt;</span>
+extends <a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="class in net.imglib2.cache.img">DiskCellCache</a>&lt;A&gt;</pre>
+<div class="block">TODO</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html#DirtyDiskCellCache-java.nio.file.Path-net.imglib2.img.cell.CellGrid-net.imglib2.cache.CacheLoader-net.imglib2.cache.img.AccessIo-net.imglib2.util.Fraction-">DirtyDiskCellCache</a></span>(<a href="https://javadoc.scijava.org/Java/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;blockcache,
+                  <a href="../../../../net/imglib2/img/cell/CellGrid.html" title="class in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
+                  <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&gt;&nbsp;backingLoader,
+                  <a href="../../../../net/imglib2/cache/img/AccessIo.html" title="interface in net.imglib2.cache.img">AccessIo</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&nbsp;accessIo,
+                  <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html#onRemoval-java.lang.Long-net.imglib2.img.cell.Cell-">onRemoval</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
+         <a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&nbsp;value)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.img.DiskCellCache">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.cache.img.<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="class in net.imglib2.cache.img">DiskCellCache</a></h3>
+<code><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#addDeleteHook-java.nio.file.Path-">addDeleteHook</a>, <a href="../../../../net/imglib2/cache/img/DiskCellCache.html#createTempDirectory-java.nio.file.Path-java.lang.String-boolean-">createTempDirectory</a>, <a href="../../../../net/imglib2/cache/img/DiskCellCache.html#createTempDirectory-java.lang.String-boolean-">createTempDirectory</a>, <a href="../../../../net/imglib2/cache/img/DiskCellCache.html#get-java.lang.Long-">get</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DirtyDiskCellCache-java.nio.file.Path-net.imglib2.img.cell.CellGrid-net.imglib2.cache.CacheLoader-net.imglib2.cache.img.AccessIo-net.imglib2.util.Fraction-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DirtyDiskCellCache</h4>
+<pre>public&nbsp;DirtyDiskCellCache(<a href="https://javadoc.scijava.org/Java/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;blockcache,
+                          <a href="../../../../net/imglib2/img/cell/CellGrid.html" title="class in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
+                          <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&gt;&nbsp;backingLoader,
+                          <a href="../../../../net/imglib2/cache/img/AccessIo.html" title="interface in net.imglib2.cache.img">AccessIo</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&nbsp;accessIo,
+                          <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="onRemoval-java.lang.Long-net.imglib2.img.cell.Cell-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>onRemoval</h4>
+<pre>public&nbsp;void&nbsp;onRemoval(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
+                      <a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a>&gt;&nbsp;value)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-">onRemoval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a> extends <a href="../../../../net/imglib2/Dirty.html" title="interface in net.imglib2">Dirty</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#onRemoval-java.lang.Long-net.imglib2.img.cell.Cell-">onRemoval</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="class in net.imglib2.cache.img">DiskCellCache</a>&lt;<a href="../../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="type parameter in DirtyDiskCellCache">A</a> extends <a href="../../../../net/imglib2/Dirty.html" title="interface in net.imglib2">Dirty</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/cache/img/CellLoader.html" title="interface in net.imglib2.cache.img"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="class in net.imglib2.cache.img"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/cache/img/DirtyDiskCellCache.html" target="_top">Frames</a></li>
+<li><a href="DirtyDiskCellCache.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2019 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>
