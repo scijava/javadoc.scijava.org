@@ -14,6 +14,8 @@ Check primary URLs:
   HTTP/1.1 200 OK
   $ curl -Is https://javadoc.scijava.org/Java12/ | head -n1
   HTTP/1.1 200 OK
+  $ curl -Is https://javadoc.scijava.org/Java13/ | head -n1
+  HTTP/1.1 200 OK
 
 Check secondary aliases:
 
@@ -43,4 +45,7 @@ Check that trailing slashes are added appropriately:
   $ curl -Is https://javadoc.scijava.org/Java12 | grep '^\(HTTP/\|Location:\)'
   HTTP/1.1 301 Moved Permanently
   Location: https://javadoc.scijava.org/Java12/
+  $ curl -Is https://javadoc.scijava.org/Java13 | grep '^\(HTTP/\|Location:\)'
+  HTTP/1.1 301 Moved Permanently
+  Location: https://javadoc.scijava.org/Java13/
 
