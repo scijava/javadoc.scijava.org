@@ -1026,7 +1026,14 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <li class="blockList">
 <h4>setExecutorService</h4>
 <pre>public&nbsp;void&nbsp;setExecutorService(<a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
-<div class="block">Set the executor service to use.</div>
+<div class="block">Set the executor service to use.
+
+ When null, a temporary one will be created in <a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#convolve--"><code>convolve()</code></a>, using
+ as many <a href="https://javadoc.scijava.org/Java/java/lang/Thread.html?is-external=true" title="class or interface in java.lang"><code>Thread</code></a>s as <a href="https://javadoc.scijava.org/Java/java/lang/Runtime.html?is-external=true#availableProcessors--" title="class or interface in java.lang"><code>Runtime.availableProcessors()</code></a>, which
+ will be <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutorService.html?is-external=true#shutdownNow--" title="class or interface in java.util.concurrent"><code>ExecutorService.shutdownNow()</code></a> when done.
+
+ Otherwise, the caller is responsible for shutting down the provided
+ <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent"><code>ExecutorService</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>service</code> - - Executor service to use.</dd>
