@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":18,"i5":6,"i6":18,"i7":6,"i8":18,"i9":6,"i10":18,"i11":6,"i12":18,"i13":18,"i14":18,"i15":6,"i16":6,"i17":18,"i18":6,"i19":18,"i20":6,"i21":18,"i22":6,"i23":18,"i24":6,"i25":18,"i26":6};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":18,"i5":6,"i6":18,"i7":6,"i8":18,"i9":6,"i10":18,"i11":6,"i12":18,"i13":18,"i14":18,"i15":6,"i16":18,"i17":6,"i18":18,"i19":6,"i20":18,"i21":6,"i22":6,"i23":18,"i24":6,"i25":18,"i26":6,"i27":18,"i28":6,"i29":18,"i30":6,"i31":18,"i32":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</dd>
+<dd><a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">Vertices</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</pre>
+extends <a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</pre>
 <div class="block">Collection of vertices for a <a href="../../../net/imagej/mesh/Mesh.html" title="interface in net.imagej.mesh"><code>Mesh</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -175,7 +175,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</code></td>
+<td class="colFirst"><code>default <a href="https://javadoc.scijava.org/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#iterator--">iterator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -226,7 +226,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
    double&nbsp;x,
    double&nbsp;y,
    double&nbsp;z)</code>
-<div class="block">Overwrites the position of a vertex.</div>
+<div class="block">Overwrites the position of a vertex, sets normal and texture coordinates
+ to <code>0</code></div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -249,7 +250,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
     float&nbsp;x,
     float&nbsp;y,
     float&nbsp;z)</code>
-<div class="block">Overwrites a vertex's position.</div>
+<div class="block">Overwrites the position of a vertex, sets normal and texture coordinates
+ to <code>0</code></div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
@@ -267,66 +269,118 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 </td>
 </tr>
 <tr id="i16" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setNormal-long-double-double-double-">setNormal</a></span>(long&nbsp;vIndex,
+         double&nbsp;nx,
+         double&nbsp;ny,
+         double&nbsp;nz)</code>
+<div class="block">Overwrites a vertex's normal.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setNormalf-long-float-float-float-">setNormalf</a></span>(long&nbsp;vIndex,
+          float&nbsp;nx,
+          float&nbsp;ny,
+          float&nbsp;nz)</code>
+<div class="block">Overwrites a vertex's normal.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setPosition-long-double-double-double-">setPosition</a></span>(long&nbsp;vIndex,
+           double&nbsp;x,
+           double&nbsp;y,
+           double&nbsp;z)</code>
+<div class="block">Overwrites a vertex's position.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setPositionf-long-float-float-float-">setPositionf</a></span>(long&nbsp;vIndex,
+            float&nbsp;x,
+            float&nbsp;y,
+            float&nbsp;z)</code>
+<div class="block">Overwrites a vertex's position.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setTexture-long-double-double-">setTexture</a></span>(long&nbsp;vIndex,
+          double&nbsp;u,
+          double&nbsp;v)</code>
+<div class="block">Overwrites a vertex's texture coordinates.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#setTexturef-long-float-float-">setTexturef</a></span>(long&nbsp;vIndex,
+           float&nbsp;u,
+           float&nbsp;v)</code>
+<div class="block">Overwrites a vertex's texture coordinates.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#size--">size</a></span>()</code>
 <div class="block">Number of vertices in the collection.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>default double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#u-long-">u</a></span>(long&nbsp;vIndex)</code>
 <div class="block">U value of vertex texture coordinate, as a double.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#uf-long-">uf</a></span>(long&nbsp;vIndex)</code>
 <div class="block">U value of vertex texture coordinate, as a float.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>default double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#v-long-">v</a></span>(long&nbsp;vIndex)</code>
 <div class="block">V value of vertex texture coordinate, as a double.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#vf-long-">vf</a></span>(long&nbsp;vIndex)</code>
 <div class="block">V value of vertex texture coordinate, as a float.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>default double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#x-long-">x</a></span>(long&nbsp;vIndex)</code>
 <div class="block">X position of a vertex, as a double.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#xf-long-">xf</a></span>(long&nbsp;vIndex)</code>
 <div class="block">X position of a vertex, as a float.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>default double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#y-long-">y</a></span>(long&nbsp;vIndex)</code>
 <div class="block">Y position of a vertex, as a double.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#yf-long-">yf</a></span>(long&nbsp;vIndex)</code>
 <div class="block">Y position of a vertex, as a float.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>default double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#z-long-">z</a></span>(long&nbsp;vIndex)</code>
 <div class="block">Z position of a vertex, as a double.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imagej/mesh/Vertices.html#zf-long-">zf</a></span>(long&nbsp;vIndex)</code>
 <div class="block">Z position of a vertex, as a float.</div>
@@ -337,8 +391,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#forEach-java.util.function.Consumer-" title="class or interface in java.lang">forEach</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#spliterator--" title="class or interface in java.lang">spliterator</a></code></li>
+<h3>Methods inherited from interface&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a></h3>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true#forEach-java.util.function.Consumer-" title="class or interface in java.lang">forEach</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true#spliterator--" title="class or interface in java.lang">spliterator</a></code></li>
 </ul>
 </li>
 </ul>
@@ -514,6 +568,64 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 </dl>
 </li>
 </ul>
+<a name="setPositionf-long-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPositionf</h4>
+<pre>void&nbsp;setPositionf(long&nbsp;vIndex,
+                  float&nbsp;x,
+                  float&nbsp;y,
+                  float&nbsp;z)</pre>
+<div class="block">Overwrites a vertex's position.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>x</code> - X position of the vertex.</dd>
+<dd><code>y</code> - Y position of the vertex.</dd>
+<dd><code>z</code> - Z position of the vertex.</dd>
+</dl>
+</li>
+</ul>
+<a name="setNormalf-long-float-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNormalf</h4>
+<pre>void&nbsp;setNormalf(long&nbsp;vIndex,
+                float&nbsp;nx,
+                float&nbsp;ny,
+                float&nbsp;nz)</pre>
+<div class="block">Overwrites a vertex's normal.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>nx</code> - X coordinate of the vertex's normal.</dd>
+<dd><code>ny</code> - Y coordinate of the vertex's normal.</dd>
+<dd><code>nz</code> - Z coordinate of the vertex's normal.</dd>
+</dl>
+</li>
+</ul>
+<a name="setTexturef-long-float-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTexturef</h4>
+<pre>void&nbsp;setTexturef(long&nbsp;vIndex,
+                 float&nbsp;u,
+                 float&nbsp;v)</pre>
+<div class="block">Overwrites a vertex's texture coordinates.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>u</code> - U value of vertex texture coordinate.</dd>
+<dd><code>v</code> - V value of vertex texture coordinate.</dd>
+</dl>
+</li>
+</ul>
 <a name="addf-float-float-float-">
 <!--   -->
 </a>
@@ -544,7 +656,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
                   float&nbsp;x,
                   float&nbsp;y,
                   float&nbsp;z)</pre>
-<div class="block">Overwrites a vertex's position.</div>
+<div class="block">Overwrites the position of a vertex, sets normal and texture coordinates
+ to <code>0</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
@@ -694,7 +807,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
                  double&nbsp;x,
                  double&nbsp;y,
                  double&nbsp;z)</pre>
-<div class="block">Overwrites the position of a vertex.</div>
+<div class="block">Overwrites the position of a vertex, sets normal and texture coordinates
+ to <code>0</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
@@ -734,16 +848,74 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.ht
 </dl>
 </li>
 </ul>
+<a name="setPosition-long-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPosition</h4>
+<pre>default&nbsp;void&nbsp;setPosition(long&nbsp;vIndex,
+                         double&nbsp;x,
+                         double&nbsp;y,
+                         double&nbsp;z)</pre>
+<div class="block">Overwrites a vertex's position.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>x</code> - X position of the vertex.</dd>
+<dd><code>y</code> - Y position of the vertex.</dd>
+<dd><code>z</code> - Z position of the vertex.</dd>
+</dl>
+</li>
+</ul>
+<a name="setNormal-long-double-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNormal</h4>
+<pre>default&nbsp;void&nbsp;setNormal(long&nbsp;vIndex,
+                       double&nbsp;nx,
+                       double&nbsp;ny,
+                       double&nbsp;nz)</pre>
+<div class="block">Overwrites a vertex's normal.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>nx</code> - X coordinate of the vertex's normal.</dd>
+<dd><code>ny</code> - Y coordinate of the vertex's normal.</dd>
+<dd><code>nz</code> - Z coordinate of the vertex's normal.</dd>
+</dl>
+</li>
+</ul>
+<a name="setTexture-long-double-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTexture</h4>
+<pre>default&nbsp;void&nbsp;setTexture(long&nbsp;vIndex,
+                        double&nbsp;u,
+                        double&nbsp;v)</pre>
+<div class="block">Overwrites a vertex's texture coordinates.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vIndex</code> - Index of vertex to overwrite.</dd>
+<dd><code>u</code> - U value of vertex texture coordinate.</dd>
+<dd><code>v</code> - V value of vertex texture coordinate.</dd>
+</dl>
+</li>
+</ul>
 <a name="iterator--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;&nbsp;iterator()</pre>
+<pre>default&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</code></dd>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../net/imagej/mesh/Vertex.html" title="interface in net.imagej.mesh">Vertex</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
