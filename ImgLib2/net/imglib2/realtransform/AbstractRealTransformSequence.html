@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -120,7 +120,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></pre>
 <div class="block">Shared properties of <a href="../../../net/imglib2/realtransform/RealTransformSequence.html" title="class in net.imglib2.realtransform"><code>RealTransformSequence</code></a> and
  <a href="../../../net/imglib2/realtransform/InvertibleRealTransformSequence.html" title="class in net.imglib2.realtransform"><code>InvertibleRealTransformSequence</code></a>, sequences of something that extends
- <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransforms</code></a>.</div>
+ <a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform"><code>RealTransforms</code></a>. If empty, will behave as the identity transformation.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Stephan Saalfeld</dd>
@@ -232,12 +232,19 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AbstractRealTransformSequence.html#isIdentity--">isIdentity</a></span>()</code>
+<div class="block">Returns true if either the sequence is empty, or if
+ every transform in the sequence returns true for <code>isIdentity</code>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AbstractRealTransformSequence.html#numSourceDimensions--">numSourceDimensions</a></span>()</code>
 <div class="block">Returns <em>n</em>, the minimal number of dimension of the source vector.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/realtransform/AbstractRealTransformSequence.html#numTargetDimensions--">numTargetDimensions</a></span>()</code>
 <div class="block">Returns <em>m</em>, the minimal dimension of the target vector.</div>
@@ -250,13 +257,6 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.realtransform.RealTransform">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;net.imglib2.realtransform.<a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></h3>
-<code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a></code></li>
 </ul>
 </li>
 </ul>
@@ -389,6 +389,25 @@ implements <a href="../../../net/imglib2/realtransform/RealTransform.html" title
 <dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#numTargetDimensions--">numTargetDimensions</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the dimension of the target vector.</dd>
+</dl>
+</li>
+</ul>
+<a name="isIdentity--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isIdentity</h4>
+<pre>public&nbsp;boolean&nbsp;isIdentity()</pre>
+<div class="block">Returns true if either the sequence is empty, or if
+ every transform in the sequence returns true for <code>isIdentity</code>.  This 
+ sequence could behave as the identity even if this method returns false,
+ for example, if it contains only a transform and its inverse.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/realtransform/RealTransform.html#isIdentity--">isIdentity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/realtransform/RealTransform.html" title="interface in net.imglib2.realtransform">RealTransform</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if empty or contains only identity transforms.</dd>
 </dl>
 </li>
 </ul>
