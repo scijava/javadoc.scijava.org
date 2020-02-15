@@ -158,6 +158,13 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/handle/AbstractDataHandle.html#AbstractDataHandle--">AbstractDataHandle()</a></span> - Constructor for class org.scijava.io.handle.<a href="org/scijava/io/handle/AbstractDataHandle.html" title="class in org.scijava.io.handle">AbstractDataHandle</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/scijava/convert/AbstractDelegateConverter.html" title="class in org.scijava.convert"><span class="typeNameLink">AbstractDelegateConverter</span></a>&lt;<a href="org/scijava/convert/AbstractDelegateConverter.html" title="type parameter in AbstractDelegateConverter">I</a>,<a href="org/scijava/convert/AbstractDelegateConverter.html" title="type parameter in AbstractDelegateConverter">D</a>,<a href="org/scijava/convert/AbstractDelegateConverter.html" title="type parameter in AbstractDelegateConverter">O</a>&gt; - Class in <a href="org/scijava/convert/package-summary.html">org.scijava.convert</a></dt>
+<dd>
+<div class="block">Abstract superclass for <a href="org/scijava/convert/Converter.html" title="interface in org.scijava.convert"><code>Converter</code></a> plugins that delegate to other
+ converters to chain two conversion steps together.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/convert/AbstractDelegateConverter.html#AbstractDelegateConverter--">AbstractDelegateConverter()</a></span> - Constructor for class org.scijava.convert.<a href="org/scijava/convert/AbstractDelegateConverter.html" title="class in org.scijava.convert">AbstractDelegateConverter</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/scijava/display/AbstractDisplay.html" title="class in org.scijava.display"><span class="typeNameLink">AbstractDisplay</span></a>&lt;<a href="org/scijava/display/AbstractDisplay.html" title="type parameter in AbstractDisplay">T</a>&gt; - Class in <a href="org/scijava/display/package-summary.html">org.scijava.display</a></dt>
 <dd>
 <div class="block">Abstract superclass of <a href="org/scijava/display/Display.html" title="interface in org.scijava.display"><code>Display</code></a> implementations.</div>
@@ -637,6 +644,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/minimaven/JarClassLoader.html#add-java.lang.String-">add(String)</a></span> - Method in class org.scijava.minimaven.<a href="org/scijava/minimaven/JarClassLoader.html" title="class in org.scijava.minimaven">JarClassLoader</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/NamedObjectIndex.html#add-E-java.lang.String-">add(E, String)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/NamedObjectIndex.html" title="class in org.scijava.object">NamedObjectIndex</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/NamedObjectIndex.html#add-E-java.lang.Class-java.lang.String-boolean-">add(E, Class&lt;?&gt;, String, boolean)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/NamedObjectIndex.html" title="class in org.scijava.object">NamedObjectIndex</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/object/ObjectIndex.html#add-E-">add(E)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/ObjectIndex.html" title="class in org.scijava.object">ObjectIndex</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/object/ObjectIndex.html#add-E-boolean-">add(E, boolean)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/ObjectIndex.html" title="class in org.scijava.object">ObjectIndex</a></dt>
@@ -915,11 +926,13 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/menu/SwingJPopupMenuCreator.html#addNonLeafToTop-org.scijava.menu.ShadowMenu-javax.swing.JPopupMenu-">addNonLeafToTop(ShadowMenu, JPopupMenu)</a></span> - Method in class org.scijava.ui.swing.menu.<a href="org/scijava/ui/swing/menu/SwingJPopupMenuCreator.html" title="class in org.scijava.ui.swing.menu">SwingJPopupMenuCreator</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/scijava/object/DefaultObjectService.html#addObject-java.lang.Object-">addObject(Object)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/DefaultObjectService.html" title="class in org.scijava.object">DefaultObjectService</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/object/ObjectService.html#addObject-java.lang.Object-">addObject(Object)</a></span> - Method in interface org.scijava.object.<a href="org/scijava/object/ObjectService.html" title="interface in org.scijava.object">ObjectService</a></dt>
 <dd>
 <div class="block">Registers an object with the object service.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/ObjectService.html#addObject-java.lang.Object-java.lang.String-">addObject(Object, String)</a></span> - Method in interface org.scijava.object.<a href="org/scijava/object/ObjectService.html" title="interface in org.scijava.object">ObjectService</a></dt>
+<dd>
+<div class="block">Registers a named object with the object service.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/console/LogRecorder.html#addObservers-java.lang.Runnable-">addObservers(Runnable)</a></span> - Method in class org.scijava.ui.swing.console.<a href="org/scijava/ui/swing/console/LogRecorder.html" title="class in org.scijava.ui.swing.console">LogRecorder</a></dt>
 <dd>
@@ -2119,7 +2132,16 @@
 <div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by the specified
  <a href="org/scijava/io/ByteBank.html" title="interface in org.scijava.io"><code>ByteBank</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-org.scijava.io.ByteBank-java.lang.String-">BytesLocation(ByteBank, String)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by the specified <a href="org/scijava/io/ByteBank.html" title="interface in org.scijava.io"><code>ByteBank</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-int-">BytesLocation(int)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> with
+ the specified initial capacity, but with a reported size of 0.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-int-java.lang.String-">BytesLocation(int, String)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
 <dd>
 <div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> with
  the specified initial capacity, but with a reported size of 0.</div>
@@ -2129,12 +2151,27 @@
 <div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a>
  that wraps the specified <a href="org/scijava/util/ByteArray.html" title="class in org.scijava.util"><code>ByteArray</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-org.scijava.util.ByteArray-java.lang.String-">BytesLocation(ByteArray, String)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> that
+ wraps the specified <a href="org/scijava/util/ByteArray.html" title="class in org.scijava.util"><code>ByteArray</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-byte:A-">BytesLocation(byte[])</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
 <dd>
 <div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a>
  which wraps the specified array.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-byte:A-java.lang.String-">BytesLocation(byte[], String)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> which
+ wraps the specified array.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-byte:A-int-int-">BytesLocation(byte[], int, int)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> with
+ the specified initial capacity and the provided data.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#BytesLocation-byte:A-int-int-java.lang.String-">BytesLocation(byte[], int, int, String)</a></span> - Constructor for class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
 <dd>
 <div class="block">Creates a <a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location"><code>BytesLocation</code></a> backed by a <a href="org/scijava/io/ByteArrayByteBank.html" title="class in org.scijava.io"><code>ByteArrayByteBank</code></a> with
  the specified initial capacity and the provided data.</div>
@@ -2442,6 +2479,10 @@
 <dt><span class="memberNameLink"><a href="org/scijava/script/ScriptInfo.html#canRunHeadless--">canRunHeadless()</a></span> - Method in class org.scijava.script.<a href="org/scijava/script/ScriptInfo.html" title="class in org.scijava.script">ScriptInfo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/headless/HeadlessDisplayViewer.html#canView-org.scijava.display.Display-">canView(Display&lt;?&gt;)</a></span> - Method in class org.scijava.ui.headless.<a href="org/scijava/ui/headless/HeadlessDisplayViewer.html" title="class in org.scijava.ui.headless">HeadlessDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#canView-org.scijava.display.Display-">canView(Display&lt;?&gt;)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#canView-T-">canView(T)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/viewer/DisplayViewer.html#canView-org.scijava.display.Display-">canView(Display&lt;?&gt;)</a></span> - Method in interface org.scijava.ui.viewer.<a href="org/scijava/ui/viewer/DisplayViewer.html" title="interface in org.scijava.ui.viewer">DisplayViewer</a></dt>
 <dd>
@@ -3551,6 +3592,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/convert/AbstractConvertService.html#convert-org.scijava.convert.ConversionRequest-">convert(ConversionRequest)</a></span> - Method in class org.scijava.convert.<a href="org/scijava/convert/AbstractConvertService.html" title="class in org.scijava.convert">AbstractConvertService</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/convert/AbstractDelegateConverter.html#convert-java.lang.Object-java.lang.Class-">convert(Object, Class&lt;T&gt;)</a></span> - Method in class org.scijava.convert.<a href="org/scijava/convert/AbstractDelegateConverter.html" title="class in org.scijava.convert">AbstractDelegateConverter</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/convert/CastingConverter.html#convert-java.lang.Object-java.lang.Class-">convert(Object, Class&lt;T&gt;)</a></span> - Method in class org.scijava.convert.<a href="org/scijava/convert/CastingConverter.html" title="class in org.scijava.convert">CastingConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/convert/Converter.html#convert-java.lang.Object-java.lang.reflect.Type-">convert(Object, Type)</a></span> - Method in interface org.scijava.convert.<a href="org/scijava/convert/Converter.html" title="interface in org.scijava.convert">Converter</a></dt>
@@ -3735,6 +3778,15 @@
 <dd>
 <div class="block">Creates an accelerator from the given string representation.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#create-java.lang.Class-">create(Class&lt;? extends SciJavaPlugin&gt;)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> for the given plugin class.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#create-java.lang.Class-java.lang.Class-">create(Class&lt;P&gt;, Class&lt;PT&gt;)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Creates a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> for the given plugin class of the specified
+ plugin type.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/plugin/PTService.html#create-java.lang.Class-">create(Class&lt;P&gt;)</a></span> - Method in interface org.scijava.plugin.<a href="org/scijava/plugin/PTService.html" title="interface in org.scijava.plugin">PTService</a></dt>
 <dd>
 <div class="block">Creates an instance of the given plugin class.</div>
@@ -3791,6 +3843,8 @@
 <div class="block">Creates a display for the given object, publishing a
  <a href="org/scijava/display/event/DisplayCreatedEvent.html" title="class in org.scijava.display.event"><code>DisplayCreatedEvent</code></a> to notify interested parties.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#createDisplayPanel-T-">createDisplayPanel(T)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/display/DefaultDisplayService.html#createDisplayQuietly-java.lang.Object-">createDisplayQuietly(Object)</a></span> - Method in class org.scijava.display.<a href="org/scijava/display/DefaultDisplayService.html" title="class in org.scijava.display">DefaultDisplayService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/display/DisplayService.html#createDisplayQuietly-java.lang.Object-">createDisplayQuietly(Object)</a></span> - Method in interface org.scijava.display.<a href="org/scijava/display/DisplayService.html" title="interface in org.scijava.display">DisplayService</a></dt>
@@ -4941,6 +4995,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/event/DefaultEventService.html#dispose--">dispose()</a></span> - Method in class org.scijava.event.<a href="org/scijava/event/DefaultEventService.html" title="class in org.scijava.event">DefaultEventService</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/Gateway.html#dispose--">dispose()</a></span> - Method in interface org.scijava.<a href="org/scijava/Gateway.html" title="interface in org.scijava">Gateway</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/platform/DefaultPlatformService.html#dispose--">dispose()</a></span> - Method in class org.scijava.platform.<a href="org/scijava/platform/DefaultPlatformService.html" title="class in org.scijava.platform">DefaultPlatformService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/plugins/platforms/macos/MacOSPlatform.html#dispose--">dispose()</a></span> - Method in class org.scijava.plugins.platforms.macos.<a href="org/scijava/plugins/platforms/macos/MacOSPlatform.html" title="class in org.scijava.plugins.platforms.macos">MacOSPlatform</a></dt>
@@ -5338,6 +5394,16 @@
 </a>
 <h2 class="title">E</h2>
 <dl>
+<dt><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer"><span class="typeNameLink">EasySwingDisplayViewer</span></a>&lt;<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="type parameter in EasySwingDisplayViewer">T</a>&gt; - Class in <a href="org/scijava/ui/swing/viewer/package-summary.html">org.scijava.ui.swing.viewer</a></dt>
+<dd>
+<div class="block">Class helping to build a simple Swing <a href="https://javadoc.scijava.org/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing"><code>JPanel</code></a> viewer for any object of
+ class T declared as a <a href="org/scijava/ItemIO.html" title="enum in org.scijava"><code>ItemIO</code></a> output <a href="org/scijava/plugin/Parameter.html" title="annotation in org.scijava.plugin"><code>Parameter</code></a> in
+ a <a href="org/scijava/command/Command.html" title="interface in org.scijava.command"><code>Command</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#EasySwingDisplayViewer-java.lang.Class-">EasySwingDisplayViewer(Class&lt;T&gt;)</a></span> - Constructor for class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer"><span class="typeNameLink">EasySwingDisplayViewer.SwingDisplayPanel</span></a> - Class in <a href="org/scijava/ui/swing/viewer/package-summary.html">org.scijava.ui.swing.viewer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/scijava/annotations/EclipseHelper.html" title="class in org.scijava.annotations"><span class="typeNameLink">EclipseHelper</span></a> - Class in <a href="org/scijava/annotations/package-summary.html">org.scijava.annotations</a></dt>
 <dd>
 <div class="block">Helps Eclipse's lack of support for annotation processing in incremental
@@ -6263,6 +6329,21 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/plugin/AbstractWrapperPlugin.html#get--">get()</a></span> - Method in class org.scijava.plugin.<a href="org/scijava/plugin/AbstractWrapperPlugin.html" title="class in org.scijava.plugin">AbstractWrapperPlugin</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#get-java.lang.Class-org.scijava.plugin.PluginIndex-">get(Class&lt;P&gt;, PluginIndex)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Finds a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> of the given plugin class in the specified
+ <a href="org/scijava/plugin/PluginIndex.html" title="class in org.scijava.plugin"><code>PluginIndex</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#get-java.lang.Class-java.lang.Class-org.scijava.plugin.PluginIndex-">get(Class&lt;P&gt;, Class&lt;PT&gt;, PluginIndex)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Finds a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> of the given plugin class and plugin type in the
+ specified <a href="org/scijava/plugin/PluginIndex.html" title="class in org.scijava.plugin"><code>PluginIndex</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#get-java.lang.Class-java.util.Collection-">get(Class&lt;P&gt;, Collection&lt;? extends PluginInfo&lt;PT&gt;&gt;)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Finds a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> of the given plugin class in the specified list
+ of plugins.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/plugin/WrapperPlugin.html#get--">get()</a></span> - Method in interface org.scijava.plugin.<a href="org/scijava/plugin/WrapperPlugin.html" title="interface in org.scijava.plugin">WrapperPlugin</a></dt>
 <dd>
 <div class="block">Gets the data object currently associated with this plugin.</div>
@@ -6781,6 +6862,10 @@
 <div class="block"><span class="deprecationComment">Use <a href="org/scijava/util/Types.html#raws-java.lang.reflect.Type-"><code>Types.raws(java.lang.reflect.Type)</code></a> instead.</span></div>
 </div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/Context.html#getClassLoader--">getClassLoader()</a></span> - Static method in class org.scijava.<a href="org/scijava/Context.html" title="class in org.scijava">Context</a></dt>
+<dd>
+<div class="block">Gets the class loader to use.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/command/CommandInfo.html#getClassName--">getClassName()</a></span> - Method in class org.scijava.command.<a href="org/scijava/command/CommandInfo.html" title="class in org.scijava.command">CommandInfo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/Instantiable.html#getClassName--">getClassName()</a></span> - Method in interface org.scijava.<a href="org/scijava/Instantiable.html" title="interface in org.scijava">Instantiable</a></dt>
@@ -7111,6 +7196,8 @@
 <dd>
 <div class="block">Gets the object containing the module's actual implementation.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/convert/AbstractDelegateConverter.html#getDelegateType--">getDelegateType()</a></span> - Method in class org.scijava.convert.<a href="org/scijava/convert/AbstractDelegateConverter.html" title="class in org.scijava.convert">AbstractDelegateConverter</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/minimaven/MavenProject.html#getDependencies--">getDependencies()</a></span> - Method in class org.scijava.minimaven.<a href="org/scijava/minimaven/MavenProject.html" title="class in org.scijava.minimaven">MavenProject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/minimaven/MavenProject.html#getDependencies-boolean-boolean-java.lang.String...-">getDependencies(boolean, boolean, String...)</a></span> - Method in class org.scijava.minimaven.<a href="org/scijava/minimaven/MavenProject.html" title="class in org.scijava.minimaven">MavenProject</a></dt>
@@ -7172,6 +7259,8 @@
 <dd>
 <div class="block">Gets the display associated with the last observed mouse cursor.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#getDisplay--">getDisplay()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html#getDisplay--">getDisplay()</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html#getDisplay--">getDisplay()</a></span> - Method in class org.scijava.ui.swing.viewer.text.<a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.text">SwingTextDisplayPanel</a></dt>
@@ -8495,6 +8584,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/display/AbstractDisplay.html#getName--">getName()</a></span> - Method in class org.scijava.display.<a href="org/scijava/display/AbstractDisplay.html" title="class in org.scijava.display">AbstractDisplay</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/io/location/BytesLocation.html#getName--">getName()</a></span> - Method in class org.scijava.io.location.<a href="org/scijava/io/location/BytesLocation.html" title="class in org.scijava.io.location">BytesLocation</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/location/FileLocation.html#getName--">getName()</a></span> - Method in class org.scijava.io.location.<a href="org/scijava/io/location/FileLocation.html" title="class in org.scijava.io.location">FileLocation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/location/Location.html#getName--">getName()</a></span> - Method in interface org.scijava.io.location.<a href="org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a></dt>
@@ -8514,6 +8605,12 @@
 <dt><span class="memberNameLink"><a href="org/scijava/Named.html#getName--">getName()</a></span> - Method in interface org.scijava.<a href="org/scijava/Named.html" title="interface in org.scijava">Named</a></dt>
 <dd>
 <div class="block">Gets the name of the object.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/NamedObjectIndex.html#getName-E-">getName(E)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/NamedObjectIndex.html" title="class in org.scijava.object">NamedObjectIndex</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/ObjectService.html#getName-java.lang.Object-">getName(Object)</a></span> - Method in interface org.scijava.object.<a href="org/scijava/object/ObjectService.html" title="interface in org.scijava.object">ObjectService</a></dt>
+<dd>
+<div class="block">Gets the name belonging to a given object.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/task/DefaultTask.html#getName--">getName()</a></span> - Method in class org.scijava.task.<a href="org/scijava/task/DefaultTask.html" title="class in org.scijava.task">DefaultTask</a></dt>
 <dd>&nbsp;</dd>
@@ -8586,8 +8683,6 @@
 <dd>
 <div class="block">Gets the available objects for use with the widget.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/scijava/object/DefaultObjectService.html#getObjects-java.lang.Class-">getObjects(Class&lt;T&gt;)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/DefaultObjectService.html" title="class in org.scijava.object">DefaultObjectService</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/object/ObjectService.html#getObjects-java.lang.Class-">getObjects(Class&lt;T&gt;)</a></span> - Method in interface org.scijava.object.<a href="org/scijava/object/ObjectService.html" title="interface in org.scijava.object">ObjectService</a></dt>
 <dd>
 <div class="block">Gets a list of all registered objects compatible with the given type.</div>
@@ -8612,6 +8707,14 @@
 <dt><span class="memberNameLink"><a href="org/scijava/options/OptionsService.html#getOptions-java.lang.Class-">getOptions(Class&lt;O&gt;)</a></span> - Method in interface org.scijava.options.<a href="org/scijava/options/OptionsService.html" title="interface in org.scijava.options">OptionsService</a></dt>
 <dd>
 <div class="block">Gets the options plugin of the given class, or null if none.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#getOrCreate-java.lang.Class-org.scijava.plugin.PluginIndex-">getOrCreate(Class&lt;P&gt;, PluginIndex)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Obtains a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> for the given plugin class.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/plugin/PluginInfo.html#getOrCreate-java.lang.Class-java.lang.Class-org.scijava.plugin.PluginIndex-">getOrCreate(Class&lt;P&gt;, Class&lt;PT&gt;, PluginIndex)</a></span> - Static method in class org.scijava.plugin.<a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin">PluginInfo</a></dt>
+<dd>
+<div class="block">Obtains a <a href="org/scijava/plugin/PluginInfo.html" title="class in org.scijava.plugin"><code>PluginInfo</code></a> for the given plugin class.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/io/handle/AbstractDataHandle.html#getOrder--">getOrder()</a></span> - Method in class org.scijava.io.handle.<a href="org/scijava/io/handle/AbstractDataHandle.html" title="class in org.scijava.io.handle">AbstractDataHandle</a></dt>
 <dd>&nbsp;</dd>
@@ -9284,8 +9387,6 @@
 <dd>
 <div class="block">Gets a very succinct name for use referring to this gateway, e.g.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/scijava/SciJava.html#getShortName--">getShortName()</a></span> - Method in class org.scijava.<a href="org/scijava/SciJava.html" title="class in org.scijava">SciJava</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/module/DefaultModuleService.html#getSingleInput-org.scijava.module.Module-java.lang.Class-">getSingleInput(Module, Class&lt;T&gt;)</a></span> - Method in class org.scijava.module.<a href="org/scijava/module/DefaultModuleService.html" title="class in org.scijava.module">DefaultModuleService</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/module/DefaultModuleService.html#getSingleInput-org.scijava.module.Module-java.util.Collection-">getSingleInput(Module, Collection&lt;Class&lt;?&gt;&gt;)</a></span> - Method in class org.scijava.module.<a href="org/scijava/module/DefaultModuleService.html" title="class in org.scijava.module">DefaultModuleService</a></dt>
@@ -10016,6 +10117,8 @@
 <dd>
 <div class="block">Gets the actual UI-specific window.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#getWindow--">getWindow()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html#getWindow--">getWindow()</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html#getWindow--">getWindow()</a></span> - Method in class org.scijava.ui.swing.viewer.text.<a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.text">SwingTextDisplayPanel</a></dt>
@@ -11138,6 +11241,8 @@
 <div class="block">Gets whether this MIME type represents objects of the given Java class.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/headless/HeadlessDisplayViewer.html#isCompatible-org.scijava.ui.UserInterface-">isCompatible(UserInterface)</a></span> - Method in class org.scijava.ui.headless.<a href="org/scijava/ui/headless/HeadlessDisplayViewer.html" title="class in org.scijava.ui.headless">HeadlessDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#isCompatible-org.scijava.ui.UserInterface-">isCompatible(UserInterface)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayViewer.html#isCompatible-org.scijava.ui.UserInterface-">isCompatible(UserInterface)</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayViewer.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayViewer</a></dt>
 <dd>&nbsp;</dd>
@@ -12374,6 +12479,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/script/ScriptInfo.html#loadDelegateClass--">loadDelegateClass()</a></span> - Method in class org.scijava.script.<a href="org/scijava/script/ScriptInfo.html" title="class in org.scijava.script">ScriptInfo</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/module/DefaultModuleService.html#loadInputs-org.scijava.module.Module-">loadInputs(Module)</a></span> - Method in class org.scijava.module.<a href="org/scijava/module/DefaultModuleService.html" title="class in org.scijava.module">DefaultModuleService</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/module/ModuleService.html#loadInputs-org.scijava.module.Module-">loadInputs(Module)</a></span> - Method in interface org.scijava.module.<a href="org/scijava/module/ModuleService.html" title="interface in org.scijava.module">ModuleService</a></dt>
+<dd>
+<div class="block">Loads values from persistent storage into the given <a href="org/scijava/module/Module.html" title="interface in org.scijava.module"><code>Module</code></a>.</div>
+</dd>
 <dt><a href="org/scijava/module/process/LoadInputsPreprocessor.html" title="class in org.scijava.module.process"><span class="typeNameLink">LoadInputsPreprocessor</span></a> - Class in <a href="org/scijava/module/process/package-summary.html">org.scijava.module.process</a></dt>
 <dd>
 <div class="block">A preprocessor for loading populated input values from persistent storage.</div>
@@ -13311,6 +13422,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/command/DefaultCommandService.html#moduleService--">moduleService()</a></span> - Method in class org.scijava.command.<a href="org/scijava/command/DefaultCommandService.html" title="class in org.scijava.command">DefaultCommandService</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/command/DynamicCommand.html#moduleService">moduleService</a></span> - Variable in class org.scijava.command.<a href="org/scijava/command/DynamicCommand.html" title="class in org.scijava.command">DynamicCommand</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/scijava/module/ModuleService.html" title="interface in org.scijava.module"><span class="typeNameLink">ModuleService</span></a> - Interface in <a href="org/scijava/module/package-summary.html">org.scijava.module</a></dt>
 <dd>
 <div class="block">Interface for service that tracks and executes available modules.</div>
@@ -13554,6 +13667,12 @@
 <dd>
 <div class="block">Interface for things that have names.</div>
 </dd>
+<dt><a href="org/scijava/object/NamedObjectIndex.html" title="class in org.scijava.object"><span class="typeNameLink">NamedObjectIndex</span></a>&lt;<a href="org/scijava/object/NamedObjectIndex.html" title="type parameter in NamedObjectIndex">E</a>&gt; - Class in <a href="org/scijava/object/package-summary.html">org.scijava.object</a></dt>
+<dd>
+<div class="block">An <a href="org/scijava/object/ObjectIndex.html" title="class in org.scijava.object"><code>ObjectIndex</code></a> where each object can have an associated name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/object/NamedObjectIndex.html#NamedObjectIndex-java.lang.Class-">NamedObjectIndex(Class&lt;E&gt;)</a></span> - Constructor for class org.scijava.object.<a href="org/scijava/object/NamedObjectIndex.html" title="class in org.scijava.object">NamedObjectIndex</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/plugins/scripting/beanshell/BeanshellBindings.html#nameSpace">nameSpace</a></span> - Variable in class org.scijava.plugins.scripting.beanshell.<a href="org/scijava/plugins/scripting/beanshell/BeanshellBindings.html" title="class in org.scijava.plugins.scripting.beanshell">BeanshellBindings</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/scijava/nativelib/NativeLibraryUtil.html" title="class in org.scijava.nativelib"><span class="typeNameLink">NativeLibraryUtil</span></a> - Class in <a href="org/scijava/nativelib/package-summary.html">org.scijava.nativelib</a></dt>
@@ -14014,6 +14133,8 @@
 <dd>
 <div class="block">Handles a display activated event directed at this viewer's display.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#onDisplayDeletedEvent-org.scijava.display.event.DisplayDeletedEvent-">onDisplayDeletedEvent(DisplayDeletedEvent)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/viewer/DisplayViewer.html#onDisplayDeletedEvent-org.scijava.display.event.DisplayDeletedEvent-">onDisplayDeletedEvent(DisplayDeletedEvent)</a></span> - Method in interface org.scijava.ui.viewer.<a href="org/scijava/ui/viewer/DisplayViewer.html" title="interface in org.scijava.ui.viewer">DisplayViewer</a></dt>
 <dd>
 <div class="block">Removes the user interface when the display is deleted.</div>
@@ -14685,14 +14806,14 @@
 <div class="block">Creates a new <a href="https://javadoc.scijava.org/Java/java/lang/reflect/ParameterizedType.html?is-external=true" title="class or interface in java.lang.reflect"><code>ParameterizedType</code></a> of the given class together with
  the specified type arguments.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/scijava/util/Types.html#parameterize-java.lang.Class-java.lang.reflect.Type-java.lang.reflect.Type...-">parameterize(Class&lt;?&gt;, Type, Type...)</a></span> - Static method in class org.scijava.util.<a href="org/scijava/util/Types.html" title="class in org.scijava.util">Types</a></dt>
-<dd>
-<div class="block">Creates a new <a href="https://javadoc.scijava.org/Java/java/lang/reflect/ParameterizedType.html?is-external=true" title="class or interface in java.lang.reflect"><code>ParameterizedType</code></a> of the given class together with
- the specified type arguments.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/util/Types.html#parameterize-java.lang.Class-java.util.Map-">parameterize(Class&lt;?&gt;, Map&lt;TypeVariable&lt;?&gt;, Type&gt;)</a></span> - Static method in class org.scijava.util.<a href="org/scijava/util/Types.html" title="class in org.scijava.util">Types</a></dt>
 <dd>
 <div class="block">Create a parameterized type instance.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/util/Types.html#parameterizeWithOwner-java.lang.reflect.Type-java.lang.Class-java.lang.reflect.Type...-">parameterizeWithOwner(Type, Class&lt;?&gt;, Type...)</a></span> - Static method in class org.scijava.util.<a href="org/scijava/util/Types.html" title="class in org.scijava.util">Types</a></dt>
+<dd>
+<div class="block">Creates a new <a href="https://javadoc.scijava.org/Java/java/lang/reflect/ParameterizedType.html?is-external=true" title="class or interface in java.lang.reflect"><code>ParameterizedType</code></a> of the given class together with
+ the specified type arguments.</div>
 </dd>
 <dt><a href="org/scijava/script/ParameterObject.html" title="class in org.scijava.script"><span class="typeNameLink">ParameterObject</span></a> - Class in <a href="org/scijava/script/package-summary.html">org.scijava.script</a></dt>
 <dd>
@@ -16023,6 +16144,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/util/Colors.html#RED">RED</a></span> - Static variable in class org.scijava.util.<a href="org/scijava/util/Colors.html" title="class in org.scijava.util">Colors</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#redoLayout--">redoLayout()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#redoLayout--">redoLayout()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html#redoLayout--">redoLayout()</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html#redoLayout--">redoLayout()</a></span> - Method in class org.scijava.ui.swing.viewer.text.<a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.text">SwingTextDisplayPanel</a></dt>
@@ -16032,6 +16157,10 @@
 <div class="block">Rebuilds the display window to reflect the display's current views,
  dimensional lengths, etc.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#redraw--">redraw()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#redraw--">redraw()</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html#redraw--">redraw()</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html#redraw--">redraw()</a></span> - Method in class org.scijava.ui.swing.viewer.text.<a href="org/scijava/ui/swing/viewer/text/SwingTextDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.text">SwingTextDisplayPanel</a></dt>
@@ -16317,8 +16446,6 @@
 <dd>
 <div class="block">Manually unregisters a list of modules with the module service.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/scijava/object/DefaultObjectService.html#removeObject-java.lang.Object-">removeObject(Object)</a></span> - Method in class org.scijava.object.<a href="org/scijava/object/DefaultObjectService.html" title="class in org.scijava.object">DefaultObjectService</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/object/ObjectService.html#removeObject-java.lang.Object-">removeObject(Object)</a></span> - Method in interface org.scijava.object.<a href="org/scijava/object/ObjectService.html" title="interface in org.scijava.object">ObjectService</a></dt>
 <dd>
 <div class="block">Deregisters an object with the object service.</div>
@@ -16985,6 +17112,16 @@
 <dt><span class="memberNameLink"><a href="org/scijava/download/LocationCache.html#saveChecksum-org.scijava.io.location.Location-java.lang.String-">saveChecksum(Location, String)</a></span> - Method in interface org.scijava.download.<a href="org/scijava/download/LocationCache.html" title="interface in org.scijava.download">LocationCache</a></dt>
 <dd>
 <div class="block">Associates the given checksum value with the specified source location.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/command/DynamicCommand.html#saveInputs--">saveInputs()</a></span> - Method in class org.scijava.command.<a href="org/scijava/command/DynamicCommand.html" title="class in org.scijava.command">DynamicCommand</a></dt>
+<dd>
+<div class="block">Persists current input values.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/module/DefaultModuleService.html#saveInputs-org.scijava.module.Module-">saveInputs(Module)</a></span> - Method in class org.scijava.module.<a href="org/scijava/module/DefaultModuleService.html" title="class in org.scijava.module">DefaultModuleService</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/module/ModuleService.html#saveInputs-org.scijava.module.Module-">saveInputs(Module)</a></span> - Method in interface org.scijava.module.<a href="org/scijava/module/ModuleService.html" title="interface in org.scijava.module">ModuleService</a></dt>
+<dd>
+<div class="block">Saves values to persistent storage from the given <a href="org/scijava/module/Module.html" title="interface in org.scijava.module"><code>Module</code></a>.</div>
 </dd>
 <dt><a href="org/scijava/module/process/SaveInputsPreprocessor.html" title="class in org.scijava.module.process"><span class="typeNameLink">SaveInputsPreprocessor</span></a> - Class in <a href="org/scijava/module/process/package-summary.html">org.scijava.module.process</a></dt>
 <dd>
@@ -17786,6 +17923,10 @@
 <dt><span class="memberNameLink"><a href="org/scijava/command/DynamicCommandInfo.html#setLabel-java.lang.String-">setLabel(String)</a></span> - Method in class org.scijava.command.<a href="org/scijava/command/DynamicCommandInfo.html" title="class in org.scijava.command">DynamicCommandInfo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/module/DefaultMutableModuleItem.html#setLabel-java.lang.String-">setLabel(String)</a></span> - Method in class org.scijava.module.<a href="org/scijava/module/DefaultMutableModuleItem.html" title="class in org.scijava.module">DefaultMutableModuleItem</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#setLabel-java.lang.String-">setLabel(String)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#setLabel-java.lang.String-">setLabel(String)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html#setLabel-java.lang.String-">setLabel(String)</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayPanel.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayPanel</a></dt>
 <dd>&nbsp;</dd>
@@ -19367,6 +19508,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/sdi/SwingDialogPrompt.html#SwingDialogPrompt-java.lang.String-java.lang.String-org.scijava.ui.DialogPrompt.MessageType-org.scijava.ui.DialogPrompt.OptionType-">SwingDialogPrompt(String, String, DialogPrompt.MessageType, DialogPrompt.OptionType)</a></span> - Constructor for class org.scijava.ui.swing.sdi.<a href="org/scijava/ui/swing/sdi/SwingDialogPrompt.html" title="class in org.scijava.ui.swing.sdi">SwingDialogPrompt</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html#SwingDisplayPanel-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-org.scijava.ui.swing.viewer.EasySwingDisplayViewer-javax.swing.JPanel-">SwingDisplayPanel(DisplayWindow, Display&lt;?&gt;, EasySwingDisplayViewer&lt;?&gt;, JPanel)</a></span> - Constructor for class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer.SwingDisplayPanel</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/scijava/ui/swing/viewer/SwingDisplayPanel.html" title="class in org.scijava.ui.swing.viewer"><span class="typeNameLink">SwingDisplayPanel</span></a> - Class in <a href="org/scijava/ui/swing/viewer/package-summary.html">org.scijava.ui.swing.viewer</a></dt>
 <dd>
 <div class="block">Swing implementation of <a href="org/scijava/ui/viewer/DisplayPanel.html" title="interface in org.scijava.ui.viewer"><code>DisplayPanel</code></a>.</div>
@@ -20698,6 +20841,8 @@ the order they are declared.</div>
 </div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/headless/HeadlessDisplayViewer.html#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">view(DisplayWindow, Display&lt;?&gt;)</a></span> - Method in class org.scijava.ui.headless.<a href="org/scijava/ui/headless/HeadlessDisplayViewer.html" title="class in org.scijava.ui.headless">HeadlessDisplayViewer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">view(DisplayWindow, Display&lt;?&gt;)</a></span> - Method in class org.scijava.ui.swing.viewer.<a href="org/scijava/ui/swing/viewer/EasySwingDisplayViewer.html" title="class in org.scijava.ui.swing.viewer">EasySwingDisplayViewer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayViewer.html#view-org.scijava.ui.viewer.DisplayWindow-org.scijava.display.Display-">view(DisplayWindow, Display&lt;?&gt;)</a></span> - Method in class org.scijava.ui.swing.viewer.table.<a href="org/scijava/ui/swing/viewer/table/SwingTableDisplayViewer.html" title="class in org.scijava.ui.swing.viewer.table">SwingTableDisplayViewer</a></dt>
 <dd>&nbsp;</dd>
