@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -141,6 +141,83 @@ implements <a href="../../bdv/BehaviourTransformEventHandler.html" title="interf
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.BehaviourTransformEventHandlerPlanarFactory.html" title="class in bdv.util">BehaviourTransformEventHandlerPlanar.BehaviourTransformEventHandlerPlanarFactory</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#affine">affine</a></span></code>
+<div class="block">Current source to screen transform.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#affineDragStart">affineDragStart</a></span></code>
+<div class="block">Copy of <a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#affine"><code>current transform</code></a> when mouse dragging started.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/SciJava/org/scijava/ui/behaviour.util.Behaviours.html?is-external=true" title="class or interface in org.scijava.ui">org.scijava.ui.behaviour.util.Behaviours</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#behaviours">behaviours</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#canvasH">canvasH</a></span></code>
+<div class="block">The screen size of the canvas (the component displaying the image and
+ generating mouse events).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#canvasW">canvasW</a></span></code>
+<div class="block">The screen size of the canvas (the component displaying the image and
+ generating mouse events).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#centerX">centerX</a></span></code>
+<div class="block">Screen coordinates to keep centered while zooming or rotating with the
+ keyboard.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#centerY">centerY</a></span></code>
+<div class="block">Screen coordinates to keep centered while zooming or rotating with the
+ keyboard.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#oX">oX</a></span></code>
+<div class="block">Coordinates where mouse dragging started.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#oY">oY</a></span></code>
+<div class="block">Coordinates where mouse dragging started.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#step">step</a></span></code>
+<div class="block">One step of rotation (radian).</div>
+</td>
 </tr>
 </table>
 </li>
@@ -221,6 +298,121 @@ implements <a href="../../bdv/BehaviourTransformEventHandler.html" title="interf
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="affine">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>affine</h4>
+<pre>protected final&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> affine</pre>
+<div class="block">Current source to screen transform.</div>
+</li>
+</ul>
+<a name="affineDragStart">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>affineDragStart</h4>
+<pre>protected final&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a> affineDragStart</pre>
+<div class="block">Copy of <a href="../../bdv/util/BehaviourTransformEventHandlerPlanar.html#affine"><code>current transform</code></a> when mouse dragging started.</div>
+</li>
+</ul>
+<a name="oX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>oX</h4>
+<pre>protected&nbsp;double oX</pre>
+<div class="block">Coordinates where mouse dragging started.</div>
+</li>
+</ul>
+<a name="oY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>oY</h4>
+<pre>protected&nbsp;double oY</pre>
+<div class="block">Coordinates where mouse dragging started.</div>
+</li>
+</ul>
+<a name="canvasW">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canvasW</h4>
+<pre>protected&nbsp;int canvasW</pre>
+<div class="block">The screen size of the canvas (the component displaying the image and
+ generating mouse events).</div>
+</li>
+</ul>
+<a name="canvasH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canvasH</h4>
+<pre>protected&nbsp;int canvasH</pre>
+<div class="block">The screen size of the canvas (the component displaying the image and
+ generating mouse events).</div>
+</li>
+</ul>
+<a name="centerX">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>centerX</h4>
+<pre>protected&nbsp;int centerX</pre>
+<div class="block">Screen coordinates to keep centered while zooming or rotating with the
+ keyboard. These are set to <em>(canvasW/2, canvasH/2)</em></div>
+</li>
+</ul>
+<a name="centerY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>centerY</h4>
+<pre>protected&nbsp;int centerY</pre>
+<div class="block">Screen coordinates to keep centered while zooming or rotating with the
+ keyboard. These are set to <em>(canvasW/2, canvasH/2)</em></div>
+</li>
+</ul>
+<a name="behaviours">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>behaviours</h4>
+<pre>protected final&nbsp;<a href="https://javadoc.scijava.org/SciJava/org/scijava/ui/behaviour.util.Behaviours.html?is-external=true" title="class or interface in org.scijava.ui">org.scijava.ui.behaviour.util.Behaviours</a> behaviours</pre>
+</li>
+</ul>
+<a name="step">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>step</h4>
+<pre>protected static final&nbsp;double step</pre>
+<div class="block">One step of rotation (radian).</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../constant-values.html#bdv.util.BehaviourTransformEventHandlerPlanar.step">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -387,13 +579,13 @@ implements <a href="../../bdv/BehaviourTransformEventHandler.html" title="interf
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

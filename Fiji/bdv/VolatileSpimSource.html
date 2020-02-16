@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">bdv</div>
-<h2 title="Class VolatileSpimSource" class="title">Class VolatileSpimSource&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;,V extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;V&gt;&gt;</h2>
+<h2 title="Class VolatileSpimSource" class="title">Class VolatileSpimSource&lt;V extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;V&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -101,7 +101,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../bdv/AbstractSpimSource.html" title="class in bdv">bdv.AbstractSpimSource</a>&lt;V&gt;</li>
 <li>
 <ul class="inheritance">
-<li>bdv.VolatileSpimSource&lt;T,V&gt;</li>
+<li>bdv.VolatileSpimSource&lt;V&gt;</li>
 </ul>
 </li>
 </ul>
@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">VolatileSpimSource&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt;,V extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;V&gt;&gt;</span>
+<pre>public class <span class="typeNameLabel">VolatileSpimSource&lt;V extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;V&gt;&gt;</span>
 extends <a href="../bdv/AbstractSpimSource.html" title="class in bdv">AbstractSpimSource</a>&lt;V&gt;
 implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></pre>
 </li>
@@ -166,10 +166,6 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface in bdv.viewer.render">MipmapOrdering</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bdv/VolatileSpimSource.html#mipmapOrdering">mipmapOrdering</a></span></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected <a href="../bdv/SpimSource.html" title="class in bdv">SpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bdv/VolatileSpimSource.html#nonVolatileSource">nonVolatileSource</a></span></code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -243,10 +239,6 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
 <div class="block">Get an instance of the pixel type.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../bdv/SpimSource.html" title="class in bdv">SpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bdv/VolatileSpimSource.html#nonVolatile--">nonVolatile</a></span>()</code>&nbsp;</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.bdv.AbstractSpimSource">
@@ -276,22 +268,13 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="nonVolatileSource">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>nonVolatileSource</h4>
-<pre>protected final&nbsp;<a href="../bdv/SpimSource.html" title="class in bdv">SpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a> extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt;&gt; nonVolatileSource</pre>
-</li>
-</ul>
 <a name="imgLoader">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>imgLoader</h4>
-<pre>protected final&nbsp;<a href="../bdv/ViewerSetupImgLoader.html" title="interface in bdv">ViewerSetupImgLoader</a>&lt;?,<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt; imgLoader</pre>
+<pre>protected final&nbsp;<a href="../bdv/ViewerSetupImgLoader.html" title="interface in bdv">ViewerSetupImgLoader</a>&lt;?,<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt; imgLoader</pre>
 </li>
 </ul>
 <a name="mipmapOrdering">
@@ -341,19 +324,10 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
 <div class="block">Get an instance of the pixel type.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../bdv/viewer/Source.html#getType--">getType</a></code>&nbsp;in interface&nbsp;<code><a href="../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
+<dd><code><a href="../bdv/viewer/Source.html#getType--">getType</a></code>&nbsp;in interface&nbsp;<code><a href="../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>instance of pixel type.</dd>
 </dl>
-</li>
-</ul>
-<a name="nonVolatile--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>nonVolatile</h4>
-<pre>public&nbsp;<a href="../bdv/SpimSource.html" title="class in bdv">SpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt;&nbsp;nonVolatile()</pre>
 </li>
 </ul>
 <a name="getImage-int-int-">
@@ -366,7 +340,7 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
                                                int&nbsp;level)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../bdv/AbstractSpimSource.html#getImage-int-int-">getImage</a></code>&nbsp;in class&nbsp;<code><a href="../bdv/AbstractSpimSource.html" title="class in bdv">AbstractSpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
+<dd><code><a href="../bdv/AbstractSpimSource.html#getImage-int-int-">getImage</a></code>&nbsp;in class&nbsp;<code><a href="../bdv/AbstractSpimSource.html" title="class in bdv">AbstractSpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -379,7 +353,7 @@ implements <a href="../bdv/viewer/render/MipmapOrdering.html" title="interface i
 <pre>protected&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>[]&nbsp;getMipmapTransforms()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../bdv/AbstractSpimSource.html#getMipmapTransforms--">getMipmapTransforms</a></code>&nbsp;in class&nbsp;<code><a href="../bdv/AbstractSpimSource.html" title="class in bdv">AbstractSpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">T</a>&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
+<dd><code><a href="../bdv/AbstractSpimSource.html#getMipmapTransforms--">getMipmapTransforms</a></code>&nbsp;in class&nbsp;<code><a href="../bdv/AbstractSpimSource.html" title="class in bdv">AbstractSpimSource</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a> extends <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Volatile.html?is-external=true" title="class or interface in net.imglib2">Volatile</a>&lt;?&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;<a href="../bdv/VolatileSpimSource.html" title="type parameter in VolatileSpimSource">V</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
