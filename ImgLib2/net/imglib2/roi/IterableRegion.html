@@ -93,7 +93,7 @@
 <li class="blockList">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>T</code> - </dd>
+<dd><code>T</code> - some <code>BooleanType</code> indicating containment in region</dd>
 </dl>
 <dl>
 <dt>All Superinterfaces:</dt>
@@ -105,17 +105,28 @@
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../net/imglib2/roi/boundary/Boundary.html" title="class in net.imglib2.roi.boundary">Boundary</a>, <a href="../../../net/imglib2/roi/util/IterableRandomAccessibleRegion.html" title="class in net.imglib2.roi.util">IterableRandomAccessibleRegion</a>, <a href="../../../net/imglib2/roi/labeling/LabelRegion.html" title="class in net.imglib2.roi.labeling">LabelRegion</a></dd>
+<dd><a href="../../../net/imglib2/roi/boundary/Boundary.html" title="class in net.imglib2.roi.boundary">Boundary</a>, <a href="../../../net/imglib2/roi/util/IterableRandomAccessibleRegion.html" title="class in net.imglib2.roi.util">IterableRandomAccessibleRegion</a>, <a href="../../../net/imglib2/roi/util/IterableRegionOnBooleanRAI.html" title="class in net.imglib2.roi.util">IterableRegionOnBooleanRAI</a>, <a href="../../../net/imglib2/roi/labeling/LabelRegion.html" title="class in net.imglib2.roi.labeling">LabelRegion</a>, <a href="../../../net/imglib2/roi/util/PositionableWrappedIterableRegion.html" title="class in net.imglib2.roi.util">PositionableWrappedIterableRegion</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">IterableRegion&lt;T extends <a href="../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2">IterableInterval</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Void.html?is-external=true" title="class or interface in java.lang">Void</a>&gt;, <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;</pre>
-<div class="block">Iteration of only the true pixels of a region (instead of all pixels in
- bounding box).
-
+<div class="block">A region that allows to iterate only the pixels contained in the region
+ (instead of all pixels in bounding box).
  <p>
- We put interfaces <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval&lt;BooleanType&gt;</code></a>, <a href="../../../net/imglib2/roi/IterableRegion.html" title="interface in net.imglib2.roi"><code>IterableRegion&lt;BooleanType&gt;</code></a>, <a href="../../../net/imglib2/roi/PositionableIterableRegion.html" title="interface in net.imglib2.roi"><code>PositionableIterableRegion&lt;BooleanType&gt;</code></a> into this sequence such that
+ Specifically, a region is a <code>RandomAccessibleInterval</code> of some
+ <code>BooleanType</code> having value <code>true</code> for all pixels contained in the
+ region. The interval is a (not necessarily tight) bounding box of the region,
+ i.e., it is assumed that all pixels outside the interval have value
+ <code>false</code>.
+ <p>
+ Iterating only the pixels contained in the region is indicated by
+ <code>IterableInterval&lt;Void&gt;</code>, i.e., when iterating, only the coordinates
+ that are visited are interesting. There is no associated value.
+ <p>
+ We put interfaces <code>RandomAccessibleInterval&lt;BooleanType&gt;</code>, extended by
+ <code>IterableRegion&lt;BooleanType&gt;</code>, extended by
+ <code>PositionableIterableRegion&lt;BooleanType&gt;</code> into this sequence such that
  the <a href="../../../net/imglib2/roi/Regions.html" title="class in net.imglib2.roi"><code>Regions</code></a> methods that "add capabilities" (being iterable,
  positionable) can have appropriate result types.</div>
 <dl>
