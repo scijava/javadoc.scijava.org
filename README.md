@@ -1,5 +1,5 @@
 This repository serves the content of
-[http://javadoc.scijava.org/](http://javadoc.scijava.org/).
+[https://javadoc.scijava.org/](https://javadoc.scijava.org/).
 
 To contribute, please:
 
