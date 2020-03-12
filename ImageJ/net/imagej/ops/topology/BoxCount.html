@@ -129,18 +129,18 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">BoxCount&lt;B extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/BooleanType.html?is-external=true" title="class or interface in net.imglib2.type">BooleanType</a>&lt;B&gt;&gt;</span>
 extends <a href="../../../../net/imagej/ops/special/function/AbstractUnaryFunctionOp.html" title="class in net.imagej.ops.special.function">AbstractUnaryFunctionOp</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;,<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/ValuePair.html?is-external=true" title="class or interface in net.imglib2.util">ValuePair</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>&gt;&gt;&gt;
 implements <a href="../../../../net/imagej/ops/Ops.Topology.BoxCount.html" title="interface in net.imagej.ops">Ops.Topology.BoxCount</a></pre>
-<div class="block">An N-dimensional box counting that can be used to estimate the fractal
- dimension of an interval
+<div class="block">An N-dimensional version of fixed-grid box counting algorithm that can be
+ used to estimate the fractal dimension of an interval
  <p>
  The algorithm repeatedly lays a fixed grid on the interval, and counts the
- number of sections that contain foreground. After each step the grid is made
+ number of boxes that contain foreground. After each step the grid is made
  finer by a factor of <a href="../../../../net/imagej/ops/topology/BoxCount.html#scaling"><code>scaling</code></a>. If the objects in the interval are
- fractal, the proportion of foreground sections should increase as the grid
- gets finer.
+ fractal, the proportion of foreground boxes should increase as the boxes
+ get smaller.
  </p>
  <p>
- Produces a set of points (log(foreground count), -log(section size)) for
- curve fitting. The slope of the function gives the fractal dimension of the
+ Produces a set of points (log(foreground count), -log(box size)) for curve
+ fitting. The slope of the function gives the fractal dimension of the
  interval.
  </p></div>
 <dl>
@@ -215,8 +215,8 @@ implements <a href="../../../../net/imagej/ops/Ops.Topology.BoxCount.html" title
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/ValuePair.html?is-external=true" title="class or interface in net.imglib2.util">ValuePair</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imagej/ops/topology/BoxCount.html#calculate-net.imglib2.RandomAccessibleInterval-">calculate</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/topology/BoxCount.html" title="type parameter in BoxCount">B</a>&gt;&nbsp;input)</code>
-<div class="block">Counts the number of foreground sections in the interval repeatedly with
- different size sections</div>
+<div class="block">Counts the number of boxes that have foreground in the interval repeatedly with
+ different size boxes</div>
 </td>
 </tr>
 </table>
@@ -328,15 +328,15 @@ implements <a href="../../../../net/imagej/ops/Ops.Topology.BoxCount.html" title
 <li class="blockList">
 <h4>calculate</h4>
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/ValuePair.html?is-external=true" title="class or interface in net.imglib2.util">ValuePair</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>&gt;&gt;&nbsp;calculate(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/topology/BoxCount.html" title="type parameter in BoxCount">B</a>&gt;&nbsp;input)</pre>
-<div class="block">Counts the number of foreground sections in the interval repeatedly with
- different size sections</div>
+<div class="block">Counts the number of boxes that have foreground in the interval repeatedly with
+ different size boxes</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../net/imagej/ops/special/function/UnaryFunctionOp.html#calculate-I-">calculate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imagej/ops/special/function/UnaryFunctionOp.html" title="interface in net.imagej.ops.special.function">UnaryFunctionOp</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imagej/ops/topology/BoxCount.html" title="type parameter in BoxCount">B</a> extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/BooleanType.html?is-external=true" title="class or interface in net.imglib2.type">BooleanType</a>&lt;<a href="../../../../net/imagej/ops/topology/BoxCount.html" title="type parameter in BoxCount">B</a>&gt;&gt;,<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/ValuePair.html?is-external=true" title="class or interface in net.imglib2.util">ValuePair</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/DoubleType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">DoubleType</a>&gt;&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>input</code> - an n-dimensional binary interval</dd>
+<dd><code>input</code> - An n-dimensional binary interval.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A list of (log(foreground count), -log(section size))
+<dd>A list of (log(foreground count), -log(box size))
          <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/ValuePair.html?is-external=true" title="class or interface in net.imglib2.util"><code>ValuePair</code></a> objects for curve fitting</dd>
 </dl>
 </li>
