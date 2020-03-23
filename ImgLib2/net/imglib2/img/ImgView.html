@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -132,7 +132,7 @@ implements <a href="../../../net/imglib2/img/Img.html" title="interface in net.i
 <div class="block">Allows a <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> to be treated as an <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch, Christian Dietz</dd>
+<dd>Tobias Pietzsch, Christian Dietz, Curtis Rueden</dd>
 </dl>
 </li>
 </ul>
@@ -241,9 +241,19 @@ implements <a href="../../../net/imglib2/img/Img.html" title="interface in net.i
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>static &lt;T extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;T&gt;&gt;<br><a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/img/ImgView.html#wrap-net.imglib2.RandomAccessibleInterval-">wrap</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;accessible)</code>
+<div class="block">Represent an arbitrary <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> as an
+ <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>, with a suitable <a href="../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for its size and type,
+ created by
+ <a href="../../../net/imglib2/util/Util.html#getSuitableImgFactory-net.imglib2.Dimensions-T-"><code>Util.getSuitableImgFactory(net.imglib2.Dimensions, Object)</code></a>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;T&gt;&gt;<br><a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/img/ImgView.html#wrap-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-">wrap</a></span>(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;accessible,
     <a href="../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;factory)</code>
-<div class="block">Represent an arbitrary RandomAccessibleInterval as an Img</div>
+<div class="block">Represent an arbitrary <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> as an
+ <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -280,7 +290,7 @@ implements <a href="../../../net/imglib2/img/Img.html" title="interface in net.i
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a></h3>
-<code><a href="../../../net/imglib2/RandomAccessible.html#randomAccess--">randomAccess</a>, <a href="../../../net/imglib2/RandomAccessible.html#randomAccess-net.imglib2.Interval-">randomAccess</a></code></li>
+<code><a href="../../../net/imglib2/RandomAccessible.html#getAt-int...-">getAt</a>, <a href="../../../net/imglib2/RandomAccessible.html#getAt-net.imglib2.Localizable-">getAt</a>, <a href="../../../net/imglib2/RandomAccessible.html#getAt-long...-">getAt</a>, <a href="../../../net/imglib2/RandomAccessible.html#randomAccess--">randomAccess</a>, <a href="../../../net/imglib2/RandomAccessible.html#randomAccess-net.imglib2.Interval-">randomAccess</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.IterableRealInterval">
@@ -315,7 +325,7 @@ implements <a href="../../../net/imglib2/img/Img.html" title="interface in net.i
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a></h3>
-<code><a href="../../../net/imglib2/Dimensions.html#dimensions-long:A-">dimensions</a></code></li>
+<code><a href="../../../net/imglib2/Dimensions.html#allPositive-int...-">allPositive</a>, <a href="../../../net/imglib2/Dimensions.html#allPositive-long...-">allPositive</a>, <a href="../../../net/imglib2/Dimensions.html#dimensions-long:A-">dimensions</a>, <a href="../../../net/imglib2/Dimensions.html#verify-int...-">verify</a>, <a href="../../../net/imglib2/Dimensions.html#verify-long...-">verify</a>, <a href="../../../net/imglib2/Dimensions.html#verifyAllPositive-int...-">verifyAllPositive</a>, <a href="../../../net/imglib2/Dimensions.html#verifyAllPositive-long...-">verifyAllPositive</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
@@ -351,8 +361,9 @@ public&nbsp;ImgView(<a href="../../../net/imglib2/RandomAccessibleInterval.html"
 <div class="block">View on <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a> which is defined by a given Interval, but still is an
  <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>.
 
- Deprecation: Use <a href="../../../net/imglib2/img/ImgView.html#wrap-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-"><code>wrap(RandomAccessibleInterval, ImgFactory)</code></a>
- to represent a RandomAccessibleInterval as an Img</div>
+ Deprecation: Use
+ <a href="../../../net/imglib2/img/ImgView.html#wrap-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-"><code>wrap(RandomAccessibleInterval, ImgFactory)</code></a> to represent a
+ RandomAccessibleInterval as an Img</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>in</code> - Source interval for the view</dd>
@@ -542,6 +553,27 @@ public&nbsp;ImgView(<a href="../../../net/imglib2/RandomAccessibleInterval.html"
 </dl>
 </li>
 </ul>
+<a name="wrap-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wrap</h4>
+<pre>public static&nbsp;&lt;T extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;T&gt;&gt;&nbsp;<a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;&nbsp;wrap(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;accessible)</pre>
+<div class="block">Represent an arbitrary <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> as an
+ <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>, with a suitable <a href="../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> for its size and type,
+ created by
+ <a href="../../../net/imglib2/util/Util.html#getSuitableImgFactory-net.imglib2.Dimensions-T-"><code>Util.getSuitableImgFactory(net.imglib2.Dimensions, Object)</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>accessible</code> - RandomAccessibleInterval which will be wrapped with an ImgView</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>RandomAccessibleInterval represented as an Img</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../net/imglib2/util/Util.html#getSuitableImgFactory-net.imglib2.Dimensions-T-"><code>Util.getSuitableImgFactory(net.imglib2.Dimensions, Object)</code></a></dd>
+</dl>
+</li>
+</ul>
 <a name="wrap-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-">
 <!--   -->
 </a>
@@ -550,7 +582,8 @@ public&nbsp;ImgView(<a href="../../../net/imglib2/RandomAccessibleInterval.html"
 <h4>wrap</h4>
 <pre>public static&nbsp;&lt;T extends <a href="../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;T&gt;&gt;&nbsp;<a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;T&gt;&nbsp;wrap(<a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;T&gt;&nbsp;accessible,
                                               <a href="../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;factory)</pre>
-<div class="block">Represent an arbitrary RandomAccessibleInterval as an Img</div>
+<div class="block">Represent an arbitrary <a href="../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a> as an
+ <a href="../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>accessible</code> - RandomAccessibleInterval which will be wrapped with an ImgView</dd>

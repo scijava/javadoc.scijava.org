@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -151,18 +151,39 @@ extends <a href="../../net/imglib2/EuclideanSpace.html" title="interface in net.
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>default <a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RandomAccessible.html#getAt-int...-">getAt</a></span>(int...&nbsp;position)</code>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>default <a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RandomAccessible.html#getAt-net.imglib2.Localizable-">getAt</a></span>(<a href="../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;position)</code>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default <a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RandomAccessible.html#getAt-long...-">getAt</a></span>(long...&nbsp;position)</code>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RandomAccessible.html#randomAccess--">randomAccess</a></span>()</code>
 <div class="block">Create a random access sampler for integer coordinates.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../net/imglib2/RandomAccessible.html#randomAccess-net.imglib2.Interval-">randomAccess</a></span>(<a href="../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval)</code>
 <div class="block">Create a random access sampler for integer coordinates.</div>
@@ -245,7 +266,7 @@ extends <a href="../../net/imglib2/EuclideanSpace.html" title="interface in net.
 <a name="randomAccess-net.imglib2.Interval-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>randomAccess</h4>
 <pre><a href="../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&gt;&nbsp;randomAccess(<a href="../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval)</pre>
@@ -263,6 +284,75 @@ extends <a href="../../net/imglib2/EuclideanSpace.html" title="interface in net.
 <dd><code>interval</code> - in which interval you intend to use the random access.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>random access sampler</dd>
+</dl>
+</li>
+</ul>
+<a name="getAt-long...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAt</h4>
+<pre>default&nbsp;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&nbsp;getAt(long...&nbsp;position)</pre>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.
+ <p>
+ WARNING: This method is VERY SLOW, and memory inefficient when used in tight
+ loops, or called many times!!! Use <a href="../../net/imglib2/RandomAccessible.html#randomAccess--"><code>randomAccess()</code></a> when efficiency
+ is important.
+ <p>
+ This method is a short cut for <code>randomAccess().setPositionAndGet( position );</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>value of the the <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> at <code>position</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getAt-int...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAt</h4>
+<pre>default&nbsp;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&nbsp;getAt(int...&nbsp;position)</pre>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.
+ <p>
+ WARNING: This method is VERY SLOW, and memory inefficient when used in tight
+ loops, or called many times!!! Use <a href="../../net/imglib2/RandomAccessible.html#randomAccess--"><code>randomAccess()</code></a> when efficiency
+ is important.
+ <p>
+ This method is a short cut for <code>randomAccess().setPositionAndGet( position );</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>value of the the <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> at <code>position</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="getAt-net.imglib2.Localizable-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getAt</h4>
+<pre>default&nbsp;<a href="../../net/imglib2/RandomAccessible.html" title="type parameter in RandomAccessible">T</a>&nbsp;getAt(<a href="../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;position)</pre>
+<div class="block">Convenience method to query a <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> for the value at a
+ position.
+ <p>
+ WARNING: This method is VERY SLOW, and memory inefficient when used in tight
+ loops, or called many times!!! Use <a href="../../net/imglib2/RandomAccessible.html#randomAccess--"><code>randomAccess()</code></a> when efficiency
+ is important.
+ <p>
+ This method is a short cut for <code>randomAccess().setPositionAndGet( position );</code></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>value of the the <a href="../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2"><code>RandomAccessible</code></a> at <code>position</code>.</dd>
 </dl>
 </li>
 </ul>
