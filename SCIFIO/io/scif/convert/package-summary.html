@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>io.scif.config (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
+<title>io.scif.convert (SCIFIO Javadocs 1.0.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
@@ -11,7 +11,7 @@
 <script type="text/javascript"><!--
     try {
         if (location.href.indexOf('is-external=true') == -1) {
-            parent.document.title="io.scif.config (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
+            parent.document.title="io.scif.convert (SCIFIO Javadocs 1.0.0-SNAPSHOT API)";
         }
     }
     catch(err) {
@@ -41,11 +41,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../io/scif/common/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../../io/scif/convert/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../../io/scif/config/package-summary.html">Prev&nbsp;Package</a></li>
+<li><a href="../../../io/scif/enumeration/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?io/scif/config/package-summary.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html?io/scif/convert/package-summary.html" target="_top">Frames</a></li>
 <li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -68,11 +68,7 @@
 </a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
 <div class="header">
-<h1 title="Package" class="title">Package&nbsp;io.scif.config</h1>
-<div class="docSummary">
-<div class="block">This package provides configuration options for all SCIFIO components.</div>
-</div>
-<p>See:&nbsp;<a href="#package.description">Description</a></p>
+<h1 title="Package" class="title">Package&nbsp;io.scif.convert</h1>
 </div>
 <div class="contentContainer">
 <ul class="blockList">
@@ -85,63 +81,21 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a></td>
+<td class="colFirst"><a href="../../../io/scif/convert/FileToDatasetConverter.html" title="class in io.scif.convert">FileToDatasetConverter</a></td>
 <td class="colLast">
-<div class="block">Configuration class for all SCIFIO components.</div>
+<div class="block"><a href="https://javadoc.scijava.org/SciJava/org/scijava/convert/Converter.html?is-external=true" title="class or interface in org.scijava.convert"><code>Converter</code></a> for loading <a href="https://javadoc.scijava.org/ImageJ/net/imagej/Dataset.html?is-external=true" title="class or interface in net.imagej"><code>Dataset</code></a>s from <a href="https://javadoc.scijava.org/Java/java/io/File.html?is-external=true" title="class or interface in java.io"><code>File</code></a>s.</div>
 </td>
 </tr>
-</tbody>
-</table>
-</li>
-<li class="blockList">
-<table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
-<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Enum</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../io/scif/config/SCIFIOConfig.ImgMode.html" title="enum in io.scif.config">SCIFIOConfig.ImgMode</a></td>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../io/scif/convert/StringToDatasetConverter.html" title="class in io.scif.convert">StringToDatasetConverter</a></td>
 <td class="colLast">
-<div class="block">Access type options for opening datasets.</div>
+<div class="block"><a href="https://javadoc.scijava.org/SciJava/org/scijava/convert/Converter.html?is-external=true" title="class or interface in org.scijava.convert"><code>Converter</code></a> for loading <a href="https://javadoc.scijava.org/ImageJ/net/imagej/Dataset.html?is-external=true" title="class or interface in net.imagej"><code>Dataset</code></a>s from <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang"><code>String</code></a>s.</div>
 </td>
 </tr>
 </tbody>
 </table>
 </li>
 </ul>
-<a name="package.description">
-<!--   -->
-</a>
-<h2 title="Package io.scif.config Description">Package io.scif.config Description</h2>
-<div class="block">This package provides configuration options for all SCIFIO components.
- <p>
- Configuration is achieved through use of the
- <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> class. Methods in this class are prefixed
- based on what component they are modifying. The <code>SCIFIOConfig</code> then
- operates as a single container of state, passed between each consumer, which
- queries the values that apply to them.
- </p>
- <p>
- Configuration is scoped within method execution, thus SCIFIOConfig objects
- should not be cached, but instead always passed through method signatures.
- </p>
- <p>
- Adding new configuration options requires three steps:
- </p>
- <ul>
- <li>Add the appropriate field(s) and setter/accessor methods to
- <code>SCIFIOConfig</code>.</li>
- <li>Modify the class being configured to accept <code>SCIFIOConfig</code> objects
- and query the desired information.</li>
- <li>Update any downstream code of the newly configurable class to pass along
- <code>SCIFIOConfig</code> objects.</li>
- </ul></div>
-<dl>
-<dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Mark Hiner</dd>
-</dl>
 </div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">
@@ -163,11 +117,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../io/scif/common/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../../io/scif/convert/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../../io/scif/config/package-summary.html">Prev&nbsp;Package</a></li>
+<li><a href="../../../io/scif/enumeration/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?io/scif/config/package-summary.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html?io/scif/convert/package-summary.html" target="_top">Frames</a></li>
 <li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
