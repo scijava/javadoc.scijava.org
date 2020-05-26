@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":42,"i20":10,"i21":10,"i22":10,"i23":10,"i24":42,"i25":10,"i26":10,"i27":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -133,7 +133,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">ImgOpener</span>
 extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class in io.scif.img">AbstractImgIOComponent</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> using SCIFIO.</div>
+<div class="block">Reads images from data sources using SCIFIO.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Curtis Rueden, Mark Hiner, Stephan Preibisch, Stephan Saalfeld</dd>
@@ -171,73 +171,243 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source)</code>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the first image of the given source.</div>
+<td class="colFirst"><code><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-io.scif.Reader-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, SCIFIOConfig)</code></a>.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-net.imglib2.img.ImgFactory-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
-        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)</code>&nbsp;</td>
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-io.scif.Reader-T-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+       T&nbsp;type,
+       <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, Object, SCIFIOConfig)</code></a> or
+             <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
-        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
-        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-io.scif.Reader-T-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+       T&nbsp;type,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, Object, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
-        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the specified index of the given source.</div>
+<td class="colFirst"><code><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-"><code>openImgs(String)</code></a>.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-T-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
-        T&nbsp;type)</code>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the first image of the given source.</div>
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-net.imglib2.img.ImgFactory-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a>.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(String, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-net.imglib2.img.ImgFactory-T-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+       T&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a> or
+             <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-"><code>openImgs(String, RealType)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-io.scif.config.SCIFIOConfig-"><code>openImgs(String, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-T-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       T&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-"><code>openImgs(String, RealType)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImg-java.lang.String-T-io.scif.config.SCIFIOConfig-">openImg</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+       T&nbsp;type,
+       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-io.scif.config.SCIFIOConfig-"><code>openImgs(String, RealType, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-net.imglib2.img.ImgFactory-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-T-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
+        T&nbsp;type)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-org.scijava.io.location.Location-T-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
         T&nbsp;type,
         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the specified index of the given source.</div>
+<div class="block">Reads in images from the given source.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader)</code>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
+</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
         <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
         <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the given initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>,
- using the given <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to construct the <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img"><code>Img</code></a>.</div>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
-        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
+</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+        T&nbsp;type,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
         T&nbsp;type,
-        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>&nbsp;</td>
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-T-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+        T&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a>.</span></div>
+</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        T&nbsp;type)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br><a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-io.scif.config.SCIFIOConfig-">openImgs</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+        T&nbsp;type,
+        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)</code>
+<div class="block">Reads in images from the given source.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -350,6 +520,140 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="openImgs-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
+                                throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the images to open</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="openImgs-java.lang.String-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                               T&nbsp;type)
+                                                                        throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>type</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>es.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                       <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-net.imglib2.type.numeric.RealType-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a><a name="openImgs-java.lang.String-T-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                               T&nbsp;type,
+                                                                               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                        throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>type</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>es.</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-net.imglib2.img.ImgFactory-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                               <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)
+                                                                        throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the dataset to open</dd>
+<dd><code>imgFactory</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
+          resultant <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre>public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                               <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                               <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                        throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the location of the dataset to open</dd>
+<dd><code>imgFactory</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
+          resultant <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the images which were read</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
 <a name="openImgs-org.scijava.io.location.Location-">
 <!--   -->
 </a>
@@ -358,12 +662,12 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <h4>openImgs</h4>
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source)
                                 throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the first image of the given source.</div>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
+<dd><code>source</code> - the location of the images to open</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -380,13 +684,13 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <pre>public&nbsp;&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
                                            T&nbsp;type)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the first image of the given source.</div>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
-<dd><code>type</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>type</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>es.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -401,14 +705,13 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
                                        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                 throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the specified index of the given source.
- Can specify a variety of options via <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a>.</div>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -426,15 +729,14 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
                                            T&nbsp;type,
                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the specified index of the given source.
- Can specify the Type that should be opened.</div>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
-<dd><code>type</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>source</code> - the location of the images to open</dd>
+<dd><code>type</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>es.</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -449,13 +751,14 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <pre>public&nbsp;&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/SciJava/org/scijava/io/location/Location.html?is-external=true" title="class or interface in org.scijava.io.location">Location</a>&nbsp;source,
                                            <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
-<dd><code>imgFactory</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
+<dd><code>source</code> - the location of the dataset to open</dd>
+<dd><code>imgFactory</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
           resultant <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -471,14 +774,15 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
                                            <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images from the given source.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>source</code> - - the location of the dataset to open</dd>
-<dd><code>imgFactory</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
+<dd><code>source</code> - the location of the dataset to open</dd>
+<dd><code>imgFactory</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
           resultant <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -492,12 +796,13 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <h4>openImgs</h4>
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader)
                                 throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>reader</code> - - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
-          data.</dd>
+<dd><code>reader</code> - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
+          data. Must be wrapped by a <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a> filter.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -512,13 +817,14 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&gt;&nbsp;openImgs(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
                                        <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                 throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>reader</code> - - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
-          data.</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>reader</code> - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
+          data. Must be wrapped by a <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a> filter.</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -536,15 +842,15 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
                                            T&nbsp;type,
                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>reader</code> - - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
-          data.</dd>
-<dd><code>type</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>, which must
-          match the typing of the <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a>.</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>reader</code> - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image data.
+          Must be wrapped by a <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a> filter.</dd>
+<dd><code>type</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T of the output <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>es.</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
 </dl>
@@ -553,30 +859,253 @@ extends <a href="../../../io/scif/img/AbstractImgIOComponent.html" title="class 
 <a name="openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>openImgs</h4>
 <pre>public&nbsp;&lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
                                            <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
-<div class="block">Reads in an <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> from the given initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>,
- using the given <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to construct the <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/Img.html?is-external=true" title="class or interface in net.imglib2.img"><code>Img</code></a>. The
- <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/Type.html?is-external=true" title="class or interface in net.imglib2.type"><code>Type</code></a> T to read is defined by the third parameter.
- <p>
- NB: Any Reader provided must be wrapped by a <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a> filter.
- </p></div>
+<div class="block">Reads in images using the given <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>reader</code> - - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
-          data.</dd>
-<dd><code>imgFactory</code> - - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
+<dd><code>reader</code> - An initialized <a href="../../../io/scif/Reader.html" title="interface in io.scif"><code>Reader</code></a> to use for reading image
+          data. Must be wrapped by a <a href="../../../io/scif/filters/PlaneSeparator.html" title="class in io.scif.filters"><code>PlaneSeparator</code></a> filter.</dd>
+<dd><code>imgFactory</code> - The <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img"><code>ImgFactory</code></a> to use for creating the
           resultant <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a>.</dd>
-<dd><code>config</code> - - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening this dataset</dd>
+<dd><code>config</code> - <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config"><code>SCIFIOConfig</code></a> to use when opening the images</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>- the <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImgPlus.html?is-external=true" title="class or interface in net.imagej"><code>ImgPlus</code></a> or null</dd>
+<dd>the images which were read</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code> - if there is a problem reading the image data.</dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-java.lang.String-net.imglib2.img.ImgFactory-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="openImgs-java.lang.String-net.imglib2.img.ImgFactory-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                           <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                                           T&nbsp;type)
+                                                                                    throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImgs-io.scif.Reader-net.imglib2.type.numeric.RealType-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a><a name="openImgs-io.scif.Reader-T-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImgs</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&gt;&nbsp;openImgs(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+                                                                           T&nbsp;type,
+                                                                           <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                           <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                    throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
+                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-"><code>openImgs(String)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="openImg-java.lang.String-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                    T&nbsp;type)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-"><code>openImgs(String, RealType)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-io.scif.config.SCIFIOConfig-"><code>openImgs(String, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-net.imglib2.type.numeric.RealType-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a><a name="openImg-java.lang.String-T-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                    T&nbsp;type,
+                                                                                    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-io.scif.config.SCIFIOConfig-"><code>openImgs(String, RealType, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-net.imglib2.img.ImgFactory-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                    <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                    <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                                    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(String, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-java.lang.String-net.imglib2.img.ImgFactory-net.imglib2.type.numeric.RealType-">
+<!--   -->
+</a><a name="openImg-java.lang.String-net.imglib2.img.ImgFactory-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+                                                                                    <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                                    T&nbsp;type)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-net.imglib2.img.ImgFactory-"><code>openImgs(String, ImgFactory)</code></a> or
+             <a href="../../../io/scif/img/ImgOpener.html#openImgs-java.lang.String-T-"><code>openImgs(String, RealType)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-io.scif.Reader-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;?&gt;&nbsp;openImg(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+                                            <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                     throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-io.scif.Reader-net.imglib2.type.numeric.RealType-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a><a name="openImg-io.scif.Reader-T-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+                                                                                    T&nbsp;type,
+                                                                                    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, Object, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="openImg-io.scif.Reader-net.imglib2.type.numeric.RealType-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a><a name="openImg-io.scif.Reader-T-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>openImg</h4>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;<a href="../../../io/scif/img/SCIFIOImgPlus.html" title="class in io.scif.img">SCIFIOImgPlus</a>&lt;T&gt;&nbsp;openImg(<a href="../../../io/scif/Reader.html" title="interface in io.scif">Reader</a>&nbsp;reader,
+                                                                    T&nbsp;type,
+                                                                    <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/ImgFactory.html?is-external=true" title="class or interface in net.imglib2.img">ImgFactory</a>&lt;T&gt;&nbsp;imgFactory,
+                                                                    <a href="../../../io/scif/config/SCIFIOConfig.html" title="class in io.scif.config">SCIFIOConfig</a>&nbsp;config)
+                                                             throws <a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-T-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, Object, SCIFIOConfig)</code></a> or
+             <a href="../../../io/scif/img/ImgOpener.html#openImgs-io.scif.Reader-net.imglib2.img.ImgFactory-io.scif.config.SCIFIOConfig-"><code>openImgs(Reader, ImgFactory, SCIFIOConfig)</code></a>.</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../io/scif/img/ImgIOException.html" title="class in io.scif.img">ImgIOException</a></code></dd>
 </dl>
 </li>
 </ul>

@@ -213,11 +213,12 @@ implements <a href="https://javadoc.scijava.org/SciJava/org/scijava/Disposable.h
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/img/cell/SCIFIOCellImg.html#SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">SCIFIOCellImg</a></span>(<a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell">SCIFIOCellImgFactory</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&nbsp;factory,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../io/scif/img/cell/SCIFIOCellImg.html#SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-net.imglib2.cache.IoSync-">SCIFIOCellImg</a></span>(<a href="../../../../io/scif/img/cell/SCIFIOCellImgFactory.html" title="class in io.scif.img.cell">SCIFIOCellImgFactory</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">T</a>&gt;&nbsp;factory,
              <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/cell/CellGrid.html?is-external=true" title="class or interface in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
              <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
              <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/cache/Cache.html?is-external=true" title="class or interface in net.imglib2.cache">Cache</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cache,
-             <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType)</code>&nbsp;</td>
+             <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType,
+             <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/cache/IoSync.html?is-external=true" title="class or interface in net.imglib2.cache">IoSync</a>&nbsp;iosync)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -360,9 +361,9 @@ implements <a href="https://javadoc.scijava.org/SciJava/org/scijava/Disposable.h
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-java.lang.Object-">
+<a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-java.lang.Object-net.imglib2.cache.IoSync-">
 <!--   -->
-</a><a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">
+</a><a name="SCIFIOCellImg-io.scif.img.cell.SCIFIOCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-net.imglib2.cache.IoSync-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -372,7 +373,8 @@ implements <a href="https://javadoc.scijava.org/SciJava/org/scijava/Disposable.h
                      <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/cell/CellGrid.html?is-external=true" title="class or interface in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
                      <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/util/Fraction.html?is-external=true" title="class or interface in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
                      <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/cache/Cache.html?is-external=true" title="class or interface in net.imglib2.cache">Cache</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&gt;&gt;&nbsp;cache,
-                     <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType)</pre>
+                     <a href="../../../../io/scif/img/cell/SCIFIOCellImg.html" title="type parameter in SCIFIOCellImg">A</a>&nbsp;accessType,
+                     <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/cache/IoSync.html?is-external=true" title="class or interface in net.imglib2.cache">IoSync</a>&nbsp;iosync)</pre>
 </li>
 </ul>
 </li>
