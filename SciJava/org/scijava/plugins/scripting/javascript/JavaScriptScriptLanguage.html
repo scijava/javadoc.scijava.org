@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -136,7 +136,7 @@ extends <a href="../../../../../org/scijava/script/AdaptedScriptLanguage.html" t
 <div class="block">An adapter of the JavaScript interpreter to the SciJava scripting interface.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Curtis Rueden</dd>
+<dd>Curtis Rueden, Ulrik Guenther</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://javadoc.scijava.org/Java/javax/script/ScriptEngine.html?is-external=true" title="class or interface in javax.script"><code>ScriptEngine</code></a></dd>
 </dl>
@@ -188,19 +188,26 @@ extends <a href="../../../../../org/scijava/script/AdaptedScriptLanguage.html" t
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/plugins/scripting/javascript/JavaScriptScriptLanguage.html#isGraalJS--">isGraalJS</a></span>()</code>
+<div class="block">Returns true iff this script language is using the
+ <a href="https://github.com/graalvm/graaljs">Graal.js</a> scripting engine.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/plugins/scripting/javascript/JavaScriptScriptLanguage.html#isNashorn--">isNashorn</a></span>()</code>
 <div class="block">Returns true iff this script language is using the <a
  href="http://openjdk.java.net/projects/nashorn/">Nashorn</a> JavaScript
  engine.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/plugins/scripting/javascript/JavaScriptScriptLanguage.html#isOpenJDK--">isOpenJDK</a></span>()</code>
 <div class="block">Returns true iff the JVM appears to be the OpenJDK version of Java.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/scijava/plugins/scripting/javascript/JavaScriptScriptLanguage.html#isRhino--">isRhino</a></span>()</code>
 <div class="block">Returns true iff this script language is using the <a
@@ -346,6 +353,20 @@ extends <a href="../../../../../org/scijava/script/AdaptedScriptLanguage.html" t
 <div class="block">Returns true iff this script language is using the <a
  href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino"
  >Rhino</a> JavaScript engine. This is the case for Java 6 and Java 7.</div>
+</li>
+</ul>
+<a name="isGraalJS--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isGraalJS</h4>
+<pre>public&nbsp;boolean&nbsp;isGraalJS()</pre>
+<div class="block">Returns true iff this script language is using the
+ <a href="https://github.com/graalvm/graaljs">Graal.js</a> scripting engine.
+ Also see <a href="https://github.com/graalvm/graaljs/blob/master/docs/user/NashornMigrationGuide.md">The
+ Nashorn migration guide</a>.
+ True for GraalVM.</div>
 </li>
 </ul>
 <a name="isOpenJDK--">
