@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -111,7 +111,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;, <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;</dd>
+<dd><a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;, <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;,A&gt;, <a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;</dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">DiskCellCache&lt;A&gt;</span>
 extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;, <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;</pre>
+implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;,A&gt;, <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;A&gt;&gt;</pre>
 <div class="block">Basic <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache"><code>CacheRemover</code></a>/<a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache"><code>CacheLoader</code></a> for writing/reading cells
  to a disk cache. Currently blocks are simply written as flat files to a
  specified directory. <a href="../../../../net/imglib2/cache/img/DiskCellCache.html#createTempDirectory-java.lang.String-boolean-"><code>createTempDirectory(String, boolean)</code></a> can be
@@ -145,6 +145,21 @@ implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="inte
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#defaultParallelismThreshold">defaultParallelismThreshold</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -202,13 +217,47 @@ implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="inte
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#extract-net.imglib2.img.cell.Cell-">extract</a></span>(<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&nbsp;value)</code>
+<div class="block">Extract data out of <code>value</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#get-java.lang.Long-">get</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#onRemoval-java.lang.Long-net.imglib2.img.cell.Cell-">onRemoval</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
-         <a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&nbsp;value)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#invalidate-java.lang.Long-">invalidate</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key)</code>
+<div class="block">Removes the file for the given <code>key</code> (if it exists).</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#invalidateAll-long-">invalidateAll</a></span>(long&nbsp;parallelismThreshold)</code>
+<div class="block">Removes all files.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></span>(long&nbsp;parallelismThreshold,
+            <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;condition)</code>
+<div class="block">Removes all files for keys matching the given <code>condition</code>.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#onRemoval-java.lang.Long-A-">onRemoval</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
+         <a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&nbsp;valueData)</code>
+<div class="block">Called when an entry is evicted from the cache.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCellCache.html#reconstruct-java.lang.Long-A-">reconstruct</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
+           <a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&nbsp;valueData)</code>
+<div class="block">Construct a value from its <code>key</code> and <code>valueData</code>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -217,6 +266,13 @@ implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="inte
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll--">invalidateAll</a>, <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-">invalidateIf</a></code></li>
 </ul>
 </li>
 </ul>
@@ -269,17 +325,115 @@ implements <a href="../../../../net/imglib2/cache/CacheRemover.html" title="inte
 </dl>
 </li>
 </ul>
-<a name="onRemoval-java.lang.Long-net.imglib2.img.cell.Cell-">
+<a name="extract-net.imglib2.img.cell.Cell-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extract</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&nbsp;extract(<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&nbsp;value)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html#extract-V-">CacheRemover</a></code></span></div>
+<div class="block">Extract data out of <code>value</code>. The data must be sufficient to
+ reconstruct an identical value, and must not contain any references to
+ value.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#extract-V-">extract</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="reconstruct-java.lang.Long-java.lang.Object-">
+<!--   -->
+</a><a name="reconstruct-java.lang.Long-A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reconstruct</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&nbsp;reconstruct(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
+                           <a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&nbsp;valueData)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html#reconstruct-K-D-">CacheRemover</a></code></span></div>
+<div class="block">Construct a value from its <code>key</code> and <code>valueData</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#reconstruct-K-D-">reconstruct</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="onRemoval-java.lang.Long-java.lang.Object-">
+<!--   -->
+</a><a name="onRemoval-java.lang.Long-A-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onRemoval</h4>
 <pre>public&nbsp;void&nbsp;onRemoval(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key,
-                      <a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&nbsp;value)</pre>
+                      <a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&nbsp;valueData)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-">CacheRemover</a></code></span></div>
+<div class="block">Called when an entry is evicted from the cache.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-">onRemoval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-">onRemoval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+<dd><code>valueData</code> - value data of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidate-java.lang.Long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidate</h4>
+<pre>public&nbsp;void&nbsp;invalidate(<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&nbsp;key)</pre>
+<div class="block">Removes the file for the given <code>key</code> (if it exists).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateIf-long-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidateIf</h4>
+<pre>public&nbsp;void&nbsp;invalidateIf(long&nbsp;parallelismThreshold,
+                         <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;condition)</pre>
+<div class="block">Removes all files for keys matching the given <code>condition</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - ignored</dd>
+<dd><code>condition</code> - condition on keys of entries to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateAll-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidateAll</h4>
+<pre>public&nbsp;void&nbsp;invalidateAll(long&nbsp;parallelismThreshold)</pre>
+<div class="block">Removes all files.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/CacheRemover.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;,<a href="../../../../net/imglib2/cache/img/DiskCellCache.html" title="type parameter in DiskCellCache">A</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - ignored</dd>
 </dl>
 </li>
 </ul>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -130,7 +130,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
  is the highest priority. Priorities of <a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#put-E-int-boolean-"><code>enqueued</code></a> entries are clamped to the range <em>0 ... n-1</em>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch &lt;tobias.pietzsch@gmail.com&gt;</dd>
+<dd>Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -150,10 +150,12 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#BlockingFetchQueues-int-">BlockingFetchQueues</a></span>(int&nbsp;numPriorities)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#BlockingFetchQueues-int-int-">BlockingFetchQueues</a></span>(int&nbsp;numPriorities,
+                   int&nbsp;numConsumers)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#BlockingFetchQueues-int-int-">BlockingFetchQueues</a></span>(int&nbsp;numPriorities,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#BlockingFetchQueues-int-int-int-">BlockingFetchQueues</a></span>(int&nbsp;numPriorities,
+                   int&nbsp;numConsumers,
                    int&nbsp;prefetchCapacity)</code>&nbsp;</td>
 </tr>
 </table>
@@ -193,6 +195,12 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#pause--">pause</a></span>()</code>
+<div class="block">Pause the queue.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#put_unsafe-E-int-boolean-">put_unsafe</a></span>(<a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html" title="type parameter in BlockingFetchQueues">E</a>&nbsp;element,
           int&nbsp;priority,
           boolean&nbsp;enqueuToFront)</code>
@@ -200,7 +208,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
  clamped to the allowed range.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#put-E-int-boolean-">put</a></span>(<a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html" title="type parameter in BlockingFetchQueues">E</a>&nbsp;element,
    int&nbsp;priority,
@@ -208,7 +216,11 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <div class="block">Add element to the queue of the specified priority.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#resume--">resume</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html" title="type parameter in BlockingFetchQueues">E</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/queue/BlockingFetchQueues.html#take--">take</a></span>()</code>
 <div class="block">Remove and return an element from the highest priority non-empty queue.</div>
@@ -236,22 +248,24 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="BlockingFetchQueues-int-">
+<a name="BlockingFetchQueues-int-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>BlockingFetchQueues</h4>
-<pre>public&nbsp;BlockingFetchQueues(int&nbsp;numPriorities)</pre>
+<pre>public&nbsp;BlockingFetchQueues(int&nbsp;numPriorities,
+                           int&nbsp;numConsumers)</pre>
 </li>
 </ul>
-<a name="BlockingFetchQueues-int-int-">
+<a name="BlockingFetchQueues-int-int-int-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>BlockingFetchQueues</h4>
 <pre>public&nbsp;BlockingFetchQueues(int&nbsp;numPriorities,
+                           int&nbsp;numConsumers,
                            int&nbsp;prefetchCapacity)</pre>
 </li>
 </ul>
@@ -326,6 +340,41 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>element.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="pause--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pause</h4>
+<pre>public&nbsp;void&nbsp;pause()
+           throws <a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+<div class="block">Pause the queue. While the queue is paused, all consumer threads are held
+ in <code>take()</code>. The <code>pause()</code> method itself blocks until all (of
+ the pre-defined number of) consumer threads have arrived in
+ <code>take()</code>.
+ <p>
+ While the queue is paused, all calls to <code>take()</code> block. (Calls to
+ <code>put()</code> are not affected.)</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="resume--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resume</h4>
+<pre>public&nbsp;void&nbsp;resume()
+            throws <a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+<dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
 </dl>

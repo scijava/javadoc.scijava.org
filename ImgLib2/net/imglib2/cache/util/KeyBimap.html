@@ -106,11 +106,15 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">KeyBimap&lt;S,T&gt;</span></pre>
 <div class="block">A bidirectional map between key types <code>S</code> and <code>T</code> (source and
- target). This is used to create adapters exposing a <code>T→V</code> cache as
- a <code>S→V</code> cache.</div>
+ target). This is used to create adapters exposing a <code>T→V</code> cache as a
+ <code>S→V</code> cache.
+ <p>
+ The <code>S→T</code> mapping must be injective. If the <code>S→T</code> mapping is not
+ bijective, <a href="../../../../net/imglib2/cache/util/KeyBimap.html#getSource-T-"><code>getSource(Object)</code></a> should return <code>null</code> for target
+ keys with no corresponding source key.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch &lt;tobias.pietzsch@gmail.com&gt;</dd>
+<dd>Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -137,11 +141,16 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">S</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/util/KeyBimap.html#getSource-T-">getSource</a></span>(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">T</a>&nbsp;target)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/util/KeyBimap.html#getSource-T-">getSource</a></span>(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">T</a>&nbsp;target)</code>
+<div class="block">Returns source key source key mapping to a given target key, or
+ <code>null</code> if there is no such source key.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">T</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/util/KeyBimap.html#getTarget-S-">getTarget</a></span>(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">S</a>&nbsp;source)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/util/KeyBimap.html#getTarget-S-">getTarget</a></span>(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">S</a>&nbsp;source)</code>
+<div class="block">Returns target key for a given source key.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -167,6 +176,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getTarget</h4>
 <pre><a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">T</a>&nbsp;getTarget(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">S</a>&nbsp;source)</pre>
+<div class="block">Returns target key for a given source key.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - source key</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the target key corresponding to <code>source</code></dd>
+</dl>
 </li>
 </ul>
 <a name="getSource-java.lang.Object-">
@@ -178,6 +194,15 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getSource</h4>
 <pre><a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">S</a>&nbsp;getSource(<a href="../../../../net/imglib2/cache/util/KeyBimap.html" title="type parameter in KeyBimap">T</a>&nbsp;target)</pre>
+<div class="block">Returns source key source key mapping to a given target key, or
+ <code>null</code> if there is no such source key.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target</code> - target key</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the source key mapping to <code>target</code>, or <code>null</code> if
+         there is no such source key.</dd>
+</dl>
 </li>
 </ul>
 <a name="build-java.util.function.Function-java.util.function.Function-">

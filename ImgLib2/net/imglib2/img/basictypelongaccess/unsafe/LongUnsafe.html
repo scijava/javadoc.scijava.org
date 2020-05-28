@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -112,13 +112,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../net/imglib2/img/basictypeaccess/LongAccess.html" title="interface in net.imglib2.img.basictypeaccess">LongAccess</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongAccess.html" title="interface in net.imglib2.img.basictypelongaccess">LongLongAccess</a></dd>
+<dd><a href="../../../../../net/imglib2/img/basictypeaccess/LongAccess.html" title="interface in net.imglib2.img.basictypeaccess">LongAccess</a>, <a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileAccess</a>, <a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileLongAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileLongAccess</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongAccess.html" title="interface in net.imglib2.img.basictypelongaccess">LongLongAccess</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LongUnsafe</span>
 extends <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">AbstractStridedUnsafeLongAccess</a>
-implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongAccess.html" title="interface in net.imglib2.img.basictypelongaccess">LongLongAccess</a></pre>
+implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongAccess.html" title="interface in net.imglib2.img.basictypelongaccess">LongLongAccess</a>, <a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileLongAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileLongAccess</a></pre>
 </li>
 </ul>
 </div>
@@ -136,7 +136,7 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;net.imglib2.img.basictypelongaccess.unsafe.<a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">AbstractStridedUnsafeLongAccess</a></h3>
-<code><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#stride">stride</a></code></li>
+<code><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#DEFAULT_IS_VALID">DEFAULT_IS_VALID</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#stride">stride</a></code></li>
 </ul>
 </li>
 </ul>
@@ -155,8 +155,17 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#LongUnsafe-long-">LongUnsafe</a></span>(long&nbsp;address)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#LongUnsafe-long-boolean-">LongUnsafe</a></span>(long&nbsp;address,
+          boolean&nbsp;isValid)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#LongUnsafe-long-java.lang.Object-">LongUnsafe</a></span>(long&nbsp;address,
           <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ownerReference)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#LongUnsafe-long-java.lang.Object-boolean-">LongUnsafe</a></span>(long&nbsp;address,
+          <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ownerReference,
+          boolean&nbsp;isValid)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -174,23 +183,27 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getAddres--">getAddres</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#finalize--">finalize</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getValue-int-">getValue</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getAddres--">getAddres</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getValue-long-">getValue</a></span>(long&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getValue-int-">getValue</a></span>(int&nbsp;index)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#getValue-long-">getValue</a></span>(long&nbsp;index)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#setValue-int-long-">setValue</a></span>(int&nbsp;index,
         long&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html#setValue-long-long-">setValue</a></span>(long&nbsp;index,
         long&nbsp;value)</code>&nbsp;</td>
@@ -201,14 +214,21 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.imglib2.img.basictypelongaccess.unsafe.<a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">AbstractStridedUnsafeLongAccess</a></h3>
-<code><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#getPosition-long-long-">getPosition</a></code></li>
+<code><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#getPosition-long-long-">getPosition</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#isValid--">isValid</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.img.basictypeaccess.volatiles.VolatileAccess">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.img.basictypeaccess.volatiles.<a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileAccess</a></h3>
+<code><a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html#isValid--">isValid</a></code></li>
 </ul>
 </li>
 </ul>
@@ -233,14 +253,35 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <pre>public&nbsp;LongUnsafe(long&nbsp;address)</pre>
 </li>
 </ul>
+<a name="LongUnsafe-long-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LongUnsafe</h4>
+<pre>public&nbsp;LongUnsafe(long&nbsp;address,
+                  boolean&nbsp;isValid)</pre>
+</li>
+</ul>
 <a name="LongUnsafe-long-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LongUnsafe</h4>
+<pre>public&nbsp;LongUnsafe(long&nbsp;address,
+                  <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ownerReference)</pre>
+</li>
+</ul>
+<a name="LongUnsafe-long-java.lang.Object-boolean-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LongUnsafe</h4>
 <pre>public&nbsp;LongUnsafe(long&nbsp;address,
-                  <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ownerReference)</pre>
+                  <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ownerReference,
+                  boolean&nbsp;isValid)</pre>
 </li>
 </ul>
 </li>
@@ -308,10 +349,26 @@ implements <a href="../../../../../net/imglib2/img/basictypelongaccess/LongLongA
 <a name="getAddres--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getAddres</h4>
 <pre>public&nbsp;long&nbsp;getAddres()</pre>
+</li>
+</ul>
+<a name="finalize--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>finalize</h4>
+<pre>public&nbsp;void&nbsp;finalize()
+              throws <a href="https://javadoc.scijava.org/Java/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a></code>&nbsp;in class&nbsp;<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>

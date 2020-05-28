@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":18,"i2":18,"i3":18,"i4":6,"i5":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?net/imglib2/cache/CacheRemover.html" target="_top">Frames</a></li>
@@ -91,25 +91,63 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.cache</div>
-<h2 title="Interface CacheRemover" class="title">Interface CacheRemover&lt;K,V&gt;</h2>
+<h2 title="Interface CacheRemover" class="title">Interface CacheRemover&lt;K,V,D&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>K</code> - key type</dd>
+<dd><code>V</code> - value type</dd>
+<dd><code>D</code> - value data type</dd>
+</dl>
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;K&gt;</dd>
+</dl>
+<dl>
 <dt>All Known Implementing Classes:</dt>
 <dd><a href="../../../net/imglib2/cache/img/DirtyDiskCellCache.html" title="class in net.imglib2.cache.img">DirtyDiskCellCache</a>, <a href="../../../net/imglib2/cache/img/DiskCellCache.html" title="class in net.imglib2.cache.img">DiskCellCache</a>, <a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache">IoSync</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">CacheRemover&lt;K,V&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">CacheRemover&lt;K,V,D&gt;</span>
+extends <a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;K&gt;</pre>
+<div class="block">Handles entries that are removed from a cache (by propagating to a
+ higher-level cache, writing to disk, or similar).
+ <p>
+ To make this work, it must be possible to <a href="../../../net/imglib2/cache/CacheRemover.html#extract-V-"><code>extract</code></a>
+ data <code>D</code> out of a value <code>V</code>, and to
+ <a href="../../../net/imglib2/cache/CacheRemover.html#reconstruct-K-D-"><code>reconstruct</code></a> an identical value <code>V</code>
+ from <code>D</code>. <code>D</code> must be sufficient to reconstruct an identical
+ <code>V</code>, and must not contain any references to <code>V</code>.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imglib2.cache.<a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../net/imglib2/cache/Invalidate.html#defaultParallelismThreshold">defaultParallelismThreshold</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -117,17 +155,59 @@ var activeTableTab = "activeTableTab";
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#extract-V-">extract</a></span>(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a>&nbsp;value)</code>
+<div class="block">Extract data out of <code>value</code>.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#invalidate-K-">invalidate</a></span>(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key)</code>
+<div class="block">Called when a specific entry is invalidated from the cache.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#invalidateAll-long-">invalidateAll</a></span>(long&nbsp;parallelismThreshold)</code>
+<div class="block">Called when all entries are invalidated from the cache.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></span>(long&nbsp;parallelismThreshold,
+            <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&gt;&nbsp;condition)</code>
+<div class="block">Called when all entries with keys matching <code>condition</code> are
+ invalidated from the cache.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-V-">onRemoval</a></span>(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
-         <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a>&nbsp;value)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-">onRemoval</a></span>(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
+         <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a>&nbsp;valueData)</code>
+<div class="block">Called when an entry is evicted from the cache.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/cache/CacheRemover.html#reconstruct-K-D-">reconstruct</a></span>(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
+           <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a>&nbsp;valueData)</code>
+<div class="block">Construct a value from its <code>key</code> and <code>valueData</code>.</div>
+</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../net/imglib2/cache/Invalidate.html#invalidateAll--">invalidateAll</a>, <a href="../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-">invalidateIf</a></code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -144,14 +224,114 @@ var activeTableTab = "activeTableTab";
 <h3>Method Detail</h3>
 <a name="onRemoval-java.lang.Object-java.lang.Object-">
 <!--   -->
-</a><a name="onRemoval-K-V-">
+</a><a name="onRemoval-K-D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onRemoval</h4>
+<pre>void&nbsp;onRemoval(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
+               <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a>&nbsp;valueData)</pre>
+<div class="block">Called when an entry is evicted from the cache.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+<dd><code>valueData</code> - value data of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="extract-java.lang.Object-">
+<!--   -->
+</a><a name="extract-V-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extract</h4>
+<pre><a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a>&nbsp;extract(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a>&nbsp;value)</pre>
+<div class="block">Extract data out of <code>value</code>. The data must be sufficient to
+ reconstruct an identical value, and must not contain any references to
+ value.</div>
+</li>
+</ul>
+<a name="reconstruct-java.lang.Object-java.lang.Object-">
+<!--   -->
+</a><a name="reconstruct-K-D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reconstruct</h4>
+<pre><a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a>&nbsp;reconstruct(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
+              <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">D</a>&nbsp;valueData)</pre>
+<div class="block">Construct a value from its <code>key</code> and <code>valueData</code>.</div>
+</li>
+</ul>
+<a name="invalidate-java.lang.Object-">
+<!--   -->
+</a><a name="invalidate-K-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidate</h4>
+<pre>default&nbsp;void&nbsp;invalidate(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key)</pre>
+<div class="block">Called when a specific entry is invalidated from the cache. (See
+ <a href="../../../net/imglib2/cache/AbstractCache.html#invalidate-K-"><code>AbstractCache.invalidate(Object)</code></a>.)
+ <p>
+ If this <code>CacheRemover</code> itself represents a (higher-level) cache,
+ the entry should be invalidated in this cache as well.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/cache/Invalidate.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateIf-long-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidateIf</h4>
+<pre>default&nbsp;void&nbsp;invalidateIf(long&nbsp;parallelismThreshold,
+                          <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&gt;&nbsp;condition)</pre>
+<div class="block">Called when all entries with keys matching <code>condition</code> are
+ invalidated from the cache. (See
+ <a href="../../../net/imglib2/cache/AbstractCache.html#invalidateIf-long-java.util.function.Predicate-"><code>AbstractCache.invalidateIf(long, Predicate)</code></a>.)
+ <p>
+ If this <code>CacheRemover</code> itself represents a (higher-level) cache,
+ the entries should be invalidated in this cache as well.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/cache/Invalidate.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
+<dd><code>condition</code> - condition on keys of entries to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateAll-long-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>onRemoval</h4>
-<pre>void&nbsp;onRemoval(<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&nbsp;key,
-               <a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">V</a>&nbsp;value)</pre>
+<h4>invalidateAll</h4>
+<pre>default&nbsp;void&nbsp;invalidateAll(long&nbsp;parallelismThreshold)</pre>
+<div class="block">Called when all entries are invalidated from the cache. (See
+ <a href="../../../net/imglib2/cache/AbstractCache.html#invalidateAll-long-"><code>AbstractCache.invalidateAll(long)</code></a>.)
+ <p>
+ If this <code>CacheRemover</code> itself represents a (higher-level) cache,
+ the entries should be invalidated in this cache as well.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/cache/Invalidate.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../net/imglib2/cache/CacheRemover.html" title="type parameter in CacheRemover">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -182,7 +362,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?net/imglib2/cache/CacheRemover.html" target="_top">Frames</a></li>

@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.cache.volatiles</div>
-<h2 title="Interface VolatileLoaderRemoverCache" class="title">Interface VolatileLoaderRemoverCache&lt;K,V&gt;</h2>
+<h2 title="Interface VolatileLoaderRemoverCache" class="title">Interface VolatileLoaderRemoverCache&lt;K,V,D&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -99,18 +99,37 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;K,V&gt;</dd>
+<dd><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;K,V&gt;, <a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;K&gt;</dd>
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">VolatileLoaderRemoverCache&lt;K,V&gt;</span>
+<pre>public interface <span class="typeNameLabel">VolatileLoaderRemoverCache&lt;K,V,D&gt;</span>
 extends <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;K,V&gt;</pre>
+<div class="block">This is only here for consistency with the non-volatile cache interfaces.
+ There is no implementation at the moment.
+ <p>
+ TODO: REMOVE?</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#defaultParallelismThreshold">defaultParallelismThreshold</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -127,7 +146,7 @@ extends <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.h
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html#get-K-net.imglib2.cache.volatiles.VolatileCacheLoader-net.imglib2.cache.CacheRemover-net.imglib2.cache.volatiles.CacheHints-">get</a></span>(<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>&nbsp;key,
    <a href="../../../../net/imglib2/cache/volatiles/VolatileCacheLoader.html" title="interface in net.imglib2.cache.volatiles">VolatileCacheLoader</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,? extends <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>&gt;&nbsp;loader,
-   <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>&gt;&nbsp;remover,
+   <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>,<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">D</a>&gt;&nbsp;remover,
    <a href="../../../../net/imglib2/cache/volatiles/CacheHints.html" title="class in net.imglib2.cache.volatiles">CacheHints</a>&nbsp;cacheHints)</code>&nbsp;</td>
 </tr>
 </table>
@@ -136,7 +155,14 @@ extends <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.h
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.cache.volatiles.<a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a></h3>
-<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#getIfPresent-K-net.imglib2.cache.volatiles.CacheHints-">getIfPresent</a>, <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateAll--">invalidateAll</a></code></li>
+<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#getIfPresent-K-net.imglib2.cache.volatiles.CacheHints-">getIfPresent</a>, <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidate-K-">invalidate</a>, <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateAll-long-">invalidateAll</a>, <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll--">invalidateAll</a>, <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-">invalidateIf</a></code></li>
 </ul>
 </li>
 </ul>
@@ -162,7 +188,7 @@ extends <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.h
 <h4>get</h4>
 <pre><a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>&nbsp;get(<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>&nbsp;key,
       <a href="../../../../net/imglib2/cache/volatiles/VolatileCacheLoader.html" title="interface in net.imglib2.cache.volatiles">VolatileCacheLoader</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,? extends <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>&gt;&nbsp;loader,
-      <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>&gt;&nbsp;remover,
+      <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">V</a>,<a href="../../../../net/imglib2/cache/volatiles/VolatileLoaderRemoverCache.html" title="type parameter in VolatileLoaderRemoverCache">D</a>&gt;&nbsp;remover,
       <a href="../../../../net/imglib2/cache/volatiles/CacheHints.html" title="class in net.imglib2.cache.volatiles">CacheHints</a>&nbsp;cacheHints)
 throws <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
 <dl>

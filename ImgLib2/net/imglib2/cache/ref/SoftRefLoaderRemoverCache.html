@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.cache.ref</div>
-<h2 title="Class SoftRefLoaderRemoverCache" class="title">Class SoftRefLoaderRemoverCache&lt;K,V&gt;</h2>
+<h2 title="Class SoftRefLoaderRemoverCache" class="title">Class SoftRefLoaderRemoverCache&lt;K,V,D&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>net.imglib2.cache.ref.SoftRefLoaderRemoverCache&lt;K,V&gt;</li>
+<li>net.imglib2.cache.ref.SoftRefLoaderRemoverCache&lt;K,V,D&gt;</li>
 </ul>
 </li>
 </ul>
@@ -112,20 +112,20 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;K,V&gt;, <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;K,V&gt;</dd>
+<dd><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;K,V&gt;, <a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;K&gt;, <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;K,V,D&gt;</dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">SoftRefLoaderRemoverCache&lt;K,V&gt;</span>
+<pre>public class <span class="typeNameLabel">SoftRefLoaderRemoverCache&lt;K,V,D&gt;</span>
 extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;K,V&gt;</pre>
+implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;K,V,D&gt;</pre>
 <div class="block">TODO: Consider periodically calling <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#cleanUp--"><code>cleanUp()</code></a> from a background
  thread. Otherwise, freeing memory depends on the cache being regularly used.
  (This is different for PhantomRefs than for Weak/SoftRefs. PhantomRefs must
  be explicitly clear()ed before the referent is freed.)</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch &lt;tobias.pietzsch@gmail.com&gt;</dd>
+<dd>Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -133,6 +133,21 @@ implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#defaultParallelismThreshold">defaultParallelismThreshold</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -173,7 +188,7 @@ implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#get-K-net.imglib2.cache.CacheLoader-net.imglib2.cache.CacheRemover-">get</a></span>(<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&nbsp;key,
    <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,? extends <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;&nbsp;loader,
-   <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;&nbsp;remover)</code>&nbsp;</td>
+   <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">D</a>&gt;&nbsp;remover)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a></code></td>
@@ -181,8 +196,21 @@ implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#invalidateAll--">invalidateAll</a></span>()</code>
-<div class="block">TODO: Decide what invalidateAll() should actually do.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#invalidate-K-">invalidate</a></span>(<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&nbsp;key)</code>
+<div class="block">Removes and discards the entry with the specified <code>key</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#invalidateAll-long-">invalidateAll</a></span>(long&nbsp;parallelismThreshold)</code>
+<div class="block">Removes and discards all entries.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></span>(long&nbsp;parallelismThreshold,
+            <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&gt;&nbsp;condition)</code>
+<div class="block">Removes and discards all entries with keys matching <code>condition</code>.</div>
 </td>
 </tr>
 </table>
@@ -199,6 +227,13 @@ implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a></h3>
 <code><a href="../../../../net/imglib2/cache/LoaderRemoverCache.html#mapKeys-net.imglib2.cache.util.KeyBimap-">mapKeys</a>, <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html#withLoader-net.imglib2.cache.CacheLoader-">withLoader</a>, <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html#withRemover-net.imglib2.cache.CacheRemover-">withRemover</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll--">invalidateAll</a>, <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-">invalidateIf</a></code></li>
 </ul>
 </li>
 </ul>
@@ -256,29 +291,110 @@ implements <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title
 <h4>get</h4>
 <pre>public&nbsp;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&nbsp;get(<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&nbsp;key,
              <a href="../../../../net/imglib2/cache/CacheLoader.html" title="interface in net.imglib2.cache">CacheLoader</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,? extends <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;&nbsp;loader,
-             <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;&nbsp;remover)
+             <a href="../../../../net/imglib2/cache/CacheRemover.html" title="interface in net.imglib2.cache">CacheRemover</a>&lt;? super <a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">D</a>&gt;&nbsp;remover)
       throws <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../net/imglib2/cache/LoaderRemoverCache.html#get-K-net.imglib2.cache.CacheLoader-net.imglib2.cache.CacheRemover-">get</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/cache/LoaderRemoverCache.html#get-K-net.imglib2.cache.CacheLoader-net.imglib2.cache.CacheRemover-">get</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache">LoaderRemoverCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">D</a>&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="invalidateAll--">
+<a name="invalidate-java.lang.Object-">
+<!--   -->
+</a><a name="invalidate-K-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidate</h4>
+<pre>public&nbsp;void&nbsp;invalidate(<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&nbsp;key)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidate-K-">AbstractCache</a></code></span></div>
+<div class="block">Removes and discards the entry with the specified <code>key</code>.
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entry.
+ <p>
+ If this cache has a <code>CacheRemover</code>, calls <a href="../../../../net/imglib2/cache/CacheRemover.html#invalidate-K-"><code>CacheRemover.invalidate(Object)</code></a> for the discarded
+ entry, (which should in turn remove it from any backing cache).
+ <em>Note that this applies only when the whole cache has a <code>CacheRemover</code>,
+ instead of each individual entry as in <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache"><code>LoaderRemoverCache</code></a>.</em>
+ <p>
+ <em>There must be no concurrent <code>get()</code> operations for <code>key</code>.
+ This may result in cache corruption and/or a deadlock.</em></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateIf-long-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidateIf</h4>
+<pre>public&nbsp;void&nbsp;invalidateIf(long&nbsp;parallelismThreshold,
+                         <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&gt;&nbsp;condition)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateIf-long-java.util.function.Predicate-">AbstractCache</a></code></span></div>
+<div class="block">Removes and discards all entries with keys matching <code>condition</code>.
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entries.
+ <p>
+ If this cache has a <code>CacheRemover</code>, calls <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-"><code>Invalidate.invalidateIf(Predicate)</code></a> for the discarded
+ entries, (which should in turn remove them from any backing cache).
+ <em>Note that this applies only when the whole cache has a <code>CacheRemover</code>,
+ instead of each individual entry as in <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache"><code>LoaderRemoverCache</code></a>.</em>
+ <p>
+ <em>There must be no concurrent <code>get()</code> operations for keys
+ matching <code>condition</code>. This may result in cache corruption and/or a
+ deadlock.</em></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
+<dd><code>condition</code> - condition on keys of entries to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateAll-long-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>invalidateAll</h4>
-<pre>public&nbsp;void&nbsp;invalidateAll()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateAll--">AbstractCache</a></code></span></div>
-<div class="block">TODO: Decide what invalidateAll() should actually do. See
- <a href="https://github.com/imglib/imglib2-cache/issues/2">this issue</a></div>
+<pre>public&nbsp;void&nbsp;invalidateAll(long&nbsp;parallelismThreshold)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateAll-long-">AbstractCache</a></code></span></div>
+<div class="block">Removes and discards all entries.
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entries.
+ <p>
+ If this cache has a <code>CacheRemover</code>, calls <a href="../../../../net/imglib2/cache/CacheRemover.html#invalidateAll-long-"><code>CacheRemover.invalidateAll(long)</code></a>
+ (which should in turn invalidate any backing cache).
+ <em>Note that this applies only when the whole cache has a <code>CacheRemover</code>,
+ instead of each individual entry as in <a href="../../../../net/imglib2/cache/LoaderRemoverCache.html" title="interface in net.imglib2.cache"><code>LoaderRemoverCache</code></a>.</em>
+ <p>
+ <em> There must be no concurrent <code>get()</code> operations. This may
+ result in cache corruption and/or a deadlock.</em></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateAll--">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/cache/AbstractCache.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/AbstractCache.html" title="interface in net.imglib2.cache">AbstractCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>,<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">V</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/SoftRefLoaderRemoverCache.html" title="type parameter in SoftRefLoaderRemoverCache">K</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
 </dl>
 </li>
 </ul>

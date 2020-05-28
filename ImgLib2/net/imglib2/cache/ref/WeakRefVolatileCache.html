@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;K,V&gt;, <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" title="interface in net.imglib2.cache.volatiles">VolatileCache</a>&lt;K,V&gt;</dd>
+<dd><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;K&gt;, <a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;K,V&gt;, <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" title="interface in net.imglib2.cache.volatiles">VolatileCache</a>&lt;K,V&gt;</dd>
 </dl>
 <hr>
 <br>
@@ -120,6 +120,21 @@ implements <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" 
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#defaultParallelismThreshold">defaultParallelismThreshold</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -170,7 +185,22 @@ implements <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" 
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html#invalidateAll--">invalidateAll</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html#invalidate-K-">invalidate</a></span>(<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&nbsp;key)</code>
+<div class="block">Removes and discards the entry with the specified <code>key</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html#invalidateAll-long-">invalidateAll</a></span>(long&nbsp;parallelismThreshold)</code>
+<div class="block">Removes and discards all entries.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></span>(long&nbsp;parallelismThreshold,
+            <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&gt;&nbsp;condition)</code>
+<div class="block">Removes and discards all entries with keys matching <code>condition</code>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -186,6 +216,13 @@ implements <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" 
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.cache.volatiles.<a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" title="interface in net.imglib2.cache.volatiles">VolatileCache</a></h3>
 <code><a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html#unchecked--">unchecked</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.cache.Invalidate">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.cache.<a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a></h3>
+<code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll--">invalidateAll</a>, <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-">invalidateIf</a></code></li>
 </ul>
 </li>
 </ul>
@@ -267,16 +304,91 @@ implements <a href="../../../../net/imglib2/cache/volatiles/VolatileCache.html" 
  garbage-collected.</div>
 </li>
 </ul>
-<a name="invalidateAll--">
+<a name="invalidate-java.lang.Object-">
+<!--   -->
+</a><a name="invalidate-K-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidate</h4>
+<pre>public&nbsp;void&nbsp;invalidate(<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&nbsp;key)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidate-K-">AbstractVolatileCache</a></code></span></div>
+<div class="block">Removes and discards the entry with the specified <code>key</code>. Calls
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#invalidate-K-"><code>CacheRemover.invalidate(Object)</code></a> for the discarded entry, (which
+ should in turn remove it from any backing cache)
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entry.
+ <p>
+ <em>There must be no concurrent <code>get()</code> operations for <code>key</code>.
+ This may result in cache corruption and/or a deadlock.</em></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidate-K-">invalidate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>,<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">V</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - key of the entry to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateIf-long-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidateIf</h4>
+<pre>public&nbsp;void&nbsp;invalidateIf(long&nbsp;parallelismThreshold,
+                         <a href="https://javadoc.scijava.org/Java/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&gt;&nbsp;condition)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateIf-long-java.util.function.Predicate-">AbstractVolatileCache</a></code></span></div>
+<div class="block">Removes and discards all entries with keys matching <code>condition</code>.
+ Calls <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-java.util.function.Predicate-"><code>Invalidate.invalidateIf(Predicate)</code></a> for the discarded
+ entries, (which should in turn remove them from any backing cache)
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entries.
+ <p>
+ <em>There must be no concurrent <code>get()</code> operations for keys
+ matching <code>condition</code>. This may result in cache corruption and/or a
+ deadlock.</em></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateIf-long-java.util.function.Predicate-">invalidateIf</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>,<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">V</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
+<dd><code>condition</code> - condition on keys of entries to remove</dd>
+</dl>
+</li>
+</ul>
+<a name="invalidateAll-long-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>invalidateAll</h4>
-<pre>public&nbsp;void&nbsp;invalidateAll()</pre>
+<pre>public&nbsp;void&nbsp;invalidateAll(long&nbsp;parallelismThreshold)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateAll-long-">AbstractVolatileCache</a></code></span></div>
+<div class="block">Removes and discards all entries. Calls
+ <a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll--"><code>Invalidate.invalidateAll()</code></a> (which should in turn invalidate any
+ backing cache)
+ <p>
+ Note that this will <em>not</em> call
+ <a href="../../../../net/imglib2/cache/CacheRemover.html#onRemoval-K-D-"><code>CacheRemover.onRemoval(Object, Object)</code></a> for the discarded entries.
+ <p>
+ <em> There must be no concurrent <code>get()</code> operations. This may
+ result in cache corruption and/or a deadlock.</em></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateAll--">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>,<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">V</a>&gt;</code></dd>
+<dd><code><a href="../../../../net/imglib2/cache/Invalidate.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/Invalidate.html" title="interface in net.imglib2.cache">Invalidate</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html#invalidateAll-long-">invalidateAll</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/cache/volatiles/AbstractVolatileCache.html" title="interface in net.imglib2.cache.volatiles">AbstractVolatileCache</a>&lt;<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">K</a>,<a href="../../../../net/imglib2/cache/ref/WeakRefVolatileCache.html" title="type parameter in WeakRefVolatileCache">V</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parallelismThreshold</code> - the (estimated) number of entries in the cache needed for this
+            operation to be executed in parallel</dd>
 </dl>
 </li>
 </ul>

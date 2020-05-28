@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -218,10 +218,11 @@ extends <a href="../../../../net/imglib2/cache/img/CachedCellImg.html" title="cl
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html#DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">DiskCachedCellImg</a></span>(<a href="../../../../net/imglib2/cache/img/DiskCachedCellImgFactory.html" title="class in net.imglib2.cache.img">DiskCachedCellImgFactory</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">T</a>&gt;&nbsp;factory,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html#DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-net.imglib2.cache.IoSync-A-">DiskCachedCellImg</a></span>(<a href="../../../../net/imglib2/cache/img/DiskCachedCellImgFactory.html" title="class in net.imglib2.cache.img">DiskCachedCellImgFactory</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">T</a>&gt;&nbsp;factory,
                  <a href="../../../../net/imglib2/img/cell/CellGrid.html" title="class in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
                  <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
                  <a href="../../../../net/imglib2/cache/Cache.html" title="interface in net.imglib2.cache">Cache</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">A</a>&gt;&gt;&nbsp;cache,
+                 <a href="../../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache">IoSync</a>&nbsp;iosync,
                  <a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">A</a>&nbsp;accessType)</code>&nbsp;</td>
 </tr>
 </table>
@@ -244,6 +245,13 @@ extends <a href="../../../../net/imglib2/cache/img/CachedCellImg.html" title="cl
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html#factory--">factory</a></span>()</code>
 <div class="block">Get a <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img"><code>ImgFactory</code></a> that creates <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img"><code>Img</code></a>s of the same kind as
  this one.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html#shutdown--">shutdown</a></span>()</code>
+<div class="block">Shutdown the internal <a href="../../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> to free resources via
+ <a href="../../../../net/imglib2/cache/IoSync.html#shutdown--"><code>IoSync.shutdown()</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -352,9 +360,9 @@ extends <a href="../../../../net/imglib2/cache/img/CachedCellImg.html" title="cl
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-java.lang.Object-">
+<a name="DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-net.imglib2.cache.IoSync-java.lang.Object-">
 <!--   -->
-</a><a name="DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-A-">
+</a><a name="DiskCachedCellImg-net.imglib2.cache.img.DiskCachedCellImgFactory-net.imglib2.img.cell.CellGrid-net.imglib2.util.Fraction-net.imglib2.cache.Cache-net.imglib2.cache.IoSync-A-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -364,6 +372,7 @@ extends <a href="../../../../net/imglib2/cache/img/CachedCellImg.html" title="cl
                          <a href="../../../../net/imglib2/img/cell/CellGrid.html" title="class in net.imglib2.img.cell">CellGrid</a>&nbsp;grid,
                          <a href="../../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a>&nbsp;entitiesPerPixel,
                          <a href="../../../../net/imglib2/cache/Cache.html" title="interface in net.imglib2.cache">Cache</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>,<a href="../../../../net/imglib2/img/cell/Cell.html" title="class in net.imglib2.img.cell">Cell</a>&lt;<a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">A</a>&gt;&gt;&nbsp;cache,
+                         <a href="../../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache">IoSync</a>&nbsp;iosync,
                          <a href="../../../../net/imglib2/cache/img/DiskCachedCellImg.html" title="type parameter in DiskCachedCellImg">A</a>&nbsp;accessType)</pre>
 </li>
 </ul>
@@ -375,6 +384,18 @@ extends <a href="../../../../net/imglib2/cache/img/CachedCellImg.html" title="cl
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="shutdown--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdown</h4>
+<pre>public&nbsp;void&nbsp;shutdown()</pre>
+<div class="block">Shutdown the internal <a href="../../../../net/imglib2/cache/IoSync.html" title="class in net.imglib2.cache"><code>IoSync</code></a> to free resources via
+ <a href="../../../../net/imglib2/cache/IoSync.html#shutdown--"><code>IoSync.shutdown()</code></a>. No data will be written to disk after
+ shutdown.</div>
+</li>
+</ul>
 <a name="factory--">
 <!--   -->
 </a>

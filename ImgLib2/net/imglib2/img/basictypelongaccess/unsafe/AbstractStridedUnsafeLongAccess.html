@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -106,13 +106,18 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileAccess</a></dd>
+</dl>
+<dl>
 <dt>Direct Known Subclasses:</dt>
 <dd><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/CharUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">CharUnsafe</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/DoubleUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">DoubleUnsafe</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/FloatUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">FloatUnsafe</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/IntUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">IntUnsafe</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/LongUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">LongUnsafe</a>, <a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/ShortUnsafe.html" title="class in net.imglib2.img.basictypelongaccess.unsafe">ShortUnsafe</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">AbstractStridedUnsafeLongAccess</span>
-extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileAccess</a></pre>
 </li>
 </ul>
 </div>
@@ -132,6 +137,10 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected static boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#DEFAULT_IS_VALID">DEFAULT_IS_VALID</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#stride">stride</a></span></code>&nbsp;</td>
 </tr>
@@ -150,7 +159,8 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#AbstractStridedUnsafeLongAccess-int-">AbstractStridedUnsafeLongAccess</a></span>(int&nbsp;stride)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#AbstractStridedUnsafeLongAccess-int-boolean-">AbstractStridedUnsafeLongAccess</a></span>(int&nbsp;stride,
+                               boolean&nbsp;isValid)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -171,6 +181,10 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <td class="colFirst"><code>protected long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#getPosition-long-long-">getPosition</a></span>(long&nbsp;offset,
            long&nbsp;index)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/img/basictypelongaccess/unsafe/AbstractStridedUnsafeLongAccess.html#isValid--">isValid</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -194,6 +208,19 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="DEFAULT_IS_VALID">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DEFAULT_IS_VALID</h4>
+<pre>protected static final&nbsp;boolean DEFAULT_IS_VALID</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#net.imglib2.img.basictypelongaccess.unsafe.AbstractStridedUnsafeLongAccess.DEFAULT_IS_VALID">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
 <a name="stride">
 <!--   -->
 </a>
@@ -211,13 +238,14 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AbstractStridedUnsafeLongAccess-int-">
+<a name="AbstractStridedUnsafeLongAccess-int-boolean-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractStridedUnsafeLongAccess</h4>
-<pre>public&nbsp;AbstractStridedUnsafeLongAccess(int&nbsp;stride)</pre>
+<pre>public&nbsp;AbstractStridedUnsafeLongAccess(int&nbsp;stride,
+                                       boolean&nbsp;isValid)</pre>
 </li>
 </ul>
 </li>
@@ -231,11 +259,24 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <a name="getPosition-long-long-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getPosition</h4>
 <pre>protected&nbsp;long&nbsp;getPosition(long&nbsp;offset,
                            long&nbsp;index)</pre>
+</li>
+</ul>
+<a name="isValid--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isValid</h4>
+<pre>public&nbsp;boolean&nbsp;isValid()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html#isValid--">isValid</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html" title="interface in net.imglib2.img.basictypeaccess.volatiles">VolatileAccess</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>
