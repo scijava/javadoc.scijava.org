@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScaleIO.html" title="class in org.jfree.chart.renderer"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/jfree/chart/renderer/InterpolatePaintScale.html" target="_top">Frames</a></li>
@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">InterpolatePaintScale</span>
 extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/PaintScale.html?is-external=true" title="class or interface in org.jfree.chart.renderer">PaintScale</a>, <a href="https://javadoc.scijava.org/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
-<div class="block">This class implements a <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/PaintScale.html?is-external=true" title="class or interface in org.jfree.chart.renderer"><code>PaintScale</code></a> that generate colors interpolated 
+<div class="block">This class implements a <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/PaintScale.html?is-external=true" title="class or interface in org.jfree.chart.renderer"><code>PaintScale</code></a> that generate colors interpolated
  within a list of given color, using a linear scale.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -143,8 +143,21 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#Jet">Jet</a></span></code>
-<div class="block">A <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that map a typical "Jet" colormap going from
- blue to red to the range [0, 1].</div>
+<div class="block">An <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that maps a typical "Jet" colormap going
+ from blue to red to the range [0, 1].</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#Turbo">Turbo</a></span></code>
+<div class="block">The TURBO color-map, from Google LLC, Anton Mikhailov.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#Viridis">Viridis</a></span></code>
+<div class="block">An <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that replicates the matplotlib "Viridis"
+ colormap.</div>
 </td>
 </tr>
 </table>
@@ -163,21 +176,23 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#InterpolatePaintScale--">InterpolatePaintScale</a></span>()</code>
-<div class="block">Create a paint scale with a lower bound of 0, an upper bound of 1 and a default
- black color.</div>
+<div class="block">Create a paint scale with a lower bound of 0, an upper bound of 1 and a
+ default black color.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#InterpolatePaintScale-double-double-">InterpolatePaintScale</a></span>(double&nbsp;lowerBound,
                      double&nbsp;upperBound)</code>
-<div class="block">Create a paint scale with a given lower and upper bound and a default black color.</div>
+<div class="block">Create a paint scale with a given lower and upper bound and a default
+ black color.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#InterpolatePaintScale-double-double-java.awt.Color-">InterpolatePaintScale</a></span>(double&nbsp;lowerBound,
                      double&nbsp;upperBound,
                      <a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;defaultColor)</code>
-<div class="block">Create a paint scale with given lower and upper bound, and a specified default color.</div>
+<div class="block">Create a paint scale with given lower and upper bound, and a specified
+ default color.</div>
 </td>
 </tr>
 </table>
@@ -190,7 +205,7 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -199,8 +214,8 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#add-double-java.awt.Color-">add</a></span>(double&nbsp;value,
    <a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</code>
-<div class="block">Add a color to the color list of this paint scale, at the position given by
- <code>value</code>.</div>
+<div class="block">Add a color to the color list of this paint scale, at the position given
+ by <code>value</code>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -208,18 +223,26 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#clone--">clone</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#getAvailableLUTs--">getAvailableLUTs</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#getLowerBound--">getLowerBound</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#getPaint-double-">getPaint</a></span>(double&nbsp;value)</code>
 <div class="block">Return a color interpolated within the color list of this paint scale.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#getUpperBound--">getUpperBound</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html#main-java.lang.String:A-">main</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -246,12 +269,34 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <a name="Jet">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>Jet</h4>
 <pre>public static final&nbsp;<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a> Jet</pre>
-<div class="block">A <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that map a typical "Jet" colormap going from
- blue to red to the range [0, 1].</div>
+<div class="block">An <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that maps a typical "Jet" colormap going
+ from blue to red to the range [0, 1].</div>
+</li>
+</ul>
+<a name="Viridis">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Viridis</h4>
+<pre>public static final&nbsp;<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a> Viridis</pre>
+<div class="block">An <a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer"><code>InterpolatePaintScale</code></a> that replicates the matplotlib "Viridis"
+ colormap.</div>
+</li>
+</ul>
+<a name="Turbo">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Turbo</h4>
+<pre>public static final&nbsp;<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a> Turbo</pre>
+<div class="block">The TURBO color-map, from Google LLC, Anton Mikhailov.
+ https://gist.github.com/mikhailov-work/ee72ba4191942acecc03fe6da94fc73f</div>
 </li>
 </ul>
 </li>
@@ -271,7 +316,8 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <pre>public&nbsp;InterpolatePaintScale(double&nbsp;lowerBound,
                              double&nbsp;upperBound,
                              <a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;defaultColor)</pre>
-<div class="block">Create a paint scale with given lower and upper bound, and a specified default color.</div>
+<div class="block">Create a paint scale with given lower and upper bound, and a specified
+ default color.</div>
 </li>
 </ul>
 <a name="InterpolatePaintScale-double-double-">
@@ -282,7 +328,8 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <h4>InterpolatePaintScale</h4>
 <pre>public&nbsp;InterpolatePaintScale(double&nbsp;lowerBound,
                              double&nbsp;upperBound)</pre>
-<div class="block">Create a paint scale with a given lower and upper bound and a default black color.</div>
+<div class="block">Create a paint scale with a given lower and upper bound and a default
+ black color.</div>
 </li>
 </ul>
 <a name="InterpolatePaintScale--">
@@ -292,8 +339,8 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <li class="blockList">
 <h4>InterpolatePaintScale</h4>
 <pre>public&nbsp;InterpolatePaintScale()</pre>
-<div class="block">Create a paint scale with a lower bound of 0, an upper bound of 1 and a default
- black color.</div>
+<div class="block">Create a paint scale with a lower bound of 0, an upper bound of 1 and a
+ default black color.</div>
 </li>
 </ul>
 </li>
@@ -304,6 +351,15 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="getAvailableLUTs--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAvailableLUTs</h4>
+<pre>public static&nbsp;<a href="https://javadoc.scijava.org/Java/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a>&gt;&nbsp;getAvailableLUTs()</pre>
+</li>
+</ul>
 <a name="add-double-java.awt.Color-">
 <!--   -->
 </a>
@@ -312,9 +368,10 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <h4>add</h4>
 <pre>public&nbsp;void&nbsp;add(double&nbsp;value,
                 <a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</pre>
-<div class="block">Add a color to the color list of this paint scale, at the position given by
- <code>value</code>. If <code>value</code> is greater than the upper bound or lower
- than the lower bound set at construction, this call will be ignored.</div>
+<div class="block">Add a color to the color list of this paint scale, at the position given
+ by <code>value</code>. If <code>value</code> is greater than the upper
+ bound or lower than the lower bound set at construction, this call will
+ be ignored.</div>
 </li>
 </ul>
 <a name="getLowerBound--">
@@ -337,8 +394,8 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <li class="blockList">
 <h4>getPaint</h4>
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;getPaint(double&nbsp;value)</pre>
-<div class="block">Return a color interpolated within the color list of this paint scale. 
- The interpolation is a linear one between the two colors in the list 
+<div class="block">Return a color interpolated within the color list of this paint scale.
+ The interpolation is a linear one between the two colors in the list
  whose associated values frame the one given.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -362,7 +419,7 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <a name="clone--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>clone</h4>
 <pre>public&nbsp;<a href="../../../../org/jfree/chart/renderer/InterpolatePaintScale.html" title="class in org.jfree.chart.renderer">InterpolatePaintScale</a>&nbsp;clone()</pre>
@@ -370,6 +427,15 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a></code>&nbsp;in class&nbsp;<code><a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="main-java.lang.String:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>main</h4>
+<pre>public static&nbsp;void&nbsp;main(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
@@ -400,7 +466,7 @@ implements <a href="https://javadoc.scijava.org/Fiji/org/jfree/chart/renderer/Pa
 <div class="subNav">
 <ul class="navList">
 <li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../org/jfree/chart/renderer/InterpolatePaintScaleIO.html" title="class in org.jfree.chart.renderer"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/jfree/chart/renderer/InterpolatePaintScale.html" target="_top">Frames</a></li>

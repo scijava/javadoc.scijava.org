@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":9,"i10":6,"i11":10,"i12":9,"i13":10,"i14":9,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":9,"i24":9};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":9,"i10":9,"i11":6,"i12":10,"i13":9,"i14":10,"i15":9,"i16":6,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":9,"i28":9,"i29":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -167,8 +167,16 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#isVirtual">isVirtual</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected static org.apache.log4j.Logger</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#logger">logger</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected int[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#movingSourceIndexList">movingSourceIndexList</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#nameSuffix">nameSuffix</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
@@ -205,6 +213,10 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <tr class="altColor">
 <td class="colFirst"><code>protected int[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#targetSourceIndexList">targetSourceIndexList</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#unit">unit</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -303,79 +315,105 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
                                 boolean&nbsp;isMoving)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#estimateAffineFromCorners-net.imglib2.realtransform.AffineTransform3D-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">estimateAffineFromCorners</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;affine,
+                         <a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
+                         <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval)</code>
+<div class="block">Only works for 2D or 3D.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Fiji/net/imglib2/FinalInterval.html?is-external=true" title="class or interface in net.imglib2">FinalInterval</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#estimateBounds-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">estimateBounds</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
               <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>abstract ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#export--">export</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#exportAsynch-boolean-">exportAsynch</a></span>(boolean&nbsp;wait)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWarpExporter</a>&lt;?&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#getExporter-bigwarp.BigWarp.BigWarpData-java.util.List-bdv.viewer.Interpolation-bdv.export.ProgressWriter-">getExporter</a></span>(<a href="../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&lt;T&gt;&nbsp;bwData,
            <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;T&gt;&gt;&nbsp;transformedSources,
            <a href="../bdv/viewer/Interpolation.html" title="enum in bdv.viewer">Interpolation</a>&nbsp;interp,
            <a href="../bdv/export/ProgressWriter.html" title="interface in bdv.export">ProgressWriter</a>&nbsp;progressWriter)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#getResult--">getResult</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Fiji/net/imglib2/FinalInterval.html?is-external=true" title="class or interface in net.imglib2">FinalInterval</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#getSubInterval-net.imglib2.Interval-int-long-long-">getSubInterval</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval,
               int&nbsp;d,
               long&nbsp;start,
               long&nbsp;end)</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setInterp-bdv.viewer.Interpolation-">setInterp</a></span>(<a href="../bdv/viewer/Interpolation.html" title="enum in bdv.viewer">Interpolation</a>&nbsp;interp)</code>&nbsp;</td>
-</tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setInterval-net.imglib2.Interval-">setInterval</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;outputInterval)</code>&nbsp;</td>
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#isRGB--">isRGB</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setNumThreads-int-">setNumThreads</a></span>(int&nbsp;nThreads)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setInterp-bdv.viewer.Interpolation-">setInterp</a></span>(<a href="../bdv/viewer/Interpolation.html" title="enum in bdv.viewer">Interpolation</a>&nbsp;interp)</code>&nbsp;</td>
 </tr>
 <tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setInterval-net.imglib2.Interval-">setInterval</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;outputInterval)</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setNameSuffix-java.lang.String-">setNameSuffix</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;suffix)</code>&nbsp;</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setNumThreads-int-">setNumThreads</a></span>(int&nbsp;nThreads)</code>&nbsp;</td>
+</tr>
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setOffset-double...-">setOffset</a></span>(double...&nbsp;offset)</code>
 <div class="block">Set the offset of the output field of view in pixels.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setParallelizationPolicy-bigwarp.BigWarpExporter.ParallelizationPolicy-">setParallelizationPolicy</a></span>(<a href="../bigwarp/BigWarpExporter.ParallelizationPolicy.html" title="enum in bigwarp">BigWarpExporter.ParallelizationPolicy</a>&nbsp;policy)</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setRenderResolution-double...-">setRenderResolution</a></span>(double...&nbsp;res)</code>&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setUnit-java.lang.String-">setUnit</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;unit)</code>&nbsp;</td>
+</tr>
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#setVirtual-boolean-">setVirtual</a></span>(boolean&nbsp;isVirtual)</code>&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#showResult-boolean-">showResult</a></span>(boolean&nbsp;showResult)</code>&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Fiji/net/imglib2/FinalInterval.html?is-external=true" title="class or interface in net.imglib2">FinalInterval</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#transformIntervalMinMax-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">transformIntervalMinMax</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
                        <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval)</code>&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Fiji/net/imglib2/FinalInterval.html?is-external=true" title="class or interface in net.imglib2">FinalInterval</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#transformRealInterval-net.imglib2.realtransform.RealTransform-net.imglib2.RealInterval-">transformRealInterval</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
                      <a href="https://javadoc.scijava.org/Fiji/net/imglib2/RealInterval.html?is-external=true" title="class or interface in net.imglib2">RealInterval</a>&nbsp;interval)</code>&nbsp;</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpExporter.html#updateBrightnessContrast-ij.ImagePlus-bigwarp.BigWarp.BigWarpData-int:A-">updateBrightnessContrast</a></span>(ij.ImagePlus&nbsp;imp,
+                        <a href="../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&lt;?&gt;&nbsp;bwdata,
+                        int[]&nbsp;indexList)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -498,6 +536,24 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <pre>protected&nbsp;<a href="../bigwarp/BigWarpExporter.ExportThread.html" title="class in bigwarp">BigWarpExporter.ExportThread</a> exportThread</pre>
 </li>
 </ul>
+<a name="nameSuffix">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nameSuffix</h4>
+<pre>protected&nbsp;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> nameSuffix</pre>
+</li>
+</ul>
+<a name="unit">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unit</h4>
+<pre>protected&nbsp;<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> unit</pre>
+</li>
+</ul>
 <a name="progress">
 <!--   -->
 </a>
@@ -510,10 +566,19 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <a name="policy">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>policy</h4>
 <pre>public&nbsp;<a href="../bigwarp/BigWarpExporter.ParallelizationPolicy.html" title="enum in bigwarp">BigWarpExporter.ParallelizationPolicy</a> policy</pre>
+</li>
+</ul>
+<a name="logger">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>logger</h4>
+<pre>protected static&nbsp;org.apache.log4j.Logger logger</pre>
 </li>
 </ul>
 </li>
@@ -554,6 +619,15 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <pre>public abstract&nbsp;ij.ImagePlus&nbsp;export()</pre>
 </li>
 </ul>
+<a name="isRGB--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRGB</h4>
+<pre>public abstract&nbsp;boolean&nbsp;isRGB()</pre>
+</li>
+</ul>
 <a name="showResult-boolean-">
 <!--   -->
 </a>
@@ -561,6 +635,15 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <li class="blockList">
 <h4>showResult</h4>
 <pre>public&nbsp;void&nbsp;showResult(boolean&nbsp;showResult)</pre>
+</li>
+</ul>
+<a name="setUnit-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUnit</h4>
+<pre>public&nbsp;void&nbsp;setUnit(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;unit)</pre>
 </li>
 </ul>
 <a name="setInterp-bdv.viewer.Interpolation-">
@@ -597,6 +680,15 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <li class="blockList">
 <h4>setNumThreads</h4>
 <pre>public&nbsp;void&nbsp;setNumThreads(int&nbsp;nThreads)</pre>
+</li>
+</ul>
+<a name="setNameSuffix-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNameSuffix</h4>
+<pre>public&nbsp;void&nbsp;setNameSuffix(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;suffix)</pre>
 </li>
 </ul>
 <a name="setRenderResolution-double...-">
@@ -641,6 +733,17 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <li class="blockList">
 <h4>setInterval</h4>
 <pre>public&nbsp;void&nbsp;setInterval(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;outputInterval)</pre>
+</li>
+</ul>
+<a name="updateBrightnessContrast-ij.ImagePlus-bigwarp.BigWarp.BigWarpData-int:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateBrightnessContrast</h4>
+<pre>public static&nbsp;void&nbsp;updateBrightnessContrast(ij.ImagePlus&nbsp;imp,
+                                            <a href="../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&lt;?&gt;&nbsp;bwdata,
+                                            int[]&nbsp;indexList)</pre>
 </li>
 </ul>
 <a name="destinationIntervalFromLandmarks-java.util.ArrayList-boolean-">
@@ -747,6 +850,24 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <h4>transformIntervalMinMax</h4>
 <pre>public static&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/FinalInterval.html?is-external=true" title="class or interface in net.imglib2">FinalInterval</a>&nbsp;transformIntervalMinMax(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
                                                     <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval)</pre>
+</li>
+</ul>
+<a name="estimateAffineFromCorners-net.imglib2.realtransform.AffineTransform3D-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>estimateAffineFromCorners</h4>
+<pre>public static&nbsp;void&nbsp;estimateAffineFromCorners(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&nbsp;affine,
+                                             <a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;xfm,
+                                             <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;interval)</pre>
+<div class="block">Only works for 2D or 3D.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>affine</code> - variable in which to store the result</dd>
+<dd><code>xfm</code> - the transform</dd>
+<dd><code>interval</code> - the interval</dd>
+</dl>
 </li>
 </ul>
 <a name="estimateBounds-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">

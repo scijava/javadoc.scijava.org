@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -193,7 +193,7 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#ExportStatsToIJAction--">ExportStatsToIJAction</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#ExportStatsToIJAction-fiji.plugin.trackmate.SelectionModel-">ExportStatsToIJAction</a></span>(<a href="../../../../fiji/plugin/trackmate/SelectionModel.html" title="class in fiji.plugin.trackmate">SelectionModel</a>&nbsp;selectionModel)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -214,6 +214,30 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-">execute</a></span>(<a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate">TrackMate</a>&nbsp;trackmate)</code>
 <div class="block">Executes this action using the specified trackmate instance.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>ij.measure.ResultsTable</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#getEdgeTable--">getEdgeTable</a></span>()</code>
+<div class="block">Returns the results table containing the edge statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>ij.measure.ResultsTable</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#getSpotTable--">getSpotTable</a></span>()</code>
+<div class="block">Returns the results table containing the spot statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>ij.measure.ResultsTable</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#getTrackTable--">getTrackTable</a></span>()</code>
+<div class="block">Returns the results table containing the track statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
 </td>
 </tr>
 </table>
@@ -301,13 +325,13 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ExportStatsToIJAction--">
+<a name="ExportStatsToIJAction-fiji.plugin.trackmate.SelectionModel-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ExportStatsToIJAction</h4>
-<pre>public&nbsp;ExportStatsToIJAction()</pre>
+<pre>public&nbsp;ExportStatsToIJAction(<a href="../../../../fiji/plugin/trackmate/SelectionModel.html" title="class in fiji.plugin.trackmate">SelectionModel</a>&nbsp;selectionModel)</pre>
 </li>
 </ul>
 </li>
@@ -321,7 +345,7 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <a name="execute-fiji.plugin.trackmate.TrackMate-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>execute</h4>
 <pre>public&nbsp;void&nbsp;execute(<a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate">TrackMate</a>&nbsp;trackmate)</pre>
@@ -330,6 +354,54 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>trackmate</code> - the <a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate"><code>TrackMate</code></a> instance to use to execute the action.</dd>
+</dl>
+</li>
+</ul>
+<a name="getSpotTable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSpotTable</h4>
+<pre>public&nbsp;ij.measure.ResultsTable&nbsp;getSpotTable()</pre>
+<div class="block">Returns the results table containing the spot statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the results table containing the spot statistics.</dd>
+</dl>
+</li>
+</ul>
+<a name="getEdgeTable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEdgeTable</h4>
+<pre>public&nbsp;ij.measure.ResultsTable&nbsp;getEdgeTable()</pre>
+<div class="block">Returns the results table containing the edge statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the results table containing the edge statistics.</dd>
+</dl>
+</li>
+</ul>
+<a name="getTrackTable--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getTrackTable</h4>
+<pre>public&nbsp;ij.measure.ResultsTable&nbsp;getTrackTable()</pre>
+<div class="block">Returns the results table containing the track statistics, or
+ <code>null</code> if the <a href="../../../../fiji/plugin/trackmate/action/ExportStatsToIJAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> method has not been
+ called.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the results table containing the track statistics.</dd>
 </dl>
 </li>
 </ul>

@@ -115,7 +115,18 @@ var activeTableTab = "activeTableTab";
 extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements ij.plugin.filter.PlugInFilter</pre>
 <div class="block">A class which can be used to programmatically run and control the various
- steps in local thickness map calculations. +</div>
+ steps in local thickness map calculations.
+ <p>
+ This plugin overlaps with <a href="../../../sc/fiji/localThickness/Local_Thickness_Driver.html" title="class in sc.fiji.localThickness"><code>Local_Thickness_Driver</code></a>. Both execute all the steps of local thickness
+ in one go. However, this class offers more control over the execution, e.g. "running silent"
+ which means that none of the intermediate images are shown. It also has some additional
+ features needed by BoneJ, e.g. masking artifact pixels created by the algorithm that weren't
+ present in the input image.
+ </p>
+ <p>
+ This duplication makes the package messy, but I wanted to left the original code as is, because
+ I don't understand it well enough to confidently alter it.
+ </p></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Richard Domander</dd>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":10,"i5":9};
+var methods = {"i0":9,"i1":9,"i2":10,"i3":10,"i4":10,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../bigwarp/BigWarpInit.html" title="class in bigwarp"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../bigwarp/BigWarpRealExporter.ARGBFloatConverter.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../bigwarp/HelpDialog.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?bigwarp/BigWarpRealExporter.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.bigwarp.BigWarpExporter">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#fields.inherited.from.class.bigwarp.BigWarpExporter">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -126,17 +126,6 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <!--   -->
 </a>
 <h3>Nested Class Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.ARGBFloatConverter.html" title="class in bigwarp">BigWarpRealExporter.ARGBFloatConverter</a></span></code>&nbsp;</td>
-</tr>
-</table>
 <ul class="blockList">
 <li class="blockList"><a name="nested.classes.inherited.from.class.bigwarp.BigWarpExporter">
 <!--   -->
@@ -157,7 +146,7 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;bigwarp.<a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWarpExporter</a></h3>
-<code><a href="../bigwarp/BigWarpExporter.html#exportThread">exportThread</a>, <a href="../bigwarp/BigWarpExporter.html#interp">interp</a>, <a href="../bigwarp/BigWarpExporter.html#isVirtual">isVirtual</a>, <a href="../bigwarp/BigWarpExporter.html#movingSourceIndexList">movingSourceIndexList</a>, <a href="../bigwarp/BigWarpExporter.html#nThreads">nThreads</a>, <a href="../bigwarp/BigWarpExporter.html#offsetTransform">offsetTransform</a>, <a href="../bigwarp/BigWarpExporter.html#outputInterval">outputInterval</a>, <a href="../bigwarp/BigWarpExporter.html#pixelRenderToPhysical">pixelRenderToPhysical</a>, <a href="../bigwarp/BigWarpExporter.html#policy">policy</a>, <a href="../bigwarp/BigWarpExporter.html#progress">progress</a>, <a href="../bigwarp/BigWarpExporter.html#resolutionTransform">resolutionTransform</a>, <a href="../bigwarp/BigWarpExporter.html#sources">sources</a>, <a href="../bigwarp/BigWarpExporter.html#targetSourceIndexList">targetSourceIndexList</a></code></li>
+<code><a href="../bigwarp/BigWarpExporter.html#exportThread">exportThread</a>, <a href="../bigwarp/BigWarpExporter.html#interp">interp</a>, <a href="../bigwarp/BigWarpExporter.html#isVirtual">isVirtual</a>, <a href="../bigwarp/BigWarpExporter.html#logger">logger</a>, <a href="../bigwarp/BigWarpExporter.html#movingSourceIndexList">movingSourceIndexList</a>, <a href="../bigwarp/BigWarpExporter.html#nameSuffix">nameSuffix</a>, <a href="../bigwarp/BigWarpExporter.html#nThreads">nThreads</a>, <a href="../bigwarp/BigWarpExporter.html#offsetTransform">offsetTransform</a>, <a href="../bigwarp/BigWarpExporter.html#outputInterval">outputInterval</a>, <a href="../bigwarp/BigWarpExporter.html#pixelRenderToPhysical">pixelRenderToPhysical</a>, <a href="../bigwarp/BigWarpExporter.html#policy">policy</a>, <a href="../bigwarp/BigWarpExporter.html#progress">progress</a>, <a href="../bigwarp/BigWarpExporter.html#resolutionTransform">resolutionTransform</a>, <a href="../bigwarp/BigWarpExporter.html#sources">sources</a>, <a href="../bigwarp/BigWarpExporter.html#targetSourceIndexList">targetSourceIndexList</a>, <a href="../bigwarp/BigWarpExporter.html#unit">unit</a></code></li>
 </ul>
 </li>
 </ul>
@@ -205,28 +194,27 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/FloatType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">FloatType</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#convertToFloat-bdv.viewer.SourceAndConverter-int-">convertToFloat</a></span>(<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&nbsp;source,
-              int&nbsp;index)</code>&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static &lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br>ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#copyToImageStack-net.imglib2.RandomAccessible-net.imglib2.Interval-bdv.export.ProgressWriter-">copyToImageStack</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RandomAccessible</a>&lt;T&gt;&nbsp;rai,
                 <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;itvl,
                 <a href="../bdv/export/ProgressWriter.html" title="interface in bdv.export">ProgressWriter</a>&nbsp;progress)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static &lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;<br>ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#copyToImageStack-net.imglib2.RealRandomAccessible-net.imglib2.Interval-">copyToImageStack</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;T&gt;&nbsp;rai,
                 <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;itvl)</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>ij.ImagePlus</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#export--">export</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../bigwarp/BigWarpRealExporter.html" title="type parameter in BigWarpRealExporter">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#exportRai--">exportRai</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../bigwarp/BigWarpRealExporter.html#isRGB--">isRGB</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;boolean</code></td>
@@ -241,7 +229,7 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;bigwarp.<a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWarpExporter</a></h3>
-<code><a href="../bigwarp/BigWarpExporter.html#buildTotalRenderTransform--">buildTotalRenderTransform</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStack-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-">copyToImageStack</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackBySlice-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-bdv.export.ProgressWriter-">copyToImageStackBySlice</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackBySlice-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-int-bdv.export.ProgressWriter-">copyToImageStackBySlice</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackIterOrder-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-bdv.export.ProgressWriter-">copyToImageStackIterOrder</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackIterOrder-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-int-bdv.export.ProgressWriter-">copyToImageStackIterOrder</a>, <a href="../bigwarp/BigWarpExporter.html#copyToLongCeil-double:A-long:A-">copyToLongCeil</a>, <a href="../bigwarp/BigWarpExporter.html#copyToLongFloor-double:A-long:A-">copyToLongFloor</a>, <a href="../bigwarp/BigWarpExporter.html#destinationIntervalFromLandmarks-java.util.ArrayList-boolean-">destinationIntervalFromLandmarks</a>, <a href="../bigwarp/BigWarpExporter.html#estimateBounds-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">estimateBounds</a>, <a href="../bigwarp/BigWarpExporter.html#exportAsynch-boolean-">exportAsynch</a>, <a href="../bigwarp/BigWarpExporter.html#getExporter-bigwarp.BigWarp.BigWarpData-java.util.List-bdv.viewer.Interpolation-bdv.export.ProgressWriter-">getExporter</a>, <a href="../bigwarp/BigWarpExporter.html#getResult--">getResult</a>, <a href="../bigwarp/BigWarpExporter.html#getSubInterval-net.imglib2.Interval-int-long-long-">getSubInterval</a>, <a href="../bigwarp/BigWarpExporter.html#setInterp-bdv.viewer.Interpolation-">setInterp</a>, <a href="../bigwarp/BigWarpExporter.html#setInterval-net.imglib2.Interval-">setInterval</a>, <a href="../bigwarp/BigWarpExporter.html#setNumThreads-int-">setNumThreads</a>, <a href="../bigwarp/BigWarpExporter.html#setOffset-double...-">setOffset</a>, <a href="../bigwarp/BigWarpExporter.html#setParallelizationPolicy-bigwarp.BigWarpExporter.ParallelizationPolicy-">setParallelizationPolicy</a>, <a href="../bigwarp/BigWarpExporter.html#setRenderResolution-double...-">setRenderResolution</a>, <a href="../bigwarp/BigWarpExporter.html#setVirtual-boolean-">setVirtual</a>, <a href="../bigwarp/BigWarpExporter.html#showResult-boolean-">showResult</a>, <a href="../bigwarp/BigWarpExporter.html#transformIntervalMinMax-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">transformIntervalMinMax</a>, <a href="../bigwarp/BigWarpExporter.html#transformRealInterval-net.imglib2.realtransform.RealTransform-net.imglib2.RealInterval-">transformRealInterval</a></code></li>
+<code><a href="../bigwarp/BigWarpExporter.html#buildTotalRenderTransform--">buildTotalRenderTransform</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStack-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-">copyToImageStack</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackBySlice-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-bdv.export.ProgressWriter-">copyToImageStackBySlice</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackBySlice-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-int-bdv.export.ProgressWriter-">copyToImageStackBySlice</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackIterOrder-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.img.ImgFactory-int-bdv.export.ProgressWriter-">copyToImageStackIterOrder</a>, <a href="../bigwarp/BigWarpExporter.html#copyToImageStackIterOrder-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-int-bdv.export.ProgressWriter-">copyToImageStackIterOrder</a>, <a href="../bigwarp/BigWarpExporter.html#copyToLongCeil-double:A-long:A-">copyToLongCeil</a>, <a href="../bigwarp/BigWarpExporter.html#copyToLongFloor-double:A-long:A-">copyToLongFloor</a>, <a href="../bigwarp/BigWarpExporter.html#destinationIntervalFromLandmarks-java.util.ArrayList-boolean-">destinationIntervalFromLandmarks</a>, <a href="../bigwarp/BigWarpExporter.html#estimateAffineFromCorners-net.imglib2.realtransform.AffineTransform3D-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">estimateAffineFromCorners</a>, <a href="../bigwarp/BigWarpExporter.html#estimateBounds-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">estimateBounds</a>, <a href="../bigwarp/BigWarpExporter.html#exportAsynch-boolean-">exportAsynch</a>, <a href="../bigwarp/BigWarpExporter.html#getExporter-bigwarp.BigWarp.BigWarpData-java.util.List-bdv.viewer.Interpolation-bdv.export.ProgressWriter-">getExporter</a>, <a href="../bigwarp/BigWarpExporter.html#getResult--">getResult</a>, <a href="../bigwarp/BigWarpExporter.html#getSubInterval-net.imglib2.Interval-int-long-long-">getSubInterval</a>, <a href="../bigwarp/BigWarpExporter.html#setInterp-bdv.viewer.Interpolation-">setInterp</a>, <a href="../bigwarp/BigWarpExporter.html#setInterval-net.imglib2.Interval-">setInterval</a>, <a href="../bigwarp/BigWarpExporter.html#setNameSuffix-java.lang.String-">setNameSuffix</a>, <a href="../bigwarp/BigWarpExporter.html#setNumThreads-int-">setNumThreads</a>, <a href="../bigwarp/BigWarpExporter.html#setOffset-double...-">setOffset</a>, <a href="../bigwarp/BigWarpExporter.html#setParallelizationPolicy-bigwarp.BigWarpExporter.ParallelizationPolicy-">setParallelizationPolicy</a>, <a href="../bigwarp/BigWarpExporter.html#setRenderResolution-double...-">setRenderResolution</a>, <a href="../bigwarp/BigWarpExporter.html#setUnit-java.lang.String-">setUnit</a>, <a href="../bigwarp/BigWarpExporter.html#setVirtual-boolean-">setVirtual</a>, <a href="../bigwarp/BigWarpExporter.html#showResult-boolean-">showResult</a>, <a href="../bigwarp/BigWarpExporter.html#transformIntervalMinMax-net.imglib2.realtransform.RealTransform-net.imglib2.Interval-">transformIntervalMinMax</a>, <a href="../bigwarp/BigWarpExporter.html#transformRealInterval-net.imglib2.realtransform.RealTransform-net.imglib2.RealInterval-">transformRealInterval</a>, <a href="../bigwarp/BigWarpExporter.html#updateBrightnessContrast-ij.ImagePlus-bigwarp.BigWarp.BigWarpData-int:A-">updateBrightnessContrast</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -334,6 +322,19 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../bigwarp/BigWarpRealExporter.html" title="type parameter in BigWarpRealExporter">T</a>&gt;&nbsp;exportRai()</pre>
 </li>
 </ul>
+<a name="isRGB--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRGB</h4>
+<pre>public&nbsp;boolean&nbsp;isRGB()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../bigwarp/BigWarpExporter.html#isRGB--">isRGB</a></code>&nbsp;in class&nbsp;<code><a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWarpExporter</a>&lt;<a href="../bigwarp/BigWarpRealExporter.html" title="type parameter in BigWarpRealExporter">T</a> extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../bigwarp/BigWarpRealExporter.html" title="type parameter in BigWarpRealExporter">T</a>&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;<a href="../bigwarp/BigWarpRealExporter.html" title="type parameter in BigWarpRealExporter">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
 <a name="export--">
 <!--   -->
 </a>
@@ -361,21 +362,11 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <a name="copyToImageStack-net.imglib2.RealRandomAccessible-net.imglib2.Interval-">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>copyToImageStack</h4>
 <pre>public static&nbsp;&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/NumericType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">NumericType</a>&lt;T&gt; &amp; <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;&nbsp;ij.ImagePlus&nbsp;copyToImageStack(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RealRandomAccessible.html?is-external=true" title="class or interface in net.imglib2">RealRandomAccessible</a>&lt;T&gt;&nbsp;rai,
                                                                                        <a href="https://javadoc.scijava.org/Fiji/net/imglib2/Interval.html?is-external=true" title="class or interface in net.imglib2">Interval</a>&nbsp;itvl)</pre>
-</li>
-</ul>
-<a name="convertToFloat-bdv.viewer.SourceAndConverter-int-">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>convertToFloat</h4>
-<pre>public static&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/RandomAccessibleInterval.html?is-external=true" title="class or interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/real/FloatType.html?is-external=true" title="class or interface in net.imglib2.type.numeric.real">FloatType</a>&gt;&nbsp;convertToFloat(<a href="../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&nbsp;source,
-                                                                 int&nbsp;index)</pre>
 </li>
 </ul>
 </li>
@@ -406,7 +397,7 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <div class="subNav">
 <ul class="navList">
 <li><a href="../bigwarp/BigWarpInit.html" title="class in bigwarp"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../bigwarp/BigWarpRealExporter.ARGBFloatConverter.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../bigwarp/HelpDialog.html" title="class in bigwarp"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../index.html?bigwarp/BigWarpRealExporter.html" target="_top">Frames</a></li>
@@ -430,7 +421,7 @@ extends <a href="../bigwarp/BigWarpExporter.html" title="class in bigwarp">BigWa
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#nested.classes.inherited.from.class.bigwarp.BigWarpExporter">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#fields.inherited.from.class.bigwarp.BigWarpExporter">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

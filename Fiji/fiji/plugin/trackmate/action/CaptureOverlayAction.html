@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":9};
+var methods = {"i0":9,"i1":9,"i2":10,"i3":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -193,7 +193,7 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#CaptureOverlayAction-fiji.plugin.trackmate.gui.TrackMateWizard-">CaptureOverlayAction</a></span>(<a href="../../../../fiji/plugin/trackmate/gui/TrackMateWizard.html" title="class in fiji.plugin.trackmate.gui">TrackMateWizard</a>&nbsp;gui)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#CaptureOverlayAction-java.awt.Component-">CaptureOverlayAction</a></span>(<a href="https://javadoc.scijava.org/Java/java/awt/Component.html?is-external=true" title="class or interface in java.awt">Component</a>&nbsp;gui)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -211,19 +211,31 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static ij.ImagePlus</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#capture-ij.ImagePlus-int-int-fiji.plugin.trackmate.Logger-">capture</a></span>(ij.ImagePlus&nbsp;imp,
+       int&nbsp;first,
+       int&nbsp;last,
+       <a href="../../../../fiji/plugin/trackmate/Logger.html" title="class in fiji.plugin.trackmate">Logger</a>&nbsp;log)</code>
+<div class="block">Generates a new ImagePlus of type RGB, 2D over time, made by capturing
+ each time frame of the specified ImagePlus.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static ij.ImagePlus</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#capture-fiji.plugin.trackmate.TrackMate-int-int-">capture</a></span>(<a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate">TrackMate</a>&nbsp;trackmate,
+       int&nbsp;first,
+       int&nbsp;last)</code>
+<div class="block">Generates a new ImagePlus of type RGB, 2D over time, made by capturing
+ each time frame of the TrackMate display.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#execute-fiji.plugin.trackmate.TrackMate-">execute</a></span>(<a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate">TrackMate</a>&nbsp;trackmate)</code>
 <div class="block">Executes this action using the specified trackmate instance.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>ij.ImagePlus</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#getCapture--">getCapture</a></span>()</code>
-<div class="block">Returns a the <code>ImagePlus</code> resulting from the last
- <a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> call.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#main-java.lang.String:A-">main</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</code>&nbsp;</td>
 </tr>
@@ -312,13 +324,13 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="CaptureOverlayAction-fiji.plugin.trackmate.gui.TrackMateWizard-">
+<a name="CaptureOverlayAction-java.awt.Component-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CaptureOverlayAction</h4>
-<pre>public&nbsp;CaptureOverlayAction(<a href="../../../../fiji/plugin/trackmate/gui/TrackMateWizard.html" title="class in fiji.plugin.trackmate.gui">TrackMateWizard</a>&nbsp;gui)</pre>
+<pre>public&nbsp;CaptureOverlayAction(<a href="https://javadoc.scijava.org/Java/java/awt/Component.html?is-external=true" title="class or interface in java.awt">Component</a>&nbsp;gui)</pre>
 </li>
 </ul>
 </li>
@@ -344,19 +356,52 @@ extends <a href="../../../../fiji/plugin/trackmate/action/AbstractTMAction.html"
 </dl>
 </li>
 </ul>
-<a name="getCapture--">
+<a name="capture-fiji.plugin.trackmate.TrackMate-int-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCapture</h4>
-<pre>public&nbsp;ij.ImagePlus&nbsp;getCapture()</pre>
-<div class="block">Returns a the <code>ImagePlus</code> resulting from the last
- <a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> call.</div>
+<h4>capture</h4>
+<pre>public static&nbsp;ij.ImagePlus&nbsp;capture(<a href="../../../../fiji/plugin/trackmate/TrackMate.html" title="class in fiji.plugin.trackmate">TrackMate</a>&nbsp;trackmate,
+                                   int&nbsp;first,
+                                   int&nbsp;last)</pre>
+<div class="block">Generates a new ImagePlus of type RGB, 2D over time, made by capturing
+ each time frame of the TrackMate display. The zoom level and overlay are
+ captured as is. If the ImagePlus used by TrackMate as multiple Z-slices,
+ or multiple channels, the current Z-slice and channel are captured as is.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trackmate</code> - the TrackMate instance to use for capture.</dd>
+<dd><code>first</code> - the first frame, inclusive, to capture.</dd>
+<dd><code>last</code> - the last frame, inclusive, to capture.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a RGB <code>ImagePlus</code>, or <code>null</code> if the
-         <a href="../../../../fiji/plugin/trackmate/action/CaptureOverlayAction.html#execute-fiji.plugin.trackmate.TrackMate-"><code>execute(TrackMate)</code></a> has not been called yet.</dd>
+<dd>a new ImagePlus.</dd>
+</dl>
+</li>
+</ul>
+<a name="capture-ij.ImagePlus-int-int-fiji.plugin.trackmate.Logger-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>capture</h4>
+<pre>public static&nbsp;ij.ImagePlus&nbsp;capture(ij.ImagePlus&nbsp;imp,
+                                   int&nbsp;first,
+                                   int&nbsp;last,
+                                   <a href="../../../../fiji/plugin/trackmate/Logger.html" title="class in fiji.plugin.trackmate">Logger</a>&nbsp;log)</pre>
+<div class="block">Generates a new ImagePlus of type RGB, 2D over time, made by capturing
+ each time frame of the specified ImagePlus. The zoom level and overlay
+ are captured as is. If the specified ImagePlus as multiple Z-slices, or
+ multiple channels, the current Z-slice and channel are captured as is.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>imp</code> - the ImagePlus to capture.</dd>
+<dd><code>first</code> - the first frame, inclusive, to capture.</dd>
+<dd><code>last</code> - the last frame, inclusive, to capture.</dd>
+<dd><code>log</code> - a <a href="../../../../fiji/plugin/trackmate/Logger.html" title="class in fiji.plugin.trackmate"><code>Logger</code></a> to report capture progress. Can be
+            <code>null</code>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new ImagePlus.</dd>
 </dl>
 </li>
 </ul>

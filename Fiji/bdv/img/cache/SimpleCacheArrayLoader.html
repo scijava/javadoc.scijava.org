@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SimpleCacheArrayLoader (Fiji Javadocs 2.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SimpleCacheArrayLoader (Fiji Javadocs 2.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":18,"i1":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../bdv/img/cache/EmptyArrayCreator.html" title="interface in bdv.img.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../bdv/img/cache/VolatileCachedCellImg.html" title="class in bdv.img.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?bdv/img/cache/SimpleCacheArrayLoader.html" target="_top">Frames</a></li>
+<li><a href="SimpleCacheArrayLoader.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">bdv.img.cache</div>
+<h2 title="Interface SimpleCacheArrayLoader" class="title">Interface SimpleCacheArrayLoader&lt;A&gt;</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>A</code> - type of access to cell data, currently always a
+            <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/VolatileAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles"><code>VolatileAccess</code></a>.</dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="typeNameLabel">SimpleCacheArrayLoader&lt;A&gt;</span></pre>
+<div class="block">Provider of volatile <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/cell/Cell.html?is-external=true" title="class or interface in net.imglib2.img.cell"><code>Cell</code></a> data. This is
+ implemented by data back-ends to the <a href="../../../bdv/img/cache/VolatileGlobalCellCache.html" title="class in bdv.img.cache"><code>VolatileGlobalCellCache</code></a>.
+ <p>
+ <code>SimpleCacheArrayLoader</code> is supposed to load data one specific image.
+ <code>loadArray()</code> will not get information about which timepoint,
+ resolution level, etc a requested block belongs to, and also the appropriate
+ block size is supposed to be known.
+ <p>
+ This is in contrast to <a href="../../../bdv/img/cache/CacheArrayLoader.html" title="interface in bdv.img.cache"><code>CacheArrayLoader</code></a>, where all information to
+ identify a particular block in a whole dataset is provided. Whether it makes
+ more sense to implement <code>CacheArrayLoader</code> or
+ <code>SimpleCacheArrayLoader</code> depends on the particular back-end.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>default <a href="../../../bdv/img/cache/EmptyArrayCreator.html" title="interface in bdv.img.cache">EmptyArrayCreator</a>&lt;<a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html" title="type parameter in SimpleCacheArrayLoader">A</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html#getEmptyArrayCreator--">getEmptyArrayCreator</a></span>()</code>
+<div class="block">Implementing classes must override this if <code>A</code> is not a standard
+ <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/VolatileArrayDataAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles"><code>VolatileArrayDataAccess</code></a> type.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html" title="type parameter in SimpleCacheArrayLoader">A</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html#loadArray-long:A-">loadArray</a></span>(long[]&nbsp;gridPosition)</code>
+<div class="block">Load cell data into memory.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getEmptyArrayCreator--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEmptyArrayCreator</h4>
+<pre>default&nbsp;<a href="../../../bdv/img/cache/EmptyArrayCreator.html" title="interface in bdv.img.cache">EmptyArrayCreator</a>&lt;<a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html" title="type parameter in SimpleCacheArrayLoader">A</a>&gt;&nbsp;getEmptyArrayCreator()</pre>
+<div class="block">Implementing classes must override this if <code>A</code> is not a standard
+ <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/VolatileArrayDataAccess.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles"><code>VolatileArrayDataAccess</code></a> type. The default implementation returns
+ <code>null</code>, which will let
+ <a href="../../../bdv/img/cache/CreateInvalidVolatileCell.html#get-net.imglib2.img.cell.CellGrid-T-boolean-"><code>CreateInvalidVolatileCell.get(...)</code></a> try to figure out the appropriate
+ <a href="../../../bdv/img/cache/DefaultEmptyArrayCreator.html" title="class in bdv.img.cache"><code>DefaultEmptyArrayCreator</code></a>.
+ <p>
+ Default access types are
+ </p>
+ <ul>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileByteArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileByteArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileByteArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileByteArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileCharArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileCharArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileCharArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileCharArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileDoubleArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileDoubleArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileDoubleArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileDoubleArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileFloatArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileFloatArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileFloatArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileFloatArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileIntArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileIntArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileIntArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileIntArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileLongArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileLongArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileLongArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileLongArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/DirtyVolatileShortArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>DirtyVolatileShortArray</code></a></li>
+ <li><a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/img/basictypeaccess/volatiles/array/VolatileShortArray.html?is-external=true" title="class or interface in net.imglib2.img.basictypeaccess.volatiles.array"><code>VolatileShortArray</code></a></li>
+ </ul></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an <a href="../../../bdv/img/cache/EmptyArrayCreator.html" title="interface in bdv.img.cache"><code>EmptyArrayCreator</code></a> for <code>A</code> or null.</dd>
+</dl>
+</li>
+</ul>
+<a name="loadArray-long:A-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>loadArray</h4>
+<pre><a href="../../../bdv/img/cache/SimpleCacheArrayLoader.html" title="type parameter in SimpleCacheArrayLoader">A</a>&nbsp;loadArray(long[]&nbsp;gridPosition)
+     throws <a href="https://javadoc.scijava.org/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Load cell data into memory. This method blocks until data is successfully
+ loaded. If it completes normally, the returned data is always valid. If
+ anything goes wrong, an <a href="https://javadoc.scijava.org/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io"><code>IOException</code></a> is thrown.
+ <p>
+ <code>SimpleCacheArrayLoader</code> is supposed to load data one specific
+ image. <code>loadArray()</code> will not get information about which
+ timepoint, resolution level, etc a requested block belongs to. Also the
+ appropriate block size is supposed to be known to the
+ <code>SimpleCacheArrayLoader</code>.
+ <p>
+ This is in contrast to
+ <a href="../../../bdv/img/cache/CacheArrayLoader.html#loadArray-int-int-int-int:A-long:A-"><code>CacheArrayLoader.loadArray(int, int, int, int[], long[])</code></a>, where
+ all information to identify a particular block in a whole dataset is
+ provided.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>gridPosition</code> - the coordinate of the cell in the cell grid.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>loaded cell data.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../bdv/img/cache/EmptyArrayCreator.html" title="interface in bdv.img.cache"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../bdv/img/cache/VolatileCachedCellImg.html" title="class in bdv.img.cache"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?bdv/img/cache/SimpleCacheArrayLoader.html" target="_top">Frames</a></li>
+<li><a href="SimpleCacheArrayLoader.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2020 <a href="http://fiji.sc/">Fiji</a>. All rights reserved.</small></p>
+</body>
+</html>

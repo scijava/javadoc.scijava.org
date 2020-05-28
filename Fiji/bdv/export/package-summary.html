@@ -42,7 +42,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../bdv/cache/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../bdv/gui/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../bdv/export/n5/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?bdv/export/package-summary.html" target="_top">Frames</a></li>
@@ -81,20 +81,37 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../bdv/export/ProgressWriter.html" title="interface in bdv.export">ProgressWriter</a></td>
+<td class="colFirst"><a href="../../bdv/export/CopyBlock.html" title="interface in bdv.export">CopyBlock</a>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../bdv/export/WriteSequenceToHdf5.AfterEachPlane.html" title="interface in bdv.export">WriteSequenceToHdf5.AfterEachPlane</a></td>
+<td class="colFirst"><a href="../../bdv/export/DownsampleBlock.html" title="interface in bdv.export">DownsampleBlock</a>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../bdv/export/WriteSequenceToHdf5.LoopbackHeuristic.html" title="interface in bdv.export">WriteSequenceToHdf5.LoopbackHeuristic</a></td>
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.AfterEachPlane.html" title="interface in bdv.export">ExportScalePyramid.AfterEachPlane</a></td>
+<td class="colLast">
+<div class="block">Callback that is called after each "plane of blocks" is written, giving
+ the opportunity to clear caches, etc.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.DatasetIO.html" title="interface in bdv.export">ExportScalePyramid.DatasetIO</a>&lt;D,T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</td>
+<td class="colLast">
+<div class="block">Writing and reading back data for each resolution level.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.LoopbackHeuristic.html" title="interface in bdv.export">ExportScalePyramid.LoopbackHeuristic</a></td>
 <td class="colLast">
 <div class="block">A heuristic to decide for a given resolution level whether the source
  pixels should be taken from the original image or read from a previously
- written resolution level in the hdf5 file.</div>
+ written resolution level in the output dataset.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../bdv/export/ProgressWriter.html" title="interface in bdv.export">ProgressWriter</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -116,7 +133,30 @@
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.html" title="class in bdv.export">ExportScalePyramid</a></td>
+<td class="colLast">
+<div class="block">Write an image to a chunked mipmap representation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.Block.html" title="class in bdv.export">ExportScalePyramid.Block</a>&lt;T extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/NativeType.html?is-external=true" title="class or interface in net.imglib2.type">NativeType</a>&lt;T&gt;&gt;</td>
+<td class="colLast">
+<div class="block">A block to be written.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../bdv/export/ExportScalePyramid.DefaultLoopbackHeuristic.html" title="class in bdv.export">ExportScalePyramid.DefaultLoopbackHeuristic</a></td>
+<td class="colLast">
+<div class="block">Simple heuristic: use loopback image loader if saving 8 times or more on
+ number of pixel access with respect to the original image.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../bdv/export/ProgressWriterConsole.html" title="class in bdv.export">ProgressWriterConsole</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../bdv/export/ProgressWriterNull.html" title="class in bdv.export">ProgressWriterNull</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -135,17 +175,6 @@
 <td class="colLast">
 <div class="block">Create a hdf5 files containing image data from all views and all timepoints
  in a chunked, mipmaped representation.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../bdv/export/WriteSequenceToHdf5.CellCreatorThread.html" title="class in bdv.export">WriteSequenceToHdf5.CellCreatorThread</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../bdv/export/WriteSequenceToHdf5.DefaultLoopbackHeuristic.html" title="class in bdv.export">WriteSequenceToHdf5.DefaultLoopbackHeuristic</a></td>
-<td class="colLast">
-<div class="block">Simple heuristic: use loopback image loader if saving 8 times or more on
- number of pixel access with respect to the original image.</div>
 </td>
 </tr>
 </tbody>
@@ -174,7 +203,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../bdv/cache/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../bdv/gui/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../bdv/export/n5/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../index.html?bdv/export/package-summary.html" target="_top">Frames</a></li>

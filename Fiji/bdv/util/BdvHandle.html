@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":10,"i2":6,"i3":6,"i4":10,"i5":6,"i6":10,"i7":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":6,"i5":6,"i6":42,"i7":10,"i8":6,"i9":10,"i10":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -122,7 +122,7 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
  internals.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Tobias Pietzsch &lt;tobias.pietzsch@gmail.com&gt;</dd>
+<dd>Tobias Pietzsch</dd>
 </dl>
 </li>
 </ul>
@@ -155,18 +155,30 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#cacheControls">cacheControls</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../bdv/ui/CardPanel.html" title="class in bdv.ui">CardPanel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#cards">cards</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#hasPlaceHolderSources">hasPlaceHolderSources</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#origNumTimepoints">origNumTimepoints</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#setupAssignments">setupAssignments</a></span></code>&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../bdv/viewer/ConverterSetups.html" title="class in bdv.viewer">ConverterSetups</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#setups">setups</a></span></code>&nbsp;</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../bdv/ui/splitpanel/SplitPanel.html" title="class in bdv.ui.splitpanel">SplitPanel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#splitPanel">splitPanel</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#viewer">viewer</a></span></code>&nbsp;</td>
 </tr>
@@ -197,13 +209,13 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#close--">close</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -211,26 +223,40 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getBdvHandle--">getBdvHandle</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../bdv/ui/CardPanel.html" title="class in bdv.ui">CardPanel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getCardPanel--">getCardPanel</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../bdv/viewer/ConverterSetups.html" title="class in bdv.viewer">ConverterSetups</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getConverterSetups--">getConverterSetups</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://javadoc.scijava.org/SciJava/org/scijava/ui/behaviour.util.InputActionBindings.html?is-external=true" title="class or interface in org.scijava.ui">org.scijava.ui.behaviour.util.InputActionBindings</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getKeybindings--">getKeybindings</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../bdv/tools/transformation/ManualTransformationEditor.html" title="class in bdv.tools.transformation">ManualTransformationEditor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getManualTransformEditor--">getManualTransformEditor</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getSetupAssignments--">getSetupAssignments</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getSetupAssignments--">getSetupAssignments</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../bdv/ui/splitpanel/SplitPanel.html" title="class in bdv.ui.splitpanel">SplitPanel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getSplitPanel--">getSplitPanel</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://javadoc.scijava.org/SciJava/org/scijava/ui/behaviour.util.TriggerBehaviourBindings.html?is-external=true" title="class or interface in org.scijava.ui">org.scijava.ui.behaviour.util.TriggerBehaviourBindings</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getTriggerbindings--">getTriggerbindings</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#getViewerPanel--">getViewerPanel</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/BdvHandle.html#tryInitTransform--">tryInitTransform</a></span>()</code>&nbsp;</td>
 </tr>
@@ -270,6 +296,33 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 <li class="blockList">
 <h4>viewer</h4>
 <pre>protected&nbsp;<a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a> viewer</pre>
+</li>
+</ul>
+<a name="cards">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cards</h4>
+<pre>protected&nbsp;<a href="../../bdv/ui/CardPanel.html" title="class in bdv.ui">CardPanel</a> cards</pre>
+</li>
+</ul>
+<a name="splitPanel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>splitPanel</h4>
+<pre>protected&nbsp;<a href="../../bdv/ui/splitpanel/SplitPanel.html" title="class in bdv.ui.splitpanel">SplitPanel</a> splitPanel</pre>
+</li>
+</ul>
+<a name="setups">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setups</h4>
+<pre>protected&nbsp;<a href="../../bdv/viewer/ConverterSetups.html" title="class in bdv.viewer">ConverterSetups</a> setups</pre>
 </li>
 </ul>
 <a name="setupAssignments">
@@ -373,13 +426,42 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 <pre>public&nbsp;<a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a>&nbsp;getViewerPanel()</pre>
 </li>
 </ul>
+<a name="getCardPanel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCardPanel</h4>
+<pre>public&nbsp;<a href="../../bdv/ui/CardPanel.html" title="class in bdv.ui">CardPanel</a>&nbsp;getCardPanel()</pre>
+</li>
+</ul>
+<a name="getSplitPanel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSplitPanel</h4>
+<pre>public&nbsp;<a href="../../bdv/ui/splitpanel/SplitPanel.html" title="class in bdv.ui.splitpanel">SplitPanel</a>&nbsp;getSplitPanel()</pre>
+</li>
+</ul>
+<a name="getConverterSetups--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConverterSetups</h4>
+<pre>public&nbsp;<a href="../../bdv/viewer/ConverterSetups.html" title="class in bdv.viewer">ConverterSetups</a>&nbsp;getConverterSetups()</pre>
+</li>
+</ul>
 <a name="getSetupAssignments--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getSetupAssignments</h4>
-<pre>public&nbsp;<a href="../../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a>&nbsp;getSetupAssignments()</pre>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;<a href="../../bdv/tools/brightness/SetupAssignments.html" title="class in bdv.tools.brightness">SetupAssignments</a>&nbsp;getSetupAssignments()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="close--">
@@ -388,7 +470,7 @@ implements <a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</
 <ul class="blockList">
 <li class="blockList">
 <h4>close</h4>
-<pre>public abstract&nbsp;void&nbsp;close()</pre>
+<pre>public&nbsp;void&nbsp;close()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../bdv/util/Bdv.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../bdv/util/Bdv.html" title="interface in bdv.util">Bdv</a></code></dd>

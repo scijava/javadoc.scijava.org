@@ -127,7 +127,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a>, <a href="https://javadoc.scijava.org/Java/java/awt/image/ImageObserver.html?is-external=true" title="class or interface in java.awt.image">ImageObserver</a>, <a href="https://javadoc.scijava.org/Java/java/awt/MenuContainer.html?is-external=true" title="class or interface in java.awt">MenuContainer</a>, <a href="https://javadoc.scijava.org/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="https://javadoc.scijava.org/Java/javax/accessibility/Accessible.html?is-external=true" title="class or interface in javax.accessibility">Accessible</a></dd>
+<dd><a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a>, <a href="https://javadoc.scijava.org/Java/java/awt/image/ImageObserver.html?is-external=true" title="class or interface in java.awt.image">ImageObserver</a>, <a href="https://javadoc.scijava.org/Java/java/awt/MenuContainer.html?is-external=true" title="class or interface in java.awt">MenuContainer</a>, <a href="https://javadoc.scijava.org/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="https://javadoc.scijava.org/Java/javax/accessibility/Accessible.html?is-external=true" title="class or interface in javax.accessibility">Accessible</a></dd>
 </dl>
 <dl>
 <dt>Enclosing class:</dt>
@@ -137,7 +137,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public static class <span class="typeNameLabel">VisibilityAndGroupingDialog.VisibilityPanel</span>
 extends <a href="https://javadoc.scijava.org/Java/javax/swing/JPanel.html?is-external=true" title="class or interface in javax.swing">JPanel</a>
-implements <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a></pre>
+implements <a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a></pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#bdv.tools.VisibilityAndGroupingDialog.VisibilityPanel">Serialized Form</a></dd>
@@ -225,7 +225,7 @@ implements <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" 
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../bdv/tools/VisibilityAndGroupingDialog.VisibilityPanel.html#VisibilityPanel-bdv.viewer.VisibilityAndGrouping-">VisibilityPanel</a></span>(<a href="../../bdv/viewer/VisibilityAndGrouping.html" title="class in bdv.viewer">VisibilityAndGrouping</a>&nbsp;visibilityAndGrouping)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../bdv/tools/VisibilityAndGroupingDialog.VisibilityPanel.html#VisibilityPanel-bdv.viewer.ViewerState-">VisibilityPanel</a></span>(<a href="../../bdv/viewer/ViewerState.html" title="interface in bdv.viewer">ViewerState</a>&nbsp;state)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -252,7 +252,7 @@ implements <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" 
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/tools/VisibilityAndGroupingDialog.VisibilityPanel.html#visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">visibilityChanged</a></span>(<a href="../../bdv/viewer/VisibilityAndGrouping.Event.html" title="class in bdv.viewer">VisibilityAndGrouping.Event</a>&nbsp;e)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/tools/VisibilityAndGroupingDialog.VisibilityPanel.html#viewerStateChanged-bdv.viewer.ViewerStateChange-">viewerStateChanged</a></span>(<a href="../../bdv/viewer/ViewerStateChange.html" title="enum in bdv.viewer">ViewerStateChange</a>&nbsp;change)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -304,13 +304,13 @@ implements <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" 
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="VisibilityPanel-bdv.viewer.VisibilityAndGrouping-">
+<a name="VisibilityPanel-bdv.viewer.ViewerState-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>VisibilityPanel</h4>
-<pre>public&nbsp;VisibilityPanel(<a href="../../bdv/viewer/VisibilityAndGrouping.html" title="class in bdv.viewer">VisibilityAndGrouping</a>&nbsp;visibilityAndGrouping)</pre>
+<pre>public&nbsp;VisibilityPanel(<a href="../../bdv/viewer/ViewerState.html" title="interface in bdv.viewer">ViewerState</a>&nbsp;state)</pre>
 </li>
 </ul>
 </li>
@@ -339,16 +339,16 @@ implements <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" 
 <pre>protected&nbsp;void&nbsp;update()</pre>
 </li>
 </ul>
-<a name="visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">
+<a name="viewerStateChanged-bdv.viewer.ViewerStateChange-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>visibilityChanged</h4>
-<pre>public&nbsp;void&nbsp;visibilityChanged(<a href="../../bdv/viewer/VisibilityAndGrouping.Event.html" title="class in bdv.viewer">VisibilityAndGrouping.Event</a>&nbsp;e)</pre>
+<h4>viewerStateChanged</h4>
+<pre>public&nbsp;void&nbsp;viewerStateChanged(<a href="../../bdv/viewer/ViewerStateChange.html" title="enum in bdv.viewer">ViewerStateChange</a>&nbsp;change)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html#visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">visibilityChanged</a></code>&nbsp;in interface&nbsp;<code><a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a></code></dd>
+<dd><code><a href="../../bdv/viewer/ViewerStateChangeListener.html#viewerStateChanged-bdv.viewer.ViewerStateChange-">viewerStateChanged</a></code>&nbsp;in interface&nbsp;<code><a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a></code></dd>
 </dl>
 </li>
 </ul>

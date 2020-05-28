@@ -562,12 +562,13 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/util/concurrent/Callable.html?is-external=true" title="class or interface in java.util.concurrent">Callable</a>&lt;ij.ImagePlus&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../trainableSegmentation/FeatureStack.html#getGabor-ij.ImagePlus-double-double-double-double-int-">getGabor</a></span>(ij.ImagePlus&nbsp;originalImage,
+<td class="colLast"><code><span class="memberNameLink"><a href="../trainableSegmentation/FeatureStack.html#getGabor-ij.ImagePlus-double-double-double-double-int-java.util.concurrent.ExecutorService-">getGabor</a></span>(ij.ImagePlus&nbsp;originalImage,
         double&nbsp;sigma,
         double&nbsp;gamma,
         double&nbsp;psi,
         double&nbsp;frequency,
-        int&nbsp;nAngles)</code>
+        int&nbsp;nAngles,
+        <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;exec)</code>
 <div class="block">Get Gabor features (to be submitted in an ExecutorService)</div>
 </td>
 </tr>
@@ -1931,7 +1932,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 </dl>
 </li>
 </ul>
-<a name="getGabor-ij.ImagePlus-double-double-double-double-int-">
+<a name="getGabor-ij.ImagePlus-double-double-double-double-int-java.util.concurrent.ExecutorService-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1942,7 +1943,8 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
                                        double&nbsp;gamma,
                                        double&nbsp;psi,
                                        double&nbsp;frequency,
-                                       int&nbsp;nAngles)</pre>
+                                       int&nbsp;nAngles,
+                                       <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;exec)</pre>
 <div class="block">Get Gabor features (to be submitted in an ExecutorService)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1952,6 +1954,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <dd><code>psi</code> - phase offset</dd>
 <dd><code>frequency</code> - frequency of the sinusoidal component</dd>
 <dd><code>nAngles</code> - number of filter orientations</dd>
+<dd><code>exec</code> - executor service to use on FFT convolutions</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>image stack with Gabor filter projections using "Max Intensity" and "Min Intensity"</dd>
 </dl>

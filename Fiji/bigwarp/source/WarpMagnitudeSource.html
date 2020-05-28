@@ -149,6 +149,10 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#type">type</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../mpicbg/spim/data/sequence/VoxelDimensions.html" title="interface in mpicbg.spim.data.sequence">VoxelDimensions</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#voxDims">voxDims</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../bigwarp/source/WarpMagnitudeRandomAccessibleInterval.html" title="class in bigwarp.source">WarpMagnitudeRandomAccessibleInterval</a>&lt;<a href="../../bigwarp/source/WarpMagnitudeSource.html" title="type parameter in WarpMagnitudeSource">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#warpMagImg">warpMagImg</a></span></code>&nbsp;</td>
 </tr>
@@ -168,7 +172,7 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#WarpMagnitudeSource-java.lang.String-bigwarp.BigWarp.BigWarpData-T-">WarpMagnitudeSource</a></span>(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                   <a href="../../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&nbsp;data,
+                   <a href="../../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&lt;?&gt;&nbsp;data,
                    <a href="../../bigwarp/source/WarpMagnitudeSource.html" title="type parameter in WarpMagnitudeSource">T</a>&nbsp;t)</code>&nbsp;</td>
 </tr>
 </table>
@@ -191,7 +195,7 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#debug-double:A-">debug</a></span>(double[]&nbsp;pt)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;?&gt;</code></td>
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#getBaseline--">getBaseline</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -256,7 +260,7 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#setBaseline-mpicbg.models.AbstractModel-">setBaseline</a></span>(<a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;?&gt;&nbsp;baseline)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bigwarp/source/WarpMagnitudeSource.html#setBaseline-net.imglib2.realtransform.RealTransform-">setBaseline</a></span>(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;baseline)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -320,6 +324,15 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <pre>protected final&nbsp;<a href="../../bigwarp/source/WarpMagnitudeRandomAccessibleInterval.html" title="class in bigwarp.source">WarpMagnitudeRandomAccessibleInterval</a>&lt;<a href="../../bigwarp/source/WarpMagnitudeSource.html" title="type parameter in WarpMagnitudeSource">T</a> extends <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/type/numeric/RealType.html?is-external=true" title="class or interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../bigwarp/source/WarpMagnitudeSource.html" title="type parameter in WarpMagnitudeSource">T</a>&gt;&gt; warpMagImg</pre>
 </li>
 </ul>
+<a name="voxDims">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>voxDims</h4>
+<pre>protected final&nbsp;<a href="../../mpicbg/spim/data/sequence/VoxelDimensions.html" title="interface in mpicbg.spim.data.sequence">VoxelDimensions</a> voxDims</pre>
+</li>
+</ul>
 <a name="type">
 <!--   -->
 </a>
@@ -346,7 +359,7 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <li class="blockList">
 <h4>WarpMagnitudeSource</h4>
 <pre>public&nbsp;WarpMagnitudeSource(<a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                           <a href="../../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&nbsp;data,
+                           <a href="../../bigwarp/BigWarp.BigWarpData.html" title="class in bigwarp">BigWarp.BigWarpData</a>&lt;?&gt;&nbsp;data,
                            <a href="../../bigwarp/source/WarpMagnitudeSource.html" title="type parameter in WarpMagnitudeSource">T</a>&nbsp;t)</pre>
 </li>
 </ul>
@@ -376,13 +389,13 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <pre>public&nbsp;void&nbsp;setWarp(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;warp)</pre>
 </li>
 </ul>
-<a name="setBaseline-mpicbg.models.AbstractModel-">
+<a name="setBaseline-net.imglib2.realtransform.RealTransform-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setBaseline</h4>
-<pre>public&nbsp;void&nbsp;setBaseline(<a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;?&gt;&nbsp;baseline)</pre>
+<pre>public&nbsp;void&nbsp;setBaseline(<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;baseline)</pre>
 </li>
 </ul>
 <a name="getBaseline--">
@@ -391,7 +404,7 @@ implements <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer
 <ul class="blockList">
 <li class="blockList">
 <h4>getBaseline</h4>
-<pre>public&nbsp;<a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;?&gt;&nbsp;getBaseline()</pre>
+<pre>public&nbsp;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/RealTransform.html?is-external=true" title="class or interface in net.imglib2.realtransform">RealTransform</a>&nbsp;getBaseline()</pre>
 </li>
 </ul>
 <a name="debug-double:A-">

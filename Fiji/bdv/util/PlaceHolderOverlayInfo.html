@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":42,"i8":10,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../bdv/util/PlaceHolderConverterSetup.SetupChangeListener.html" title="interface in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../bdv/util/PlaceHolderConverterSetup.html" title="class in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -107,13 +107,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../bdv/viewer/TimePointListener.html" title="interface in bdv.viewer">TimePointListener</a>, <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a>, <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/TransformListener.html?is-external=true" title="class or interface in net.imglib2.ui">TransformListener</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&gt;</dd>
+<dd><a href="../../bdv/viewer/TimePointListener.html" title="interface in bdv.viewer">TimePointListener</a>, <a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a>, <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/TransformListener.html?is-external=true" title="class or interface in net.imglib2.ui">TransformListener</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">PlaceHolderOverlayInfo</span>
 extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/TransformListener.html?is-external=true" title="class or interface in net.imglib2.ui">TransformListener</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&gt;, <a href="../../bdv/viewer/TimePointListener.html" title="interface in bdv.viewer">TimePointListener</a>, <a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a></pre>
+implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/TransformListener.html?is-external=true" title="class or interface in net.imglib2.ui">TransformListener</a>&lt;<a href="https://javadoc.scijava.org/Fiji/net/imglib2/realtransform/AffineTransform3D.html?is-external=true" title="class or interface in net.imglib2.realtransform">AffineTransform3D</a>&gt;, <a href="../../bdv/viewer/TimePointListener.html" title="interface in bdv.viewer">TimePointListener</a>, <a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a></pre>
 </li>
 </ul>
 </div>
@@ -151,8 +151,8 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#PlaceHolderOverlayInfo-bdv.viewer.ViewerPanel-bdv.viewer.Source-bdv.tools.brightness.ConverterSetup-">PlaceHolderOverlayInfo</a></span>(<a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a>&nbsp;viewer,
-                      <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;?&gt;&nbsp;source,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#PlaceHolderOverlayInfo-bdv.viewer.ViewerPanel-bdv.viewer.SourceAndConverter-bdv.tools.brightness.ConverterSetup-">PlaceHolderOverlayInfo</a></span>(<a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a>&nbsp;viewer,
+                      <a href="../../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&nbsp;source,
                       <a href="../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;converterSetup)</code>&nbsp;</td>
 </tr>
 </table>
@@ -165,7 +165,7 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -173,9 +173,9 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#addVisibilityChangeListener-bdv.util.PlaceHolderOverlayInfo.VisibilityChangeListener-">addVisibilityChangeListener</a></span>(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</code>
-<div class="block">Registers a VisibilityChangeListener, that will be notified when the
- visibility of the source represented by this PlaceHolderOverlayInfo
- changes.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <code>visibilityChangeListeners().add(listener)</code> instead.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -213,7 +213,9 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#removeVisibilityChangeListener-bdv.util.PlaceHolderOverlayInfo.VisibilityChangeListener-">removeVisibilityChangeListener</a></span>(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</code>
-<div class="block">Removes the specified listener.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <code>visibilityChangeListeners().remove(listener)</code> instead.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -226,7 +228,15 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">visibilityChanged</a></span>(<a href="../../bdv/viewer/VisibilityAndGrouping.Event.html" title="class in bdv.viewer">VisibilityAndGrouping.Event</a>&nbsp;e)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#viewerStateChanged-bdv.viewer.ViewerStateChange-">viewerStateChanged</a></span>(<a href="../../bdv/viewer/ViewerStateChange.html" title="enum in bdv.viewer">ViewerStateChange</a>&nbsp;change)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/SciJava/org/scijava/listeners.Listeners.html?is-external=true" title="class or interface in org.scijava">org.scijava.listeners.Listeners</a>&lt;<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../bdv/util/PlaceHolderOverlayInfo.html#visibilityChangeListeners--">visibilityChangeListeners</a></span>()</code>
+<div class="block">Register <code>VisibilityChangeListener</code>s, that will be notified when the
+ visibility of the source represented by this PlaceHolderOverlayInfo
+ changes.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -250,14 +260,14 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="PlaceHolderOverlayInfo-bdv.viewer.ViewerPanel-bdv.viewer.Source-bdv.tools.brightness.ConverterSetup-">
+<a name="PlaceHolderOverlayInfo-bdv.viewer.ViewerPanel-bdv.viewer.SourceAndConverter-bdv.tools.brightness.ConverterSetup-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>PlaceHolderOverlayInfo</h4>
 <pre>public&nbsp;PlaceHolderOverlayInfo(<a href="../../bdv/viewer/ViewerPanel.html" title="class in bdv.viewer">ViewerPanel</a>&nbsp;viewer,
-                              <a href="../../bdv/viewer/Source.html" title="interface in bdv.viewer">Source</a>&lt;?&gt;&nbsp;source,
+                              <a href="../../bdv/viewer/SourceAndConverter.html" title="class in bdv.viewer">SourceAndConverter</a>&lt;?&gt;&nbsp;source,
                               <a href="../../bdv/tools/brightness/ConverterSetup.html" title="interface in bdv.tools.brightness">ConverterSetup</a>&nbsp;converterSetup)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -372,17 +382,29 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 </dl>
 </li>
 </ul>
-<a name="visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">
+<a name="viewerStateChanged-bdv.viewer.ViewerStateChange-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>visibilityChanged</h4>
-<pre>public&nbsp;void&nbsp;visibilityChanged(<a href="../../bdv/viewer/VisibilityAndGrouping.Event.html" title="class in bdv.viewer">VisibilityAndGrouping.Event</a>&nbsp;e)</pre>
+<h4>viewerStateChanged</h4>
+<pre>public&nbsp;void&nbsp;viewerStateChanged(<a href="../../bdv/viewer/ViewerStateChange.html" title="enum in bdv.viewer">ViewerStateChange</a>&nbsp;change)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html#visibilityChanged-bdv.viewer.VisibilityAndGrouping.Event-">visibilityChanged</a></code>&nbsp;in interface&nbsp;<code><a href="../../bdv/viewer/VisibilityAndGrouping.UpdateListener.html" title="interface in bdv.viewer">VisibilityAndGrouping.UpdateListener</a></code></dd>
+<dd><code><a href="../../bdv/viewer/ViewerStateChangeListener.html#viewerStateChanged-bdv.viewer.ViewerStateChange-">viewerStateChanged</a></code>&nbsp;in interface&nbsp;<code><a href="../../bdv/viewer/ViewerStateChangeListener.html" title="interface in bdv.viewer">ViewerStateChangeListener</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="visibilityChangeListeners--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>visibilityChangeListeners</h4>
+<pre>public&nbsp;<a href="https://javadoc.scijava.org/SciJava/org/scijava/listeners.Listeners.html?is-external=true" title="class or interface in org.scijava">org.scijava.listeners.Listeners</a>&lt;<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&gt;&nbsp;visibilityChangeListeners()</pre>
+<div class="block">Register <code>VisibilityChangeListener</code>s, that will be notified when the
+ visibility of the source represented by this PlaceHolderOverlayInfo
+ changes.</div>
 </li>
 </ul>
 <a name="addVisibilityChangeListener-bdv.util.PlaceHolderOverlayInfo.VisibilityChangeListener-">
@@ -391,7 +413,9 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <ul class="blockList">
 <li class="blockList">
 <h4>addVisibilityChangeListener</h4>
-<pre>public&nbsp;boolean&nbsp;addVisibilityChangeListener(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</pre>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;boolean&nbsp;addVisibilityChangeListener(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <code>visibilityChangeListeners().add(listener)</code> instead.</span></div>
 <div class="block">Registers a VisibilityChangeListener, that will be notified when the
  visibility of the source represented by this PlaceHolderOverlayInfo
  changes.</div>
@@ -410,7 +434,9 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 <ul class="blockListLast">
 <li class="blockList">
 <h4>removeVisibilityChangeListener</h4>
-<pre>public&nbsp;boolean&nbsp;removeVisibilityChangeListener(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</pre>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;boolean&nbsp;removeVisibilityChangeListener(<a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util">PlaceHolderOverlayInfo.VisibilityChangeListener</a>&nbsp;listener)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <code>visibilityChangeListeners().remove(listener)</code> instead.</span></div>
 <div class="block">Removes the specified listener.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -448,7 +474,7 @@ implements <a href="https://javadoc.scijava.org/ImgLib2/net/imglib2/ui/Transform
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../bdv/util/PlaceHolderConverterSetup.SetupChangeListener.html" title="interface in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../bdv/util/PlaceHolderConverterSetup.html" title="class in bdv.util"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../bdv/util/PlaceHolderOverlayInfo.VisibilityChangeListener.html" title="interface in bdv.util"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
