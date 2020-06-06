@@ -762,8 +762,10 @@ implements <a href="../../../mpicbg/models/InvertibleBoundable.html" title="inte
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -792,8 +794,10 @@ implements <a href="../../../mpicbg/models/InvertibleBoundable.html" title="inte
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -809,20 +813,21 @@ implements <a href="../../../mpicbg/models/InvertibleBoundable.html" title="inte
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../mpicbg/models/Model.html#fit-java.util.Collection-">Model</a></code></span></div>
 <div class="block">Fit the <a href="../../../mpicbg/models/Model.html" title="interface in mpicbg.models"><code>Model</code></a> to a set of data points minimizing the global
  transfer error.  This is assumed to be implemented as a weighted least
- squares minimization.  Use
- <code>ransac</code>
- and/ or <code>#filter(Class, Collection, Collection)</code> to remove
- outliers from your data points
-
- The estimated model transfers match.p1.local to match.p2.world.</div>
+ squares minimization.  Use <a href="../../../mpicbg/models/Model.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>ransac</code></a>
+ and/ or <a href="../../../mpicbg/models/Model.html#filter-java.util.Collection-java.util.Collection-double-int-"><code>Model.filter(java.util.Collection&lt;P&gt;, java.util.Collection&lt;P&gt;, double, int)</code></a> to remove outliers from your data points.
+ <p>
+ The estimated model transfers match.p1.local to match.p2.world.
+ </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../mpicbg/models/Model.html#fit-java.util.Collection-">fit</a></code>&nbsp;in interface&nbsp;<code><a href="../../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../../bdv/viewer/animate/SimilarityModel3D.html" title="class in bdv.viewer.animate">SimilarityModel3D</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if matches does not contain
+   enough data points</dd>
+<dd><code><a href="../../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -866,6 +871,9 @@ implements <a href="../../../mpicbg/models/InvertibleBoundable.html" title="inte
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../mpicbg/models/Model.html#getMinNumMatches--">getMinNumMatches</a></code>&nbsp;in interface&nbsp;<code><a href="../../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../../bdv/viewer/animate/SimilarityModel3D.html" title="class in bdv.viewer.animate">SimilarityModel3D</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimal number of <a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models"><code>PointMatches</code></a> required
+   to solve the model.</dd>
 </dl>
 </li>
 </ul>
@@ -1013,9 +1021,11 @@ implements <a href="../../../mpicbg/models/InvertibleBoundable.html" title="inte
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../mpicbg/models/Affine3D.html#toMatrix-double:A:A-">Affine3D</a></code></span></div>
 <div class="block">Write the 12 parameters of the affine into a 4x3 double array.  The order
  is
- [0][0] -> m00; [0][1] -> m01; [0][2] -> m02; [0][3] -> m03
- [1][0] -> m10; [1][1] -> m11; [1][2] -> m12; [1][3] -> m13
- [2][0] -> m20; [2][1] -> m21; [2][2] -> m22; [2][3] -> m23</div>
+ <pre><code>
+ [0][0] -&gt; m00; [0][1] -&gt; m01; [0][2] -&gt; m02; [0][3] -&gt; m03
+ [1][0] -&gt; m10; [1][1] -&gt; m11; [1][2] -&gt; m12; [1][3] -&gt; m13
+ [2][0] -&gt; m20; [2][1] -&gt; m21; [2][2] -&gt; m22; [2][3] -&gt; m23
+ </code></pre></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../mpicbg/models/Affine3D.html#toMatrix-double:A:A-">toMatrix</a></code>&nbsp;in interface&nbsp;<code><a href="../../../mpicbg/models/Affine3D.html" title="interface in mpicbg.models">Affine3D</a>&lt;<a href="../../../bdv/viewer/animate/SimilarityModel3D.html" title="class in bdv.viewer.animate">SimilarityModel3D</a>&gt;</code></dd>

@@ -127,7 +127,7 @@ extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.
  <a href="../../mpicbg/models/InterpolatedModel.html" title="class in mpicbg.models"><code>InterpolatedModel</code></a>.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.ConstantModel">Serialized Form</a></dd>
 </dl>
@@ -312,6 +312,11 @@ extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.
 <li class="blockList">
 <h4>getMinNumMatches</h4>
 <pre>public&nbsp;int&nbsp;getMinNumMatches()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimal number of <a href="../../mpicbg/models/PointMatch.html" title="class in mpicbg.models"><code>PointMatches</code></a> required
+   to solve the model.</dd>
+</dl>
 </li>
 </ul>
 <a name="fit-java.util.Collection-">
@@ -324,12 +329,11 @@ extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Model.html#fit-java.util.Collection-">Model</a></code></span></div>
 <div class="block">Fit the <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models"><code>Model</code></a> to a set of data points minimizing the global
  transfer error.  This is assumed to be implemented as a weighted least
- squares minimization.  Use
- <code>ransac</code>
- and/ or <code>#filter(Class, Collection, Collection)</code> to remove
- outliers from your data points
-
- The estimated model transfers match.p1.local to match.p2.world.</div>
+ squares minimization.  Use <a href="../../mpicbg/models/Model.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>ransac</code></a>
+ and/ or <a href="../../mpicbg/models/Model.html#filter-java.util.Collection-java.util.Collection-double-int-"><code>Model.filter(java.util.Collection&lt;P&gt;, java.util.Collection&lt;P&gt;, double, int)</code></a> to remove outliers from your data points.
+ <p>
+ The estimated model transfers match.p1.local to match.p2.world.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>

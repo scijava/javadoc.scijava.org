@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":42,"i16":10,"i17":10,"i18":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -136,7 +136,7 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
  by itself.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.InterpolatedAffineModel1D">Serialized Form</a></dd>
 </dl>
@@ -213,7 +213,7 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -288,7 +288,7 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/InterpolatedAffineModel1D.html#interpolate--">interpolate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -303,7 +303,7 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/InterpolatedAffineModel1D.html#set-float-float-">set</a></span>(float&nbsp;m0,
    float&nbsp;m1)</code>
-<div class="block">Initialize the model such that the respective affine transform is:</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
@@ -422,7 +422,7 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <ul class="blockList">
 <li class="blockList">
 <h4>interpolate</h4>
-<pre>protected&nbsp;void&nbsp;interpolate()</pre>
+<pre>public&nbsp;void&nbsp;interpolate()</pre>
 </li>
 </ul>
 <a name="fit-java.util.Collection-">
@@ -437,12 +437,11 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Model.html#fit-java.util.Collection-">Model</a></code></span></div>
 <div class="block">Fit the <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models"><code>Model</code></a> to a set of data points minimizing the global
  transfer error.  This is assumed to be implemented as a weighted least
- squares minimization.  Use
- <code>ransac</code>
- and/ or <code>#filter(Class, Collection, Collection)</code> to remove
- outliers from your data points
-
- The estimated model transfers match.p1.local to match.p2.world.</div>
+ squares minimization.  Use <a href="../../mpicbg/models/Model.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>ransac</code></a>
+ and/ or <a href="../../mpicbg/models/Model.html#filter-java.util.Collection-java.util.Collection-double-int-"><code>Model.filter(java.util.Collection&lt;P&gt;, java.util.Collection&lt;P&gt;, double, int)</code></a> to remove outliers from your data points.
+ <p>
+ The estimated model transfers match.p1.local to match.p2.world.
+ </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#fit-java.util.Collection-">fit</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="class in mpicbg.models">InterpolatedAffineModel1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a> extends <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a>&gt; &amp; <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a>&gt;,<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a> extends <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a>&gt; &amp; <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a>&gt;&gt;&gt;</code></dd>
@@ -451,8 +450,10 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if matches does not contain
+   enough data points</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -664,7 +665,8 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Affine1D.html#toMatrix-double:A:A-">Affine1D</a></code></span></div>
 <div class="block">Write the 2 parameters of the affine into a 2x1 double array.  The order
  is
- [0][0] -> m00; [0][1] -> m01;</div>
+ <code>[0][0] -&gt; m00; [0][1] -&gt; m01;
+ </code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Affine1D.html#toMatrix-double:A:A-">toMatrix</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="class in mpicbg.models">InterpolatedAffineModel1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a> extends <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a>&gt; &amp; <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">A</a>&gt;,<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a> extends <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a>&gt; &amp; <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/InterpolatedAffineModel1D.html" title="type parameter in InterpolatedAffineModel1D">B</a>&gt;&gt;&gt;</code></dd>
@@ -677,8 +679,10 @@ implements <a href="../../mpicbg/models/Affine1D.html" title="interface in mpicb
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public final&nbsp;void&nbsp;set(float&nbsp;m0,
-                      float&nbsp;m1)</pre>
+<pre><a href="https://javadoc.scijava.org/Java/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public final&nbsp;void&nbsp;set(float&nbsp;m0,
+                                  float&nbsp;m1)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Initialize the model such that the respective affine transform is:
 
  <pre>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,7 +115,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <dt><span class="simpleTagLabel">Version:</span></dt>
 <dd>0.1b</dd>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfeld@mpi-cbg.de></dd>
+<dd>Stephan Saalfeld &lt;saalfeld@mpi-cbg.de&gt;</dd>
 </dl>
 </li>
 </ul>
@@ -242,6 +242,27 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
                   <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models">PointMatch</a>&gt;&nbsp;results)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../mpicbg/ij/blockmatching/BlockMatching.html#matchByMaximalPMCCFromPreScaledImages-ij.process.FloatProcessor-ij.process.FloatProcessor-double-int-int-int-int-float-float-float-java.util.Collection-java.util.Collection-">matchByMaximalPMCCFromPreScaledImages</a></span>(ij.process.FloatProcessor&nbsp;source_scaled,
+                                     ij.process.FloatProcessor&nbsp;target_scaled,
+                                     double&nbsp;scale,
+                                     int&nbsp;blockRadiusX,
+                                     int&nbsp;blockRadiusY,
+                                     int&nbsp;searchRadiusX,
+                                     int&nbsp;searchRadiusY,
+                                     float&nbsp;minR,
+                                     float&nbsp;rod,
+                                     float&nbsp;maxCurvature,
+                                     <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../mpicbg/models/Point.html" title="class in mpicbg.models">Point</a>&gt;&nbsp;sourcePoints,
+                                     <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models">PointMatch</a>&gt;&nbsp;sourceMatches)</code>
+<div class="block">Estimate <a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models">point correspondences</a> for a
+ <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util"><code>Collection</code></a> of <a href="../../../mpicbg/models/Point.html" title="class in mpicbg.models"><code>Points</code></a> among two images that are
+ approximately related by an <a href="../../../mpicbg/models/InvertibleCoordinateTransform.html" title="interface in mpicbg.models"><code>InvertibleCoordinateTransform</code></a> using
+ the Pearson product-moment correlation coefficient (PMCC) <i>r</i> of
+ pixel intensities as similarity measure.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../mpicbg/ij/blockmatching/BlockMatching.html#matchByMinimalSquareDifference-ij.process.FloatProcessor-ij.process.FloatProcessor-mpicbg.models.InvertibleCoordinateTransform-int-int-int-int-java.util.Collection-java.util.Collection-">matchByMinimalSquareDifference</a></span>(ij.process.FloatProcessor&nbsp;source,
                               ij.process.FloatProcessor&nbsp;target,
@@ -427,7 +448,7 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
  approximately related by an <a href="../../../mpicbg/models/InvertibleCoordinateTransform.html" title="interface in mpicbg.models"><code>InvertibleCoordinateTransform</code></a> using
  the Pearson product-moment correlation coefficient (PMCC) <i>r</i> of
  pixel intensities as similarity measure. Only correspondence candidates
- with <i>r</i> >= a given threshold are accepted.</div>
+ with <i>r</i> &gt;= a given threshold are accepted.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>source</code> - </dd>
@@ -445,6 +466,65 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 <dd><code>sourcePoints</code> - </dd>
 <dd><code>sourceMatches</code> - </dd>
 <dd><code>observer</code> - </dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
+<dd><code><a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="matchByMaximalPMCCFromPreScaledImages-ij.process.FloatProcessor-ij.process.FloatProcessor-double-int-int-int-int-float-float-float-java.util.Collection-java.util.Collection-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>matchByMaximalPMCCFromPreScaledImages</h4>
+<pre>public static&nbsp;void&nbsp;matchByMaximalPMCCFromPreScaledImages(ij.process.FloatProcessor&nbsp;source_scaled,
+                                                         ij.process.FloatProcessor&nbsp;target_scaled,
+                                                         double&nbsp;scale,
+                                                         int&nbsp;blockRadiusX,
+                                                         int&nbsp;blockRadiusY,
+                                                         int&nbsp;searchRadiusX,
+                                                         int&nbsp;searchRadiusY,
+                                                         float&nbsp;minR,
+                                                         float&nbsp;rod,
+                                                         float&nbsp;maxCurvature,
+                                                         <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../mpicbg/models/Point.html" title="class in mpicbg.models">Point</a>&gt;&nbsp;sourcePoints,
+                                                         <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models">PointMatch</a>&gt;&nbsp;sourceMatches)
+                                                  throws <a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a>,
+                                                         <a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></pre>
+<div class="block">Estimate <a href="../../../mpicbg/models/PointMatch.html" title="class in mpicbg.models">point correspondences</a> for a
+ <a href="https://javadoc.scijava.org/Java/java/util/Collection.html?is-external=true" title="class or interface in java.util"><code>Collection</code></a> of <a href="../../../mpicbg/models/Point.html" title="class in mpicbg.models"><code>Points</code></a> among two images that are
+ approximately related by an <a href="../../../mpicbg/models/InvertibleCoordinateTransform.html" title="interface in mpicbg.models"><code>InvertibleCoordinateTransform</code></a> using
+ the Pearson product-moment correlation coefficient (PMCC) <i>r</i> of
+ pixel intensities as similarity measure. Only correspondence candidates
+ with <i>r</i> &gt;= a given threshold are accepted.
+
+ Similar to <a href="../../../mpicbg/ij/blockmatching/BlockMatching.html#matchByMaximalPMCC-ij.process.FloatProcessor-ij.process.FloatProcessor-ij.process.FloatProcessor-ij.process.FloatProcessor-double-mpicbg.models.CoordinateTransform-int-int-int-int-float-float-float-java.util.Collection-java.util.Collection-mpicbg.models.ErrorStatistic-"><code>matchByMaximalPMCC(FloatProcessor, FloatProcessor, FloatProcessor, FloatProcessor, double, CoordinateTransform, int, int, int, int, float, float, float, Collection, Collection, ErrorStatistic)</code></a>
+ but:
+  1. With its <code>FloatProcessor</code> images already scaled down to <code>scale</code>
+     and already with their contrast normalized, and their masks applied if any.
+     That is, images provided as arguments <code>source_scaled</code> and <code>target_scaled</code>
+     are expected to have been pre-processed with <a href="../../../mpicbg/ij/util/Filter.html#createDownsampled-ij.process.FloatProcessor-double-float-float-"><code>Filter.createDownsampled(FloatProcessor, double, float, float)</code></a>
+     and with <a href="../../../mpicbg/ij/util/Util.html#normalizeContrast-ij.process.FloatProcessor-"><code>Util.normalizeContrast(FloatProcessor)</code></a>,
+     and with <a href="../../../mpicbg/ij/blockmatching/BlockMatching.html#mapAndMask-ij.process.ImageProcessor-ij.process.ImageProcessor-ij.process.ImageProcessor-mpicbg.models.CoordinateTransform-"><code>mapAndMask(ImageProcessor, ImageProcessor, ImageProcessor, CoordinateTransform)</code></a> to set pixels outside the mask to <a href="https://javadoc.scijava.org/Java/java/lang/Float.html?is-external=true#NaN" title="class or interface in java.lang"><code>Float.NaN</code></a>.
+  2. Without a <code>transform</code>, i.e., assumes images are almost registered already.
+  
+ These modifications are a performance optimization, by preventing the Gaussian blurring
+ of images multiple times when e.g. comparing a section with its adjacent, its 2nd adjacent, etc.,
+ and also by preventing unnecessary repeats of image duplication, contrast normalization, and mask application.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source_scaled</code> - </dd>
+<dd><code>target_scaled</code> - </dd>
+<dd><code>scale</code> - [0,1]</dd>
+<dd><code>blockRadiusX</code> - horizontal radius of a block</dd>
+<dd><code>blockRadiusY</code> - vertical radius of a block</dd>
+<dd><code>searchRadiusX</code> - horizontal search radius</dd>
+<dd><code>searchRadiusY</code> - vertical search radius</dd>
+<dd><code>minR</code> - minimal accepted Cross-Correlation coefficient</dd>
+<dd><code>rod</code> - </dd>
+<dd><code>sourcePoints</code> - </dd>
+<dd><code>sourceMatches</code> - </dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>
@@ -477,20 +557,22 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
  approximately related by an <a href="../../../mpicbg/models/InvertibleCoordinateTransform.html" title="interface in mpicbg.models"><code>InvertibleCoordinateTransform</code></a> using
  the Pearson product-moment correlation coefficient (PMCC) <i>r</i> of
  pixel intensities as similarity measure.  Only correspondence candidates
- with <i>r</i> >= a given threshold are accepted.</div>
+ with <i>r</i> &gt;= a given threshold are accepted.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>scaledSource</code> - </dd>
+<dd><code>source</code> - </dd>
 <dd><code>target</code> - </dd>
+<dd><code>sourceMask</code> - </dd>
+<dd><code>targetMask</code> - </dd>
 <dd><code>scale</code> - [0,1]</dd>
 <dd><code>transform</code> - transfers source into target approximately</dd>
-<dd><code>scaledBlockRadiusX</code> - horizontal radius of a block</dd>
-<dd><code>scaledBlockRadiusY</code> - vertical radius of a block</dd>
-<dd><code>scaledSearchRadiusX</code> - horizontal search radius</dd>
-<dd><code>scaledSearchRadiusY</code> - vertical search radius</dd>
-<dd><code>minR</code> - minimal accepted Cross-Correlation coefficient</dd>
+<dd><code>blockRadiusX</code> - horizontal radius of a block</dd>
+<dd><code>blockRadiusY</code> - vertical radius of a block</dd>
+<dd><code>searchRadiusX</code> - horizontal search radius</dd>
+<dd><code>searchRadiusY</code> - vertical search radius</dd>
 <dd><code>sourcePoints</code> - </dd>
 <dd><code>sourceMatches</code> - </dd>
+<dd><code>observer</code> - </dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd>
 <dd><code><a href="https://javadoc.scijava.org/Java/java/util/concurrent/ExecutionException.html?is-external=true" title="class or interface in java.util.concurrent">ExecutionException</a></code></dd>

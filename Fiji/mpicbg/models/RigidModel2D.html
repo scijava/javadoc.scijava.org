@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -148,7 +148,7 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
  </pre></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.RigidModel2D">Serialized Form</a></dd>
 </dl>
@@ -326,6 +326,10 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#reset--">reset</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#set-double-double-double-">set</a></span>(double&nbsp;theta,
    double&nbsp;tx,
    double&nbsp;ty)</code>
@@ -336,7 +340,7 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
  0       0      1</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#set-double-double-double-double-">set</a></span>(double&nbsp;cos,
    double&nbsp;sin,
@@ -349,19 +353,23 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
  0    0   1</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#set-mpicbg.models.RigidModel2D-">set</a></span>(<a href="../../mpicbg/models/RigidModel2D.html" title="class in mpicbg.models">RigidModel2D</a>&nbsp;m)</code>
 <div class="block">Set the model to m</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#set-mpicbg.models.TranslationModel2D-">set</a></span>(<a href="../../mpicbg/models/TranslationModel2D.html" title="class in mpicbg.models">TranslationModel2D</a>&nbsp;m)</code>&nbsp;</td>
+</tr>
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#toArray-double:A-">toArray</a></span>(double[]&nbsp;data)</code>
 <div class="block">Write the 6 parameters of the affine into a double array.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/RigidModel2D.html#toMatrix-double:A:A-">toMatrix</a></span>(double[][]&nbsp;data)</code>
 <div class="block">Write the 6 parameters of the affine into a 3x2 double array.</div>
@@ -502,6 +510,11 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <li class="blockList">
 <h4>getMinNumMatches</h4>
 <pre>public final&nbsp;int&nbsp;getMinNumMatches()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimal number of <a href="../../mpicbg/models/PointMatch.html" title="class in mpicbg.models"><code>PointMatches</code></a> required
+   to solve the model.</dd>
+</dl>
 </li>
 </ul>
 <a name="createAffine--">
@@ -618,7 +631,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
 </dl>
 </li>
 </ul>
@@ -644,7 +658,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
 </dl>
 </li>
 </ul>
@@ -662,7 +677,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if matches does not contain
+   enough data points</dd>
 </dl>
 </li>
 </ul>
@@ -686,6 +702,24 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <pre>public final&nbsp;void&nbsp;set(<a href="../../mpicbg/models/RigidModel2D.html" title="class in mpicbg.models">RigidModel2D</a>&nbsp;m)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Model.html#set-M-">Model</a></code></span></div>
 <div class="block">Set the model to m</div>
+</li>
+</ul>
+<a name="reset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public final&nbsp;void&nbsp;reset()</pre>
+</li>
+</ul>
+<a name="set-mpicbg.models.TranslationModel2D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>set</h4>
+<pre>public final&nbsp;void&nbsp;set(<a href="../../mpicbg/models/TranslationModel2D.html" title="class in mpicbg.models">TranslationModel2D</a>&nbsp;m)</pre>
 </li>
 </ul>
 <a name="preConcatenate-mpicbg.models.RigidModel2D-">
@@ -804,8 +838,10 @@ extends <a href="../../mpicbg/models/AbstractAffineModel2D.html" title="class in
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Affine2D.html#toMatrix-double:A:A-">Affine2D</a></code></span></div>
 <div class="block">Write the 6 parameters of the affine into a 3x2 double array.  The order
  is
- [0][0] -> m00; [0][1] -> m01; [0][2] -> m02;
- [1][0] -> m10; [1][1] -> m11; [1][2] -> m12;</div>
+ <pre><code>
+ [0][0] -&gt; m00; [0][1] -&gt; m01; [0][2] -&gt; m02;
+ [1][0] -&gt; m10; [1][1] -&gt; m11; [1][2] -&gt; m12;
+ </code></pre></div>
 </li>
 </ul>
 </li>

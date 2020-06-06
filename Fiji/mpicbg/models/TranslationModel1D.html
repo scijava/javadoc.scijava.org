@@ -126,7 +126,7 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <div class="block">1d-translation <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models"><code>AbstractModel</code></a> to be applied to points in 1d-space.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.TranslationModel1D">Serialized Form</a></dd>
 </dl>
@@ -397,6 +397,11 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <li class="blockList">
 <h4>getMinNumMatches</h4>
 <pre>public final&nbsp;int&nbsp;getMinNumMatches()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimal number of <a href="../../mpicbg/models/PointMatch.html" title="class in mpicbg.models"><code>PointMatches</code></a> required
+   to solve the model.</dd>
+</dl>
 </li>
 </ul>
 <a name="apply-double:A-">
@@ -475,7 +480,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
 </dl>
 </li>
 </ul>
@@ -503,7 +509,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
 </dl>
 </li>
 </ul>
@@ -518,17 +525,17 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Model.html#fit-java.util.Collection-">Model</a></code></span></div>
 <div class="block">Fit the <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models"><code>Model</code></a> to a set of data points minimizing the global
  transfer error.  This is assumed to be implemented as a weighted least
- squares minimization.  Use
- <code>ransac</code>
- and/ or <code>#filter(Class, Collection, Collection)</code> to remove
- outliers from your data points
-
- The estimated model transfers match.p1.local to match.p2.world.</div>
+ squares minimization.  Use <a href="../../mpicbg/models/Model.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>ransac</code></a>
+ and/ or <a href="../../mpicbg/models/Model.html#filter-java.util.Collection-java.util.Collection-double-int-"><code>Model.filter(java.util.Collection&lt;P&gt;, java.util.Collection&lt;P&gt;, double, int)</code></a> to remove outliers from your data points.
+ <p>
+ The estimated model transfers match.p1.local to match.p2.world.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if matches does not contain
+   enough data points</dd>
 </dl>
 </li>
 </ul>
@@ -618,7 +625,8 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Affine1D.html#toMatrix-double:A:A-">Affine1D</a></code></span></div>
 <div class="block">Write the 2 parameters of the affine into a 2x1 double array.  The order
  is
- [0][0] -> m00; [0][1] -> m01;</div>
+ <code>[0][0] -&gt; m00; [0][1] -&gt; m01;
+ </code></div>
 </li>
 </ul>
 <a name="getMatrix-double:A-">

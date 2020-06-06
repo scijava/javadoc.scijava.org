@@ -120,15 +120,18 @@ extends <a href="https://javadoc.scijava.org/Java/java/lang/Object.html?is-exter
 implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;M&gt;, <a href="https://javadoc.scijava.org/Java/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">Abstract class for arbitrary transformation models to be applied
  to <a href="../../mpicbg/models/Point.html" title="class in mpicbg.models"><code>Points</code></a> in n-dimensional space.
-
- Model: R^n --> R^n
-
+ <p>
+ Model: <code>R^n --&gt; R^n</code>
+ </p>
+ <p>
  Provides methods for generic optimization and model extraction algorithms.
  Currently, the Random Sample Consensus \cite{FischlerB81}, a robust
  regression method and the Iterative Closest Point Algorithm \cite{Zhang94}
  are implemented.
-
+ </p>
+ <p>
  BibTeX:
+ </p>
  <pre>
  &#64;article{FischlerB81,
          author    = {Martin A. Fischler and Robert C. Bolles},
@@ -156,7 +159,7 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
  </pre></div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.AbstractModel">Serialized Form</a></dd>
 </dl>
@@ -296,8 +299,7 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
             int&nbsp;minNumInliers,
             double&nbsp;maxTrust)</code>
 <div class="block">Estimate a <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models"><code>AbstractModel</code></a> from a set with many outliers by first
- filtering the worst outliers with
- <code>RANSAC</code>
+ filtering the worst outliers with <a href="../../mpicbg/models/AbstractModel.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>RANSAC</code></a>
  \citet[{FischlerB81} and filter potential outliers by robust iterative
  regression.</div>
 </td>
@@ -513,7 +515,7 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>m</code> - </dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>false for <a href="../../mpicbg/models/AbstractModel.html#cost"><code>cost</code></a> < 0.0, otherwise true if
+<dd>false for <a href="../../mpicbg/models/AbstractModel.html#cost"><code>cost</code></a> &lt; 0.0, otherwise true if
    <a href="../../mpicbg/models/AbstractModel.html#cost"><code>this.cost</code></a> is smaller than <a href="../../mpicbg/models/AbstractModel.html#cost"><code>m.cost</code></a></dd>
 </dl>
 </li>
@@ -543,7 +545,7 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
 <dd><code>candidates</code> - set of point correspondence candidates</dd>
 <dd><code>inliers</code> - set of point correspondences that fit the model</dd>
 <dd><code>epsilon</code> - maximal allowed transfer error</dd>
-<dd><code>minInlierRatio</code> - minimal ratio |inliers| / |candidates| (0.0 => 0%, 1.0 => 100%)</dd>
+<dd><code>minInlierRatio</code> - minimal ratio <code>|inliers| / |candidates| (0.0 =&gt; 0%, 1.0 =&gt; 100%)</code></dd>
 <dd><code>minNumInliers</code> - minimally required absolute number of inliers</dd>
 </dl>
 </li>
@@ -579,12 +581,14 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
                                             throws <a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></pre>
 <div class="block">Estimate the <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models"><code>AbstractModel</code></a> and filter potential outliers by robust
  iterative regression.
-
+ <p>
  This method performs well on data sets with low amount of outliers.  If
  you have many outliers, you can filter those with a `tolerant' RANSAC
- first as done in <code>filterRansac</code>.
-
- Sets <a href="../../mpicbg/models/AbstractModel.html#getCost--"><code>cost</code></a> to the average point transfer error.</div>
+ first as done in <a href="../../mpicbg/models/AbstractModel.html#filterRansac-java.util.List-java.util.Collection-int-double-double-int-double-"><code>filterRansac(java.util.List&lt;P&gt;, java.util.Collection&lt;P&gt;, int, double, double, int, double)</code></a>.
+ </p>
+ <p>
+ Sets <a href="../../mpicbg/models/AbstractModel.html#getCost--"><code>cost</code></a> to the average point transfer error.
+ </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#filter-java.util.Collection-java.util.Collection-double-int-">filter</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a> extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a>&gt;&gt;</code></dd>
@@ -660,7 +664,6 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#ransac-java.util.List-java.util.Collection-int-double-double-int-">ransac</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a> extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a>&gt;&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>modelClass</code> - class of the model to be estimated</dd>
 <dd><code>candidates</code> - candidate data points inluding (many) outliers</dd>
 <dd><code>inliers</code> - remaining candidates after RANSAC</dd>
 <dd><code>iterations</code> - number of iterations</dd>
@@ -713,8 +716,7 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
                                                          double&nbsp;maxTrust)
                                                   throws <a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></pre>
 <div class="block">Estimate a <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models"><code>AbstractModel</code></a> from a set with many outliers by first
- filtering the worst outliers with
- <code>RANSAC</code>
+ filtering the worst outliers with <a href="../../mpicbg/models/AbstractModel.html#ransac-java.util.List-java.util.Collection-int-double-double-int-"><code>RANSAC</code></a>
  \citet[{FischlerB81} and filter potential outliers by robust iterative
  regression.</div>
 <dl>
@@ -816,8 +818,8 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
                                         <a href="https://javadoc.scijava.org/Java/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../mpicbg/models/Point.html" title="class in mpicbg.models">Point</a>&gt;&nbsp;q)</pre>
 <div class="block">Estimate the best model in terms of the Iterative Closest Point
  Algorithm \cite{Zhang94} for matching two point clouds into each other.
-
- p -> q</div>
+ <code>p -&gt; q
+ </code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#icp-java.util.List-java.util.List-">icp</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a> extends <a href="../../mpicbg/models/AbstractModel.html" title="class in mpicbg.models">AbstractModel</a>&lt;<a href="../../mpicbg/models/AbstractModel.html" title="type parameter in AbstractModel">M</a>&gt;&gt;</code></dd>
@@ -853,8 +855,10 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -880,8 +884,10 @@ implements <a href="../../mpicbg/models/Model.html" title="interface in mpicbg.m
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>

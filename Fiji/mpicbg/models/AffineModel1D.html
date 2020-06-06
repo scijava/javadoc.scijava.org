@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -126,7 +126,7 @@ extends <a href="../../mpicbg/models/AbstractAffineModel1D.html" title="class in
 implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interface in mpicbg.models">InvertibleBoundable</a></pre>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Stephan Saalfeld <saalfelds@janelia.hhmi.org></dd>
+<dd>Stephan Saalfeld &lt;saalfelds@janelia.hhmi.org&gt;</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../serialized-form.html#mpicbg.models.AffineModel1D">Serialized Form</a></dd>
 </dl>
@@ -294,30 +294,38 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#reset--">reset</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#set-mpicbg.models.AffineModel1D-">set</a></span>(<a href="../../mpicbg/models/AffineModel1D.html" title="class in mpicbg.models">AffineModel1D</a>&nbsp;m)</code>
 <div class="block">Set the model to m</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#set-double-double-">set</a></span>(double&nbsp;m00,
    double&nbsp;m01)</code>
 <div class="block">Initialize the model such that the respective affine transform is:</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#set-mpicbg.models.TranslationModel1D-">set</a></span>(<a href="../../mpicbg/models/TranslationModel1D.html" title="class in mpicbg.models">TranslationModel1D</a>&nbsp;m)</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#toArray-double:A-">toArray</a></span>(double[]&nbsp;data)</code>
 <div class="block">Write the 2 parameters of the affine into a double array.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#toMatrix-double:A:A-">toMatrix</a></span>(double[][]&nbsp;data)</code>
 <div class="block">Write the 2 parameters of the affine into a 2x1 double array.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="https://javadoc.scijava.org/Java/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../mpicbg/models/AffineModel1D.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -477,6 +485,9 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#getMinNumMatches--">getMinNumMatches</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/AffineModel1D.html" title="class in mpicbg.models">AffineModel1D</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimal number of <a href="../../mpicbg/models/PointMatch.html" title="class in mpicbg.models"><code>PointMatches</code></a> required
+   to solve the model.</dd>
 </dl>
 </li>
 </ul>
@@ -573,8 +584,10 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -601,8 +614,10 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <dd><code>q</code> - target points</dd>
 <dd><code>w</code> - weights</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if not enough data points
+   were available</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -625,8 +640,10 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>matches</code> - set of point correpondences</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code></dd>
-<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code></dd>
+<dd><code><a href="../../mpicbg/models/NotEnoughDataPointsException.html" title="class in mpicbg.models">NotEnoughDataPointsException</a></code> - if matches does not contain
+   enough data points</dd>
+<dd><code><a href="../../mpicbg/models/IllDefinedDataPointsException.html" title="class in mpicbg.models">IllDefinedDataPointsException</a></code> - if the set of data points is
+   inappropriate to solve the Model</dd>
 </dl>
 </li>
 </ul>
@@ -643,6 +660,24 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Model.html#set-M-">set</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Model.html" title="interface in mpicbg.models">Model</a>&lt;<a href="../../mpicbg/models/AffineModel1D.html" title="class in mpicbg.models">AffineModel1D</a>&gt;</code></dd>
 </dl>
+</li>
+</ul>
+<a name="reset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public final&nbsp;void&nbsp;reset()</pre>
+</li>
+</ul>
+<a name="set-mpicbg.models.TranslationModel1D-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>set</h4>
+<pre>public final&nbsp;void&nbsp;set(<a href="../../mpicbg/models/TranslationModel1D.html" title="class in mpicbg.models">TranslationModel1D</a>&nbsp;m)</pre>
 </li>
 </ul>
 <a name="copy--">
@@ -771,7 +806,8 @@ implements <a href="../../mpicbg/models/InvertibleBoundable.html" title="interfa
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../mpicbg/models/Affine1D.html#toMatrix-double:A:A-">Affine1D</a></code></span></div>
 <div class="block">Write the 2 parameters of the affine into a 2x1 double array.  The order
  is
- [0][0] -> m00; [0][1] -> m01;</div>
+ <code>[0][0] -&gt; m00; [0][1] -&gt; m01;
+ </code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../mpicbg/models/Affine1D.html#toMatrix-double:A:A-">toMatrix</a></code>&nbsp;in interface&nbsp;<code><a href="../../mpicbg/models/Affine1D.html" title="interface in mpicbg.models">Affine1D</a>&lt;<a href="../../mpicbg/models/AffineModel1D.html" title="class in mpicbg.models">AffineModel1D</a>&gt;</code></dd>
