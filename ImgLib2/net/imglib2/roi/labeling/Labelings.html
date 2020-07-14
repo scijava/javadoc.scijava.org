@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9};
+var methods = {"i0":9,"i1":9,"i2":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -113,7 +113,7 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 <div class="block">Utility class for labeling tasks.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Alison Walter</dd>
+<dd>Alison Walter, Jan Eglinger</dd>
 </dl>
 </li>
 </ul>
@@ -152,7 +152,26 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../net/imglib2/roi/labeling/LabelingMapping.html" title="class in net.imglib2.roi.labeling">LabelingMapping</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/roi/labeling/Labelings.html#getLabelingMapping-net.imglib2.RandomAccessibleInterval-">getLabelingMapping</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/roi/labeling/LabelingType.html" title="class in net.imglib2.roi.labeling">LabelingType</a>&lt;T&gt;&gt;&nbsp;labeling)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/roi/labeling/Labelings.html#getLabelingMapping-net.imglib2.RandomAccessibleInterval-">getLabelingMapping</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/roi/labeling/LabelingType.html" title="class in net.imglib2.roi.labeling">LabelingType</a>&lt;T&gt;&gt;&nbsp;labeling)</code>
+<div class="block">Get a <a href="../../../../net/imglib2/roi/labeling/LabelingMapping.html" title="class in net.imglib2.roi.labeling"><code>LabelingMapping</code></a> from any <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>
+ on <a href="../../../../net/imglib2/roi/labeling/LabelingType.html" title="class in net.imglib2.roi.labeling"><code>LabelingType</code></a>.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static &lt;T,U,I extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;I&gt;&gt;<br><a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;U,I&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/roi/labeling/Labelings.html#remapLabels-net.imglib2.roi.labeling.ImgLabeling-java.util.function.Function-">remapLabels</a></span>(<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;T,I&gt;&nbsp;labeling,
+           <a href="https://javadoc.scijava.org/Java8/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;T,U&gt;&nbsp;function)</code>
+<div class="block">Create a new <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> from an input labeling, with the labels
+ transformed according to the provided <a href="https://javadoc.scijava.org/Java8/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function"><code>Function</code></a>.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static &lt;T,U,I extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;I&gt;&gt;<br><a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;U,I&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/roi/labeling/Labelings.html#remapLabels-net.imglib2.roi.labeling.ImgLabeling-java.util.Map-">remapLabels</a></span>(<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;T,I&gt;&nbsp;labeling,
+           <a href="https://javadoc.scijava.org/Java8/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,U&gt;&nbsp;mapping)</code>
+<div class="block">Create a new <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> from an input labeling, with the labels
+ transformed according to the provided <a href="https://javadoc.scijava.org/Java8/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -196,10 +215,65 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 <a name="getLabelingMapping-net.imglib2.RandomAccessibleInterval-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getLabelingMapping</h4>
 <pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../net/imglib2/roi/labeling/LabelingMapping.html" title="class in net.imglib2.roi.labeling">LabelingMapping</a>&lt;T&gt;&nbsp;getLabelingMapping(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/roi/labeling/LabelingType.html" title="class in net.imglib2.roi.labeling">LabelingType</a>&lt;T&gt;&gt;&nbsp;labeling)</pre>
+<div class="block">Get a <a href="../../../../net/imglib2/roi/labeling/LabelingMapping.html" title="class in net.imglib2.roi.labeling"><code>LabelingMapping</code></a> from any <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2"><code>RandomAccessibleInterval</code></a>
+ on <a href="../../../../net/imglib2/roi/labeling/LabelingType.html" title="class in net.imglib2.roi.labeling"><code>LabelingType</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - The label image</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>mapping of indices to sets of labels</dd>
+</dl>
+</li>
+</ul>
+<a name="remapLabels-net.imglib2.roi.labeling.ImgLabeling-java.util.function.Function-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remapLabels</h4>
+<pre>public static&nbsp;&lt;T,U,I extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;I&gt;&gt;&nbsp;<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;U,I&gt;&nbsp;remapLabels(<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;T,I&gt;&nbsp;labeling,
+                                                                          <a href="https://javadoc.scijava.org/Java8/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;T,U&gt;&nbsp;function)</pre>
+<div class="block">Create a new <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> from an input labeling, with the labels
+ transformed according to the provided <a href="https://javadoc.scijava.org/Java8/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function"><code>Function</code></a>.
+ 
+ The mapping function needs to be an injective function (i.e. no
+ duplicates are allowed in the result of the mapping), otherwise an
+ <a href="https://javadoc.scijava.org/Java8/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> will be thrown.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - The <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> to be transformed</dd>
+<dd><code>function</code> - The <a href="https://javadoc.scijava.org/Java8/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function"><code>Function</code></a> providing the mapping from input to
+            output labels</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="remapLabels-net.imglib2.roi.labeling.ImgLabeling-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>remapLabels</h4>
+<pre>public static&nbsp;&lt;T,U,I extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;I&gt;&gt;&nbsp;<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;U,I&gt;&nbsp;remapLabels(<a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling">ImgLabeling</a>&lt;T,I&gt;&nbsp;labeling,
+                                                                          <a href="https://javadoc.scijava.org/Java8/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,U&gt;&nbsp;mapping)</pre>
+<div class="block">Create a new <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> from an input labeling, with the labels
+ transformed according to the provided <a href="https://javadoc.scijava.org/Java8/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>.
+ 
+ The map needs to be injective/bijective (i.e. no duplicates are allowed
+ in the result of the mapping), otherwise an
+ <a href="https://javadoc.scijava.org/Java8/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> will be thrown.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - The <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a> to be transformed</dd>
+<dd><code>mapping</code> - The <a href="https://javadoc.scijava.org/Java8/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a> mapping input to output labels</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed <a href="../../../../net/imglib2/roi/labeling/ImgLabeling.html" title="class in net.imglib2.roi.labeling"><code>ImgLabeling</code></a></dd>
+</dl>
 </li>
 </ul>
 </li>
