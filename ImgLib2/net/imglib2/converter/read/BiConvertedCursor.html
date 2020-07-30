@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BiConvertedCursor (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BiConvertedCursor (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BiConvertedCursor.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../net/imglib2/converter/read/BiConvertedIterableInterval.html" title="class in net.imglib2.converter.read"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/converter/read/BiConvertedCursor.html" target="_top">Frames</a></li>
+<li><a href="BiConvertedCursor.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.converter.read</div>
+<h2 title="Class BiConvertedCursor" class="title">Class BiConvertedCursor&lt;A,B,C extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;C&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">net.imglib2.converter.AbstractConvertedCursor</a>&lt;A,C&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.converter.read.BiConvertedCursor&lt;A,B,C&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;C&gt;, <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;C&gt;, <a href="../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>, <a href="../../../../net/imglib2/RealCursor.html" title="interface in net.imglib2">RealCursor</a>&lt;C&gt;, <a href="../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>, <a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;C&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">BiConvertedCursor&lt;A,B,C extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;C&gt;&gt;</span>
+extends <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;A,C&gt;</pre>
+<div class="block">TODO</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#converted">converted</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#converter">converter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Java8/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#converterSupplier">converterSupplier</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#sourceB">sourceB</a></span></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.converter.AbstractConvertedCursor">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.converter.<a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a></h3>
+<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#source">source</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-net.imglib2.converter.BiConverter-C-">BiConvertedCursor</a></span>(<a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>&gt;&nbsp;sourceA,
+                 <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt;&nbsp;sourceB,
+                 <a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&nbsp;converter,
+                 <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&nbsp;c)</code>
+<div class="block">Creates a copy of c for conversion that can be accessed through
+ <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#get--"><code>get()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-java.util.function.Supplier-C-">BiConvertedCursor</a></span>(<a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>&gt;&nbsp;sourceA,
+                 <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt;&nbsp;sourceB,
+                 <a href="https://javadoc.scijava.org/Java8/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;&nbsp;converterSupplier,
+                 <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&nbsp;c)</code>
+<div class="block">Creates a copy of c for conversion that can be accessed through
+ <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#get--"><code>get()</code></a>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="class in net.imglib2.converter.read">BiConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#copy--">copy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#fwd--">fwd</a></span>()</code>
+<div class="block">Move forward.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#get--">get</a></span>()</code>
+<div class="block">Access the actual <em>T</em> instance providing access to a pixel,
+ sub-pixel or integral region value the <a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> points at.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#hasNext--">hasNext</a></span>()</code>
+<div class="block">The correct logic would be to
+ <code>return sourceA.hasNext() &amp;&amp; sourceB.hasNext()</code>
+ but we test only sourceA for efficiency.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#jumpFwd-long-">jumpFwd</a></span>(long&nbsp;steps)</code>
+<div class="block">Move steps &times; forward.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#remove--">remove</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#reset--">reset</a></span>()</code>
+<div class="block">Reset the <a href="../../../../net/imglib2/Iterator.html" title="interface in net.imglib2"><code>Iterator</code></a>, that is put it to where it would be if newly
+ created.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.converter.AbstractConvertedCursor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.converter.<a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a></h3>
+<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#copyCursor--">copyCursor</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#getDoublePosition-int-">getDoublePosition</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#getFloatPosition-int-">getFloatPosition</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#getIntPosition-int-">getIntPosition</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#getLongPosition-int-">getLongPosition</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#localize-double:A-">localize</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#localize-float:A-">localize</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#localize-int:A-">localize</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#localize-long:A-">localize</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#next--">next</a>, <a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.util.Iterator">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.util.<a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a></h3>
+<code><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true#forEachRemaining-java.util.function.Consumer-" title="class or interface in java.util">forEachRemaining</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Localizable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a></h3>
+<code><a href="../../../../net/imglib2/Localizable.html#localize-net.imglib2.Positionable-">localize</a>, <a href="../../../../net/imglib2/Localizable.html#positionAsLongArray--">positionAsLongArray</a>, <a href="../../../../net/imglib2/Localizable.html#positionAsPoint--">positionAsPoint</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealLocalizable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></h3>
+<code><a href="../../../../net/imglib2/RealLocalizable.html#localize-net.imglib2.RealPositionable-">localize</a>, <a href="../../../../net/imglib2/RealLocalizable.html#positionAsDoubleArray--">positionAsDoubleArray</a>, <a href="../../../../net/imglib2/RealLocalizable.html#positionAsRealPoint--">positionAsRealPoint</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="converterSupplier">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>converterSupplier</h4>
+<pre>protected final&nbsp;<a href="https://javadoc.scijava.org/Java8/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;&gt; converterSupplier</pre>
+</li>
+</ul>
+<a name="converter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>converter</h4>
+<pre>protected final&nbsp;<a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt; converter</pre>
+</li>
+</ul>
+<a name="sourceB">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sourceB</h4>
+<pre>protected final&nbsp;<a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt; sourceB</pre>
+</li>
+</ul>
+<a name="converted">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>converted</h4>
+<pre>protected final&nbsp;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt; converted</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-java.util.function.Supplier-net.imglib2.type.Type-">
+<!--   -->
+</a><a name="BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-java.util.function.Supplier-C-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BiConvertedCursor</h4>
+<pre>public&nbsp;BiConvertedCursor(<a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>&gt;&nbsp;sourceA,
+                         <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt;&nbsp;sourceB,
+                         <a href="https://javadoc.scijava.org/Java8/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;&nbsp;converterSupplier,
+                         <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&nbsp;c)</pre>
+<div class="block">Creates a copy of c for conversion that can be accessed through
+ <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#get--"><code>get()</code></a>.</div>
+</li>
+</ul>
+<a name="BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-net.imglib2.converter.BiConverter-net.imglib2.type.Type-">
+<!--   -->
+</a><a name="BiConvertedCursor-net.imglib2.Cursor-net.imglib2.Cursor-net.imglib2.converter.BiConverter-C-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BiConvertedCursor</h4>
+<pre>public&nbsp;BiConvertedCursor(<a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>&gt;&nbsp;sourceA,
+                         <a href="../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>&gt;&nbsp;sourceB,
+                         <a href="../../../../net/imglib2/converter/BiConverter.html" title="interface in net.imglib2.converter">BiConverter</a>&lt;? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,? super <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&nbsp;converter,
+                         <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&nbsp;c)</pre>
+<div class="block">Creates a copy of c for conversion that can be accessed through
+ <a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html#get--"><code>get()</code></a>.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="get--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&nbsp;get()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/Sampler.html#get--">Sampler</a></code></span></div>
+<div class="block">Access the actual <em>T</em> instance providing access to a pixel,
+ sub-pixel or integral region value the <a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> points at.</div>
+</li>
+</ul>
+<a name="jumpFwd-long-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>jumpFwd</h4>
+<pre>public&nbsp;void&nbsp;jumpFwd(long&nbsp;steps)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/Iterator.html#jumpFwd-long-">Iterator</a></code></span></div>
+<div class="block">Move steps &times; forward.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#jumpFwd-long-">jumpFwd</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>steps</code> - number of steps to move forward</dd>
+</dl>
+</li>
+</ul>
+<a name="fwd--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fwd</h4>
+<pre>public&nbsp;void&nbsp;fwd()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/Iterator.html#fwd--">Iterator</a></code></span></div>
+<div class="block">Move forward.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#fwd--">fwd</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="reset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../net/imglib2/Iterator.html#reset--">Iterator</a></code></span></div>
+<div class="block">Reset the <a href="../../../../net/imglib2/Iterator.html" title="interface in net.imglib2"><code>Iterator</code></a>, that is put it to where it would be if newly
+ created.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#reset--">reset</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="hasNext--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasNext</h4>
+<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
+<div class="block">The correct logic would be to
+ <code>return sourceA.hasNext() &amp;&amp; sourceB.hasNext()</code>
+ but we test only sourceA for efficiency.  Make sure that sourceA is the
+ smaller <a href="../../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2"><code>IterableInterval</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true#hasNext--" title="class or interface in java.util">hasNext</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#hasNext--">hasNext</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true, if there is another step forward is possible, otherwise
+         false</dd>
+</dl>
+</li>
+</ul>
+<a name="remove--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;void&nbsp;remove()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util">remove</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java8/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#remove--">remove</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="copy--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="class in net.imglib2.converter.read">BiConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">B</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&nbsp;copy()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/Sampler.html#copy--">copy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html#copy--">copy</a></code>&nbsp;in class&nbsp;<code><a href="../../../../net/imglib2/converter/AbstractConvertedCursor.html" title="class in net.imglib2.converter">AbstractConvertedCursor</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">A</a>,<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a> extends <a href="../../../../net/imglib2/type/Type.html" title="interface in net.imglib2.type">Type</a>&lt;<a href="../../../../net/imglib2/converter/read/BiConvertedCursor.html" title="type parameter in BiConvertedCursor">C</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>- A new <a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> in the same state accessing the same
+         values.
+ 
+         It does NOT copy T, just the state of the <a href="../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a>.
+         Otherwise use T.copy() if available.
+ 
+         Sampler.copy().get() == Sampler.get(), i.e. both hold the same
+         value, not necessarily the same instance (this is the case for an
+         <a href="../../../../net/imglib2/img/array/ArrayCursor.html" title="class in net.imglib2.img.array"><code>ArrayCursor</code></a> for example)</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BiConvertedCursor.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev&nbsp;Class</li>
+<li><a href="../../../../net/imglib2/converter/read/BiConvertedIterableInterval.html" title="class in net.imglib2.converter.read"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/converter/read/BiConvertedCursor.html" target="_top">Frames</a></li>
+<li><a href="BiConvertedCursor.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2020 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>
