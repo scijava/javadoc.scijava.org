@@ -92,11 +92,11 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.interpolation</div>
-<h2 title="Class Interpolant" class="title">Class Interpolant&lt;T,F extends <a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>&gt;</h2>
+<h2 title="Class Interpolant" class="title">Class Interpolant&lt;T,F&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>net.imglib2.interpolation.Interpolant&lt;T,F&gt;</li>
@@ -112,8 +112,8 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <span class="typeNameLabel">Interpolant&lt;T,F extends <a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>&gt;</span>
-extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+<pre>public final class <span class="typeNameLabel">Interpolant&lt;T,F&gt;</span>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="interface in net.imglib2">RealRandomAccessible</a>&lt;T&gt;, <a href="../../../net/imglib2/View.html" title="interface in net.imglib2">View</a></pre>
 <div class="block">A <a href="../../../net/imglib2/RealRandomAccessible.html" title="interface in net.imglib2"><code>RealRandomAccessible</code></a> that is generated through interpolation.</div>
 <dl>
@@ -139,6 +139,10 @@ implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="inter
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/interpolation/Interpolant.html#n">n</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/interpolation/Interpolant.html#source">source</a></span></code>&nbsp;</td>
 </tr>
@@ -157,8 +161,21 @@ implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="inter
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/interpolation/Interpolant.html#Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-">Interpolant</a></span>(<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&nbsp;source,
-           <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/interpolation/Interpolant.html#Interpolant-net.imglib2.EuclideanSpace-net.imglib2.interpolation.InterpolatorFactory-">Interpolant</a></span>(<a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>&nbsp;source,
+           <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">use the compile time safe constructor
+                <a href="../../../net/imglib2/interpolation/Interpolant.html#Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-int-"><code>Interpolant(Object, InterpolatorFactory, int)</code></a> instead</span></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../net/imglib2/interpolation/Interpolant.html#Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-int-">Interpolant</a></span>(<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&nbsp;source,
+           <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory,
+           int&nbsp;n)</code>
+<div class="block">Create an <a href="../../../net/imglib2/interpolation/Interpolant.html" title="class in net.imglib2.interpolation"><code>Interpolant</code></a> for a source, a compatible intepolator
+ factory and a specified number of dimensions.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -204,8 +221,8 @@ implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="inter
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealRandomAccessible">
@@ -231,10 +248,19 @@ implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="inter
 <a name="source">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>source</h4>
-<pre>protected final&nbsp;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a> extends <a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a> source</pre>
+<pre>protected final&nbsp;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a> source</pre>
+</li>
+</ul>
+<a name="n">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>n</h4>
+<pre>protected final&nbsp;int n</pre>
 </li>
 </ul>
 </li>
@@ -247,14 +273,41 @@ implements <a href="../../../net/imglib2/RealRandomAccessible.html" title="inter
 <h3>Constructor Detail</h3>
 <a name="Interpolant-net.imglib2.EuclideanSpace-net.imglib2.interpolation.InterpolatorFactory-">
 <!--   -->
-</a><a name="Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-">
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Interpolant</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;Interpolant(<a href="../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>&nbsp;source,
+                               <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">use the compile time safe constructor
+                <a href="../../../net/imglib2/interpolation/Interpolant.html#Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-int-"><code>Interpolant(Object, InterpolatorFactory, int)</code></a> instead</span></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - </dd>
+<dd><code>factory</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="Interpolant-java.lang.Object-net.imglib2.interpolation.InterpolatorFactory-int-">
+<!--   -->
+</a><a name="Interpolant-F-net.imglib2.interpolation.InterpolatorFactory-int-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Interpolant</h4>
 <pre>public&nbsp;Interpolant(<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&nbsp;source,
-                   <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory)</pre>
+                   <a href="../../../net/imglib2/interpolation/InterpolatorFactory.html" title="interface in net.imglib2.interpolation">InterpolatorFactory</a>&lt;<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">T</a>,<a href="../../../net/imglib2/interpolation/Interpolant.html" title="type parameter in Interpolant">F</a>&gt;&nbsp;factory,
+                   int&nbsp;n)</pre>
+<div class="block">Create an <a href="../../../net/imglib2/interpolation/Interpolant.html" title="class in net.imglib2.interpolation"><code>Interpolant</code></a> for a source, a compatible intepolator
+ factory and a specified number of dimensions.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - </dd>
+<dd><code>factory</code> - </dd>
+<dd><code>n</code> - </dd>
+</dl>
 </li>
 </ul>
 </li>
