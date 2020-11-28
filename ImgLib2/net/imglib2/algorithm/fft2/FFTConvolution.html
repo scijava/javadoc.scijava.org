@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":9,"i5":9,"i6":9,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":10,"i13":9,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":9,"i5":9,"i6":9,"i7":10,"i8":10,"i9":10,"i10":9,"i11":10,"i12":10,"i13":10,"i14":9,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -286,10 +286,11 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static &lt;R extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;R&gt;&gt;<br>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#computeConvolution-net.imglib2.img.Img-net.imglib2.img.Img-net.imglib2.RandomAccessibleInterval-boolean-java.util.concurrent.ExecutorService-">computeConvolution</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftImg,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#computeConvolution-net.imglib2.img.Img-net.imglib2.img.Img-net.imglib2.RandomAccessibleInterval-boolean-boolean-java.util.concurrent.ExecutorService-">computeConvolution</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftImg,
                   <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftKernel,
                   <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;R&gt;&nbsp;output,
                   boolean&nbsp;keepImgFFT,
+                  boolean&nbsp;div,
                   <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -315,13 +316,14 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static &lt;R extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;R&gt;&gt;<br>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#convolve-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-int-">convolve</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;R&gt;&nbsp;img,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#convolve-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-boolean-java.util.concurrent.ExecutorService-">convolve</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;R&gt;&nbsp;img,
         <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;imgInterval,
         <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;R&gt;&nbsp;kernel,
         <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;kernelInterval,
         <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;R&gt;&nbsp;output,
         <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;factory,
-        int&nbsp;numThreads)</code>&nbsp;</td>
+        boolean&nbsp;div,
+        <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a></code></td>
@@ -346,80 +348,89 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#getComplexConjugate--">getComplexConjugate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#getDiv--">getDiv</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>protected static <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#getFFTFactory-net.imglib2.img.Img-">getFFTFactory</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;? extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;&gt;&nbsp;img)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#imgFFT--">imgFFT</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#keepImgFFT--">keepImgFFT</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#kernelFFT--">kernelFFT</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#multiplyComplex-net.imglib2.img.Img-net.imglib2.img.Img-">multiplyComplex</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;img,
-               <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;kernel)</code>&nbsp;</td>
-</tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#multiplyDivideComplex-net.imglib2.img.Img-net.imglib2.img.Img-boolean-">multiplyDivideComplex</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;img,
+                     <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;kernel,
+                     boolean&nbsp;div)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setComputeComplexConjugate-boolean-">setComputeComplexConjugate</a></span>(boolean&nbsp;complexConjugate)</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setDiv-boolean-">setDiv</a></span>(boolean&nbsp;div)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setExecutorService-java.util.concurrent.ExecutorService-">setExecutorService</a></span>(<a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</code>
 <div class="block">Set the executor service to use.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setFFTImgFactory-net.imglib2.img.ImgFactory-">setFFTImgFactory</a></span>(<a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;factory)</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setImg-net.imglib2.RandomAccessible-net.imglib2.Interval-">setImg</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html" title="type parameter in FFTConvolution">R</a>&gt;&nbsp;img,
       <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;imgInterval)</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setImg-net.imglib2.RandomAccessibleInterval-">setImg</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html" title="type parameter in FFTConvolution">R</a>&gt;&nbsp;img)</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setImgFFT-net.imglib2.img.Img-">setImgFFT</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftImg)</code>
 <div class="block">Sets the FFT image as computed, be very careful with this method, if any parameters of the FFT are wrong, this will fail
  WARNING: if you do not set keepImgFFT, this image will be modified during convolution</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setKeepImgFFT-boolean-">setKeepImgFFT</a></span>(boolean&nbsp;keep)</code>&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setKernel-net.imglib2.RandomAccessible-net.imglib2.Interval-">setKernel</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html" title="type parameter in FFTConvolution">R</a>&gt;&nbsp;kernel,
          <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;kernelInterval)</code>&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setKernel-net.imglib2.RandomAccessibleInterval-">setKernel</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html" title="type parameter in FFTConvolution">R</a>&gt;&nbsp;kernel)</code>&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setKernelFFT-net.imglib2.img.Img-">setKernelFFT</a></span>(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftKernel)</code>
 <div class="block">Sets the FFT kernel as computed, be very careful with this method, if any parameters of the FFT are wrong, this will fail</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setOutput-net.imglib2.RandomAccessibleInterval-">setOutput</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html" title="type parameter in FFTConvolution">R</a>&gt;&nbsp;output)</code>&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../net/imglib2/util/Pair.html" title="interface in net.imglib2.util">Pair</a>&lt;<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>,<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/fft2/FFTConvolution.html#setupFFTs-net.imglib2.Interval-net.imglib2.Interval-long:A-long:A-">setupFFTs</a></span>(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;imgInterval,
          <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;kernelInterval,
@@ -842,6 +853,28 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 <pre>public&nbsp;boolean&nbsp;getComplexConjugate()</pre>
 </li>
 </ul>
+<a name="setDiv-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDiv</h4>
+<pre>public&nbsp;void&nbsp;setDiv(boolean&nbsp;div)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>div</code> - - perform deconvolution instead of convolution.</dd>
+</dl>
+</li>
+</ul>
+<a name="getDiv--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiv</h4>
+<pre>public&nbsp;boolean&nbsp;getDiv()</pre>
+</li>
+</ul>
 <a name="setKeepImgFFT-boolean-">
 <!--   -->
 </a>
@@ -973,7 +1006,7 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
                                                                              <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
 </li>
 </ul>
-<a name="computeConvolution-net.imglib2.img.Img-net.imglib2.img.Img-net.imglib2.RandomAccessibleInterval-boolean-java.util.concurrent.ExecutorService-">
+<a name="computeConvolution-net.imglib2.img.Img-net.imglib2.img.Img-net.imglib2.RandomAccessibleInterval-boolean-boolean-java.util.concurrent.ExecutorService-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -983,10 +1016,11 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
                                                               <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;fftKernel,
                                                               <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;R&gt;&nbsp;output,
                                                               boolean&nbsp;keepImgFFT,
+                                                              boolean&nbsp;div,
                                                               <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
 </li>
 </ul>
-<a name="convolve-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-int-">
+<a name="convolve-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessible-net.imglib2.Interval-net.imglib2.RandomAccessibleInterval-net.imglib2.img.ImgFactory-boolean-java.util.concurrent.ExecutorService-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -998,17 +1032,19 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
                                                           <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;kernelInterval,
                                                           <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;R&gt;&nbsp;output,
                                                           <a href="../../../../net/imglib2/img/ImgFactory.html" title="class in net.imglib2.img">ImgFactory</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;factory,
-                                                          int&nbsp;numThreads)</pre>
+                                                          boolean&nbsp;div,
+                                                          <a href="https://javadoc.scijava.org/Java8/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a>&nbsp;service)</pre>
 </li>
 </ul>
-<a name="multiplyComplex-net.imglib2.img.Img-net.imglib2.img.Img-">
+<a name="multiplyDivideComplex-net.imglib2.img.Img-net.imglib2.img.Img-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>multiplyComplex</h4>
-<pre>public static final&nbsp;void&nbsp;multiplyComplex(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;img,
-                                         <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;kernel)</pre>
+<h4>multiplyDivideComplex</h4>
+<pre>public static final&nbsp;void&nbsp;multiplyDivideComplex(<a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;img,
+                                               <a href="../../../../net/imglib2/img/Img.html" title="interface in net.imglib2.img">Img</a>&lt;<a href="../../../../net/imglib2/type/numeric/complex/ComplexFloatType.html" title="class in net.imglib2.type.numeric.complex">ComplexFloatType</a>&gt;&nbsp;kernel,
+                                               boolean&nbsp;div)</pre>
 </li>
 </ul>
 <a name="getFFTFactory-net.imglib2.img.Img-">
