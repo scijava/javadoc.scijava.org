@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -75,13 +75,13 @@ var activeTableTab = "activeTableTab";
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -92,57 +92,24 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">org.scijava.table.io</div>
-<h2 title="Class TableIOPlugin" class="title">Class TableIOPlugin</h2>
+<h2 title="Interface TableIOPlugin" class="title">Interface TableIOPlugin</h2>
 </div>
 <div class="contentContainer">
-<ul class="inheritance">
-<li><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/AbstractContextual.html" title="class in org.scijava">org.scijava.AbstractContextual</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractRichPlugin</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/plugin/AbstractTypedPlugin.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractTypedPlugin</a>&lt;D&gt;</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/plugin/AbstractHandlerPlugin.html" title="class in org.scijava.plugin">org.scijava.plugin.AbstractHandlerPlugin</a>&lt;<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class in org.scijava.io">org.scijava.io.AbstractIOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</li>
-<li>
-<ul class="inheritance">
-<li>org.scijava.table.io.TableIOPlugin</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><a href="https://javadoc.scijava.org/Java8/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;, <a href="../../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../../org/scijava/plugin/HandlerPlugin.html" title="interface in org.scijava.plugin">HandlerPlugin</a>&lt;<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;, <a href="../../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../../org/scijava/plugin/SingletonPlugin.html" title="interface in org.scijava.plugin">SingletonPlugin</a>, <a href="../../../../org/scijava/plugin/TypedPlugin.html" title="interface in org.scijava.plugin">TypedPlugin</a>&lt;<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;, <a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a>&lt;<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;, <a href="../../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
+<dt>All Superinterfaces:</dt>
+<dd><a href="https://javadoc.scijava.org/Java8/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>&gt;, <a href="../../../../org/scijava/Contextual.html" title="interface in org.scijava">Contextual</a>, <a href="../../../../org/scijava/plugin/HandlerPlugin.html" title="interface in org.scijava.plugin">HandlerPlugin</a>&lt;<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&gt;, <a href="../../../../org/scijava/plugin/HasPluginInfo.html" title="interface in org.scijava.plugin">HasPluginInfo</a>, <a href="../../../../org/scijava/Identifiable.html" title="interface in org.scijava">Identifiable</a>, <a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;, <a href="../../../../org/scijava/Locatable.html" title="interface in org.scijava">Locatable</a>, <a href="../../../../org/scijava/log/Logged.html" title="interface in org.scijava.log">Logged</a>, <a href="../../../../org/scijava/Prioritized.html" title="interface in org.scijava">Prioritized</a>, <a href="../../../../org/scijava/plugin/RichPlugin.html" title="interface in org.scijava.plugin">RichPlugin</a>, <a href="../../../../org/scijava/plugin/SciJavaPlugin.html" title="interface in org.scijava.plugin">SciJavaPlugin</a>, <a href="../../../../org/scijava/plugin/SingletonPlugin.html" title="interface in org.scijava.plugin">SingletonPlugin</a>, <a href="../../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a>&lt;<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&gt;, <a href="../../../../org/scijava/plugin/TypedPlugin.html" title="interface in org.scijava.plugin">TypedPlugin</a>&lt;<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&gt;, <a href="../../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></dd>
 </dl>
 <dl>
-<dt>Direct Known Subclasses:</dt>
+<dt>All Known Implementing Classes:</dt>
 <dd><a href="../../../../org/scijava/table/DefaultTableIOPlugin.html" title="class in org.scijava.table">DefaultTableIOPlugin</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">TableIOPlugin</span>
-extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class in org.scijava.io">AbstractIOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</pre>
+<pre>public interface <span class="typeNameLabel">TableIOPlugin</span>
+extends <a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</pre>
 <div class="block">Abstract plugin class for saving and loading tables</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -154,23 +121,6 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor.summary">
-<!--   -->
-</a>
-<h3>Constructor Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colOne" scope="col">Constructor and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#TableIOPlugin--">TableIOPlugin</a></span>()</code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -178,80 +128,52 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</code></td>
+<td class="colFirst"><code>default <a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#getDataType--">getDataType</a></span>()</code>
 <div class="block">The type of data opened and/or saved by the plugin.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#open-java.lang.String-">open</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)</code>
-<div class="block">Opens data from the given source.</div>
+<td class="colFirst"><code>default <a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#open-org.scijava.io.location.Location-">open</a></span>(<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source)</code>
+<div class="block">Opens data from the given location.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#open-java.lang.String-org.scijava.table.io.TableIOOptions-">open</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+<td class="colFirst"><code>default <a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#open-org.scijava.io.location.Location-org.scijava.table.io.TableIOOptions-">open</a></span>(<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
     <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)</code>
 <div class="block">Opens data from the given source.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#save-org.scijava.table.Table-java.lang.String-org.scijava.table.io.TableIOOptions-">save</a></span>(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;data,
-    <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#save-org.scijava.table.Table-org.scijava.io.location.Location-org.scijava.table.io.TableIOOptions-">save</a></span>(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;data,
+    <a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination,
     <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)</code>
 <div class="block">Saves the given data to the specified destination.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#save-org.scijava.table.Table-java.lang.String-">save</a></span>(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&nbsp;data,
-    <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)</code>
-<div class="block">Saves the given data to the specified destination.</div>
+<td class="colFirst"><code>default void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/scijava/table/io/TableIOPlugin.html#save-org.scijava.table.Table-org.scijava.io.location.Location-">save</a></span>(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&nbsp;data,
+    <a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination)</code>
+<div class="block">Saves the given data to the specified location.</div>
 </td>
 </tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractTypedPlugin">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../../org/scijava/plugin/AbstractTypedPlugin.html" title="class in org.scijava.plugin">AbstractTypedPlugin</a></h3>
-<code><a href="../../../../org/scijava/plugin/AbstractTypedPlugin.html#supports-D-">supports</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.AbstractRichPlugin">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.scijava.plugin.<a href="../../../../org/scijava/plugin/AbstractRichPlugin.html" title="class in org.scijava.plugin">AbstractRichPlugin</a></h3>
-<code><a href="../../../../org/scijava/plugin/AbstractRichPlugin.html#getInfo--">getInfo</a>, <a href="../../../../org/scijava/plugin/AbstractRichPlugin.html#getPriority--">getPriority</a>, <a href="../../../../org/scijava/plugin/AbstractRichPlugin.html#setInfo-org.scijava.plugin.PluginInfo-">setInfo</a>, <a href="../../../../org/scijava/plugin/AbstractRichPlugin.html#setPriority-double-">setPriority</a>, <a href="../../../../org/scijava/plugin/AbstractRichPlugin.html#toString--">toString</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.scijava.AbstractContextual">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.scijava.<a href="../../../../org/scijava/AbstractContextual.html" title="class in org.scijava">AbstractContextual</a></h3>
-<code><a href="../../../../org/scijava/AbstractContextual.html#context--">context</a>, <a href="../../../../org/scijava/AbstractContextual.html#getContext--">getContext</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.io.IOPlugin">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.scijava.io.<a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a></h3>
-<code><a href="../../../../org/scijava/io/IOPlugin.html#getType--">getType</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supports-java.lang.String-">supports</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsOpen-java.lang.String-">supportsOpen</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-java.lang.Object-java.lang.String-">supportsSave</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-java.lang.String-">supportsSave</a></code></li>
+<code><a href="../../../../org/scijava/io/IOPlugin.html#getType--">getType</a>, <a href="../../../../org/scijava/io/IOPlugin.html#open-java.lang.String-">open</a>, <a href="../../../../org/scijava/io/IOPlugin.html#save-D-java.lang.String-">save</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supports-java.lang.String-">supports</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsOpen-org.scijava.io.location.Location-">supportsOpen</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsOpen-java.lang.String-">supportsOpen</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-org.scijava.io.location.Location-">supportsSave</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-java.lang.Object-org.scijava.io.location.Location-">supportsSave</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-java.lang.Object-java.lang.String-">supportsSave</a>, <a href="../../../../org/scijava/io/IOPlugin.html#supportsSave-java.lang.String-">supportsSave</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.scijava.plugin.RichPlugin">
@@ -295,6 +217,13 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 <h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../../org/scijava/Versioned.html" title="interface in org.scijava">Versioned</a></h3>
 <code><a href="../../../../org/scijava/Versioned.html#getVersion--">getVersion</a></code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.scijava.Typed">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.scijava.<a href="../../../../org/scijava/Typed.html" title="interface in org.scijava">Typed</a></h3>
+<code><a href="../../../../org/scijava/Typed.html#supports-T-">supports</a></code></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -303,38 +232,39 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor.detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a name="TableIOPlugin--">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>TableIOPlugin</h4>
-<pre>public&nbsp;TableIOPlugin()</pre>
-</li>
-</ul>
-</li>
-</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="open-java.lang.String-">
+<a name="open-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>open</h4>
-<pre>public&nbsp;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;open(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source)
-                throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html#open-java.lang.String-">IOPlugin</a></code></span></div>
+<pre>default&nbsp;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;open(<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source)
+                 throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html#open-org.scijava.io.location.Location-">IOPlugin</a></code></span></div>
+<div class="block">Opens data from the given location.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/IOPlugin.html#open-org.scijava.io.location.Location-">open</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="open-org.scijava.io.location.Location-org.scijava.table.io.TableIOOptions-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>open</h4>
+<pre>default&nbsp;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;open(<a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;source,
+                        <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)
+                 throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Opens data from the given source.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -342,49 +272,35 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 </dl>
 </li>
 </ul>
-<a name="open-java.lang.String-org.scijava.table.io.TableIOOptions-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>open</h4>
-<pre>public&nbsp;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;open(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
-                       <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)
-                throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens data from the given source.</div>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="save-org.scijava.table.Table-java.lang.String-">
+<a name="save-org.scijava.table.Table-org.scijava.io.location.Location-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>save</h4>
-<pre>public&nbsp;void&nbsp;save(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&nbsp;data,
-                 <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination)
-          throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html#save-D-java.lang.String-">IOPlugin</a></code></span></div>
-<div class="block">Saves the given data to the specified destination.</div>
+<pre>default&nbsp;void&nbsp;save(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&nbsp;data,
+                  <a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination)
+           throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html#save-D-org.scijava.io.location.Location-">IOPlugin</a></code></span></div>
+<div class="block">Saves the given data to the specified location.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/IOPlugin.html#save-D-org.scijava.io.location.Location-">save</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="save-org.scijava.table.Table-java.lang.String-org.scijava.table.io.TableIOOptions-">
+<a name="save-org.scijava.table.Table-org.scijava.io.location.Location-org.scijava.table.io.TableIOOptions-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>save</h4>
-<pre>public&nbsp;void&nbsp;save(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;data,
-                 <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destination,
-                 <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)
-          throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<pre>default&nbsp;void&nbsp;save(<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&lt;?,?&gt;&nbsp;data,
+                  <a href="../../../../org/scijava/io/location/Location.html" title="interface in org.scijava.io.location">Location</a>&nbsp;destination,
+                  <a href="../../../../org/scijava/table/io/TableIOOptions.html" title="class in org.scijava.table.io">TableIOOptions</a>&nbsp;options)
+           throws <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Saves the given data to the specified destination.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -398,9 +314,13 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getDataType</h4>
-<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;&nbsp;getDataType()</pre>
+<pre>default&nbsp;<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;&nbsp;getDataType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html#getDataType--">IOPlugin</a></code></span></div>
 <div class="block">The type of data opened and/or saved by the plugin.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/scijava/io/IOPlugin.html#getDataType--">getDataType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/scijava/io/IOPlugin.html" title="interface in org.scijava.io">IOPlugin</a>&lt;<a href="../../../../org/scijava/table/Table.html" title="interface in org.scijava.table">Table</a>&gt;</code></dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -458,13 +378,13 @@ extends <a href="../../../../org/scijava/io/AbstractIOPlugin.html" title="class 
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":9,"i12":10};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":9,"i13":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -108,13 +108,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></dd>
+<dd><a href="https://javadoc.scijava.org/Java8/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a>, <a href="../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Context</span>
 extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></pre>
+implements <a href="../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></pre>
 <div class="block">Top-level SciJava application context, which initializes and maintains a list
  of services.</div>
 <dl>
@@ -235,75 +235,79 @@ implements <a href="../../org/scijava/Disposable.html" title="interface in org.s
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#close--">close</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#dispose--">dispose</a></span>()</code>
 <div class="block">Performs any needed cleanup of the object's services, in preparation for
  the object being retired (e.g., to make garbage collection possible).</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Java8/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#getClassLoader--">getClassLoader</a></span>()</code>
 <div class="block">Gets the class loader to use.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../org/scijava/plugin/PluginIndex.html" title="class in org.scijava.plugin">PluginIndex</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#getPluginIndex--">getPluginIndex</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>&lt;S extends <a href="../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>&gt;<br>S</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#getService-java.lang.Class-">getService</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;S&gt;&nbsp;c)</code>
 <div class="block">Gets the service of the given class, or null if there is no matching
  service.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#getService-java.lang.String-">getService</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</code>
 <div class="block">Gets the service of the given class name (useful for scripts).</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../org/scijava/service/ServiceIndex.html" title="class in org.scijava.service">ServiceIndex</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#getServiceIndex--">getServiceIndex</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#inject-java.lang.Object-">inject</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
 <div class="block">Injects the application context into the given object.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#isInjectable-java.lang.Class-">isInjectable</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;type)</code>
 <div class="block">Reports whether a parameter of the given type would be assigned a value as
  a consequence of calling <a href="../../org/scijava/Context.html#inject-java.lang.Object-"><code>inject(Object)</code></a>.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#isStrict--">isStrict</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>&lt;S extends <a href="../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>&gt;<br>S</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#service-java.lang.Class-">service</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;S&gt;&nbsp;c)</code>
 <div class="block">Gets the service of the given class.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#service-java.lang.String-">service</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className)</code>
 <div class="block">Gets the service of the given class name (useful for scripts).</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="https://javadoc.scijava.org/Java8/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../org/scijava/service/Service.html" title="interface in org.scijava.service">Service</a>&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#serviceClassList-java.lang.Class...-">serviceClassList</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>...&nbsp;serviceClasses)</code>
 <div class="block">Utility method for converting a varargs list of service classes to a
  <a href="https://javadoc.scijava.org/Java8/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of those classes.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../org/scijava/Context.html#setStrict-boolean-">setStrict</a></span>(boolean&nbsp;strict)</code>&nbsp;</td>
 </tr>
@@ -561,6 +565,13 @@ implements <a href="../../org/scijava/Disposable.html" title="interface in org.s
  needs to occur during the initialization of these services (especially
  those of lower priority). See <a href="../../org/scijava/service/ServiceHelper.html#loadServices--"><code>ServiceHelper.loadServices()</code></a> for more
  information.
+ </p>
+ <p>
+ NB: Instiantiation of a Context has an implied requirement of a
+ corresponding call to <a href="../../org/scijava/Context.html#dispose--"><code>dispose()</code></a> at the end of the SciJava
+ applicaton's lifecycle. This cleans up any remaining resources and allows
+ the JVM to exit gracefully. This is called automatically when constructed as
+ an <a href="https://javadoc.scijava.org/Java8/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang"><code>AutoCloseable</code></a>.
  </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -744,6 +755,22 @@ implements <a href="../../org/scijava/Disposable.html" title="interface in org.s
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../org/scijava/Disposable.html#dispose--">dispose</a></code>&nbsp;in interface&nbsp;<code><a href="../../org/scijava/Disposable.html" title="interface in org.scijava">Disposable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="close--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>public&nbsp;void&nbsp;close()
+           throws <a href="https://javadoc.scijava.org/Java8/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/lang/AutoCloseable.html?is-external=true#close--" title="class or interface in java.lang">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java8/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd>
 </dl>
 </li>
 </ul>
