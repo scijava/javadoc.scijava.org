@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -178,11 +178,16 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#ShollPlot-sc.fiji.snt.analysis.sholl.math.ShollStats-">ShollPlot</a></span>(<a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#ShollPlot-java.lang.String-java.lang.String-java.lang.String-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-">ShollPlot</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;title,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#ShollPlot-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-">ShollPlot</a></span>(<a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats,
+         boolean&nbsp;cumulativeFrequencies)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#ShollPlot-java.lang.String-java.lang.String-java.lang.String-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-boolean-">ShollPlot</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;title,
          <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;xLabel,
          <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;yLabel,
          <a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats,
-         boolean&nbsp;annotate)</code>&nbsp;</td>
+         boolean&nbsp;annotate,
+         boolean&nbsp;preferCumulativeFrequencies)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -218,16 +223,20 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#isVisible--">isVisible</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#isUsingCumulativeFrequencies--">isUsingCumulativeFrequencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#isVisible--">isVisible</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#markPoint-sc.fiji.snt.util.ShollPoint-java.awt.Color-">markPoint</a></span>(<a href="../../../../../../sc/fiji/snt/util/ShollPoint.html" title="class in sc.fiji.snt.util">ShollPoint</a>&nbsp;point,
          <a href="https://javadoc.scijava.org/Java8/java/awt/Color.html?is-external=true" title="class or interface in java.awt">Color</a>&nbsp;color)</code>
 <div class="block">Highlights a point on a plot using the default marker.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#markPoint-sc.fiji.snt.util.ShollPoint-int-int-">markPoint</a></span>(<a href="../../../../../../sc/fiji/snt/util/ShollPoint.html" title="class in sc.fiji.snt.util">ShollPoint</a>&nbsp;pCentroid,
          int&nbsp;markShape,
@@ -235,19 +244,19 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 <div class="block">Highlights a point on a plot without listing it on the Plot's table.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#rebuild--">rebuild</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#rebuild-sc.fiji.snt.analysis.sholl.math.ShollStats-">rebuild</a></span>(<a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#save-java.io.File-">save</a></span>(<a href="https://javadoc.scijava.org/Java8/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../sc/fiji/snt/analysis/sholl/gui/ShollPlot.html#save-java.lang.String-">save</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filepath)</code>&nbsp;</td>
 </tr>
@@ -320,6 +329,16 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 <pre>public&nbsp;ShollPlot(<a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats)</pre>
 </li>
 </ul>
+<a name="ShollPlot-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ShollPlot</h4>
+<pre>public&nbsp;ShollPlot(<a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats,
+                 boolean&nbsp;cumulativeFrequencies)</pre>
+</li>
+</ul>
 <a name="ShollPlot-sc.fiji.snt.analysis.sholl.Profile...-">
 <!--   -->
 </a>
@@ -329,7 +348,7 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 <pre>public&nbsp;ShollPlot(<a href="../../../../../../sc/fiji/snt/analysis/sholl/Profile.html" title="class in sc.fiji.snt.analysis.sholl">Profile</a>...&nbsp;profiles)</pre>
 </li>
 </ul>
-<a name="ShollPlot-java.lang.String-java.lang.String-java.lang.String-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-">
+<a name="ShollPlot-java.lang.String-java.lang.String-java.lang.String-sc.fiji.snt.analysis.sholl.math.ShollStats-boolean-boolean-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -339,7 +358,8 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
                  <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;xLabel,
                  <a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;yLabel,
                  <a href="../../../../../../sc/fiji/snt/analysis/sholl/math/ShollStats.html" title="interface in sc.fiji.snt.analysis.sholl.math">ShollStats</a>&nbsp;stats,
-                 boolean&nbsp;annotate)</pre>
+                 boolean&nbsp;annotate,
+                 boolean&nbsp;preferCumulativeFrequencies)</pre>
 </li>
 </ul>
 </li>
@@ -431,6 +451,15 @@ extends <a href="https://javadoc.scijava.org/Fiji/ij/gui/Plot.html?is-external=t
 <li class="blockList">
 <h4>isVisible</h4>
 <pre>public&nbsp;boolean&nbsp;isVisible()</pre>
+</li>
+</ul>
+<a name="isUsingCumulativeFrequencies--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUsingCumulativeFrequencies</h4>
+<pre>public&nbsp;boolean&nbsp;isUsingCumulativeFrequencies()</pre>
 </li>
 </ul>
 <a name="save-java.lang.String-">

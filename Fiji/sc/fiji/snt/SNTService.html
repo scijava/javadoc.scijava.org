@@ -355,7 +355,7 @@ implements <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImageJService.
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/snt/SNTService.html#loadTracings-java.lang.String-">loadTracings</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../sc/fiji/snt/SNTService.html#loadTracings-java.lang.String-">loadTracings</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePathOrURL)</code>
 <div class="block">Loads the specified tracings file.</div>
 </td>
 </tr>
@@ -609,13 +609,17 @@ implements <a href="https://javadoc.scijava.org/ImageJ/net/imagej/ImageJService.
 <ul class="blockList">
 <li class="blockList">
 <h4>loadTracings</h4>
-<pre>public&nbsp;void&nbsp;loadTracings(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath)</pre>
+<pre>public&nbsp;void&nbsp;loadTracings(<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePathOrURL)
+                  throws <a href="https://javadoc.scijava.org/Java8/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a>,
+                         <a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Loads the specified tracings file.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>filePath</code> - either a "SWC", "TRACES" or "JSON" file. Null not allowed.</dd>
+<dd><code>filePathOrURL</code> - either a "SWC", "TRACES" or "JSON" file path. URLs
+                      defining remote files also supported.. Null not allowed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://javadoc.scijava.org/Java8/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang">UnsupportedOperationException</a></code> - if SNT is not running</dd>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if data cannot be imported</dd>
 </dl>
 </li>
 </ul>
