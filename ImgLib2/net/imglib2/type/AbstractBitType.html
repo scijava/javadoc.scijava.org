@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":6,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":6,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -148,7 +148,7 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#dataAccess">dataAccess</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected long</code></td>
+<td class="colFirst"><code>protected <a href="../../../net/imglib2/type/Index.html" title="class in net.imglib2.type">Index</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#i">i</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -193,59 +193,27 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#decIndex--">decIndex</a></span>()</code>
-<div class="block">Decrement the index into the current data array.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#decIndex-int-">decIndex</a></span>(int&nbsp;decrement)</code>
-<div class="block">Decrease the index into the current data array by <code>decrement</code>
- steps.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../net/imglib2/util/Fraction.html" title="class in net.imglib2.util">Fraction</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#getEntitiesPerPixel--">getEntitiesPerPixel</a></span>()</code>
 <div class="block">Get the number of entities in the storage array required to store one
  pixel value.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#getIndex--">getIndex</a></span>()</code>
-<div class="block">Get the current index into the current data array.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../net/imglib2/type/NativeTypeFactory.html" title="class in net.imglib2.type">NativeTypeFactory</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>,<a href="../../../net/imglib2/img/basictypeaccess/LongAccess.html" title="interface in net.imglib2.img.basictypeaccess">LongAccess</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#getNativeTypeFactory--">getNativeTypeFactory</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#incIndex--">incIndex</a></span>()</code>
-<div class="block">Increment the index into the current data array.</div>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../net/imglib2/type/Index.html" title="class in net.imglib2.type">Index</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#index--">index</a></span>()</code>
+<div class="block">Get the (modifiable) index into the current data array.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#incIndex-int-">incIndex</a></span>(int&nbsp;increment)</code>
-<div class="block">Increases the index into the current data array by <code>increment</code>
- steps.</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#updateContainer-java.lang.Object-">updateContainer</a></span>(<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;c)</code>
 <div class="block">This method is used by an accessor (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to request an
  update of the current data array.</div>
-</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../net/imglib2/type/AbstractBitType.html#updateIndex-int-">updateIndex</a></span>(int&nbsp;index)</code>
-<div class="block">Set the index into the current data array.</div>
 </td>
 </tr>
 </table>
@@ -261,7 +229,7 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.imglib2.type.<a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a></h3>
-<code><a href="../../../net/imglib2/type/NativeType.html#duplicateTypeOnSameNativeImg--">duplicateTypeOnSameNativeImg</a></code></li>
+<code><a href="../../../net/imglib2/type/NativeType.html#decIndex--">decIndex</a>, <a href="../../../net/imglib2/type/NativeType.html#decIndex-int-">decIndex</a>, <a href="../../../net/imglib2/type/NativeType.html#duplicateTypeOnSameNativeImg--">duplicateTypeOnSameNativeImg</a>, <a href="../../../net/imglib2/type/NativeType.html#getIndex--">getIndex</a>, <a href="../../../net/imglib2/type/NativeType.html#incIndex--">incIndex</a>, <a href="../../../net/imglib2/type/NativeType.html#incIndex-int-">incIndex</a>, <a href="../../../net/imglib2/type/NativeType.html#updateIndex-int-">updateIndex</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.net.imglib2.type.Type">
@@ -297,7 +265,7 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>i</h4>
-<pre>protected&nbsp;long i</pre>
+<pre>protected final&nbsp;<a href="../../../net/imglib2/type/Index.html" title="class in net.imglib2.type">Index</a> i</pre>
 </li>
 </ul>
 <a name="nBits">
@@ -398,6 +366,22 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 </dl>
 </li>
 </ul>
+<a name="index--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>index</h4>
+<pre>public&nbsp;<a href="../../../net/imglib2/type/Index.html" title="class in net.imglib2.type">Index</a>&nbsp;index()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#index--">NativeType</a></code></span></div>
+<div class="block">Get the (modifiable) index into the current data array. The returned
+ instance will always be the same for the same Type.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../net/imglib2/type/NativeType.html#index--">index</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
 <a name="getNativeTypeFactory--">
 <!--   -->
 </a>
@@ -408,130 +392,6 @@ implements <a href="../../../net/imglib2/type/NativeType.html" title="interface 
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../net/imglib2/type/NativeType.html#getNativeTypeFactory--">getNativeTypeFactory</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="getIndex--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIndex</h4>
-<pre>public&nbsp;int&nbsp;getIndex()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#getIndex--">NativeType</a></code></span></div>
-<div class="block">Get the current index into the current data array.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#getIndex--">getIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the current index into the underlying data array</dd>
-</dl>
-</li>
-</ul>
-<a name="updateIndex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateIndex</h4>
-<pre>public&nbsp;void&nbsp;updateIndex(int&nbsp;index)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#updateIndex-int-">NativeType</a></code></span></div>
-<div class="block">Set the index into the current data array.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#updateIndex-int-">updateIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>index</code> - the new array index</dd>
-</dl>
-</li>
-</ul>
-<a name="incIndex--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>incIndex</h4>
-<pre>public&nbsp;void&nbsp;incIndex()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#incIndex--">NativeType</a></code></span></div>
-<div class="block">Increment the index into the current data array.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#incIndex--">incIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="incIndex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>incIndex</h4>
-<pre>public&nbsp;void&nbsp;incIndex(int&nbsp;increment)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#incIndex-int-">NativeType</a></code></span></div>
-<div class="block">Increases the index into the current data array by <code>increment</code>
- steps.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#incIndex-int-">incIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>increment</code> - how many steps</dd>
-</dl>
-</li>
-</ul>
-<a name="decIndex--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>decIndex</h4>
-<pre>public&nbsp;void&nbsp;decIndex()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#decIndex--">NativeType</a></code></span></div>
-<div class="block">Decrement the index into the current data array.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#decIndex--">decIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="decIndex-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>decIndex</h4>
-<pre>public&nbsp;void&nbsp;decIndex(int&nbsp;decrement)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html#decIndex-int-">NativeType</a></code></span></div>
-<div class="block">Decrease the index into the current data array by <code>decrement</code>
- steps.
-
- <p>
- This is used by accessors (e.g., a <a href="../../../net/imglib2/Cursor.html" title="interface in net.imglib2"><code>Cursor</code></a>) to position the
- <a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type"><code>NativeType</code></a> in the container.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../net/imglib2/type/NativeType.html#decIndex-int-">decIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../net/imglib2/type/NativeType.html" title="interface in net.imglib2.type">NativeType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a> extends <a href="../../../net/imglib2/type/AbstractBitType.html" title="class in net.imglib2.type">AbstractBitType</a>&lt;<a href="../../../net/imglib2/type/AbstractBitType.html" title="type parameter in AbstractBitType">T</a>&gt;&gt;</code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>decrement</code> - how many steps</dd>
 </dl>
 </li>
 </ul>
