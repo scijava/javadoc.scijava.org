@@ -1,0 +1,701 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BSplineInterpolator (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BSplineInterpolator (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BSplineInterpolator.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineCoefficientsInterpolatorFactory.html" title="class in net.imglib2.algorithm.interpolation.randomaccess"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolatorFactory.html" title="class in net.imglib2.algorithm.interpolation.randomaccess"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" target="_top">Frames</a></li>
+<li><a href="BSplineInterpolator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.interpolation.randomaccess</div>
+<h2 title="Class BSplineInterpolator" class="title">Class BSplineInterpolator&lt;T extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">net.imglib2.AbstractEuclideanSpace</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html" title="class in net.imglib2.position.transform">net.imglib2.position.transform.AbstractPositionableTransform</a>&lt;LocalizablePositionable&gt;</li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../net/imglib2/position/transform/Floor.html" title="class in net.imglib2.position.transform">net.imglib2.position.transform.Floor</a>&lt;<a href="../../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../../net/imglib2/algorithm/neighborhood/Neighborhood.html" title="interface in net.imglib2.algorithm.neighborhood">Neighborhood</a>&lt;T&gt;&gt;&gt;</li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator&lt;T&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the image type</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/Positionable.html" title="interface in net.imglib2">Positionable</a>, <a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a>, <a href="../../../../../net/imglib2/RealPositionable.html" title="interface in net.imglib2">RealPositionable</a>, <a href="../../../../../net/imglib2/RealRandomAccess.html" title="interface in net.imglib2">RealRandomAccess</a>&lt;T&gt;, <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;T&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">BSplineInterpolator&lt;T extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;</span>
+extends <a href="../../../../../net/imglib2/position/transform/Floor.html" title="class in net.imglib2.position.transform">Floor</a>&lt;<a href="../../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;<a href="../../../../../net/imglib2/algorithm/neighborhood/Neighborhood.html" title="interface in net.imglib2.algorithm.neighborhood">Neighborhood</a>&lt;T&gt;&gt;&gt;
+implements <a href="../../../../../net/imglib2/RealRandomAccess.html" title="interface in net.imglib2">RealRandomAccess</a>&lt;T&gt;</pre>
+<div class="block">Performs cubic b-spline interpolation by pre-computing coefficients on the fly.
+ This will be less time efficient, in general, than pre-computing coefficients
+ using a <code>BSplineDecomposition</code>. This will be more memory-efficient
+ though.
+
+ See Unser, Aldroubi, and Eden "Fast B-Spline Transforms for Continuous Image
+ Representation and Interpolation" IEEE PAMI 13(3) 1991.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>John Bogovic, Stephan Preibisch, Stephan Saalfeld, Tobias Pietzsch</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#ALPHA">ALPHA</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#clipping">clipping</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#FACTOR">FACTOR</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#FOURTHIRDS">FOURTHIRDS</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#ONESIXTH">ONESIXTH</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#radius">radius</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood">RectangleShape</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#shape">shape</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#SQRT3">SQRT3</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#TWOTHIRDS">TWOTHIRDS</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#value">value</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#w">w</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[][]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#weights">weights</a></span></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.position.transform.AbstractPositionableTransform">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.position.transform.<a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html" title="class in net.imglib2.position.transform">AbstractPositionableTransform</a></h3>
+<code><a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#discrete">discrete</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#position">position</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#target">target</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.net.imglib2.AbstractEuclideanSpace">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;net.imglib2.<a href="../../../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">AbstractEuclideanSpace</a></h3>
+<code><a href="../../../../../net/imglib2/AbstractEuclideanSpace.html#n">n</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#BSplineInterpolator-net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator-">BSplineInterpolator</a></span>(<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;interpolator)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#BSplineInterpolator-net.imglib2.RandomAccessible-int-boolean-">BSplineInterpolator</a></span>(<a href="../../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;source,
+                   int&nbsp;radius,
+                   boolean&nbsp;clipping)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#BSplineInterpolator-net.imglib2.RandomAccessibleInterval-">BSplineInterpolator</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;randomAccessible)</code>
+<div class="block">Build a default cubic-bspline interpolator.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#copy--">copy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#copyRealRandomAccess--">copyRealRandomAccess</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#cubicCardinalSpline-double-int-">cubicCardinalSpline</a></span>(double&nbsp;x,
+                   int&nbsp;width)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#evaluate3Normalized-double-">evaluate3Normalized</a></span>(double&nbsp;u)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#fillWeights--">fillWeights</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html#get--">get</a></span>()</code>
+<div class="block">Access the actual <em>T</em> instance providing access to a pixel,
+ sub-pixel or integral region value the <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> points at.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.position.transform.Floor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.position.transform.<a href="../../../../../net/imglib2/position/transform/Floor.html" title="class in net.imglib2.position.transform">Floor</a></h3>
+<code><a href="../../../../../net/imglib2/position/transform/Floor.html#floor-double-">floor</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#floor-double:A-long:A-">floor</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#floor-float-">floor</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#floor-float:A-long:A-">floor</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#floor-net.imglib2.RealLocalizable-long:A-">floor</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#move-double:A-">move</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#move-double-int-">move</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#move-float:A-">move</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#move-float-int-">move</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#move-net.imglib2.RealLocalizable-">move</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#setPosition-double:A-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#setPosition-double-int-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#setPosition-float:A-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#setPosition-float-int-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/Floor.html#setPosition-net.imglib2.RealLocalizable-">setPosition</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.position.transform.AbstractPositionableTransform">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.position.transform.<a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html" title="class in net.imglib2.position.transform">AbstractPositionableTransform</a></h3>
+<code><a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#bck-int-">bck</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#fwd-int-">fwd</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#getDoublePosition-int-">getDoublePosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#getFloatPosition-int-">getFloatPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#localize-double:A-">localize</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#localize-float:A-">localize</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#move-int:A-">move</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#move-int-int-">move</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#move-net.imglib2.Localizable-">move</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#move-long:A-">move</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#move-long-int-">move</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#setPosition-int:A-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#setPosition-int-int-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#setPosition-net.imglib2.Localizable-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#setPosition-long:A-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#setPosition-long-int-">setPosition</a>, <a href="../../../../../net/imglib2/position/transform/AbstractPositionableTransform.html#toString--">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.AbstractEuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;net.imglib2.<a href="../../../../../net/imglib2/AbstractEuclideanSpace.html" title="class in net.imglib2">AbstractEuclideanSpace</a></h3>
+<code><a href="../../../../../net/imglib2/AbstractEuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealRandomAccess">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/RealRandomAccess.html" title="interface in net.imglib2">RealRandomAccess</a></h3>
+<code><a href="../../../../../net/imglib2/RealRandomAccess.html#setPositionAndGet-double...-">setPositionAndGet</a>, <a href="../../../../../net/imglib2/RealRandomAccess.html#setPositionAndGet-float...-">setPositionAndGet</a>, <a href="../../../../../net/imglib2/RealRandomAccess.html#setPositionAndGet-net.imglib2.RealLocalizable-">setPositionAndGet</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealLocalizable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/RealLocalizable.html" title="interface in net.imglib2">RealLocalizable</a></h3>
+<code><a href="../../../../../net/imglib2/RealLocalizable.html#getDoublePosition-int-">getDoublePosition</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#getFloatPosition-int-">getFloatPosition</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#localize-double:A-">localize</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#localize-float:A-">localize</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#localize-net.imglib2.RealPositionable-">localize</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#positionAsDoubleArray--">positionAsDoubleArray</a>, <a href="../../../../../net/imglib2/RealLocalizable.html#positionAsRealPoint--">positionAsRealPoint</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.RealPositionable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/RealPositionable.html" title="interface in net.imglib2">RealPositionable</a></h3>
+<code><a href="../../../../../net/imglib2/RealPositionable.html#move-double:A-">move</a>, <a href="../../../../../net/imglib2/RealPositionable.html#move-double-int-">move</a>, <a href="../../../../../net/imglib2/RealPositionable.html#move-float:A-">move</a>, <a href="../../../../../net/imglib2/RealPositionable.html#move-float-int-">move</a>, <a href="../../../../../net/imglib2/RealPositionable.html#move-net.imglib2.RealLocalizable-">move</a>, <a href="../../../../../net/imglib2/RealPositionable.html#setPosition-double:A-">setPosition</a>, <a href="../../../../../net/imglib2/RealPositionable.html#setPosition-double-int-">setPosition</a>, <a href="../../../../../net/imglib2/RealPositionable.html#setPosition-float:A-">setPosition</a>, <a href="../../../../../net/imglib2/RealPositionable.html#setPosition-float-int-">setPosition</a>, <a href="../../../../../net/imglib2/RealPositionable.html#setPosition-net.imglib2.RealLocalizable-">setPosition</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.Positionable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/Positionable.html" title="interface in net.imglib2">Positionable</a></h3>
+<code><a href="../../../../../net/imglib2/Positionable.html#bck-int-">bck</a>, <a href="../../../../../net/imglib2/Positionable.html#fwd-int-">fwd</a>, <a href="../../../../../net/imglib2/Positionable.html#move-int:A-">move</a>, <a href="../../../../../net/imglib2/Positionable.html#move-int-int-">move</a>, <a href="../../../../../net/imglib2/Positionable.html#move-net.imglib2.Localizable-">move</a>, <a href="../../../../../net/imglib2/Positionable.html#move-long:A-">move</a>, <a href="../../../../../net/imglib2/Positionable.html#move-long-int-">move</a>, <a href="../../../../../net/imglib2/Positionable.html#setPosition-int:A-">setPosition</a>, <a href="../../../../../net/imglib2/Positionable.html#setPosition-int-int-">setPosition</a>, <a href="../../../../../net/imglib2/Positionable.html#setPosition-net.imglib2.Localizable-">setPosition</a>, <a href="../../../../../net/imglib2/Positionable.html#setPosition-long:A-">setPosition</a>, <a href="../../../../../net/imglib2/Positionable.html#setPosition-long-int-">setPosition</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.EuclideanSpace">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.<a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a></h3>
+<code><a href="../../../../../net/imglib2/EuclideanSpace.html#numDimensions--">numDimensions</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="SQRT3">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SQRT3</h4>
+<pre>public static final&nbsp;double SQRT3</pre>
+</li>
+</ul>
+<a name="ALPHA">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALPHA</h4>
+<pre>public static final&nbsp;double ALPHA</pre>
+</li>
+</ul>
+<a name="FACTOR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FACTOR</h4>
+<pre>public static final&nbsp;double FACTOR</pre>
+</li>
+</ul>
+<a name="ONESIXTH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ONESIXTH</h4>
+<pre>public static final&nbsp;double ONESIXTH</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator.ONESIXTH">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="TWOTHIRDS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TWOTHIRDS</h4>
+<pre>public static final&nbsp;double TWOTHIRDS</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator.TWOTHIRDS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="FOURTHIRDS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>FOURTHIRDS</h4>
+<pre>public static final&nbsp;double FOURTHIRDS</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator.FOURTHIRDS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="w">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>w</h4>
+<pre>protected&nbsp;double w</pre>
+</li>
+</ul>
+<a name="value">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>value</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt; value</pre>
+</li>
+</ul>
+<a name="weights">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>weights</h4>
+<pre>protected final&nbsp;double[][] weights</pre>
+</li>
+</ul>
+<a name="clipping">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clipping</h4>
+<pre>protected final&nbsp;boolean clipping</pre>
+</li>
+</ul>
+<a name="radius">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>radius</h4>
+<pre>protected final&nbsp;int radius</pre>
+</li>
+</ul>
+<a name="shape">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>shape</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/neighborhood/RectangleShape.html" title="class in net.imglib2.algorithm.neighborhood">RectangleShape</a> shape</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BSplineInterpolator-net.imglib2.algorithm.interpolation.randomaccess.BSplineInterpolator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineInterpolator</h4>
+<pre>public&nbsp;BSplineInterpolator(<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;interpolator)</pre>
+</li>
+</ul>
+<a name="BSplineInterpolator-net.imglib2.RandomAccessible-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineInterpolator</h4>
+<pre>public&nbsp;BSplineInterpolator(<a href="../../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;source,
+                           int&nbsp;radius,
+                           boolean&nbsp;clipping)</pre>
+</li>
+</ul>
+<a name="BSplineInterpolator-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BSplineInterpolator</h4>
+<pre>protected&nbsp;BSplineInterpolator(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;randomAccessible)</pre>
+<div class="block">Build a default cubic-bspline interpolator.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>randomAccessible</code> - the random accessible</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="get--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get</h4>
+<pre>public&nbsp;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&nbsp;get()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/Sampler.html#get--">Sampler</a></code></span></div>
+<div class="block">Access the actual <em>T</em> instance providing access to a pixel,
+ sub-pixel or integral region value the <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> points at.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/Sampler.html#get--">get</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="fillWeights--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fillWeights</h4>
+<pre>protected&nbsp;void&nbsp;fillWeights()</pre>
+</li>
+</ul>
+<a name="copy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public&nbsp;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;copy()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/Sampler.html#copy--">copy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>- A new <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> in the same state accessing the same
+         values.
+ 
+         It does NOT copy T, just the state of the <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a>.
+         Otherwise use T.copy() if available.
+ 
+         Sampler.copy().get() == Sampler.get(), i.e. both hold the same
+         value, not necessarily the same instance (this is the case for an
+         <a href="../../../../../net/imglib2/img/array/ArrayCursor.html" title="class in net.imglib2.img.array"><code>ArrayCursor</code></a> for example)</dd>
+</dl>
+</li>
+</ul>
+<a name="copyRealRandomAccess--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copyRealRandomAccess</h4>
+<pre>public&nbsp;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="class in net.imglib2.algorithm.interpolation.randomaccess">BSplineInterpolator</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&nbsp;copyRealRandomAccess()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/RealRandomAccess.html#copyRealRandomAccess--">copyRealRandomAccess</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/RealRandomAccess.html" title="interface in net.imglib2">RealRandomAccess</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" title="type parameter in BSplineInterpolator">T</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="evaluate3Normalized-double-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evaluate3Normalized</h4>
+<pre>public static&nbsp;double&nbsp;evaluate3Normalized(double&nbsp;u)</pre>
+</li>
+</ul>
+<a name="cubicCardinalSpline-double-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>cubicCardinalSpline</h4>
+<pre>public static&nbsp;double&nbsp;cubicCardinalSpline(double&nbsp;x,
+                                         int&nbsp;width)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BSplineInterpolator.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineCoefficientsInterpolatorFactory.html" title="class in net.imglib2.algorithm.interpolation.randomaccess"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolatorFactory.html" title="class in net.imglib2.algorithm.interpolation.randomaccess"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?net/imglib2/algorithm/interpolation/randomaccess/BSplineInterpolator.html" target="_top">Frames</a></li>
+<li><a href="BSplineInterpolator.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2021 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

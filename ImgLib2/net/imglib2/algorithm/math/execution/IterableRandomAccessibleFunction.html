@@ -49,7 +49,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../net/imglib2/algorithm/math/execution/IsLessThan.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/LetBinding.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunctionDouble.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" target="_top">Frames</a></li>
@@ -74,13 +74,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields.inherited.from.class.net.imglib2.AbstractInterval">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -92,7 +92,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.algorithm.math.execution</div>
-<h2 title="Class IterableRandomAccessibleFunction" class="title">Class IterableRandomAccessibleFunction&lt;O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</h2>
+<h2 title="Class IterableRandomAccessibleFunction" class="title">Class IterableRandomAccessibleFunction&lt;C extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;C&gt;,O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">net.imglib2.AbstractInterval</a></li>
 <li>
 <ul class="inheritance">
-<li>net.imglib2.algorithm.math.execution.IterableRandomAccessibleFunction&lt;O&gt;</li>
+<li>net.imglib2.algorithm.math.execution.IterableRandomAccessibleFunction&lt;C,O&gt;</li>
 </ul>
 </li>
 </ul>
@@ -124,9 +124,13 @@ var activeTableTab = "activeTableTab";
 <dt>All Implemented Interfaces:</dt>
 <dd><a href="https://javadoc.scijava.org/Java8/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;O&gt;, <a href="../../../../../net/imglib2/Dimensions.html" title="interface in net.imglib2">Dimensions</a>, <a href="../../../../../net/imglib2/EuclideanSpace.html" title="interface in net.imglib2">EuclideanSpace</a>, <a href="../../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>, <a href="../../../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2">IterableInterval</a>&lt;O&gt;, <a href="../../../../../net/imglib2/IterableRealInterval.html" title="interface in net.imglib2">IterableRealInterval</a>&lt;O&gt;, <a href="../../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;O&gt;, <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;O&gt;, <a href="../../../../../net/imglib2/RealInterval.html" title="interface in net.imglib2">RealInterval</a>, <a href="../../../../../net/imglib2/View.html" title="interface in net.imglib2">View</a></dd>
 </dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunctionDouble.html" title="class in net.imglib2.algorithm.math.execution">IterableRandomAccessibleFunctionDouble</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">IterableRandomAccessibleFunction&lt;O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
+<pre>public class <span class="typeNameLabel">IterableRandomAccessibleFunction&lt;C extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;C&gt;,O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
 extends <a href="../../../../../net/imglib2/AbstractInterval.html" title="class in net.imglib2">AbstractInterval</a>
 implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;O&gt;, <a href="../../../../../net/imglib2/IterableInterval.html" title="interface in net.imglib2">IterableInterval</a>&lt;O&gt;, <a href="../../../../../net/imglib2/View.html" title="interface in net.imglib2">View</a></pre>
 <div class="block">A <a href="../../../../../net/imglib2/View.html" title="interface in net.imglib2"><code>View</code></a> of the computation defined by an <a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions"><code>IFunction</code></a>.
@@ -151,6 +155,33 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 <!--   -->
 </a>
 <h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#computeType">computeType</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#inConverter">inConverter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#operation">operation</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#outConverter">outConverter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#outputType">outputType</a></span></code>&nbsp;</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="fields.inherited.from.class.net.imglib2.AbstractInterval">
 <!--   -->
@@ -185,15 +216,24 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-C-O-net.imglib2.converter.Converter-">IterableRandomAccessibleFunction</a></span>(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+                                <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt;&nbsp;inConverter,
+                                <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&nbsp;computeType,
+                                <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType,
+                                <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;outConverter)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-O-">IterableRandomAccessibleFunction</a></span>(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
                                 <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType)</code>
 <div class="block">Use a default <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter"><code>Converter</code></a> as defined by <a href="../../../../../net/imglib2/algorithm/math/abstractions/Util.html#genericRealTypeConverter--"><code>Util.genericRealTypeConverter()</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html#IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-O-net.imglib2.converter.Converter-">IterableRandomAccessibleFunction</a></span>(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
                                 <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType,
-                                <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;converter)</code>&nbsp;</td>
+                                <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;outConverter)</code>
+<div class="block">Use a default <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter"><code>Converter</code></a> as defined by <a href="../../../../../net/imglib2/algorithm/math/abstractions/Util.html#genericRealTypeConverter--"><code>Util.genericRealTypeConverter()</code></a>.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -333,23 +373,86 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="operation">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>operation</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a> operation</pre>
+</li>
+</ul>
+<a name="computeType">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>computeType</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt; computeType</pre>
+</li>
+</ul>
+<a name="outputType">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outputType</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt; outputType</pre>
+</li>
+</ul>
+<a name="inConverter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inConverter</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt;&gt; inConverter</pre>
+</li>
+</ul>
+<a name="outConverter">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>outConverter</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&gt; outConverter</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.type.numeric.RealType-net.imglib2.converter.Converter-">
+<a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-net.imglib2.type.numeric.RealType-net.imglib2.type.numeric.RealType-net.imglib2.converter.Converter-">
 <!--   -->
-</a><a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-O-net.imglib2.converter.Converter-">
+</a><a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-C-O-net.imglib2.converter.Converter-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>IterableRandomAccessibleFunction</h4>
 <pre>public&nbsp;IterableRandomAccessibleFunction(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+                                        <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&gt;&nbsp;inConverter,
+                                        <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>&nbsp;computeType,
                                         <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType,
-                                        <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;converter)</pre>
+                                        <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;outConverter)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>operation</code> - </dd>
+<dd><code>inConverter</code> - Can be null</dd>
+<dd><code>computeType</code> - </dd>
+<dd><code>outputType</code> - </dd>
+<dd><code>outConverter</code> - Can be null.</dd>
+</dl>
 </li>
 </ul>
 <a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.type.numeric.RealType-">
@@ -362,6 +465,20 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 <h4>IterableRandomAccessibleFunction</h4>
 <pre>public&nbsp;IterableRandomAccessibleFunction(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
                                         <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType)</pre>
+<div class="block">Use a default <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter"><code>Converter</code></a> as defined by <a href="../../../../../net/imglib2/algorithm/math/abstractions/Util.html#genericRealTypeConverter--"><code>Util.genericRealTypeConverter()</code></a>.</div>
+</li>
+</ul>
+<a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.type.numeric.RealType-net.imglib2.converter.Converter-">
+<!--   -->
+</a><a name="IterableRandomAccessibleFunction-net.imglib2.algorithm.math.abstractions.IFunction-O-net.imglib2.converter.Converter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>IterableRandomAccessibleFunction</h4>
+<pre>public&nbsp;IterableRandomAccessibleFunction(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+                                        <a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&nbsp;outputType,
+                                        <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" title="type parameter in IterableRandomAccessibleFunction">O</a>&gt;&nbsp;outConverter)</pre>
 <div class="block">Use a default <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter"><code>Converter</code></a> as defined by <a href="../../../../../net/imglib2/algorithm/math/abstractions/Util.html#genericRealTypeConverter--"><code>Util.genericRealTypeConverter()</code></a>.</div>
 </li>
 </ul>
@@ -630,7 +747,7 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../net/imglib2/algorithm/math/execution/IsLessThan.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/LetBinding.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunctionDouble.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/algorithm/math/execution/IterableRandomAccessibleFunction.html" target="_top">Frames</a></li>
@@ -655,13 +772,13 @@ implements <a href="../../../../../net/imglib2/RandomAccessibleInterval.html" ti
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields.inherited.from.class.net.imglib2.AbstractInterval">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -183,6 +183,27 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>static &lt;B extends <a href="../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,C extends <a href="../../../../net/imglib2/view/composite/RealComposite.html" title="class in net.imglib2.view.composite">RealComposite</a>&lt;B&gt;,L extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/labeling/ConnectedComponentAnalysis.html#connectedComponentsOnAffinities-net.imglib2.RandomAccessible-long:A:A-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.util.unionfind.UnionFind-long-">connectedComponentsOnAffinities</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;C&gt;&nbsp;affinities,
+                               long[][]&nbsp;affinityOffsets,
+                               <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+                               <a href="../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html" title="interface in net.imglib2.algorithm.util.unionfind">UnionFind</a>&nbsp;uf,
+                               long&nbsp;firstIndex)</code>
+<div class="block">Connected components on a regular arbitrary boolean affinity graph.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;B extends <a href="../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,C extends <a href="../../../../net/imglib2/view/composite/RealComposite.html" title="class in net.imglib2.view.composite">RealComposite</a>&lt;B&gt;,L extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/labeling/ConnectedComponentAnalysis.html#connectedComponentsOnAffinities-net.imglib2.RandomAccessible-long:A:A-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.util.unionfind.UnionFind-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">connectedComponentsOnAffinities</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;C&gt;&nbsp;affinities,
+                               long[][]&nbsp;affinityOffsets,
+                               <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+                               <a href="../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html" title="interface in net.imglib2.algorithm.util.unionfind">UnionFind</a>&nbsp;uf,
+                               <a href="https://javadoc.scijava.org/Java8/java/util/function/ToLongBiFunction.html?is-external=true" title="class or interface in java.util.function">ToLongBiFunction</a>&lt;<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,L&gt;&nbsp;id,
+                               <a href="https://javadoc.scijava.org/Java8/java/util/function/LongUnaryOperator.html?is-external=true" title="class or interface in java.util.function">LongUnaryOperator</a>&nbsp;idForSet)</code>
+<div class="block">Connected components on a regular arbitrary boolean affinity graph.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://javadoc.scijava.org/Java8/java/util/function/ToLongBiFunction.html?is-external=true" title="class or interface in java.util.function">ToLongBiFunction</a>&lt;<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/labeling/ConnectedComponentAnalysis.html#idFromIntervalIndexer-net.imglib2.Interval-">idFromIntervalIndexer</a></span>(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval)</code>&nbsp;</td>
 </tr>
@@ -269,7 +290,8 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
                                                                                            <a href="../../../../net/imglib2/algorithm/neighborhood/Shape.html" title="interface in net.imglib2.algorithm.neighborhood">Shape</a>&nbsp;shape)</pre>
 <div class="block">Implementation of connected component analysis that uses
  <a href="../../../../net/imglib2/algorithm/util/unionfind/IntArrayRankedUnionFind.html" title="class in net.imglib2.algorithm.util.unionfind"><code>IntArrayRankedUnionFind</code></a> to find sets of pixels that are connected
- with respect to a neighborhood (<code>shape</code>) over a binary mask. <code>mask</code>
+ with respect to a neighborhood (<code>shape</code>) over a binary mask.
+ <code>mask</code>
  and <code>labeling</code> are expected to have equal min and max.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -289,7 +311,7 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
 <a name="connectedComponents-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.neighborhood.Shape-java.util.function.LongFunction-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>connectedComponents</h4>
 <pre>public static&nbsp;&lt;B extends <a href="../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,L extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;connectedComponents(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;mask,
@@ -321,6 +343,61 @@ extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-exte
             the same argument should always return the same result.</dd>
 <dd><code>idForSet</code> - Create id for a set from the root id of a set. Multiple calls
             with the same argument should always return the same result.</dd>
+</dl>
+</li>
+</ul>
+<a name="connectedComponentsOnAffinities-net.imglib2.RandomAccessible-long:A:A-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.util.unionfind.UnionFind-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connectedComponentsOnAffinities</h4>
+<pre>public static&nbsp;&lt;B extends <a href="../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,C extends <a href="../../../../net/imglib2/view/composite/RealComposite.html" title="class in net.imglib2.view.composite">RealComposite</a>&lt;B&gt;,L extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;connectedComponentsOnAffinities(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;C&gt;&nbsp;affinities,
+                                                                                                                                  long[][]&nbsp;affinityOffsets,
+                                                                                                                                  <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+                                                                                                                                  <a href="../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html" title="interface in net.imglib2.algorithm.util.unionfind">UnionFind</a>&nbsp;uf,
+                                                                                                                                  <a href="https://javadoc.scijava.org/Java8/java/util/function/ToLongBiFunction.html?is-external=true" title="class or interface in java.util.function">ToLongBiFunction</a>&lt;<a href="../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,L&gt;&nbsp;id,
+                                                                                                                                  <a href="https://javadoc.scijava.org/Java8/java/util/function/LongUnaryOperator.html?is-external=true" title="class or interface in java.util.function">LongUnaryOperator</a>&nbsp;idForSet)</pre>
+<div class="block">Connected components on a regular arbitrary boolean affinity graph.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>B</code> - boolean type used for affinity scalars</dd>
+<dd><code>C</code> - affinity vector</dd>
+<dd><code>L</code> - label output must fit number of components</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>affinities</code> - affinity vector for each pixel</dd>
+<dd><code>affinityOffsets</code> - offset vector for each affinity index</dd>
+<dd><code>labeling</code> - output</dd>
+<dd><code>uf</code> - union find</dd>
+<dd><code>id</code> - id generator for pixels/ locations</dd>
+<dd><code>idForSet</code> - id generator for components</dd>
+</dl>
+</li>
+</ul>
+<a name="connectedComponentsOnAffinities-net.imglib2.RandomAccessible-long:A:A-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.util.unionfind.UnionFind-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>connectedComponentsOnAffinities</h4>
+<pre>public static&nbsp;&lt;B extends <a href="../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,C extends <a href="../../../../net/imglib2/view/composite/RealComposite.html" title="class in net.imglib2.view.composite">RealComposite</a>&lt;B&gt;,L extends <a href="../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;connectedComponentsOnAffinities(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;C&gt;&nbsp;affinities,
+                                                                                                                                  long[][]&nbsp;affinityOffsets,
+                                                                                                                                  <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+                                                                                                                                  <a href="../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html" title="interface in net.imglib2.algorithm.util.unionfind">UnionFind</a>&nbsp;uf,
+                                                                                                                                  long&nbsp;firstIndex)</pre>
+<div class="block">Connected components on a regular arbitrary boolean affinity graph.
+ Each component gets the id of the first pixel (in flat iteration order)
+ inside the component increased by firstIndex.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>B</code> - boolean type used for affinity scalars</dd>
+<dd><code>C</code> - affinity vector</dd>
+<dd><code>L</code> - label output must fit number of components</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>affinities</code> - affinity vector for each pixel</dd>
+<dd><code>affinityOffsets</code> - offset vector for each affinity index</dd>
+<dd><code>labeling</code> - output</dd>
+<dd><code>firstIndex</code> - </dd>
 </dl>
 </li>
 </ul>

@@ -1,0 +1,785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BSplineDecomposition (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../../script.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="BSplineDecomposition (ImgLib2 Javadocs 1.0.0-SNAPSHOT API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":10,"i11":9,"i12":10,"i13":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BSplineDecomposition.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/bspline/BSplineCoefficientsInterpolatorOdd.html" title="class in net.imglib2.algorithm.bspline"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/bspline/BsplineKernel0.html" title="class in net.imglib2.algorithm.bspline"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/bspline/BSplineDecomposition.html" target="_top">Frames</a></li>
+<li><a href="BSplineDecomposition.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">net.imglib2.algorithm.bspline</div>
+<h2 title="Class BSplineDecomposition" class="title">Class BSplineDecomposition&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>net.imglib2.algorithm.bspline.BSplineDecomposition&lt;T,S&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - image type</dd>
+<dd><code>S</code> - coefficient type</dd>
+</dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="typeNameLabel">BSplineDecomposition&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;,S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;&gt;</span>
+extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;S&gt;&gt;</pre>
+<div class="block">Compute Bspline coefficients from an image.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>John Bogovic</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#Ci">Ci</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#img">img</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#initHorizon">initHorizon</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#isPadded">isPadded</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#numberOfPoles">numberOfPoles</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#order">order</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#originalInterval">originalInterval</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#padding">padding</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#paddingWidth">paddingWidth</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#poles">poles</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#tmpCoefStorage">tmpCoefStorage</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#tolerance">tolerance</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#BSplineDecomposition-int-net.imglib2.RandomAccessible-">BSplineDecomposition</a></span>(int&nbsp;order,
+                    <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&nbsp;img)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#BSplineDecomposition-net.imglib2.RandomAccessible-">BSplineDecomposition</a></span>(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&nbsp;img)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#accept-net.imglib2.RandomAccessibleInterval-">accept</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&nbsp;coefficients)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#acceptUnpadded-net.imglib2.RandomAccessibleInterval-">acceptUnpadded</a></span>(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&nbsp;coefficients)</code>
+<div class="block">Compute coefficients.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#gainFromPoles-double:A-">gainFromPoles</a></span>(double[]&nbsp;poles)</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#getImage--">getImage</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static <a href="../../../../net/imglib2/iterator/IntervalIterator.html" title="class in net.imglib2.iterator">IntervalIterator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#getIterator-net.imglib2.Interval-int-">getIterator</a></span>(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+           int&nbsp;dim)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../net/imglib2/iterator/IntervalIterator.html" title="class in net.imglib2.iterator">IntervalIterator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#getIterator-net.imglib2.Interval-net.imglib2.Interval-int-">getIterator</a></span>(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;paddedInterval,
+           <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;originalInterval,
+           int&nbsp;dim)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected static &lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#initializeAntiCausalCoefficients-double-double-T-net.imglib2.RandomAccess-">initializeAntiCausalCoefficients</a></span>(double&nbsp;z,
+                                double&nbsp;c,
+                                T&nbsp;previous,
+                                <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;coefs)</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected static &lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#initializeCausalCoefficients-double-double-int-net.imglib2.RandomAccess-">initializeCausalCoefficients</a></span>(double&nbsp;z,
+                            double&nbsp;tolerance,
+                            int&nbsp;dimension,
+                            <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;dataAccess)</code>
+<div class="block">Data must be 1d or permuted such that the first dimension
+ is the dimension to be iterated over.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#poles-int-">poles</a></span>(int&nbsp;splineOrder)</code>
+<div class="block">Returns the poles for the filter for a spline of a given order.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static double[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#polesCi-double:A-">polesCi</a></span>(double[]&nbsp;poles)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>&lt;S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#recursion1d-net.imglib2.RandomAccess-net.imglib2.RandomAccess-double-double-S-long-int-">recursion1d</a></span>(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;srcAccess,
+           <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;S&gt;&nbsp;destAccess,
+           double&nbsp;z,
+           double&nbsp;Ci,
+           S&nbsp;previous,
+           long&nbsp;N,
+           int&nbsp;dimension)</code>
+<div class="block">Compute a 1d forward-backward recursion to compute bspline coefficients.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static &lt;S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#recursion1dUnpadded-net.imglib2.RandomAccess-net.imglib2.RandomAccess-S-long-int-double-int-double:A-double:A-">recursion1dUnpadded</a></span>(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;srcAccess,
+                   <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;S&gt;&nbsp;destAccess,
+                   S&nbsp;previous,
+                   long&nbsp;N,
+                   int&nbsp;dimension,
+                   double&nbsp;tolerance,
+                   int&nbsp;numberOfPoles,
+                   double[]&nbsp;poles,
+                   double[]&nbsp;Ci)</code>
+<div class="block">Compute a 1d forward-backward recursion to compute bspline coefficients.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#setPadded-boolean-">setPadded</a></span>(boolean&nbsp;isPadded)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.util.function.Consumer">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.util.function.<a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a></h3>
+<code><a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true#andThen-java.util.function.Consumer-" title="class or interface in java.util.function">andThen</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="order">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>order</h4>
+<pre>protected final&nbsp;int order</pre>
+</li>
+</ul>
+<a name="numberOfPoles">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numberOfPoles</h4>
+<pre>protected final&nbsp;int numberOfPoles</pre>
+</li>
+</ul>
+<a name="poles">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>poles</h4>
+<pre>protected final&nbsp;double[] poles</pre>
+</li>
+</ul>
+<a name="Ci">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Ci</h4>
+<pre>protected final&nbsp;double[] Ci</pre>
+</li>
+</ul>
+<a name="img">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>img</h4>
+<pre>protected final&nbsp;<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a> extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&gt; img</pre>
+</li>
+</ul>
+<a name="tolerance">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tolerance</h4>
+<pre>protected&nbsp;double tolerance</pre>
+</li>
+</ul>
+<a name="paddingWidth">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>paddingWidth</h4>
+<pre>protected&nbsp;int paddingWidth</pre>
+</li>
+</ul>
+<a name="initHorizon">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initHorizon</h4>
+<pre>protected&nbsp;int initHorizon</pre>
+</li>
+</ul>
+<a name="padding">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>padding</h4>
+<pre>protected&nbsp;double[] padding</pre>
+</li>
+</ul>
+<a name="tmpCoefStorage">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tmpCoefStorage</h4>
+<pre>protected&nbsp;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a> extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&gt; tmpCoefStorage</pre>
+</li>
+</ul>
+<a name="originalInterval">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>originalInterval</h4>
+<pre>protected&nbsp;<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a> originalInterval</pre>
+</li>
+</ul>
+<a name="isPadded">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isPadded</h4>
+<pre>protected&nbsp;boolean isPadded</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BSplineDecomposition-int-net.imglib2.RandomAccessible-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>BSplineDecomposition</h4>
+<pre>public&nbsp;BSplineDecomposition(int&nbsp;order,
+                            <a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&nbsp;img)</pre>
+</li>
+</ul>
+<a name="BSplineDecomposition-net.imglib2.RandomAccessible-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BSplineDecomposition</h4>
+<pre>public&nbsp;BSplineDecomposition(<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&nbsp;img)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setPadded-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPadded</h4>
+<pre>public&nbsp;void&nbsp;setPadded(boolean&nbsp;isPadded)</pre>
+</li>
+</ul>
+<a name="getImage--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getImage</h4>
+<pre>public&nbsp;<a href="../../../../net/imglib2/RandomAccessible.html" title="interface in net.imglib2">RandomAccessible</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">T</a>&gt;&nbsp;getImage()</pre>
+</li>
+</ul>
+<a name="polesCi-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>polesCi</h4>
+<pre>public static&nbsp;double[]&nbsp;polesCi(double[]&nbsp;poles)</pre>
+</li>
+</ul>
+<a name="gainFromPoles-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gainFromPoles</h4>
+<pre>public static&nbsp;double&nbsp;gainFromPoles(double[]&nbsp;poles)</pre>
+</li>
+</ul>
+<a name="accept-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>accept</h4>
+<pre>public&nbsp;void&nbsp;accept(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&nbsp;coefficients)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true#accept-T-" title="class or interface in java.util.function">accept</a></code>&nbsp;in interface&nbsp;<code><a href="https://javadoc.scijava.org/Java8/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a> extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="acceptUnpadded-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>acceptUnpadded</h4>
+<pre>public&nbsp;void&nbsp;acceptUnpadded(<a href="../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../net/imglib2/algorithm/bspline/BSplineDecomposition.html" title="type parameter in BSplineDecomposition">S</a>&gt;&nbsp;coefficients)</pre>
+<div class="block">Compute coefficients.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>coefficients</code> - the interval and destination in which to store coefficients.</dd>
+</dl>
+</li>
+</ul>
+<a name="getIterator-net.imglib2.Interval-net.imglib2.Interval-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIterator</h4>
+<pre>public static&nbsp;<a href="../../../../net/imglib2/iterator/IntervalIterator.html" title="class in net.imglib2.iterator">IntervalIterator</a>&nbsp;getIterator(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;paddedInterval,
+                                           <a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;originalInterval,
+                                           int&nbsp;dim)</pre>
+</li>
+</ul>
+<a name="getIterator-net.imglib2.Interval-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIterator</h4>
+<pre>public static&nbsp;<a href="../../../../net/imglib2/iterator/IntervalIterator.html" title="class in net.imglib2.iterator">IntervalIterator</a>&nbsp;getIterator(<a href="../../../../net/imglib2/Interval.html" title="interface in net.imglib2">Interval</a>&nbsp;interval,
+                                           int&nbsp;dim)</pre>
+</li>
+</ul>
+<a name="recursion1dUnpadded-net.imglib2.RandomAccess-net.imglib2.RandomAccess-net.imglib2.type.numeric.RealType-long-int-double-int-double:A-double:A-">
+<!--   -->
+</a><a name="recursion1dUnpadded-net.imglib2.RandomAccess-net.imglib2.RandomAccess-S-long-int-double-int-double:A-double:A-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recursion1dUnpadded</h4>
+<pre>public static&nbsp;&lt;S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;recursion1dUnpadded(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;srcAccess,
+                                                                                     <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;S&gt;&nbsp;destAccess,
+                                                                                     S&nbsp;previous,
+                                                                                     long&nbsp;N,
+                                                                                     int&nbsp;dimension,
+                                                                                     double&nbsp;tolerance,
+                                                                                     int&nbsp;numberOfPoles,
+                                                                                     double[]&nbsp;poles,
+                                                                                     double[]&nbsp;Ci)</pre>
+<div class="block">Compute a 1d forward-backward recursion to compute bspline coefficients.
+ Stores results in the destAccess, reads data from srcAccess.
+ 
+ srcAccess and destAccess can look into the same RandomAccessible, 
+ but need to be different (RandomAccess)es
+ 
+ It is the caller's responsibility to ensure the 
+ access are positioned correctly before calling.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srcAccess</code> - access for the data</dd>
+<dd><code>destAccess</code> - access to write results into</dd>
+<dd><code>previous</code> - a temporary variable</dd>
+<dd><code>N</code> - width of the recursion</dd>
+<dd><code>dimension</code> - the dimension along which to operate</dd>
+<dd><code>tolerance</code> - tolerance for initializing coefficients</dd>
+<dd><code>numberOfPoles</code> - number of poles</dd>
+<dd><code>poles</code> - the poles</dd>
+<dd><code>Ci</code> - Ci</dd>
+</dl>
+</li>
+</ul>
+<a name="recursion1d-net.imglib2.RandomAccess-net.imglib2.RandomAccess-double-double-net.imglib2.type.numeric.RealType-long-int-">
+<!--   -->
+</a><a name="recursion1d-net.imglib2.RandomAccess-net.imglib2.RandomAccess-double-double-S-long-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recursion1d</h4>
+<pre>public&nbsp;&lt;S extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;S&gt;,T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;recursion1d(<a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;srcAccess,
+                                                                      <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;S&gt;&nbsp;destAccess,
+                                                                      double&nbsp;z,
+                                                                      double&nbsp;Ci,
+                                                                      S&nbsp;previous,
+                                                                      long&nbsp;N,
+                                                                      int&nbsp;dimension)</pre>
+<div class="block">Compute a 1d forward-backward recursion to compute bspline coefficients.
+ Stores results in the destAccess, reads data from srcAccess.
+ 
+ srcAccess and destAccess can look into the same RandomAccessible, 
+ but need to be different (RandomAccess)es
+ 
+ It is the caller's responsibility to ensure the 
+ access are positioned correctly before calling.
+ 
+ See also ITK's:
+ Core/ImageFunction/include/itkBSplineDecompositionImageFilter.hxx</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srcAccess</code> - access for the data</dd>
+<dd><code>destAccess</code> - access to write results into</dd>
+<dd><code>previous</code> - a temporary variable</dd>
+<dd><code>N</code> - width of the recursion</dd>
+<dd><code>dimension</code> - the dimension along which to operate</dd>
+</dl>
+</li>
+</ul>
+<a name="initializeAntiCausalCoefficients-double-double-net.imglib2.type.numeric.RealType-net.imglib2.RandomAccess-">
+<!--   -->
+</a><a name="initializeAntiCausalCoefficients-double-double-T-net.imglib2.RandomAccess-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initializeAntiCausalCoefficients</h4>
+<pre>protected static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;void&nbsp;initializeAntiCausalCoefficients(double&nbsp;z,
+                                                                               double&nbsp;c,
+                                                                               T&nbsp;previous,
+                                                                               <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;coefs)</pre>
+</li>
+</ul>
+<a name="initializeCausalCoefficients-double-double-int-net.imglib2.RandomAccess-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initializeCausalCoefficients</h4>
+<pre>protected static&nbsp;&lt;T extends <a href="../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;T&gt;&gt;&nbsp;double&nbsp;initializeCausalCoefficients(double&nbsp;z,
+                                                                             double&nbsp;tolerance,
+                                                                             int&nbsp;dimension,
+                                                                             <a href="../../../../net/imglib2/RandomAccess.html" title="interface in net.imglib2">RandomAccess</a>&lt;T&gt;&nbsp;dataAccess)</pre>
+<div class="block">Data must be 1d or permuted such that the first dimension
+ is the dimension to be iterated over.
+ 
+ See Box 2 of Unser 1999</div>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="https://javadoc.scijava.org/Java8/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="poles-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>poles</h4>
+<pre>public static&nbsp;double[]&nbsp;poles(int&nbsp;splineOrder)</pre>
+<div class="block">Returns the poles for the filter for a spline of a given order. 
+ See Unser, 1997. Part II, Table I for Pole values.
+ 
+ See ITK's:
+ Modules/Core/ImageFunction/include/itkBSplineDecompositionImageFilter.hxx</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>splineOrder</code> - the order of the bspline</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of the poles</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a name="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/BSplineDecomposition.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../net/imglib2/algorithm/bspline/BSplineCoefficientsInterpolatorOdd.html" title="class in net.imglib2.algorithm.bspline"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../net/imglib2/algorithm/bspline/BsplineKernel0.html" title="class in net.imglib2.algorithm.bspline"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?net/imglib2/algorithm/bspline/BSplineDecomposition.html" target="_top">Frames</a></li>
+<li><a href="BSplineDecomposition.html" target="_top">No&nbsp;Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a name="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015&#x2013;2021 <a href="http://imglib2.net/">ImgLib2</a>. All rights reserved.</small></p>
+</body>
+</html>

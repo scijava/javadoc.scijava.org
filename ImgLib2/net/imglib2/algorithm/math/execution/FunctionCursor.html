@@ -48,8 +48,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/Equality.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorIncompatibleOrder.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/Exponential.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorDouble.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/algorithm/math/execution/FunctionCursor.html" target="_top">Frames</a></li>
@@ -92,7 +92,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">net.imglib2.algorithm.math.execution</div>
-<h2 title="Class FunctionCursor" class="title">Class FunctionCursor&lt;O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</h2>
+<h2 title="Class FunctionCursor" class="title">Class FunctionCursor&lt;C extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;C&gt;,O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../net/imglib2/AbstractCursor.html" title="class in net.imglib2">net.imglib2.AbstractCursor</a>&lt;O&gt;</li>
 <li>
 <ul class="inheritance">
-<li>net.imglib2.algorithm.math.execution.FunctionCursor&lt;O&gt;</li>
+<li>net.imglib2.algorithm.math.execution.FunctionCursor&lt;C,O&gt;</li>
 </ul>
 </li>
 </ul>
@@ -122,11 +122,11 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorIncompatibleOrder.html" title="class in net.imglib2.algorithm.math.execution">FunctionCursorIncompatibleOrder</a></dd>
+<dd><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorDouble.html" title="class in net.imglib2.algorithm.math.execution">FunctionCursorDouble</a>, <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorDoubleIncompatibleOrder.html" title="class in net.imglib2.algorithm.math.execution">FunctionCursorDoubleIncompatibleOrder</a>, <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorIncompatibleOrder.html" title="class in net.imglib2.algorithm.math.execution">FunctionCursorIncompatibleOrder</a></dd>
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">FunctionCursor&lt;O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
+<pre>public class <span class="typeNameLabel">FunctionCursor&lt;C extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;C&gt;,O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
 extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in net.imglib2">AbstractCursor</a>&lt;O&gt;</pre>
 </li>
 </ul>
@@ -147,20 +147,36 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://javadoc.scijava.org/Java8/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#all_ii">all_ii</a></span></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;?&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#cursor">cursor</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#f">f</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#ii">ii</a></span></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#inConverter">inConverter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#operation">operation</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#outConverter">outConverter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#sampler">sampler</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#scrapC">scrapC</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#scrap">scrap</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#scrapO">scrapO</a></span></code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -184,9 +200,11 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-O-net.imglib2.converter.Converter-">FunctionCursor</a></span>(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html#FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-C-O-net.imglib2.converter.Converter-">FunctionCursor</a></span>(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+              <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;&nbsp;inConverter,
+              <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&nbsp;computeType,
               <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&nbsp;outputType,
-              <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&nbsp;converter)</code>&nbsp;</td>
+              <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&nbsp;outConverter)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -306,40 +324,76 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="operation">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>operation</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a> operation</pre>
+</li>
+</ul>
+<a name="inConverter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inConverter</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;&gt; inConverter</pre>
+</li>
+</ul>
+<a name="outConverter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outConverter</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&gt; outConverter</pre>
+</li>
+</ul>
 <a name="f">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>f</h4>
-<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&gt; f</pre>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;&gt; f</pre>
 </li>
 </ul>
-<a name="scrap">
+<a name="scrapC">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>scrap</h4>
-<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt; scrap</pre>
+<h4>scrapC</h4>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt; scrapC</pre>
 </li>
 </ul>
-<a name="ii">
+<a name="scrapO">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ii</h4>
-<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a> ii</pre>
+<h4>scrapO</h4>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt; scrapO</pre>
 </li>
 </ul>
-<a name="all_ii">
+<a name="cursor">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cursor</h4>
+<pre>protected&nbsp;<a href="../../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;?&gt; cursor</pre>
+</li>
+</ul>
+<a name="sampler">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>all_ii</h4>
-<pre>protected&nbsp;<a href="https://javadoc.scijava.org/Java8/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>&gt; all_ii</pre>
+<h4>sampler</h4>
+<pre>protected final&nbsp;<a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2">Sampler</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&gt; sampler</pre>
 </li>
 </ul>
 </li>
@@ -350,17 +404,27 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.type.numeric.RealType-net.imglib2.converter.Converter-">
+<a name="FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-net.imglib2.type.numeric.RealType-net.imglib2.type.numeric.RealType-net.imglib2.converter.Converter-">
 <!--   -->
-</a><a name="FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-O-net.imglib2.converter.Converter-">
+</a><a name="FunctionCursor-net.imglib2.algorithm.math.abstractions.IFunction-net.imglib2.converter.Converter-C-O-net.imglib2.converter.Converter-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>FunctionCursor</h4>
 <pre>public&nbsp;FunctionCursor(<a href="../../../../../net/imglib2/algorithm/math/abstractions/IFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">IFunction</a>&nbsp;operation,
+                      <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&gt;&nbsp;inConverter,
+                      <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>&nbsp;computeType,
                       <a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&nbsp;outputType,
-                      <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;?&gt;,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&nbsp;converter)</pre>
+                      <a href="../../../../../net/imglib2/converter/Converter.html" title="interface in net.imglib2.converter">Converter</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">C</a>,<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&gt;&nbsp;outConverter)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>operation</code> - </dd>
+<dd><code>inConverter</code> - Can be null, and if so, a generic <code>Util#genericRealTypeConverter()</code> will be used.</dd>
+<dd><code>computeType</code> - </dd>
+<dd><code>outputType</code> - </dd>
+<dd><code>outConverter</code> - Can be null, and if so, a generic integer or real converter will be used.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -377,7 +441,7 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&nbsp;get()</pre>
+<pre>public final&nbsp;<a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursor.html" title="type parameter in FunctionCursor">O</a>&nbsp;get()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../net/imglib2/Sampler.html#get--">Sampler</a></code></span></div>
 <div class="block">Access the actual <em>T</em> instance providing access to a pixel,
  sub-pixel or integral region value the <a href="../../../../../net/imglib2/Sampler.html" title="interface in net.imglib2"><code>Sampler</code></a> points at.</div>
@@ -398,7 +462,7 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 <ul class="blockList">
 <li class="blockList">
 <h4>hasNext</h4>
-<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
+<pre>public final&nbsp;boolean&nbsp;hasNext()</pre>
 </li>
 </ul>
 <a name="reset--">
@@ -512,8 +576,8 @@ extends <a href="../../../../../net/imglib2/AbstractCursor.html" title="class in
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/Equality.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorIncompatibleOrder.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/Exponential.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../net/imglib2/algorithm/math/execution/FunctionCursorDouble.html" title="class in net.imglib2.algorithm.math.execution"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?net/imglib2/algorithm/math/execution/FunctionCursor.html" target="_top">Frames</a></li>

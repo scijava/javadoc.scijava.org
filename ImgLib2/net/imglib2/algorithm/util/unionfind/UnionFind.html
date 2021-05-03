@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":17,"i3":6,"i4":6};
+var methods = {"i0":6,"i1":6,"i2":17,"i3":18,"i4":18,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -151,10 +151,26 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>default &lt;L extends <a href="../../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html#relabel-net.imglib2.RandomAccessibleInterval-">relabel</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling)</code>
+<div class="block">Relabel all pixels into the representative id of their containing
+ sets as defined by <code>unionFind</code>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>default &lt;B extends <a href="../../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,L extends <a href="../../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;<br>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html#relabel-net.imglib2.RandomAccessibleInterval-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">relabel</a></span>(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+       <a href="https://javadoc.scijava.org/Java8/java/util/function/ToLongBiFunction.html?is-external=true" title="class or interface in java.util.function">ToLongBiFunction</a>&lt;<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,L&gt;&nbsp;idForPixel,
+       <a href="https://javadoc.scijava.org/Java8/java/util/function/LongUnaryOperator.html?is-external=true" title="class or interface in java.util.function">LongUnaryOperator</a>&nbsp;idForSet)</code>
+<div class="block">Relabel all pixels into the representative id of their containing
+ sets as defined by <code>unionFind</code>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html#setCount--">setCount</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/util/unionfind/UnionFind.html#size--">size</a></span>()</code>&nbsp;</td>
 </tr>
@@ -235,7 +251,7 @@ var activeTableTab = "activeTableTab";
 <a name="relabel-net.imglib2.RandomAccessibleInterval-net.imglib2.RandomAccessibleInterval-net.imglib2.algorithm.util.unionfind.UnionFind-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>relabel</h4>
 <pre>static&nbsp;&lt;B extends <a href="../../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,L extends <a href="../../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;relabel(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;B&gt;&nbsp;mask,
@@ -258,6 +274,48 @@ var activeTableTab = "activeTableTab";
             the same argument should always return the same result.</dd>
 <dd><code>idForSet</code> - Create id for a set from the root id of a set. Multiple calls
             with the same argument should always return the same result.</dd>
+</dl>
+</li>
+</ul>
+<a name="relabel-net.imglib2.RandomAccessibleInterval-java.util.function.ToLongBiFunction-java.util.function.LongUnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>relabel</h4>
+<pre>default&nbsp;&lt;B extends <a href="../../../../../net/imglib2/type/BooleanType.html" title="interface in net.imglib2.type">BooleanType</a>&lt;B&gt;,L extends <a href="../../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;relabel(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling,
+                                                                         <a href="https://javadoc.scijava.org/Java8/java/util/function/ToLongBiFunction.html?is-external=true" title="class or interface in java.util.function">ToLongBiFunction</a>&lt;<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>,L&gt;&nbsp;idForPixel,
+                                                                         <a href="https://javadoc.scijava.org/Java8/java/util/function/LongUnaryOperator.html?is-external=true" title="class or interface in java.util.function">LongUnaryOperator</a>&nbsp;idForSet)</pre>
+<div class="block">Relabel all pixels into the representative id of their containing
+ sets as defined by <code>unionFind</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - Output parameter to store labeling: background pixels are
+            labeled zero, foreground pixels are greater than zero: 1, 2,
+            ..., N. Note that this is expected to be zero as background
+            values will not be written.</dd>
+<dd><code>idForPixel</code> - Create id from pixel location and value. Multiple calls with
+            the same argument should always return the same result.</dd>
+<dd><code>idForSet</code> - Create id for a set from the root id of a set. Multiple calls
+            with the same argument should always return the same result.</dd>
+</dl>
+</li>
+</ul>
+<a name="relabel-net.imglib2.RandomAccessibleInterval-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>relabel</h4>
+<pre>default&nbsp;&lt;L extends <a href="../../../../../net/imglib2/type/numeric/IntegerType.html" title="interface in net.imglib2.type.numeric">IntegerType</a>&lt;L&gt;&gt;&nbsp;void&nbsp;relabel(<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;L&gt;&nbsp;labeling)</pre>
+<div class="block">Relabel all pixels into the representative id of their containing
+ sets as defined by <code>unionFind</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>labeling</code> - Output parameter to store labeling: background pixels are
+            labeled zero, foreground pixels are greater than zero: 1, 2,
+            ..., N. Note that this is expected to be zero as background
+            values will not be written.</dd>
 </dl>
 </li>
 </ul>

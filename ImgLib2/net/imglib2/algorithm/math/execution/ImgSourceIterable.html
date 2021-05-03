@@ -108,13 +108,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>, <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;O&gt;</dd>
+<dd><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>&lt;I&gt;, <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;O&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">ImgSourceIterable&lt;I extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;I&gt;,O extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;O&gt;&gt;</span>
 extends <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;O&gt;, <a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a></pre>
+implements <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;O&gt;, <a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>&lt;I&gt;</pre>
 </li>
 </ul>
 </div>
@@ -165,20 +165,20 @@ implements <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunc
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#eval-net.imglib2.Localizable-">eval</a></span>(<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;loc)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#getRandomAccessibleInterval--">getRandomAccessibleInterval</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#evalDouble--">evalDouble</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#hasNext--">hasNext</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#evalDouble-net.imglib2.Localizable-">evalDouble</a></span>(<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;loc)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#localizable--">localizable</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#getCursor--">getCursor</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#localize-long:A-">localize</a></span>(long[]&nbsp;position)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html#getRandomAccessibleInterval--">getRandomAccessibleInterval</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -187,6 +187,13 @@ implements <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunc
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://javadoc.scijava.org/Java8/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.net.imglib2.algorithm.math.abstractions.OFunction">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;net.imglib2.algorithm.math.abstractions.<a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a></h3>
+<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html#isOne--">isOne</a>, <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html#isZero--">isZero</a></code></li>
 </ul>
 </li>
 </ul>
@@ -258,55 +265,55 @@ implements <a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunc
 <pre>public&nbsp;<a href="../../../../../net/imglib2/RandomAccessibleInterval.html" title="interface in net.imglib2">RandomAccessibleInterval</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;&nbsp;getRandomAccessibleInterval()</pre>
 </li>
 </ul>
-<a name="hasNext--">
+<a name="getCursor--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>hasNext</h4>
-<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
+<h4>getCursor</h4>
+<pre>public&nbsp;<a href="../../../../../net/imglib2/Cursor.html" title="interface in net.imglib2">Cursor</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;&nbsp;getCursor()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html#hasNext--">hasNext</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="localizable--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>localizable</h4>
-<pre>public&nbsp;<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;localizable()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html#localizable--">localizable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="localize-long:A-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>localize</h4>
-<pre>public&nbsp;void&nbsp;localize(long[]&nbsp;position)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html#localize-long:A-">localize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a></code></dd>
+<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html#getCursor--">getCursor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/IImgSourceIterable.html" title="interface in net.imglib2.algorithm.math.abstractions">IImgSourceIterable</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">I</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
 <a name="children--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>children</h4>
 <pre>public&nbsp;<a href="https://javadoc.scijava.org/Java8/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a>&gt;&gt;&nbsp;children()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html#children--">children</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="evalDouble--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evalDouble</h4>
+<pre>public final&nbsp;double&nbsp;evalDouble()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html#evalDouble--">evalDouble</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="evalDouble-net.imglib2.Localizable-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>evalDouble</h4>
+<pre>public final&nbsp;double&nbsp;evalDouble(<a href="../../../../../net/imglib2/Localizable.html" title="interface in net.imglib2">Localizable</a>&nbsp;loc)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html#evalDouble-net.imglib2.Localizable-">evalDouble</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../net/imglib2/algorithm/math/abstractions/OFunction.html" title="interface in net.imglib2.algorithm.math.abstractions">OFunction</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a> extends <a href="../../../../../net/imglib2/type/numeric/RealType.html" title="interface in net.imglib2.type.numeric">RealType</a>&lt;<a href="../../../../../net/imglib2/algorithm/math/execution/ImgSourceIterable.html" title="type parameter in ImgSourceIterable">O</a>&gt;&gt;</code></dd>
 </dl>
 </li>
 </ul>
