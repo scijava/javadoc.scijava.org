@@ -1,16 +1,16 @@
 Check primary URLs:
 
-  $ curl -Is https://javadoc.scijava.org/ImageJ/ | head -n1
+  $ curl -Is https://javadoc.scijava.org/ImageJ2/ | head -n1
   HTTP/1.1 200 OK
   $ curl -Is https://javadoc.scijava.org/ImageJ1/ | grep '^\(HTTP/\|Location:\)'
   HTTP/1.1 301 Moved Permanently
-  Location: https://imagej.nih.gov/ij/developer/api/
+  Location: https://imagej.net/ij/developer/api/
 
 Check secondary aliases:
 
-  $ curl -Is https://javadoc.scijava.org/ImageJ2/ | grep '^\(HTTP/\|Location:\)'
+  $ curl -Is https://javadoc.scijava.org/ImageJ/ | grep '^\(HTTP/\|Location:\)'
   HTTP/1.1 301 Moved Permanently
-  Location: https://javadoc.scijava.org/ImageJ/
+  Location: https://javadoc.scijava.org/ImageJ2/
 
 Check that trailing slashes are added appropriately:
 
