@@ -1,3 +1,5 @@
+[![check](https://github.com/scijava/javadoc.scijava.org/actions/workflows/check.yml/badge.svg)](https://github.com/scijava/javadoc.scijava.org/actions/workflows/check.yml)
+
 This repository holds the hand-made parts of
 [https://javadoc.scijava.org/](https://javadoc.scijava.org/): the front page,
 its stylesheet and its icons. It also documents how the rest of the site, the
