@@ -1,0 +1,97 @@
+# What each path must end at: a status, or a glob of the final URL (which must
+# be a 200 if it stays on the site). Paths through "latest" use globs, since
+# their versions move with each release.
+
+# The front page and its assets.
+/                                                                       200
+/style.css                                                              200
+/favicon.png                                                            200
+
+# A component's javadoc, at its versioned path.
+/org.scijava/scijava-common/2.100.1/                                    200
+/net.imglib2/imglib2/8.0.0/net/imglib2/img/Img.html                     200
+# Modular javadoc, served at its real (module-nested) path.
+/net.imagej/ij/1.54p/ij/ij/ImagePlus.html                               200
+
+# The BOM union: a class page redirects to the managed version's page...
+/org.scijava/pom-scijava/45.1.0/                                        200
+/org.scijava/pom-scijava/45.1.0/element-list                            200
+/org.scijava/pom-scijava/45.1.0/net/imglib2/img/Img.html                /net.imglib2/imglib2/8.0.0/net/imglib2/img/Img.html
+# ...keyed by the class's flat path even where the javadoc is modular.
+/org.scijava/pom-scijava/45.1.0/ij/ImagePlus.html                       /net.imagej/ij/1.54p/ij/ij/ImagePlus.html
+/org.scijava/pom-scijava/45.1.0/net/imglib2/NoSuchClass.html            404
+
+# Named unions, and their fallback to the BOM-wide one for other groups.
+/org.scijava/pom-scijava/45.1.0/net.imglib2/                            200
+/org.scijava/pom-scijava/45.1.0/net.imglib2/net/imglib2/img/Img.html    /net.imglib2/imglib2/8.0.0/net/imglib2/img/Img.html
+/org.scijava/pom-scijava/45.1.0/net.imglib2/org/scijava/Context.html    /org.scijava/scijava-common/*/org/scijava/Context.html
+
+# "latest" floats to the newest release.
+/net.imagej/ij/latest/                                                  /net.imagej/ij/*/
+/net.imagej/ij/latest/ij/ij/ImagePlus.html                              /net.imagej/ij/*/ij/ij/ImagePlus.html
+/org.scijava/pom-scijava/latest/                                        /org.scijava/pom-scijava/*/
+/org.scijava/pom-scijava/latest/net/imglib2/img/Img.html                /net.imglib2/imglib2/*/net/imglib2/img/Img.html
+/org.scijava/pom-scijava/latest/net.imagej/                             /org.scijava/pom-scijava/*/net.imagej/
+
+# Legacy front pages go to the project's main component or named union.
+/ImageJ/                                                                /net.imagej/imagej/*/
+/ImageJ2/                                                               /net.imagej/imagej/*/
+/ImageJ1/                                                               /net.imagej/ij/*/
+/ImgLib2/                                                               /net.imglib2/imglib2/*/
+/SCIFIO/                                                                /io.scif/scifio/*/
+/SciJava/                                                               /org.scijava/scijava-common/*/
+/Fiji/                                                                  /org.scijava/pom-scijava/*/sc.fiji/
+/BoneJ/                                                                 /org.scijava/pom-scijava/*/org.bonej/
+/Bio-Formats/                                                           /ome/formats-api/*/
+/OMERO/                                                                 /org.openmicroscopy/omero-gateway/*/
+/FLIMLib/                                                               /flimlib/flimlib/*/
+/Guava/                                                                 /com.google.guava/guava/*/
+/Java3D/                                                                /org.jogamp.java3d/java3d-core/*/
+/JHotDraw/                                                              /org.jhotdraw/jhotdraw/7.6.0/
+/SciView/                                                               /sc.iview/sciview/*/
+/sciview/                                                               /sc.iview/sciview/*/
+/XChart/                                                                /org.knowm.xchart/xchart/*/
+/ImgLib2                                                                /net.imglib2/imglib2/*/
+
+# Legacy deep links reach the same class, including old frameset links.
+/ImgLib2/net/imglib2/img/Img.html                                       /net.imglib2/imglib2/*/net/imglib2/img/Img.html
+/ImageJ1/ij/ImagePlus.html                                              /net.imagej/ij/*/ij/ij/ImagePlus.html
+/ImageJ1/index.html?ij/ImagePlus.html                                   /net.imagej/ij/*/ij/ij/ImagePlus.html
+/Fiji/index.html?fiji/Main.html                                         /sc.fiji/fiji/*/fiji/Main.html
+/SciJava/org/scijava/Context.html                                       /org.scijava/scijava-common/*/org/scijava/Context.html
+/Guava/com/google/common/collect/ImmutableList.html                     /com.google.guava/guava/*/com/google/common/collect/ImmutableList.html
+/Bio-Formats/ome/xml/model/OME.html                                     /org.openmicroscopy/ome-xml/*/ome/xml/model/OME.html
+# Lowercase spellings old links use.
+/bio-formats/loci/formats/ImageReader.html                              /ome/formats-*/*/loci/formats/ImageReader.html
+/omero/                                                                 /org.openmicroscopy/omero-gateway/*/
+# The SciJava fork of Java 3D is now JogAmp's, packages renamed (twice, in one).
+/Java3D/org/scijava/vecmath/Tuple2f.html                                /org.jogamp.java3d/vecmath/*/org/jogamp/vecmath/Tuple2f.html
+/Java3D/org/scijava/java3d/Canvas3D.html                                /org.jogamp.java3d/java3d-core/*/org/jogamp/java3d/Canvas3D.html
+# Pages modern javadoc lacks fall back to the nearest equivalent.
+/Apache-Commons-IO/org/apache/commons/io/output/package-frame.html      /commons-io/commons-io/*/org/apache/commons/io/output/package-summary.html
+/JOML/org/joml/class-use/Matrix4d.html                                  /org.joml/joml/*/org/joml/Matrix4d.html
+
+# Legacy names are case-sensitive, so they never capture a groupId dir.
+/flimlib/flimlib/2.1.1/                                                 200
+/mpicbg/mpicbg/1.5.0/                                                   200
+
+# JDK and JavaFX API docs are proxied (javadoc links under /Java{N}/ rely on it).
+/Java8/java/lang/String.html                                            200
+/Java21/java.base/java/lang/String.html                                 200
+/JavaFX21/javafx.base/javafx/beans/Observable.html                      200
+/Java8/package-list                                                     200
+# javadoc -link probes element-list first; Java < 9 has none, so it must 404.
+/Java8/element-list                                                     404
+
+# Projects whose javadoc lives elsewhere.
+/VisAD/                                                                 https://javadoc.io/doc/org.scijava/visad/latest/
+/Pivot/                                                                 https://javadoc.io/doc/org.apache.pivot/pivot-core/latest/
+/Eclipse/                                                               https://help.eclipse.org/latest/*
+/Icy/                                                                   http://bioimageanalysis.org/icy/doc/
+/Micro-Manager-Core/                                                    https://micro-manager.org/apidoc/mmcorej/latest/
+/Micro-Manager-Studio/                                                  https://micro-manager.org/apidoc/mmstudio/stable/
+/NetBeans/                                                              https://bits.netbeans.org/dev/javadoc/
+/Alida/                                                                 https://github.com/alida-hub
+/KNIME/                                                                 https://github.com/knime-oss
+/LOCI/                                                                  https://github.com/uw-loci
+/MiToBo/                                                                https://github.com/mitobo-hub

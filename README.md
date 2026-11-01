@@ -179,6 +179,36 @@ ln -sfn releases/OLDER-STAMP current.new && mv -T current.new current
 
 Use `publish-javadoc.sh -n` to see what it would do without doing it.
 
+## Testing
+
+`.tests/check.py` checks the live site's URL behavior, following redirects
+while they stay on the site:
+
+* **`contract`**: the expectations in `.tests/contract.txt`, one path per
+  line with the status or URL it must end at: versioned pages, unions,
+  `latest`, legacy paths, proxies, and external redirects.
+* **`legacy`**: the links in `.tests/legacy-urls.txt`, sampled from real
+  traffic to the site's old unversioned trees, must each still reach the
+  same page.
+* **`index`**: every link on the front page, from this checkout's
+  `index.html`, so a proposed change is checked before it is published.
+
+```sh
+python3 .tests/check.py              # all checks, against javadoc.scijava.org
+python3 .tests/check.py index -v     # one check, listing passes too
+python3 .tests/check.py --base http://localhost:8080 contract
+```
+
+It needs only Python 3. GitHub Actions runs it on every push and pull request.
+Since most breakage would come from outside this repository (the server's
+configuration, a new publish, or a proxied site changing), it should also run
+after each publish, and daily on the server, where `-q` keeps it silent
+unless something fails, so cron mails only failures:
+
+```cron
+17 6 * * * cd ~/code/scijava/javadoc.scijava.org && git pull -q && python3 .tests/check.py -q
+```
+
 ## Adding a project to the front page
 
 1. Add a 64×64 icon to `images/`.
