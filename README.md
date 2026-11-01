@@ -1,5 +1,8 @@
-This repository houses the logic for generating the javadoc content at
-[https://javadoc.scijava.org/](https://javadoc.scijava.org/).
+This repository holds the hand-made parts of
+[https://javadoc.scijava.org/](https://javadoc.scijava.org/): the front page,
+its stylesheet and its icons. It also documents how the rest of the site, the
+javadoc itself, is generated: by [pombast], from the components managed by
+[pom-scijava].
 
 To contribute, please:
 
@@ -7,37 +10,56 @@ To contribute, please:
 2. make your changes, commit and push,
 3. [open a Pull Request](https://help.github.com/articles/creating-a-pull-request/).
 
-## TL;DR: What is generated
+## What the site serves
 
-1. **Actual javadoc for each component.**
-   E.g. `/org.scijava/scijava-common/2.87.1/`. Analogous to javadoc.io,
-   but also supports artifacts deployed to maven.scijava.org. And javadoc
-   of supported components is unpacked in advance, not on the fly on demand.
+1. **Javadoc for each component**, at a versioned path.
+   E.g. `/org.scijava/scijava-common/2.100.1/`. Analogous to [javadoc.io],
+   but also covering artifacts deployed to maven.scijava.org, and prepared in
+   advance rather than on demand.
 
-2. **Unioned index of all managed components for a particular BOM.**
-   E.g. `/org.scijava/pom-scijava/31.1.0/`. Useful for passing as a link to the
-   `javadoc` tool, or when you want to access the javadoc for a library
-   corresponding to a particular BOM version. Actual class and package javadoc
-   is referenced via 301 redirects to the correct component. For example, the
-   path:
+2. **A unioned index of all components managed by a BOM**, per BOM release.
+   E.g. `/org.scijava/pom-scijava/45.1.0/`. Useful as a single link target for
+   the `javadoc` tool, or for browsing the libraries of one BOM version. The
+   union holds no class pages of its own: each one 301-redirects to the
+   component that owns it. For example:
    ```
-   /org.scijava/pom-scijava/31.1.0/net/imglib2/img/Img.html
+   /org.scijava/pom-scijava/45.1.0/net/imglib2/img/Img.html
    ```
    redirects to:
    ```
-   /net.imglib2/imglib2/5.12.0/net/imglib2/img/Img.html
+   /net.imglib2/imglib2/8.0.0/net/imglib2/img/Img.html
    ```
-   Because the `net.imglib2.img.Img` class is part of
-   `net.imglib2:imglib2:5.12.0`, one of the BOM's managed components.
+   since the `net.imglib2.img.Img` class is part of `net.imglib2:imglib2:8.0.0`,
+   the version pom-scijava 45.1.0 manages.
 
-3. **Toplevel index of available javadoc.**
+3. **Named unions over parts of a BOM**, e.g. all of ImgLib2's components:
+   `/org.scijava/pom-scijava/45.1.0/net.imglib2/`. Each works like the full
+   union, with its own index and landing page.
+
+4. **`latest` aliases**, which float to the newest release on the site:
+   `/net.imagej/ij/latest/` → `/net.imagej/ij/1.54p/`, and
+   `/org.scijava/pom-scijava/latest/…` → the newest pom-scijava. These are 302
+   (temporary) redirects, so browsers never cache a stale target. A page the
+   newest union no longer has (e.g. a class since removed) is sent to the
+   newest older union that does, instead of a 404.
+
+5. **The front page**, from this repository.
+
+The site also keeps old links working. Its earlier incarnation served
+unversioned trees such as `/ImageJ2/`, `/SciJava/` and `/ImgLib2/`; their
+front pages now redirect to the project's main component (e.g.
+`/ImgLib2/` → `/net.imglib2/imglib2/latest/`), and their class pages to the
+same class via a union (e.g. `/ImgLib2/net/imglib2/img/Img.html` →
+`/org.scijava/pom-scijava/latest/net.imglib2/net/imglib2/img/Img.html`).
+`/Java{N}/` and `/JavaFX{N}/` proxy the JDK and JavaFX API docs. Projects
+whose javadoc lives elsewhere redirect there.
 
 ## Background and rationale
 
-The generated content is designed around the idea of a [Bill of Materials]
-(BOM), which provides a list of *managed* components at particular versions
-that are tested and working together. By importing the BOM into your build, you
-can then depend on any combination of the managed components without explicitly
+The site is designed around the idea of a [Bill of Materials] (BOM), which
+provides a list of *managed* components at particular versions that are
+tested and working together. By importing the BOM into your build, you can
+then depend on any combination of the managed components without explicitly
 declaring their versions, and the versions will be inferred from the BOM.
 
 Now suppose you are developing a Java library L that depends on several managed
@@ -76,40 +98,96 @@ There are still challenges, however:
   maven.scijava.org, for example, cannot be browsed there. And as far as I
   know, the server-side javadoc.io code is not open source, so configuring
   javadoc.scijava.org to work analogously, but for maven.scijava.org instead of
-  Maven Central, requires coding our own solution (i.e., this repository).
+  Maven Central, requires coding our own solution.
 
-## How this repository helps
+That solution is [pombast]'s `javadoc` command. Its BOM union gives the
+`javadoc` tool a single, fast link target, so builds stay quick and embed
+permanent, reproducible links. Every available javadoc of every component
+managed by every pom-scijava release on the site sits at a canonical,
+versioned location.
 
-The `wrangle.py` script generates a **combined javadoc target for a BOM**,
-unioning the `element-list`/`package-list` index so that it can be passed to
-the `javadoc` tool as a single link target, resulting in fast javadoc build
-times, with permanent reproducible links embedded in the resultant javadoc.
+## How the javadoc is made
 
-The script also unpacks the **actual javadoc for each managed component**.
+For each release of the BOM, `pombast javadoc`:
 
-The combined javadoc target, rather than recapitulating the HTML for every
-class of every component, instead uses 301 redirects via an Apache `.htaccess`
-file, which point at the unmodified unpacked javadoc for that component.
+* **Resolves** every managed component's full dependency closure, as Maven
+  would, so the components it depends on are included too.
 
-This approach has several advantages:
+* **Unpacks** each component's `-javadoc` JAR into `/{groupId}/{artifactId}/{version}/`.
+  Where none is published, or it is an empty stub (as some projects publish to
+  satisfy Maven Central's rules), it **generates** the javadoc from the
+  component's `-sources` JAR instead, as leniently as the `javadoc` tool
+  allows.
 
-* The `javadoc` tool has a single reproducible link target, so new javadoc
-  builds more quickly, with classes from dependencies linked with permalinks.
+* **Cross-links** each component's javadoc against the versions *it* actually
+  depends on, not the versions the BOM manages, so a component's pages are
+  the same whichever BOM brought it in. Old javadoc that linked to the
+  unversioned trees (e.g. `/SciJava/org/scijava/Context.html`) is rewritten to
+  link to the exact versioned page instead, class names that were never linked
+  become links, and JDK links point at the component's target Java version
+  under `/Java{N}/`.
 
-* Every available javadoc for every component managed by every version of
-  pom-scijava is accessible from a canonical location, with stable links.
+* **Builds the unions** for that BOM release, and regenerates the site-wide
+  redirect maps (union paths, `latest` versions, and `latest` fallbacks) from
+  everything on disk.
 
-* Old javadoc using version-agnostic (and therefore irreproducible) links
-  is adjusted during unpacking to use stable links instead&mdash;e.g.,
-  `/SciJava/org/scijava/Context.html` &rarr;
-  `/org.scijava/pom-scijava/30.0.0/org/scijava/Context.html` which then
-  redirects to `org.scijava/scijava-common/2.85.0/org/scijava/Context.html`.
+Component javadoc is cached per version, so each new BOM release only adds
+the component versions it introduces. pombast keeps its load on Maven
+repositories low: requests are spaced out, misses (e.g. a component that
+publishes no `-javadoc` JAR) are remembered rather than retried each run,
+and a run stops at the first refusal from a repository. Each run reports
+how many requests it made.
 
-  The various version-agnostic prefixes from the prior incarnation of the
-  javadoc.scijava.org website now redirect to the latest pom-scijava javadoc
-  prefix&mdash;e.g., `/SciJava/` &rarr; `/org.scijava/pom-scijava/latest/`
-  &rarr; `org.scijava/pom-scijava/31.1.0`, with the `latest` path updating
-  over time to always redirect to the newest BOM version hosted on the site.
+## Where everything lives
+
+| What | Where |
+|------|-------|
+| Front page, stylesheet, icons | this repository |
+| The generator, and the script that publishes its output | [pombast] (`pombast javadoc`, `bin/publish-javadoc.sh`) |
+| What is built: settings and named unions | [pom-scijava]'s `pombast.toml`, `[javadoc]` section |
+| Redirect rules (legacy paths, `latest`, unions, proxies) | [uw-loci/loci-servers] (private), `apache/sites/javadoc.scijava.org.include` |
+
+JHotDraw 7.6.0's javadoc was imported once from the old site, since no
+`-javadoc` or `-sources` JAR of it is published.
+
+## Building and publishing
+
+On the server, build each new pom-scijava release into the build tree, then
+publish:
+
+```sh
+cd pom-scijava
+pombast javadoc --workers 2 -o ~/javadoc-build org.scijava:pom-scijava:45.1.0
+../pombast/bin/publish-javadoc.sh -s ../javadoc.scijava.org \
+  ~/javadoc-build /var/www/javadoc/releases /var/www/javadoc/current
+```
+
+`publish-javadoc.sh` hard-links the build tree into a new, timestamped
+snapshot under `/var/www/javadoc/releases/`, lays this repository's files
+over it, converts the redirect maps into the format Apache reads, and then
+switches the `/var/www/javadoc/current` symlink to it in a single step.
+`/var/www/javadoc.scijava.org`, the web server's document root, points at
+`current`. Visitors therefore see either the old site or the new one, never a
+half-published one. Since the snapshots share unchanged files, each costs
+about a gigabyte rather than another copy of the site. The newest three are
+kept; to roll back, point `current` at an older one:
+
+```sh
+cd /var/www/javadoc
+ln -sfn releases/OLDER-STAMP current.new && mv -T current.new current
+```
+
+Use `publish-javadoc.sh -n` to see what it would do without doing it.
+
+## Adding a project to the front page
+
+1. Add a 64×64 icon to `images/`.
+2. Add a box to `index.html` linking to the project's `latest` javadoc, e.g.
+   `org.example/example/latest/`, or to a named union for a project of many
+   components.
+3. If the project should get a named union, add it to pom-scijava's
+   `[javadoc.unions]`.
+4. Publish as above.
 
 ------------------------------------------------------------------------
 
@@ -119,4 +197,7 @@ This approach has several advantages:
 [javadoc]:                https://en.wikipedia.org/wiki/Javadoc
 [`javadoc` tool]:         https://openjdk.java.net/groups/compiler/javadoc-architecture.html
 [Maven Central]:          https://search.maven.org/
+[pom-scijava]:            https://github.com/scijava/pom-scijava
+[pombast]:                https://github.com/scijava/pombast
 [SciJava Common v2.87.1]: https://javadoc.io/doc/org.scijava/scijava-common/2.87.1/
+[uw-loci/loci-servers]:   https://github.com/uw-loci/loci-servers
