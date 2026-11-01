@@ -47,9 +47,9 @@ To contribute, please:
 
 The site also keeps old links working. Its earlier incarnation served
 unversioned trees such as `/ImageJ2/`, `/SciJava/` and `/ImgLib2/`; their
-front pages now redirect to the project's main component (e.g.
-`/ImgLib2/` → `/net.imglib2/imglib2/latest/`), and their class pages to the
-same class via a union (e.g. `/ImgLib2/net/imglib2/img/Img.html` →
+front pages now redirect to the project's named union, or else its main
+component (e.g. `/ImgLib2/` → `/org.scijava/pom-scijava/latest/net.imglib2/`),
+and their class pages to the same class via a union (e.g. `/ImgLib2/net/imglib2/img/Img.html` →
 `/org.scijava/pom-scijava/latest/net.imglib2/net/imglib2/img/Img.html`).
 `/Java{N}/` and `/JavaFX{N}/` proxy the JDK and JavaFX API docs. Projects
 whose javadoc lives elsewhere redirect there.
