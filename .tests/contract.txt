@@ -93,9 +93,25 @@
 /Java21/java.base/java/lang/String.html                                 200 unofficial
 /Java25/java.base/java/lang/String.html                                 200 unofficial
 /Java/java/lang/String.html                                             /Java8/java/lang/String.html
-# ...others, and JavaFX, are proxied from the official docs.
-/Java22/java.base/java/lang/String.html                                 200 official
-/JavaFX21/javafx.base/javafx/beans/Observable.html                      200
+# ...other versions go to the next LTS: Java 9 and 10's pages gaining their
+# module, as their docs were not yet nested by module...
+/Java6/java/lang/String.html                                            /Java8/java/lang/String.html
+/Java10/java/lang/String.html                                           /Java11/java.base/java/lang/String.html
+/Java9/javax/swing/JFrame.html                                          /Java11/java.desktop/javax/swing/JFrame.html
+/Java9/java/util/class-use/List.html                                    /Java11/java.base/java/util/class-use/List.html
+/java10/java/lang/String.html                                           /Java11/java.base/java/lang/String.html
+/Java14/java.base/java/lang/String.html                                 /Java17/java.base/java/lang/String.html
+/Java14/element-list                                                    /Java17/element-list
+/Java22/java.base/java/lang/String.html                                 /Java25/java.base/java/lang/String.html
+/Java9/element-list                                                     404
+# ...except versions newer than the newest LTS we generate: the official docs.
+/Java26/java.base/java/lang/String.html                                 https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html
+
+# JavaFX: the BOM's, through its named union, from flat or module-qualified links.
+/JavaFX21/                                                              /org.scijava/pom-scijava/*/org.openjfx/
+/JavaFX8/javafx/scene/Node.html                                         /org.openjfx/javafx-*/*/javafx.graphics/javafx/scene/Node.html
+/JavaFX21/javafx.graphics/javafx/scene/Node.html                        /org.openjfx/javafx-*/*/javafx.graphics/javafx/scene/Node.html
+/javafx14/javafx/beans/Observable.html                                  /org.openjfx/javafx-*/*/javafx.base/javafx/beans/Observable.html
 /Java8/package-list                                                     200
 # javadoc -link probes element-list first; Java < 9 has none, so it must 404.
 /Java8/element-list                                                     404

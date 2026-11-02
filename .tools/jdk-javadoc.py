@@ -120,6 +120,29 @@ def generate(version: int, out: Path) -> None:
     shutil.rmtree(old, ignore_errors=True)
     n = sum(1 for _ in dest.rglob("*.html"))
     print(f"Java {version}: {n} pages in {dest} (javadoc exit {proc.returncode})")
+    if version == MODULE_MAP_VERSION:
+        write_module_map(dest / "element-list", out / MODULE_MAP)
+
+
+# Java 9 and 10's docs, which the site redirects to Java 11's, are not yet
+# module-nested (/Java10/java/lang/String.html), so redirecting needs each
+# package's module: a RewriteMap of package dir -> module, e.g. "java/lang
+# java.base", from Java 11's element-list.
+MODULE_MAP = "jdk-modules.map"
+MODULE_MAP_VERSION = 11
+
+
+def write_module_map(element_list: Path, dest: Path) -> None:
+    rows, module = [], None
+    for line in element_list.read_text().splitlines():
+        if line.startswith("module:"):
+            module = line[len("module:") :]
+        elif line and module:
+            rows.append(f"{line.replace('.', '/')} {module}\n")
+    tmp = dest.with_name(f".{dest.name}.tmp")
+    tmp.write_text("".join(sorted(rows)))
+    os.replace(tmp, dest)
+    print(f"Wrote {len(rows)} package modules to {dest}")
 
 
 def main() -> None:

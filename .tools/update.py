@@ -82,13 +82,17 @@ def built(version: str) -> bool:
 
 
 def run(cmd: list[str], cwd: Path, log: Path | None = None) -> str:
-    out = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, errors="replace")
-    text = out.stdout + out.stderr
     if log:
-        log.write_text(text)
-    if out.returncode:
+        # Written as it runs, so a long build can be followed (tail -f).
+        with log.open("w") as f:
+            code = subprocess.run(cmd, cwd=cwd, stdout=f, stderr=subprocess.STDOUT).returncode
+        text = log.read_text(errors="replace")
+    else:
+        out = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, errors="replace")
+        code, text = out.returncode, out.stdout + out.stderr
+    if code:
         where = f" (see {log})" if log else ""
-        raise SystemExit(f"FAILED ({out.returncode}): {' '.join(cmd)}{where}\n{text[-2000:]}")
+        raise SystemExit(f"FAILED ({code}): {' '.join(cmd)}{where}\n{text[-2000:]}")
     return text
 
 
