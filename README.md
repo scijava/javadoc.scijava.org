@@ -53,8 +53,17 @@ front pages now redirect to the project's named union, or else its main
 component (e.g. `/ImgLib2/` → `/org.scijava/pom-scijava/latest/net.imglib2/`),
 and their class pages to the same class via a union (e.g. `/ImgLib2/net/imglib2/img/Img.html` →
 `/org.scijava/pom-scijava/latest/net.imglib2/net/imglib2/img/Img.html`).
-`/Java{N}/` and `/JavaFX{N}/` proxy the JDK and JavaFX API docs. Projects
-whose javadoc lives elsewhere redirect there.
+`/Java{N}/` serves the Java SE API docs: for the LTS versions (8, 11, 17, 21
+and 25), generated from OpenJDK's own sources; for others, and for JavaFX at
+`/JavaFX{N}/`, proxied from the official docs. Projects whose javadoc lives
+elsewhere redirect there.
+
+The site hosts javadoc of many projects it does not author, so that the
+components managed by pom-scijava can link to it. These copies are not the
+projects' official documentation, and say so in a banner on every page; they
+are also kept out of search engines (`X-Robots-Tag: noindex`), so that a
+search never presents them as a project's current documentation. This covers
+every project outside the SciJava family, and the JDK docs generated here.
 
 ## Background and rationale
 
@@ -147,15 +156,26 @@ how many requests it made.
 | Front page, stylesheet, icons | this repository |
 | The generator, and the script that publishes its output | [pombast] (`pombast javadoc`, `bin/publish-javadoc.sh`) |
 | What is built: settings and named unions | [pom-scijava]'s `pombast.toml`, `[javadoc]` section |
-| Redirect rules (legacy paths, `latest`, unions, proxies) | [uw-loci/loci-servers] (private), `apache/sites/javadoc.scijava.org.include` |
+| Redirect rules (legacy paths, `latest`, unions, proxies), banner | [uw-loci/loci-servers] (private), `apache/sites/javadoc.scijava.org.include` |
+| Java SE API docs (`/Java{N}/`) | `.tools/jdk-javadoc.py` |
+| Building each new pom-scijava release | `.tools/update.py` |
 
 JHotDraw 7.6.0's javadoc was imported once from the old site, since no
 `-javadoc` or `-sources` JAR of it is published.
 
 ## Building and publishing
 
-On the server, build each new pom-scijava release into the build tree, then
-publish:
+New pom-scijava releases are built and published automatically:
+`.tools/update.py`, run hourly by cron on the server, notices each release
+whose GitHub release workflow has succeeded, waits until its POM is on Maven
+Central, then builds it, publishes, and runs the checks below. It prints
+nothing when there is nothing to do, so cron mails only when it acted:
+
+```cron
+7 * * * * cd ~/code/scijava/javadoc.scijava.org && python3 .tools/update.py
+```
+
+By hand, build a release into the build tree, then publish:
 
 ```sh
 cd pom-scijava
@@ -180,6 +200,13 @@ ln -sfn releases/OLDER-STAMP current.new && mv -T current.new current
 ```
 
 Use `publish-javadoc.sh -n` to see what it would do without doing it.
+
+The Java SE API docs are generated from the `src.zip` of each version's Zulu
+(OpenJDK) build, with that JDK's own `javadoc` tool, into the build tree:
+
+```sh
+uv run --project ../pombast python .tools/jdk-javadoc.py -o ~/javadoc-build 8 11 17 21 25
+```
 
 ## Testing
 
