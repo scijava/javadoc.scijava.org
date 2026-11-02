@@ -85,9 +85,16 @@
 /flimlib/flimlib/2.1.1/                                                 200
 /mpicbg/mpicbg/1.5.0/                                                   200
 
-# JDK and JavaFX API docs are proxied (javadoc links under /Java{N}/ rely on it).
-/Java8/java/lang/String.html                                            200
-/Java21/java.base/java/lang/String.html                                 200
+# Java SE API docs (javadoc links under /Java{N}/ rely on them): the LTS
+# versions are generated from OpenJDK's sources and served here...
+/Java8/java/lang/String.html                                            200 unofficial
+/Java11/java.base/java/lang/String.html                                 200 unofficial
+/Java17/java.base/java/lang/String.html                                 200 unofficial
+/Java21/java.base/java/lang/String.html                                 200 unofficial
+/Java25/java.base/java/lang/String.html                                 200 unofficial
+/Java/java/lang/String.html                                             /Java8/java/lang/String.html
+# ...others, and JavaFX, are proxied from the official docs.
+/Java22/java.base/java/lang/String.html                                 200 official
 /JavaFX21/javafx.base/javafx/beans/Observable.html                      200
 /Java8/package-list                                                     200
 # javadoc -link probes element-list first; Java < 9 has none, so it must 404.
@@ -105,3 +112,15 @@
 /KNIME/                                                                 https://github.com/knime-oss
 /LOCI/                                                                  https://github.com/uw-loci
 /MiToBo/                                                                https://github.com/mitobo-hub
+
+# Third-party javadoc is marked as an unofficial copy and kept out of search
+# engines (scijava/javadoc.scijava.org#6); the SciJava family's is not.
+# (Old frame-based javadoc: its content pages carry the banner, not its
+# navigation frames, nor the frameset shell, which has no <body>.)
+/org.ojalgo/ojalgo/45.1.1/overview-summary.html                         200 unofficial
+/org.ojalgo/ojalgo/45.1.1/allclasses-frame.html                         200
+/com.google.guava/guava/33.4.8-jre/com/google/common/collect/ImmutableList.html  200 unofficial
+/org.jhotdraw/jhotdraw/7.6.0/org/jhotdraw/app/Application.html          200 unofficial
+/org.scijava/scijava-common/2.100.1/org/scijava/Context.html            200 official
+/net.imglib2/imglib2/8.0.0/net/imglib2/img/Img.html                     200 official
+/                                                                       200 official

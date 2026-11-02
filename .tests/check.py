@@ -64,6 +64,21 @@ class Site:
         return 0, path, statuses
 
 
+def _page(self: "Site", path: str) -> tuple[str, str]:
+    """The body and X-Robots-Tag header of a page on the site."""
+    cls = http.client.HTTPSConnection if self.tls else http.client.HTTPConnection
+    conn = cls(self.host, self.port, timeout=30)
+    try:
+        conn.request("GET", path, headers={"User-Agent": "javadoc.scijava.org-check"})
+        r = conn.getresponse()
+        return r.read().decode("utf-8", "replace"), r.getheader("X-Robots-Tag") or ""
+    finally:
+        conn.close()
+
+
+Site.page = _page
+
+
 def lines(name: str):
     for line in (HERE / name).read_text().splitlines():
         line = line.split(" #")[0].strip()
@@ -71,15 +86,27 @@ def lines(name: str):
             yield line
 
 
+BANNER = "unofficial copy of this project's javadoc"
+
+
 def check_contract(site: Site):
     for line in lines("contract.txt"):
-        path, expect = line.split()
+        path, expect, *marks = line.split()
         status, end, seen = site.follow(path)
         if expect.isdigit():
             ok = status == int(expect) and not end.startswith("http")
         else:
             ok = fnmatch.fnmatchcase(end, expect) and (end.startswith("http") or status == 200)
-        yield ok, f"{path} -> {end} {seen} (expected {expect})"
+        note = ""
+        if ok and marks:
+            # "unofficial": the page shows the banner and is kept out of search
+            # engines; "official": neither (scijava/javadoc.scijava.org#6).
+            body, robots = site.page(end)
+            unofficial = BANNER in body and "noindex" in robots
+            official = BANNER not in body and "noindex" not in robots
+            ok = unofficial if marks[0] == "unofficial" else official
+            note = f" [{'banner' if BANNER in body else 'no banner'}, X-Robots-Tag: {robots or 'none'}]"
+        yield ok, f"{path} -> {end} {seen} (expected {expect}{' ' + marks[0] if marks else ''}){note}"
 
 
 # Rewrites the site applies on purpose, so the landing page differs from the
