@@ -160,9 +160,6 @@ how many requests it made.
 | Java SE API docs (`/Java{N}/`) | `.tools/jdk-javadoc.py` |
 | Building each new pom-scijava release | `.tools/update.py` |
 
-JHotDraw 7.6.0's javadoc was imported once from the old site, since no
-`-javadoc` or `-sources` JAR of it is published.
-
 ## Building and publishing
 
 New pom-scijava releases are built and published automatically:
