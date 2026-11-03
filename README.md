@@ -163,21 +163,30 @@ how many requests it made.
 ## Building and publishing
 
 New pom-scijava releases are built and published automatically:
-`.tools/update.py`, run hourly by cron on the server, notices each release
-whose GitHub release workflow has succeeded, waits until its POM is on Maven
-Central, then builds it, publishes, and runs the checks below. It prints
-nothing when there is nothing to do, so cron mails only when it acted:
+`.tools/update.py` notices each release whose GitHub release workflow has
+succeeded, waits until its POM is on Maven Central, then builds it, publishes,
+and runs the checks below. It runs hourly as the `cronbot` user, from the
+server's cron configuration in [uw-loci/loci-servers] (private:
+`cron/refresh-javadoc`, via `bin/refresh-javadoc.sh`), and prints nothing when
+there is nothing to do, so cron mails only when it acted or failed. It runs
+from its own clones of this repository, pombast and pom-scijava under
+`/var/www/javadoc/src`, fast-forwarded before each run, never from anyone's
+working copy.
 
-```cron
-7 * * * * cd ~/code/scijava/javadoc.scijava.org && python3 .tools/update.py
-```
-
-By hand, build a release into the build tree, then publish:
+Everything under `/var/www/javadoc` belongs to `cronbot`, so run anything by
+hand as that user too. To build a release and publish:
 
 ```sh
-cd pom-scijava
-pombast javadoc --workers 2 -o /var/www/javadoc/build org.scijava:pom-scijava:45.1.0
-../pombast/bin/publish-javadoc.sh -s ../javadoc.scijava.org \
+sudo -u cronbot python3 /var/www/javadoc/src/javadoc.scijava.org/.tools/update.py
+```
+
+`update.py` builds every successfully released version not yet on the site.
+For other versions, or to rebuild many at once, use `.tools/backfill.sh`
+(below), then publish:
+
+```sh
+sudo -u cronbot /var/www/javadoc/src/pombast/bin/publish-javadoc.sh \
+  -s /var/www/javadoc/src/javadoc.scijava.org \
   /var/www/javadoc/build /var/www/javadoc/releases /var/www/javadoc/current
 ```
 
@@ -207,6 +216,12 @@ Everything the site is built from and served from lives under
 | `logs/` | each release's build log (and `update.py`'s lock file) |
 | `releases/` | the published snapshots |
 | `current` | the live snapshot; `/var/www/javadoc.scijava.org` points here |
+| `src/` | the clones the automation runs from (this repository, pombast, pom-scijava) |
+| `cache/` | the build's caches: Maven repository (`m2/`), JDKs (`cjdk/`), Python packages (`uv/`) |
+
+Keep `cache/m2` in particular: besides the downloaded artifacts, it holds
+pombast's record of artifacts known to be missing, which spares the Maven
+repositories thousands of repeated requests.
 
 To rebuild many releases at once (e.g. after a pombast or jgo fix that changes
 what is built), `.tools/backfill.sh VERSION...` builds them one at a time,
@@ -220,7 +235,9 @@ The Java SE API docs are generated from the `src.zip` of each version's Zulu
 (OpenJDK) build, with that JDK's own `javadoc` tool, into the build tree:
 
 ```sh
-uv run --project ../pombast python .tools/jdk-javadoc.py -o /var/www/javadoc/build 8 11 17 21 25
+cd /var/www/javadoc/src/javadoc.scijava.org
+sudo -u cronbot env UV_CACHE_DIR=/var/www/javadoc/cache/uv \
+  uv run --project ../pombast python .tools/jdk-javadoc.py -o /var/www/javadoc/build 8 11 17 21 25
 ```
 
 ## Testing
@@ -245,13 +262,10 @@ python3 .tests/check.py --base http://localhost:8080 contract
 
 It needs only Python 3. GitHub Actions runs it on every push and pull request.
 Since most breakage would come from outside this repository (the server's
-configuration, a new publish, or a proxied site changing), it should also run
-after each publish, and daily on the server, where `-q` keeps it silent
-unless something fails, so cron mails only failures:
-
-```cron
-17 6 * * * cd ~/code/scijava/javadoc.scijava.org && git pull -q && python3 .tests/check.py -q
-```
+configuration, a new publish, or a site we redirect to changing), it also runs
+after each automatic publish, and daily on the server (loci-servers'
+`cron/check-javadoc`), where `-q` keeps it silent unless something fails, so
+cron mails only failures.
 
 ## Adding a project to the front page
 

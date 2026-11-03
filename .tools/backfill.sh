@@ -14,11 +14,16 @@
 
 set -u
 
-BUILD=${JD_BUILD:-/var/www/javadoc/build}
-LOGS=${JD_LOGS:-/var/www/javadoc/logs}
-POMBAST=${JD_POMBAST:-$HOME/code/scijava/pombast}
-POM_SCIJAVA=${JD_POM_SCIJAVA:-$HOME/code/scijava/pom-scijava}
+ROOT=/var/www/javadoc
+BUILD=${JD_BUILD:-$ROOT/build}
+LOGS=${JD_LOGS:-$ROOT/logs}
+POMBAST=${JD_POMBAST:-$ROOT/src/pombast}
+POM_SCIJAVA=${JD_POM_SCIJAVA:-$ROOT/src/pom-scijava}
 MAX_REQUESTS=${MAX_REQUESTS:-3000}
+# The same caches update.py uses (see there).
+export M2_REPO=${M2_REPO:-$ROOT/cache/m2}
+export CJDK_CACHE_DIR=${CJDK_CACHE_DIR:-$ROOT/cache/cjdk}
+export UV_CACHE_DIR=${UV_CACHE_DIR:-$ROOT/cache/uv}
 
 if [ $# -eq 0 ]; then
   sed -n '3,14s/^# \{0,1\}//p' "$0" >&2

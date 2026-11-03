@@ -9,7 +9,9 @@ OpenJDK's sources, and so this output, are GPLv2 with the Classpath Exception.
 The JDK is located (downloaded if needed) via jgo, so run this in an
 environment that has it, e.g.:
 
-    uv run --project ../pombast python .tools/jdk-javadoc.py -o /var/www/javadoc/build 21
+    sudo -u cronbot env UV_CACHE_DIR=/var/www/javadoc/cache/uv \
+      uv run --project /var/www/javadoc/src/pombast \
+      python .tools/jdk-javadoc.py -o /var/www/javadoc/build 21
 
 Output goes to {OUT}/Java{N}/, staged beside it and swapped in whole.
 """
@@ -35,6 +37,8 @@ JAVA8_PACKAGES = "java:javax:org.ietf.jgss:org.omg:org.w3c.dom:org.xml.sax"
 
 
 def java_home(version: int) -> Path:
+    # The site's JDK cache (see update.py), unless told otherwise.
+    os.environ.setdefault("CJDK_CACHE_DIR", "/var/www/javadoc/cache/cjdk")
     from jgo.util.java import JavaLocator, JavaSource
 
     exe = JavaLocator(java_version=version, java_source=JavaSource.DOWNLOAD).locate()

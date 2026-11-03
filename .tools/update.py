@@ -11,8 +11,11 @@ is then built with pombast into the build tree, published with this
 repository's static files laid over it, and the site checked.
 
 Usage: update.py [--dry-run]
-Paths default to this server's layout; override with the environment
-variables named in DEFAULTS.
+Everything lives under /var/www/javadoc (see the README): the build tree,
+logs and snapshots, plus clones of pombast and pom-scijava (src/), which this
+fast-forwards to their default branches before building, and the caches the
+build uses (cache/). Override any path with the environment variables named
+in DEFAULTS and CACHES.
 """
 
 import argparse
@@ -26,15 +29,23 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-HOME = Path.home()
+ROOT = Path("/var/www/javadoc")
 SITE = Path(__file__).resolve().parent.parent  # this repository
 DEFAULTS = {
-    "JD_BUILD": Path("/var/www/javadoc/build"),
-    "JD_RELEASES": Path("/var/www/javadoc/releases"),
-    "JD_LIVE": Path("/var/www/javadoc/current"),
-    "JD_POMBAST": HOME / "code/scijava/pombast",
-    "JD_POM_SCIJAVA": HOME / "code/scijava/pom-scijava",
-    "JD_LOGS": Path("/var/www/javadoc/logs"),
+    "JD_BUILD": ROOT / "build",
+    "JD_RELEASES": ROOT / "releases",
+    "JD_LIVE": ROOT / "current",
+    "JD_POMBAST": ROOT / "src/pombast",
+    "JD_POM_SCIJAVA": ROOT / "src/pom-scijava",
+    "JD_LOGS": ROOT / "logs",
+}
+# The build's caches, kept with the site rather than in a user's home: the
+# Maven repository (with pombast's record of artifacts known to be missing,
+# which spares the repositories repeated requests), JDKs, and uv's packages.
+CACHES = {
+    "M2_REPO": ROOT / "cache/m2",
+    "CJDK_CACHE_DIR": ROOT / "cache/cjdk",
+    "UV_CACHE_DIR": ROOT / "cache/uv",
 }
 RUNS = (
     "https://api.github.com/repos/scijava/pom-scijava/actions/workflows/"
@@ -98,6 +109,7 @@ def run(cmd: list[str], cwd: Path, log: Path | None = None) -> str:
 
 def build(version: str) -> None:
     pom_scijava = path("JD_POM_SCIJAVA")
+    run(["git", "pull", "-q", "--ff-only"], path("JD_POMBAST"))
     run(["git", "pull", "-q", "--ff-only"], pom_scijava)  # current pombast.toml
     log = path("JD_LOGS") / f"{version}.log"
     text = run(
@@ -134,6 +146,9 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("-n", "--dry-run", action="store_true", help="report, change nothing")
     args = ap.parse_args()
+
+    for name, default in CACHES.items():
+        os.environ.setdefault(name, str(default))
 
     # One run at a time: a build can outlast the cron interval.
     lock = open(path("JD_LOGS") / ".update.lock", "w")
