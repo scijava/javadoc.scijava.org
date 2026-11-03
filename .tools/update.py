@@ -29,12 +29,12 @@ from pathlib import Path
 HOME = Path.home()
 SITE = Path(__file__).resolve().parent.parent  # this repository
 DEFAULTS = {
-    "JD_BUILD": HOME / "javadoc-build",
+    "JD_BUILD": Path("/var/www/javadoc/build"),
     "JD_RELEASES": Path("/var/www/javadoc/releases"),
     "JD_LIVE": Path("/var/www/javadoc/current"),
     "JD_POMBAST": HOME / "code/scijava/pombast",
     "JD_POM_SCIJAVA": HOME / "code/scijava/pom-scijava",
-    "JD_LOGS": HOME / "javadoc-build-logs",
+    "JD_LOGS": Path("/var/www/javadoc/logs"),
 }
 RUNS = (
     "https://api.github.com/repos/scijava/pom-scijava/actions/workflows/"

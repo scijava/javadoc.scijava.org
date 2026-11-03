@@ -176,9 +176,9 @@ By hand, build a release into the build tree, then publish:
 
 ```sh
 cd pom-scijava
-pombast javadoc --workers 2 -o ~/javadoc-build org.scijava:pom-scijava:45.1.0
+pombast javadoc --workers 2 -o /var/www/javadoc/build org.scijava:pom-scijava:45.1.0
 ../pombast/bin/publish-javadoc.sh -s ../javadoc.scijava.org \
-  ~/javadoc-build /var/www/javadoc/releases /var/www/javadoc/current
+  /var/www/javadoc/build /var/www/javadoc/releases /var/www/javadoc/current
 ```
 
 `publish-javadoc.sh` hard-links the build tree into a new, timestamped
@@ -198,11 +198,29 @@ ln -sfn releases/OLDER-STAMP current.new && mv -T current.new current
 
 Use `publish-javadoc.sh -n` to see what it would do without doing it.
 
+Everything the site is built from and served from lives under
+`/var/www/javadoc/`, on one filesystem (as hard links require):
+
+| Path | What |
+|------|------|
+| `build/` | the build tree pombast writes; every snapshot shares its unchanged files |
+| `logs/` | each release's build log (and `update.py`'s lock file) |
+| `releases/` | the published snapshots |
+| `current` | the live snapshot; `/var/www/javadoc.scijava.org` points here |
+
+To rebuild many releases at once (e.g. after a pombast or jgo fix that changes
+what is built), `.tools/backfill.sh VERSION...` builds them one at a time,
+stopping at the first sign of trouble with a repository. To try changes to the
+Apache rules before reloading production, `.tools/apache-test.sh start` runs
+them on a throwaway, unprivileged server over the build tree, at
+`http://127.0.0.1:18080`, for `.tests/check.py --base` or
+`.tools/apache-test.sh trace PATH...`.
+
 The Java SE API docs are generated from the `src.zip` of each version's Zulu
 (OpenJDK) build, with that JDK's own `javadoc` tool, into the build tree:
 
 ```sh
-uv run --project ../pombast python .tools/jdk-javadoc.py -o ~/javadoc-build 8 11 17 21 25
+uv run --project ../pombast python .tools/jdk-javadoc.py -o /var/www/javadoc/build 8 11 17 21 25
 ```
 
 ## Testing

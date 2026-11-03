@@ -9,7 +9,7 @@ OpenJDK's sources, and so this output, are GPLv2 with the Classpath Exception.
 The JDK is located (downloaded if needed) via jgo, so run this in an
 environment that has it, e.g.:
 
-    uv run --project ../pombast python .tools/jdk-javadoc.py -o ~/javadoc-build 21
+    uv run --project ../pombast python .tools/jdk-javadoc.py -o /var/www/javadoc/build 21
 
 Output goes to {OUT}/Java{N}/, staged beside it and swapped in whole.
 """
