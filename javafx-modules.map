@@ -1,0 +1,49 @@
+# JavaFX package -> its module, for Apache's RewriteMap "fxmodule": old flat
+# links (/JavaFX11/javafx/scene/Node.html) gain the module dir that JavaFX 11+
+# javadoc nests pages under. Packages have never moved between modules, so one
+# map serves every version. It is the union of the element-lists of the
+# JavaFX javadoc we serve; regenerate it when javafx.map gains a version:
+#   awk '/^module:/ { m = substr($0, 8); next } { gsub("\\.", "/"); print $0, m }' \
+#     org.openjfx/javafx-base/*/element-list | sort -u
+javafx/animation javafx.graphics
+javafx/application javafx.graphics
+javafx/beans/binding javafx.base
+javafx/beans javafx.base
+javafx/beans/property/adapter javafx.base
+javafx/beans/property javafx.base
+javafx/beans/value javafx.base
+javafx/collections javafx.base
+javafx/collections/transformation javafx.base
+javafx/concurrent javafx.graphics
+javafx/css/converter javafx.graphics
+javafx/css javafx.graphics
+javafx/embed/swing javafx.swing
+javafx/event javafx.base
+javafx/fxml javafx.fxml
+javafx/geometry javafx.graphics
+javafx/print javafx.graphics
+javafx/scene/canvas javafx.graphics
+javafx/scene/chart javafx.controls
+javafx/scene/control/cell javafx.controls
+javafx/scene/control javafx.controls
+javafx/scene/control/skin javafx.controls
+javafx/scene/effect javafx.graphics
+javafx/scene/image javafx.graphics
+javafx/scene/input javafx.graphics
+javafx/scene javafx.graphics
+javafx/scene/layout javafx.graphics
+javafx/scene/media javafx.media
+javafx/scene/paint javafx.graphics
+javafx/scene/robot javafx.graphics
+javafx/scene/shape javafx.graphics
+javafx/scene/text javafx.graphics
+javafx/scene/transform javafx.graphics
+javafx/scene/web javafx.web
+javafx/stage javafx.graphics
+javafx/util/converter javafx.base
+javafx/util javafx.base
+jfx/incubator/scene/control/input jfx.incubator.input
+jfx/incubator/scene/control/richtext jfx.incubator.richtext
+jfx/incubator/scene/control/richtext/model jfx.incubator.richtext
+jfx/incubator/scene/control/richtext/skin jfx.incubator.richtext
+netscape/javascript jdk.jsobject

@@ -107,11 +107,23 @@
 # ...except versions newer than the newest LTS we generate: the official docs.
 /Java26/java.base/java/lang/String.html                                 https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/String.html
 
-# JavaFX: the BOM's, through its named union, from flat or module-qualified links.
-/JavaFX21/                                                              /org.scijava/pom-scijava/*/org.openjfx/
-/JavaFX8/javafx/scene/Node.html                                         /org.openjfx/javafx-*/*/javafx.graphics/javafx/scene/Node.html
-/JavaFX21/javafx.graphics/javafx/scene/Node.html                        /org.openjfx/javafx-*/*/javafx.graphics/javafx/scene/Node.html
-/javafx14/javafx/beans/Observable.html                                  /org.openjfx/javafx-*/*/javafx.base/javafx/beans/Observable.html
+# JavaFX 8 was never on Maven Central: Oracle's docs.
+/JavaFX8/javafx/scene/Node.html                                         https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html
+# Each major we serve, pinned by javafx.map; flat links gain their module.
+/JavaFX11/                                                              /org.openjfx/javafx-base/11.0.2/
+/JavaFX17/javafx/scene/Node.html                                        /org.openjfx/javafx-base/17.0.21/javafx.graphics/javafx/scene/Node.html
+/JavaFX19/element-list                                                  /org.openjfx/javafx-base/19.0.2.1/element-list
+/JavaFX21/javafx.graphics/javafx/scene/Node.html                        /org.openjfx/javafx-base/21.0.13/javafx.graphics/javafx/scene/Node.html
+/JavaFX23/javafx/scene/control/class-use/Button.html                    /org.openjfx/javafx-base/23.0.2/javafx.controls/javafx/scene/control/class-use/Button.html
+/JavaFX25/jfx/incubator/scene/control/richtext/RichTextArea.html        /org.openjfx/javafx-base/25.0.5/jfx.incubator.richtext/jfx/incubator/scene/control/richtext/RichTextArea.html
+# ...other majors, the next one up...
+/javafx14/javafx/beans/Observable.html                                  /org.openjfx/javafx-base/17.0.21/javafx.base/javafx/beans/Observable.html
+/JavaFX24/javafx.web/javafx/scene/web/WebView.html                      /org.openjfx/javafx-base/25.0.5/javafx.web/javafx/scene/web/WebView.html
+# ...and newer than we serve, upstream's.
+/JavaFX26/javafx.graphics/javafx/scene/Node.html                        https://openjfx.io/javadoc/26/javafx.graphics/javafx/scene/Node.html
+# Unversioned: the BOM's, through its named union.
+/JavaFX/                                                                /org.scijava/pom-scijava/*/org.openjfx/
+/JavaFX/javafx/scene/Node.html                                          /org.openjfx/javafx-*/*/javafx.graphics/javafx/scene/Node.html
 /Java8/package-list                                                     200
 # javadoc -link probes element-list first; Java < 9 has none, so it must 404.
 /Java8/element-list                                                     404

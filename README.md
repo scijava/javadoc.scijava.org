@@ -54,9 +54,12 @@ component (e.g. `/ImgLib2/` → `/org.scijava/pom-scijava/latest/net.imglib2/`),
 and their class pages to the same class via a union (e.g. `/ImgLib2/net/imglib2/img/Img.html` →
 `/org.scijava/pom-scijava/latest/net.imglib2/net/imglib2/img/Img.html`).
 `/Java{N}/` serves the Java SE API docs: for the LTS versions (8, 11, 17, 21
-and 25), generated from OpenJDK's own sources; for others, and for JavaFX at
-`/JavaFX{N}/`, proxied from the official docs. Projects whose javadoc lives
-elsewhere redirect there.
+and 25), generated from OpenJDK's own sources; others redirect to the next LTS,
+or, if newer, to the official docs. `/JavaFX{N}/` serves the JavaFX docs of
+the JavaFX LTS versions (11, 17, 21 and 25) and of those SciJava ships (19 and
+23), with other versions likewise redirected to the next one up, or upstream
+(JavaFX 8, and versions newer than 25); `/JavaFX/` serves the version
+pom-scijava manages. Projects whose javadoc lives elsewhere redirect there.
 
 The site hosts javadoc of many projects it does not author, so that the
 components managed by pom-scijava can link to it. These copies are not the
@@ -155,9 +158,10 @@ how many requests it made.
 |------|-------|
 | Front page, stylesheet, icons | this repository |
 | The generator, and the script that publishes its output | [pombast] (`pombast javadoc`, `bin/publish-javadoc.sh`) |
-| What is built: settings and named unions | [pom-scijava]'s `pombast.toml`, `[javadoc]` section |
+| What is built: settings, named unions, extras (e.g. JavaFX versions) | [pom-scijava]'s `pombast.toml`, `[javadoc]` section |
 | Redirect rules (legacy paths, `latest`, unions, proxies), banner | [uw-loci/loci-servers] (private), `apache/sites/javadoc.scijava.org.include` |
 | Java SE API docs (`/Java{N}/`) | `.tools/jdk-javadoc.py` |
+| JavaFX version served at each `/JavaFX{N}/`, and each JavaFX package's module | `javafx.map`, `javafx-modules.map` |
 | Building each new pom-scijava release | `.tools/update.py` |
 
 ## Building and publishing
